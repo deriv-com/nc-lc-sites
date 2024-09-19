@@ -1,0 +1,1 @@
+define("BrowserConsoleLogging.referencesHealth", [], function() {});
