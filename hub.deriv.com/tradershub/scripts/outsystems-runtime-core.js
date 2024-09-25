@@ -8780,7 +8780,7 @@
                     defaultValue: "'{\"attrs\":{}}'"
                 }, {
                     name: "Upgrade_Status",
-                    defaultValue: 0.toString()
+                    defaultValue: 0. toString()
                 }],
                 s = `"${i.map(e => e.name).join('", "')}"`;
 
