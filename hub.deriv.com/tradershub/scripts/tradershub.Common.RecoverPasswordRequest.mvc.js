@@ -358,7 +358,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                         },
                                         isDefault: true,
                                         onClick: function() {
-                                            controller.validationService.validateWidget(idService.getId("RecoverPasswordForm"));
+                                            _this.validateWidget(idService.getId("RecoverPasswordForm"));
                                             return Promise.resolve().then(function() {
                                                 var eventHandlerContext = callContext.clone();
                                                 return controller.resetPasswordOnClick$Action(controller.callContext(eventHandlerContext));

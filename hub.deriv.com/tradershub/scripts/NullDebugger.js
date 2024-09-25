@@ -1,17 +1,28 @@
 (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@outsystems/runtime-core-js')) :
-        typeof define === 'function' && define.amd ? define('@outsystems/runtime-core-js/debugger', ['exports', '@outsystems/runtime-core-js'], factory) :
-        (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.NullDebugger = {}, global.OSRuntimeCore));
-})(this, (function(exports, runtimeCoreJs) {
-    'use strict';
+    if (typeof define === "function" && define.amd) {
+        define("@outsystems/runtime-core-js/debugger", ["exports", "@outsystems/runtime-core-js"], factory);
+    } else if (typeof exports !== "undefined") {
+        factory(exports, require("@outsystems/runtime-core-js"));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod.exports, global.runtimeCoreJs);
+        global.outsystemsRuntimeCoreJsDebugger = mod.exports;
+    }
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function(_exports, _runtimeCoreJs) {
+    "use strict";
 
+    Object.defineProperty(_exports, "__esModule", {
+        value: true
+    });
+    _exports.Version = _exports.NullDebugger = void 0;
     var BreakpointType;
     (function(BreakpointType) {
         BreakpointType[BreakpointType["Normal"] = 0] = "Normal";
         BreakpointType[BreakpointType["AtFunctionReturn"] = 1] = "AtFunctionReturn";
         BreakpointType[BreakpointType["BetweenAssignments"] = 2] = "BetweenAssignments";
     })(BreakpointType || (BreakpointType = {}));
-
     class NullDebugger {
         startSession() {}
         endSession() {}
@@ -73,16 +84,9 @@
             return BreakpointType;
         }
     }
-    const Version = "6.18.8";
-    runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-core", Version);
+    _exports.NullDebugger = NullDebugger;
+    const Version = _exports.Version = "6.19.1";
+    _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-core", Version);
     const globalObj = typeof window !== "undefined" ? window : global;
     globalObj.OutSystemsDebugger = new NullDebugger();
-
-    exports.NullDebugger = NullDebugger;
-    exports.Version = Version;
-
-    Object.defineProperty(exports, '__esModule', {
-        value: true
-    });
-
-}));
+});

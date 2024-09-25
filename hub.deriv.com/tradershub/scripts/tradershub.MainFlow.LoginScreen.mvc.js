@@ -410,7 +410,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             },
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("LoginForm"));
+                                _this.validateWidget(idService.getId("LoginForm"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.onClickLogin$Action(controller.callContext(eventHandlerContext));
 

@@ -416,7 +416,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                             extendedProperties: {
                                 style: "text-align: right;"
                             },
-                            style: "form-btn-container",
+                            style: "form-btn-container btn-container",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -430,7 +430,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                             },
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form"));
+                                _this.validateWidget(idService.getId("Form"));
                                 return Promise.resolve().then(function() {
                                     var eventHandlerContext = callContext.clone();
                                     return controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
@@ -882,6 +882,8 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@
                                         model.widgets.get(idService.getId("Input_DocumentType")).validationMessageAttr = jSONDeserializeIDVValidationErrorVar.value.dataOut.documentTypeAttr;
                                     }).then(function() {
                                         if ((model.widgets.get(idService.getId("Form")).validAttr)) {
+                                            // RealSignupSkippedIDV = False
+                                            tradershubClientVariables.setRealSignupSkippedIDV(false);
                                             // Destination: /tradershub/EmploymentDetails
                                             return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "employment-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         }

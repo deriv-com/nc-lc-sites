@@ -26,6 +26,10 @@ define("tradershub.referencesHealth$RESTAPIWebsocket", [], function() {
     // Reference to producer 'RESTAPIWebsocket' is OK.
 });
 
+define("tradershub.referencesHealth$SharedUtilities", [], function() {
+    // Reference to producer 'SharedUtilities' is OK.
+});
+
 define("tradershub.referencesHealth$System_", [], function() {
     // Reference to producer 'System_' is OK.
 });

@@ -67,8 +67,7 @@
                 (s.debug || e.debugAll) && console.debug("ReconnectingWebSocket", "onerror", s.url, n), d.dispatchEvent(l("error"))
             }
         }, !0 == this.automaticOpen && this.open(!1), this.send = function(n) {
-            if (c) return (s.debug || e.debugAll) && console.debug("ReconnectingWebSocket", "send", s.url, n), c.send(n);
-            throw "INVALID_STATE_ERR : Pausing to reconnect websocket"
+            if (c && c.readyState === WebSocket.OPEN) return (s.debug || e.debugAll) && console.debug("ReconnectingWebSocket", "send", s.url, n), c.send(n)
         }, this.close = function(e, n) {
             void 0 === e && (e = 1e3), a = !0, c && c.close(e, n)
         }, this.refresh = function() {

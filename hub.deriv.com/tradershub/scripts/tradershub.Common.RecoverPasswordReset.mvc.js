@@ -825,7 +825,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                         },
                                         isDefault: true,
                                         onClick: function() {
-                                            controller.validationService.validateWidget(idService.getId("PasswordResetForm"));
+                                            _this.validateWidget(idService.getId("PasswordResetForm"));
                                             return Promise.resolve().then(function() {
                                                 var eventHandlerContext = callContext.clone();
                                                 return controller.savePasswordOnClick$Action(controller.callContext(eventHandlerContext));

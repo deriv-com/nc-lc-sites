@@ -240,7 +240,7 @@ define("tradershub.Signup.Citizenship2.mvc$view", ["@outsystems/runtime-core-js"
                                 style: "height: 20px;"
                             },
                             transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                            url: OS.Navigation.generateScreenURL("tradershub", "country-of-residence2", {}),
+                            url: OS.Navigation.generateScreenURL("tradershub", "signup/country-of-residence", {}),
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -470,7 +470,7 @@ define("tradershub.Signup.Citizenship2.mvc$view", ["@outsystems/runtime-core-js"
                             },
                             isDefault: false,
                             onClick: function() {
-                                controller.validationService.validateWidget("");
+                                _this.validateWidget("");
                                 var eventHandlerContext = callContext.clone();
                                 controller.onNextButtonClick$Action(controller.callContext(eventHandlerContext));
 
@@ -593,7 +593,7 @@ define("tradershub.Signup.Citizenship2.mvc$view", ["@outsystems/runtime-core-js"
 
     return View;
 });
-define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.Citizenship2.mvc$controller.OnNextButtonClick.RudderStackJS", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_Citizenship2_mvc_controller_OnNextButtonClick_RudderStackJS) {
+define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.Citizenship2.mvc$controller.OnReady.RudderStackJS", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_Citizenship2_mvc_controller_OnReady_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -622,6 +622,84 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
             }
 
             // Client Actions - Methods
+            get _onClickCountry$Action() {
+                if (!(this.hasOwnProperty("__onClickCountry$Action"))) {
+                    this.__onClickCountry$Action = function(residenceIn, callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnClickCountry", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnClickCountry");
+                                span.setAttribute("outsystems.function.key", "144fb604-b5d5-4c9f-b0dd-69ccd5f55160");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnClickCountry");
+                                callContext = controller.callContext(callContext);
+                                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.Signup.Citizenship2.OnClickCountry$vars"))());
+                                vars.value.residenceInLocal = residenceIn;
+                                // SelectedCitizenship = Residence
+                                tradershubClientVariables.setSelectedCitizenship(vars.value.residenceInLocal);
+                                // Destination: /tradershub/CreatePassword
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "create-password", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onClickCountry$Action;
+            }
+            set _onClickCountry$Action(value) {
+                this.__onClickCountry$Action = value;
+            }
+
+            get _residenceSelectorOnClickBack$Action() {
+                if (!(this.hasOwnProperty("__residenceSelectorOnClickBack$Action"))) {
+                    this.__residenceSelectorOnClickBack$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("ResidenceSelectorOnClickBack", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "ResidenceSelectorOnClickBack");
+                                span.setAttribute("outsystems.function.key", "21739951-6c88-4d95-b016-16e19456ac0a");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("ResidenceSelectorOnClickBack");
+                                callContext = controller.callContext(callContext);
+                                // Destination: /tradershub/CountryOfResidence2
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "signup/country-of-residence", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__residenceSelectorOnClickBack$Action;
+            }
+            set _residenceSelectorOnClickBack$Action(value) {
+                this.__residenceSelectorOnClickBack$Action = value;
+            }
+
             get _dropdownSearchOnChanged$Action() {
                 if (!(this.hasOwnProperty("__dropdownSearchOnChanged$Action"))) {
                     this.__dropdownSearchOnChanged$Action = function(selectedOptionListIn, callContext) {
@@ -631,7 +709,7 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                         return OS.Logger.startActiveSpan("DropdownSearchOnChanged", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "DropdownSearchOnChanged");
-                                span.setAttribute("outsystems.function.key", "3e2157de-a502-4fd5-a9e0-655450a5920a");
+                                span.setAttribute("outsystems.function.key", "58739ea7-4204-4687-ace1-f484a0e11247");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -669,84 +747,6 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                 this.__dropdownSearchOnChanged$Action = value;
             }
 
-            get _residenceSelectorOnClickBack$Action() {
-                if (!(this.hasOwnProperty("__residenceSelectorOnClickBack$Action"))) {
-                    this.__residenceSelectorOnClickBack$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("ResidenceSelectorOnClickBack", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "ResidenceSelectorOnClickBack");
-                                span.setAttribute("outsystems.function.key", "6221058d-b21d-448c-9e3b-8e9d46e152c3");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("ResidenceSelectorOnClickBack");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/CountryOfResidence2
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "country-of-residence2", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__residenceSelectorOnClickBack$Action;
-            }
-            set _residenceSelectorOnClickBack$Action(value) {
-                this.__residenceSelectorOnClickBack$Action = value;
-            }
-
-            get _onClickCountry$Action() {
-                if (!(this.hasOwnProperty("__onClickCountry$Action"))) {
-                    this.__onClickCountry$Action = function(residenceIn, callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnClickCountry", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnClickCountry");
-                                span.setAttribute("outsystems.function.key", "88e27c3e-ae07-4a3d-b8c1-36cd858ebe1e");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnClickCountry");
-                                callContext = controller.callContext(callContext);
-                                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.Signup.Citizenship2.OnClickCountry$vars"))());
-                                vars.value.residenceInLocal = residenceIn;
-                                // SelectedCitizenship = Residence
-                                tradershubClientVariables.setSelectedCitizenship(vars.value.residenceInLocal);
-                                // Destination: /tradershub/CreatePassword2
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "create-password2", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onClickCountry$Action;
-            }
-            set _onClickCountry$Action(value) {
-                this.__onClickCountry$Action = value;
-            }
-
             get _onInitialize$Action() {
                 if (!(this.hasOwnProperty("__onInitialize$Action"))) {
                     this.__onInitialize$Action = function(callContext) {
@@ -756,7 +756,7 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                         return OS.Logger.startActiveSpan("OnInitialize", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "d50b5091-abbf-428d-8967-328e29b32181");
+                                span.setAttribute("outsystems.function.key", "b85aa2d0-fb97-431e-93b1-7b59b043bcbc");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -815,7 +815,7 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                         return OS.Logger.startActiveSpan("OnNextButtonClick", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "OnNextButtonClick");
-                                span.setAttribute("outsystems.function.key", "dd74786b-6d1c-422e-8f71-a4481b536179");
+                                span.setAttribute("outsystems.function.key", "d79acf93-0787-4c8f-ad15-b93506cb3c93");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -827,27 +827,8 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                                 if ((((model.variables.isCountrySelectedVar && (OS.BuiltinFunctions.length(model.variables.selectedCitizenshipVar) > 0)) || ((OS.BuiltinFunctions.length(tradershubClientVariables.getSelectedResidence()) > 0) && !(model.variables.showErrorVar))))) {
                                     // SelectedCitizenship = SelectedCitizenship
                                     tradershubClientVariables.setSelectedCitizenship(model.variables.selectedCitizenshipVar);
-                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                        if (span) {
-                                            span.setAttribute("code.function", "RudderStack");
-                                            span.setAttribute("outsystems.function.key", "7b0bb794-e013-48fb-8350-8771b0beb939");
-                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                        }
-
-                                        try {
-                                            return controller.safeExecuteJSNode(tradershub_Signup_Citizenship2_mvc_controller_OnNextButtonClick_RudderStackJS, "RudderStack", "OnNextButtonClick", null, function($parameters) {}, {}, {});
-                                        } finally {
-                                            if (span) {
-                                                span.end();
-                                            }
-
-                                        }
-
-                                    }, 1);
                                     // Destination: /tradershub/CreatePassword2
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "create-password2", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "signup/create-password", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 } else {
                                     // ShowError = True
                                     model.variables.showErrorVar = true;
@@ -870,61 +851,67 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                 this.__onNextButtonClick$Action = value;
             }
 
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "f848048d-61de-4a7f-adf7-597d81fe1722");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
 
-            dropdownSearchOnChanged$Action(selectedOptionListIn, callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("DropdownSearchOnChanged__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "DropdownSearchOnChanged");
-                        span.setAttribute("outsystems.function.key", "3e2157de-a502-4fd5-a9e0-655450a5920a");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
+                            try {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "RudderStack");
+                                        span.setAttribute("outsystems.function.key", "e6b5fd7c-ba94-4bac-9af4-1f06461ec70f");
+                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
 
-                    try {
-                        return controller.safeExecuteClientAction(controller._dropdownSearchOnChanged$Action, callContext, selectedOptionListIn);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
+                                    try {
+                                        return controller.safeExecuteJSNode(tradershub_Signup_Citizenship2_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
 
-                    }
+                                    }
 
-                }, 0);
+                                }, 1);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
 
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onReady$Action;
+            }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
             }
 
-            residenceSelectorOnClickBack$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("ResidenceSelectorOnClickBack__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "ResidenceSelectorOnClickBack");
-                        span.setAttribute("outsystems.function.key", "6221058d-b21d-448c-9e3b-8e9d46e152c3");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._residenceSelectorOnClickBack$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
 
             onClickCountry$Action(residenceIn, callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnClickCountry__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "OnClickCountry");
-                        span.setAttribute("outsystems.function.key", "88e27c3e-ae07-4a3d-b8c1-36cd858ebe1e");
+                        span.setAttribute("outsystems.function.key", "144fb604-b5d5-4c9f-b0dd-69ccd5f55160");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -943,12 +930,60 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
 
             }
 
+            residenceSelectorOnClickBack$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("ResidenceSelectorOnClickBack__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "ResidenceSelectorOnClickBack");
+                        span.setAttribute("outsystems.function.key", "21739951-6c88-4d95-b016-16e19456ac0a");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._residenceSelectorOnClickBack$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            dropdownSearchOnChanged$Action(selectedOptionListIn, callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("DropdownSearchOnChanged__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "DropdownSearchOnChanged");
+                        span.setAttribute("outsystems.function.key", "58739ea7-4204-4687-ace1-f484a0e11247");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._dropdownSearchOnChanged$Action, callContext, selectedOptionListIn);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
             onInitialize$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "d50b5091-abbf-428d-8967-328e29b32181");
+                        span.setAttribute("outsystems.function.key", "b85aa2d0-fb97-431e-93b1-7b59b043bcbc");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -972,7 +1007,7 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
                 return OS.Logger.startActiveSpan("OnNextButtonClick__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "OnNextButtonClick");
-                        span.setAttribute("outsystems.function.key", "dd74786b-6d1c-422e-8f71-a4481b536179");
+                        span.setAttribute("outsystems.function.key", "d79acf93-0787-4c8f-ad15-b93506cb3c93");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -980,6 +1015,30 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
 
                     try {
                         return controller.safeExecuteClientAction(controller._onNextButtonClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "f848048d-61de-4a7f-adf7-597d81fe1722");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -1013,7 +1072,14 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;
@@ -1080,6 +1146,15 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
         // Server Actions - Variables
 
         // Client Actions - Variables
+        Controller.registerVariableGroupType("tradershub.Signup.Citizenship2.OnClickCountry$vars", [{
+            name: "Residence",
+            attrName: "residenceInLocal",
+            mandatory: true,
+            dataType: OS.DataTypes.DataTypes.Text,
+            defaultValue: function() {
+                return "";
+            }
+        }]);
         Controller.registerVariableGroupType("tradershub.Signup.Citizenship2.DropdownSearchOnChanged$vars", [{
             name: "SelectedOptionList",
             attrName: "selectedOptionListInLocal",
@@ -1090,24 +1165,18 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
             },
             complexType: tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b
         }]);
-        Controller.registerVariableGroupType("tradershub.Signup.Citizenship2.OnClickCountry$vars", [{
-            name: "Residence",
-            attrName: "residenceInLocal",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
 });
 
-define("tradershub.Signup.Citizenship2.mvc$controller.OnNextButtonClick.RudderStackJS", [], function() {
+define("tradershub.Signup.Citizenship2.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent({
-            action: "citizenship_selection_next_button_os",
-        })
+        setTimeout(() => {
+            Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
+                action: "citizenship_selection_screen_opened",
+                form_name: "virtual_signup_form_outsystems"
+            })
+        }, 100);
     };
 });

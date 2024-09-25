@@ -217,7 +217,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                 classes: "ThemeGrid_MarginGutter"
                             },
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form"));
+                                _this.validateWidget(idService.getId("Form"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.skipOnClick$Action(controller.callContext(eventHandlerContext));
 
@@ -480,7 +480,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                             },
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form"));
+                                _this.validateWidget(idService.getId("Form"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.saveOnClick$Action(controller.callContext(eventHandlerContext));
 

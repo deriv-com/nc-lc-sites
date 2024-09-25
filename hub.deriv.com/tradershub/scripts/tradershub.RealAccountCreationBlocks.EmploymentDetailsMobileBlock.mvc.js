@@ -175,13 +175,13 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                             },
                             onClick: function() {
                                 var eventHandlerContext = callContext.clone();
-                                controller.listItemOnClick$Action(OS.BuiltinFunctions.identifierToText(model.variables.getEmploymentStatusesAggr.listOut.getCurrent(callContext.iterationContext).employmentStatusAttr.idAttr), controller.callContext(eventHandlerContext));
+                                controller.listItemOnClick$Action(model.variables.getEmploymentStatusesAggr.listOut.getCurrent(callContext.iterationContext).employmentStatusAttr.labelAttr, controller.callContext(eventHandlerContext));
 
                                 ;
                             },
                             style: "list-item",
-                            triggerActionOnFullSwipeLeft: true,
-                            triggerActionOnFullSwipeRight: true,
+                            triggerActionOnFullSwipeLeft: false,
+                            triggerActionOnFullSwipeRight: false,
                             _idProps: {
                                 service: idService,
                                 name: "ListItem1"
@@ -202,7 +202,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Expression, {
                                         extendedProperties: {
-                                            style: "weight: 500;"
+                                            style: "font-weight: 500;"
                                         },
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -561,9 +561,9 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.ListItemOnClick$vars"))());
                                 vars.value.statusInLocal = statusIn;
-                                // RealSignupEmployementStatus = TextToIdentifier
-                                tradershubClientVariables.setRealSignupEmployementStatus(OS.BuiltinFunctions.textToIdentifier(vars.value.statusInLocal));
-                                if ((((vars.value.statusInLocal === "student") || (vars.value.statusInLocal === "unemployed")))) {
+                                // RealSignupEmployementStatus = Status
+                                tradershubClientVariables.setRealSignupEmployementStatus(vars.value.statusInLocal);
+                                if ((((vars.value.statusInLocal === "Student") || (vars.value.statusInLocal === "Unemployed")))) {
                                     // ShowTaxConfirmationPopup = True
                                     model.variables.showTaxConfirmationPopupVar = true;
                                 } else {
@@ -606,8 +606,10 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                             try {
                                 controller.ensureControllerAlive("LinkOnClick");
                                 callContext = controller.callContext(callContext);
-                                // RealSignupEmployementStatus = TextToIdentifier
-                                tradershubClientVariables.setRealSignupEmployementStatus(OS.BuiltinFunctions.textToIdentifier(""));
+                                // RealSignupEmployementStatus = NullTextIdentifier
+                                tradershubClientVariables.setRealSignupEmployementStatus(OS.BuiltinFunctions.nullTextIdentifier());
+                                // ShowTaxConfirmationPopup = False
+                                model.variables.showTaxConfirmationPopupVar = false;
                             } finally {
                                 if (span) {
                                     span.end();

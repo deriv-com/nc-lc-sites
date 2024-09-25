@@ -261,7 +261,7 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mv
                 enabled: true,
                 isDefault: true,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("DocumentNumberForm"));
+                    _this.validateWidget(idService.getId("DocumentNumberForm"));
                     return Promise.resolve().then(function() {
                         var eventHandlerContext = callContext.clone();
                         return controller.nextOnClick$Action(controller.callContext(eventHandlerContext));

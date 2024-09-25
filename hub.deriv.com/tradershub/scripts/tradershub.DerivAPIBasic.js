@@ -1351,7 +1351,7 @@
             }), t && l(e, t)
         }
         r.d(n, {
-            default: () => ze
+            default: () => We
         });
         var h = r(248),
             g = r.n(h);
@@ -1722,10 +1722,10 @@
             }(M),
             $ = Function.prototype.bind;
 
-        function z(e, t) {
+        function W(e, t) {
             return $.call(e, t)
         }
-        var W = function() {
+        var z = function() {
                 function e(e) {
                     this.partialObserver = e
                 }
@@ -1762,10 +1762,10 @@
                     } : s && T.useDeprecatedNextContext ? ((o = Object.create(t)).unsubscribe = function() {
                         return s.unsubscribe()
                     }, i = {
-                        next: t.next && z(t.next, o),
-                        error: t.error && z(t.error, o),
-                        complete: t.complete && z(t.complete, o)
-                    }) : i = t, s.destination = new W(i), s
+                        next: t.next && W(t.next, o),
+                        error: t.error && W(t.error, o),
+                        complete: t.complete && W(t.complete, o)
+                    }) : i = t, s.destination = new z(i), s
                 }
                 return w(t, e), t
             }(G);
@@ -7226,7 +7226,7 @@
                 return !!e
             })()
         }
-        var ze = function(e) {
+        var We = function(e) {
             function t() {
                 var e, r = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = r.storage,
@@ -7249,7 +7249,7 @@
                     if (!i) throw Error("An app_id is required to connect to the API");
                     e.shouldReconnect = !0, e.connectionArgs = {
                         app_id: i,
-                        endpointUrl: We(d),
+                        endpointUrl: ze(d),
                         lang: l.toUpperCase(),
                         brand: h.toLowerCase()
                     }, e.connect()
@@ -7289,7 +7289,7 @@
             }, {
                 key: "isConnectionClosed",
                 value: function() {
-                    return 2 === this.connection.readyState || 3 === this.connection.readyState
+                    return this.connection.readyState !== WebSocket.OPEN
                 }
             }, {
                 key: "sendAndGetSource",
@@ -7517,7 +7517,7 @@
             }]), t
         }(ge);
 
-        function We(r) {
+        function ze(r) {
             if ("string" != typeof r) throw new xe("Endpoint must be a string, passed: ".concat(t(r)));
             var n, i, o;
             try {

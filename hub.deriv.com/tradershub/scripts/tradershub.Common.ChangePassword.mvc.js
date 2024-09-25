@@ -733,7 +733,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                                                     },
                                                     isDefault: true,
                                                     onClick: function() {
-                                                        controller.validationService.validateWidget(idService.getId("Form"));
+                                                        _this.validateWidget(idService.getId("Form"));
                                                         return Promise.resolve().then(function() {
                                                             var eventHandlerContext = callContext.clone();
                                                             return controller.setNewPasswordOnClick$Action(controller.callContext(eventHandlerContext));
@@ -805,7 +805,7 @@ define("tradershub.Common.ChangePassword.mvc$controller", ["@outsystems/runtime-
                             var model = this.model;
                             var controller = this.controller;
                             var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetUserDetail", "screenservices/tradershub/Common/ChangePassword/ScreenDataSetGetUserDetail", "lOVG8XYUtT1F4BnlmUbFQw", maxRecords, startIndex, function(b) {
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetUserDetail", "screenservices/tradershub/Common/ChangePassword/ScreenDataSetGetUserDetail", "Vkw62r1ZUud4EmSrR_Th1Q", maxRecords, startIndex, function(b) {
                                 model.variables.getUserDetailAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getUserDetailAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getUserDetailAggr.constructor));

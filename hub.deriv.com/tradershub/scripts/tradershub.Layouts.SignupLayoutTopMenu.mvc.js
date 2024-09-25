@@ -1,4 +1,4 @@
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController, OutSystemsUIModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController, OutSystemsUIModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -119,7 +119,7 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_Layouts_SignupLayoutTopMenu_mvc_model, tradershub_Layouts_SignupLayoutTopMenu_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_Layouts_SignupLayoutTopMenu_mvc_model, tradershub_Layouts_SignupLayoutTopMenu_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -419,7 +419,7 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-
 
     return View;
 });
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -523,62 +523,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
             }
             set _onDestroy$Action(value) {
                 this.__onDestroy$Action = value;
-            }
-
-            get _onRender$Action() {
-                if (!(this.hasOwnProperty("__onRender$Action"))) {
-                    this.__onRender$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnRender", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnRender");
-                                span.setAttribute("outsystems.function.key", "87df9063-f523-4c5c-b7d7-bc6a799675ad");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnRender");
-                                callContext = controller.callContext(callContext);
-                                var sendResidenceListVar = new OS.DataTypes.VariableHolder();
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    return OS.Flow.executeSequence(function() {
-                                        if (((OS.BuiltinFunctions.length(tradershubClientVariables.getRawResidenceListResponse()) === 0))) {
-                                            // Execute Action: SendResidenceList
-                                            model.flush();
-                                            return tradershubController.default.sendResidenceList$Action(false, callContext).then(function(value) {
-                                                sendResidenceListVar.value = value;
-                                            });
-                                        } else {
-                                            return OS.Flow.executeSequence(function() {
-                                                if (((OS.BuiltinFunctions.length(tradershubClientVariables.getRawWebsiteStatusResponse()) === 0))) {
-                                                    // Execute Action: GetWebsiteStatus
-                                                    model.flush();
-                                                    return tradershubController.default.getWebsiteStatus$Action(callContext);
-                                                }
-
-                                            });
-                                        }
-
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__onRender$Action;
-            }
-            set _onRender$Action(value) {
-                this.__onRender$Action = value;
             }
 
             get _onReady$Action() {
@@ -721,29 +665,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
 
             }
 
-            onRender$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnRender__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnRender");
-                        span.setAttribute("outsystems.function.key", "87df9063-f523-4c5c-b7d7-bc6a799675ad");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onRender$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
             onReady$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
@@ -831,14 +752,7 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
 
             get onRenderEventHandler() {
                 if (!(this.hasOwnProperty("_onRenderEventHandler"))) {
-                    this._onRenderEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onRender$Action(callContext);
-
-                    };
+                    this._onRenderEventHandler = null;
                 }
 
                 return this._onRenderEventHandler;

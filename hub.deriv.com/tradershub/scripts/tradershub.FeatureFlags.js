@@ -1,9 +1,18 @@
 // Define your feature flags here and add them to the array
 // example { name: "foo", enabled: true },
 let FEATURE_FLAGS = [{
-    name: "NewSignupUI",
-    enabled: false
-}]
+        name: "NewSignupUI",
+        enabled: false
+    },
+    {
+        name: "Options",
+        enabled: true
+    },
+    {
+        name: "AddtionalPersonalDetails",
+        enabled: false
+    },
+]
 
 if (location.hostname === "hub.deriv.com") {
     FEATURE_FLAGS = []

@@ -562,7 +562,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
                                         },
                                         isDefault: true,
                                         onClick: function() {
-                                            controller.validationService.validateWidget(idService.getId("LoginForm"));
+                                            _this.validateWidget(idService.getId("LoginForm"));
                                             return Promise.resolve().then(function() {
                                                 var eventHandlerContext = callContext.clone();
                                                 return controller.loginOnClick$Action(controller.callContext(eventHandlerContext));

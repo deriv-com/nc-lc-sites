@@ -222,7 +222,7 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Expression, {
                                         extendedProperties: {
-                                            style: "weight: 500;"
+                                            style: "font-weight: 500;"
                                         },
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -440,6 +440,8 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
                                     tradershubClientVariables.setRealSignupIDVDocumentNumber(OS.BuiltinFunctions.nullTextIdentifier());
                                     // RealSignupIDVAdditionalDocumentNumber = NullTextIdentifier
                                     tradershubClientVariables.setRealSignupIDVAdditionalDocumentNumber(OS.BuiltinFunctions.nullTextIdentifier());
+                                    // RealSignupSkippedIDV = False
+                                    tradershubClientVariables.setRealSignupSkippedIDV(false);
                                     // JSON Serialize: JSONSerialize1
                                     jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.supportedDocumentsVar, false, false);
                                     return OS.Logger.startActiveSpan("JavaScript1", function(span) {
@@ -720,9 +722,6 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
             const document = JSON.parse($parameters.DocumentsList ?? JSON.stringify([])).find(doc => doc.display_name === $parameters.SelectedDocument)
             $parameters.AdditionalDocumentLabel = document?.additional?.display_name ?? ""
             $parameters.AdditionalDocumentFormat = document?.additional?.format ?? ""
-
-
-
             $resolve()
         });
     };

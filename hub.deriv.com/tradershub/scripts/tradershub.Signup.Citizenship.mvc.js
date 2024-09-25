@@ -276,14 +276,14 @@ define("tradershub.Signup.Citizenship.mvc$view", ["@outsystems/runtime-core-js",
                                         var list = new tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b();
                                         list.pushAll([function() {
                                             var rec = new OutSystemsUIModel.ST_60f22bd2e9b10a22278b8afe6d7f601aStructure();
-                                            rec.valueAttr = ((((model.variables.selectedCitizenshipVar) !== (""))) ? (model.variables.selectedCitizenshipVar) : (tradershubClientVariables.getSelectedResidence()));
+                                            rec.valueAttr = ((((tradershubClientVariables.getSelectedCitizenship()) !== ((OS.BuiltinFunctions.nullIdentifier()).toString()))) ? (tradershubClientVariables.getSelectedCitizenship()) : (tradershubClientVariables.getSelectedResidence()));
                                             rec.labelAttr = tradershubClientVariables.getSelectedResidenceLabel();
                                             return rec;
                                         }()]);
                                         return list;
                                     }();
                                 }, function() {
-                                    return model.variables.selectedCitizenshipVar;
+                                    return tradershubClientVariables.getSelectedCitizenship();
                                 }, function() {
                                     return tradershubClientVariables.getSelectedResidence();
                                 }, function() {
@@ -400,7 +400,7 @@ define("tradershub.Signup.Citizenship.mvc$view", ["@outsystems/runtime-core-js",
                             },
                             isDefault: false,
                             onClick: function() {
-                                controller.validationService.validateWidget("");
+                                _this.validateWidget("");
                                 var eventHandlerContext = callContext.clone();
                                 controller.onNextButtonClick$Action(controller.callContext(eventHandlerContext));
 

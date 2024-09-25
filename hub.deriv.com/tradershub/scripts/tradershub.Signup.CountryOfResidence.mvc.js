@@ -1,4 +1,4 @@
-define("tradershub.Signup.CountryOfResidence.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.model", "tradershub.controller", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "OutSystemsUI.Interaction.DropdownSearch.mvc$model", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "tradershub.Common.ResidenceSelector.mvc$model", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, OutSystemsUIModel, tradershubController, tradershub_Layouts_SignupLayoutTopMenu_mvcModel, OutSystemsUI_Interaction_DropdownSearch_mvcModel, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel, tradershub_Common_ResidenceSelector_mvcModel) {
+define("tradershub.Signup.CountryOfResidence.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.model", "tradershub.controller", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "OutSystemsUI.Interaction.DropdownSearch.mvc$model", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "tradershub.Common.ResidenceSelector.mvc$model", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage", "tradershub.controller$RudderstackIdentifyEvent"], function(OSRuntimeCore, tradershubModel, OutSystemsUIModel, tradershubController, tradershub_Layouts_SignupLayoutTopMenu_mvcModel, OutSystemsUI_Interaction_DropdownSearch_mvcModel, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel, tradershub_Common_ResidenceSelector_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -39,6 +39,9 @@ define("tradershub.Signup.CountryOfResidence.mvc$model", ["@outsystems/runtime-c
                     }, false),
                     this.attr("SelectedResidenceLabel", "selectedResidenceLabelVar", "SelectedResidenceLabel", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
+                    }, false),
+                    this.attr("IsLoading", "isLoadingVar", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -81,7 +84,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$model", ["@outsystems/runtime-c
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Signup.CountryOfResidence.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Signup.CountryOfResidence.mvc$model", "tradershub.Signup.CountryOfResidence.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "tradershub.Common.ResidenceSelector.mvc$view", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, React, OSView, tradershub_Signup_CountryOfResidence_mvc_model, tradershub_Signup_CountryOfResidence_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, tradershub_Common_ResidenceSelector_mvc_view) {
+define("tradershub.Signup.CountryOfResidence.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Signup.CountryOfResidence.mvc$model", "tradershub.Signup.CountryOfResidence.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "tradershub.Common.ResidenceSelector.mvc$view", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage", "tradershub.controller$RudderstackIdentifyEvent"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, React, OSView, tradershub_Signup_CountryOfResidence_mvc_model, tradershub_Signup_CountryOfResidence_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, tradershub_Common_ResidenceSelector_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -393,7 +396,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$view", ["@outsystems/runtime-co
                             },
                             isDefault: false,
                             onClick: function() {
-                                controller.validationService.validateWidget("");
+                                _this.validateWidget("");
                                 var eventHandlerContext = callContext.clone();
                                 controller.onNextButtonClick$Action(controller.callContext(eventHandlerContext));
 
@@ -504,7 +507,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$view", ["@outsystems/runtime-co
                             },
                             isDefault: false,
                             onClick: function() {
-                                controller.validationService.validateWidget("");
+                                _this.validateWidget("");
                                 var eventHandlerContext = callContext.clone();
                                 controller.onCancelClick$Action(controller.callContext(eventHandlerContext));
 
@@ -653,7 +656,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$view", ["@outsystems/runtime-co
 
     return View;
 });
-define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.GetCurrentResidenceBasedOnWebsiteStatusJS", "tradershub.Signup.CountryOfResidence.mvc$controller.DropdownSearchOnChanged.JavaScript1JS", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_GetCurrentResidenceBasedOnWebsiteStatusJS, tradershub_Signup_CountryOfResidence_mvc_controller_DropdownSearchOnChanged_JavaScript1JS) {
+define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.GetCurrentResidenceBasedOnWebsiteStatus2JS", "tradershub.Signup.CountryOfResidence.mvc$controller.DropdownSearchOnChanged.JavaScript1JS", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_268c8bb28743388aadc6c4f1ff502e41Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_25b9b327f0c66aea511dc5895e377c2eStructure", "tradershub.model$ST_7ec9f9f71a508e65d3bd48bc2778f754Structure", "tradershub.model$ST_2dae613205bb81a0382059f7840afedcStructure", "tradershub.model$ST_152f791bd12ecebe98c991a448719621Structure", "tradershub.model$ST_9040ff9a31163603cbfef38781e8f440Structure", "tradershub.model$ST_d48988cf8eae8d40a2245d672da18414Structure", "tradershub.model$ST_c698a3174b73fffa916cca14f10645acStructure", "tradershub.model$ST_4090eb1c8cd075ebe26f8bb290f1ff93Structure", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure", "tradershub.model$ST_258259badb7b79699a67a1a8307ba86dStructure", "tradershub.model$ST_30e2edd642322834fde0261ac531b663Structure", "tradershub.model$ST_6460f355981e1f253edfbd5d857d76bdStructure", "tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", "tradershub.model$ST_c9354c8209eb9723d55bc21a92e84a3aStructure", "tradershub.model$ST_aed452511cf537505102a57a65fea54cStructure", "tradershub.controller$DerivApiSendMessage", "tradershub.controller$RudderstackIdentifyEvent"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_GetCurrentResidenceBasedOnWebsiteStatus2JS, tradershub_Signup_CountryOfResidence_mvc_controller_DropdownSearchOnChanged_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -700,12 +703,33 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
+                                var getResidenceList2Var = new OS.DataTypes.VariableHolder();
                                 var getResidenceListVar = new OS.DataTypes.VariableHolder();
                                 var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
-                                var getCurrentResidenceBasedOnWebsiteStatusJSResult = new OS.DataTypes.VariableHolder();
+                                var getCurrentResidenceBasedOnWebsiteStatus2JSResult = new OS.DataTypes.VariableHolder();
                                 var jSONDeserializeResidenceVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b))());
                                 var jSONDeserializeWebsiteStatusVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_268c8bb28743388aadc6c4f1ff502e41Structure))());
+                                var jSONDeserializeGetResidenceListResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_3d5602677826d8c01775c21c1065c8ceStructure))());
                                 return OS.Flow.executeAsyncFlow(function() {
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "7da4bfb5-bc34-4cd1-88c2-5d01efec2384");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
+
+                                        }
+
+                                    }, 1);
                                     return OS.Flow.executeSequence(function() {
                                         if (((OS.BuiltinFunctions.length(tradershubClientVariables.getRawWebsiteStatusResponse()) === 0))) {
                                             // Execute Action: GetWebsiteStatus
@@ -713,8 +737,16 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                             return tradershubController.default.derivApiSendMessage$Action("", "website_status", false, callContext).then(function(value) {
                                                 getWebsiteStatusVar.value = value;
                                             }).then(function() {
+                                                // Execute Action: GetResidenceList2
+                                                model.flush();
+                                                return tradershubController.default.derivApiSendMessage$Action("", "residence_list", false, callContext).then(function(value) {
+                                                    getResidenceList2Var.value = value;
+                                                });
+                                            }).then(function() {
                                                 // RawWebsiteStatusResponse = GetWebsiteStatus.Response
                                                 tradershubClientVariables.setRawWebsiteStatusResponse(getWebsiteStatusVar.value.responseOut);
+                                                // RawResidenceListResponse = GetResidenceList2.Response
+                                                tradershubClientVariables.setRawResidenceListResponse(getResidenceList2Var.value.responseOut);
                                             });
                                         } else {
                                             return OS.Flow.executeSequence(function() {
@@ -735,24 +767,26 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                     }).then(function() {
                                         // JSON Deserialize: JSONDeserializeWebsiteStatus
                                         jSONDeserializeWebsiteStatusVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawWebsiteStatusResponse(), tradershubModel.ST_268c8bb28743388aadc6c4f1ff502e41Structure, false);
-                                        getCurrentResidenceBasedOnWebsiteStatusJSResult.value = OS.Logger.startActiveSpan("GetCurrentResidenceBasedOnWebsiteStatus", function(span) {
+                                        // Execute Action: RudderstackIdentifyEvent
+                                        tradershubController.default.rudderstackIdentifyEvent$Action(callContext);
+                                        getCurrentResidenceBasedOnWebsiteStatus2JSResult.value = OS.Logger.startActiveSpan("GetCurrentResidenceBasedOnWebsiteStatus2", function(span) {
                                             if (span) {
-                                                span.setAttribute("code.function", "GetCurrentResidenceBasedOnWebsiteStatus");
-                                                span.setAttribute("outsystems.function.key", "c104e8d8-deba-4b1b-a4b4-c80c4a596495");
+                                                span.setAttribute("code.function", "GetCurrentResidenceBasedOnWebsiteStatus2");
+                                                span.setAttribute("outsystems.function.key", "eea4d06e-3cbd-4503-81f6-f78da50d800e");
                                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                                 span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                             }
 
                                             try {
-                                                return controller.safeExecuteJSNode(tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_GetCurrentResidenceBasedOnWebsiteStatusJS, "GetCurrentResidenceBasedOnWebsiteStatus", "OnReady", {
-                                                    ResidenceList: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawResidenceListResponse(), OS.DataTypes.DataTypes.Text),
+                                                return controller.safeExecuteJSNode(tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_GetCurrentResidenceBasedOnWebsiteStatus2JS, "GetCurrentResidenceBasedOnWebsiteStatus2", "OnReady", {
                                                     SelectedResidence: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getSelectedResidence(), OS.DataTypes.DataTypes.Text),
+                                                    ResidenceList: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawResidenceListResponse(), OS.DataTypes.DataTypes.Text),
                                                     ClientCountry: OS.DataConversion.JSNodeParamConverter.to(jSONDeserializeWebsiteStatusVar.value.dataOut.website_statusAttr.clients_countryAttr, OS.DataTypes.DataTypes.Text),
                                                     CurrentResidence: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
                                                     IsServiceNotAvailable: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
                                                 }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.Signup.CountryOfResidence.OnReady$getCurrentResidenceBasedOnWebsiteStatusJSResult"))();
+                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.Signup.CountryOfResidence.OnReady$getCurrentResidenceBasedOnWebsiteStatus2JSResult"))();
                                                     jsNodeResult.currentResidenceOut = OS.DataConversion.JSNodeParamConverter.from($parameters.CurrentResidence, OS.DataTypes.DataTypes.Text);
                                                     jsNodeResult.isServiceNotAvailableOut = OS.DataConversion.JSNodeParamConverter.from($parameters.IsServiceNotAvailable, OS.DataTypes.DataTypes.Boolean);
                                                     return jsNodeResult;
@@ -765,8 +799,10 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                             }
 
                                         }, 1);
+                                        // JSON Deserialize: JSONDeserializeGetResidenceListResponse
+                                        jSONDeserializeGetResidenceListResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawResidenceListResponse(), tradershubModel.ST_3d5602677826d8c01775c21c1065c8ceStructure, false);
                                         // JSON Deserialize: JSONDeserializeResidence
-                                        jSONDeserializeResidenceVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(getCurrentResidenceBasedOnWebsiteStatusJSResult.value.currentResidenceOut, tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b, false);
+                                        jSONDeserializeResidenceVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(getCurrentResidenceBasedOnWebsiteStatus2JSResult.value.currentResidenceOut, tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b, false);
                                         // WebsiteStatusClientCountry = JSONDeserializeResidence.Data
                                         model.variables.websiteStatusClientCountryVar = jSONDeserializeResidenceVar.value.dataOut;
                                         // SelectedResidence = If
@@ -779,27 +815,12 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                         tradershubClientVariables.setSelectedResidenceLabel((((OS.BuiltinFunctions.length(tradershubClientVariables.getSelectedResidenceLabel()) > 0)) ? (tradershubClientVariables.getSelectedResidenceLabel()) : (jSONDeserializeResidenceVar.value.dataOut.getCurrent(callContext.iterationContext).labelAttr)));
                                         // SelectedResidenceLabel = If
                                         model.variables.selectedResidenceLabelVar = (((OS.BuiltinFunctions.length(tradershubClientVariables.getSelectedResidenceLabel()) > 0)) ? (tradershubClientVariables.getSelectedResidenceLabel()) : (jSONDeserializeResidenceVar.value.dataOut.getCurrent(callContext.iterationContext).labelAttr));
-                                        // ShowUnavailableServiceError = GetCurrentResidenceBasedOnWebsiteStatus.IsServiceNotAvailable
-                                        model.variables.showUnavailableServiceErrorVar = getCurrentResidenceBasedOnWebsiteStatusJSResult.value.isServiceNotAvailableOut;
-                                        OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "RudderStack");
-                                                span.setAttribute("outsystems.function.key", "5cd7bf63-58ae-40c1-9c80-aadfa06b5faf");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_Signup_CountryOfResidence_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
-
-                                            }
-
-                                        }, 1);
+                                        // IsLoading = False
+                                        model.variables.isLoadingVar = false;
+                                        // ResidenceListResponse = JSONDeserializeGetResidenceListResponse.Data
+                                        model.variables.residenceListResponseVar = jSONDeserializeGetResidenceListResponseVar.value.dataOut;
+                                        // ShowUnavailableServiceError = GetCurrentResidenceBasedOnWebsiteStatus2.IsServiceNotAvailable
+                                        model.variables.showUnavailableServiceErrorVar = getCurrentResidenceBasedOnWebsiteStatus2JSResult.value.isServiceNotAvailableOut;
                                     });
                                 });
                             }, function() {
@@ -943,6 +964,8 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                 model.variables.showUnavailableServiceErrorVar = javaScript1JSResult.value.isDisabledCountryOut;
                                 // SelectedResidenceLabel = SelectedOptionList.Current.Label
                                 model.variables.selectedResidenceLabelVar = vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).labelAttr;
+                                // IsSpain = SelectedCountry = "es"
+                                tradershubClientVariables.setIsSpain((vars.value.selectedCountryInLocal === "es"));
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1431,7 +1454,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
         // Server Actions - Variables
 
         // Client Actions - Variables
-        Controller.registerVariableGroupType("tradershub.Signup.CountryOfResidence.OnReady$getCurrentResidenceBasedOnWebsiteStatusJSResult", [{
+        Controller.registerVariableGroupType("tradershub.Signup.CountryOfResidence.OnReady$getCurrentResidenceBasedOnWebsiteStatus2JSResult", [{
             name: "CurrentResidence",
             attrName: "currentResidenceOut",
             mandatory: true,
@@ -1491,42 +1514,21 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
 
 define("tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        let rudderStackLoaded = false;
-
-        function checkForRudderStack() {
-            if (window?.rudderanalytics && !rudderStackLoaded) {
-                window.rudderanalytics.ready(() => {
-                    if (!rudderStackLoaded) {
-                        Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
-                            action: "country_selection_screen_opened",
-                            form_name: "virtual_signup_form_outsystems"
-                        });
-                        rudderStackLoaded = true;
-                    }
-                    clearInterval(intervalId);
-                });
-            }
-        }
-
-        const intervalId = setInterval(() => {
-            checkForRudderStack();
-        }, 2000);
+        Analytics.Analytics.trackEvent({
+            action: "country_selection_screen_opened_os",
+        })
     };
 });
 
-define("tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.GetCurrentResidenceBasedOnWebsiteStatusJS", [], function() {
+define("tradershub.Signup.CountryOfResidence.mvc$controller.OnReady.GetCurrentResidenceBasedOnWebsiteStatus2JS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const residenceList = JSON.parse($parameters.ResidenceList)
-
-        let residence = residenceList.residence_list.filter(residence => residence.value == $parameters.ClientCountry && !residence.disabled)
-
-
+        const residenceList = JSON.parse($parameters.ResidenceList ?? '{}')
+        let residence = residenceList?.residence_list?.filter(residence => residence.value == $parameters.ClientCountry && !residence.disabled)
 
         if ($parameters.SelectedResidence) {
-            residence = residenceList.residence_list.filter(residence => residence.value == $parameters.SelectedResidence)
-            $parameters.IsServiceNotAvailable = Boolean(residence[0]?.disabled)
+            residence = residenceList?.residence_list?.filter(residence => residence.value == $parameters.SelectedResidence) ?? {}
+            $parameters.IsServiceNotAvailable = Boolean(residence && residence[0]?.disabled)
         }
-
 
         $parameters.CurrentResidence = JSON.stringify(residence)
     };

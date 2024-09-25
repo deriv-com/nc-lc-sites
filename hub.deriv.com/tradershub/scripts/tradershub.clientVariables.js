@@ -86,6 +86,14 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
             return clientVarsService.setVariable("RealSignupIsIDVSupported", "tradershub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
+        getRealSignupAccountOpeningReason() {
+            return clientVarsService.getVariable("RealSignupAccountOpeningReason", "tradershub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setRealSignupAccountOpeningReason(value) {
+            return clientVarsService.setVariable("RealSignupAccountOpeningReason", "tradershub", OS.DataTypes.DataTypes.Text, value);
+        }
+
         getSelectedCurrencyCode() {
             return clientVarsService.getVariable("SelectedCurrencyCode", "tradershub", OS.DataTypes.DataTypes.Text);
         }
@@ -158,12 +166,28 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
             return clientVarsService.setVariable("RealSignupAddress", "tradershub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getIsSpain() {
+            return clientVarsService.getVariable("IsSpain", "tradershub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setIsSpain(value) {
+            return clientVarsService.setVariable("IsSpain", "tradershub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getLastURL() {
             return clientVarsService.getVariable("LastURL", "tradershub", OS.DataTypes.DataTypes.Text);
         }
 
         setLastURL(value) {
             return clientVarsService.setVariable("LastURL", "tradershub", OS.DataTypes.DataTypes.Text, value);
+        }
+
+        getTempClientCountry() {
+            return clientVarsService.getVariable("TempClientCountry", "tradershub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setTempClientCountry(value) {
+            return clientVarsService.setVariable("TempClientCountry", "tradershub", OS.DataTypes.DataTypes.Text, value);
         }
 
         getWebsocketURL() {
@@ -350,6 +374,14 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
             return clientVarsService.setVariable("ActiveLoginId", "tradershub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getRealSignupPlaceOfBirth() {
+            return clientVarsService.getVariable("RealSignupPlaceOfBirth", "tradershub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setRealSignupPlaceOfBirth(value) {
+            return clientVarsService.setVariable("RealSignupPlaceOfBirth", "tradershub", OS.DataTypes.DataTypes.Text, value);
+        }
+
         getRealSignupAddressPostCode() {
             return clientVarsService.getVariable("RealSignupAddressPostCode", "tradershub", OS.DataTypes.DataTypes.Text);
         }
@@ -438,6 +470,14 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
             return clientVarsService.setVariable("ResetPasswordEmailSent", "tradershub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
+        getRealSignupPhone() {
+            return clientVarsService.getVariable("RealSignupPhone", "tradershub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setRealSignupPhone(value) {
+            return clientVarsService.setVariable("RealSignupPhone", "tradershub", OS.DataTypes.DataTypes.Text, value);
+        }
+
         getFinancialAssessmentEducationLevel() {
             return clientVarsService.getVariable("FinancialAssessmentEducationLevel", "tradershub", OS.DataTypes.DataTypes.Text);
         }
@@ -498,6 +538,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
                 RealSignupTaxResidence: OS.DataConversion.ServerDataConverter.to(this.getRealSignupTaxResidence(), OS.DataTypes.DataTypes.Text),
                 FinancialAssessmentIncomeSource: OS.DataConversion.ServerDataConverter.to(this.getFinancialAssessmentIncomeSource(), OS.DataTypes.DataTypes.Text),
                 RealSignupIsIDVSupported: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIsIDVSupported(), OS.DataTypes.DataTypes.Boolean),
+                RealSignupAccountOpeningReason: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAccountOpeningReason(), OS.DataTypes.DataTypes.Text),
                 SelectedCurrencyCode: OS.DataConversion.ServerDataConverter.to(this.getSelectedCurrencyCode(), OS.DataTypes.DataTypes.Text),
                 IsEuUser: OS.DataConversion.ServerDataConverter.to(this.getIsEuUser(), OS.DataTypes.DataTypes.Boolean),
                 ProductionHostName: OS.DataConversion.ServerDataConverter.to(this.getProductionHostName(), OS.DataTypes.DataTypes.Text),
@@ -507,7 +548,9 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
                 ResetPasswordLinkExpired: OS.DataConversion.ServerDataConverter.to(this.getResetPasswordLinkExpired(), OS.DataTypes.DataTypes.Boolean),
                 AppId: OS.DataConversion.ServerDataConverter.to(this.getAppId(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddress: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddress(), OS.DataTypes.DataTypes.Text),
+                IsSpain: OS.DataConversion.ServerDataConverter.to(this.getIsSpain(), OS.DataTypes.DataTypes.Boolean),
                 LastURL: OS.DataConversion.ServerDataConverter.to(this.getLastURL(), OS.DataTypes.DataTypes.Text),
+                TempClientCountry: OS.DataConversion.ServerDataConverter.to(this.getTempClientCountry(), OS.DataTypes.DataTypes.Text),
                 WebsocketURL: OS.DataConversion.ServerDataConverter.to(this.getWebsocketURL(), OS.DataTypes.DataTypes.Text),
                 RealSignupCurrentStep: OS.DataConversion.ServerDataConverter.to(this.getRealSignupCurrentStep(), OS.DataTypes.DataTypes.Integer),
                 RealSignupFirstName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupFirstName(), OS.DataTypes.DataTypes.Text),
@@ -531,6 +574,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
                 StagingHostName: OS.DataConversion.ServerDataConverter.to(this.getStagingHostName(), OS.DataTypes.DataTypes.Text),
                 Lang: OS.DataConversion.ServerDataConverter.to(this.getLang(), OS.DataTypes.DataTypes.Text),
                 ActiveLoginId: OS.DataConversion.ServerDataConverter.to(this.getActiveLoginId(), OS.DataTypes.DataTypes.Text),
+                RealSignupPlaceOfBirth: OS.DataConversion.ServerDataConverter.to(this.getRealSignupPlaceOfBirth(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddressPostCode: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddressPostCode(), OS.DataTypes.DataTypes.Text),
                 AuthToken: OS.DataConversion.ServerDataConverter.to(this.getAuthToken(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddressStateLabel: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddressStateLabel(), OS.DataTypes.DataTypes.Text),
@@ -542,6 +586,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
                 RealSignupTaxIDConfirmation: OS.DataConversion.ServerDataConverter.to(this.getRealSignupTaxIDConfirmation(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupLastName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupLastName(), OS.DataTypes.DataTypes.Text),
                 ResetPasswordEmailSent: OS.DataConversion.ServerDataConverter.to(this.getResetPasswordEmailSent(), OS.DataTypes.DataTypes.Boolean),
+                RealSignupPhone: OS.DataConversion.ServerDataConverter.to(this.getRealSignupPhone(), OS.DataTypes.DataTypes.Text),
                 FinancialAssessmentEducationLevel: OS.DataConversion.ServerDataConverter.to(this.getFinancialAssessmentEducationLevel(), OS.DataTypes.DataTypes.Text),
                 FinancialAssessmentAccountTurnover: OS.DataConversion.ServerDataConverter.to(this.getFinancialAssessmentAccountTurnover(), OS.DataTypes.DataTypes.Text),
                 RealSignupSkippedIDV: OS.DataConversion.ServerDataConverter.to(this.getRealSignupSkippedIDV(), OS.DataTypes.DataTypes.Boolean),

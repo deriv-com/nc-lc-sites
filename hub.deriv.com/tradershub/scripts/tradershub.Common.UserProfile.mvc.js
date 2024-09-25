@@ -347,7 +347,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                                             },
                                             isDefault: true,
                                             onClick: function() {
-                                                controller.validationService.validateWidget(idService.getId("Form"));
+                                                _this.validateWidget(idService.getId("Form"));
                                                 return Promise.resolve().then(function() {
                                                     var eventHandlerContext = callContext.clone();
                                                     return controller.saveChangesOnClick$Action(controller.callContext(eventHandlerContext));
@@ -444,7 +444,7 @@ define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-cor
                             var model = this.model;
                             var controller = this.controller;
                             var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetUserById", "screenservices/tradershub/Common/UserProfile/ScreenDataSetGetUserById", "yxbZ3Gc_AyRfLt94vFYHKQ", maxRecords, startIndex, function(b) {
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetUserById", "screenservices/tradershub/Common/UserProfile/ScreenDataSetGetUserById", "rUhHAGRRggSPZ_kmlqB_2g", maxRecords, startIndex, function(b) {
                                 model.variables.getUserByIdAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getUserByIdAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getUserByIdAggr.constructor));

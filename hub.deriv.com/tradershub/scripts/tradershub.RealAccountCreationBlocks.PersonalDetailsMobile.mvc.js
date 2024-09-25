@@ -377,7 +377,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                 },
                 isDefault: true,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("NameForm"));
+                    _this.validateWidget(idService.getId("NameForm"));
                     var eventHandlerContext = callContext.clone();
                     controller.onClickNext$Action(controller.callContext(eventHandlerContext));
 

@@ -73,7 +73,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
         }
 
         static getJsDependencies() {
-            return ["scripts/tradershub.JSCookie.js"];
+            return [];
         }
 
         static getBlocks() {
@@ -511,7 +511,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form"));
+                                _this.validateWidget(idService.getId("Form"));
                                 return Promise.resolve().then(function() {
                                     var eventHandlerContext = callContext.clone();
                                     return controller.submitOnClick$Action(controller.callContext(eventHandlerContext));
@@ -707,7 +707,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
 
     return View;
 });
-define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "tradershub.Signup.signup.mvc$controller.OnInitialize.CheckAuthURLParamJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS, tradershub_Signup_signup_mvc_controller_OnInitialize_CheckAuthURLParamJS) {
+define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1061,83 +1061,6 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                 this.__submitOnClick$Action = value;
             }
 
-            get _onInitialize$Action() {
-                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
-                    this.__onInitialize$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "e1e6fe6d-4e95-4465-b25b-51d403327ccc");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnInitialize");
-                                callContext = controller.callContext(callContext);
-                                var checkAuthURLParamJSResult = new OS.DataTypes.VariableHolder();
-                                checkAuthURLParamJSResult.value = OS.Logger.startActiveSpan("CheckAuthURLParam", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "CheckAuthURLParam");
-                                        span.setAttribute("outsystems.function.key", "bea0a465-ae91-4da5-a458-d242cbbae443");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_Signup_signup_mvc_controller_OnInitialize_CheckAuthURLParamJS, "CheckAuthURLParam", "OnInitialize", {
-                                            LoginID: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                            AuthToken: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                            LoginIDTokenPairs: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {
-                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.Signup.signup.OnInitialize$checkAuthURLParamJSResult"))();
-                                            jsNodeResult.loginIDOut = OS.DataConversion.JSNodeParamConverter.from($parameters.LoginID, OS.DataTypes.DataTypes.Text);
-                                            jsNodeResult.authTokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.AuthToken, OS.DataTypes.DataTypes.Text);
-                                            jsNodeResult.loginIDTokenPairsOut = OS.DataConversion.JSNodeParamConverter.from($parameters.LoginIDTokenPairs, OS.DataTypes.DataTypes.Text);
-                                            return jsNodeResult;
-                                        }, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
-                                if ((((checkAuthURLParamJSResult.value.authTokenOut) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
-                                    // ActiveLoginId = CheckAuthURLParam.LoginID
-                                    tradershubClientVariables.setActiveLoginId(checkAuthURLParamJSResult.value.loginIDOut);
-                                    // AuthToken = CheckAuthURLParam.AuthToken
-                                    tradershubClientVariables.setAuthToken(checkAuthURLParamJSResult.value.authTokenOut);
-                                    // Destination: /tradershub/Options
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                } else {
-                                    // Email = ""
-                                    tradershubClientVariables.setEmail("");
-                                }
-
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onInitialize$Action;
-            }
-            set _onInitialize$Action(value) {
-                this.__onInitialize$Action = value;
-            }
-
 
             onReady$Action(callContext) {
                 var controller = this.controller;
@@ -1229,30 +1152,6 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                         }
 
                     });
-                }, 0);
-
-            }
-
-            onInitialize$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "e1e6fe6d-4e95-4465-b25b-51d403327ccc");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
                 }, 0);
 
             }
@@ -1406,31 +1305,6 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                 return "";
             }
         }]);
-        Controller.registerVariableGroupType("tradershub.Signup.signup.OnInitialize$checkAuthURLParamJSResult", [{
-            name: "LoginID",
-            attrName: "loginIDOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }, {
-            name: "AuthToken",
-            attrName: "authTokenOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }, {
-            name: "LoginIDTokenPairs",
-            attrName: "loginIDTokenPairsOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
@@ -1528,21 +1402,31 @@ define("tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPaylo
 
 define("tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
+        // const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+        // const validationSchema = yup.object().shape({
+        //     Email: yup.string().required("Email is required.").matches(emailRegex, "That doesn't look like an email address.")
+        // })
+        // const {errors, validFields} = validate(validationSchema, {
+        //     Email: $parameters.Email
+        // })
+        // $parameters.IsEmailValid = validFields.Email;
+        // $parameters.ValidationError = errors.Email;
         const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
-
-        const validationSchema = yup.object().shape({
-            Email: yup.string().required("Email is required.").matches(emailRegex, "That doesn't look like an email address.")
-        })
-
-        const {
-            errors,
-            validFields
-        } = validate(validationSchema, {
-            Email: $parameters.Email
-        })
+        const errors = {
+            Email: ""
+        };
+        const validFields = {
+            Email: true
+        };
+        if (!$parameters.Email) {
+            errors.Email = "Email is required.";
+            validFields.Email = false;
+        } else if (!emailRegex.test($parameters.Email)) {
+            errors.Email = "That doesn't look like an email address.";
+            validFields.Email = false;
+        }
 
         $parameters.IsEmailValid = validFields.Email;
-
         $parameters.ValidationError = errors.Email;
     };
 });
@@ -1554,38 +1438,5 @@ define("tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", []
             signup_provider: "email",
             form_name: "virtual_signup_form_outsystems"
         })
-    };
-});
-
-define("tradershub.Signup.signup.mvc$controller.OnInitialize.CheckAuthURLParamJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const params = new URLSearchParams(window.location.search)
-
-        if (params.has("token1") && params.has("acct1")) {
-            const result = {};
-
-            const accounts = {};
-            const tokens = {};
-            for (let param of params) {
-                if (param[0].startsWith('acct')) {
-                    accounts[param[0]] = param[1];
-                } else if (param[0].startsWith('token')) {
-                    tokens[param[0]] = param[1];
-                }
-            }
-            // Match accounts with tokens
-            Object.keys(accounts).forEach(key => {
-                const tokenKey = 'token' + key.slice(4);
-                result[accounts[key]] = {
-                    token: tokens[tokenKey]
-                };
-            });
-
-
-            localStorage.setItem("accountsList", JSON.stringify(result))
-            $parameters.LoginIDTokenPairs = JSON.stringify(result)
-            $parameters.LoginID = params.get("acct1");
-            $parameters.AuthToken = params.get("token1")
-        }
     };
 });

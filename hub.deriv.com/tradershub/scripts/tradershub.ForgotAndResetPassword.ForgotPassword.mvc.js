@@ -360,7 +360,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 },
                                 isDefault: false,
                                 onClick: function() {
-                                    controller.validationService.validateWidget(idService.getId("Form2"));
+                                    _this.validateWidget(idService.getId("Form2"));
                                     return Promise.resolve().then(function() {
                                         var eventHandlerContext = callContext.clone();
                                         return controller.sendEmailOnClick$Action(controller.callContext(eventHandlerContext));
@@ -660,7 +660,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     },
                                     isDefault: false,
                                     onClick: function() {
-                                        controller.validationService.validateWidget(idService.getId("Form"));
+                                        _this.validateWidget(idService.getId("Form"));
                                         return Promise.resolve().then(function() {
                                             var eventHandlerContext = callContext.clone();
                                             return controller.sendEmailOnClick$Action(controller.callContext(eventHandlerContext));

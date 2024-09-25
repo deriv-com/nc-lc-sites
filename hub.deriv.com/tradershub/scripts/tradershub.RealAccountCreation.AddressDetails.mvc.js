@@ -574,7 +574,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                             enabled: true,
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("AddressForm"));
+                                _this.validateWidget(idService.getId("AddressForm"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.saveOnClick$Action(controller.callContext(eventHandlerContext));
 

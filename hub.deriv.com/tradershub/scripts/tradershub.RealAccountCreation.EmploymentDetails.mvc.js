@@ -283,7 +283,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                             },
                             style: "dropdown",
                             values: function(elem) {
-                                return elem.employmentStatusAttr.idAttr;
+                                return elem.employmentStatusAttr.labelAttr;
                             },
                             variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getRealSignupEmployementStatus(), function(value) {
                                 tradershubClientVariables.setRealSignupEmployementStatus(value);
@@ -312,7 +312,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                                 }, callContext, idService, "1")
                             },
                             _dependencies: [asPrimitiveValue(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr)]
-                        })), $if(((OS.BuiltinFunctions.identifierToText(tradershubClientVariables.getRealSignupEmployementStatus()) === "student") || (OS.BuiltinFunctions.identifierToText(tradershubClientVariables.getRealSignupEmployementStatus()) === "unemployed")), true, this, function() {
+                        })), $if(((tradershubClientVariables.getRealSignupEmployementStatus() === "Student") || (tradershubClientVariables.getRealSignupEmployementStatus() === "Unemployed")), true, this, function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
@@ -597,7 +597,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                             },
                             isDefault: true,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form"));
+                                _this.validateWidget(idService.getId("Form"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.saveOnClick$Action(controller.callContext(eventHandlerContext));
 
@@ -788,7 +788,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@out
                             try {
                                 controller.ensureControllerAlive("EmployementStatusDropdownOnChange");
                                 callContext = controller.callContext(callContext);
-                                if (((((OS.BuiltinFunctions.identifierToText(tradershubClientVariables.getRealSignupEmployementStatus())) !== ("student")) || ((OS.BuiltinFunctions.identifierToText(tradershubClientVariables.getRealSignupEmployementStatus())) !== ("unemployed"))))) {
+                                if (((((tradershubClientVariables.getRealSignupEmployementStatus()) !== ("student")) || ((tradershubClientVariables.getRealSignupEmployementStatus()) !== ("unemployed"))))) {
                                     // NoTaxIDNumber = False
                                     model.variables.noTaxIDNumberVar = false;
                                 }
@@ -981,8 +981,8 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@out
                                 vars.value.selectedOptionListInLocal = selectedOptionListIn.clone();
                                 // TaxResidenceCountry = SelectedOptionList.Current.Value
                                 model.variables.taxResidenceCountryVar = vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr;
-                                // RealSignupTaxResidence = SelectedOptionList.Current.Value
-                                tradershubClientVariables.setRealSignupTaxResidence(vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr);
+                                // RealSignupTaxResidence = If
+                                tradershubClientVariables.setRealSignupTaxResidence(((((vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr) !== (""))) ? (vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr) : (tradershubClientVariables.getSelectedResidence())));
                                 // RealSignupTaxResidenceLabel = SelectedOptionList.Current.Label
                                 tradershubClientVariables.setRealSignupTaxResidenceLabel(vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).labelAttr);
                             } finally {

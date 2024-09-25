@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.Account.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.MainLayout.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_MainLayout_mvcModel) {
+define("tradershub.MainFlow.Account.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.MainFlow.Account.mvc$model", ["@outsystems/runtime-core-js", 
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Account.mvc$model", "tradershub.MainFlow.Account.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_MainFlow_Account_mvc_model, tradershub_MainFlow_Account_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets) {
+define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Account.mvc$model", "tradershub.MainFlow.Account.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_MainFlow_Account_mvc_model, tradershub_MainFlow_Account_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -153,7 +153,7 @@ define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "
 
     return View;
 });
-define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
+define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -182,12 +182,87 @@ define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-
             }
 
             // Client Actions - Methods
+            get _onInitialize$Action() {
+                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
+                    this.__onInitialize$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnInitialize");
+                                span.setAttribute("outsystems.function.key", "ab941d9b-5a21-41b6-a14a-232e310adc35");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnInitialize");
+                                callContext = controller.callContext(callContext);
+                                var featureFlagValueByNameVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: FeatureFlagValueByName
+                                featureFlagValueByNameVar.value = tradershubController.default.featureFlagValueByName$Action("Options", callContext);
+
+                                if ((!(featureFlagValueByNameVar.value.isEnabledOut))) {
+                                    // Destination: /tradershub/
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                }
+
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onInitialize$Action;
+            }
+            set _onInitialize$Action(value) {
+                this.__onInitialize$Action = value;
+            }
+
+
+            onInitialize$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnInitialize");
+                        span.setAttribute("outsystems.function.key", "ab941d9b-5a21-41b6-a14a-232e310adc35");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
 
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = null;
+                    this._onInitializeEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onInitialize$Action(callContext);
+
+                    };
                 }
 
                 return this._onInitializeEventHandler;
