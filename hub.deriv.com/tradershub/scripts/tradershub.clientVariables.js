@@ -23,7 +23,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
         }
 
         getRealSignupFatcaDeclaration() {
-            return clientVarsService.getVariable("RealSignupFatcaDeclaration", "tradershub", OS.DataTypes.DataTypes.Text);
+            return clientVarsService.getVariable("RealSignupFatcaDeclaration", "tradershub", OS.DataTypes.DataTypes.Text, "0");
         }
 
         setRealSignupFatcaDeclaration(value) {
@@ -151,7 +151,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
         }
 
         getAppId() {
-            return clientVarsService.getVariable("AppId", "tradershub", OS.DataTypes.DataTypes.Text, "53503");
+            return clientVarsService.getVariable("AppId", "tradershub", OS.DataTypes.DataTypes.Text, "61554");
         }
 
         setAppId(value) {
@@ -391,7 +391,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
         }
 
         getAuthToken() {
-            return clientVarsService.getVariable("AuthToken", "tradershub", OS.DataTypes.DataTypes.Text, "");
+            return clientVarsService.getVariable("AuthToken", "tradershub", OS.DataTypes.DataTypes.Text);
         }
 
         setAuthToken(value) {

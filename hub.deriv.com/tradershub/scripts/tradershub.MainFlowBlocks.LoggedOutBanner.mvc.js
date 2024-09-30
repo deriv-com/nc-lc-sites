@@ -291,7 +291,16 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                         uuid: "13"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                })), React.createElement(OutSystemsUI_Numbers_Rating_mvc_view, {
+                })), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "RatingContainer"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OutSystemsUI_Numbers_Rating_mvc_view, {
                     getOwnerSpan: function() {
                         return _this.getChildSpan("render");
                     },
@@ -312,7 +321,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     },
                     _idProps: {
                         service: idService,
-                        uuid: "14",
+                        uuid: "15",
                         alias: "1"
                     },
                     _widgetRecordProvider: widgetsRecordProvider,
@@ -326,7 +335,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "15"
+                                    uuid: "16"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -340,7 +349,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "16"
+                                    uuid: "17"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -351,14 +360,14 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "17"
+                                    uuid: "18"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
                         })
                     },
                     _dependencies: []
-                }), React.createElement(OSWidgets.Container, {
+                })), React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
@@ -371,7 +380,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     visible: true,
                     _idProps: {
                         service: idService,
-                        uuid: "18"
+                        uuid: "19"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Expression, {
@@ -387,7 +396,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     }),
                     _idProps: {
                         service: idService,
-                        uuid: "19"
+                        uuid: "20"
                     },
                     _widgetRecordProvider: widgetsRecordProvider,
                     value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.trustPilotDataAct.dataFetchStatusAttr)
@@ -397,7 +406,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     type: /*Static*/ 0,
                     _idProps: {
                         service: idService,
-                        uuid: "20"
+                        uuid: "21"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }))))];

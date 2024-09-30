@@ -375,8 +375,8 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.ListItemOnClick$vars"))());
                                 vars.value.accountPurposeInLocal = accountPurposeIn.clone();
-                                // RealSignupAccountOpeningReason = AccountPurpose.Label
-                                tradershubClientVariables.setRealSignupAccountOpeningReason(vars.value.accountPurposeInLocal.labelAttr);
+                                // RealSignupAccountOpeningReason = AccountPurpose.Value
+                                tradershubClientVariables.setRealSignupAccountOpeningReason(vars.value.accountPurposeInLocal.valueAttr);
                                 if ((tradershubClientVariables.getRealSignupIsIDVSupported())) {
                                     // Destination: /tradershub/IdentityVerification
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "identity-verification", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);

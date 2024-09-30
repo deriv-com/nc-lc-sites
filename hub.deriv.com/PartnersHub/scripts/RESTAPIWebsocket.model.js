@@ -293,6 +293,143 @@ define("RESTAPIWebsocket.model$RC_012b2720fb0dcd442416908af4498cef", ["exports",
     }
 });
 
+define("RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_77d1f9105abe302fa373f146c295ea17StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Financial_assessment", "financial_assessmentAttr", "financial_assessment", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new ST_77d1f9105abe302fa373f146c295ea17Structure(new ST_77d1f9105abe302fa373f146c295ea17Structure.RecordClass({
+                    financial_assessmentAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure = ST_77d1f9105abe302fa373f146c295ea17StructureInner;
+
+        var ST_77d1f9105abe302fa373f146c295ea17Structure = ST_77d1f9105abe302fa373f146c295ea17StructureInner;
+        ST_77d1f9105abe302fa373f146c295ea17Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_83fbd707f872e92b597918150eff1f3eStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Mt5", "mt5Attr", "mt5", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList),
+                    this.attr("Tax_information", "tax_informationAttr", "tax_information", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure = ST_83fbd707f872e92b597918150eff1f3eStructureInner;
+
+        var ST_83fbd707f872e92b597918150eff1f3eStructure = ST_83fbd707f872e92b597918150eff1f3eStructureInner;
+        ST_83fbd707f872e92b597918150eff1f3eStructure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_98319758945048a72386b9e9466c220aStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_98319758945048a72386b9e9466c220aStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Signup", "signupAttr", "signup", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList),
+                    this.attr("Withdrawal", "withdrawalAttr", "withdrawal", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList),
+                    this.attr("After_first_deposit", "after_first_depositAttr", "after_first_deposit", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure());
+                    }, true, RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure),
+                    this.attr("Compliance", "complianceAttr", "compliance", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure());
+                    }, true, RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure = ST_98319758945048a72386b9e9466c220aStructureInner;
+
+        var ST_98319758945048a72386b9e9466c220aStructure = ST_98319758945048a72386b9e9466c220aStructureInner;
+        ST_98319758945048a72386b9e9466c220aStructure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_98319758945048a72386b9e9466c220aStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_9b3eaf42648c2b28591e8ee92b7ce159StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Is_default_jurisdiction", "is_default_jurisdictionAttr", "is_default_jurisdiction", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Linkable_landing_companies", "linkable_landing_companiesAttr", "linkable_landing_companies", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
+                    }, true, OS.DataTypes.TextList),
+                    this.attr("Market_type", "market_typeAttr", "market_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Name", "nameAttr", "name", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Product", "productAttr", "product", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Requirements", "requirementsAttr", "requirements", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure());
+                    }, true, RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure),
+                    this.attr("Shortcode", "shortcodeAttr", "shortcode", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Sub_account_type", "sub_account_typeAttr", "sub_account_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure = ST_9b3eaf42648c2b28591e8ee92b7ce159StructureInner;
+
+        var ST_9b3eaf42648c2b28591e8ee92b7ce159Structure = ST_9b3eaf42648c2b28591e8ee92b7ce159StructureInner;
+        ST_9b3eaf42648c2b28591e8ee92b7ce159Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_016ebe8f15c3060e53dd56f2fea28791", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_016ebe8f15c3060e53dd56f2fea28791 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_016ebe8f15c3060e53dd56f2fea28791 = RL_016ebe8f15c3060e53dd56f2fea28791;
+
+});
+
 define("RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class ST_02211ece4f8ea033ae9a7fa2710f4a32StructureInner extends
@@ -855,87 +992,6 @@ define("RESTAPIWebsocket.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", ["
 
         var ST_72e91b438c2e206bca7398a7a69902dfStructure = ST_72e91b438c2e206bca7398a7a69902dfStructureInner;
         ST_72e91b438c2e206bca7398a7a69902dfStructure.init();
-    }
-});
-
-define("RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
-    var OS = OSRuntimeCore; {
-        class ST_77d1f9105abe302fa373f146c295ea17StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Financial_assessment", "financial_assessmentAttr", "financial_assessment", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_77d1f9105abe302fa373f146c295ea17Structure(new ST_77d1f9105abe302fa373f146c295ea17Structure.RecordClass({
-                    financial_assessmentAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure = ST_77d1f9105abe302fa373f146c295ea17StructureInner;
-
-        var ST_77d1f9105abe302fa373f146c295ea17Structure = ST_77d1f9105abe302fa373f146c295ea17StructureInner;
-        ST_77d1f9105abe302fa373f146c295ea17Structure.init();
-    }
-});
-
-define("RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
-    var OS = OSRuntimeCore; {
-        class ST_83fbd707f872e92b597918150eff1f3eStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Mt5", "mt5Attr", "mt5", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList),
-                    this.attr("Tax_information", "tax_informationAttr", "tax_information", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure = ST_83fbd707f872e92b597918150eff1f3eStructureInner;
-
-        var ST_83fbd707f872e92b597918150eff1f3eStructure = ST_83fbd707f872e92b597918150eff1f3eStructureInner;
-        ST_83fbd707f872e92b597918150eff1f3eStructure.init();
-    }
-});
-
-define("RESTAPIWebsocket.model$ST_98319758945048a72386b9e9466c220aStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
-    var OS = OSRuntimeCore; {
-        class ST_98319758945048a72386b9e9466c220aStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Signup", "signupAttr", "signup", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList),
-                    this.attr("Withdrawal", "withdrawalAttr", "withdrawal", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList),
-                    this.attr("After_first_deposit", "after_first_depositAttr", "after_first_deposit", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure());
-                    }, true, RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure),
-                    this.attr("Compliance", "complianceAttr", "compliance", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure = ST_98319758945048a72386b9e9466c220aStructureInner;
-
-        var ST_98319758945048a72386b9e9466c220aStructure = ST_98319758945048a72386b9e9466c220aStructureInner;
-        ST_98319758945048a72386b9e9466c220aStructure.init();
     }
 });
 
@@ -2319,6 +2375,139 @@ define("RESTAPIWebsocket.model$RL_0706637a7e12b34ea54e4ad5e3fa7774", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_514eb2dd1a273e9cef6da33626bbf692StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("new_password", "new_passwordAttr", "new_password", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("verification_code", "verification_codeAttr", "verification_code", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure = ST_514eb2dd1a273e9cef6da33626bbf692StructureInner;
+
+        var ST_514eb2dd1a273e9cef6da33626bbf692Structure = ST_514eb2dd1a273e9cef6da33626bbf692StructureInner;
+        ST_514eb2dd1a273e9cef6da33626bbf692Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_b95c380c099a10aa1c6c66ff29a6b5ad", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b95c380c099a10aa1c6c66ff29a6b5adInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformPasswordResetRequest", "postTradingPlatformPasswordResetRequestAttr", "PostTradingPlatformPasswordResetRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure());
+                    }, true, RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b95c380c099a10aa1c6c66ff29a6b5ad(new RC_b95c380c099a10aa1c6c66ff29a6b5ad.RecordClass({
+                    postTradingPlatformPasswordResetRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_b95c380c099a10aa1c6c66ff29a6b5ad = RC_b95c380c099a10aa1c6c66ff29a6b5adInner;
+
+        RC_b95c380c099a10aa1c6c66ff29a6b5adInner._isAnonymousRecord = true;
+        RC_b95c380c099a10aa1c6c66ff29a6b5adInner.UniqueId = "b95c380c-099a-10aa-1c6c-66ff29a6b5ad";
+        var RC_b95c380c099a10aa1c6c66ff29a6b5ad = RC_b95c380c099a10aa1c6c66ff29a6b5adInner;
+        RC_b95c380c099a10aa1c6c66ff29a6b5ad.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_0755631e3e89e106d6250421ad51275f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_b95c380c099a10aa1c6c66ff29a6b5ad"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_0755631e3e89e106d6250421ad51275f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_b95c380c099a10aa1c6c66ff29a6b5ad;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_0755631e3e89e106d6250421ad51275f = RL_0755631e3e89e106d6250421ad51275f;
+
+});
+
+define("RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_cef0b20847ad169551dbf51efb01e613StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Trading_platform_password_reset", "trading_platform_password_resetAttr", "trading_platform_password_reset", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("New_password", "new_passwordAttr", "new_password", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Verification_code", "verification_codeAttr", "verification_code", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure = ST_cef0b20847ad169551dbf51efb01e613StructureInner;
+
+        var ST_cef0b20847ad169551dbf51efb01e613Structure = ST_cef0b20847ad169551dbf51efb01e613StructureInner;
+        ST_cef0b20847ad169551dbf51efb01e613Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_07c55c1e5241bcf8a9665901701e0dbfStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure());
+                    }, true, RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Trading_platform_password_reset", "trading_platform_password_resetAttr", "trading_platform_password_reset", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure = ST_07c55c1e5241bcf8a9665901701e0dbfStructureInner;
+
+        var ST_07c55c1e5241bcf8a9665901701e0dbfStructure = ST_07c55c1e5241bcf8a9665901701e0dbfStructureInner;
+        ST_07c55c1e5241bcf8a9665901701e0dbfStructure.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class ST_d4ed48681c55954edc02f19b0ed492e7StructureInner extends
@@ -2506,6 +2695,76 @@ define("RESTAPIWebsocket.model$RL_08d09f34c86e6f5622489301d79ff8a8", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_08d09f34c86e6f5622489301d79ff8a8 = RL_08d09f34c86e6f5622489301d79ff8a8;
+
+});
+
+define("RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_4dc58b9edb8582c76248b762d6650913StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Trading_platform_accounts", "trading_platform_accountsAttr", "trading_platform_accounts", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure = ST_4dc58b9edb8582c76248b762d6650913StructureInner;
+
+        var ST_4dc58b9edb8582c76248b762d6650913Structure = ST_4dc58b9edb8582c76248b762d6650913StructureInner;
+        ST_4dc58b9edb8582c76248b762d6650913Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_832614e442cb28467f1d84472c884ebb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_832614e442cb28467f1d84472c884ebbInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req10", "echo_req10Attr", "Echo_req10", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure());
+                    }, true, RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_832614e442cb28467f1d84472c884ebb(new RC_832614e442cb28467f1d84472c884ebb.RecordClass({
+                    echo_req10Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_832614e442cb28467f1d84472c884ebb = RC_832614e442cb28467f1d84472c884ebbInner;
+
+        RC_832614e442cb28467f1d84472c884ebbInner._isAnonymousRecord = true;
+        RC_832614e442cb28467f1d84472c884ebbInner.UniqueId = "832614e4-42cb-2846-7f1d-84472c884ebb";
+        var RC_832614e442cb28467f1d84472c884ebb = RC_832614e442cb28467f1d84472c884ebbInner;
+        RC_832614e442cb28467f1d84472c884ebb.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_08ec9fd9082ce97be1a7ef16873ad7f8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_832614e442cb28467f1d84472c884ebb"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_08ec9fd9082ce97be1a7ef16873ad7f8 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_832614e442cb28467f1d84472c884ebb;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_08ec9fd9082ce97be1a7ef16873ad7f8 = RL_08ec9fd9082ce97be1a7ef16873ad7f8;
 
 });
 
@@ -2990,6 +3249,33 @@ define("RESTAPIWebsocket.model$RC_091244483290da7633fe64666de188c0", ["exports",
         RC_091244483290da7633fe64666de188c0Inner.UniqueId = "09124448-3290-da76-33fe-64666de188c0";
         var RC_091244483290da7633fe64666de188c0 = RC_091244483290da7633fe64666de188c0Inner;
         RC_091244483290da7633fe64666de188c0.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_091b86786925fd05b892541280481403Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_091b86786925fd05b892541280481403StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("trading_platform_accounts", "trading_platform_accountsAttr", "trading_platform_accounts", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure = ST_091b86786925fd05b892541280481403StructureInner;
+
+        var ST_091b86786925fd05b892541280481403Structure = ST_091b86786925fd05b892541280481403StructureInner;
+        ST_091b86786925fd05b892541280481403Structure.init();
     }
 });
 
@@ -3645,6 +3931,65 @@ define("RESTAPIWebsocket.model$RL_13576b5dee00a62e9c40a0c658db0a38", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$ST_412ed7113d9105960615d1c5b5f37301Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_412ed7113d9105960615d1c5b5f37301StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Partner_type", "partner_typeAttr", "partner_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Platform_url", "platform_urlAttr", "platform_url", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Provider", "providerAttr", "provider", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Website", "websiteAttr", "website", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure = ST_412ed7113d9105960615d1c5b5f37301StructureInner;
+
+        var ST_412ed7113d9105960615d1c5b5f37301Structure = ST_412ed7113d9105960615d1c5b5f37301StructureInner;
+        ST_412ed7113d9105960615d1c5b5f37301Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_13f257eb273389bc73abe0351586bf1c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_412ed7113d9105960615d1c5b5f37301Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_13f257eb273389bc73abe0351586bf1cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Partner_setting", "partner_settingAttr", "Partner_setting", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure());
+                    }, true, RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_13f257eb273389bc73abe0351586bf1c(new RC_13f257eb273389bc73abe0351586bf1c.RecordClass({
+                    partner_settingAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_13f257eb273389bc73abe0351586bf1c = RC_13f257eb273389bc73abe0351586bf1cInner;
+
+        RC_13f257eb273389bc73abe0351586bf1cInner._isAnonymousRecord = true;
+        RC_13f257eb273389bc73abe0351586bf1cInner.UniqueId = "13f257eb-2733-89bc-73ab-e0351586bf1c";
+        var RC_13f257eb273389bc73abe0351586bf1c = RC_13f257eb273389bc73abe0351586bf1cInner;
+        RC_13f257eb273389bc73abe0351586bf1c.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$RL_13f4e7ea22b9e316259c119567103cf9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_333caa433a680d581b2dfdf80dcbab60Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_13f4e7ea22b9e316259c119567103cf9 extends
@@ -3955,6 +4300,112 @@ define("RESTAPIWebsocket.model$RL_1b71a02dea96d4cd97c73eba8bb674c6", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_1b71a02dea96d4cd97c73eba8bb674c6 = RL_1b71a02dea96d4cd97c73eba8bb674c6;
+
+});
+
+define("RESTAPIWebsocket.model$ST_a64a97da9ee822b4b21c919739567011Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_a64a97da9ee822b4b21c919739567011StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Account_id", "account_idAttr", "account_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Account_type", "account_typeAttr", "account_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Balance", "balanceAttr", "balance", false, false, OS.DataTypes.DataTypes.Decimal, function() {
+                        return OS.DataTypes.Decimal.defaultValue;
+                    }, true),
+                    this.attr("Currency", "currencyAttr", "currency", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Display_balance", "display_balanceAttr", "display_balance", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Enabled", "enabledAttr", "enabled", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Landing_company_short", "landing_company_shortAttr", "landing_company_short", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Login", "loginAttr", "login", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Market_type", "market_typeAttr", "market_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_a64a97da9ee822b4b21c919739567011Structure = ST_a64a97da9ee822b4b21c919739567011StructureInner;
+
+        var ST_a64a97da9ee822b4b21c919739567011Structure = ST_a64a97da9ee822b4b21c919739567011StructureInner;
+        ST_a64a97da9ee822b4b21c919739567011Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_d2e8d01cb1d1df6bef4310379df28149", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_a64a97da9ee822b4b21c919739567011Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_d2e8d01cb1d1df6bef4310379df28149 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_a64a97da9ee822b4b21c919739567011Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_d2e8d01cb1d1df6bef4310379df28149 = RL_d2e8d01cb1d1df6bef4310379df28149;
+
+});
+
+define("RESTAPIWebsocket.model$ST_711f7ad16da273bf9e6563303a17ad00Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "RESTAPIWebsocket.model$ST_a64a97da9ee822b4b21c919739567011Structure", "RESTAPIWebsocket.model$RL_d2e8d01cb1d1df6bef4310379df28149"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_711f7ad16da273bf9e6563303a17ad00StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure());
+                    }, true, RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Trading_platform_accounts", "trading_platform_accountsAttr", "trading_platform_accounts", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.RL_d2e8d01cb1d1df6bef4310379df28149());
+                    }, true, RESTAPIWebsocketModel.RL_d2e8d01cb1d1df6bef4310379df28149)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_711f7ad16da273bf9e6563303a17ad00Structure = ST_711f7ad16da273bf9e6563303a17ad00StructureInner;
+
+        var ST_711f7ad16da273bf9e6563303a17ad00Structure = ST_711f7ad16da273bf9e6563303a17ad00StructureInner;
+        ST_711f7ad16da273bf9e6563303a17ad00Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_1dae29f574cdcca95ce8a85935b8f3fa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_711f7ad16da273bf9e6563303a17ad00Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_1dae29f574cdcca95ce8a85935b8f3fa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_711f7ad16da273bf9e6563303a17ad00Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_1dae29f574cdcca95ce8a85935b8f3fa = RL_1dae29f574cdcca95ce8a85935b8f3fa;
 
 });
 
@@ -5865,6 +6316,36 @@ define("RESTAPIWebsocket.model$RC_3a2d986a770a9c3e6f1096b16961e5a9", ["exports",
     }
 });
 
+define("RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_3a8fd8b28bfeab1bd267f04e730ca9e6StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Country_code", "country_codeAttr", "country_code", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure = ST_3a8fd8b28bfeab1bd267f04e730ca9e6StructureInner;
+
+        var ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure = ST_3a8fd8b28bfeab1bd267f04e730ca9e6StructureInner;
+        ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$RC_3c60a1846470070c1bbae2a1d22163d2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_628e5221d510e98bcfe00cce5f107d21Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class RC_3c60a1846470070c1bbae2a1d22163d2Inner extends
@@ -5891,6 +6372,195 @@ define("RESTAPIWebsocket.model$RC_3c60a1846470070c1bbae2a1d22163d2", ["exports",
         RC_3c60a1846470070c1bbae2a1d22163d2Inner.UniqueId = "3c60a184-6470-070c-1bba-e2a1d22163d2";
         var RC_3c60a1846470070c1bbae2a1d22163d2 = RC_3c60a1846470070c1bbae2a1d22163d2Inner;
         RC_3c60a1846470070c1bbae2a1d22163d2.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_e25657c96fdb654707c20af3bb230787StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Country_code", "country_codeAttr", "country_code", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure = ST_e25657c96fdb654707c20af3bb230787StructureInner;
+
+        var ST_e25657c96fdb654707c20af3bb230787Structure = ST_e25657c96fdb654707c20af3bb230787StructureInner;
+        ST_e25657c96fdb654707c20af3bb230787Structure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure", "RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_5a8f9ede296ad9cf5b81205656c8b54fStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_accounts", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure());
+                    }, true, RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure = ST_5a8f9ede296ad9cf5b81205656c8b54fStructureInner;
+
+        var ST_5a8f9ede296ad9cf5b81205656c8b54fStructure = ST_5a8f9ede296ad9cf5b81205656c8b54fStructureInner;
+        ST_5a8f9ede296ad9cf5b81205656c8b54fStructure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_deb49656ca36ac303bfff5ecbe52b196", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_deb49656ca36ac303bfff5ecbe52b196Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TradingPlatformAvailableAccounts", "tradingPlatformAvailableAccountsAttr", "TradingPlatformAvailableAccounts", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure());
+                    }, true, RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_deb49656ca36ac303bfff5ecbe52b196(new RC_deb49656ca36ac303bfff5ecbe52b196.RecordClass({
+                    tradingPlatformAvailableAccountsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_deb49656ca36ac303bfff5ecbe52b196 = RC_deb49656ca36ac303bfff5ecbe52b196Inner;
+
+        RC_deb49656ca36ac303bfff5ecbe52b196Inner._isAnonymousRecord = true;
+        RC_deb49656ca36ac303bfff5ecbe52b196Inner.UniqueId = "deb49656-ca36-ac30-3bff-f5ecbe52b196";
+        var RC_deb49656ca36ac303bfff5ecbe52b196 = RC_deb49656ca36ac303bfff5ecbe52b196Inner;
+        RC_deb49656ca36ac303bfff5ecbe52b196.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_3cdb40add777d21caa9a01b033bdd702", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_deb49656ca36ac303bfff5ecbe52b196"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_3cdb40add777d21caa9a01b033bdd702 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_deb49656ca36ac303bfff5ecbe52b196;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_3cdb40add777d21caa9a01b033bdd702 = RL_3cdb40add777d21caa9a01b033bdd702;
+
+});
+
+define("RESTAPIWebsocket.model$ST_75725e65d106c1568a850780233a08baStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_75725e65d106c1568a850780233a08baStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure());
+                    }, true, RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure),
+                    this.attr("Error", "errorAttr", "error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Trading_platform_accounts", "trading_platform_accountsAttr", "trading_platform_accounts", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure = ST_75725e65d106c1568a850780233a08baStructureInner;
+
+        var ST_75725e65d106c1568a850780233a08baStructure = ST_75725e65d106c1568a850780233a08baStructureInner;
+        ST_75725e65d106c1568a850780233a08baStructure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_3ce5a0117187c9d1b6ee0d6f65f07553", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_75725e65d106c1568a850780233a08baStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformAccountsResponse", "postTradingPlatformAccountsResponseAttr", "PostTradingPlatformAccountsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure());
+                    }, true, RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_3ce5a0117187c9d1b6ee0d6f65f07553(new RC_3ce5a0117187c9d1b6ee0d6f65f07553.RecordClass({
+                    postTradingPlatformAccountsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_3ce5a0117187c9d1b6ee0d6f65f07553 = RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner;
+
+        RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner._isAnonymousRecord = true;
+        RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner.UniqueId = "3ce5a011-7187-c9d1-b6ee-0d6f65f07553";
+        var RC_3ce5a0117187c9d1b6ee0d6f65f07553 = RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner;
+        RC_3ce5a0117187c9d1b6ee0d6f65f07553.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_3d96747747f3d41e23c92ff9ec0f78ebStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Partner_settings", "partner_settingsAttr", "partner_settings", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new ST_3d96747747f3d41e23c92ff9ec0f78ebStructure(new ST_3d96747747f3d41e23c92ff9ec0f78ebStructure.RecordClass({
+                    partner_settingsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure = ST_3d96747747f3d41e23c92ff9ec0f78ebStructureInner;
+
+        var ST_3d96747747f3d41e23c92ff9ec0f78ebStructure = ST_3d96747747f3d41e23c92ff9ec0f78ebStructureInner;
+        ST_3d96747747f3d41e23c92ff9ec0f78ebStructure.init();
     }
 });
 
@@ -5993,6 +6663,49 @@ define("RESTAPIWebsocket.model$RL_41e67aa458234493e723d2243db01144", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RC_5e259c61591c72343b5887d8b4ce62b5", ["exports", "@outsystems/runtime-core-js", "BrowserConsoleLogging.model", "RESTAPIWebsocket.model", "BrowserConsoleLogging.model$EN_95096fd7ce0528eba549110f4ff009ffEntityRecord", "RESTAPIWebsocket.referencesHealth", "RESTAPIWebsocket.referencesHealth$BrowserConsoleLogging"], function(exports, OSRuntimeCore, BrowserConsoleLoggingModel, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5e259c61591c72343b5887d8b4ce62b5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("ConsoleErrorType", "consoleErrorTypeAttr", "ConsoleErrorType", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new BrowserConsoleLoggingModel.EN_95096fd7ce0528eba549110f4ff009ffEntityRecord());
+                    }, true, BrowserConsoleLoggingModel.EN_95096fd7ce0528eba549110f4ff009ffEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5e259c61591c72343b5887d8b4ce62b5(new RC_5e259c61591c72343b5887d8b4ce62b5.RecordClass({
+                    consoleErrorTypeAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_5e259c61591c72343b5887d8b4ce62b5 = RC_5e259c61591c72343b5887d8b4ce62b5Inner;
+
+        RC_5e259c61591c72343b5887d8b4ce62b5Inner._isAnonymousRecord = true;
+        RC_5e259c61591c72343b5887d8b4ce62b5Inner.UniqueId = "5e259c61-591c-7234-3b58-87d8b4ce62b5";
+        var RC_5e259c61591c72343b5887d8b4ce62b5 = RC_5e259c61591c72343b5887d8b4ce62b5Inner;
+        RC_5e259c61591c72343b5887d8b4ce62b5.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_422c5cc1eb56f188f2e407af881395ae", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_5e259c61591c72343b5887d8b4ce62b5"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_422c5cc1eb56f188f2e407af881395ae extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_5e259c61591c72343b5887d8b4ce62b5;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_422c5cc1eb56f188f2e407af881395ae = RL_422c5cc1eb56f188f2e407af881395ae;
+
+});
+
 define("RESTAPIWebsocket.model$RL_d03621281d953210a5f7643c5f395ddc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_d03621281d953210a5f7643c5f395ddc extends
@@ -6007,7 +6720,7 @@ define("RESTAPIWebsocket.model$RL_d03621281d953210a5f7643c5f395ddc", ["exports",
 
 });
 
-define("RESTAPIWebsocket.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "RESTAPIWebsocket.model$RL_d03621281d953210a5f7643c5f395ddc", "RESTAPIWebsocket.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+define("RESTAPIWebsocket.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "RESTAPIWebsocket.model$RL_d03621281d953210a5f7643c5f395ddc", "RESTAPIWebsocket.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class ST_42e091eee706086ba45ab77d0ef6821fStructureInner extends
         OS.DataTypes.GenericRecord {
@@ -6021,7 +6734,10 @@ define("RESTAPIWebsocket.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", ["
                     }, true, RESTAPIWebsocketModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure),
                     this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
-                    }, true)
+                    }, true),
+                    this.attr("Error", "errorAttr", "Error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6177,6 +6893,49 @@ define("RESTAPIWebsocket.model$RL_44cebee119c996a470fbff1d981600f0", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RC_99c0018936e3cec12f037bf056295951", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_99c0018936e3cec12f037bf056295951Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req9", "echo_req9Attr", "Echo_req9", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_99c0018936e3cec12f037bf056295951(new RC_99c0018936e3cec12f037bf056295951.RecordClass({
+                    echo_req9Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_99c0018936e3cec12f037bf056295951 = RC_99c0018936e3cec12f037bf056295951Inner;
+
+        RC_99c0018936e3cec12f037bf056295951Inner._isAnonymousRecord = true;
+        RC_99c0018936e3cec12f037bf056295951Inner.UniqueId = "99c00189-36e3-cec1-2f03-7bf056295951";
+        var RC_99c0018936e3cec12f037bf056295951 = RC_99c0018936e3cec12f037bf056295951Inner;
+        RC_99c0018936e3cec12f037bf056295951.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_458a7ae223160b2af1e7ca666afa22e4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_99c0018936e3cec12f037bf056295951"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_458a7ae223160b2af1e7ca666afa22e4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_99c0018936e3cec12f037bf056295951;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_458a7ae223160b2af1e7ca666afa22e4 = RL_458a7ae223160b2af1e7ca666afa22e4;
+
+});
+
 define("RESTAPIWebsocket.model$RL_45f425cbfe3f41d3fac973fe3238818f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_3c60a1846470070c1bbae2a1d22163d2"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_45f425cbfe3f41d3fac973fe3238818f extends
@@ -6274,6 +7033,49 @@ define("RESTAPIWebsocket.model$RL_4887faff529164a4e041bdf0dc5e469f", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_4887faff529164a4e041bdf0dc5e469f = RL_4887faff529164a4e041bdf0dc5e469f;
+
+});
+
+define("RESTAPIWebsocket.model$RC_8349a704d7e4597909befcd4d12d85b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_091b86786925fd05b892541280481403Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_8349a704d7e4597909befcd4d12d85b4Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformAccountsRequest", "postTradingPlatformAccountsRequestAttr", "PostTradingPlatformAccountsRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure());
+                    }, true, RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_8349a704d7e4597909befcd4d12d85b4(new RC_8349a704d7e4597909befcd4d12d85b4.RecordClass({
+                    postTradingPlatformAccountsRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_8349a704d7e4597909befcd4d12d85b4 = RC_8349a704d7e4597909befcd4d12d85b4Inner;
+
+        RC_8349a704d7e4597909befcd4d12d85b4Inner._isAnonymousRecord = true;
+        RC_8349a704d7e4597909befcd4d12d85b4Inner.UniqueId = "8349a704-d7e4-5979-09be-fcd4d12d85b4";
+        var RC_8349a704d7e4597909befcd4d12d85b4 = RC_8349a704d7e4597909befcd4d12d85b4Inner;
+        RC_8349a704d7e4597909befcd4d12d85b4.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_495e996e3e491370fac39f81d4d0c440", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_8349a704d7e4597909befcd4d12d85b4"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_495e996e3e491370fac39f81d4d0c440 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_8349a704d7e4597909befcd4d12d85b4;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_495e996e3e491370fac39f81d4d0c440 = RL_495e996e3e491370fac39f81d4d0c440;
 
 });
 
@@ -6757,6 +7559,49 @@ define("RESTAPIWebsocket.model$RC_56c6ce1b0108db2c43eb2e512b9aa7da", ["exports",
     }
 });
 
+define("RESTAPIWebsocket.model$RC_b7e52722439ab79f06cc9b853e2e0eda", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_a64a97da9ee822b4b21c919739567011Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b7e52722439ab79f06cc9b853e2e0edaInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Trading_platform_accountItem", "trading_platform_accountItemAttr", "Trading_platform_accountItem", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_a64a97da9ee822b4b21c919739567011Structure());
+                    }, true, RESTAPIWebsocketModel.ST_a64a97da9ee822b4b21c919739567011Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b7e52722439ab79f06cc9b853e2e0eda(new RC_b7e52722439ab79f06cc9b853e2e0eda.RecordClass({
+                    trading_platform_accountItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_b7e52722439ab79f06cc9b853e2e0eda = RC_b7e52722439ab79f06cc9b853e2e0edaInner;
+
+        RC_b7e52722439ab79f06cc9b853e2e0edaInner._isAnonymousRecord = true;
+        RC_b7e52722439ab79f06cc9b853e2e0edaInner.UniqueId = "b7e52722-439a-b79f-06cc-9b853e2e0eda";
+        var RC_b7e52722439ab79f06cc9b853e2e0eda = RC_b7e52722439ab79f06cc9b853e2e0edaInner;
+        RC_b7e52722439ab79f06cc9b853e2e0eda.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_57698c22786db8cfbee18c9cbf33ed66", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_b7e52722439ab79f06cc9b853e2e0eda"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_57698c22786db8cfbee18c9cbf33ed66 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_b7e52722439ab79f06cc9b853e2e0eda;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_57698c22786db8cfbee18c9cbf33ed66 = RL_57698c22786db8cfbee18c9cbf33ed66;
+
+});
+
 define("RESTAPIWebsocket.model$RL_5a17cb0f64de6697951894cea5524431", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_3f4d741c30bd5473dc9c679433c442c3"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_5a17cb0f64de6697951894cea5524431 extends
@@ -7087,6 +7932,20 @@ define("RESTAPIWebsocket.model$RL_6742097cd0e1b80b9f740ab5594fc0b1", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_67903d82f67a613e6457850e3fe75a1b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_67903d82f67a613e6457850e3fe75a1b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_67903d82f67a613e6457850e3fe75a1b = RL_67903d82f67a613e6457850e3fe75a1b;
+
+});
+
 define("RESTAPIWebsocket.model$RL_687d5246fd214b4298d42d80fa4abd54", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_687d5246fd214b4298d42d80fa4abd54 extends
@@ -7243,6 +8102,20 @@ define("RESTAPIWebsocket.model$RL_6d35299704f3eec23ed812a5a367da37", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_6d8078983e84d9f62576b9b597c42453", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_6d8078983e84d9f62576b9b597c42453 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_6d8078983e84d9f62576b9b597c42453 = RL_6d8078983e84d9f62576b9b597c42453;
+
+});
+
 define("RESTAPIWebsocket.model$RL_6daa7fd7043bd22e153f9e359a31e19f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4e063a3cef8e9e085284fb57c1326006Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_6daa7fd7043bd22e153f9e359a31e19f extends
@@ -7341,6 +8214,20 @@ define("RESTAPIWebsocket.model$RC_72deccc4588dd4c59ea212c47055f933", ["exports",
         var RC_72deccc4588dd4c59ea212c47055f933 = RC_72deccc4588dd4c59ea212c47055f933Inner;
         RC_72deccc4588dd4c59ea212c47055f933.init();
     }
+});
+
+define("RESTAPIWebsocket.model$RL_7649b6f3b5d31da383ad943effdeab99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_7649b6f3b5d31da383ad943effdeab99 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_7649b6f3b5d31da383ad943effdeab99 = RL_7649b6f3b5d31da383ad943effdeab99;
+
 });
 
 define("RESTAPIWebsocket.model$RC_769b74cf243bca7e23f6d8b3e094aafe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
@@ -7457,6 +8344,36 @@ define("RESTAPIWebsocket.model$RL_7a61959884cd1d97a8df26308775a5c7", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure", "RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "RESTAPIWebsocket.model$RL_016ebe8f15c3060e53dd56f2fea28791", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_7a752455e27bb9ea87d724bbb902dd16StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.RL_016ebe8f15c3060e53dd56f2fea28791());
+                    }, true, RESTAPIWebsocketModel.RL_016ebe8f15c3060e53dd56f2fea28791),
+                    this.attr("Error", "errorAttr", "error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure = ST_7a752455e27bb9ea87d724bbb902dd16StructureInner;
+
+        var ST_7a752455e27bb9ea87d724bbb902dd16Structure = ST_7a752455e27bb9ea87d724bbb902dd16StructureInner;
+        ST_7a752455e27bb9ea87d724bbb902dd16Structure.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$RL_7aafab926cc9835b50687e3590d16e83", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_4fa180d49a839964a4a640104b10a272Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_7aafab926cc9835b50687e3590d16e83 extends
@@ -7543,6 +8460,35 @@ define("RESTAPIWebsocket.model$RL_7c9f790fa5c2ed1fbdf0de41347402fa", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RC_7de6f1e2c99800d3c6e1aaeb14f3afdd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Trading_platform_available_accountItem", "trading_platform_available_accountItemAttr", "Trading_platform_available_accountItem", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure());
+                    }, true, RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7de6f1e2c99800d3c6e1aaeb14f3afdd(new RC_7de6f1e2c99800d3c6e1aaeb14f3afdd.RecordClass({
+                    trading_platform_available_accountItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_7de6f1e2c99800d3c6e1aaeb14f3afdd = RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner;
+
+        RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner._isAnonymousRecord = true;
+        RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner.UniqueId = "7de6f1e2-c998-00d3-c6e1-aaeb14f3afdd";
+        var RC_7de6f1e2c99800d3c6e1aaeb14f3afdd = RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner;
+        RC_7de6f1e2c99800d3c6e1aaeb14f3afdd.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$RL_7e823839a7f836a297fa8d09d5b77858", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_264d82ff29428f3cd43ebe0810111d5a"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_7e823839a7f836a297fa8d09d5b77858 extends
@@ -7582,6 +8528,49 @@ define("RESTAPIWebsocket.model$RL_7ec701d4086b9503e816fe47fc7b3996", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_7ec701d4086b9503e816fe47fc7b3996 = RL_7ec701d4086b9503e816fe47fc7b3996;
+
+});
+
+define("RESTAPIWebsocket.model$RC_86cda441e1db9e62e574ab54636ea9ea", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_86cda441e1db9e62e574ab54636ea9eaInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformPasswordResetResponse", "postTradingPlatformPasswordResetResponseAttr", "PostTradingPlatformPasswordResetResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure());
+                    }, true, RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_86cda441e1db9e62e574ab54636ea9ea(new RC_86cda441e1db9e62e574ab54636ea9ea.RecordClass({
+                    postTradingPlatformPasswordResetResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_86cda441e1db9e62e574ab54636ea9ea = RC_86cda441e1db9e62e574ab54636ea9eaInner;
+
+        RC_86cda441e1db9e62e574ab54636ea9eaInner._isAnonymousRecord = true;
+        RC_86cda441e1db9e62e574ab54636ea9eaInner.UniqueId = "86cda441-e1db-9e62-e574-ab54636ea9ea";
+        var RC_86cda441e1db9e62e574ab54636ea9ea = RC_86cda441e1db9e62e574ab54636ea9eaInner;
+        RC_86cda441e1db9e62e574ab54636ea9ea.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_7f64f8c0aaa300d34c79a90785135151", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_86cda441e1db9e62e574ab54636ea9ea"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_7f64f8c0aaa300d34c79a90785135151 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_86cda441e1db9e62e574ab54636ea9ea;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_7f64f8c0aaa300d34c79a90785135151 = RL_7f64f8c0aaa300d34c79a90785135151;
 
 });
 
@@ -8143,6 +9132,20 @@ define("RESTAPIWebsocket.model$RL_9bbf3501c857fa771241aed7c9717166", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_9cb00801b4a261afbddde8f0eaaf25f3", ["exports", "@outsystems/runtime-core-js", "BrowserConsoleLogging.model", "RESTAPIWebsocket.model", "BrowserConsoleLogging.model$EN_95096fd7ce0528eba549110f4ff009ffEntityRecord", "RESTAPIWebsocket.referencesHealth", "RESTAPIWebsocket.referencesHealth$BrowserConsoleLogging"], function(exports, OSRuntimeCore, BrowserConsoleLoggingModel, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_9cb00801b4a261afbddde8f0eaaf25f3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return BrowserConsoleLoggingModel.EN_95096fd7ce0528eba549110f4ff009ffEntityRecord;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_9cb00801b4a261afbddde8f0eaaf25f3 = RL_9cb00801b4a261afbddde8f0eaaf25f3;
+
+});
+
 define("RESTAPIWebsocket.model$RL_9d69b2d3ce2ad95c00706adc74706b15", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_bccc1fae1833449eea329fa137ba885aStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_9d69b2d3ce2ad95c00706adc74706b15 extends
@@ -8200,6 +9203,20 @@ define("RESTAPIWebsocket.model$RC_9fdefb1423ae0af9c1d321109b8695e4", ["exports",
     }
 });
 
+define("RESTAPIWebsocket.model$RL_a08f65ffe8aa106df28c69272e328037", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_412ed7113d9105960615d1c5b5f37301Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_a08f65ffe8aa106df28c69272e328037 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_a08f65ffe8aa106df28c69272e328037 = RL_a08f65ffe8aa106df28c69272e328037;
+
+});
+
 define("RESTAPIWebsocket.model$RL_a2a3d623cff8db0b23d39b4d88a9486f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_9fdefb1423ae0af9c1d321109b8695e4"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_a2a3d623cff8db0b23d39b4d88a9486f extends
@@ -8241,6 +9258,20 @@ define("RESTAPIWebsocket.model$RC_a5fc3d62312a89b32ae393e0571bcad7", ["exports",
         var RC_a5fc3d62312a89b32ae393e0571bcad7 = RC_a5fc3d62312a89b32ae393e0571bcad7Inner;
         RC_a5fc3d62312a89b32ae393e0571bcad7.init();
     }
+});
+
+define("RESTAPIWebsocket.model$RL_a6ed4fd2e7e0b79f06fecc8c65713a43", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_a6ed4fd2e7e0b79f06fecc8c65713a43 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_a6ed4fd2e7e0b79f06fecc8c65713a43 = RL_a6ed4fd2e7e0b79f06fecc8c65713a43;
+
 });
 
 define("RESTAPIWebsocket.model$RL_a7094b4040c9bc1f29f799c201256c99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_091244483290da7633fe64666de188c0"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
@@ -8441,6 +9472,79 @@ define("RESTAPIWebsocket.model$RL_abbb06caa2dc3007694c8b499e93ac42", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "RESTAPIWebsocket.model$ST_412ed7113d9105960615d1c5b5f37301Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class ST_e89429535bbc3a843fdfa9ff6a750a5fStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure());
+                    }, true, RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure),
+                    this.attr("Error", "errorAttr", "error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Partner_settings", "partner_settingsAttr", "partner_settings", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure());
+                    }, true, RESTAPIWebsocketModel.ST_412ed7113d9105960615d1c5b5f37301Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure = ST_e89429535bbc3a843fdfa9ff6a750a5fStructureInner;
+
+        var ST_e89429535bbc3a843fdfa9ff6a750a5fStructure = ST_e89429535bbc3a843fdfa9ff6a750a5fStructureInner;
+        ST_e89429535bbc3a843fdfa9ff6a750a5fStructure.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_d69d31319b581746ce9d01515b7635df", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_d69d31319b581746ce9d01515b7635dfInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("GetPartnerSettingsResponse", "getPartnerSettingsResponseAttr", "GetPartnerSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure());
+                    }, true, RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_d69d31319b581746ce9d01515b7635df(new RC_d69d31319b581746ce9d01515b7635df.RecordClass({
+                    getPartnerSettingsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_d69d31319b581746ce9d01515b7635df = RC_d69d31319b581746ce9d01515b7635dfInner;
+
+        RC_d69d31319b581746ce9d01515b7635dfInner._isAnonymousRecord = true;
+        RC_d69d31319b581746ce9d01515b7635dfInner.UniqueId = "d69d3131-9b58-1746-ce9d-01515b7635df";
+        var RC_d69d31319b581746ce9d01515b7635df = RC_d69d31319b581746ce9d01515b7635dfInner;
+        RC_d69d31319b581746ce9d01515b7635df.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_ac6093dc6d88ec6d2280dfd00ae486ca", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_d69d31319b581746ce9d01515b7635df"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_ac6093dc6d88ec6d2280dfd00ae486ca extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_d69d31319b581746ce9d01515b7635df;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_ac6093dc6d88ec6d2280dfd00ae486ca = RL_ac6093dc6d88ec6d2280dfd00ae486ca;
+
+});
+
 define("RESTAPIWebsocket.model$RC_aca073df88d40d31252fa904cba1bb39", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_6cf1ba858957788c000fe8d27578f9c1Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class RC_aca073df88d40d31252fa904cba1bb39Inner extends
@@ -8467,6 +9571,35 @@ define("RESTAPIWebsocket.model$RC_aca073df88d40d31252fa904cba1bb39", ["exports",
         RC_aca073df88d40d31252fa904cba1bb39Inner.UniqueId = "aca073df-88d4-0d31-252f-a904cba1bb39";
         var RC_aca073df88d40d31252fa904cba1bb39 = RC_aca073df88d40d31252fa904cba1bb39Inner;
         RC_aca073df88d40d31252fa904cba1bb39.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RC_ad160031f42d1788007448cccfc906ac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_ad160031f42d1788007448cccfc906acInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformAvailableAccountResponse", "postTradingPlatformAvailableAccountResponseAttr", "PostTradingPlatformAvailableAccountResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure());
+                    }, true, RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_ad160031f42d1788007448cccfc906ac(new RC_ad160031f42d1788007448cccfc906ac.RecordClass({
+                    postTradingPlatformAvailableAccountResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_ad160031f42d1788007448cccfc906ac = RC_ad160031f42d1788007448cccfc906acInner;
+
+        RC_ad160031f42d1788007448cccfc906acInner._isAnonymousRecord = true;
+        RC_ad160031f42d1788007448cccfc906acInner.UniqueId = "ad160031-f42d-1788-0074-48cccfc906ac";
+        var RC_ad160031f42d1788007448cccfc906ac = RC_ad160031f42d1788007448cccfc906acInner;
+        RC_ad160031f42d1788007448cccfc906ac.init();
     }
 });
 
@@ -8585,6 +9718,49 @@ define("RESTAPIWebsocket.model$RC_b17c3526d6deec2ea51fe6ca6895e3ea", ["exports",
     }
 });
 
+define("RESTAPIWebsocket.model$RC_f1102e0e903c36b89dd3a8ad41701e5f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f1102e0e903c36b89dd3a8ad41701e5fInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformAvailableAccountsRequest", "postTradingPlatformAvailableAccountsRequestAttr", "PostTradingPlatformAvailableAccountsRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure());
+                    }, true, RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f1102e0e903c36b89dd3a8ad41701e5f(new RC_f1102e0e903c36b89dd3a8ad41701e5f.RecordClass({
+                    postTradingPlatformAvailableAccountsRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_f1102e0e903c36b89dd3a8ad41701e5f = RC_f1102e0e903c36b89dd3a8ad41701e5fInner;
+
+        RC_f1102e0e903c36b89dd3a8ad41701e5fInner._isAnonymousRecord = true;
+        RC_f1102e0e903c36b89dd3a8ad41701e5fInner.UniqueId = "f1102e0e-903c-36b8-9dd3-a8ad41701e5f";
+        var RC_f1102e0e903c36b89dd3a8ad41701e5f = RC_f1102e0e903c36b89dd3a8ad41701e5fInner;
+        RC_f1102e0e903c36b89dd3a8ad41701e5f.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_b180a59f8f5def3150ec40c96b1bacf2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_f1102e0e903c36b89dd3a8ad41701e5f"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_b180a59f8f5def3150ec40c96b1bacf2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_f1102e0e903c36b89dd3a8ad41701e5f;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_b180a59f8f5def3150ec40c96b1bacf2 = RL_b180a59f8f5def3150ec40c96b1bacf2;
+
+});
+
 define("RESTAPIWebsocket.model$RC_b1f9a62aa1eb0e7979aaceb89243cea9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_5ba9c80e587385c94102779d8eab301cStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore; {
         class RC_b1f9a62aa1eb0e7979aaceb89243cea9Inner extends
@@ -8612,6 +9788,34 @@ define("RESTAPIWebsocket.model$RC_b1f9a62aa1eb0e7979aaceb89243cea9", ["exports",
         var RC_b1f9a62aa1eb0e7979aaceb89243cea9 = RC_b1f9a62aa1eb0e7979aaceb89243cea9Inner;
         RC_b1f9a62aa1eb0e7979aaceb89243cea9.init();
     }
+});
+
+define("RESTAPIWebsocket.model$RL_b2061216c3d82010dc8c3226204dac46", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_7de6f1e2c99800d3c6e1aaeb14f3afdd"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_b2061216c3d82010dc8c3226204dac46 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_7de6f1e2c99800d3c6e1aaeb14f3afdd;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_b2061216c3d82010dc8c3226204dac46 = RL_b2061216c3d82010dc8c3226204dac46;
+
+});
+
+define("RESTAPIWebsocket.model$RL_b2117356ef65d3231f992a69f03538c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_75725e65d106c1568a850780233a08baStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_b2117356ef65d3231f992a69f03538c4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_b2117356ef65d3231f992a69f03538c4 = RL_b2117356ef65d3231f992a69f03538c4;
+
 });
 
 define("RESTAPIWebsocket.model$RL_b36cbf00535b19d854633a6aebe03044", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_7b274cb5f96a8ac297db685000547ab1"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
@@ -8667,6 +9871,49 @@ define("RESTAPIWebsocket.model$RL_b60c30f70d5c7d39a851eeb74ad499d4", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_b60c30f70d5c7d39a851eeb74ad499d4 = RL_b60c30f70d5c7d39a851eeb74ad499d4;
+
+});
+
+define("RESTAPIWebsocket.model$RC_b66f106ffca3ec8b9893c19faf2ae442", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_711f7ad16da273bf9e6563303a17ad00Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b66f106ffca3ec8b9893c19faf2ae442Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req11", "echo_req11Attr", "Echo_req11", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_711f7ad16da273bf9e6563303a17ad00Structure());
+                    }, true, RESTAPIWebsocketModel.ST_711f7ad16da273bf9e6563303a17ad00Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b66f106ffca3ec8b9893c19faf2ae442(new RC_b66f106ffca3ec8b9893c19faf2ae442.RecordClass({
+                    echo_req11Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_b66f106ffca3ec8b9893c19faf2ae442 = RC_b66f106ffca3ec8b9893c19faf2ae442Inner;
+
+        RC_b66f106ffca3ec8b9893c19faf2ae442Inner._isAnonymousRecord = true;
+        RC_b66f106ffca3ec8b9893c19faf2ae442Inner.UniqueId = "b66f106f-fca3-ec8b-9893-c19faf2ae442";
+        var RC_b66f106ffca3ec8b9893c19faf2ae442 = RC_b66f106ffca3ec8b9893c19faf2ae442Inner;
+        RC_b66f106ffca3ec8b9893c19faf2ae442.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_b7369d5f4cafbbcd5483c083235b9d49", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_3ce5a0117187c9d1b6ee0d6f65f07553"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_b7369d5f4cafbbcd5483c083235b9d49 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_3ce5a0117187c9d1b6ee0d6f65f07553;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_b7369d5f4cafbbcd5483c083235b9d49 = RL_b7369d5f4cafbbcd5483c083235b9d49;
 
 });
 
@@ -8952,6 +10199,20 @@ define("RESTAPIWebsocket.model$RL_c8ec1067f658d445cb4bb406a536d6e4", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_c9802391ccf1fcf76850377db0a5a2bd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_c9802391ccf1fcf76850377db0a5a2bd extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_c9802391ccf1fcf76850377db0a5a2bd = RL_c9802391ccf1fcf76850377db0a5a2bd;
+
+});
+
 define("RESTAPIWebsocket.model$RL_cb7f36c20c1100a526f054e4bd5ee331", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_870defcbb5bf4a58a2a009971edc7d07Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_cb7f36c20c1100a526f054e4bd5ee331 extends
@@ -9024,6 +10285,20 @@ define("RESTAPIWebsocket.model$RL_cead5d196d772d870bc3f7d4fa164d8c", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_ceea93824bcd8ed549fcfcd4e2f5b807", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_ceea93824bcd8ed549fcfcd4e2f5b807 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_ceea93824bcd8ed549fcfcd4e2f5b807 = RL_ceea93824bcd8ed549fcfcd4e2f5b807;
+
+});
+
 define("RESTAPIWebsocket.model$RL_d020274c0ef0b03336f86133d39e8e5d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_c77c7364c5e093c1d601fe854bbf1fd7Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_d020274c0ef0b03336f86133d39e8e5d extends
@@ -9049,6 +10324,20 @@ define("RESTAPIWebsocket.model$RL_d085e8d032d69f30c1ff1fcbd1a431a3", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_d085e8d032d69f30c1ff1fcbd1a431a3 = RL_d085e8d032d69f30c1ff1fcbd1a431a3;
+
+});
+
+define("RESTAPIWebsocket.model$RL_d170df24c2e1d399274b953b3ea7ee8d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_ad160031f42d1788007448cccfc906ac"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_d170df24c2e1d399274b953b3ea7ee8d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_ad160031f42d1788007448cccfc906ac;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_d170df24c2e1d399274b953b3ea7ee8d = RL_d170df24c2e1d399274b953b3ea7ee8d;
 
 });
 
@@ -9279,6 +10568,20 @@ define("RESTAPIWebsocket.model$RL_d85e4c67416f974767ee94f9ffec8e89", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_d879fd0f70d45798161ae7b5ea69146c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_b66f106ffca3ec8b9893c19faf2ae442"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_d879fd0f70d45798161ae7b5ea69146c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_b66f106ffca3ec8b9893c19faf2ae442;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_d879fd0f70d45798161ae7b5ea69146c = RL_d879fd0f70d45798161ae7b5ea69146c;
+
+});
+
 define("RESTAPIWebsocket.model$RL_da9f97f6a3c8b98228b608b130222591", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_623a04a7e1c688b7ec133f2b7ca28f8e"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_da9f97f6a3c8b98228b608b130222591 extends
@@ -9450,6 +10753,20 @@ define("RESTAPIWebsocket.model$RL_e17c98c9ebad9849b38663a52005be50", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_e27fd9e7224bf0c7e999a01ff4028f6a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_091b86786925fd05b892541280481403Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_e27fd9e7224bf0c7e999a01ff4028f6a extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_e27fd9e7224bf0c7e999a01ff4028f6a = RL_e27fd9e7224bf0c7e999a01ff4028f6a;
+
+});
+
 define("RESTAPIWebsocket.model$RL_e377a277aec73abf25e2c35110f340eb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_72deccc4588dd4c59ea212c47055f933"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_e377a277aec73abf25e2c35110f340eb extends
@@ -9464,6 +10781,35 @@ define("RESTAPIWebsocket.model$RL_e377a277aec73abf25e2c35110f340eb", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RC_e3ab321471af4ded6c61cc352ee47ad1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_e3ab321471af4ded6c61cc352ee47ad1Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TradingPlatformPasswordReset", "tradingPlatformPasswordResetAttr", "TradingPlatformPasswordReset", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure());
+                    }, true, RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_e3ab321471af4ded6c61cc352ee47ad1(new RC_e3ab321471af4ded6c61cc352ee47ad1.RecordClass({
+                    tradingPlatformPasswordResetAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_e3ab321471af4ded6c61cc352ee47ad1 = RC_e3ab321471af4ded6c61cc352ee47ad1Inner;
+
+        RC_e3ab321471af4ded6c61cc352ee47ad1Inner._isAnonymousRecord = true;
+        RC_e3ab321471af4ded6c61cc352ee47ad1Inner.UniqueId = "e3ab3214-71af-4ded-6c61-cc352ee47ad1";
+        var RC_e3ab321471af4ded6c61cc352ee47ad1 = RC_e3ab321471af4ded6c61cc352ee47ad1Inner;
+        RC_e3ab321471af4ded6c61cc352ee47ad1.init();
+    }
+});
+
 define("RESTAPIWebsocket.model$RL_e4cc4242bd1a5b513b2d0e5945f5ee99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_e4cc4242bd1a5b513b2d0e5945f5ee99 extends
@@ -9475,6 +10821,20 @@ define("RESTAPIWebsocket.model$RL_e4cc4242bd1a5b513b2d0e5945f5ee99", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_e4cc4242bd1a5b513b2d0e5945f5ee99 = RL_e4cc4242bd1a5b513b2d0e5945f5ee99;
+
+});
+
+define("RESTAPIWebsocket.model$RL_e4faad65a5799477101b50d791cb6c4b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_13f257eb273389bc73abe0351586bf1c"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_e4faad65a5799477101b50d791cb6c4b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_13f257eb273389bc73abe0351586bf1c;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_e4faad65a5799477101b50d791cb6c4b = RL_e4faad65a5799477101b50d791cb6c4b;
 
 });
 
@@ -9517,6 +10877,20 @@ define("RESTAPIWebsocket.model$RL_e76c00ddf7abece102174559911adf6e", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_e76c00ddf7abece102174559911adf6e = RL_e76c00ddf7abece102174559911adf6e;
+
+});
+
+define("RESTAPIWebsocket.model$RL_e80a0f2e1d0d40303b1a689b4ad27a7b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_e80a0f2e1d0d40303b1a689b4ad27a7b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_e80a0f2e1d0d40303b1a689b4ad27a7b = RL_e80a0f2e1d0d40303b1a689b4ad27a7b;
 
 });
 
@@ -9619,6 +10993,91 @@ define("RESTAPIWebsocket.model$RL_ece3ed6e115187092667bb2ed6368718", ["exports",
 
 });
 
+define("RESTAPIWebsocket.model$RL_f067ae7af5eafa7f1242db8deda5f8c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_f067ae7af5eafa7f1242db8deda5f8c4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_f067ae7af5eafa7f1242db8deda5f8c4 = RL_f067ae7af5eafa7f1242db8deda5f8c4;
+
+});
+
+define("RESTAPIWebsocket.model$RL_f078853eb4e1ea502520482773117b08", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_f078853eb4e1ea502520482773117b08 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_f078853eb4e1ea502520482773117b08 = RL_f078853eb4e1ea502520482773117b08;
+
+});
+
+define("RESTAPIWebsocket.model$RL_f09c659879e2269528f7b678199b971f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_f09c659879e2269528f7b678199b971f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_f09c659879e2269528f7b678199b971f = RL_f09c659879e2269528f7b678199b971f;
+
+});
+
+define("RESTAPIWebsocket.model$RC_fcf4341f7efd9506f671d9240030f6a0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore; {
+        class RC_fcf4341f7efd9506f671d9240030f6a0Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req12", "echo_req12Attr", "Echo_req12", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure());
+                    }, true, RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_fcf4341f7efd9506f671d9240030f6a0(new RC_fcf4341f7efd9506f671d9240030f6a0.RecordClass({
+                    echo_req12Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        RESTAPIWebsocketModel.RC_fcf4341f7efd9506f671d9240030f6a0 = RC_fcf4341f7efd9506f671d9240030f6a0Inner;
+
+        RC_fcf4341f7efd9506f671d9240030f6a0Inner._isAnonymousRecord = true;
+        RC_fcf4341f7efd9506f671d9240030f6a0Inner.UniqueId = "fcf4341f-7efd-9506-f671-d9240030f6a0";
+        var RC_fcf4341f7efd9506f671d9240030f6a0 = RC_fcf4341f7efd9506f671d9240030f6a0Inner;
+        RC_fcf4341f7efd9506f671d9240030f6a0.init();
+    }
+});
+
+define("RESTAPIWebsocket.model$RL_f11b3648faafeee87f9baa4118b19aeb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_fcf4341f7efd9506f671d9240030f6a0"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_f11b3648faafeee87f9baa4118b19aeb extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_fcf4341f7efd9506f671d9240030f6a0;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_f11b3648faafeee87f9baa4118b19aeb = RL_f11b3648faafeee87f9baa4118b19aeb;
+
+});
+
 define("RESTAPIWebsocket.model$RL_f15b302598caef69c6cdd4e0690795f9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_7096ca0099728124fcaff6ac0bf8440c"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
     var OS = OSRuntimeCore;
     class RL_f15b302598caef69c6cdd4e0690795f9 extends
@@ -9644,6 +11103,20 @@ define("RESTAPIWebsocket.model$RL_f565e985301ac9dd26dbfb84b70bf745", ["exports",
     }
 
     RESTAPIWebsocketModel.RL_f565e985301ac9dd26dbfb84b70bf745 = RL_f565e985301ac9dd26dbfb84b70bf745;
+
+});
+
+define("RESTAPIWebsocket.model$RL_f61c6f02c5c68df8a996828a465a3da2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "RESTAPIWebsocket.model$RC_e3ab321471af4ded6c61cc352ee47ad1"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel) {
+    var OS = OSRuntimeCore;
+    class RL_f61c6f02c5c68df8a996828a465a3da2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketModel.RC_e3ab321471af4ded6c61cc352ee47ad1;
+        }
+
+    }
+
+    RESTAPIWebsocketModel.RL_f61c6f02c5c68df8a996828a465a3da2 = RL_f61c6f02c5c68df8a996828a465a3da2;
 
 });
 
@@ -9826,4 +11299,26 @@ define("RESTAPIWebsocket.model", ["exports", "@outsystems/runtime-core-js"], fun
     });
 
     RESTAPIWebsocketModel.staticEntities = {};
+    RESTAPIWebsocketModel.staticEntities.consoleErrorType = {};
+    var getConsoleErrorTypeRecord = function(record) {
+        return OS.ApplicationInfo.getModules()["7f7c3cd2-279d-4fb8-b978-c1ee91ff0d4f"].staticEntities["18eef253-4376-4287-8f3a-dedb635f5e6d"][record];
+    };
+    Object.defineProperty(RESTAPIWebsocketModel.staticEntities.consoleErrorType, "error", {
+        get: function() {
+            return 2;
+        }
+    });
+
+    Object.defineProperty(RESTAPIWebsocketModel.staticEntities.consoleErrorType, "warning", {
+        get: function() {
+            return 1;
+        }
+    });
+
+    Object.defineProperty(RESTAPIWebsocketModel.staticEntities.consoleErrorType, "information", {
+        get: function() {
+            return 0;
+        }
+    });
+
 });

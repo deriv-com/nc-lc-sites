@@ -73,7 +73,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$model", 
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$model", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStepProgressBar", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$NextStepReal", "PartnersHub.model$RC_4535b2a68fa04382d8868d60004b6438", "PartnersHub.model$RL_117c7b7da327962152f7a4113c25ca3f"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_EmploymentDetailsMobile_mvc_model, PartnersHub_RealAccountCreationFlow_EmploymentDetailsMobile_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$model", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStepProgressBar", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$NextStepReal", "PartnersHub.model$RC_4535b2a68fa04382d8868d60004b6438", "PartnersHub.model$RL_117c7b7da327962152f7a4113c25ca3f"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_EmploymentDetailsMobile_mvc_model, PartnersHub_RealAccountCreationFlow_EmploymentDetailsMobile_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -104,7 +104,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$view", [
         }
 
         static getBlocks() {
-            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -618,7 +618,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$view", [
                     uuid: "30"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

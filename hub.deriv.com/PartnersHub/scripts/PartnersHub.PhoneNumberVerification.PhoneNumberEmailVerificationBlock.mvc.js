@@ -70,7 +70,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.Input.ControlledInput.mvc$view", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_Input_ControlledInput_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.Input.ControlledInput.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_Input_ControlledInput_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -101,7 +101,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
         }
 
         static getBlocks() {
-            return [CustomComponents_Input_ControlledInput_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_Input_ControlledInput_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -215,7 +215,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
                     uuid: "6"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_Input_ControlledInput_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_Input_ControlledInput_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -277,7 +277,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
                     uuid: "9"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

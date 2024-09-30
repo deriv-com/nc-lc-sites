@@ -960,6 +960,7 @@ define("tradershub.MainFlow.Endpoint.mvc$controller.SaveOnClick.SaveWSURLJS", []
         setTimeout(function() {
             location.reload()
         }, 1000)
+
     };
 });
 

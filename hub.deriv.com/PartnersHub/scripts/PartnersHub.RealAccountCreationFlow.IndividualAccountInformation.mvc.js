@@ -261,7 +261,7 @@ define("PartnersHub.RealAccountCreationFlow.IndividualAccountInformation.mvc$vie
                 },
                 isDefault: false,
                 onClick: function() {
-                    controller.validationService.validateWidget("");
+                    _this.validateWidget("");
                     var eventHandlerContext = callContext.clone();
                     controller.nextAction$Action(controller.callContext(eventHandlerContext));
 

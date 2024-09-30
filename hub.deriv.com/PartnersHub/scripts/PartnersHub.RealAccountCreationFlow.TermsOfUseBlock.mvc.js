@@ -79,7 +79,7 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$model", ["@outsy
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_c68ca2b5352eede25365718c29283667Structure", "PartnersHub.controller$SendTncApproval"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_model, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_c68ca2b5352eede25365718c29283667Structure", "PartnersHub.controller$SendTncApproval"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_model, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -110,7 +110,7 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$view", ["@outsys
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -470,7 +470,7 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$view", ["@outsys
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 style_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._isMobileLayoutInDataFetchStatus)
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

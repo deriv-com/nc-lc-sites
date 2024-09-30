@@ -58,7 +58,7 @@ define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "P
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "RESTAPIWebsocket.controller$VerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "RESTAPIWebsocket.controller$VerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -89,7 +89,7 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -479,7 +479,7 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
                                                     },
                                                     isDefault: false,
                                                     onClick: function() {
-                                                        controller.validationService.validateWidget(idService.getId("Form3"));
+                                                        _this.validateWidget(idService.getId("Form3"));
                                                         return Promise.resolve().then(function() {
                                                             var eventHandlerContext = callContext.clone();
                                                             return controller.createPartnerAccountOnClick$Action(controller.callContext(eventHandlerContext));
@@ -815,7 +815,7 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
                                             uuid: "48"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("If_l85cWxEO6d6tLUbNSEw#Value", "terms and conditions.")))), React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+                                    }, $text(getTranslation("If_l85cWxEO6d6tLUbNSEw#Value", "terms and conditions.")))), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                                         getOwnerSpan: function() {
                                             return _this.getChildSpan("render");
                                         },

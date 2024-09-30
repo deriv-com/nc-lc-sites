@@ -9,7 +9,7 @@ let FEATURE_FLAGS = [{
         enabled: true
     },
     {
-        name: "AddtionalPersonalDetails",
+        name: "RESTAPI",
         enabled: false
     },
 ]

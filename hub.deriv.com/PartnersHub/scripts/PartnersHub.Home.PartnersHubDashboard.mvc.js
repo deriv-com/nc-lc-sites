@@ -1,4 +1,4 @@
-define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "PartnersHub.controller", "RESTAPIWebsocket.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.LoaderBlock.mvc$model", "PartnersHub.Home.ReferralLinksReports.mvc$model", "PartnersHub.Home.CompleteMyProfile.mvc$model", "PartnersHub.Home.CommissionPlans.mvc$model", "PartnersHub.Home.CommissionBanner.mvc$model", "PartnersHub.Home.PartnersAcademy.mvc$model", "PartnersHub.Home.AffiliateProgramme.mvc$model", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$InitGTM", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$GTMPushDataLayer", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, PartnersHubController, RESTAPIWebsocketController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_LoaderBlock_mvcModel, PartnersHub_Home_ReferralLinksReports_mvcModel, PartnersHub_Home_CompleteMyProfile_mvcModel, PartnersHub_Home_CommissionPlans_mvcModel, PartnersHub_Home_CommissionBanner_mvcModel, PartnersHub_Home_PartnersAcademy_mvcModel, PartnersHub_Home_AffiliateProgramme_mvcModel) {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "PartnersHub.controller", "RESTAPIWebsocket.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.LoaderBlock.mvc$model", "PartnersHub.Home.ReferralLinksReports.mvc$model", "PartnersHub.Home.CompleteMyProfile.mvc$model", "PartnersHub.Home.CommissionPlans.mvc$model", "PartnersHub.Home.CommissionBanner.mvc$model", "PartnersHub.Home.PartnersAcademy.mvc$model", "PartnersHub.Home.AffiliateProgramme.mvc$model", "PartnersHub.Home.WhatsAppBanner.mvc$model", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, PartnersHubController, RESTAPIWebsocketController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_LoaderBlock_mvcModel, PartnersHub_Home_ReferralLinksReports_mvcModel, PartnersHub_Home_CompleteMyProfile_mvcModel, PartnersHub_Home_CommissionPlans_mvcModel, PartnersHub_Home_CommissionBanner_mvcModel, PartnersHub_Home_PartnersAcademy_mvcModel, PartnersHub_Home_AffiliateProgramme_mvcModel, PartnersHub_Home_WhatsAppBanner_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -19,10 +19,13 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
                     this.attr("WebsiteStatusResponse", "websiteStatusResponseVar", "WebsiteStatusResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure());
                     }, false, RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure),
-                    this.attr("isCompleteMyProfileEnabledGB", "isCompleteMyProfileEnabledGBVar", "isCompleteMyProfileEnabledGB", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                    this.attr("website_platform_url", "website_platform_urlVar", "website_platform_url", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("EnableWhatsappBanner", "enableWhatsappBannerVar", "EnableWhatsappBanner", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
-                    this.attr("isCommisionsPlansEnabled", "isCommisionsPlansEnabledVar", "isCommisionsPlansEnabled", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                    this.attr("isNotAPartner", "isNotAPartnerVar", "isNotAPartner", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -53,7 +56,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((((((PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_LoaderBlock_mvcModel.hasValidationWidgets) || PartnersHub_Home_ReferralLinksReports_mvcModel.hasValidationWidgets) || PartnersHub_Home_CompleteMyProfile_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionPlans_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionBanner_mvcModel.hasValidationWidgets) || PartnersHub_Home_PartnersAcademy_mvcModel.hasValidationWidgets) || PartnersHub_Home_AffiliateProgramme_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((((((((PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_LoaderBlock_mvcModel.hasValidationWidgets) || PartnersHub_Home_ReferralLinksReports_mvcModel.hasValidationWidgets) || PartnersHub_Home_CompleteMyProfile_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionPlans_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionBanner_mvcModel.hasValidationWidgets) || PartnersHub_Home_PartnersAcademy_mvcModel.hasValidationWidgets) || PartnersHub_Home_AffiliateProgramme_mvcModel.hasValidationWidgets) || PartnersHub_Home_WhatsAppBanner_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -66,7 +69,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.PartnersHubDashboard.mvc$model", "PartnersHub.Home.PartnersHubDashboard.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.LoaderBlock.mvc$view", "PartnersHub.Home.ReferralLinksReports.mvc$view", "PartnersHub.Home.CompleteMyProfile.mvc$view", "PartnersHub.Home.CommissionPlans.mvc$view", "PartnersHub.Home.CommissionBanner.mvc$view", "PartnersHub.Home.PartnersAcademy.mvc$view", "PartnersHub.Home.AffiliateProgramme.mvc$view", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$InitGTM", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$GTMPushDataLayer", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Home_PartnersHubDashboard_mvc_model, PartnersHub_Home_PartnersHubDashboard_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view) {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.PartnersHubDashboard.mvc$model", "PartnersHub.Home.PartnersHubDashboard.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.LoaderBlock.mvc$view", "PartnersHub.Home.ReferralLinksReports.mvc$view", "PartnersHub.Home.CompleteMyProfile.mvc$view", "PartnersHub.Home.CommissionPlans.mvc$view", "PartnersHub.Home.CommissionBanner.mvc$view", "PartnersHub.Home.PartnersAcademy.mvc$view", "PartnersHub.Home.AffiliateProgramme.mvc$view", "PartnersHub.Home.WhatsAppBanner.mvc$view", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Home_PartnersHubDashboard_mvc_model, PartnersHub_Home_PartnersHubDashboard_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -97,7 +100,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view];
+            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view];
         }
 
         get modelFactory() {
@@ -157,7 +160,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     mainContent: new PlaceholderContent(function() {
-                        return [$if(model.variables.isLoadingVar, false, this, function() {
+                        return [$if((model.variables.isLoadingVar || model.variables.isNotAPartnerVar), false, this, function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
@@ -212,14 +215,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                     uuid: "3"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.AdvancedHtml, {
-                                tag: "span",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "4"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.Container, {
+                            }, React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
                                 style: "partners-hub-title-container",
@@ -238,7 +234,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "6"
+                                    uuid: "5"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Text, {
@@ -248,7 +244,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 text: [$text(getTranslation("6QftVDCBCUOUp+OG1UYZ_A#Value", "Partner\'s Hub"))],
                                 _idProps: {
                                     service: idService,
-                                    uuid: "7"
+                                    uuid: "6"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }))), React.createElement(OSWidgets.Container, {
@@ -261,7 +257,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "8"
+                                    uuid: "7"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Container, {
@@ -274,7 +270,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "9"
+                                    uuid: "8"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(PartnersHub_Home_ReferralLinksReports_mvc_view, {
@@ -284,7 +280,9 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 getOwnerDisposeSpan: function() {
                                     return _this.getChildSpan("destroy");
                                 },
-                                inputs: {},
+                                inputs: {
+                                    website_platform_url: model.variables.website_platform_urlVar
+                                },
                                 events: {
                                     _handleError: function(ex) {
                                         controller.handleError(ex);
@@ -295,7 +293,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 },
                                 _idProps: {
                                     service: idService,
-                                    uuid: "10",
+                                    uuid: "9",
                                     alias: "3"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider,
@@ -324,7 +322,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 visible: false,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "12"
+                                    uuid: "11"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(PartnersHub_Home_CompleteMyProfile_mvc_view, {
@@ -345,12 +343,12 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 },
                                 _idProps: {
                                     service: idService,
-                                    uuid: "13",
+                                    uuid: "12",
                                     alias: "4"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider,
                                 _dependencies: []
-                            })), $if(model.variables.isCommisionsPlansEnabledVar, false, this, function() {
+                            })), $if(PartnersHubClientVariables.getisCommisionsPlansEnabledFF(), false, this, function() {
                                 return [React.createElement(OSWidgets.Container, {
                                     align: /*Default*/ 0,
                                     animate: false,
@@ -361,7 +359,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "14"
+                                        uuid: "13"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(PartnersHub_Home_CommissionPlans_mvc_view, {
@@ -382,7 +380,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                     },
                                     _idProps: {
                                         service: idService,
-                                        uuid: "15",
+                                        uuid: "14",
                                         alias: "5"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider,
@@ -399,7 +397,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "16"
+                                        uuid: "15"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(PartnersHub_Home_CommissionBanner_mvc_view, {
@@ -420,7 +418,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                     },
                                     _idProps: {
                                         service: idService,
-                                        uuid: "17",
+                                        uuid: "16",
                                         alias: "6"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider,
@@ -456,7 +454,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 },
                                 _idProps: {
                                     service: idService,
-                                    uuid: "19",
+                                    uuid: "18",
                                     alias: "7"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider,
@@ -492,8 +490,40 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                                 },
                                 _idProps: {
                                     service: idService,
-                                    uuid: "21",
+                                    uuid: "20",
                                     alias: "8"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "WhatsappBanner"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(PartnersHub_Home_WhatsAppBanner_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {},
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "22",
+                                    alias: "9"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider,
                                 _dependencies: []
@@ -501,14 +531,14 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.isCommisionsPlansEnabledVar), asPrimitiveValue(model.variables.isLoadingVar)]
+                _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisCommisionsPlansEnabledFF()), asPrimitiveValue(model.variables.website_platform_urlVar), asPrimitiveValue(model.variables.isNotAPartnerVar), asPrimitiveValue(model.variables.isLoadingVar)]
             }));
         }
     }
 
     return View;
 });
-define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GrowthBookFlagsVariablesJS", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$InitGTM", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$GTMPushDataLayer", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_PartnersHubDashboard_mvc_TranslationsResources, PartnersHub_HomeController, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GetAuthTokenJS, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GrowthBookFlagsVariablesJS) {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatformURLJS", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_PartnersHubDashboard_mvc_TranslationsResources, PartnersHub_HomeController, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GetAuthTokenJS, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_ParsePlatformURLJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -522,6 +552,76 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             }
 
             // Server Actions - Methods
+            get getBDEnablePartnerAccount$ServerAction() {
+                if (!(this.hasOwnProperty("_getBDEnablePartnerAccount$ServerAction"))) {
+                    this._getBDEnablePartnerAccount$ServerAction = function(callContext) {
+                        var controller = this.controller;
+                        return OS.Logger.startActiveSpan("GetBDEnablePartnerAccount", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "GetBDEnablePartnerAccount");
+                                span.setAttribute("outsystems.function.key", "5d7be442-8e46-4df7-b36d-1de79ae5c83f");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return controller.callServerAction("GetBDEnablePartnerAccount", "screenservices/PartnersHub/Home/PartnersHubDashboard/ActionGetBDEnablePartnerAccount", "xAiHTtR3nnJI6XYuIrZWyA", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
+                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetBDEnablePartnerAccount"))();
+                                    executeServerActionResult.enablePartnerAccountOut = OS.DataConversion.ServerDataConverter.from(outputs.EnablePartnerAccount, OS.DataTypes.DataTypes.Boolean);
+                                    return executeServerActionResult;
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 0);
+                    };
+                }
+
+                return this._getBDEnablePartnerAccount$ServerAction;
+            }
+            set getBDEnablePartnerAccount$ServerAction(value) {
+                this._getBDEnablePartnerAccount$ServerAction = value;
+            }
+
+            get getEnableWhatsappBanner$ServerAction() {
+                if (!(this.hasOwnProperty("_getEnableWhatsappBanner$ServerAction"))) {
+                    this._getEnableWhatsappBanner$ServerAction = function(callContext) {
+                        var controller = this.controller;
+                        return OS.Logger.startActiveSpan("GetEnableWhatsappBanner", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "GetEnableWhatsappBanner");
+                                span.setAttribute("outsystems.function.key", "8a6aeaba-8069-42c2-a58f-7251d0854dc0");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return controller.callServerAction("GetEnableWhatsappBanner", "screenservices/PartnersHub/Home/PartnersHubDashboard/ActionGetEnableWhatsappBanner", "pYv1IrVU1PoFUzQaOoL6AA", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
+                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetEnableWhatsappBanner"))();
+                                    executeServerActionResult.enableWhatsappBannerOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableWhatsappBanner, OS.DataTypes.DataTypes.Boolean);
+                                    return executeServerActionResult;
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 0);
+                    };
+                }
+
+                return this._getEnableWhatsappBanner$ServerAction;
+            }
+            set getEnableWhatsappBanner$ServerAction(value) {
+                this._getEnableWhatsappBanner$ServerAction = value;
+            }
+
 
             // Aggregates and Data Actions
 
@@ -555,26 +655,27 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
+                                var getBDEnablePartnerAccountVar = new OS.DataTypes.VariableHolder();
+                                var getEnableWhatsappBannerVar = new OS.DataTypes.VariableHolder();
+                                var partnerSettingsVar = new OS.DataTypes.VariableHolder();
                                 var getSettingsVar = new OS.DataTypes.VariableHolder();
                                 var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
-                                var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
                                 var getAuthTokenJSResult = new OS.DataTypes.VariableHolder();
-                                var growthBookFlagsVariablesJSResult = new OS.DataTypes.VariableHolder();
+                                var parsePlatformURLJSResult = new OS.DataTypes.VariableHolder();
+                                var jSONDeserializeGetWebsiteStatusResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure))());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // IsLoading = True
                                     model.variables.isLoadingVar = true;
-                                    // Execute Action: UseDevice
-                                    PartnersHubController.default.useDevice$Action(callContext);
-                                    // Execute Action: SetDefaultAppId
-                                    PartnersHubController.default.setDefaultAppId$Action(false, callContext);
-                                    // Execute Action: GetWebsiteStatus
+                                    // Execute Action: GetEnableWhatsappBanner
                                     model.flush();
-                                    return RESTAPIWebsocketController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                        getWebsiteStatusVar.value = value;
+                                    return controller.getEnableWhatsappBanner$ServerAction(callContext).then(function(value) {
+                                        getEnableWhatsappBannerVar.value = value;
                                     }).then(function() {
-                                        // Execute Action: InitGrowthbook
+                                        // Execute Action: GetBDEnablePartnerAccount
                                         model.flush();
-                                        return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
+                                        return controller.getBDEnablePartnerAccount$ServerAction(callContext).then(function(value) {
+                                            getBDEnablePartnerAccountVar.value = value;
+                                        });
                                     }).then(function() {
                                         // Execute Action: HandleRedirectOnLogin
                                         model.flush();
@@ -584,12 +685,6 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                                     }).then(function() {
                                         return OS.Flow.executeSequence(function() {
                                             if ((handleRedirectOnLoginVar.value.isLoggedInOut)) {
-                                                // IsLoading = False
-                                                model.variables.isLoadingVar = false;
-                                                // Execute Action: InitGTM
-                                                PartnersHubController.default.initGTM$Action(callContext);
-                                                // Execute Action: GTMPushDataLayer
-                                                PartnersHubController.default.gTMPushDataLayer$Action("page_load", callContext);
                                                 // Execute Action: RudderstackIdentifyEvent
                                                 PartnersHubController.default.rudderstackIdentifyEvent$Action(callContext);
                                                 getAuthTokenJSResult.value = OS.Logger.startActiveSpan("GetAuthToken", function(span) {
@@ -617,63 +712,86 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                                                     }
 
                                                 }, 1);
-                                                // Execute Action: GetSettings
-                                                model.flush();
-                                                return RESTAPIWebsocketController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                                    getSettingsVar.value = value;
-                                                }).then(function() {
-                                                    // Execute Action: MountLiveChat
-                                                    PartnersHubController.default.mountLiveChat$Action(getSettingsVar.value.responseOut, callContext);
-                                                    // Execute Action: RudderstackTrackEvent
-                                                    PartnersHubController.default.rudderstackTrackEvent$Action(function() {
-                                                        var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
-                                                        rec.actionAttr = "homepage_open";
-                                                        return rec;
-                                                    }(), "ce_partnershub_form", callContext);
-                                                    growthBookFlagsVariablesJSResult.value = OS.Logger.startActiveSpan("GrowthBookFlagsVariables", function(span) {
-                                                        if (span) {
-                                                            span.setAttribute("code.function", "GrowthBookFlagsVariables");
-                                                            span.setAttribute("outsystems.function.key", "ae9af235-2483-4180-87f9-cde34842487a");
-                                                            span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                                            span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                        }
+                                                return OS.Flow.executeSequence(function() {
+                                                    if ((!(getBDEnablePartnerAccountVar.value.enablePartnerAccountOut))) {
+                                                        // Execute Action: PartnerSettings
+                                                        model.flush();
+                                                        return RESTAPIWebsocketController.default.partnerSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                                            partnerSettingsVar.value = value;
+                                                        }).then(function() {
+                                                            if (((partnerSettingsVar.value.responseOut.errorAttr.codeAttr === "InputValidationFailed"))) {
+                                                                // Destination: /PartnersHub/NonPartnerAccount
+                                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "NonPartnerAccount", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                            } else {
+                                                                parsePlatformURLJSResult.value = OS.Logger.startActiveSpan("ParsePlatformURL", function(span) {
+                                                                    if (span) {
+                                                                        span.setAttribute("code.function", "ParsePlatformURL");
+                                                                        span.setAttribute("outsystems.function.key", "2e6b08f5-f80c-45f6-8716-9c62f621de7a");
+                                                                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                                                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                                    }
 
-                                                        try {
-                                                            return controller.safeExecuteJSNode(PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GrowthBookFlagsVariablesJS, "GrowthBookFlagsVariables", "OnReady", {
-                                                                isCompleteMyProfileEnabledGB: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
-                                                                isCommissionPlansEnabled: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
-                                                            }, function($parameters) {
-                                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$growthBookFlagsVariablesJSResult"))();
-                                                                jsNodeResult.isCompleteMyProfileEnabledGBOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCompleteMyProfileEnabledGB, OS.DataTypes.DataTypes.Boolean);
-                                                                jsNodeResult.isCommissionPlansEnabledOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCommissionPlansEnabled, OS.DataTypes.DataTypes.Boolean);
-                                                                return jsNodeResult;
-                                                            }, {}, {});
-                                                        } finally {
-                                                            if (span) {
-                                                                span.end();
+                                                                    try {
+                                                                        return controller.safeExecuteJSNode(PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_ParsePlatformURLJS, "ParsePlatformURL", "OnReady", {
+                                                                            provider: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.providerAttr, OS.DataTypes.DataTypes.Text),
+                                                                            platform_url: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.platform_urlAttr, OS.DataTypes.DataTypes.Text),
+                                                                            website_platform_url: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                                                        }, function($parameters) {
+                                                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$parsePlatformURLJSResult"))();
+                                                                            jsNodeResult.website_platform_urlOut = OS.DataConversion.JSNodeParamConverter.from($parameters.website_platform_url, OS.DataTypes.DataTypes.Text);
+                                                                            return jsNodeResult;
+                                                                        }, {}, {});
+                                                                    } finally {
+                                                                        if (span) {
+                                                                            span.end();
+                                                                        }
+
+                                                                    }
+
+                                                                }, 1);
+                                                                // website_platform_url = ParsePlatformURL.website_platform_url
+                                                                model.variables.website_platform_urlVar = parsePlatformURLJSResult.value.website_platform_urlOut;
+                                                                // isNotAPartner = False
+                                                                model.variables.isNotAPartnerVar = false;
                                                             }
 
-                                                        }
+                                                        });
+                                                    }
 
-                                                    }, 1);
-                                                    // InitialGetSettingsEmail = GetSettings.Response.Get_settings.Email
-                                                    PartnersHubClientVariables.setInitialGetSettingsEmail(getSettingsVar.value.responseOut.get_settingsAttr.emailAttr);
-                                                    // GetSettingsResponse = GetSettings.Response
-                                                    model.variables.getSettingsResponseVar = getSettingsVar.value.responseOut;
-                                                    // isPhoneNumberVerified = GetSettings.Response.Get_settings.Phone_number_verification.Verified
-                                                    model.variables.isPhoneNumberVerifiedVar = getSettingsVar.value.responseOut.get_settingsAttr.phone_number_verificationAttr.verifiedAttr;
-                                                    // isCompleteMyProfileEnabledGB = GrowthBookFlagsVariables.isCompleteMyProfileEnabledGB
-                                                    model.variables.isCompleteMyProfileEnabledGBVar = growthBookFlagsVariablesJSResult.value.isCompleteMyProfileEnabledGBOut;
-                                                    // WebsiteStatusResponse = GetWebsiteStatus.Response
-                                                    model.variables.websiteStatusResponseVar = getWebsiteStatusVar.value.responseOut;
-                                                    // isCommisionsPlansEnabled = GrowthBookFlagsVariables.isCommissionPlansEnabled
-                                                    model.variables.isCommisionsPlansEnabledVar = growthBookFlagsVariablesJSResult.value.isCommissionPlansEnabledOut;
+                                                }).then(function() {
+                                                    // Execute Action: GetSettings
+                                                    model.flush();
+                                                    return RESTAPIWebsocketController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                                        getSettingsVar.value = value;
+                                                    }).then(function() {
+                                                        // Execute Action: MountLiveChat
+                                                        PartnersHubController.default.mountLiveChat$Action(getSettingsVar.value.responseOut, callContext);
+                                                        // Execute Action: RudderstackTrackEvent
+                                                        PartnersHubController.default.rudderstackTrackEvent$Action(function() {
+                                                            var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
+                                                            rec.actionAttr = "homepage_open";
+                                                            return rec;
+                                                        }(), "ce_partnershub_form", callContext);
+                                                        // JSON Deserialize: JSONDeserializeGetWebsiteStatusResponse
+                                                        jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(PartnersHubClientVariables.getWebsiteStatusResponse(), RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure, false);
+                                                        // InitialGetSettingsEmail = GetSettings.Response.Get_settings.Email
+                                                        PartnersHubClientVariables.setInitialGetSettingsEmail(getSettingsVar.value.responseOut.get_settingsAttr.emailAttr);
+                                                        // isPhoneNumberVerified = GetSettings.Response.Get_settings.Phone_number_verification.Verified
+                                                        model.variables.isPhoneNumberVerifiedVar = getSettingsVar.value.responseOut.get_settingsAttr.phone_number_verificationAttr.verifiedAttr;
+                                                        // WebsiteStatusResponse = JSONDeserializeGetWebsiteStatusResponse.Data
+                                                        model.variables.websiteStatusResponseVar = jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut;
+                                                        // GetSettingsResponse = GetSettings.Response
+                                                        model.variables.getSettingsResponseVar = getSettingsVar.value.responseOut;
+                                                        // EnableWhatsappBanner = GetEnableWhatsappBanner.EnableWhatsappBanner
+                                                        model.variables.enableWhatsappBannerVar = getEnableWhatsappBannerVar.value.enableWhatsappBannerOut;
+                                                        // IsLoading = False
+                                                        model.variables.isLoadingVar = false;
+                                                    });
                                                 });
                                             } else {
-                                                // Execute Action: IFrameLogout
-                                                model.flush();
-                                                return PartnersHubController.default.iFrameLogout$Action(callContext);
+                                                // Execute Action: OnClickLogout
+                                                return controller._onClickLogout$Action(callContext);
                                             }
 
                                         });
@@ -695,26 +813,24 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                 this.__onReady$Action = value;
             }
 
-            get _onInitialize$Action() {
-                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
-                    this.__onInitialize$Action = function(callContext) {
+            get _onRender$Action() {
+                if (!(this.hasOwnProperty("__onRender$Action"))) {
+                    this.__onRender$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
+                        return OS.Logger.startActiveSpan("OnRender", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "c16cf78e-29e5-49ad-b68c-eddeb97416d7");
+                                span.setAttribute("code.function", "OnRender");
+                                span.setAttribute("outsystems.function.key", "9ade71bd-e602-415b-89d9-1681dcbb90c2");
                                 span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                 span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
                             try {
-                                controller.ensureControllerAlive("OnInitialize");
+                                controller.ensureControllerAlive("OnRender");
                                 callContext = controller.callContext(callContext);
-                                // Execute Action: MountDerivAPIClient
-                                PartnersHubController.default.mountDerivAPIClient$Action(callContext);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -726,10 +842,49 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                     };
                 }
 
-                return this.__onInitialize$Action;
+                return this.__onRender$Action;
             }
-            set _onInitialize$Action(value) {
-                this.__onInitialize$Action = value;
+            set _onRender$Action(value) {
+                this.__onRender$Action = value;
+            }
+
+            get _onClickLogout$Action() {
+                if (!(this.hasOwnProperty("__onClickLogout$Action"))) {
+                    this.__onClickLogout$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnClickLogout", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnClickLogout");
+                                span.setAttribute("outsystems.function.key", "d0f7bbb5-2ebf-4ea9-869b-cae2b990f028");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnClickLogout");
+                                callContext = controller.callContext(callContext);
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: IFrameLogout
+                                    model.flush();
+                                    return PartnersHubController.default.iFrameLogout$Action(callContext);
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__onClickLogout$Action;
+            }
+            set _onClickLogout$Action(value) {
+                this.__onClickLogout$Action = value;
             }
 
             get _showLoader$Action() {
@@ -793,19 +948,19 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
             }
 
-            onInitialize$Action(callContext) {
+            onRender$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
+                return OS.Logger.startActiveSpan("OnRender__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "c16cf78e-29e5-49ad-b68c-eddeb97416d7");
+                        span.setAttribute("code.function", "OnRender");
+                        span.setAttribute("outsystems.function.key", "9ade71bd-e602-415b-89d9-1681dcbb90c2");
                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
                     try {
-                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
+                        return controller.safeExecuteClientAction(controller._onRender$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -813,6 +968,29 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
                     }
 
+                }, 0);
+
+            }
+
+            onClickLogout$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnClickLogout__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnClickLogout");
+                        span.setAttribute("outsystems.function.key", "d0f7bbb5-2ebf-4ea9-869b-cae2b990f028");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onClickLogout$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
                 }, 0);
 
             }
@@ -845,14 +1023,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onInitialize$Action(callContext);
-
-                    };
+                    this._onInitializeEventHandler = null;
                 }
 
                 return this._onInitializeEventHandler;
@@ -881,7 +1052,14 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
             get onRenderEventHandler() {
                 if (!(this.hasOwnProperty("_onRenderEventHandler"))) {
-                    this._onRenderEventHandler = null;
+                    this._onRenderEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onRender$Action(callContext);
+
+                    };
                 }
 
                 return this._onRenderEventHandler;
@@ -935,6 +1113,24 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
         var Controller = ControllerInner;
         // Server Actions - Variables
+        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetBDEnablePartnerAccount", [{
+            name: "EnablePartnerAccount",
+            attrName: "enablePartnerAccountOut",
+            mandatory: false,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return false;
+            }
+        }]);
+        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetEnableWhatsappBanner", [{
+            name: "EnableWhatsappBanner",
+            attrName: "enableWhatsappBannerOut",
+            mandatory: false,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return false;
+            }
+        }]);
 
         // Client Actions - Variables
         Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$getAuthTokenJSResult", [{
@@ -946,21 +1142,13 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                 return "";
             }
         }]);
-        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$growthBookFlagsVariablesJSResult", [{
-            name: "isCompleteMyProfileEnabledGB",
-            attrName: "isCompleteMyProfileEnabledGBOut",
+        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$parsePlatformURLJSResult", [{
+            name: "website_platform_url",
+            attrName: "website_platform_urlOut",
             mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Boolean,
+            dataType: OS.DataTypes.DataTypes.Text,
             defaultValue: function() {
-                return false;
-            }
-        }, {
-            name: "isCommissionPlansEnabled",
-            attrName: "isCommissionPlansEnabledOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Boolean,
-            defaultValue: function() {
-                return false;
+                return "";
             }
         }]);
 
@@ -970,17 +1158,22 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        $parameters.Token = localStorage.getItem('token')
+        const token = localStorage.getItem('token')
+
+        $parameters.Token = token
     };
 });
 
-define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GrowthBookFlagsVariablesJS", [], function() {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatformURLJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const isCompleteMyProfileEnabledGB = window.Analytics.Analytics.getFeatureValue("enable-dashboard-stepper");
-        const isCommissionPlansEnabled = window.Analytics.Analytics.getFeatureValue("enable-commission-plan");
+        const default_url = {
+            myaffiliates: 'https://login.deriv.com/signin.php?lang=0',
+            dynamicworks: 'https://partners.deriv.com/login?brd=1'
+        }
+        const platform_url_obj = $parameters.platform_url ? JSON.parse($parameters.platform_url) : default_url
+        const provider = $parameters.provider || 'myaffiliates'
 
-        $parameters.isCompleteMyProfileEnabledGB = isCompleteMyProfileEnabledGB ?? false
-        $parameters.isCommissionPlansEnabled = isCommissionPlansEnabled ?? false
+        $parameters.website_platform_url = platform_url_obj[provider]
     };
 });
 

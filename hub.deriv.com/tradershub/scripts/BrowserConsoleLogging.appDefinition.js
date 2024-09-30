@@ -20,8 +20,8 @@ define("BrowserConsoleLogging.appDefinition", ["@outsystems/runtime-core-js"], f
         isWeb: true,
         personalArea: null,
         showWatermark: false,
-        buildServiceVersion: "v17.1618.0.0",
-        clientRuntimeVersion: "6.12.0",
+        buildServiceVersion: "v17.1637.0.0",
+        clientRuntimeVersion: "6.13.2",
         useESM: false,
         appVersion: "1"
     };

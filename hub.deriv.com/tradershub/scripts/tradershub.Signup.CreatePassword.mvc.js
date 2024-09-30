@@ -15,6 +15,9 @@ define("tradershub.Signup.CreatePassword.mvc$model", ["@outsystems/runtime-core-
                     }, false),
                     this.attr("IsPasswordValid", "isPasswordValidVar", "IsPasswordValid", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
+                    }, false),
+                    this.attr("IsSubmitting", "isSubmittingVar", "IsSubmitting", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -970,7 +973,9 @@ define("tradershub.Signup.CreatePassword.mvc$controller", ["@outsystems/runtime-
                                 callContext = controller.callContext(callContext);
                                 return OS.Flow.executeAsyncFlow(function() {
                                     return OS.Flow.executeSequence(function() {
-                                        if ((model.variables.isPasswordValidVar)) {
+                                        if (((model.variables.isPasswordValidVar && !(model.variables.isSubmittingVar)))) {
+                                            // IsSubmitting = True
+                                            model.variables.isSubmittingVar = true;
                                             // Execute Action: CreateVirtualAccount
                                             return controller._createVirtualAccount$Action(model.variables.passwordVar, callContext);
                                         } else {

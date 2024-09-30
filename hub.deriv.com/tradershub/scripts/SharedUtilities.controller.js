@@ -30,8 +30,8 @@ define("SharedUtilities.controller$FormatMoney", ["exports", "@outsystems/runtim
 
                     try {
                         return controller.safeExecuteJSNode(SharedUtilities_controller_FormatMoney_FormatMoneyFnJS, "FormatMoneyFn", "FormatMoney", {
-                            DecimalPlaces: OS.DataConversion.JSNodeParamConverter.to(vars.value.decimalPlacesInLocal, OS.DataTypes.DataTypes.Integer),
-                            Number: OS.DataConversion.JSNodeParamConverter.to(vars.value.numberInLocal, OS.DataTypes.DataTypes.Integer),
+                            DecimalPlaces: OS.DataConversion.JSNodeParamConverter.to(vars.value.decimalPlacesInLocal, OS.DataTypes.DataTypes.Text),
+                            Number: OS.DataConversion.JSNodeParamConverter.to(vars.value.numberInLocal, OS.DataTypes.DataTypes.Text),
                             Locale: OS.DataConversion.JSNodeParamConverter.to(vars.value.localeInLocal, OS.DataTypes.DataTypes.Text),
                             Currency: OS.DataConversion.JSNodeParamConverter.to(vars.value.currencyInLocal, OS.DataTypes.DataTypes.Text),
                             FormattedNumber: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
@@ -65,9 +65,9 @@ define("SharedUtilities.controller$FormatMoney", ["exports", "@outsystems/runtim
         name: "Number",
         attrName: "numberInLocal",
         mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Integer,
+        dataType: OS.DataTypes.DataTypes.Text,
         defaultValue: function() {
-            return 0;
+            return "";
         }
     }, {
         name: "Currency",
@@ -89,9 +89,9 @@ define("SharedUtilities.controller$FormatMoney", ["exports", "@outsystems/runtim
         name: "DecimalPlaces",
         attrName: "decimalPlacesInLocal",
         mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Integer,
+        dataType: OS.DataTypes.DataTypes.Text,
         defaultValue: function() {
-            return 0;
+            return "";
         }
     }]);
     SharedUtilitiesController.default.constructor.registerVariableGroupType("SharedUtilities.FormatMoney$formatMoneyFnJSResult", [{
@@ -113,11 +113,11 @@ define("SharedUtilities.controller$FormatMoney", ["exports", "@outsystems/runtim
         }
     }]);
     SharedUtilitiesController.default.clientActionProxies.formatMoney$Action = function(numberIn, currencyIn, localeIn, decimalPlacesIn) {
-        numberIn = (numberIn === undefined) ? 0 : numberIn;
+        numberIn = (numberIn === undefined) ? "" : numberIn;
         currencyIn = (currencyIn === undefined) ? "USD" : currencyIn;
         localeIn = (localeIn === undefined) ? "en-US" : localeIn;
-        decimalPlacesIn = (decimalPlacesIn === undefined) ? 0 : decimalPlacesIn;
-        return controller.executeActionInsideJSNode(SharedUtilitiesController.default.formatMoney$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(numberIn, OS.DataTypes.DataTypes.Integer), OS.DataConversion.JSNodeParamConverter.from(currencyIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(localeIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(decimalPlacesIn, OS.DataTypes.DataTypes.Integer)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+        decimalPlacesIn = (decimalPlacesIn === undefined) ? "" : decimalPlacesIn;
+        return controller.executeActionInsideJSNode(SharedUtilitiesController.default.formatMoney$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(numberIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(currencyIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(localeIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(decimalPlacesIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {
                 FormattedNumber: OS.DataConversion.JSNodeParamConverter.to(actionResults.formattedNumberOut, OS.DataTypes.DataTypes.Text)
             };
@@ -317,14 +317,14 @@ define("SharedUtilities.controller$FormatMoney.FormatMoneyFnJS", [], function() 
         const FormatMoney = (number, currency, locale, decimalPlaces) => {
             try {
                 const currencyPrecision = precision[currency];
-                const fractionDigits = decimalPlaces || currencyPrecision;
+                const fractionDigits = Number(decimalPlaces) || currencyPrecision;
                 const formatter = new Intl.NumberFormat(locale, {
                     minimumFractionDigits: fractionDigits,
                     maximumFractionDigits: fractionDigits,
                 });
-                return formatter.format(number);
+                return formatter.format(Number(number));
             } catch (e) {
-                return number.toString();
+                return number;
             }
         };
 
@@ -547,6 +547,8 @@ define("SharedUtilities.controller$GetURL", ["exports", "@outsystems/runtime-cor
                 outVars.value.derivP2pProductionOut = generateURLJSResult.value.derivP2pProductionOut;
                 // DerivP2pStaging = GenerateURL.DerivP2pStaging
                 outVars.value.derivP2pStagingOut = generateURLJSResult.value.derivP2pStagingOut;
+                // DerivWhatsApp = "https://wa.me/35699578341"
+                outVars.value.derivWhatsAppOut = "https://wa.me/35699578341";
                 return outVars.value;
             } finally {
                 if (span) {
@@ -751,6 +753,14 @@ define("SharedUtilities.controller$GetURL", ["exports", "@outsystems/runtime-cor
         defaultValue: function() {
             return "";
         }
+    }, {
+        name: "DerivWhatsApp",
+        attrName: "derivWhatsAppOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
     }]);
     SharedUtilitiesController.default.clientActionProxies.getURL$Action = function() {
         return controller.executeActionInsideJSNode(SharedUtilitiesController.default.getURL$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
@@ -766,7 +776,8 @@ define("SharedUtilities.controller$GetURL", ["exports", "@outsystems/runtime-cor
                 SmartTraderProduction: OS.DataConversion.JSNodeParamConverter.to(actionResults.smartTraderProductionOut, OS.DataTypes.DataTypes.Text),
                 SmartTraderStaging: OS.DataConversion.JSNodeParamConverter.to(actionResults.smartTraderStagingOut, OS.DataTypes.DataTypes.Text),
                 DerivP2pProduction: OS.DataConversion.JSNodeParamConverter.to(actionResults.derivP2pProductionOut, OS.DataTypes.DataTypes.Text),
-                DerivP2pStaging: OS.DataConversion.JSNodeParamConverter.to(actionResults.derivP2pStagingOut, OS.DataTypes.DataTypes.Text)
+                DerivP2pStaging: OS.DataConversion.JSNodeParamConverter.to(actionResults.derivP2pStagingOut, OS.DataTypes.DataTypes.Text),
+                DerivWhatsApp: OS.DataConversion.JSNodeParamConverter.to(actionResults.derivWhatsAppOut, OS.DataTypes.DataTypes.Text)
             };
         });
     };

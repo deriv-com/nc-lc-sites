@@ -1,4 +1,4 @@
-define("PartnersHub.ForgotPassword.TokenExpired.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.DeviceLayout.mvc$model", "PartnersHub.Common.AlertBlock.mvc$model", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, PartnersHub_Layouts_DeviceLayout_mvcModel, PartnersHub_Common_AlertBlock_mvcModel, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel) {
+define("PartnersHub.ForgotPassword.TokenExpired.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.DeviceLayout.mvc$model", "PartnersHub.Common.AlertBlock.mvc$model", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, PartnersHub_Layouts_DeviceLayout_mvcModel, PartnersHub_Common_AlertBlock_mvcModel, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("PartnersHub.ForgotPassword.TokenExpired.mvc$model", ["@outsystems/runtim
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || PartnersHub_Layouts_DeviceLayout_mvcModel.hasValidationWidgets) || PartnersHub_Common_AlertBlock_mvcModel.hasValidationWidgets) || CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (((PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || PartnersHub_Layouts_DeviceLayout_mvcModel.hasValidationWidgets) || PartnersHub_Common_AlertBlock_mvcModel.hasValidationWidgets) || CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("PartnersHub.ForgotPassword.TokenExpired.mvc$model", ["@outsystems/runtim
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.ForgotPassword.TokenExpired.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.TokenExpired.mvc$model", "PartnersHub.ForgotPassword.TokenExpired.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "PartnersHub.Common.AlertBlock.mvc$view", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_TokenExpired_mvc_model, PartnersHub_ForgotPassword_TokenExpired_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_Common_AlertBlock_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
+define("PartnersHub.ForgotPassword.TokenExpired.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.TokenExpired.mvc$model", "PartnersHub.ForgotPassword.TokenExpired.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "PartnersHub.Common.AlertBlock.mvc$view", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_TokenExpired_mvc_model, PartnersHub_ForgotPassword_TokenExpired_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_Common_AlertBlock_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("PartnersHub.ForgotPassword.TokenExpired.mvc$view", ["@outsystems/runtime
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_Common_AlertBlock_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_Common_AlertBlock_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
         }
 
         get modelFactory() {
@@ -235,7 +235,7 @@ define("PartnersHub.ForgotPassword.TokenExpired.mvc$view", ["@outsystems/runtime
                                 }),
                                 tabletContent: PlaceholderContent.Empty,
                                 mobileContent: new PlaceholderContent(function() {
-                                    return [React.createElement(CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
+                                    return [React.createElement(CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
                                         getOwnerSpan: function() {
                                             return _this.getChildSpan("render");
                                         },

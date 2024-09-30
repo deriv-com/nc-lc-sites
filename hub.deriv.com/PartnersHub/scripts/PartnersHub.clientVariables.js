@@ -14,6 +14,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("SignupEmail", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getWebsiteStatusResponse() {
+            return clientVarsService.getVariable("WebsiteStatusResponse", "PartnersHub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setWebsiteStatusResponse(value) {
+            return clientVarsService.setVariable("WebsiteStatusResponse", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
+        }
+
         getIsCountryUnavailable() {
             return clientVarsService.getVariable("IsCountryUnavailable", "PartnersHub", OS.DataTypes.DataTypes.Boolean, true);
         }
@@ -68,6 +76,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setIsMobile(value) {
             return clientVarsService.setVariable("IsMobile", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
+        getisCommisionsPlansEnabledFF() {
+            return clientVarsService.getVariable("isCommisionsPlansEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setisCommisionsPlansEnabledFF(value) {
+            return clientVarsService.setVariable("isCommisionsPlansEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
         getRealSignupIDVDocumentName() {
@@ -214,12 +230,12 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("RealSignupPostalZip", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
-        getisCompleteMyProfileEnabled() {
-            return clientVarsService.getVariable("isCompleteMyProfileEnabled", "PartnersHub", OS.DataTypes.DataTypes.Boolean, false);
+        getisCompleteMyProfileEnabledFF() {
+            return clientVarsService.getVariable("isCompleteMyProfileEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, false);
         }
 
-        setisCompleteMyProfileEnabled(value) {
-            return clientVarsService.setVariable("isCompleteMyProfileEnabled", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        setisCompleteMyProfileEnabledFF(value) {
+            return clientVarsService.setVariable("isCompleteMyProfileEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
         getisIDVMobileDocumentNumberContainerVisible() {
@@ -409,6 +425,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
         serialize() {
             return {
                 SignupEmail: OS.DataConversion.ServerDataConverter.to(this.getSignupEmail(), OS.DataTypes.DataTypes.Text),
+                WebsiteStatusResponse: OS.DataConversion.ServerDataConverter.to(this.getWebsiteStatusResponse(), OS.DataTypes.DataTypes.Text),
                 IsCountryUnavailable: OS.DataConversion.ServerDataConverter.to(this.getIsCountryUnavailable(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupFirstName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupFirstName(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddress: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddress(), OS.DataTypes.DataTypes.Text),
@@ -416,6 +433,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 RealSignupCurrentStep: OS.DataConversion.ServerDataConverter.to(this.getRealSignupCurrentStep(), OS.DataTypes.DataTypes.Integer),
                 RealSignupLastName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupLastName(), OS.DataTypes.DataTypes.Text),
                 IsMobile: OS.DataConversion.ServerDataConverter.to(this.getIsMobile(), OS.DataTypes.DataTypes.Boolean),
+                isCommisionsPlansEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisCommisionsPlansEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupIDVDocumentName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVDocumentName(), OS.DataTypes.DataTypes.Text),
                 StagingHostName: OS.DataConversion.ServerDataConverter.to(this.getStagingHostName(), OS.DataTypes.DataTypes.Text),
                 InitialGetSettingsEmail: OS.DataConversion.ServerDataConverter.to(this.getInitialGetSettingsEmail(), OS.DataTypes.DataTypes.Text),
@@ -434,7 +452,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 RealSignupIDVAdditionalDocumentNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVAdditionalDocumentNumber(), OS.DataTypes.DataTypes.Text),
                 Code: OS.DataConversion.ServerDataConverter.to(this.getCode(), OS.DataTypes.DataTypes.Text),
                 RealSignupPostalZip: OS.DataConversion.ServerDataConverter.to(this.getRealSignupPostalZip(), OS.DataTypes.DataTypes.Text),
-                isCompleteMyProfileEnabled: OS.DataConversion.ServerDataConverter.to(this.getisCompleteMyProfileEnabled(), OS.DataTypes.DataTypes.Boolean),
+                isCompleteMyProfileEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisCompleteMyProfileEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 isIDVMobileDocumentNumberContainerVisible: OS.DataConversion.ServerDataConverter.to(this.getisIDVMobileDocumentNumberContainerVisible(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupStateProvince: OS.DataConversion.ServerDataConverter.to(this.getRealSignupStateProvince(), OS.DataTypes.DataTypes.Text),
                 CurrentStepperPage: OS.DataConversion.ServerDataConverter.to(this.getCurrentStepperPage(), OS.DataTypes.DataTypes.Integer),

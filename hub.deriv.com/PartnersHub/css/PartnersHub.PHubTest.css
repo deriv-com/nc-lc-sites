@@ -135,3 +135,33 @@ background: var(--core-color-solid-slate-50, #FFF);
   background-color: #F8F9FA;
 }
 
+.phone .table:not(.table-no-responsive) td:before, .tablet .table:not(.table-no-responsive) td:before {
+    display: none;
+}
+
+.phone .table:not(.table-no-responsive) tr, .tablet .table:not(.table-no-responsive) tr  {
+    display: flex;
+}
+
+.phone .table:not(.table-no-responsive) thead, .tablet .table:not(.table-no-responsive) thead {
+    display: block;
+}
+
+.phone .table:not(.table-no-responsive) td, .tablet .table:not(.table-no-responsive) td {
+    justify-content: center;
+    align-items: center;
+}
+
+.phone .table-header th, .tablet .table-header th {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-header {
+    font-size: 12px;
+}
+.desktop .table-header {
+    font-size: 14px;
+}
+

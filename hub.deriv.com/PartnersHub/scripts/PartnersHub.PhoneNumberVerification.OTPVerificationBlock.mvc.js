@@ -79,7 +79,7 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$model", ["@
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.Input.ControlledInput.mvc$view", "PartnersHub.model$ST_1b66e77b43cfa957e304643e93df7a64Structure", "PartnersHub.controller$SendPhoneNumberVerify"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_Input_ControlledInput_mvc_view) {
+define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.Input.ControlledInput.mvc$view", "PartnersHub.model$ST_1b66e77b43cfa957e304643e93df7a64Structure", "PartnersHub.controller$SendPhoneNumberVerify"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_Input_ControlledInput_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -110,7 +110,7 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$view", ["@o
         }
 
         static getBlocks() {
-            return [CustomComponents_Input_ControlledInput_mvc_view];
+            return [CustomComponentsOfficial_Input_ControlledInput_mvc_view];
         }
 
         get modelFactory() {
@@ -200,7 +200,7 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$view", ["@o
                     uuid: "4"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_Input_ControlledInput_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_Input_ControlledInput_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -288,7 +288,7 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$view", ["@o
                 },
                 isDefault: true,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("Form1"));
+                    _this.validateWidget(idService.getId("Form1"));
                     return Promise.resolve().then(function() {
                         var eventHandlerContext = callContext.clone();
                         return controller.onClickVerifyImpl$Action(controller.callContext(eventHandlerContext));

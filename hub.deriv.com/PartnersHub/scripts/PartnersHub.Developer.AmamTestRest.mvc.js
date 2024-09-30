@@ -590,15 +590,14 @@ define("PartnersHub.Developer.AmamTestRest.mvc$controller", ["@outsystems/runtim
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }

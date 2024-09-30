@@ -23,3 +23,7 @@
 .desktop .personal-details-section__mobile {
     display: none;
 }
+
+.flatpickr-calendar:not(.open) {
+    display: none;
+}

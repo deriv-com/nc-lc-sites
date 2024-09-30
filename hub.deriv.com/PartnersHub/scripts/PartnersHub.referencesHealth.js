@@ -10,8 +10,8 @@ define("PartnersHub.referencesHealth$CommonPlugin", [], function() {
     // Reference to producer 'CommonPlugin' is OK.
 });
 
-define("PartnersHub.referencesHealth$CustomComponents", [], function() {
-    // Reference to producer 'CustomComponents' is OK.
+define("PartnersHub.referencesHealth$CustomComponentsOfficial", [], function() {
+    // Reference to producer 'CustomComponentsOfficial' is OK.
 });
 
 define("PartnersHub.referencesHealth$DerivLogger", [], function() {

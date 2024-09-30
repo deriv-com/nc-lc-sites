@@ -91,7 +91,7 @@
 
 .phone .hide-mobile,
 .tablet .hide-mobile {
-    display: none;
+    display: flex;
 }
 
 .trustpilot-text {
@@ -101,4 +101,8 @@
 .phone .trustpilot-text,
 .tablet .trustpilot-text {
     margin-left: 24px;
+}
+
+.rating-item {
+    width: 24px !important;
 }

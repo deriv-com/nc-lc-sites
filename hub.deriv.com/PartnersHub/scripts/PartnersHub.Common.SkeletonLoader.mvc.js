@@ -6,7 +6,20 @@ define("PartnersHub.Common.SkeletonLoader.mvc$model", ["@outsystems/runtime-core
         class VariablesRecordInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
-                return [].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+                return [
+                    this.attr("IsLoading", "isLoadingIn", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("ClassName", "classNameIn", "ClassName", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("_classNameInDataFetchStatus", "_classNameInDataFetchStatus", "_classNameInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
         }
@@ -23,7 +36,7 @@ define("PartnersHub.Common.SkeletonLoader.mvc$model", ["@outsystems/runtime-core
     }
 
     class Model extends
-    OS.Model.VariablelessViewModel {
+    OS.Model.BaseViewModel {
         static getVariablesRecordConstructor() {
             return VariablesRecord;
         }
@@ -35,7 +48,24 @@ define("PartnersHub.Common.SkeletonLoader.mvc$model", ["@outsystems/runtime-core
         static get hasValidationWidgets() {
             return false;
         }
-        setInputs(inputs) {}
+        setInputs(inputs) {
+            if ("IsLoading" in inputs) {
+                this.variables.isLoadingIn = inputs.IsLoading;
+                if ("_isLoadingInDataFetchStatus" in inputs) {
+                    this.variables._isLoadingInDataFetchStatus = inputs._isLoadingInDataFetchStatus;
+                }
+
+            }
+
+            if ("ClassName" in inputs) {
+                this.variables.classNameIn = inputs.ClassName;
+                if ("_classNameInDataFetchStatus" in inputs) {
+                    this.variables._classNameInDataFetchStatus = inputs._classNameInDataFetchStatus;
+                }
+
+            }
+
+        }
 
     }
 
@@ -104,16 +134,30 @@ define("PartnersHub.Common.SkeletonLoader.mvc$view", ["@outsystems/runtime-core-
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                style: "skeleton-loader",
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    uuid: "0"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
+            return React.createElement("div", this.getRootNodeProperties(), $if(model.variables.isLoadingIn, false, this, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "skeleton-loader",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "0"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }, function() {
+                return [React.createElement(OSWidgets.Placeholder, {
+                    align: /*Default*/ 0,
+                    content: _this.props.placeholders.content,
+                    style: model.variables.classNameIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Content"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    style_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._classNameInDataFetchStatus)
+                })];
             }));
         }
     }

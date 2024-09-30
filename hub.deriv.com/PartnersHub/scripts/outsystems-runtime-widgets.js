@@ -2645,6 +2645,6 @@
         }
     };
     Nt.Capture = "capture", _exports.Upload = Nt = Ot = w([_runtimeViewJs.Widget.WidgetSpec], Nt);
-    const Ht = _exports.Version = "6.3.4";
+    const Ht = _exports.Version = "6.3.5";
     _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-widgets", Ht);
 });

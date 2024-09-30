@@ -93,7 +93,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$model", [
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_0be4704c381e15995202804b221a5e3aStructure", "PartnersHub.controller$NextStepReal", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$UseDevice", "PartnersHub.model$RC_4535b2a68fa04382d8868d60004b6438", "PartnersHub.model$RL_117c7b7da327962152f7a4113c25ca3f"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_model, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_0be4704c381e15995202804b221a5e3aStructure", "PartnersHub.controller$NextStepReal", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$UseDevice", "PartnersHub.model$RC_4535b2a68fa04382d8868d60004b6438", "PartnersHub.model$RL_117c7b7da327962152f7a4113c25ca3f"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_model, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -124,7 +124,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$view", ["
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -469,7 +469,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$view", ["
                     uuid: "22"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

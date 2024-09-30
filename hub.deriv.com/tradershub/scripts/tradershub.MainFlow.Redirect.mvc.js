@@ -274,8 +274,8 @@ define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "reset-password", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 } else {
                                     if ((((getURLParamsJSResult.value.tokenOut) !== ("")))) {
-                                        // Destination: /tradershub/HomeScreen
-                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "home", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                        // Destination: /tradershub/Options
+                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                     } else {
                                         // AuthToken = NullTextIdentifier
                                         tradershubClientVariables.setAuthToken(OS.BuiltinFunctions.nullTextIdentifier());

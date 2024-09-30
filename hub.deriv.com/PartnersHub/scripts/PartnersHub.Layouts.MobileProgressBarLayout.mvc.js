@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.Numbers.ProgressBar.mvc$model", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model", "CustomComponents.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_Numbers_ProgressBar_mvcModel, CustomComponents_ButtonVariants_PrimaryButton_mvcModel, CustomComponents_ButtonVariants_SecondaryButton_mvcModel) {
+define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.Numbers.ProgressBar.mvc$model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_Numbers_ProgressBar_mvcModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -44,7 +44,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", ["@outsystems/ru
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = ((OutSystemsUI_Numbers_ProgressBar_mvcModel.hasValidationWidgets || CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets) || CustomComponents_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((OutSystemsUI_Numbers_ProgressBar_mvcModel.hasValidationWidgets || CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets) || CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -66,7 +66,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", ["@outsystems/ru
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Numbers.ProgressBar.mvc$view", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "CustomComponents.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_MobileProgressBarLayout_mvc_model, PartnersHub_Layouts_MobileProgressBarLayout_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Numbers_ProgressBar_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view) {
+define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$model", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Numbers.ProgressBar.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_MobileProgressBarLayout_mvc_model, PartnersHub_Layouts_MobileProgressBarLayout_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Numbers_ProgressBar_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -97,7 +97,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$view", ["@outsystems/run
         }
 
         static getBlocks() {
-            return [OutSystemsUI_Numbers_ProgressBar_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view];
+            return [OutSystemsUI_Numbers_ProgressBar_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -382,7 +382,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$view", ["@outsystems/run
                     uuid: "16"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -416,7 +416,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$view", ["@outsystems/run
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 _dependencies: []
-            }), React.createElement(CustomComponents_ButtonVariants_SecondaryButton_mvc_view, {
+            }), React.createElement(CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

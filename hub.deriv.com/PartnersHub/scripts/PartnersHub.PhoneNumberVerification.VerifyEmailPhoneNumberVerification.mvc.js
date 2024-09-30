@@ -70,7 +70,7 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$model", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_model, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$model", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_model, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -101,7 +101,7 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -277,7 +277,7 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
                     uuid: "10"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

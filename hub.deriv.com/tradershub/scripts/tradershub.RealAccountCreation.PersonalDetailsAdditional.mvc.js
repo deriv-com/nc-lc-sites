@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel, tradershubController) {
+define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel) {
     var OS = OSRuntimeCore; {
         class GetAccountPurposesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -82,7 +82,7 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$model", ["@
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$model", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_model, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, OutSystemsUI_Interaction_InputWithIcon_mvc_view, tradershub_Common_CountryOfTaxResidenceSelector_mvc_view) {
+define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$model", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_model, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, OutSystemsUI_Interaction_InputWithIcon_mvc_view, tradershub_Common_CountryOfTaxResidenceSelector_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -704,7 +704,7 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$view", ["@o
 
     return View;
 });
-define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_ValidateJS) {
+define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_f196b2bf03fb028fc7e9ccfdf5bcd25fStructure", "tradershub.model$ST_330a68ea16ade2addf77a21e8231421fStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_ValidateJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -835,12 +835,20 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller"
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreation.PersonalDetailsAdditional.DropdownSearchOnChanged$vars"))());
                                 vars.value.selectedOptionListInLocal = selectedOptionListIn.clone();
+                                var listFilterVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: ListFilter
+                                listFilterVar.value = OS.SystemActions.listFilter(model.variables.residenceListVar, function(p) {
+                                    return (p.valueAttr === vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr);
+                                }, callContext);
+
                                 // SelectedPlaceOfBirth_Mobile = SelectedOptionList.Current.Label
                                 model.variables.selectedPlaceOfBirth_MobileVar = vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).labelAttr;
                                 // IsCountrySelectorPopupOpen = False
                                 model.variables.isCountrySelectorPopupOpenVar = false;
                                 // RealSignupPlaceOfBirth = SelectedOptionList.Current.Value
                                 tradershubClientVariables.setRealSignupPlaceOfBirth(vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr);
+                                // RealSignupPhone = If
+                                tradershubClientVariables.setRealSignupPhone((((OS.BuiltinFunctions.length(tradershubClientVariables.getRealSignupPhone()) > 1)) ? (tradershubClientVariables.getRealSignupPhone()) : (("+" + listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).phone_iddAttr))));
                             } finally {
                                 if (span) {
                                     span.end();
@@ -997,19 +1005,8 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller"
                             try {
                                 controller.ensureControllerAlive("OnInitialize");
                                 callContext = controller.callContext(callContext);
-                                var featureFlagValueByNameVar = new OS.DataTypes.VariableHolder();
-                                // Execute Action: FeatureFlagValueByName
-                                featureFlagValueByNameVar.value = tradershubController.default.featureFlagValueByName$Action("AddtionalPersonalDetails", callContext);
-
-                                // Check if FeatureFlagValueByName IsEnabled
-                                if (((featureFlagValueByNameVar.value.isEnabledOut === true))) {
-                                    // RealSignupCurrentStep = 2
-                                    tradershubClientVariables.setRealSignupCurrentStep(2);
-                                } else {
-                                    // Destination: /tradershub/signup
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "signup", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                }
-
+                                // RealSignupCurrentStep = 2
+                                tradershubClientVariables.setRealSignupCurrentStep(2);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1139,12 +1136,20 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller"
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreation.PersonalDetailsAdditional.PlaceofBirthSelectorOnClickCountry$vars"))());
                                 vars.value.placeValueInLocal = placeValueIn;
                                 vars.value.labelInLocal = labelIn;
+                                var listFilterVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: ListFilter
+                                listFilterVar.value = OS.SystemActions.listFilter(model.variables.residenceListVar, function(p) {
+                                    return (p.valueAttr === vars.value.placeValueInLocal);
+                                }, callContext);
+
                                 // SelectedPlaceOfBirth_Mobile = Label
                                 model.variables.selectedPlaceOfBirth_MobileVar = vars.value.labelInLocal;
                                 // IsCountrySelectorPopupOpen = False
                                 model.variables.isCountrySelectorPopupOpenVar = false;
                                 // RealSignupPlaceOfBirth = PlaceValue
                                 tradershubClientVariables.setRealSignupPlaceOfBirth(vars.value.placeValueInLocal);
+                                // RealSignupPhone = If
+                                tradershubClientVariables.setRealSignupPhone((((OS.BuiltinFunctions.length(tradershubClientVariables.getRealSignupPhone()) > 1)) ? (tradershubClientVariables.getRealSignupPhone()) : (("+" + listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).phone_iddAttr))));
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1510,7 +1515,7 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.
             payload.AccountOpeningReason = $parameters.AccountOpeningReason
         }
 
-        const phoneNumberRegex = /^\+\d{1,15}$/;
+        const phoneNumberRegex = /^\+\d{9,20}$/;
 
         const validationSchema = yup.object().shape({
             PlaceOfBirth: yup.string()
@@ -1518,10 +1523,7 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.
             Phone: yup.string()
                 .trim()
                 .required('Phone number is required.')
-                .noConsecutiveSpaces('Phone number must not contain consecutive spaces.')
-                .min(10, 'You should enter 9-16 digits.')
-                .max(16, 'You should enter 9-16 digits.')
-                .matches(phoneNumberRegex, 'Phone number is not in valid format.')
+                .matches(phoneNumberRegex, "Enter 9-20 digits, starting with '+'.")
         });
 
         const validationSchemaAccountOpeningReason = yup.object().shape({

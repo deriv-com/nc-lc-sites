@@ -28,3 +28,11 @@
 [data-label].mandatory:after {
     content: none;
 }
+
+.ThemeGrid_MarginGutter {
+    margin-left: 0 !important;
+}
+
+.osui-btn-loading {
+    width: 100%;
+}

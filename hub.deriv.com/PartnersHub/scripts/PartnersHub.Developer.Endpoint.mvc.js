@@ -349,7 +349,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                             enabled: true,
                             isDefault: false,
                             onClick: function() {
-                                controller.validationService.validateWidget(idService.getId("Form1"));
+                                _this.validateWidget(idService.getId("Form1"));
                                 var eventHandlerContext = callContext.clone();
                                 controller.buttonOnClick$Action(controller.callContext(eventHandlerContext));
 
@@ -719,15 +719,14 @@ define("PartnersHub.Developer.Endpoint.mvc$controller", ["@outsystems/runtime-co
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }

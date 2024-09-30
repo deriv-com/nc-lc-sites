@@ -457,7 +457,7 @@ define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$view", ["@outsyst
                 enabled: true,
                 isDefault: true,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("Form1"));
+                    _this.validateWidget(idService.getId("Form1"));
                     var eventHandlerContext = callContext.clone();
                     controller.saveOnClick$Action(controller.callContext(eventHandlerContext));
 

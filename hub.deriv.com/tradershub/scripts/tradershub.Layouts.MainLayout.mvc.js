@@ -1,4 +1,4 @@
-define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
+define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -77,7 +77,7 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Navigation.BottomBarItem.mvc$view", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
+define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Navigation.BottomBarItem.mvc$view", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -455,6 +455,9 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 return [React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
+                    extendedProperties: {
+                        style: "height: 100%;"
+                    },
                     style: "content-wrapper",
                     visible: true,
                     _idProps: {
@@ -466,7 +469,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     align: /*Default*/ 0,
                     content: _this.props.placeholders.content,
                     extendedProperties: {
-                        style: "margin: 0;"
+                        style: "height: 100%; margin: 0;"
                     },
                     gridProperties: {
                         classes: "ThemeGrid_Width10"
@@ -871,7 +874,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
+define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -964,47 +967,6 @@ define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-cor
                 this.__onReady$Action = value;
             }
 
-            get _onInitialize$Action() {
-                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
-                    this.__onInitialize$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "56d44608-19eb-40f6-8188-f9fea9ffad9e");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnInitialize");
-                                callContext = controller.callContext(callContext);
-                                var addFaviconVar = new OS.DataTypes.VariableHolder();
-                                // Execute Action: AddFavicon
-                                addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("/tradershub/favicon.png", callContext);
-
-                                // Execute Action: InitizalizeDerivApi
-                                tradershubController.default.initizalizeDerivApi$Action(callContext);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onInitialize$Action;
-            }
-            set _onInitialize$Action(value) {
-                this.__onInitialize$Action = value;
-            }
-
 
             onReady$Action(callContext) {
                 var controller = this.controller;
@@ -1029,42 +991,11 @@ define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-cor
 
             }
 
-            onInitialize$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "56d44608-19eb-40f6-8188-f9fea9ffad9e");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
 
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onInitialize$Action(callContext);
-
-                    };
+                    this._onInitializeEventHandler = null;
                 }
 
                 return this._onInitializeEventHandler;

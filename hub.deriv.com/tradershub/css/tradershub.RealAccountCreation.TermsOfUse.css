@@ -39,19 +39,19 @@ div[data-radio-button] {
     width: 100%;
 }
 
-.tablet .popup-dialog,
-.desktop .popup-dialog {
+.tablet .popup_account-already-exists,
+.desktop .popup_account-already-exists {
     max-width: 446px !important;
 }
 
-.phone .popup-dialog {
+.phone .popup_account-already-exists {
     max-width: 100% !important;
     margin: 0;
     height: 100%;
     max-height: 100%;
 }
 
-.phone .popup-content {
+.phone .popup_account-already-exists .popup-content {
     height: 100%;
 }
 

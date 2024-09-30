@@ -1,4 +1,4 @@
-define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.DeviceLayout.mvc$model", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$model", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, PartnersHub_Layouts_DeviceLayout_mvcModel, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvcModel, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel) {
+define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.DeviceLayout.mvc$model", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$model", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, PartnersHub_Layouts_DeviceLayout_mvcModel, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvcModel, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", ["@outsyste
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || PartnersHub_Layouts_DeviceLayout_mvcModel.hasValidationWidgets) || PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvcModel.hasValidationWidgets) || CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (((PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || PartnersHub_Layouts_DeviceLayout_mvcModel.hasValidationWidgets) || PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvcModel.hasValidationWidgets) || CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", ["@outsyste
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", "PartnersHub.ForgotPassword.VerificationEmailSent.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$view", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_VerificationEmailSent_mvc_model, PartnersHub_ForgotPassword_VerificationEmailSent_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
+define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.VerificationEmailSent.mvc$model", "PartnersHub.ForgotPassword.VerificationEmailSent.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$view", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_VerificationEmailSent_mvc_model, PartnersHub_ForgotPassword_VerificationEmailSent_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$view", ["@outsystem
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
         }
 
         get modelFactory() {
@@ -224,7 +224,7 @@ define("PartnersHub.ForgotPassword.VerificationEmailSent.mvc$view", ["@outsystem
                                 }),
                                 tabletContent: PlaceholderContent.Empty,
                                 mobileContent: new PlaceholderContent(function() {
-                                    return [React.createElement(CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
+                                    return [React.createElement(CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
                                         getOwnerSpan: function() {
                                             return _this.getChildSpan("render");
                                         },

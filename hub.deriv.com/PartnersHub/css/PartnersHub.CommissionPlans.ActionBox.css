@@ -1,0 +1,35 @@
+﻿.action-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid var(--Neutral-Neutral-4, #DEE2E6);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+.action-box:hover {
+    border-color: #CACED2;
+}
+.desktop .action-box {
+    height: 64px;
+}
+
+.action-box-container {
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+}
+.desktop .action-box-container {
+    gap: 16px;
+}
+.desktop .three-column-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+.desktop .two-column-container {
+    grid-template-columns: repeat(2, 1fr);
+}

@@ -4290,10 +4290,8 @@
             let c = !!t || void 0;
             Object.defineProperty(a.current, "valid", {
                 configurable: !0,
-                get: function() {
-                    return c;
-                },
-                set: function(e) {
+                get: () => c,
+                set(e) {
                     c = void 0 === e || e;
                 }
             }), !l.current && i && i.register(a.current), (0, _react.useEffect)(() => (l.current = !0, () => {
@@ -4742,51 +4740,19 @@
             });
         }
     });
-    const Wr = _ref15 => {
-            let {
-                errorMessage: e,
-                extraErrorMessage: t
-            } = _ref15;
-            return (0, _react.useEffect)(() => {
-                const n = e || (() => {
-                        const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
-                        return (null == e ? void 0 : e.messages.defaultMessage) || "There was an error processing your request.";
-                    })(),
-                    r = t || (() => {
-                        const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
-                        return (null == e ? void 0 : e.extraMessage) || "";
-                    })();
-                _runtimeCoreJs.ErrorHandling.navigateToErrorPage(void 0, n, r);
-            }, []), ge.jsx("div", {});
-        },
-        Fr = () => {
-            const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
-                t = (null == e ? void 0 : e.messages.noDefaultScreen) || "This application does not contain a default entry.";
-            return ge.jsx(Wr, {
-                errorMessage: t
-            });
-        },
-        Ur = e => {
-            const t = `Screen not found: ${e.location.pathname || "(none)"}`,
-                n = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
-                r = (null == n ? void 0 : n.messages.screenNotFound) || t;
-            return ge.jsx(Wr, {
-                errorMessage: r
-            });
-        },
-        _r = e => {
-            const {
-                component: t,
-                onEnter: n,
-                onLeave: r
-            } = e;
-            return (0, _react.useEffect)(() => (n && n(), () => {
-                r && r();
-            }), []), t ? (0, _react.createElement)(t, e) : null;
-        };
-    let Hr = [];
+    const Wr = e => {
+        const {
+            component: t,
+            onEnter: n,
+            onLeave: r
+        } = e;
+        return (0, _react.useEffect)(() => (n && n(), () => {
+            r && r();
+        }), []), t ? (0, _react.createElement)(t, e) : null;
+    };
+    let Fr = [];
 
-    function Vr() {
+    function Ur() {
         const e = {
             width: window.innerWidth || document.documentElement.clientWidth,
             height: window.innerHeight || document.documentElement.clientHeight
@@ -4800,13 +4766,13 @@
         }
         return t = e.width > e.height ? "landscape" : "portrait", [n, t];
     }
-    let zr = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider) || Vr;
+    let _r = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider) || Ur;
 
-    function Br() {
-        Hr.forEach(e => document.body.classList.remove(e)), Hr = zr(), Hr.forEach(e => document.body.classList.add(e));
+    function Hr() {
+        Fr.forEach(e => document.body.classList.remove(e)), Fr = _r(), Fr.forEach(e => document.body.classList.add(e));
     }
 
-    function $r(n) {
+    function Vr(n) {
         let r = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _runtimeCoreJs.Navigation.hasPendingReload;
         if (mt(!1), n.isShowingSplashScreen || r()) return;
         const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(_runtimeCoreJs.Navigation.getCurrentLocation().href);
@@ -4814,20 +4780,20 @@
         const i = _runtimeCoreJs.Application.ApplicationStorage.pendingUpgradeFeedback.get();
         i && (n.showUpgradeFeedback(i), _runtimeCoreJs.Application.ApplicationStorage.pendingUpgradeFeedback.remove());
     }
-    _runtimeCoreJs.Injector.addRegistrationListener(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider, (e, t) => zr = t || Vr);
-    const Gr = (0, _react.createContext)(!0);
-    let Kr = null;
+    _runtimeCoreJs.Injector.addRegistrationListener(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider, (e, t) => _r = t || Ur);
+    const zr = (0, _react.createContext)(!0);
+    let Br = null;
 
-    function qr(e) {
-        Kr = e;
+    function $r(e) {
+        Br = e;
     }
-    const Jr = _ref16 => {
+    const Gr = _ref15 => {
         let {
             runtime: e,
             screenLoader: t,
             children: n,
             onBeforeNavigate: r
-        } = _ref16;
+        } = _ref15;
         var i, s;
         const a = (0, _v6ReactRouterDom.useLocation)(),
             l = (0, _v6ReactRouterDom.useNavigate)(),
@@ -4849,11 +4815,11 @@
                 } catch (e) {}
                 return !1;
             }),
-            x = (0, _v6ReactRouterDom.useBlocker)(_ref17 => {
+            x = (0, _v6ReactRouterDom.useBlocker)(_ref16 => {
                 let {
                     nextLocation: t,
                     historyAction: n
-                } = _ref17;
+                } = _ref16;
                 return r(e, t, n) && (C.current = e => b(t, n).then(t => {
                     var n, r;
                     return t ? null === (n = e.proceed) || void 0 === n ? void 0 : n.call(e) : null === (r = e.reset) || void 0 === r ? void 0 : r.call(e);
@@ -4861,7 +4827,7 @@
             }),
             N = () => {
                 setTimeout(() => {
-                    Br();
+                    Hr();
                 }, 300);
             },
             O = () => {
@@ -4871,17 +4837,17 @@
                     });
                 });
             };
-        if (w.current || (Br(), window.addEventListener(E, N, !1)), (0, _react.useEffect)(() => (w.current = !0, v || O(), $r(e), () => {
+        if (w.current || (Hr(), window.addEventListener(E, N, !1)), (0, _react.useEffect)(() => (w.current = !0, v || O(), Vr(e), () => {
                 window.removeEventListener(E, N);
             }), []), (0, _react.useEffect)(() => {
-                w.current && (O(), $r(e));
+                w.current && (O(), Vr(e));
             }), (0, _react.useEffect)(() => {
                 var e;
                 "blocked" === x.state && (null === (e = C.current) || void 0 === e || e.call(C, x));
             }, [x]), (0, _react.useEffect)(() => {
                 const e = ((e, t, n) => {
                     var r;
-                    return Kr ? _runtimeCoreJs.Transitions.sanitizeTransition(Kr) : _runtimeCoreJs.Navigation.locationReachedFromHistory(Object.assign({
+                    return Br ? _runtimeCoreJs.Transitions.sanitizeTransition(Br) : _runtimeCoreJs.Navigation.locationReachedFromHistory(Object.assign({
                         action: e
                     }, t)) ? _runtimeCoreJs.Transitions.reverseTransition(_runtimeCoreJs.Transitions.sanitizeTransition(n)) : (null === (r = t.state) || void 0 === r ? void 0 : r.transition) ? _runtimeCoreJs.Transitions.sanitizeTransition(t.state.transition) : new _runtimeCoreJs.Transitions.Transition("");
                 })(c, a, h);
@@ -4890,7 +4856,7 @@
             e && S(!1);
         }), null;
         const R = hn(h.name);
-        return ge.jsx(Gr.Provider, {
+        return ge.jsx(zr.Provider, {
             value: d,
             children: ge.jsx(Be, {
                 component: "div",
@@ -4918,14 +4884,14 @@
             })
         });
     };
-    class Qr {
+    class Kr {
         constructor(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : qr;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $r;
             this.navigate = e, this.currentRuntime = t, this.setTransition = n;
         }
         static urlToLocationDescriptor(e, t) {
             return [{
-                pathname: e.path,
+                pathname: e.path.replace(/\/$/, ""),
                 search: nn.stringify(e.queryParams),
                 hash: e.hash ? "#" + e.hash : ""
             }, {
@@ -4934,22 +4900,18 @@
         }
         push(e, t) {
             this.navigate(e, {
-                state: {
-                    user: t
-                }
+                state: t
             });
         }
         replace(e, t) {
             this.navigate(e, {
-                state: {
-                    user: t
-                },
+                state: t,
                 replace: !0
             });
         }
         goTo(e, t, n) {
             var r;
-            const [o, i] = Qr.urlToLocationDescriptor(e, t);
+            const [o, i] = Kr.urlToLocationDescriptor(e, t);
             n || (null === (r = this.currentRuntime) || void 0 === r ? void 0 : r.isShowingSplashScreen) ? this.replace(o, i) : this.push(o, i);
         }
         goBack(e) {
@@ -4960,16 +4922,49 @@
         }
         dispose(e) {}
     }
-    class Xr extends Qr {
+    class qr extends Kr {
         constructor(e, t) {
             super(e, t);
         }
         goTo(e, t) {
-            const [n, r] = Qr.urlToLocationDescriptor(e, t);
+            const [n, r] = Kr.urlToLocationDescriptor(e, t);
             this.push(n, r);
         }
     }
-    const Yr = (e, t) => {
+    const Jr = _ref17 => {
+            let {
+                errorMessage: e,
+                extraErrorMessage: t
+            } = _ref17;
+            return (0, _react.useEffect)(() => {
+                const n = e || (() => {
+                        const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
+                        return (null == e ? void 0 : e.messages.defaultMessage) || "There was an error processing your request.";
+                    })(),
+                    r = t || (() => {
+                        const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
+                        return (null == e ? void 0 : e.extraMessage) || "";
+                    })();
+                _runtimeCoreJs.ErrorHandling.navigateToErrorPage(void 0, n, r);
+            }, []), ge.jsx("div", {});
+        },
+        Qr = () => {
+            const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
+                t = (null == e ? void 0 : e.messages.noDefaultScreen) || "This application does not contain a default entry.";
+            return ge.jsx(Jr, {
+                errorMessage: t
+            });
+        },
+        Xr = () => {
+            var e;
+            const t = `Screen not found: ${(0, _v6ReactRouterDom.useLocation)().pathname || "(none)"}`,
+                n = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
+                r = (null === (e = null == n ? void 0 : n.messages) || void 0 === e ? void 0 : e.screenNotFound) || t;
+            return ge.jsx(Jr, {
+                errorMessage: r
+            });
+        },
+        Yr = (e, t) => {
             const n = {},
                 r = [],
                 o = e => {
@@ -5117,7 +5112,9 @@
             action: o,
             isFirstNavigation: i,
             routeParams: s,
-            loadScreenCache: a = _runtimeCoreJs.ScreenStateCache.ScreenStateCache.loadScreenCache,
+            loadScreenCache: a = function() {
+                return _runtimeCoreJs.ScreenStateCache.ScreenStateCache.loadScreenCache(...arguments);
+            },
             checkReachedFromHistory: l = _runtimeCoreJs.Navigation.locationReachedFromHistory
         } = _ref19;
         var c;
@@ -5230,8 +5227,8 @@
                     });
                     if (!g.success) throw _runtimeCoreJs.Logger.log(mo, g.error, xt.Internal), new Error("Error while loading application routes");
                     const [S, y, w, E] = g.modules,
-                        b = new Qr(r, it(_this2, oo, "f")),
-                        x = new Xr(r, it(_this2, oo, "f")),
+                        b = new Kr(r, it(_this2, oo, "f")),
+                        x = new qr(r, it(_this2, oo, "f")),
                         N = E.getRootSpan(!0);
                     null == N || N.activate();
                     const O = l({
@@ -5282,7 +5279,7 @@
             Component: e => {
                 const o = (0, _v6ReactRouterDom.useLocation)(),
                     i = t.getLoadedComponent(o);
-                return console.log(`Rendering ${o.key} with component loaded from key ${o.key}: ${i}`), ge.jsx(_r, Object.assign({
+                return console.log(`Rendering ${o.key} with component loaded from key ${o.key}: ${i}`), ge.jsx(Wr, Object.assign({
                     onEnter: n,
                     onLeave: () => {
                         t.freeLoadedComponent(o), r && r();
@@ -5363,7 +5360,7 @@
                                 pathname: s,
                                 forDefaultPath: !0,
                                 screenName: "no-default-screen",
-                                component: Fr
+                                component: Qr
                             };
                         o.push(n), _runtimeCoreJs.Logger.debug(fo, `Created default application route for ${n.pathname}`), o.push(...r.screens.map(e => ({
                             pathname: `${s}/${e.screenUrl}`,
@@ -5429,7 +5426,7 @@
                 }),
                 g = i([Eo(a), bo(a), {
                     path: "/",
-                    element: ge.jsx(Jr, {
+                    element: ge.jsx(Gr, {
                         runtime: t,
                         screenLoader: f,
                         onBeforeNavigate: yo,
@@ -5441,10 +5438,10 @@
                         t.shouldRenderSplashScreen() && (t.isShowingSplashScreen = !1);
                     }), {
                         path: "*",
-                        Component: Ur
+                        Component: Xr
                     }]
                 }]);
-            _runtimeCoreJs.Navigation.setNavigationCallbacks(new Qr(g.navigate, t)), r(ge.jsx(ft, {
+            _runtimeCoreJs.Navigation.setNavigationCallbacks(new Kr(g.navigate, t)), r(ge.jsx(ft, {
                 onError: e => {
                     t.handleError(e);
                 },
@@ -5456,6 +5453,6 @@
             });
         }
     });
-    const No = _exports.Version = "6.5.10";
+    const No = _exports.Version = "6.5.14";
     _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-view-framework-react", No);
 });

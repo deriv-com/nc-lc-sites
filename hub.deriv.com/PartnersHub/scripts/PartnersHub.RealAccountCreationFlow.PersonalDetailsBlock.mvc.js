@@ -304,7 +304,7 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$view", ["@o
                     },
                     isDefault: false,
                     onClick: function() {
-                        controller.validationService.validateWidget(idService.getId("Form1"));
+                        _this.validateWidget(idService.getId("Form1"));
                         var eventHandlerContext = callContext.clone();
                         controller.openDateOfBirthContainer$Action(controller.callContext(eventHandlerContext));
 
@@ -697,7 +697,7 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$view", ["@o
                     },
                     isDefault: false,
                     onClick: function() {
-                        controller.validationService.validateWidget("");
+                        _this.validateWidget("");
                         var eventHandlerContext = callContext.clone();
                         controller.buttonOnClick$Action(controller.callContext(eventHandlerContext));
 

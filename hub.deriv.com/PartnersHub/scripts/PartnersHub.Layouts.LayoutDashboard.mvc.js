@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model", "CustomComponents.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$MountDatadogClient", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, CustomComponents_ButtonVariants_PrimaryButton_mvcModel, CustomComponents_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -56,7 +56,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-co
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets || CustomComponents_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets) || OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (((CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets || CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets) || OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -94,7 +94,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-co
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "CustomComponents.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$MountDatadogClient", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -125,7 +125,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view];
         }
 
         get modelFactory() {
@@ -251,7 +251,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                     uuid: "6"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -293,7 +293,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                     uuid: "8"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_SecondaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -304,8 +304,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                     height: "40px",
                     title: "Cancel",
                     borderRadius: "100px",
-                    Width: "100%",
-                    BorderColor: "#FF444F"
+                    Width: "100%"
                 },
                 events: {
                     _handleError: function(ex) {
@@ -384,7 +383,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                         return [React.createElement(OSWidgets.AdvancedHtml, {
                             extendedProperties: {
                                 role: "banner",
-                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1", "header")
+                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1", "header")
                             },
                             tag: "header",
                             _idProps: {
@@ -466,8 +465,8 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
-                                ExtendedClass: "tooltip",
-                                Position: PartnersHubModel.staticEntities.position.bottom
+                                Position: PartnersHubModel.staticEntities.position.bottom,
+                                ExtendedClass: "tooltip"
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -536,7 +535,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                             uuid: "21"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("zOG2b5Vg8UWXy3rR7PzcOw#Value", "Live chat")))];
+                                    }, $text(getTranslation("jHgL0nZwmUqbmQ22LEVMJQ#Value", "Live chat")))];
                                 })
                             },
                             _dependencies: []
@@ -612,251 +611,13 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                             uuid: "25"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("jJ43ECPLvEeKFN3LPXcGug#Value", "Log out")))];
+                                    }, $text(getTranslation("ZqXGHgmYOUKuOnAfIM5aYA#Value", "Log out")))];
                                 })
                             },
                             _dependencies: []
                         }))))];
                     }),
                     onTablet: new PlaceholderContent(function() {
-                        return [React.createElement(OSWidgets.AdvancedHtml, {
-                            extendedProperties: {
-                                role: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1", "banner"),
-                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1", "header")
-                            },
-                            tag: "header",
-                            _idProps: {
-                                service: idService,
-                                name: "Header3"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "align-items: center; display: flex; flex-shrink: 0; height: 56px; justify-content: space-between; padding: 16px 40px;"
-                            },
-                            gridProperties: {
-                                classes: "OSInline",
-                                width: "100%"
-                            },
-                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1", "header-top"),
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "27"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "align-items: center; display: flex; gap: 16px; text-align: right;"
-                            },
-                            style: "left-header",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "28"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Image, {
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.onClickRedirectToDerivCom$Action(controller.callContext(eventHandlerContext));
-
-                                    ;
-                                }
-                            },
-                            extendedProperties: {
-                                style: "height: 24px;"
-                            },
-                            gridProperties: {
-                                width: "130px",
-                                marginLeft: "0"
-                            },
-                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.DashboardPartnersLogo.svg"),
-                            type: /*Static*/ 0,
-                            _idProps: {
-                                service: idService,
-                                uuid: "29"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        })), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "display: flex; gap: 32px; justify-content: center;"
-                            },
-                            style: "display-flex align-items-center",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "30"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OutSystemsUI_Content_Tooltip_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {
-                                ExtendedClass: "tooltip",
-                                Position: PartnersHubModel.staticEntities.position.bottom
-                            },
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                name: "LivechatTooltip2",
-                                alias: "6"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                content: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedEvents: {
-                                            onClick: function() {
-                                                var eventHandlerContext = callContext.clone();
-                                                controller.onClickOpenLiveChat$Action(controller.callContext(eventHandlerContext));
-
-                                                ;
-                                            }
-                                        },
-                                        extendedProperties: {
-                                            "data-allow-event-propagation": "True",
-                                            style: "cursor: pointer;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "32"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        extendedProperties: {
-                                            "data-allow-event-propagation": "True"
-                                        },
-                                        gridProperties: {
-                                            width: "28px"
-                                        },
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.livechat2.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "33"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))];
-                                }),
-                                tooltip: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            "data-allow-event-propagation": "True",
-                                            style: "text-align: center;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "34"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("y3I3z2tJB06xi0f6VYHYww#Value", "Live chat")))];
-                                })
-                            },
-                            _dependencies: []
-                        }), React.createElement(OutSystemsUI_Content_Tooltip_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {
-                                Position: PartnersHubModel.staticEntities.position.bottom
-                            },
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                name: "LogoutTooltip2",
-                                alias: "7"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                content: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedEvents: {
-                                            onClick: function() {
-                                                var eventHandlerContext = callContext.clone();
-                                                controller.openLogoutModal$Action(controller.callContext(eventHandlerContext));
-
-                                                ;
-                                            }
-                                        },
-                                        extendedProperties: {
-                                            style: "cursor: pointer;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "36"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        gridProperties: {
-                                            width: "22px"
-                                        },
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.logout.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "37"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))];
-                                }),
-                                tooltip: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "text-align: center;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "38"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("WuL5RxW2z0GzmUysFxZAVg#Value", "Log out")))];
-                                })
-                            },
-                            _dependencies: []
-                        }))))];
-                    }),
-                    onPhone: new PlaceholderContent(function() {
                         return [React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
@@ -875,7 +636,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "39"
+                                uuid: "26"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -887,7 +648,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "40"
+                                uuid: "27"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -909,7 +670,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "41"
+                                uuid: "28"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -922,7 +683,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "42"
+                                uuid: "29"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -934,7 +695,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "43"
+                                uuid: "30"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -950,7 +711,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "44"
+                                uuid: "31"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -962,7 +723,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "45"
+                                uuid: "32"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -981,7 +742,137 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "46"
+                                uuid: "33"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }))))];
+                    }),
+                    onPhone: new PlaceholderContent(function() {
+                        return [React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedEvents: {
+                                onClick: function() {
+                                    return Promise.resolve().then(function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        return controller.onClickOpenSideMenu$Action(controller.callContext(eventHandlerContext));
+                                    });;
+                                }
+                            },
+                            extendedProperties: {
+                                style: "padding: 16px;"
+                            },
+                            style: "dashboard-mobile-header",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "34"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "align-items: center; display: flex;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "35"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.onClickRedirectToDerivCom$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            extendedProperties: {
+                                style: "height: 48px;"
+                            },
+                            gridProperties: {
+                                width: "130px"
+                            },
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.DashboardPartnersLogo.svg"),
+                            type: /*Static*/ 0,
+                            _idProps: {
+                                service: idService,
+                                uuid: "36"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "display: flex; gap: 32px; justify-content: center;"
+                            },
+                            style: "display-flex align-items-center",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "37"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "cursor: pointer;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "38"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.onClickOpenLiveChat$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.livechat2.svg"),
+                            type: /*Static*/ 0,
+                            _idProps: {
+                                service: idService,
+                                uuid: "39"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "cursor: pointer;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "40"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.openLogoutModal$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            gridProperties: {
+                                width: "22px"
+                            },
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.logout.svg"),
+                            type: /*Static*/ 0,
+                            _idProps: {
+                                service: idService,
+                                uuid: "41"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))];
@@ -1030,7 +921,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDerivAPIClient", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$MountDatadogClient", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1182,11 +1073,11 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                                 var addFaviconVar = new OS.DataTypes.VariableHolder();
                                 // Execute Action: UseDevice
                                 PartnersHubController.default.useDevice$Action(callContext);
-                                // Execute Action: MountDerivAPIClient
-                                PartnersHubController.default.mountDerivAPIClient$Action(callContext);
                                 // Execute Action: AddFavicon
                                 addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("favicon.ico", callContext);
 
+                                // Execute Action: MountDatadog
+                                PartnersHubController.default.mountDatadogClient$Action(callContext);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1446,18 +1337,35 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
+                            return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                // Execute Action: MountDatadog
-                                PartnersHubController.default.mountDatadogClient$Action(callContext);
-                            } finally {
+                                var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
+                                var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: SetDefaultAppId
+                                    PartnersHubController.default.setDefaultAppId$Action(false, callContext);
+                                    // Execute Action: GetWebsiteStatus
+                                    model.flush();
+                                    return RESTAPIWebsocketController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                        getWebsiteStatusVar.value = value;
+                                    }).then(function() {
+                                        // Execute Action: InitGrowthbook
+                                        model.flush();
+                                        return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
+                                    }).then(function() {
+                                        // JSON Serialize: JSONSerialize1
+                                        jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(getWebsiteStatusVar.value.responseOut, false, false);
+                                        // WebsiteStatusResponse = JSONSerialize1.JSON
+                                        PartnersHubClientVariables.setWebsiteStatusResponse(jSONSerialize1Var.value.jSONOut);
+                                    });
+                                });
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
@@ -1743,15 +1651,14 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -2029,14 +1936,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleL
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Dashboard",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Abmelden",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Live-Chat",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Abmelden",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Live-Chat",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Abmelden",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Live-Chat",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Bist du dir sicher, dass du dich abmelden möchtest?"
     };
 });
@@ -2044,14 +1946,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Panel",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Cerrar sesión",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Chat en vivo",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Cerrar sesión",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Chat en vivo",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Cerrar sesión",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "¿Estás seguro de que quieres cerrar sesión?"
     };
 });
@@ -2059,14 +1956,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Tableau de bord",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Se déconnecter",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Chat en direct",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Se déconnecter",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Chat en direct",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Se déconnecter",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en direct",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Êtes-vous sûr de vouloir vous déconnecter ?"
     };
 });
@@ -2074,14 +1966,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Cruscotto",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Disconnettersi",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Chat dal vivo",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Disconnettersi",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Chat dal vivo",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Disconnettersi",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat dal vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Sei sicuro di voler effettuare il logout?"
     };
 });
@@ -2089,14 +1976,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Panel",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Wyloguj się",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Czat na żywo",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Wyloguj się",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Czat na żywo",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Wyloguj się",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Czat na żywo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Czy jesteś pewien, że chcesz się wylogować?"
     };
 });
@@ -2104,14 +1986,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Painel",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Sair",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Chat ao vivo",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Sair",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Chat ao vivo",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Sair",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat ao vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Tem certeza de que deseja sair?"
     };
 });
@@ -2119,14 +1996,9 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", []
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU", [], function() {
     return {
         "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Панель управления",
-        "38XhKKe5LEW+A2zRRni8zQ#Value.-1221270899.1": "header",
-        "ZGGeSbg7WUagZno4rBIW5w#Value.-1396342996.1": "banner",
-        "WuL5RxW2z0GzmUysFxZAVg#Value": "Выйти",
-        "y3I3z2tJB06xi0f6VYHYww#Value": "Оnлайн-чат",
-        "rTuVkrGaBEOPnPSbtA3yVQ#ValueExpression.1976371733.1": "header-top",
-        "L0LZ2weFB0i4vQ6cHwhS1Q#Value.-1221270899.1": "header",
-        "jJ43ECPLvEeKFN3LPXcGug#Value": "Выйти",
-        "zOG2b5Vg8UWXy3rR7PzcOw#Value": "Живой чат",
+        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Выйти",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Живой чат",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Вы уверены, что хотите выйти?"
     };
 });

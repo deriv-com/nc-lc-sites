@@ -782,7 +782,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 style: "border-radius: 8px; padding: 0px;"
                             },
                             showPopup: model.variables.isDuplicateAccountVar,
-                            style: "popup-dialog",
+                            style: "popup-dialog popup_account-already-exists",
                             _idProps: {
                                 service: idService,
                                 uuid: "49"
@@ -1171,6 +1171,8 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
                                 callContext = controller.callContext(callContext);
                                 // RealSignupCurrentStep = If
                                 tradershubClientVariables.setRealSignupCurrentStep(((tradershubClientVariables.getRealSignupIsIDVSupported()) ? (6) : (5)));
+                                // RealSignupFatcaDeclaration = 0
+                                tradershubClientVariables.setRealSignupFatcaDeclaration("0");
                             } finally {
                                 if (span) {
                                     span.end();

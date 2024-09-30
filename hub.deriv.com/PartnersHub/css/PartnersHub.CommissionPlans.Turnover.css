@@ -102,10 +102,16 @@ height: auto;
 padding: 0px !important;
 }
 
-/* NOTE: this fixes the flickering issue with the carousel */
-.phone .partners-hub-dashboard .affiliate-programme-block {
-    max-width: calc(100vw - 32px) !important;
+.gap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
+
+/* NOTE: this fixes the flickering issue with the carousel */
+/* .phone .partners-hub-dashboard .affiliate-programme-block {
+    max-width: calc(100vw - 32px) !important;
+} */
 
 .marketing-details {
     display: flex;
@@ -225,28 +231,13 @@ background: rgba(44, 154, 255, 0.08);
     padding-top: 20px;
     padding-bottom: 40px;;
     max-width: 1069px;
+    width: 100%
 }
 
-.complete-profile-commission-banner{
+.container {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-@media (min-width: 1280px) {
-    .partners-hub-dashboard {
-        width: 77%;
-    }
-    .complete-profile-commission-banner{
-    display: flex;
-    flex-direction: row !important;
-    justify-content: space-evenly;
-    align-items: center;
-}
-}
-
-.phone .partners-hub-dashboard {
-    padding: 36px 16px 16px
 }
 
 .links-report-tab .osui-tabs__header-item.osui-tabs--is-active {
@@ -368,4 +359,8 @@ justify-content: space-between;
     font-size: 14px;
     font-weight: 700;
     line-height: 22px;
+}
+
+.table-row {
+    pointer-events: none !important;
 }

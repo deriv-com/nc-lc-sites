@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.EmploymentDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel) {
+define("tradershub.RealAccountCreation.EmploymentDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel) {
     var OS = OSRuntimeCore; {
         class GetEmploymentStatusesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -28,9 +28,6 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$model", ["@outsyste
                     this.attr("ResidenceList", "residenceListVar", "ResidenceList", true, false, OS.DataTypes.DataTypes.RecordList, function() {
                         return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_10436c71a703b5c08e6ed74c34052e0a());
                     }, false, tradershubModel.RL_10436c71a703b5c08e6ed74c34052e0a),
-                    this.attr("TaxResidenceCountry", "taxResidenceCountryVar", "TaxResidenceCountry", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, false),
                     this.attr("NoTaxIDNumber", "noTaxIDNumberVar", "NoTaxIDNumber", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
@@ -80,7 +77,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$model", ["@outsyste
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.EmploymentDetails.mvc$model", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_RealAccountCreation_EmploymentDetails_mvc_model, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_view) {
+define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.EmploymentDetails.mvc$model", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.DropdownSearch.mvc$view", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_RealAccountCreation_EmploymentDetails_mvc_model, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_DropdownSearch_mvc_view, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -404,7 +401,7 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                                         list.pushAll([function() {
                                             var rec = new OutSystemsUIModel.ST_60f22bd2e9b10a22278b8afe6d7f601aStructure();
                                             rec.valueAttr = ((((tradershubClientVariables.getRealSignupTaxResidence()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? (tradershubClientVariables.getRealSignupTaxResidence()) : (tradershubClientVariables.getSelectedResidence()));
-                                            rec.labelAttr = ((((tradershubClientVariables.getRealSignupTaxResidenceLabel()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? (tradershubClientVariables.getRealSignupTaxResidenceLabel()) : (tradershubClientVariables.getSelectedResidence()));
+                                            rec.labelAttr = ((((tradershubClientVariables.getRealSignupTaxResidenceLabel()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? (tradershubClientVariables.getRealSignupTaxResidenceLabel()) : (tradershubClientVariables.getSelectedResidenceLabel()));
                                             return rec;
                                         }()]);
                                         return list;
@@ -415,6 +412,8 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                                     return tradershubClientVariables.getSelectedResidence();
                                 }, function() {
                                     return tradershubClientVariables.getRealSignupTaxResidenceLabel();
+                                }, function() {
+                                    return tradershubClientVariables.getSelectedResidenceLabel();
                                 }),
                                 OptionsList: model.getCachedValue(idService.getId("u2kC3epDCEeZQ0+iKThzrw.OptionsList"), function() {
                                     return OS.DataConversion.JSConversions.typeConvertRecordList(model.variables.residenceListVar, new tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b(), function(source, target) {
@@ -613,9 +612,11 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                             _widgetRecordProvider: widgetsRecordProvider
                         }, "Next")))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
-                            animate: false,
+                            animate: true,
                             style: "full-width employment-details-section__mobile",
-                            visible: true,
+                            visible: model.getCachedValue(idService.getId("oS9YisTis0afS9jDRBnJ7w.Visible"), function() {
+                                return !(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut);
+                            }),
                             _idProps: {
                                 service: idService,
                                 uuid: "27"
@@ -647,14 +648,14 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$view", ["@outsystem
                         }))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.widgets.get(idService.getId("TaxIDConfirmationCheckbox")).validAttr), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxIDConfirmation()), asPrimitiveValue(tradershubClientVariables.getRealSignupTIDNumber()), asPrimitiveValue(model.variables.residenceListVar), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxResidenceLabel()), asPrimitiveValue(tradershubClientVariables.getSelectedResidence()), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxResidence()), asPrimitiveValue(model.variables.noTaxIDNumberVar), asPrimitiveValue(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getEmploymentStatusesAggr.listOut), asPrimitiveValue(tradershubClientVariables.getRealSignupEmployementStatus())]
+                _dependencies: [asPrimitiveValue(model.widgets.get(idService.getId("TaxIDConfirmationCheckbox")).validAttr), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxIDConfirmation()), asPrimitiveValue(tradershubClientVariables.getRealSignupTIDNumber()), asPrimitiveValue(model.variables.residenceListVar), asPrimitiveValue(tradershubClientVariables.getSelectedResidenceLabel()), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxResidenceLabel()), asPrimitiveValue(tradershubClientVariables.getSelectedResidence()), asPrimitiveValue(tradershubClientVariables.getRealSignupTaxResidence()), asPrimitiveValue(model.variables.noTaxIDNumberVar), asPrimitiveValue(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getEmploymentStatusesAggr.listOut), asPrimitiveValue(tradershubClientVariables.getRealSignupEmployementStatus())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnClick.RudderStackJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller_SaveOnClick_RudderStackJS) {
+define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnClick.RudderStackJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$IsDesktop", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreation_EmploymentDetails_mvc_controller_SaveOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -942,6 +943,8 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@out
                             try {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
+                                // RealSignupTaxResidence = If
+                                tradershubClientVariables.setRealSignupTaxResidence(((((tradershubClientVariables.getRealSignupTaxResidence()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? (tradershubClientVariables.getRealSignupTaxResidence()) : (tradershubClientVariables.getSelectedResidence())));
                             } finally {
                                 if (span) {
                                     span.end();
@@ -979,12 +982,10 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller", ["@out
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreation.EmploymentDetails.DropdownSearchOnChanged$vars"))());
                                 vars.value.selectedOptionListInLocal = selectedOptionListIn.clone();
-                                // TaxResidenceCountry = SelectedOptionList.Current.Value
-                                model.variables.taxResidenceCountryVar = vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr;
-                                // RealSignupTaxResidence = If
-                                tradershubClientVariables.setRealSignupTaxResidence(((((vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr) !== (""))) ? (vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr) : (tradershubClientVariables.getSelectedResidence())));
                                 // RealSignupTaxResidenceLabel = SelectedOptionList.Current.Label
                                 tradershubClientVariables.setRealSignupTaxResidenceLabel(vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).labelAttr);
+                                // RealSignupTaxResidence = SelectedOptionList.Current.Value
+                                tradershubClientVariables.setRealSignupTaxResidence(vars.value.selectedOptionListInLocal.getCurrent(callContext.iterationContext).valueAttr);
                             } finally {
                                 if (span) {
                                     span.end();

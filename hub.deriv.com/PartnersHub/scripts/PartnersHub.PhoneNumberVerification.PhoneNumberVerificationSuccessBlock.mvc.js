@@ -1,4 +1,4 @@
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model"], function(OSRuntimeCore, PartnersHubModel, CustomComponents_ButtonVariants_PrimaryButton_mvcModel) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model"], function(OSRuntimeCore, PartnersHubModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
+                Model._hasValidationWidgetsValue = CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -170,7 +170,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
                     uuid: "5"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            })), React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            })), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

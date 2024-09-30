@@ -20,9 +20,9 @@ define("RESTAPIWebsocket.appDefinition", ["@outsystems/runtime-core-js"], functi
         isWeb: true,
         personalArea: null,
         showWatermark: false,
-        buildServiceVersion: "v17.1581.6.0",
-        clientRuntimeVersion: "6.9.4",
+        buildServiceVersion: "v17.1626.0.0",
+        clientRuntimeVersion: "6.12.1",
         useESM: false,
-        appVersion: "93"
+        appVersion: "182"
     };
 });

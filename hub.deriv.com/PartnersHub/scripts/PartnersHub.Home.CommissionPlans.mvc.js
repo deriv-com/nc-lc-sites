@@ -1,4 +1,4 @@
-define("PartnersHub.Home.CommissionPlans.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.Utilities.Separator.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Interaction.Carousel.mvc$model", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUI_Utilities_Separator_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Interaction_Carousel_mvcModel) {
+define("PartnersHub.Home.CommissionPlans.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "PartnersHub.controller", "OutSystemsUI.Utilities.Separator.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Interaction.Carousel.mvc$model", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, PartnersHubController, OutSystemsUI_Utilities_Separator_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Interaction_Carousel_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$model", ["@outsystems/runtime-core-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.CommissionPlans.mvc$model", "PartnersHub.Home.CommissionPlans.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.Separator.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Interaction.Carousel.mvc$view", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, React, OSView, PartnersHub_Home_CommissionPlans_mvc_model, PartnersHub_Home_CommissionPlans_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Utilities_Separator_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Interaction_Carousel_mvc_view) {
+define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.CommissionPlans.mvc$model", "PartnersHub.Home.CommissionPlans.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.Separator.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Interaction.Carousel.mvc$view", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, React, OSView, PartnersHub_Home_CommissionPlans_mvc_model, PartnersHub_Home_CommissionPlans_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Utilities_Separator_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Interaction_Carousel_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -199,18 +199,33 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                     uuid: "8"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }), React.createElement(OSWidgets.Text, {
-                extendedProperties: {
-                    style: "color: #222; cursor: pointer; font-weight: bold; margin-left: 4px; text-decoration: underline;"
+            }), React.createElement(OSWidgets.AdvancedHtml, {
+                extendedEvents: {
+                    onClick: function() {
+                        return Promise.resolve().then(function() {
+                            var eventHandlerContext = callContext.clone();
+                            return controller.onClickToCFDs$Action(controller.callContext(eventHandlerContext));
+                        });;
+                    }
                 },
-                style: "learn-more",
-                text: [$text(getTranslation("3Mst69ljQUSYkHB+A283Ig#Value", "Learn more"))],
+                tag: "span",
                 _idProps: {
                     service: idService,
                     uuid: "9"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }))), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
+            }, React.createElement(OSWidgets.Text, {
+                extendedProperties: {
+                    style: "color: #222; cursor: pointer; font-weight: bold; margin-left: 4px; text-decoration: underline;"
+                },
+                style: "learn-more",
+                text: [$text(getTranslation("KqzR9r0VMk+XWO72OHcs9w#Value", "Learn more"))],
+                _idProps: {
+                    service: idService,
+                    uuid: "10"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            })))), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -230,7 +245,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "10",
+                    uuid: "11",
                     alias: "1"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
@@ -244,14 +259,14 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                 visible: true,
                 _idProps: {
                     service: idService,
-                    uuid: "11"
+                    uuid: "12"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.AdvancedHtml, {
                 tag: "h6",
                 _idProps: {
                     service: idService,
-                    uuid: "12"
+                    uuid: "13"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
@@ -259,7 +274,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                 text: [$text(getTranslation("gk2KnLQCD0KeRtMYuvpOAw#Value", "Options trading"))],
                 _idProps: {
                     service: idService,
-                    uuid: "13"
+                    uuid: "14"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             })), React.createElement(OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, {
@@ -280,7 +295,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "14",
+                    uuid: "15",
                     alias: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
@@ -295,7 +310,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "15"
+                                uuid: "16"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -322,7 +337,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("jLzVa2m9oEGnkW5OrULuCg#Value", "RevShare plan"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "17"
+                                uuid: "18"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -331,7 +346,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "18"
+                                uuid: "19"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -343,7 +358,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "19"
+                                uuid: "20"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -351,21 +366,38 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("jJ8nLPwM20+t2pixjceWoQ#Value", "Earn up to 40% commissions from client trades. "))],
                             _idProps: {
                                 service: idService,
-                                uuid: "20"
+                                uuid: "21"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Text, {
+                        }), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "22"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "color: #222; cursor: pointer; font-weight: bold; text-decoration: underline;"
                             },
                             style: "learn-more",
-                            text: [$text(getTranslation("6hI64MVKEEuOSA17cteDQQ#Value", "Learn more"))],
+                            text: [$text(getTranslation("Er2lTutc2kCUipBHls6Ldw#Value", "Learn more"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "21"
+                                uuid: "23"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })))), React.createElement(OSWidgets.Container, {
+                        }))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -389,7 +421,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("rCfVQRCOwUeOjLc5k9bK_g#Value", "Turnover plan"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "23"
+                                uuid: "25"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -398,7 +430,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "24"
+                                uuid: "26"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -407,7 +439,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "25"
+                                uuid: "27"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -415,7 +447,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("JtPablj72ka6iT8yDu3afA#Value", "Earn based on each contract\'s payout probability. "))],
                             _idProps: {
                                 service: idService,
-                                uuid: "26"
+                                uuid: "28"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -432,7 +464,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "27"
+                                uuid: "29"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -443,7 +475,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("jb90e8yGVUK6svjpp0bwUg#Value", "Learn more"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "28"
+                                uuid: "30"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))))];
@@ -458,7 +490,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "29"
+                                uuid: "31"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -485,7 +517,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("MBxZcxTX8kCa_CS2kWFtRA#Value", "RevShare plan"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "31"
+                                uuid: "33"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -494,7 +526,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "32"
+                                uuid: "34"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -506,7 +538,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "33"
+                                uuid: "35"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -514,18 +546,38 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("AM3kjT8sL0W1zK3wc7lrOQ#Value", "Earn up to 40% commissions from client trades. "))],
                             _idProps: {
                                 service: idService,
-                                uuid: "34"
+                                uuid: "36"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Text, {
-                            style: "learn-more",
-                            text: [$text(getTranslation("RyNtCxoVBE6ox+lPZrh0Qw#Value", "Learn more"))],
+                        }), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "35"
+                                uuid: "37"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })))), React.createElement(OSWidgets.Container, {
+                        }, React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "width: 400px;"
+                            },
+                            style: "learn-more",
+                            text: [$text(getTranslation("hZXRdQ9H9027jZpgAUnwvQ#Value", "Learn more"))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "38"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -549,7 +601,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("1eBXIyzyg0qx3nrHmQDNiQ#Value", "Turnover plan"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "37"
+                                uuid: "40"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -558,7 +610,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "38"
+                                uuid: "41"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -567,7 +619,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "39"
+                                uuid: "42"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -575,7 +627,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("SepJyYaIZ0+8kxwRmo4Dbg#Value", "Earn based on each contract\'s payout probability. "))],
                             _idProps: {
                                 service: idService,
-                                uuid: "40"
+                                uuid: "43"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -592,7 +644,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "41"
+                                uuid: "44"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
@@ -600,7 +652,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             text: [$text(getTranslation("pb9_wp5IckGXwpbZJxsYcg#Value", "Learn more"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "42"
+                                uuid: "45"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))))];
@@ -634,7 +686,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "43",
+                                uuid: "46",
                                 alias: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -664,7 +716,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         text: [$text(getTranslation("jSsy64RznE2cFM4wpU5ikg#Value", "RevShare plan"))],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "45"
+                                            uuid: "48"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Container, {
@@ -673,14 +725,14 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "46"
+                                            uuid: "49"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.AdvancedHtml, {
                                         tag: "span",
                                         _idProps: {
                                             service: idService,
-                                            uuid: "47"
+                                            uuid: "50"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
@@ -688,18 +740,33 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         text: [$text(getTranslation("hFtAvU1qskuUiUzagzDUZw#Value", "Earn up to 40% commissions from client trades. "))],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "48"
+                                            uuid: "51"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        style: "learn-more",
-                                        text: [$text(getTranslation("DE9GtnXiZEe9f2PEuW9X7Q#Value", "Learn more"))],
+                                    }), React.createElement(OSWidgets.AdvancedHtml, {
+                                        extendedEvents: {
+                                            onClick: function() {
+                                                var eventHandlerContext = callContext.clone();
+                                                controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+
+                                                ;
+                                            }
+                                        },
+                                        tag: "span",
                                         _idProps: {
                                             service: idService,
-                                            uuid: "49"
+                                            uuid: "52"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    })))), React.createElement(OSWidgets.Container, {
+                                    }, React.createElement(OSWidgets.Text, {
+                                        style: "learn-more",
+                                        text: [$text(getTranslation("iM8YkmJUFUGHOgcWVI9HUQ#Value", "Learn more"))],
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "53"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }))))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         extendedProperties: {
@@ -724,7 +791,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         text: [$text(getTranslation("cersVruy0EKVyA2R+lHM7g#Value", "Turnover plan"))],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "51"
+                                            uuid: "55"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Container, {
@@ -733,14 +800,14 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "52"
+                                            uuid: "56"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.AdvancedHtml, {
                                         tag: "span",
                                         _idProps: {
                                             service: idService,
-                                            uuid: "53"
+                                            uuid: "57"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
@@ -748,18 +815,33 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                         text: [$text(getTranslation("EKoSIPn3hkGdR0Difafweg#Value", "Earn based on each contract\'s payout probability. "))],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "54"
+                                            uuid: "58"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        style: "learn-more",
-                                        text: [$text(getTranslation("_aY_Z__0P02XRUdwjVWALg#Value", "Learn more"))],
+                                    }), React.createElement(OSWidgets.AdvancedHtml, {
+                                        extendedEvents: {
+                                            onClick: function() {
+                                                var eventHandlerContext = callContext.clone();
+                                                controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
+
+                                                ;
+                                            }
+                                        },
+                                        tag: "span",
                                         _idProps: {
                                             service: idService,
-                                            uuid: "55"
+                                            uuid: "59"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }))))];
+                                    }, React.createElement(OSWidgets.Text, {
+                                        style: "learn-more",
+                                        text: [$text(getTranslation("_8BUrT5uwUSE0QXIRC7pbg#Value", "Learn more"))],
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "60"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    })))))];
                                 })
                             },
                             _dependencies: []
@@ -773,7 +855,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.CommissionPlans.mvc$translationsResources", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_CommissionPlans_mvc_TranslationsResources) {
+define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.CommissionPlans.mvc$translationsResources", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_7d99fd1de65649f174aff6854b052539Structure", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_CommissionPlans_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -787,6 +869,41 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
             }
 
             // Server Actions - Methods
+            get getBDEnableCFDScreens$ServerAction() {
+                if (!(this.hasOwnProperty("_getBDEnableCFDScreens$ServerAction"))) {
+                    this._getBDEnableCFDScreens$ServerAction = function(callContext) {
+                        var controller = this.controller;
+                        return OS.Logger.startActiveSpan("GetBDEnableCFDScreens", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "GetBDEnableCFDScreens");
+                                span.setAttribute("outsystems.function.key", "7eca81a1-5ec3-449c-b6ab-0bca5f9ecfbf");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return controller.callServerAction("GetBDEnableCFDScreens", "screenservices/PartnersHub/Home/CommissionPlans/ActionGetBDEnableCFDScreens", "LjNg3yE0AdZRJluRGkzpGw", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
+                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.CommissionPlans$ActionGetBDEnableCFDScreens"))();
+                                    executeServerActionResult.enableCFDScreensOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableCFDScreens, OS.DataTypes.DataTypes.Boolean);
+                                    return executeServerActionResult;
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 0);
+                    };
+                }
+
+                return this._getBDEnableCFDScreens$ServerAction;
+            }
+            set getBDEnableCFDScreens$ServerAction(value) {
+                this._getBDEnableCFDScreens$ServerAction = value;
+            }
+
 
             // Aggregates and Data Actions
 
@@ -820,6 +937,16 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
                             try {
                                 controller.ensureControllerAlive("OnClickToTurnoverPlan");
                                 callContext = controller.callContext(callContext);
+                                // Execute Action: RudderstackTrackEvent
+                                PartnersHubController.default.rudderstackTrackEvent$Action(function() {
+                                    var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
+                                    rec.actionAttr = "click_cta";
+                                    rec.cta_nameAttr = "Turnover";
+                                    rec.cta_placementAttr = "commission plans turnover section";
+                                    rec.timestampAttr = OS.BuiltinFunctions.dateTimeToText(OS.BuiltinFunctions.currDateTime());
+                                    rec.show_user_idAttr = true;
+                                    return rec;
+                                }(), "clicked_learn_more_on_turnover_plan", callContext);
                                 // Destination: /PartnersHub/Turnover
                                 return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "Turnover", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                             } finally {
@@ -839,6 +966,114 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
                 this.__onClickToTurnoverPlan$Action = value;
             }
 
+            get _onClickToCFDs$Action() {
+                if (!(this.hasOwnProperty("__onClickToCFDs$Action"))) {
+                    this.__onClickToCFDs$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnClickToCFDs", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnClickToCFDs");
+                                span.setAttribute("outsystems.function.key", "59f039cc-eec2-4cf6-a669-07d1e80b0dd9");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnClickToCFDs");
+                                callContext = controller.callContext(callContext);
+                                var getBDEnableCFDScreensVar = new OS.DataTypes.VariableHolder();
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: RudderstackTrackEvent
+                                    PartnersHubController.default.rudderstackTrackEvent$Action(function() {
+                                        var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
+                                        rec.actionAttr = "click_cta";
+                                        rec.cta_nameAttr = "CFDs";
+                                        rec.cta_placementAttr = "commission plans cfds section";
+                                        rec.timestampAttr = OS.BuiltinFunctions.dateTimeToText(OS.BuiltinFunctions.currDateTime());
+                                        rec.show_user_idAttr = true;
+                                        return rec;
+                                    }(), "clicked_learn_more_on_cfds", callContext);
+                                    // Execute Action: GetBDEnableCFDScreens
+                                    model.flush();
+                                    return controller.getBDEnableCFDScreens$ServerAction(callContext).then(function(value) {
+                                        getBDEnableCFDScreensVar.value = value;
+                                    }).then(function() {
+                                        if ((getBDEnableCFDScreensVar.value.enableCFDScreensOut)) {
+                                            // Destination: /PartnersHub/CFDs
+                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "CFDs", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                        } else {
+                                            // Execute Action: RedirectToExternalNewTab
+                                            PartnersHubController.default.redirectToExternalNewTab$Action("https://docs.deriv.com/partners/ib-cfds-commissions-table.pdf", callContext);
+                                        }
+
+                                    });
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__onClickToCFDs$Action;
+            }
+            set _onClickToCFDs$Action(value) {
+                this.__onClickToCFDs$Action = value;
+            }
+
+            get _onClickToRevShare$Action() {
+                if (!(this.hasOwnProperty("__onClickToRevShare$Action"))) {
+                    this.__onClickToRevShare$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnClickToRevShare", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnClickToRevShare");
+                                span.setAttribute("outsystems.function.key", "694bcb0b-945e-486a-bcf0-267063a408cd");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnClickToRevShare");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: RudderstackTrackEvent
+                                PartnersHubController.default.rudderstackTrackEvent$Action(function() {
+                                    var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
+                                    rec.actionAttr = "click_cta";
+                                    rec.cta_nameAttr = "Rev Share";
+                                    rec.cta_placementAttr = "commission plans revshare section";
+                                    rec.timestampAttr = OS.BuiltinFunctions.dateTimeToText(OS.BuiltinFunctions.currDateTime());
+                                    rec.show_user_idAttr = true;
+                                    return rec;
+                                }(), "clicked_learn_more_on_revshare_plan", callContext);
+                                // Destination: /PartnersHub/RevShare
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "RevShare", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onClickToRevShare$Action;
+            }
+            set _onClickToRevShare$Action(value) {
+                this.__onClickToRevShare$Action = value;
+            }
+
 
             onClickToTurnoverPlan$Action(callContext) {
                 var controller = this.controller;
@@ -853,6 +1088,53 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
 
                     try {
                         return controller.safeExecuteClientAction(controller._onClickToTurnoverPlan$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            onClickToCFDs$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnClickToCFDs__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnClickToCFDs");
+                        span.setAttribute("outsystems.function.key", "59f039cc-eec2-4cf6-a669-07d1e80b0dd9");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onClickToCFDs$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
+                }, 0);
+
+            }
+
+            onClickToRevShare$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnClickToRevShare__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnClickToRevShare");
+                        span.setAttribute("outsystems.function.key", "694bcb0b-945e-486a-bcf0-267063a408cd");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onClickToRevShare$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -944,6 +1226,15 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
 
         var Controller = ControllerInner;
         // Server Actions - Variables
+        Controller.registerVariableGroupType("PartnersHub.Home.CommissionPlans$ActionGetBDEnableCFDScreens", [{
+            name: "EnableCFDScreens",
+            attrName: "enableCFDScreensOut",
+            mandatory: false,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return false;
+            }
+        }]);
 
         // Client Actions - Variables
 
@@ -954,26 +1245,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.de-DE", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Mehr erfahren",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Mehr erfahren",
         "EKoSIPn3hkGdR0Difafweg#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Umsatzplan",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Mehr erfahren",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Mehr erfahren",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Handelsgeschäften Ihrer Kunden.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "RevShare-Plan",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Mehr erfahren",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Umsatzplan",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Erfahren Sie mehr",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Erfahren Sie mehr",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades von Kunden.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "RevShare-Plan",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Mehr erfahren",
         "JtPablj72ka6iT8yDu3afA#Value": "Verdienen Sie basierend auf der Auszahlungwahrscheinlichkeit jedes Vertrags.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Umsatzplan",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Mehr erfahren",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Mehr erfahren",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades Ihrer Kunden.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "RevShare-Plan",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "Optionenhandel",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Mehr erfahren",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Mehr erfahren",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Verdienen Sie mit unserem instrumentenbasierten Provisionsplan.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Sie können Provisionen von verdienen"
@@ -982,26 +1273,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.de-DE", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.es-ES", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Aprende más",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Aprende más",
         "EKoSIPn3hkGdR0Difafweg#Value": "Gana según la probabilidad de pago de cada contrato.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Plan de volumen",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Aprende más",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Aprende más",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Gane hasta un 40% de comisiones por las operaciones de los clientes.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "Plan de RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Aprender más",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Gana según la probabilidad de pago de cada contrato.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Plan de facturación",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Aprende más",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Aprende más",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Gana hasta un 40 % de comisiones por las operaciones de los clientes.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "Plan de RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Aprende más",
         "JtPablj72ka6iT8yDu3afA#Value": "Gana según la probabilidad de pago de cada contrato.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Plan de facturación",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Aprende más",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Aprende más",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Gana hasta un 40% de comisiones por las operaciones de los clientes.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "Plan de RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "comercio de opciones",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Aprende más",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Aprende más",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Gana con nuestro plan de comisiones basado en instrumentos.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Puedes ganar comisiones de"
@@ -1010,26 +1301,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.es-ES", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "En savoir plus",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "En savoir plus",
         "EKoSIPn3hkGdR0Difafweg#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Plan de chiffre d\'affaires",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "En savoir plus",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "En savoir plus",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "Plan RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "En savoir plus",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Plan de chiffre d\'affaires",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "En savoir plus",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "En savoir plus",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "Plan RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "En savoir plus",
         "JtPablj72ka6iT8yDu3afA#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Plan de chiffre d\'affaires",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "En savoir plus",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "En savoir plus",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "Plan RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "trading d\'options",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "En savoir plus",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "En savoir plus",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Gagnez avec notre plan de commission basé sur les instruments.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Vous pouvez gagner des commissions de"
@@ -1038,26 +1329,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.fr-FR", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.it-IT", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Scopri di più",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Scopri di più",
         "EKoSIPn3hkGdR0Difafweg#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Piano di fatturato",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Scopri di più",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Scopri di più",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Guadagna fino al 40% di commissioni dalle operazioni dei clienti.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "Piano RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Scopri di più",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Piano di fatturato",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Scopri di più",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Scopri di più",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Guadagna fino al 40% di commissioni dai trade dei clienti.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "Piano RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Scopri di più",
         "JtPablj72ka6iT8yDu3afA#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Piano di fatturato",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Scopri di più",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Scopri di più",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Guadagna fino al 40% di commissioni dai trade dei tuoi clienti.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "Piano RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "trading di opzioni",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Scopri di più",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Scopri di più",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Guadagna con il nostro piano commissionale basato sugli strumenti.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Puoi guadagnare commissioni da"
@@ -1066,26 +1357,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.it-IT", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Dowiedz się więcej",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Dowiedz się więcej",
         "EKoSIPn3hkGdR0Difafweg#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Plan obrotu",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Dowiedz się więcej",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Dowiedz się więcej",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "Plan RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Dowiedz się więcej",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Zarabiaj na podstawie prawdopodobieństwa wypłaty każdego kontraktu.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Plan obrotu",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Dowiedz się więcej",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Dowiedz się więcej",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "Plan RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Dowiedz się więcej",
         "JtPablj72ka6iT8yDu3afA#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Plan obrotu",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Dowiedz się więcej",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Dowiedz się więcej",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "Plan RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "handel opcjami",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Dowiedz się więcej",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Dowiedz się więcej",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Zarabiaj z naszym planem prowizyjnym opartym na instrumentach.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Możesz zarabiać prowizje z"
@@ -1094,26 +1385,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pl-PL", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Saiba mais",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Saiba mais",
         "EKoSIPn3hkGdR0Difafweg#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
         "cersVruy0EKVyA2R+lHM7g#Value": "Plano de faturamento",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Saiba mais",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Saiba mais",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Ganhe até 40% de comissões nas operações dos clientes.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "Plano RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Saber mais",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "Plano de faturamento",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Saiba mais",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Saiba mais",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "Plano RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Saiba mais",
         "JtPablj72ka6iT8yDu3afA#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "Plano de faturamento",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Saiba mais",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Saiba mais",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "Plano RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "negociação de opções",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Saiba mais",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Saiba mais",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Ganhe com o nosso plano de comissões baseado em instrumentos.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Você pode ganhar comissões de"
@@ -1122,26 +1413,26 @@ define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pt-PT", [], f
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "_aY_Z__0P02XRUdwjVWALg#Value": "Узнать больше",
+        "_8BUrT5uwUSE0QXIRC7pbg#Value": "Узнать больше",
         "EKoSIPn3hkGdR0Difafweg#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
         "cersVruy0EKVyA2R+lHM7g#Value": "План оборота",
-        "DE9GtnXiZEe9f2PEuW9X7Q#Value": "Узнать больше",
+        "iM8YkmJUFUGHOgcWVI9HUQ#Value": "Узнать больше",
         "hFtAvU1qskuUiUzagzDUZw#Value": "Зарабатывайте до 40% комиссий от сделок клиентов.",
         "jSsy64RznE2cFM4wpU5ikg#Value": "План RevShare",
         "pb9_wp5IckGXwpbZJxsYcg#Value": "Узнать больше",
         "SepJyYaIZ0+8kxwRmo4Dbg#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
         "1eBXIyzyg0qx3nrHmQDNiQ#Value": "План оборота",
-        "RyNtCxoVBE6ox+lPZrh0Qw#Value": "Узнать больше",
+        "hZXRdQ9H9027jZpgAUnwvQ#Value": "Узнать больше",
         "AM3kjT8sL0W1zK3wc7lrOQ#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
         "MBxZcxTX8kCa_CS2kWFtRA#Value": "План RevShare",
         "jb90e8yGVUK6svjpp0bwUg#Value": "Узнать больше",
         "JtPablj72ka6iT8yDu3afA#Value": "Зарабатывайте на основе вероятности выплаты по каждому контракту.",
         "rCfVQRCOwUeOjLc5k9bK_g#Value": "План оборота",
-        "6hI64MVKEEuOSA17cteDQQ#Value": "Узнать больше",
+        "Er2lTutc2kCUipBHls6Ldw#Value": "Узнать больше",
         "jJ8nLPwM20+t2pixjceWoQ#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
         "jLzVa2m9oEGnkW5OrULuCg#Value": "План RevShare",
         "gk2KnLQCD0KeRtMYuvpOAw#Value": "торговля опционами",
-        "3Mst69ljQUSYkHB+A283Ig#Value": "Узнать больше",
+        "KqzR9r0VMk+XWO72OHcs9w#Value": "Узнать больше",
         "GhDO2DQmRU+HH31OjhQMRQ#Value": "Зарабатывайте с нашим комиссионным планом, основанным на инструментах.",
         "gFPe6yylxEaejJx_2HySgQ#Value": "CFDs",
         "yv0JmcsVO0iSMrOM9NG6XA#Value": "Вы можете зарабатывать комиссионные от"

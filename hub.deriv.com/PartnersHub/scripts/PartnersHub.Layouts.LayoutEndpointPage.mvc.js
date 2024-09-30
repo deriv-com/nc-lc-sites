@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model", "CustomComponents.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, CustomComponents_ButtonVariants_PrimaryButton_mvcModel, CustomComponents_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -59,7 +59,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = ((CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets || CustomComponents_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets || CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -97,7 +97,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutEndpointPage.mvc$model", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "CustomComponents.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_LayoutEndpointPage_mvc_model, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutEndpointPage.mvc$model", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_LayoutEndpointPage_mvc_model, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -128,7 +128,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view, CustomComponents_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view];
         }
 
         get modelFactory() {
@@ -254,7 +254,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                     uuid: "6"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -296,7 +296,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                     uuid: "8"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_SecondaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -304,7 +304,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    BorderColor: "#FF444F",
                     title: "Cancel",
                     height: "40px",
                     Width: "100%",
@@ -633,7 +632,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnClickLogout.JavaScript1JS", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_TranslationsResources, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnClickLogout_JavaScript1JS) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnClickLogout.JavaScript1JS", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_TranslationsResources, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnClickLogout_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -848,43 +847,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/ru
                 this.__onClickLogout$Action = value;
             }
 
-            get _onClickOpenLiveChat$Action() {
-                if (!(this.hasOwnProperty("__onClickOpenLiveChat$Action"))) {
-                    this.__onClickOpenLiveChat$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnClickOpenLiveChat", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnClickOpenLiveChat");
-                                span.setAttribute("outsystems.function.key", "3f66a0ef-dff7-4214-95e5-14bead682412");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnClickOpenLiveChat");
-                                callContext = controller.callContext(callContext);
-                                // Execute Action: ShowLiveChat
-                                PartnersHubController.default.showLiveChat$Action(callContext);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onClickOpenLiveChat$Action;
-            }
-            set _onClickOpenLiveChat$Action(value) {
-                this.__onClickOpenLiveChat$Action = value;
-            }
-
             get _onInitialize$Action() {
                 if (!(this.hasOwnProperty("__onInitialize$Action"))) {
                     this.__onInitialize$Action = function(callContext) {
@@ -1094,30 +1056,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/ru
 
                     try {
                         return controller.safeExecuteClientAction(controller._onClickLogout$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            onClickOpenLiveChat$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnClickOpenLiveChat__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnClickOpenLiveChat");
-                        span.setAttribute("outsystems.function.key", "3f66a0ef-dff7-4214-95e5-14bead682412");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._onClickOpenLiveChat$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();

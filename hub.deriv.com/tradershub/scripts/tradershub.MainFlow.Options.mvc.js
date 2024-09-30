@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController) {
+define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -100,7 +100,7 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view) {
+define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -2118,7 +2118,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     gridProperties: {
                                         classes: "OSFillParent"
                                     },
-                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.dgobanner.svg"),
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.dgobanner.jpg"),
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
@@ -2635,7 +2635,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
 
     return View;
 });
-define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript1JS", "tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript2JS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript1JS, tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript2JS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS) {
+define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript1JS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript1JS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -2663,7 +2663,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/MainFlow/Options/ActionCurrenciesList", "P9KvWybXyhlQu_4RCM97cg", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/MainFlow/Options/ActionCurrenciesList", "psznQM4XSL63xbToINuQZw", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options$ActionCurrenciesList"))();
                                     executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
                                     return executeServerActionResult;
@@ -2699,43 +2699,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             }
 
             // Client Actions - Methods
-            get _turbosRedirection$Action() {
-                if (!(this.hasOwnProperty("__turbosRedirection$Action"))) {
-                    this.__turbosRedirection$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("TurbosRedirection", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "TurbosRedirection");
-                                span.setAttribute("outsystems.function.key", "1c18723e-c832-447f-940d-b297712b3aeb");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("TurbosRedirection");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=turboslong", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__turbosRedirection$Action;
-            }
-            set _turbosRedirection$Action(value) {
-                this.__turbosRedirection$Action = value;
-            }
-
             get _botRedirection$Action() {
                 if (!(this.hasOwnProperty("__botRedirection$Action"))) {
                     this.__botRedirection$Action = function(callContext) {
@@ -2869,7 +2832,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                         sendAuthorizeVar.value = value;
                                     }).then(function() {
                                         // Execute Action: FormatMoney
-                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.textToInteger(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr)), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", 0, callContext);
+                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
                                         // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
                                         model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
@@ -3022,73 +2985,39 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var sendGetSettingVar = new OS.DataTypes.VariableHolder();
                                 var tradingPlatformProductListingVar = new OS.DataTypes.VariableHolder();
                                 var javaScript1JSResult = new OS.DataTypes.VariableHolder();
-                                var javaScript2JSResult = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // IsLoading = True
                                     model.variables.isLoadingVar = true;
-                                    // Execute Action: GetWebsiteStatus
-                                    model.flush();
-                                    return tradershubController.default.getWebsiteStatus$Action(callContext).then(function() {
-                                        javaScript2JSResult.value = OS.Logger.startActiveSpan("JavaScript2", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "JavaScript2");
-                                                span.setAttribute("outsystems.function.key", "e6c1937f-b5e0-4378-97ac-6d26d00e933a");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript2JS, "JavaScript2", "OnReady", {
-                                                    TempClientCountry: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getTempClientCountry(), OS.DataTypes.DataTypes.Text),
-                                                    WebsiteData: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawWebsiteStatusResponse(), OS.DataTypes.DataTypes.Text),
-                                                    ClientCountry: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                                }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.OnReady$javaScript2JSResult"))();
-                                                    jsNodeResult.clientCountryOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ClientCountry, OS.DataTypes.DataTypes.Text);
-                                                    return jsNodeResult;
-                                                }, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
-
-                                            }
-
-                                        }, 1);
-                                        // ClientCountry = JavaScript2.ClientCountry
-                                        tradershubClientVariables.setClientCountry(javaScript2JSResult.value.clientCountryOut);
-                                    }).then(function() {
-                                        return OS.Flow.executeSequence(function() {
-                                            if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
-                                                // Execute Action: FilterAccountListAction
-                                                return controller._filterAccountListAction$Action(callContext).then(function() {
-                                                    // IsBalanceLoading = True
-                                                    model.variables.isBalanceLoadingVar = true;
-                                                    // Execute Action: SendAuthorize
-                                                    model.flush();
-                                                    return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                                        sendAuthorizeVar.value = value;
-                                                    });
-                                                }).then(function() {
-                                                    // IsBalanceLoading = False
-                                                    model.variables.isBalanceLoadingVar = false;
-                                                    // Execute Action: SendGetSetting
-                                                    model.flush();
-                                                    return tradershubController.default.sendGetSetting$Action(callContext).then(function(value) {
-                                                        sendGetSettingVar.value = value;
-                                                    });
-                                                }).then(function() {
-                                                    // ClientCountry = SendGetSetting.GetSettingResponse.Country_code
-                                                    tradershubClientVariables.setClientCountry(sendGetSettingVar.value.getSettingResponseOut.country_codeAttr);
-                                                    // TempClientCountry = ""
-                                                    tradershubClientVariables.setTempClientCountry("");
-                                                    // AuthorizeResponse = SendAuthorize.Response.Authorize
-                                                    model.variables.authorizeResponseVar = sendAuthorizeVar.value.responseOut.authorizeAttr;
+                                    // IsTokenNull
+                                    return OS.Flow.executeSequence(function() {
+                                        if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
+                                            // Execute Action: FilterAccountListAction
+                                            return controller._filterAccountListAction$Action(callContext).then(function() {
+                                                // IsBalanceLoading = True
+                                                model.variables.isBalanceLoadingVar = true;
+                                                // Execute Action: SendAuthorize
+                                                model.flush();
+                                                return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
+                                                    sendAuthorizeVar.value = value;
                                                 });
-                                            }
+                                            }).then(function() {
+                                                // IsBalanceLoading = False
+                                                model.variables.isBalanceLoadingVar = false;
+                                                // Execute Action: SendGetSetting
+                                                model.flush();
+                                                return tradershubController.default.sendGetSetting$Action(callContext).then(function(value) {
+                                                    sendGetSettingVar.value = value;
+                                                });
+                                            }).then(function() {
+                                                // ClientCountry = SendGetSetting.GetSettingResponse.Country_code
+                                                tradershubClientVariables.setClientCountry(sendGetSettingVar.value.getSettingResponseOut.country_codeAttr);
+                                                // TempClientCountry = ""
+                                                tradershubClientVariables.setTempClientCountry("");
+                                                // AuthorizeResponse = SendAuthorize.Response.Authorize
+                                                model.variables.authorizeResponseVar = sendAuthorizeVar.value.responseOut.authorizeAttr;
+                                            });
+                                        }
 
-                                        });
                                     }).then(function() {
                                         // Execute Action: TradingPlatformProductListing
                                         model.flush();
@@ -3283,7 +3212,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                                 sendAuthorizeVar.value = value;
                                             }).then(function() {
                                                 // Execute Action: FormatMoney
-                                                formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.textToInteger(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr)), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", 0, callContext);
+                                                formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
                                                 // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
                                                 model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
@@ -3315,43 +3244,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             }
             set _setRealValue$Action(value) {
                 this.__setRealValue$Action = value;
-            }
-
-            get _accumulatorsRedirection$Action() {
-                if (!(this.hasOwnProperty("__accumulatorsRedirection$Action"))) {
-                    this.__accumulatorsRedirection$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("AccumulatorsRedirection", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "AccumulatorsRedirection");
-                                span.setAttribute("outsystems.function.key", "c28ff081-8b45-433f-8851-bb00be8bcbbd");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("AccumulatorsRedirection");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=accumulator", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__accumulatorsRedirection$Action;
-            }
-            set _accumulatorsRedirection$Action(value) {
-                this.__accumulatorsRedirection$Action = value;
             }
 
             get _toggleDerivGoModal$Action() {
@@ -3667,7 +3559,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                                     model.variables.isBalanceLoadingVar = false;
                                                 } else {
                                                     // Execute Action: FormatMoney
-                                                    formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.textToInteger(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr)), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", 0, callContext);
+                                                    formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
                                                     // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
                                                     model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
@@ -3698,43 +3590,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             }
             set _accountListItemOnClick$Action(value) {
                 this.__accountListItemOnClick$Action = value;
-            }
-
-            get _multipliersRedirection$Action() {
-                if (!(this.hasOwnProperty("__multipliersRedirection$Action"))) {
-                    this.__multipliersRedirection$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("MultipliersRedirection", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "MultipliersRedirection");
-                                span.setAttribute("outsystems.function.key", "df700acd-6a92-4799-855a-91a3953c0a66");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("MultipliersRedirection");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=multiplier", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__multipliersRedirection$Action;
-            }
-            set _multipliersRedirection$Action(value) {
-                this.__multipliersRedirection$Action = value;
             }
 
             get _openAccountSwitcherOnClick$Action() {
@@ -3848,7 +3703,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                         sendAuthorizeVar.value = value;
                                     }).then(function() {
                                         // Execute Action: FormatMoney
-                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.textToInteger(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr)), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", 0, callContext);
+                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
                                         // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
                                         model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
@@ -3933,67 +3788,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 this.__filterAccountListAction$Action = value;
             }
 
-            get _vanillaRedirection$Action() {
-                if (!(this.hasOwnProperty("__vanillaRedirection$Action"))) {
-                    this.__vanillaRedirection$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("VanillaRedirection", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "VanillaRedirection");
-                                span.setAttribute("outsystems.function.key", "e851e336-37c0-4f91-aaf5-cbd43c848dec");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("VanillaRedirection");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=vanillalongcall", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__vanillaRedirection$Action;
-            }
-            set _vanillaRedirection$Action(value) {
-                this.__vanillaRedirection$Action = value;
-            }
-
-
-            turbosRedirection$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("TurbosRedirection__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "TurbosRedirection");
-                        span.setAttribute("outsystems.function.key", "1c18723e-c832-447f-940d-b297712b3aeb");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._turbosRedirection$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
 
             botRedirection$Action(callContext) {
                 var controller = this.controller;
@@ -4183,30 +3977,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             }
 
-            accumulatorsRedirection$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("AccumulatorsRedirection__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "AccumulatorsRedirection");
-                        span.setAttribute("outsystems.function.key", "c28ff081-8b45-433f-8851-bb00be8bcbbd");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._accumulatorsRedirection$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
             toggleDerivGoModal$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("ToggleDerivGoModal__proxy", function(span) {
@@ -4350,30 +4120,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             }
 
-            multipliersRedirection$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("MultipliersRedirection__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "MultipliersRedirection");
-                        span.setAttribute("outsystems.function.key", "df700acd-6a92-4799-855a-91a3953c0a66");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._multipliersRedirection$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
             openAccountSwitcherOnClick$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OpenAccountSwitcherOnClick__proxy", function(span) {
@@ -4440,30 +4186,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                         }
 
                     });
-                }, 0);
-
-            }
-
-            vanillaRedirection$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("VanillaRedirection__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "VanillaRedirection");
-                        span.setAttribute("outsystems.function.key", "e851e336-37c0-4f91-aaf5-cbd43c848dec");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._vanillaRedirection$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
                 }, 0);
 
             }
@@ -4601,15 +4323,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 return false;
             }
         }]);
-        Controller.registerVariableGroupType("tradershub.MainFlow.Options.OnReady$javaScript2JSResult", [{
-            name: "ClientCountry",
-            attrName: "clientCountryOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
         Controller.registerVariableGroupType("tradershub.MainFlow.Options.SmarttraderRedirection$generateRedirectURLJSResult", [{
             name: "SmartTraderURL",
             attrName: "smartTraderURLOut",
@@ -4682,13 +4395,6 @@ define("tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAcco
 define("tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript1JS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         $parameters.AllOptionsAvailability = $parameters.ShouldShowDGo || $parameters.ShouldShowDTrader || $parameters.ShouldShowDBot || $parameters.ShouldShowSmartTrader;
-    };
-});
-
-define("tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript2JS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const website_data = JSON.parse($parameters.WebsiteData);
-        $parameters.ClientCountry = $parameters.TempClientCountry ? $parameters.TempClientCountry : website_data.website_status.clients_country;
     };
 });
 

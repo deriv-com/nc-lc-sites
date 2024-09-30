@@ -65,6 +65,10 @@
     background-color: var(--color-background-login);
 }
 
+html {
+    overflow-y: auto !important;
+}
+
 .form-control[data-input]:focus:not(.not-valid), .form-control[data-textarea]:focus:not(.not-valid) {
     border-color: #818488 !important;
 }
@@ -163,4 +167,8 @@ body {
     margin: 0;
     max-height: 100% !important;
     height: 100%;
+}
+
+.flatpickr-calendar:not(.open) {
+    display: none;
 }

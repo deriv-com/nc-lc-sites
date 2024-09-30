@@ -58,7 +58,7 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$model", ["@outsystems/runt
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.ForgotPassword.mvc$model", "PartnersHub.ForgotPassword.ForgotPassword.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_ForgotPassword_mvc_model, PartnersHub_ForgotPassword_ForgotPassword_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
+define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.ForgotPassword.mvc$model", "PartnersHub.ForgotPassword.ForgotPassword.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.DeviceLayout.mvc$view", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "PartnersHub.model$ST_8ae1180ce44995afc567de3f72e5c712Structure", "PartnersHub.controller$SendVerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_ForgotPassword_ForgotPassword_mvc_model, PartnersHub_ForgotPassword_ForgotPassword_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -89,7 +89,7 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runti
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view];
         }
 
         get modelFactory() {
@@ -320,7 +320,7 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runti
                                         },
                                         isDefault: true,
                                         onClick: function() {
-                                            controller.validationService.validateWidget(idService.getId("ResetPasswordEmailForm"));
+                                            _this.validateWidget(idService.getId("ResetPasswordEmailForm"));
                                             return Promise.resolve().then(function() {
                                                 var eventHandlerContext = callContext.clone();
                                                 return controller.sendEmailEvent$Action(controller.callContext(eventHandlerContext));
@@ -339,7 +339,7 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runti
                                 }),
                                 tabletContent: PlaceholderContent.Empty,
                                 mobileContent: new PlaceholderContent(function() {
-                                    return [React.createElement(CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
+                                    return [React.createElement(CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
                                         getOwnerSpan: function() {
                                             return _this.getChildSpan("render");
                                         },
@@ -485,7 +485,7 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$view", ["@outsystems/runti
                                                     },
                                                     isDefault: true,
                                                     onClick: function() {
-                                                        controller.validationService.validateWidget(idService.getId("ResetPasswordEmailForm2"));
+                                                        _this.validateWidget(idService.getId("ResetPasswordEmailForm2"));
                                                         return Promise.resolve().then(function() {
                                                             var eventHandlerContext = callContext.clone();
                                                             return controller.sendEmailEvent$Action(controller.callContext(eventHandlerContext));

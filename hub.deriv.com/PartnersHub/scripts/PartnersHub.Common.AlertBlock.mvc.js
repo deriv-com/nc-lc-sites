@@ -1,4 +1,4 @@
-define("PartnersHub.Common.AlertBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure"], function(OSRuntimeCore, PartnersHubModel, CustomComponents_ButtonVariants_PrimaryButton_mvcModel) {
+define("PartnersHub.Common.AlertBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure"], function(OSRuntimeCore, PartnersHubModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -59,7 +59,7 @@ define("PartnersHub.Common.AlertBlock.mvc$model", ["@outsystems/runtime-core-js"
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
+                Model._hasValidationWidgetsValue = CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
             }
 
             return Model._hasValidationWidgetsValue;
@@ -105,7 +105,7 @@ define("PartnersHub.Common.AlertBlock.mvc$model", ["@outsystems/runtime-core-js"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Common.AlertBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Common.AlertBlock.mvc$model", "PartnersHub.Common.AlertBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Common_AlertBlock_mvc_model, PartnersHub_Common_AlertBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Common.AlertBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Common.AlertBlock.mvc$model", "PartnersHub.Common.AlertBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_6e5c732e48bd98c4d439ed63bb1fb9c4Structure"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Common_AlertBlock_mvc_model, PartnersHub_Common_AlertBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -136,7 +136,7 @@ define("PartnersHub.Common.AlertBlock.mvc$view", ["@outsystems/runtime-core-js",
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -263,7 +263,7 @@ define("PartnersHub.Common.AlertBlock.mvc$view", ["@outsystems/runtime-core-js",
                     uuid: "7"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

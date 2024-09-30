@@ -41,15 +41,15 @@ define("tradershub.model$BasicTypeList<Text>", ["exports", "@outsystems/runtime-
 
 });
 
-define("tradershub.model$RC_3183b1f3faf6969c32d1f8eb3c0f8d02", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_41688d261db663d4544900081e65767bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_3183b1f3faf6969c32d1f8eb3c0f8d02", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_41688d261db663d4544900081e65767bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_3183b1f3faf6969c32d1f8eb3c0f8d02Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetAccountStatus", "getAccountStatusAttr", "GetAccountStatus", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_41688d261db663d4544900081e65767bStructure());
-                    }, true, RESTAPIWebsocketModel.ST_41688d261db663d4544900081e65767bStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_41688d261db663d4544900081e65767bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_41688d261db663d4544900081e65767bStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -353,33 +353,18 @@ define("tradershub.model$RL_00936eef257061be45c67cab1008e648", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_009f057acdc45a698d784f1d33cd022c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_009f057acdc45a698d784f1d33cd022cInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("PostVerifyEmailResponse", "postVerifyEmailResponseAttr", "PostVerifyEmailResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_009f057acdc45a698d784f1d33cd022c(new RC_009f057acdc45a698d784f1d33cd022c.RecordClass({
-                    postVerifyEmailResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
+define("tradershub.model$RL_00e1daf27d32b8b4e98978c4e9e58544", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_00e1daf27d32b8b4e98978c4e9e58544 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure;
         }
 
-        tradershubModel.RC_009f057acdc45a698d784f1d33cd022c = RC_009f057acdc45a698d784f1d33cd022cInner;
-
-        RC_009f057acdc45a698d784f1d33cd022cInner._isAnonymousRecord = true;
-        RC_009f057acdc45a698d784f1d33cd022cInner.UniqueId = "009f057a-cdc4-5a69-8d78-4f1d33cd022c";
-        var RC_009f057acdc45a698d784f1d33cd022c = RC_009f057acdc45a698d784f1d33cd022cInner;
-        RC_009f057acdc45a698d784f1d33cd022c.init();
     }
+
+    tradershubModel.RL_00e1daf27d32b8b4e98978c4e9e58544 = RL_00e1daf27d32b8b4e98978c4e9e58544;
+
 });
 
 define("tradershub.model$RC_80cb2a4451da1d8d8f25a688259024cd", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model", "tradershub.model", "OutSystemsMaps.model$ST_c2a46cf64d2acc4b38d805712495224cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsMaps"], function(exports, OSRuntimeCore, OutSystemsMapsModel, tradershubModel) {
@@ -425,15 +410,15 @@ define("tradershub.model$RL_01101873132d33b7b76cda4800cadf1d", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_012b2720fb0dcd442416908af4498cef", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_333caa433a680d581b2dfdf80dcbab60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_012b2720fb0dcd442416908af4498cef", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_333caa433a680d581b2dfdf80dcbab60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_012b2720fb0dcd442416908af4498cefInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Postcode", "postcodeAttr", "Postcode", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_333caa433a680d581b2dfdf80dcbab60Structure());
-                    }, true, RESTAPIWebsocketModel.ST_333caa433a680d581b2dfdf80dcbab60Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_333caa433a680d581b2dfdf80dcbab60Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_333caa433a680d581b2dfdf80dcbab60Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -454,12 +439,12 @@ define("tradershub.model$RC_012b2720fb0dcd442416908af4498cef", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_016ebe8f15c3060e53dd56f2fea28791 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure;
+            return RESTAPIWebsocketOfficialModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure;
         }
 
     }
@@ -525,12 +510,12 @@ define("tradershub.model$RL_024c65775fda4a7c95336ab422a752c4", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_0253348eb22ed9882ec1d8af3ef0b76e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_0253348eb22ed9882ec1d8af3ef0b76e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_0253348eb22ed9882ec1d8af3ef0b76e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure;
+            return RESTAPIWebsocketOfficialModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure;
         }
 
     }
@@ -553,12 +538,12 @@ define("tradershub.model$RL_028be7f802152b5f25a868ed964b5ea2", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_02995be0d4089fecb83f5ff06bf3de7f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_02995be0d4089fecb83f5ff06bf3de7f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_02995be0d4089fecb83f5ff06bf3de7f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure;
         }
 
     }
@@ -567,15 +552,15 @@ define("tradershub.model$RL_02995be0d4089fecb83f5ff06bf3de7f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e16346b05b03d5a8388d39bb24b7660c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_55477c48be760e041c4dbfa365f63009Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e16346b05b03d5a8388d39bb24b7660c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_55477c48be760e041c4dbfa365f63009Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e16346b05b03d5a8388d39bb24b7660cInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetLandingCompanyResponse", "getLandingCompanyResponseAttr", "GetLandingCompanyResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_55477c48be760e041c4dbfa365f63009Structure());
-                    }, true, RESTAPIWebsocketModel.ST_55477c48be760e041c4dbfa365f63009Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_55477c48be760e041c4dbfa365f63009Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_55477c48be760e041c4dbfa365f63009Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -653,15 +638,15 @@ define("tradershub.model$RL_02cff45c25b99caaf51dba44a0e0b754", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_f5490f87f20f20000a36a875dced4a8f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f5490f87f20f20000a36a875dced4a8f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f5490f87f20f20000a36a875dced4a8fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("KYCAuthStatus", "kYCAuthStatusAttr", "KYCAuthStatus", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -811,12 +796,12 @@ define("tradershub.model$RC_03619642a06de09478f0b8f506c364eb", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_03ad86d8c1630b012ffc7d14eb428cff", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_03ad86d8c1630b012ffc7d14eb428cff", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_03ad86d8c1630b012ffc7d14eb428cff extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure;
+            return RESTAPIWebsocketOfficialModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure;
         }
 
     }
@@ -936,15 +921,15 @@ define("tradershub.model$RL_0417077f5c5348a1b4859e3336d70f3e", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e70e907746052ce92e691c25e5a4ffd3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e70e907746052ce92e691c25e5a4ffd3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e70e907746052ce92e691c25e5a4ffd3Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetAccountStatusResponse", "getAccountStatusResponseAttr", "GetAccountStatusResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -979,12 +964,12 @@ define("tradershub.model$RL_05831c3634322d723355d086c3117149", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_071a5687136a6dbeecb0a0d193c188a2 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure;
+            return RESTAPIWebsocketOfficialModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure;
         }
 
     }
@@ -993,15 +978,15 @@ define("tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_0a5ac3085c044e0c9df151a275033fc0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_0a5ac3085c044e0c9df151a275033fc0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_0a5ac3085c044e0c9df151a275033fc0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetResidenceListResponse", "getResidenceListResponseAttr", "GetResidenceListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_63a473e932ef99f5271718b62399e682Structure());
-                    }, true, RESTAPIWebsocketModel.ST_63a473e932ef99f5271718b62399e682Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1036,12 +1021,12 @@ define("tradershub.model$RL_06044e18a6adcb4a057162249eab9621", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_06622fbce6cdd9c0cef8e5e1e42d7483", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_06622fbce6cdd9c0cef8e5e1e42d7483", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_06622fbce6cdd9c0cef8e5e1e42d7483 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure;
         }
 
     }
@@ -1301,15 +1286,15 @@ define("tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", ["export
     }
 });
 
-define("tradershub.model$RC_7501a1e5933671743a2bbef56326a047", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b5282edb36283adb40969ef7004c3e79Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7501a1e5933671743a2bbef56326a047", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5282edb36283adb40969ef7004c3e79Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7501a1e5933671743a2bbef56326a047Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Common_reporting_standard", "common_reporting_standardAttr", "Common_reporting_standard", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b5282edb36283adb40969ef7004c3e79Structure());
-                    }, true, RESTAPIWebsocketModel.ST_b5282edb36283adb40969ef7004c3e79Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b5282edb36283adb40969ef7004c3e79Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b5282edb36283adb40969ef7004c3e79Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1358,15 +1343,15 @@ define("tradershub.model$RL_06b8cf83c83115de92b2a23869873cfa", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_08d13aa30e14041e8a414b5d62b51845", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4e063a3cef8e9e085284fb57c1326006Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_08d13aa30e14041e8a414b5d62b51845", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4e063a3cef8e9e085284fb57c1326006Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_08d13aa30e14041e8a414b5d62b51845Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Transfer_between_account", "transfer_between_accountAttr", "Transfer_between_account2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4e063a3cef8e9e085284fb57c1326006Structure());
-                    }, true, RESTAPIWebsocketModel.ST_4e063a3cef8e9e085284fb57c1326006Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4e063a3cef8e9e085284fb57c1326006Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4e063a3cef8e9e085284fb57c1326006Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1516,15 +1501,15 @@ define("tradershub.model$RL_073741b4a94a52714ff12683c5a2ca93", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b95c380c099a10aa1c6c66ff29a6b5ad", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b95c380c099a10aa1c6c66ff29a6b5ad", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b95c380c099a10aa1c6c66ff29a6b5adInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformPasswordResetRequest", "postTradingPlatformPasswordResetRequestAttr", "PostTradingPlatformPasswordResetRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure());
-                    }, true, RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1635,12 +1620,12 @@ define("tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_07d4f66324fea8299f2f66d1b9c5293b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_72900159fa859d96c9b5e8531e637a4cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_07d4f66324fea8299f2f66d1b9c5293b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_72900159fa859d96c9b5e8531e637a4cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_07d4f66324fea8299f2f66d1b9c5293b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_72900159fa859d96c9b5e8531e637a4cStructure;
+            return RESTAPIWebsocketOfficialModel.ST_72900159fa859d96c9b5e8531e637a4cStructure;
         }
 
     }
@@ -1663,12 +1648,12 @@ define("tradershub.model$RL_07e65f4cc3491f918636e1711890abb8", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_08493c76d04a33db201691368d61ec98", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e9350867621f419f78bd47d2bb88d9ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_08493c76d04a33db201691368d61ec98", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e9350867621f419f78bd47d2bb88d9ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_08493c76d04a33db201691368d61ec98 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure;
+            return RESTAPIWebsocketOfficialModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure;
         }
 
     }
@@ -1677,12 +1662,12 @@ define("tradershub.model$RL_08493c76d04a33db201691368d61ec98", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_085f95fe6d8c0993316da931c0bd457a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_085f95fe6d8c0993316da931c0bd457a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_085f95fe6d8c0993316da931c0bd457a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure;
+            return RESTAPIWebsocketOfficialModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure;
         }
 
     }
@@ -1691,15 +1676,15 @@ define("tradershub.model$RL_085f95fe6d8c0993316da931c0bd457a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b654e7cd3dd9ac2b1fbdd9af9d59a56a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ec58aaccd7b190d47a2dd7159fa0d866Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b654e7cd3dd9ac2b1fbdd9af9d59a56a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ec58aaccd7b190d47a2dd7159fa0d866Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b654e7cd3dd9ac2b1fbdd9af9d59a56aInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("KYC_Identity", "kYC_IdentityAttr", "KYC_Identity", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure());
-                    }, true, RESTAPIWebsocketModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1734,15 +1719,15 @@ define("tradershub.model$RL_08d09f34c86e6f5622489301d79ff8a8", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_832614e442cb28467f1d84472c884ebb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_832614e442cb28467f1d84472c884ebb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_832614e442cb28467f1d84472c884ebbInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req10", "echo_req10Attr", "Echo_req12", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure());
-                    }, true, RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4dc58b9edb8582c76248b762d6650913Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4dc58b9edb8582c76248b762d6650913Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1777,12 +1762,12 @@ define("tradershub.model$RL_08ec9fd9082ce97be1a7ef16873ad7f8", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_593060ea0fb9fd453ef904bd5780284a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_593060ea0fb9fd453ef904bd5780284a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_593060ea0fb9fd453ef904bd5780284a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure;
+            return RESTAPIWebsocketOfficialModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure;
         }
 
     }
@@ -1791,15 +1776,15 @@ define("tradershub.model$RL_593060ea0fb9fd453ef904bd5780284a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_091244483290da7633fe64666de188c0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_091244483290da7633fe64666de188c0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_091244483290da7633fe64666de188c0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetWebsiteStatusResponse", "getWebsiteStatusResponseAttr", "GetWebsiteStatusResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1850,12 +1835,12 @@ define("tradershub.model$EN_09277b6b86cf80f882c3c457ae17c01aEntityRecord", ["exp
     }
 });
 
-define("tradershub.model$RL_098222569d614b59c720a7d15f2e16c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b8e1602bee02fb2422c9742384775a7bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_098222569d614b59c720a7d15f2e16c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b8e1602bee02fb2422c9742384775a7bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_098222569d614b59c720a7d15f2e16c6 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b8e1602bee02fb2422c9742384775a7bStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b8e1602bee02fb2422c9742384775a7bStructure;
         }
 
     }
@@ -1893,15 +1878,15 @@ define("tradershub.model$RC_098c46906c1c0c7e7b39f1210fb64f78", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_8e2ccc4cb2bbc580c7d8c36277a3970f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_349094d98d9594831ba9e5194411246fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_8e2ccc4cb2bbc580c7d8c36277a3970f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_349094d98d9594831ba9e5194411246fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_8e2ccc4cb2bbc580c7d8c36277a3970fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("NonParticipatingJurisdiction_LandingCompany", "nonParticipatingJurisdiction_LandingCompanyAttr", "NonParticipatingJurisdiction_LandingCompany", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_349094d98d9594831ba9e5194411246fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_349094d98d9594831ba9e5194411246fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_349094d98d9594831ba9e5194411246fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_349094d98d9594831ba9e5194411246fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1965,15 +1950,15 @@ define("tradershub.model$RC_0a89eeb60fa1f44b6316ca69b462007b", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_0af1f162a4f117f1f3e8ae4dce5af0db", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cea376e9e95ae6d491d188174483cdceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_0af1f162a4f117f1f3e8ae4dce5af0db", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cea376e9e95ae6d491d188174483cdceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_0af1f162a4f117f1f3e8ae4dce5af0dbInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Dxtrade_all_company", "dxtrade_all_companyAttr", "Dxtrade_all_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_cea376e9e95ae6d491d188174483cdceStructure());
-                    }, true, RESTAPIWebsocketModel.ST_cea376e9e95ae6d491d188174483cdceStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_cea376e9e95ae6d491d188174483cdceStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_cea376e9e95ae6d491d188174483cdceStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -1994,15 +1979,15 @@ define("tradershub.model$RC_0af1f162a4f117f1f3e8ae4dce5af0db", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_177ce791066fe3e52ef3d9c99be27198", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_177ce791066fe3e52ef3d9c99be27198", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_177ce791066fe3e52ef3d9c99be27198Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req5", "echo_req5Attr", "Echo_req5", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure());
-                    }, true, RESTAPIWebsocketModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -2121,15 +2106,15 @@ define("tradershub.model$RL_0c027f63b75e77718f945ebcb3e14385", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_fbe47240f7e3e38042a8c23b7b2b02e0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2aa6b158772e078b381113da0ab825f8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_fbe47240f7e3e38042a8c23b7b2b02e0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2aa6b158772e078b381113da0ab825f8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_fbe47240f7e3e38042a8c23b7b2b02e0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetLandingCompanyRequest", "getLandingCompanyRequestAttr", "GetLandingCompanyRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_2aa6b158772e078b381113da0ab825f8Structure());
-                    }, true, RESTAPIWebsocketModel.ST_2aa6b158772e078b381113da0ab825f8Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2aa6b158772e078b381113da0ab825f8Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2aa6b158772e078b381113da0ab825f8Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -2164,12 +2149,12 @@ define("tradershub.model$RL_0c13bf82c0e754513401b974c717dc2b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_0c71b2fc045fad5c4e0f7f80c50bd453", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_0c71b2fc045fad5c4e0f7f80c50bd453", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_0c71b2fc045fad5c4e0f7f80c50bd453 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure;
+            return RESTAPIWebsocketOfficialModel.ST_77d1f9105abe302fa373f146c295ea17Structure;
         }
 
     }
@@ -2178,15 +2163,15 @@ define("tradershub.model$RL_0c71b2fc045fad5c4e0f7f80c50bd453", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_0d71b623ce5a409adf80e6d9d4a7031e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_26b581032ad004235c0d5c566e39b1dcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_0d71b623ce5a409adf80e6d9d4a7031e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_26b581032ad004235c0d5c566e39b1dcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_0d71b623ce5a409adf80e6d9d4a7031eInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req2", "echo_req2Attr", "Echo_req8", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_26b581032ad004235c0d5c566e39b1dcStructure());
-                    }, true, RESTAPIWebsocketModel.ST_26b581032ad004235c0d5c566e39b1dcStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_26b581032ad004235c0d5c566e39b1dcStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_26b581032ad004235c0d5c566e39b1dcStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -2428,6 +2413,49 @@ define("tradershub.model$RC_0deb69ca07bab991a82d69c39659451c", ["exports", "@out
     }
 });
 
+define("tradershub.model$RC_6bc4d28968c6b7a46635811add966ded", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_6bc4d28968c6b7a46635811add966dedInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Trading_platform_available_accountItemCtrader", "trading_platform_available_accountItemCtraderAttr", "Trading_platform_available_accountItemCtrader", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ae15e885fd6defd7e40491664a35bff0Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ae15e885fd6defd7e40491664a35bff0Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_6bc4d28968c6b7a46635811add966ded(new RC_6bc4d28968c6b7a46635811add966ded.RecordClass({
+                    trading_platform_available_accountItemCtraderAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_6bc4d28968c6b7a46635811add966ded = RC_6bc4d28968c6b7a46635811add966dedInner;
+
+        RC_6bc4d28968c6b7a46635811add966dedInner._isAnonymousRecord = true;
+        RC_6bc4d28968c6b7a46635811add966dedInner.UniqueId = "6bc4d289-68c6-b7a4-6635-811add966ded";
+        var RC_6bc4d28968c6b7a46635811add966ded = RC_6bc4d28968c6b7a46635811add966dedInner;
+        RC_6bc4d28968c6b7a46635811add966ded.init();
+    }
+});
+
+define("tradershub.model$RL_0e22e79825d574ddeb21017d3fee72f5", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_6bc4d28968c6b7a46635811add966ded"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0e22e79825d574ddeb21017d3fee72f5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_6bc4d28968c6b7a46635811add966ded;
+        }
+
+    }
+
+    tradershubModel.RL_0e22e79825d574ddeb21017d3fee72f5 = RL_0e22e79825d574ddeb21017d3fee72f5;
+
+});
+
 define("tradershub.model$RC_fdf568550fb18a6ec270df7466fa0d20", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model", "tradershub.model", "OutSystemsMaps.model$ST_5fb6f64676b0133fcb572480a766fc9cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsMaps"], function(exports, OSRuntimeCore, OutSystemsMapsModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_fdf568550fb18a6ec270df7466fa0d20Inner extends
@@ -2471,15 +2499,15 @@ define("tradershub.model$RL_0e72f02e1a6410320f8b97edcbb7dcb3", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_5a174d6874253917600b578d844943be", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_5a174d6874253917600b578d844943be", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_5a174d6874253917600b578d844943beInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Nik", "nikAttr", "Nik", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure());
-                    }, true, RESTAPIWebsocketModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3101,12 +3129,12 @@ define("tradershub.model$RL_11cc4644519686d814d0c7c45c84e15b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_126434276122aa915715df7da7c75609", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_af8134183a4bd7e3eec97ada0cf46b5eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_126434276122aa915715df7da7c75609", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_af8134183a4bd7e3eec97ada0cf46b5eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_126434276122aa915715df7da7c75609 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure;
         }
 
     }
@@ -3115,15 +3143,15 @@ define("tradershub.model$RL_126434276122aa915715df7da7c75609", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_127d33c3734e3f0cecd53087584e156c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_127d33c3734e3f0cecd53087584e156c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_127d33c3734e3f0cecd53087584e156cInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req6", "echo_req6Attr", "Echo_req6", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure());
-                    }, true, RESTAPIWebsocketModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3191,12 +3219,12 @@ define("tradershub.model$RL_12a53b3c28725edc5745777d2ebb8a76", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_12d1ba6d0f7dc76efbcc2fac29abf585", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_13505e54da5ba49238f8f2a40834f63fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_12d1ba6d0f7dc76efbcc2fac29abf585", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_13505e54da5ba49238f8f2a40834f63fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_12d1ba6d0f7dc76efbcc2fac29abf585 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_13505e54da5ba49238f8f2a40834f63fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_13505e54da5ba49238f8f2a40834f63fStructure;
         }
 
     }
@@ -3205,15 +3233,15 @@ define("tradershub.model$RL_12d1ba6d0f7dc76efbcc2fac29abf585", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_334ec8eb11cbb1f900eb82a622de6be5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b47d3155c531939aabdd10ec3a99049dStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_334ec8eb11cbb1f900eb82a622de6be5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b47d3155c531939aabdd10ec3a99049dStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_334ec8eb11cbb1f900eb82a622de6be5Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("AUD", "aUDAttr", "AUD", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b47d3155c531939aabdd10ec3a99049dStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b47d3155c531939aabdd10ec3a99049dStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b47d3155c531939aabdd10ec3a99049dStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b47d3155c531939aabdd10ec3a99049dStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3248,15 +3276,15 @@ define("tradershub.model$RL_130306c98b85aa803514000e3331edb0", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_131ec4afe292e50694c2940b1e3c9a73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bccc1fae1833449eea329fa137ba885aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_131ec4afe292e50694c2940b1e3c9a73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bccc1fae1833449eea329fa137ba885aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_131ec4afe292e50694c2940b1e3c9a73Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Currency_config2", "currency_config2Attr", "Currency_config2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_bccc1fae1833449eea329fa137ba885aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_bccc1fae1833449eea329fa137ba885aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_bccc1fae1833449eea329fa137ba885aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_bccc1fae1833449eea329fa137ba885aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3277,15 +3305,15 @@ define("tradershub.model$RC_131ec4afe292e50694c2940b1e3c9a73", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_d54336ec6049dff9c99f14fd62e782c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_d54336ec6049dff9c99f14fd62e782c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d54336ec6049dff9c99f14fd62e782c4Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Trading", "tradingAttr", "Trading3", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure());
-                    }, true, RESTAPIWebsocketModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3406,12 +3434,41 @@ define("tradershub.model$RL_13dce2cada552f2b003eedebc4cfbf64", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_13f4e7ea22b9e316259c119567103cf9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_333caa433a680d581b2dfdf80dcbab60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_13f257eb273389bc73abe0351586bf1c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_412ed7113d9105960615d1c5b5f37301Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_13f257eb273389bc73abe0351586bf1cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Partner_setting", "partner_settingAttr", "Partner_setting", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_13f257eb273389bc73abe0351586bf1c(new RC_13f257eb273389bc73abe0351586bf1c.RecordClass({
+                    partner_settingAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_13f257eb273389bc73abe0351586bf1c = RC_13f257eb273389bc73abe0351586bf1cInner;
+
+        RC_13f257eb273389bc73abe0351586bf1cInner._isAnonymousRecord = true;
+        RC_13f257eb273389bc73abe0351586bf1cInner.UniqueId = "13f257eb-2733-89bc-73ab-e0351586bf1c";
+        var RC_13f257eb273389bc73abe0351586bf1c = RC_13f257eb273389bc73abe0351586bf1cInner;
+        RC_13f257eb273389bc73abe0351586bf1c.init();
+    }
+});
+
+define("tradershub.model$RL_13f4e7ea22b9e316259c119567103cf9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_333caa433a680d581b2dfdf80dcbab60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_13f4e7ea22b9e316259c119567103cf9 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_333caa433a680d581b2dfdf80dcbab60Structure;
+            return RESTAPIWebsocketOfficialModel.ST_333caa433a680d581b2dfdf80dcbab60Structure;
         }
 
     }
@@ -3420,12 +3477,12 @@ define("tradershub.model$RL_13f4e7ea22b9e316259c119567103cf9", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_143abbfebca3c373ef0923e4c8b26336", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cea376e9e95ae6d491d188174483cdceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_143abbfebca3c373ef0923e4c8b26336", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cea376e9e95ae6d491d188174483cdceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_143abbfebca3c373ef0923e4c8b26336 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_cea376e9e95ae6d491d188174483cdceStructure;
+            return RESTAPIWebsocketOfficialModel.ST_cea376e9e95ae6d491d188174483cdceStructure;
         }
 
     }
@@ -3434,12 +3491,12 @@ define("tradershub.model$RL_143abbfebca3c373ef0923e4c8b26336", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_14c5bb80b83da1321f2059f42deabf95", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_10e78341d21be3a7dc573dcf4252c9dbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_14c5bb80b83da1321f2059f42deabf95", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_10e78341d21be3a7dc573dcf4252c9dbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_14c5bb80b83da1321f2059f42deabf95 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure;
+            return RESTAPIWebsocketOfficialModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure;
         }
 
     }
@@ -3693,12 +3750,12 @@ define("tradershub.model$RL_1608d9419ce68c1bc879636bc5f915cc", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_1659ef22005bb5893eb1c95011619009", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6e7638d850b78b46a75a04e2dcd58f58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_1659ef22005bb5893eb1c95011619009", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6e7638d850b78b46a75a04e2dcd58f58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_1659ef22005bb5893eb1c95011619009 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure;
+            return RESTAPIWebsocketOfficialModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure;
         }
 
     }
@@ -3886,12 +3943,12 @@ define("tradershub.model$RL_1877a0bf65882e17598cb03c8ccde386", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_18994bd1cd31a465f2635a0d68fa478a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_18994bd1cd31a465f2635a0d68fa478a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_18994bd1cd31a465f2635a0d68fa478a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_72e91b438c2e206bca7398a7a69902dfStructure;
+            return RESTAPIWebsocketOfficialModel.ST_72e91b438c2e206bca7398a7a69902dfStructure;
         }
 
     }
@@ -3930,15 +3987,44 @@ define("tradershub.model$EN_18a161aea4f6fead5f823df7320c3dd0EntityRecord", ["exp
     }
 });
 
-define("tradershub.model$RC_d748f9b2c2050386449473bdb4b3b0cb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_18cf7a633c2eb19c8f4a71d50c228fa8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_839b1aebc8b507d4259e4312bdc21d4bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_18cf7a633c2eb19c8f4a71d50c228fa8Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Product_detail", "product_detailAttr", "Product_detail", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_839b1aebc8b507d4259e4312bdc21d4bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_839b1aebc8b507d4259e4312bdc21d4bStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_18cf7a633c2eb19c8f4a71d50c228fa8(new RC_18cf7a633c2eb19c8f4a71d50c228fa8.RecordClass({
+                    product_detailAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_18cf7a633c2eb19c8f4a71d50c228fa8 = RC_18cf7a633c2eb19c8f4a71d50c228fa8Inner;
+
+        RC_18cf7a633c2eb19c8f4a71d50c228fa8Inner._isAnonymousRecord = true;
+        RC_18cf7a633c2eb19c8f4a71d50c228fa8Inner.UniqueId = "18cf7a63-3c2e-b19c-8f4a-71d50c228fa8";
+        var RC_18cf7a633c2eb19c8f4a71d50c228fa8 = RC_18cf7a633c2eb19c8f4a71d50c228fa8Inner;
+        RC_18cf7a633c2eb19c8f4a71d50c228fa8.init();
+    }
+});
+
+define("tradershub.model$RC_d748f9b2c2050386449473bdb4b3b0cb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d748f9b2c2050386449473bdb4b3b0cbInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req4", "echo_req4Attr", "Echo_req9", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure());
-                    }, true, RESTAPIWebsocketModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3987,15 +4073,15 @@ define("tradershub.model$RL_18eaeddec5c9c8e43211a24af7fe76c5", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_191172c94e64292c8bf1a2dce4b5e876", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_977d84487e32bee2c1a14da15d247b5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_191172c94e64292c8bf1a2dce4b5e876", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_977d84487e32bee2c1a14da15d247b5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_191172c94e64292c8bf1a2dce4b5e876Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Dxtrade_status", "dxtrade_statusAttr", "Dxtrade_status2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_977d84487e32bee2c1a14da15d247b5fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_977d84487e32bee2c1a14da15d247b5fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_977d84487e32bee2c1a14da15d247b5fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_977d84487e32bee2c1a14da15d247b5fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4016,15 +4102,15 @@ define("tradershub.model$RC_191172c94e64292c8bf1a2dce4b5e876", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_19aa89641c7398ceacf4370c69126f64", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_1c923b28044712e7268167783ecfdfbeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_19aa89641c7398ceacf4370c69126f64", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1c923b28044712e7268167783ecfdfbeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_19aa89641c7398ceacf4370c69126f64Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Tax", "taxAttr", "Tax", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_1c923b28044712e7268167783ecfdfbeStructure());
-                    }, true, RESTAPIWebsocketModel.ST_1c923b28044712e7268167783ecfdfbeStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1c923b28044712e7268167783ecfdfbeStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1c923b28044712e7268167783ecfdfbeStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4145,15 +4231,15 @@ define("tradershub.model$RL_1a211c52d9450d4da06f34c1b8aa3b76", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_39bf756e3f1604202cf1d7ac5fb3b260", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_39bf756e3f1604202cf1d7ac5fb3b260", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_39bf756e3f1604202cf1d7ac5fb3b260Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Mt_financial_company", "mt_financial_companyAttr", "Mt_financial_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure());
-                    }, true, RESTAPIWebsocketModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4404,15 +4490,15 @@ define("tradershub.model$ST_1a99e1302699632bd3158595a2dd8d57Structure", ["export
     }
 });
 
-define("tradershub.model$RC_1b2532ef629f2b3259beb09a3dc495b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_0543ba6e58ccc819d0ba65db33df025eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_1b2532ef629f2b3259beb09a3dc495b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_0543ba6e58ccc819d0ba65db33df025eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_1b2532ef629f2b3259beb09a3dc495b4Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Feature_flag", "feature_flagAttr", "Feature_flag", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4462,15 +4548,15 @@ define("tradershub.model$RC_1b25d6a078a2b54dc46acf86c7e61fc3", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_ea9565ddc265550c2d38c39dc154035f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_113226709b84b71c70ebd50296313568Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_ea9565ddc265550c2d38c39dc154035f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_113226709b84b71c70ebd50296313568Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_ea9565ddc265550c2d38c39dc154035fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Turnover", "turnoverAttr", "Turnover", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_113226709b84b71c70ebd50296313568Structure());
-                    }, true, RESTAPIWebsocketModel.ST_113226709b84b71c70ebd50296313568Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_113226709b84b71c70ebd50296313568Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_113226709b84b71c70ebd50296313568Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4532,6 +4618,20 @@ define("tradershub.model$RC_1ba3db8c7175cd095b4f1a36c3a1e53d", ["exports", "@out
         var RC_1ba3db8c7175cd095b4f1a36c3a1e53d = RC_1ba3db8c7175cd095b4f1a36c3a1e53dInner;
         RC_1ba3db8c7175cd095b4f1a36c3a1e53d.init();
     }
+});
+
+define("tradershub.model$RL_1d3883baf2a25f26e9aa7de12c9a4468", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1d3883baf2a25f26e9aa7de12c9a4468 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure;
+        }
+
+    }
+
+    tradershubModel.RL_1d3883baf2a25f26e9aa7de12c9a4468 = RL_1d3883baf2a25f26e9aa7de12c9a4468;
+
 });
 
 define("tradershub.model$RC_699ccb418c056c9e57a80a9dfd4d1935", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure"], function(exports, OSRuntimeCore, tradershubModel) {
@@ -4739,12 +4839,40 @@ define("tradershub.model$RL_1da0588253bddedd5b1b7d88c0cc1c86", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_1dc527401e57829601dc86609514b95f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d2e8d01cb1d1df6bef4310379df28149", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a64a97da9ee822b4b21c919739567011Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_d2e8d01cb1d1df6bef4310379df28149 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a64a97da9ee822b4b21c919739567011Structure;
+        }
+
+    }
+
+    tradershubModel.RL_d2e8d01cb1d1df6bef4310379df28149 = RL_d2e8d01cb1d1df6bef4310379df28149;
+
+});
+
+define("tradershub.model$RL_1dae29f574cdcca95ce8a85935b8f3fa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_711f7ad16da273bf9e6563303a17ad00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1dae29f574cdcca95ce8a85935b8f3fa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_711f7ad16da273bf9e6563303a17ad00Structure;
+        }
+
+    }
+
+    tradershubModel.RL_1dae29f574cdcca95ce8a85935b8f3fa = RL_1dae29f574cdcca95ce8a85935b8f3fa;
+
+});
+
+define("tradershub.model$RL_1dc527401e57829601dc86609514b95f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_83fbd707f872e92b597918150eff1f3eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_1dc527401e57829601dc86609514b95f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_83fbd707f872e92b597918150eff1f3eStructure;
         }
 
     }
@@ -4753,15 +4881,15 @@ define("tradershub.model$RL_1dc527401e57829601dc86609514b95f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_f643b3acfc27a4fecd1e2e4d216ea947", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f643b3acfc27a4fecd1e2e4d216ea947", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f643b3acfc27a4fecd1e2e4d216ea947Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("DemoItem", "demoItemAttr", "DemoItem2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure());
-                    }, true, RESTAPIWebsocketModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_cd83fe90bac6d8f5fe1d8e3dce9729c1Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -4796,15 +4924,15 @@ define("tradershub.model$RL_1dea2ab8630085ef26828f80f7648065", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_a1310fc4b6664d1d807ee5336bf20c28", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a1310fc4b6664d1d807ee5336bf20c28", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a1310fc4b6664d1d807ee5336bf20c28Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetGetSettingsResponse", "getGetSettingsResponseAttr", "GetGetSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure());
-                    }, true, RESTAPIWebsocketModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5031,12 +5159,12 @@ define("tradershub.model$RC_1ec8ce039f100a775e8587dc53ed1b5e", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_1ee2701fb233e597575036a6d1cfcb5b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2aa6b158772e078b381113da0ab825f8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_1ee2701fb233e597575036a6d1cfcb5b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2aa6b158772e078b381113da0ab825f8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_1ee2701fb233e597575036a6d1cfcb5b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_2aa6b158772e078b381113da0ab825f8Structure;
+            return RESTAPIWebsocketOfficialModel.ST_2aa6b158772e078b381113da0ab825f8Structure;
         }
 
     }
@@ -5117,15 +5245,15 @@ define("tradershub.model$RL_201410915258bdd92387bbd4bec2a7bb", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_a336dc96fafc2e7ffdb88fdcc24fe482", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a336dc96fafc2e7ffdb88fdcc24fe482", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a336dc96fafc2e7ffdb88fdcc24fe482Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("After_first_deposit", "after_first_depositAttr", "After_first_deposit", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure());
-                    }, true, RESTAPIWebsocketModel.ST_77d1f9105abe302fa373f146c295ea17Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_77d1f9105abe302fa373f146c295ea17Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_77d1f9105abe302fa373f146c295ea17Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5357,15 +5485,15 @@ define("tradershub.model$RC_21847b804416cb439cd5eb109d0a6094", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_6da37637b0593f4ec39cbdb7fca0818f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_10e78341d21be3a7dc573dcf4252c9dbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_6da37637b0593f4ec39cbdb7fca0818f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_10e78341d21be3a7dc573dcf4252c9dbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_6da37637b0593f4ec39cbdb7fca0818fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Onfido", "onfidoAttr", "Onfido2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure());
-                    }, true, RESTAPIWebsocketModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_10e78341d21be3a7dc573dcf4252c9dbStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5400,15 +5528,15 @@ define("tradershub.model$RL_21aa582dbaa7e503639ee59cca230a00", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_30490951290854c2926b2cf8ec7b4a20", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9eb2d1268b055c9ba20852d2758a5050Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_30490951290854c2926b2cf8ec7b4a20", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9eb2d1268b055c9ba20852d2758a5050Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_30490951290854c2926b2cf8ec7b4a20Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Jurisdiction_risk_assessment", "jurisdiction_risk_assessmentAttr", "Jurisdiction_risk_assessment", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure());
-                    }, true, RESTAPIWebsocketModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5443,15 +5571,15 @@ define("tradershub.model$RL_222c4cca834a8b261e24304f207bc884", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_224fc9970e9693b073b49748bfa1459a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_224fc9970e9693b073b49748bfa1459a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_224fc9970e9693b073b49748bfa1459aInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Max_requestes_general", "max_requestes_generalAttr", "Max_requestes_general2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5472,15 +5600,15 @@ define("tradershub.model$RC_224fc9970e9693b073b49748bfa1459a", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_2296852fb68ffc0d98bf144361127c38", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b8e5132e8639404a10bb651dc17997bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_2296852fb68ffc0d98bf144361127c38", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b8e5132e8639404a10bb651dc17997bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_2296852fb68ffc0d98bf144361127c38Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Platform", "platformAttr", "Platform", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b8e5132e8639404a10bb651dc17997bcStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b8e5132e8639404a10bb651dc17997bcStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b8e5132e8639404a10bb651dc17997bcStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b8e5132e8639404a10bb651dc17997bcStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5515,15 +5643,15 @@ define("tradershub.model$RL_230328260e3d7a695b9562201483a549", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_236b9780ed98eefd23c7d452d5b32785", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_236b9780ed98eefd23c7d452d5b32785", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_236b9780ed98eefd23c7d452d5b32785Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostAuthorizeRequest", "postAuthorizeRequestAttr", "PostAuthorizeRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_450f06937a42e6bd68832beac9fd4297Structure());
-                    }, true, RESTAPIWebsocketModel.ST_450f06937a42e6bd68832beac9fd4297Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_450f06937a42e6bd68832beac9fd4297Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_450f06937a42e6bd68832beac9fd4297Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5544,12 +5672,12 @@ define("tradershub.model$RC_236b9780ed98eefd23c7d452d5b32785", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_23c5170e5cae92676806075f1dc0926f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_26b581032ad004235c0d5c566e39b1dcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_23c5170e5cae92676806075f1dc0926f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_26b581032ad004235c0d5c566e39b1dcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_23c5170e5cae92676806075f1dc0926f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_26b581032ad004235c0d5c566e39b1dcStructure;
+            return RESTAPIWebsocketOfficialModel.ST_26b581032ad004235c0d5c566e39b1dcStructure;
         }
 
     }
@@ -5617,12 +5745,40 @@ define("tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", ["export
     }
 });
 
-define("tradershub.model$RL_25008888c069155597e1a02e1b9ea813", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_803bffb999fad6a38040b2086877902eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e615c73f7c49d5c9a1b81b0e5505c2d5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_ae15e885fd6defd7e40491664a35bff0Structure;
+        }
+
+    }
+
+    tradershubModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5 = RL_e615c73f7c49d5c9a1b81b0e5505c2d5;
+
+});
+
+define("tradershub.model$RL_24d00c079b23f7e47e2ee86991545c06", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_24d00c079b23f7e47e2ee86991545c06 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure;
+        }
+
+    }
+
+    tradershubModel.RL_24d00c079b23f7e47e2ee86991545c06 = RL_24d00c079b23f7e47e2ee86991545c06;
+
+});
+
+define("tradershub.model$RL_25008888c069155597e1a02e1b9ea813", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_803bffb999fad6a38040b2086877902eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_25008888c069155597e1a02e1b9ea813 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_803bffb999fad6a38040b2086877902eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_803bffb999fad6a38040b2086877902eStructure;
         }
 
     }
@@ -5631,15 +5787,15 @@ define("tradershub.model$RL_25008888c069155597e1a02e1b9ea813", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_96175866bef7bdbf74965597575b319c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_72900159fa859d96c9b5e8531e637a4cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_96175866bef7bdbf74965597575b319c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_72900159fa859d96c9b5e8531e637a4cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_96175866bef7bdbf74965597575b319cInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostNewAccountVirtualResponse", "postNewAccountVirtualResponseAttr", "PostNewAccountVirtualResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_72900159fa859d96c9b5e8531e637a4cStructure());
-                    }, true, RESTAPIWebsocketModel.ST_72900159fa859d96c9b5e8531e637a4cStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_72900159fa859d96c9b5e8531e637a4cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_72900159fa859d96c9b5e8531e637a4cStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5717,15 +5873,15 @@ define("tradershub.model$RL_257ff75163dcb7f5df49442c867d608a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e1b3eaedbd133d4ebfdb497dc119e9c1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d12f6a9e29cbb97250918a3fc7bc632aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e1b3eaedbd133d4ebfdb497dc119e9c1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d12f6a9e29cbb97250918a3fc7bc632aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e1b3eaedbd133d4ebfdb497dc119e9c1Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Landing_company", "landing_companyAttr", "Landing_company2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -5774,12 +5930,12 @@ define("tradershub.model$RL_25fb06a470c3da9f340536abb6a3c81b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_260232560d4d04c2013fce278e787f24", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_260232560d4d04c2013fce278e787f24", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_260232560d4d04c2013fce278e787f24 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure;
         }
 
     }
@@ -5876,15 +6032,15 @@ define("tradershub.model$RC_2624ed456a552c74637631b7754933a4", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_264d82ff29428f3cd43ebe0810111d5a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_264d82ff29428f3cd43ebe0810111d5a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_264d82ff29428f3cd43ebe0810111d5aInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("KYCAuthStatusRequest", "kYCAuthStatusRequestAttr", "KYCAuthStatusRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6083,15 +6239,15 @@ define("tradershub.model$ST_27f8ec64ca98713144ae178da75c54abStructure", ["export
     }
 });
 
-define("tradershub.model$RC_2827a9b1879137deb3aaa08d45397068", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4fa180d49a839964a4a640104b10a272Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_2827a9b1879137deb3aaa08d45397068", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4fa180d49a839964a4a640104b10a272Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_2827a9b1879137deb3aaa08d45397068Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Currencies_config", "currencies_configAttr", "Currencies_config2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4fa180d49a839964a4a640104b10a272Structure());
-                    }, true, RESTAPIWebsocketModel.ST_4fa180d49a839964a4a640104b10a272Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4fa180d49a839964a4a640104b10a272Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4fa180d49a839964a4a640104b10a272Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6112,12 +6268,12 @@ define("tradershub.model$RC_2827a9b1879137deb3aaa08d45397068", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_96ea0e5dbed7b91dda2061420ea7817a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d5a14f6db075b658d013dc3ad63d0c60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_96ea0e5dbed7b91dda2061420ea7817a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d5a14f6db075b658d013dc3ad63d0c60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_96ea0e5dbed7b91dda2061420ea7817a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure;
         }
 
     }
@@ -6126,15 +6282,15 @@ define("tradershub.model$RL_96ea0e5dbed7b91dda2061420ea7817a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_2838f738beb90761e9ec634e42207f58", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_870defcbb5bf4a58a2a009971edc7d07Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_2838f738beb90761e9ec634e42207f58", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_870defcbb5bf4a58a2a009971edc7d07Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_2838f738beb90761e9ec634e42207f58Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetAssetIndexResponse", "getAssetIndexResponseAttr", "GetAssetIndexResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure());
-                    }, true, RESTAPIWebsocketModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6225,15 +6381,15 @@ define("tradershub.model$RL_28b1907e8293683af0c45f54c4d2b8d8", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_82e915cb61269c2e1fb30ed84469e07b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_82e915cb61269c2e1fb30ed84469e07b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_82e915cb61269c2e1fb30ed84469e07bInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("National_identity_card", "national_identity_cardAttr", "National_identity_card", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure());
-                    }, true, RESTAPIWebsocketModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6341,15 +6497,15 @@ define("tradershub.model$RL_294e7fa6f4ea2c75e6fa553916c277dc", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_cd5e42a0793d8eb69fbc5056fff3f372", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_55ea19c18b42991c3f5575c063ad7ca7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_cd5e42a0793d8eb69fbc5056fff3f372", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_55ea19c18b42991c3f5575c063ad7ca7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_cd5e42a0793d8eb69fbc5056fff3f372Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Non_participating_jurisdiction", "non_participating_jurisdictionAttr", "Non_participating_jurisdiction", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6663,12 +6819,12 @@ define("tradershub.model$RC_2ac88c51f2d9ed908454e6a06ffe188e", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_2b1a3419eafdbc343d89f210b76f82c7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ddeabbcab252c99fc5f083425434b2a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_2b1a3419eafdbc343d89f210b76f82c7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ddeabbcab252c99fc5f083425434b2a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_2b1a3419eafdbc343d89f210b76f82c7 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure;
         }
 
     }
@@ -6824,12 +6980,12 @@ define("tradershub.model$RC_2b9e41428d5c5ca3b04a80be4ce98f53", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_d214456dc511920f517885542ecb318a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2361699202fda01d7c8ade7cab583650Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d214456dc511920f517885542ecb318a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2361699202fda01d7c8ade7cab583650Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d214456dc511920f517885542ecb318a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_2361699202fda01d7c8ade7cab583650Structure;
+            return RESTAPIWebsocketOfficialModel.ST_2361699202fda01d7c8ade7cab583650Structure;
         }
 
     }
@@ -6838,15 +6994,15 @@ define("tradershub.model$RL_d214456dc511920f517885542ecb318a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_5c073669af4d1bb9a059222c06ae3a49", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_5c073669af4d1bb9a059222c06ae3a49", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_5c073669af4d1bb9a059222c06ae3a49Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetMT5LoginListResponse", "getMT5LoginListResponseAttr", "GetMT5LoginListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6881,15 +7037,15 @@ define("tradershub.model$RL_2bc6600c37d3f99d4190f0fccf1bad67", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_2bf25d62d530e43a49ce5fb7ed436ea0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d5a14f6db075b658d013dc3ad63d0c60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_2bf25d62d530e43a49ce5fb7ed436ea0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d5a14f6db075b658d013dc3ad63d0c60Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_2bf25d62d530e43a49ce5fb7ed436ea0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Asset_indexItem", "asset_indexItemAttr", "Asset_indexItem", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d5a14f6db075b658d013dc3ad63d0c60Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7097,15 +7253,58 @@ define("tradershub.model$RC_2d331d34aa02e5b2741655b3ecf842bf", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_441f684d3efba387356554fe17c62bec", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f4690c821393576cd1cde60070daa64f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f4690c821393576cd1cde60070daa64fInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostTradingPlatformAvailableAccountResponseCtrader", "postTradingPlatformAvailableAccountResponseCtraderAttr", "PostTradingPlatformAvailableAccountResponseCtrader", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f4690c821393576cd1cde60070daa64f(new RC_f4690c821393576cd1cde60070daa64f.RecordClass({
+                    postTradingPlatformAvailableAccountResponseCtraderAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_f4690c821393576cd1cde60070daa64f = RC_f4690c821393576cd1cde60070daa64fInner;
+
+        RC_f4690c821393576cd1cde60070daa64fInner._isAnonymousRecord = true;
+        RC_f4690c821393576cd1cde60070daa64fInner.UniqueId = "f4690c82-1393-576c-d1cd-e60070daa64f";
+        var RC_f4690c821393576cd1cde60070daa64f = RC_f4690c821393576cd1cde60070daa64fInner;
+        RC_f4690c821393576cd1cde60070daa64f.init();
+    }
+});
+
+define("tradershub.model$RL_2d46a49728c41d7be4ec88ca0d4e8266", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_f4690c821393576cd1cde60070daa64f"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2d46a49728c41d7be4ec88ca0d4e8266 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_f4690c821393576cd1cde60070daa64f;
+        }
+
+    }
+
+    tradershubModel.RL_2d46a49728c41d7be4ec88ca0d4e8266 = RL_2d46a49728c41d7be4ec88ca0d4e8266;
+
+});
+
+define("tradershub.model$RC_441f684d3efba387356554fe17c62bec", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_441f684d3efba387356554fe17c62becInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Limit", "limitAttr", "Limit2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7197,12 +7396,12 @@ define("tradershub.model$RL_2def98ced4c3f8fc12f4d1b63b0e1ece", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_2e550e70d4f60fcf474568418d9dcf73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_35e76a2e1583feb611523ac6c760c8a9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_2e550e70d4f60fcf474568418d9dcf73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_35e76a2e1583feb611523ac6c760c8a9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_2e550e70d4f60fcf474568418d9dcf73 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure;
+            return RESTAPIWebsocketOfficialModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure;
         }
 
     }
@@ -7211,15 +7410,15 @@ define("tradershub.model$RL_2e550e70d4f60fcf474568418d9dcf73", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_2e6da4a898d55ae96aab51b6e09d6a22", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6eafdf6bd9852632690d0672a511a98fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_2e6da4a898d55ae96aab51b6e09d6a22", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6eafdf6bd9852632690d0672a511a98fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_2e6da4a898d55ae96aab51b6e09d6a22Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Fiat", "fiatAttr", "Fiat2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6eafdf6bd9852632690d0672a511a98fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_6eafdf6bd9852632690d0672a511a98fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_6eafdf6bd9852632690d0672a511a98fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_6eafdf6bd9852632690d0672a511a98fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7312,15 +7511,15 @@ define("tradershub.model$RL_2ed820148ec0066544c2529736074c83", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_98e502ffc9bd24401241ef277fce403c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4820561c523dc84c471446a46147a065Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_98e502ffc9bd24401241ef277fce403c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4820561c523dc84c471446a46147a065Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_98e502ffc9bd24401241ef277fce403cInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("KYCAuthStatusResponse", "kYCAuthStatusResponseAttr", "KYCAuthStatusResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_4820561c523dc84c471446a46147a065Structure());
-                    }, true, RESTAPIWebsocketModel.ST_4820561c523dc84c471446a46147a065Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4820561c523dc84c471446a46147a065Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4820561c523dc84c471446a46147a065Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7355,15 +7554,15 @@ define("tradershub.model$RL_2f1c969e24c9ba731c5c1c39ceea50ec", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_71e7722a7761502e1fc1ee9175838bd9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ac4f1b4870aba80de82d4c04f7b530ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_71e7722a7761502e1fc1ee9175838bd9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ac4f1b4870aba80de82d4c04f7b530ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_71e7722a7761502e1fc1ee9175838bd9Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Max_proposal_subscription", "max_proposal_subscriptionAttr", "Max_proposal_subscription2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure());
-                    }, true, RESTAPIWebsocketModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7427,15 +7626,15 @@ define("tradershub.model$RC_2ff13084d6cf0d9d6734571de8315c4a", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_7a9f1d8fcf08e196ae4fcb70fce3ae4d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7a9f1d8fcf08e196ae4fcb70fce3ae4d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7a9f1d8fcf08e196ae4fcb70fce3ae4dInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Mt5_status", "mt5_statusAttr", "Mt5_status2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure());
-                    }, true, RESTAPIWebsocketModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7484,15 +7683,15 @@ define("tradershub.model$RL_30b2ec80e078c787b2c4b1e6dbae866f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_30f7e77f4f85f62f55a749d558899db1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b8e1602bee02fb2422c9742384775a7bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_30f7e77f4f85f62f55a749d558899db1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b8e1602bee02fb2422c9742384775a7bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_30f7e77f4f85f62f55a749d558899db1Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostResetPasswordResponse", "postResetPasswordResponseAttr", "PostResetPasswordResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b8e1602bee02fb2422c9742384775a7bStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b8e1602bee02fb2422c9742384775a7bStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b8e1602bee02fb2422c9742384775a7bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b8e1602bee02fb2422c9742384775a7bStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7539,6 +7738,35 @@ define("tradershub.model$RC_310dae2b4d3a1f1ded7570a6ee74f16e", ["exports", "@out
         RC_310dae2b4d3a1f1ded7570a6ee74f16eInner.UniqueId = "310dae2b-4d3a-1f1d-ed75-70a6ee74f16e";
         var RC_310dae2b4d3a1f1ded7570a6ee74f16e = RC_310dae2b4d3a1f1ded7570a6ee74f16eInner;
         RC_310dae2b4d3a1f1ded7570a6ee74f16e.init();
+    }
+});
+
+define("tradershub.model$RC_31254dd0eceb66de83ea4d3f76038ef7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_31254dd0eceb66de83ea4d3f76038ef7Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Url_parameter", "url_parameterAttr", "Url_parameter", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_31254dd0eceb66de83ea4d3f76038ef7(new RC_31254dd0eceb66de83ea4d3f76038ef7.RecordClass({
+                    url_parameterAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_31254dd0eceb66de83ea4d3f76038ef7 = RC_31254dd0eceb66de83ea4d3f76038ef7Inner;
+
+        RC_31254dd0eceb66de83ea4d3f76038ef7Inner._isAnonymousRecord = true;
+        RC_31254dd0eceb66de83ea4d3f76038ef7Inner.UniqueId = "31254dd0-eceb-66de-83ea-4d3f76038ef7";
+        var RC_31254dd0eceb66de83ea4d3f76038ef7 = RC_31254dd0eceb66de83ea4d3f76038ef7Inner;
+        RC_31254dd0eceb66de83ea4d3f76038ef7.init();
     }
 });
 
@@ -7726,15 +7954,15 @@ define("tradershub.model$RL_3511070d73ad6e94604961f61996b199", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e693c35b48131a7d9d296aba5185b8c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_98319758945048a72386b9e9466c220aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e693c35b48131a7d9d296aba5185b8c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_98319758945048a72386b9e9466c220aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e693c35b48131a7d9d296aba5185b8c6Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Requirement", "requirementAttr", "Requirement", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_98319758945048a72386b9e9466c220aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_98319758945048a72386b9e9466c220aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -7798,12 +8026,12 @@ define("tradershub.model$RC_3554b1e2806a5b827c457cdecc492d4a", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_357030bc20ba450abe6756927d50ad98", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2aef4efdcc8a8ad935c2f051f3051327Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_357030bc20ba450abe6756927d50ad98", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2aef4efdcc8a8ad935c2f051f3051327Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_357030bc20ba450abe6756927d50ad98 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure;
+            return RESTAPIWebsocketOfficialModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure;
         }
 
     }
@@ -7841,12 +8069,12 @@ define("tradershub.model$RC_35e37489cb29f7a304d512a403000665", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_360fcdf4e596d82c75762f808854a5a1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_95720c0132c7c8b07166d48790a0a129Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_360fcdf4e596d82c75762f808854a5a1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_95720c0132c7c8b07166d48790a0a129Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_360fcdf4e596d82c75762f808854a5a1 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_95720c0132c7c8b07166d48790a0a129Structure;
+            return RESTAPIWebsocketOfficialModel.ST_95720c0132c7c8b07166d48790a0a129Structure;
         }
 
     }
@@ -7866,49 +8094,6 @@ define("tradershub.model$RL_362950b7d5d9798e12950648533599a1", ["exports", "@out
     }
 
     tradershubModel.RL_362950b7d5d9798e12950648533599a1 = RL_362950b7d5d9798e12950648533599a1;
-
-});
-
-define("tradershub.model$RC_cc81504e70ca274810f96237dd739de9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_cc81504e70ca274810f96237dd739de9Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("PostVerifyEmailRequest", "postVerifyEmailRequestAttr", "PostVerifyEmailRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_178833eaf81da5980f461500f3f98736Structure());
-                    }, true, RESTAPIWebsocketModel.ST_178833eaf81da5980f461500f3f98736Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_cc81504e70ca274810f96237dd739de9(new RC_cc81504e70ca274810f96237dd739de9.RecordClass({
-                    postVerifyEmailRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        tradershubModel.RC_cc81504e70ca274810f96237dd739de9 = RC_cc81504e70ca274810f96237dd739de9Inner;
-
-        RC_cc81504e70ca274810f96237dd739de9Inner._isAnonymousRecord = true;
-        RC_cc81504e70ca274810f96237dd739de9Inner.UniqueId = "cc81504e-70ca-2748-10f9-6237dd739de9";
-        var RC_cc81504e70ca274810f96237dd739de9 = RC_cc81504e70ca274810f96237dd739de9Inner;
-        RC_cc81504e70ca274810f96237dd739de9.init();
-    }
-});
-
-define("tradershub.model$RL_3678d55ba96cf40559a175ccd7265a85", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_cc81504e70ca274810f96237dd739de9"], function(exports, OSRuntimeCore, tradershubModel) {
-    var OS = OSRuntimeCore;
-    class RL_3678d55ba96cf40559a175ccd7265a85 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return tradershubModel.RC_cc81504e70ca274810f96237dd739de9;
-        }
-
-    }
-
-    tradershubModel.RL_3678d55ba96cf40559a175ccd7265a85 = RL_3678d55ba96cf40559a175ccd7265a85;
 
 });
 
@@ -8066,12 +8251,12 @@ define("tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_36ff7df6547fc6551e99dc50dec2ec00", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_36ff7df6547fc6551e99dc50dec2ec00", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_36ff7df6547fc6551e99dc50dec2ec00 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b5731219a4e422dad77e0fd7d6ee0cdfStructure;
         }
 
     }
@@ -8180,15 +8365,15 @@ define("tradershub.model$RL_37ebca9cc7a640553fda76d301ad4a68", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_60071085ccdc1a939c98b76e05aec53e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_60071085ccdc1a939c98b76e05aec53e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_60071085ccdc1a939c98b76e05aec53eInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("KYC_Address", "kYC_AddressAttr", "KYC_Address", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure());
-                    }, true, RESTAPIWebsocketModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8223,12 +8408,12 @@ define("tradershub.model$RL_3860d269e9dd680bb74541283f709b44", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_386f6a281c08d72d0376417e02fe0b4b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b5282edb36283adb40969ef7004c3e79Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_386f6a281c08d72d0376417e02fe0b4b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5282edb36283adb40969ef7004c3e79Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_386f6a281c08d72d0376417e02fe0b4b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b5282edb36283adb40969ef7004c3e79Structure;
+            return RESTAPIWebsocketOfficialModel.ST_b5282edb36283adb40969ef7004c3e79Structure;
         }
 
     }
@@ -8248,20 +8433,6 @@ define("tradershub.model$RL_392b64bd075fc192968825bc0bc06ae0", ["exports", "@out
     }
 
     tradershubModel.RL_392b64bd075fc192968825bc0bc06ae0 = RL_392b64bd075fc192968825bc0bc06ae0;
-
-});
-
-define("tradershub.model$RL_39e0a2148c652f14154e90634eb14b80", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_009f057acdc45a698d784f1d33cd022c"], function(exports, OSRuntimeCore, tradershubModel) {
-    var OS = OSRuntimeCore;
-    class RL_39e0a2148c652f14154e90634eb14b80 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return tradershubModel.RC_009f057acdc45a698d784f1d33cd022c;
-        }
-
-    }
-
-    tradershubModel.RL_39e0a2148c652f14154e90634eb14b80 = RL_39e0a2148c652f14154e90634eb14b80;
 
 });
 
@@ -8309,15 +8480,15 @@ define("tradershub.model$RL_3a1899c5a981c2e6215522e2a06f6863", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_3a2d986a770a9c3e6f1096b16961e5a9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_af8134183a4bd7e3eec97ada0cf46b5eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_3a2d986a770a9c3e6f1096b16961e5a9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_af8134183a4bd7e3eec97ada0cf46b5eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_3a2d986a770a9c3e6f1096b16961e5a9Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Api_call_limit", "api_call_limitAttr", "Api_call_limit2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_af8134183a4bd7e3eec97ada0cf46b5eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8381,15 +8552,15 @@ define("tradershub.model$RC_3bbfc6c91fcd8a2dd97847564be30682", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_3c60a1846470070c1bbae2a1d22163d2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_628e5221d510e98bcfe00cce5f107d21Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_3c60a1846470070c1bbae2a1d22163d2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_628e5221d510e98bcfe00cce5f107d21Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_3c60a1846470070c1bbae2a1d22163d2Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Config", "configAttr", "Config", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_628e5221d510e98bcfe00cce5f107d21Structure());
-                    }, true, RESTAPIWebsocketModel.ST_628e5221d510e98bcfe00cce5f107d21Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_628e5221d510e98bcfe00cce5f107d21Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_628e5221d510e98bcfe00cce5f107d21Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8453,15 +8624,15 @@ define("tradershub.model$RL_3ca6f21f8a7ceea4eaa2dfc40b22a5c8", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_deb49656ca36ac303bfff5ecbe52b196", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_deb49656ca36ac303bfff5ecbe52b196", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_deb49656ca36ac303bfff5ecbe52b196Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("TradingPlatformAvailableAccounts", "tradingPlatformAvailableAccountsAttr", "TradingPlatformAvailableAccounts", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8496,15 +8667,15 @@ define("tradershub.model$RL_3cdb40add777d21caa9a01b033bdd702", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_3ce5a0117187c9d1b6ee0d6f65f07553", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_3ce5a0117187c9d1b6ee0d6f65f07553", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_3ce5a0117187c9d1b6ee0d6f65f07553Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformAccountsResponse", "postTradingPlatformAccountsResponseAttr", "PostTradingPlatformAccountsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure());
-                    }, true, RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8641,12 +8812,12 @@ define("tradershub.model$RC_3d7c5be4055c8fe2c227afc40d8dee2f", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_3da257b38954975290536b7e144f85a1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_3da257b38954975290536b7e144f85a1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_3da257b38954975290536b7e144f85a1 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure;
+            return RESTAPIWebsocketOfficialModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure;
         }
 
     }
@@ -8655,12 +8826,12 @@ define("tradershub.model$RL_3da257b38954975290536b7e144f85a1", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_3dd031951f15020fcf2011e126c45859", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d331548db274235fee458e1a8f950858Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_3dd031951f15020fcf2011e126c45859", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d331548db274235fee458e1a8f950858Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_3dd031951f15020fcf2011e126c45859 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d331548db274235fee458e1a8f950858Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d331548db274235fee458e1a8f950858Structure;
         }
 
     }
@@ -8669,12 +8840,12 @@ define("tradershub.model$RL_3dd031951f15020fcf2011e126c45859", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_3ddab8163c31ef065226c1ec689ad1e9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_113226709b84b71c70ebd50296313568Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_3ddab8163c31ef065226c1ec689ad1e9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_113226709b84b71c70ebd50296313568Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_3ddab8163c31ef065226c1ec689ad1e9 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_113226709b84b71c70ebd50296313568Structure;
+            return RESTAPIWebsocketOfficialModel.ST_113226709b84b71c70ebd50296313568Structure;
         }
 
     }
@@ -8758,15 +8929,15 @@ define("tradershub.model$RL_3edf9b671d971f98015ab6b1b5f47187", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_3f4d741c30bd5473dc9c679433c442c3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2aef4efdcc8a8ad935c2f051f3051327Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_3f4d741c30bd5473dc9c679433c442c3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2aef4efdcc8a8ad935c2f051f3051327Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_3f4d741c30bd5473dc9c679433c442c3Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Documents_supported2", "documents_supported2Attr", "Documents_supported3", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure());
-                    }, true, RESTAPIWebsocketModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2aef4efdcc8a8ad935c2f051f3051327Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8884,6 +9055,20 @@ define("tradershub.model$RL_40926bad652f2233991b98241cbb55fb", ["exports", "@out
     }
 
     tradershubModel.RL_40926bad652f2233991b98241cbb55fb = RL_40926bad652f2233991b98241cbb55fb;
+
+});
+
+define("tradershub.model$RL_409d5d24f3ff15709c6eb8292127d3ba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_409d5d24f3ff15709c6eb8292127d3ba extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure;
+        }
+
+    }
+
+    tradershubModel.RL_409d5d24f3ff15709c6eb8292127d3ba = RL_409d5d24f3ff15709c6eb8292127d3ba;
 
 });
 
@@ -9059,12 +9244,55 @@ define("tradershub.model$RC_4296ff7d5f43d4cf83217088b56550c4", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_d03621281d953210a5f7643c5f395ddc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_c0258e0f6ca87b3e5e39e33c3e5f0c77", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c0258e0f6ca87b3e5e39e33c3e5f0c77Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostCashierCryptoResponse", "postCashierCryptoResponseAttr", "PostCashierCryptoResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2f46c6fecf81fe9d91763f789141eec9Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2f46c6fecf81fe9d91763f789141eec9Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c0258e0f6ca87b3e5e39e33c3e5f0c77(new RC_c0258e0f6ca87b3e5e39e33c3e5f0c77.RecordClass({
+                    postCashierCryptoResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_c0258e0f6ca87b3e5e39e33c3e5f0c77 = RC_c0258e0f6ca87b3e5e39e33c3e5f0c77Inner;
+
+        RC_c0258e0f6ca87b3e5e39e33c3e5f0c77Inner._isAnonymousRecord = true;
+        RC_c0258e0f6ca87b3e5e39e33c3e5f0c77Inner.UniqueId = "c0258e0f-6ca8-7b3e-5e39-e33c3e5f0c77";
+        var RC_c0258e0f6ca87b3e5e39e33c3e5f0c77 = RC_c0258e0f6ca87b3e5e39e33c3e5f0c77Inner;
+        RC_c0258e0f6ca87b3e5e39e33c3e5f0c77.init();
+    }
+});
+
+define("tradershub.model$RL_42ae10f2ee499169129a9427d0491b08", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_c0258e0f6ca87b3e5e39e33c3e5f0c77"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_42ae10f2ee499169129a9427d0491b08 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_c0258e0f6ca87b3e5e39e33c3e5f0c77;
+        }
+
+    }
+
+    tradershubModel.RL_42ae10f2ee499169129a9427d0491b08 = RL_42ae10f2ee499169129a9427d0491b08;
+
+});
+
+define("tradershub.model$RL_d03621281d953210a5f7643c5f395ddc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d03621281d953210a5f7643c5f395ddc extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure;
+            return RESTAPIWebsocketOfficialModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure;
         }
 
     }
@@ -9073,15 +9301,15 @@ define("tradershub.model$RL_d03621281d953210a5f7643c5f395ddc", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_725766536428f47602ca54f05f55b577", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_04eaf04e4147681bc07ba614af4e7e78Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_725766536428f47602ca54f05f55b577", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_04eaf04e4147681bc07ba614af4e7e78Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_725766536428f47602ca54f05f55b577Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Crypto", "cryptoAttr", "Crypto2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure());
-                    }, true, RESTAPIWebsocketModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9116,15 +9344,15 @@ define("tradershub.model$RL_43065d40fb42cf2e1c75ff4cebf95a65", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_655de439743f6ef66e4c426b009f58b1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e9350867621f419f78bd47d2bb88d9ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_655de439743f6ef66e4c426b009f58b1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e9350867621f419f78bd47d2bb88d9ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_655de439743f6ef66e4c426b009f58b1Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Documents_supported", "documents_supportedAttr", "Documents_supported4", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure());
-                    }, true, RESTAPIWebsocketModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e9350867621f419f78bd47d2bb88d9ceStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9231,12 +9459,12 @@ define("tradershub.model$RC_43bc430cd4b2876c18eee5a50b2984a4", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_43c33c0f3b9a2eb3199ef87eb6b6c7b3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_55477c48be760e041c4dbfa365f63009Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_43c33c0f3b9a2eb3199ef87eb6b6c7b3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_55477c48be760e041c4dbfa365f63009Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_43c33c0f3b9a2eb3199ef87eb6b6c7b3 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_55477c48be760e041c4dbfa365f63009Structure;
+            return RESTAPIWebsocketOfficialModel.ST_55477c48be760e041c4dbfa365f63009Structure;
         }
 
     }
@@ -9288,15 +9516,15 @@ define("tradershub.model$RC_44b7e8f0764c9d3d615c2b316db93ff7", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_d5f1faf2f682624c1c27e7a932faee50", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_a37989da54adde60afe7657f5bc1d06eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_d5f1faf2f682624c1c27e7a932faee50", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a37989da54adde60afe7657f5bc1d06eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d5f1faf2f682624c1c27e7a932faee50Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Disclaimer", "disclaimerAttr", "Disclaimer", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_a37989da54adde60afe7657f5bc1d06eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_a37989da54adde60afe7657f5bc1d06eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a37989da54adde60afe7657f5bc1d06eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a37989da54adde60afe7657f5bc1d06eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9374,15 +9602,15 @@ define("tradershub.model$RL_452bae0381b3504e486b471d2123e658", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_99c0018936e3cec12f037bf056295951", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_99c0018936e3cec12f037bf056295951", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_99c0018936e3cec12f037bf056295951Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req9", "echo_req9Attr", "Echo_req11", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure());
-                    }, true, RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9445,6 +9673,49 @@ define("tradershub.model$RL_4645896d20bae069726fdb473c154d2d", ["exports", "@out
 
 });
 
+define("tradershub.model$RC_f6746cbb50b7a6a36f454937aab260b0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f6746cbb50b7a6a36f454937aab260b0Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostVerifyEmailResponse", "postVerifyEmailResponseAttr", "PostVerifyEmailResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f6746cbb50b7a6a36f454937aab260b0(new RC_f6746cbb50b7a6a36f454937aab260b0.RecordClass({
+                    postVerifyEmailResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_f6746cbb50b7a6a36f454937aab260b0 = RC_f6746cbb50b7a6a36f454937aab260b0Inner;
+
+        RC_f6746cbb50b7a6a36f454937aab260b0Inner._isAnonymousRecord = true;
+        RC_f6746cbb50b7a6a36f454937aab260b0Inner.UniqueId = "f6746cbb-50b7-a6a3-6f45-4937aab260b0";
+        var RC_f6746cbb50b7a6a36f454937aab260b0 = RC_f6746cbb50b7a6a36f454937aab260b0Inner;
+        RC_f6746cbb50b7a6a36f454937aab260b0.init();
+    }
+});
+
+define("tradershub.model$RL_466fd140517db96d071045e35052d015", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_f6746cbb50b7a6a36f454937aab260b0"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_466fd140517db96d071045e35052d015 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_f6746cbb50b7a6a36f454937aab260b0;
+        }
+
+    }
+
+    tradershubModel.RL_466fd140517db96d071045e35052d015 = RL_466fd140517db96d071045e35052d015;
+
+});
+
 define("tradershub.model$RL_47595c6744be14d2bd677fd05324180f", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_1ba3db8c7175cd095b4f1a36c3a1e53d"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_47595c6744be14d2bd677fd05324180f extends
@@ -9459,15 +9730,15 @@ define("tradershub.model$RL_47595c6744be14d2bd677fd05324180f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_47772cad80dc4a787d65fd52470ca2cd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ccbd4ab860fdf3c4690e46bb49937de5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_47772cad80dc4a787d65fd52470ca2cd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ccbd4ab860fdf3c4690e46bb49937de5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_47772cad80dc4a787d65fd52470ca2cdInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Get_setting", "get_settingAttr", "Get_setting", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure());
-                    }, true, RESTAPIWebsocketModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9545,15 +9816,15 @@ define("tradershub.model$RL_4805e15f00dc12c56ca2c04862bba5ec", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_d4bf765df28dc44cfc977eebedb13ed3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ddeabbcab252c99fc5f083425434b2a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_d4bf765df28dc44cfc977eebedb13ed3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ddeabbcab252c99fc5f083425434b2a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d4bf765df28dc44cfc977eebedb13ed3Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Changeable_field", "changeable_fieldAttr", "Changeable_field", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ddeabbcab252c99fc5f083425434b2a7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9617,12 +9888,12 @@ define("tradershub.model$RC_4835a3b0a2d4ab28e154f8a8831a00ef", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_4887faff529164a4e041bdf0dc5e469f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b8e5132e8639404a10bb651dc17997bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_4887faff529164a4e041bdf0dc5e469f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b8e5132e8639404a10bb651dc17997bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_4887faff529164a4e041bdf0dc5e469f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b8e5132e8639404a10bb651dc17997bcStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b8e5132e8639404a10bb651dc17997bcStructure;
         }
 
     }
@@ -9660,15 +9931,15 @@ define("tradershub.model$RC_48d7c166849f4c26288a543a51543b8d", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_8349a704d7e4597909befcd4d12d85b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_091b86786925fd05b892541280481403Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_8349a704d7e4597909befcd4d12d85b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_091b86786925fd05b892541280481403Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_8349a704d7e4597909befcd4d12d85b4Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformAccountsRequest", "postTradingPlatformAccountsRequestAttr", "PostTradingPlatformAccountsRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure());
-                    }, true, RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_091b86786925fd05b892541280481403Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_091b86786925fd05b892541280481403Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9703,15 +9974,15 @@ define("tradershub.model$RL_495e996e3e491370fac39f81d4d0c440", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_5e1b44d038654ac19cd218a2a7d6a6b8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_30cf47a274820f1ac96cf412803888fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_5e1b44d038654ac19cd218a2a7d6a6b8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_30cf47a274820f1ac96cf412803888fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_5e1b44d038654ac19cd218a2a7d6a6b8Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Idv", "idvAttr", "Idv2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_30cf47a274820f1ac96cf412803888fdStructure());
-                    }, true, RESTAPIWebsocketModel.ST_30cf47a274820f1ac96cf412803888fdStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_30cf47a274820f1ac96cf412803888fdStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_30cf47a274820f1ac96cf412803888fdStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9746,15 +10017,15 @@ define("tradershub.model$RL_49a4d531de393d17563dea4ec0d88883", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_4a76c214f34feb841d0c1a2d8cdbec01", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_35e76a2e1583feb611523ac6c760c8a9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_4a76c214f34feb841d0c1a2d8cdbec01", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_35e76a2e1583feb611523ac6c760c8a9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_4a76c214f34feb841d0c1a2d8cdbec01Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Financial_assessment", "financial_assessmentAttr", "Financial_assessment", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure());
-                    }, true, RESTAPIWebsocketModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_35e76a2e1583feb611523ac6c760c8a9Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9873,20 +10144,6 @@ define("tradershub.model$RL_4c2681156ae930a86f200f636cda11aa", ["exports", "@out
     }
 
     tradershubModel.RL_4c2681156ae930a86f200f636cda11aa = RL_4c2681156ae930a86f200f636cda11aa;
-
-});
-
-define("tradershub.model$RL_4cc8ccb8d3cf71eb7bcb10bdbab7ddf8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
-    var OS = OSRuntimeCore;
-    class RL_4cc8ccb8d3cf71eb7bcb10bdbab7ddf8 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return RESTAPIWebsocketModel.ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure;
-        }
-
-    }
-
-    tradershubModel.RL_4cc8ccb8d3cf71eb7bcb10bdbab7ddf8 = RL_4cc8ccb8d3cf71eb7bcb10bdbab7ddf8;
 
 });
 
@@ -10017,12 +10274,12 @@ define("tradershub.model$RL_4f99e622169e93dd43493d76013d1b5f", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_4f9f1230897f0a3e8b129024e1de623d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6669f981cb8653c55787de44bdd42a18Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_4f9f1230897f0a3e8b129024e1de623d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6669f981cb8653c55787de44bdd42a18Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_4f9f1230897f0a3e8b129024e1de623d extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_6669f981cb8653c55787de44bdd42a18Structure;
+            return RESTAPIWebsocketOfficialModel.ST_6669f981cb8653c55787de44bdd42a18Structure;
         }
 
     }
@@ -10031,15 +10288,15 @@ define("tradershub.model$RL_4f9f1230897f0a3e8b129024e1de623d", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_5044465528c94ee468cc97cee02c2f31", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_af97180714ce3993e80d246ca4429825Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_5044465528c94ee468cc97cee02c2f31", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_af97180714ce3993e80d246ca4429825Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_5044465528c94ee468cc97cee02c2f31Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Initial_deposit_per_country", "initial_deposit_per_countryAttr", "Initial_deposit_per_country2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_af97180714ce3993e80d246ca4429825Structure());
-                    }, true, RESTAPIWebsocketModel.ST_af97180714ce3993e80d246ca4429825Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_af97180714ce3993e80d246ca4429825Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_af97180714ce3993e80d246ca4429825Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10131,12 +10388,12 @@ define("tradershub.model$RL_5019766850d43ca0bf9f4b16188cd294", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_508855d25108765122be317d42e36c82", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_349094d98d9594831ba9e5194411246fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_508855d25108765122be317d42e36c82", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_349094d98d9594831ba9e5194411246fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_508855d25108765122be317d42e36c82 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_349094d98d9594831ba9e5194411246fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_349094d98d9594831ba9e5194411246fStructure;
         }
 
     }
@@ -10248,15 +10505,15 @@ define("tradershub.model$RC_51b1c15949308af5f9b2dba7043d5ae6", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_a77cae619f7a824ffaa6e30caf3829e5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a77cae619f7a824ffaa6e30caf3829e5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a77cae619f7a824ffaa6e30caf3829e5Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Fee", "feeAttr", "Fee2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure());
-                    }, true, RESTAPIWebsocketModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ae69fbe61d3588d5f7a813905e5dc3aeStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10291,15 +10548,15 @@ define("tradershub.model$RL_51c36384638fb46b29235e79e23007b4", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_51c73f641f2d05540b68c15e7660196f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8812c3cbc0a0d322acb5354526a670b4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_51c73f641f2d05540b68c15e7660196f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8812c3cbc0a0d322acb5354526a670b4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_51c73f641f2d05540b68c15e7660196fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Identity", "identityAttr", "Identity2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure());
-                    }, true, RESTAPIWebsocketModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10320,12 +10577,12 @@ define("tradershub.model$RC_51c73f641f2d05540b68c15e7660196f", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_51cb6ee93d723ed4d67f527a1090ade3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_977d84487e32bee2c1a14da15d247b5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_51cb6ee93d723ed4d67f527a1090ade3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_977d84487e32bee2c1a14da15d247b5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_51cb6ee93d723ed4d67f527a1090ade3 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_977d84487e32bee2c1a14da15d247b5fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_977d84487e32bee2c1a14da15d247b5fStructure;
         }
 
     }
@@ -10435,12 +10692,12 @@ define("tradershub.model$RL_52a96e0500b1d6d23d93e10409e37890", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_53248a1b8ab3b0462ffd76c73f4f1eba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ccbd4ab860fdf3c4690e46bb49937de5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_53248a1b8ab3b0462ffd76c73f4f1eba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ccbd4ab860fdf3c4690e46bb49937de5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_53248a1b8ab3b0462ffd76c73f4f1eba extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure;
+            return RESTAPIWebsocketOfficialModel.ST_ccbd4ab860fdf3c4690e46bb49937de5Structure;
         }
 
     }
@@ -10449,12 +10706,12 @@ define("tradershub.model$RL_53248a1b8ab3b0462ffd76c73f4f1eba", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_535207a4cf1e4bc1dcc85faad9d4014e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_535207a4cf1e4bc1dcc85faad9d4014e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_535207a4cf1e4bc1dcc85faad9d4014e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure;
         }
 
     }
@@ -10463,12 +10720,12 @@ define("tradershub.model$RL_535207a4cf1e4bc1dcc85faad9d4014e", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_538ff2f1d030482c84c803644c8c1240", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_15693c4dffeb1c18ce04ec8c251678cfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_538ff2f1d030482c84c803644c8c1240", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_15693c4dffeb1c18ce04ec8c251678cfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_538ff2f1d030482c84c803644c8c1240 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure;
+            return RESTAPIWebsocketOfficialModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure;
         }
 
     }
@@ -10477,15 +10734,15 @@ define("tradershub.model$RL_538ff2f1d030482c84c803644c8c1240", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_cb3c04d88b114a075539728cafcde6e0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_60a5d7a279694c475c6cf2585b652410Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_cb3c04d88b114a075539728cafcde6e0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_60a5d7a279694c475c6cf2585b652410Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_cb3c04d88b114a075539728cafcde6e0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Mt_all_company", "mt_all_companyAttr", "Mt_all_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_60a5d7a279694c475c6cf2585b652410Structure());
-                    }, true, RESTAPIWebsocketModel.ST_60a5d7a279694c475c6cf2585b652410Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_60a5d7a279694c475c6cf2585b652410Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_60a5d7a279694c475c6cf2585b652410Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10549,15 +10806,15 @@ define("tradershub.model$RC_53d491417faf149f9fb8a0dda9c12d06", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_9156a578055ce3e905fa78bea04b423e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_39c69c310b1fed6e6a637381cf367162Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_9156a578055ce3e905fa78bea04b423e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_39c69c310b1fed6e6a637381cf367162Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_9156a578055ce3e905fa78bea04b423eInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req3", "echo_req3Attr", "Echo_req3", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_39c69c310b1fed6e6a637381cf367162Structure());
-                    }, true, RESTAPIWebsocketModel.ST_39c69c310b1fed6e6a637381cf367162Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_39c69c310b1fed6e6a637381cf367162Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_39c69c310b1fed6e6a637381cf367162Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10777,12 +11034,12 @@ define("tradershub.model$RL_560d4c8f65a370a0f5f40af5ea7ad8af", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_5615c834166e52223964bada9f9f6329", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_5615c834166e52223964bada9f9f6329", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_5615c834166e52223964bada9f9f6329 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure;
+            return RESTAPIWebsocketOfficialModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure;
         }
 
     }
@@ -10820,15 +11077,15 @@ define("tradershub.model$RC_56805fdef6332e01f13c0f9217357dbc", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_56c6ce1b0108db2c43eb2e512b9aa7da", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d331548db274235fee458e1a8f950858Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_56c6ce1b0108db2c43eb2e512b9aa7da", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d331548db274235fee458e1a8f950858Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_56c6ce1b0108db2c43eb2e512b9aa7daInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Payment_agent", "payment_agentAttr", "Payment_agent2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d331548db274235fee458e1a8f950858Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d331548db274235fee458e1a8f950858Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d331548db274235fee458e1a8f950858Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d331548db274235fee458e1a8f950858Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10860,6 +11117,49 @@ define("tradershub.model$RL_571b103d9a95a8c3a2deb1712897dca8", ["exports", "@out
     }
 
     tradershubModel.RL_571b103d9a95a8c3a2deb1712897dca8 = RL_571b103d9a95a8c3a2deb1712897dca8;
+
+});
+
+define("tradershub.model$RC_b7e52722439ab79f06cc9b853e2e0eda", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a64a97da9ee822b4b21c919739567011Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b7e52722439ab79f06cc9b853e2e0edaInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Trading_platform_accountItem", "trading_platform_accountItemAttr", "Trading_platform_accountItem", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a64a97da9ee822b4b21c919739567011Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a64a97da9ee822b4b21c919739567011Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b7e52722439ab79f06cc9b853e2e0eda(new RC_b7e52722439ab79f06cc9b853e2e0eda.RecordClass({
+                    trading_platform_accountItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_b7e52722439ab79f06cc9b853e2e0eda = RC_b7e52722439ab79f06cc9b853e2e0edaInner;
+
+        RC_b7e52722439ab79f06cc9b853e2e0edaInner._isAnonymousRecord = true;
+        RC_b7e52722439ab79f06cc9b853e2e0edaInner.UniqueId = "b7e52722-439a-b79f-06cc-9b853e2e0eda";
+        var RC_b7e52722439ab79f06cc9b853e2e0eda = RC_b7e52722439ab79f06cc9b853e2e0edaInner;
+        RC_b7e52722439ab79f06cc9b853e2e0eda.init();
+    }
+});
+
+define("tradershub.model$RL_57698c22786db8cfbee18c9cbf33ed66", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_b7e52722439ab79f06cc9b853e2e0eda"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_57698c22786db8cfbee18c9cbf33ed66 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_b7e52722439ab79f06cc9b853e2e0eda;
+        }
+
+    }
+
+    tradershubModel.RL_57698c22786db8cfbee18c9cbf33ed66 = RL_57698c22786db8cfbee18c9cbf33ed66;
 
 });
 
@@ -11169,6 +11469,9 @@ define("tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", ["exp
                     }, true),
                     this.attr("Category", "categoryAttr", "Category", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
+                    }, true),
+                    this.attr("Type", "typeAttr", "Type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
                     }, true)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -11286,12 +11589,12 @@ define("tradershub.model$RL_5f1eb42ec5e25a70109aeb71587a7f0b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_5f96baf85bbca68a104650af9c95a482", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_5f96baf85bbca68a104650af9c95a482", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_5f96baf85bbca68a104650af9c95a482 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_450f06937a42e6bd68832beac9fd4297Structure;
+            return RESTAPIWebsocketOfficialModel.ST_450f06937a42e6bd68832beac9fd4297Structure;
         }
 
     }
@@ -11300,12 +11603,12 @@ define("tradershub.model$RL_5f96baf85bbca68a104650af9c95a482", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_617ce086b197e1cd7e2af2a1c0d1c20b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ef2ca9573c3bd1e27b35145a902be10bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_617ce086b197e1cd7e2af2a1c0d1c20b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ef2ca9573c3bd1e27b35145a902be10bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_617ce086b197e1cd7e2af2a1c0d1c20b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure;
+            return RESTAPIWebsocketOfficialModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure;
         }
 
     }
@@ -11314,15 +11617,15 @@ define("tradershub.model$RL_617ce086b197e1cd7e2af2a1c0d1c20b", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_61df84f9969928991e575f5d3cdeb6cf", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_123df4fc5615aac2800d1fa4847bc440Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_61df84f9969928991e575f5d3cdeb6cf", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_123df4fc5615aac2800d1fa4847bc440Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_61df84f9969928991e575f5d3cdeb6cfInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Local_currency", "local_currencyAttr", "Local_currency2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_123df4fc5615aac2800d1fa4847bc440Structure());
-                    }, true, RESTAPIWebsocketModel.ST_123df4fc5615aac2800d1fa4847bc440Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_123df4fc5615aac2800d1fa4847bc440Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_123df4fc5615aac2800d1fa4847bc440Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11343,15 +11646,15 @@ define("tradershub.model$RC_61df84f9969928991e575f5d3cdeb6cf", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_61e849a6b27c65d4f84da11bc7fcd961", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_61e849a6b27c65d4f84da11bc7fcd961", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_61e849a6b27c65d4f84da11bc7fcd961Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Server_info", "server_infoAttr", "Server_info", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b3b8308da7c5dcdc42b3f87ca949eb8cStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11372,15 +11675,15 @@ define("tradershub.model$RC_61e849a6b27c65d4f84da11bc7fcd961", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_623a04a7e1c688b7ec133f2b7ca28f8e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_96047f3e265fbed2401212ad81dfa1f4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_623a04a7e1c688b7ec133f2b7ca28f8e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_96047f3e265fbed2401212ad81dfa1f4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_623a04a7e1c688b7ec133f2b7ca28f8eInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req", "echo_reqAttr", "Echo_req10", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure());
-                    }, true, RESTAPIWebsocketModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11429,12 +11732,12 @@ define("tradershub.model$RL_62db41b41dbf507c50e0bafe4d455ef4", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6389593f218720e640897f2a30c71a02", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6389593f218720e640897f2a30c71a02", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6389593f218720e640897f2a30c71a02 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure;
         }
 
     }
@@ -11600,12 +11903,12 @@ define("tradershub.model$RL_65d3df966a7e3cf88a00a473fc2b09d2", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_66079fd510547022662fad21af9161f1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_96047f3e265fbed2401212ad81dfa1f4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_66079fd510547022662fad21af9161f1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_96047f3e265fbed2401212ad81dfa1f4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_66079fd510547022662fad21af9161f1 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure;
+            return RESTAPIWebsocketOfficialModel.ST_96047f3e265fbed2401212ad81dfa1f4Structure;
         }
 
     }
@@ -11614,15 +11917,15 @@ define("tradershub.model$RL_66079fd510547022662fad21af9161f1", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_f481c39b6dc571441408fc418f17e793", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f481c39b6dc571441408fc418f17e793", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_02211ece4f8ea033ae9a7fa2710f4a32Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f481c39b6dc571441408fc418f17e793Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Account_listItem", "account_listItemAttr", "Account_listItem2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure());
-                    }, true, RESTAPIWebsocketModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_02211ece4f8ea033ae9a7fa2710f4a32Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11657,15 +11960,15 @@ define("tradershub.model$RL_6611d2d9fcbfcbfe8fb57800c9eecc82", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_6ff4ee45dfc92afe92e4874530f95001", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e184b5e893ff6633d3c7357dd29941faStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_6ff4ee45dfc92afe92e4874530f95001", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e184b5e893ff6633d3c7357dd29941faStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_6ff4ee45dfc92afe92e4874530f95001Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformPasswordChangeResponse", "postTradingPlatformPasswordChangeResponseAttr", "PostTradingPlatformPasswordChangeResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e184b5e893ff6633d3c7357dd29941faStructure());
-                    }, true, RESTAPIWebsocketModel.ST_e184b5e893ff6633d3c7357dd29941faStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e184b5e893ff6633d3c7357dd29941faStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e184b5e893ff6633d3c7357dd29941faStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11800,15 +12103,15 @@ define("tradershub.model$RC_673cc0a63dbc3f5836f7732ba0712544", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_fb91f9eab17d134884b2213f47fb4a68", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_fb91f9eab17d134884b2213f47fb4a68", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_fb91f9eab17d134884b2213f47fb4a68Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("All", "allAttr", "All", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure());
-                    }, true, RESTAPIWebsocketModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9adaf3e13b31a4c3f4ee4c0b223b00bcStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11857,12 +12160,12 @@ define("tradershub.model$RL_6753b1849ff4bc19e62c553317f17751", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_67903d82f67a613e6457850e3fe75a1b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_67903d82f67a613e6457850e3fe75a1b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_514eb2dd1a273e9cef6da33626bbf692Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_67903d82f67a613e6457850e3fe75a1b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure;
+            return RESTAPIWebsocketOfficialModel.ST_514eb2dd1a273e9cef6da33626bbf692Structure;
         }
 
     }
@@ -11885,12 +12188,12 @@ define("tradershub.model$RL_6821444cee9a405e385950ad5e787e6a", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_687d5246fd214b4298d42d80fa4abd54", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_687d5246fd214b4298d42d80fa4abd54", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_687d5246fd214b4298d42d80fa4abd54 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure;
+            return RESTAPIWebsocketOfficialModel.ST_9d2eeec2f5ab741e3d87ce62bfe442ffStructure;
         }
 
     }
@@ -11913,12 +12216,26 @@ define("tradershub.model$RL_68be9dd68c0e161ac2c65c1092c999e6", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6a09e143d0e4a59a21ce23725d2e887e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_68d94344bca87ca3c6e8048bda3cfcff", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_68d94344bca87ca3c6e8048bda3cfcff extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure;
+        }
+
+    }
+
+    tradershubModel.RL_68d94344bca87ca3c6e8048bda3cfcff = RL_68d94344bca87ca3c6e8048bda3cfcff;
+
+});
+
+define("tradershub.model$RL_6a09e143d0e4a59a21ce23725d2e887e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6a09e143d0e4a59a21ce23725d2e887e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure;
+            return RESTAPIWebsocketOfficialModel.ST_812466b8d5a9a4a768bb1404c7c0b0e5Structure;
         }
 
     }
@@ -11927,12 +12244,12 @@ define("tradershub.model$RL_6a09e143d0e4a59a21ce23725d2e887e", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6a534bbcb28aa4f96e8b5853e0208016", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6a534bbcb28aa4f96e8b5853e0208016", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6a534bbcb28aa4f96e8b5853e0208016 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure;
+            return RESTAPIWebsocketOfficialModel.ST_8ddbf1b6e2eccc5a160b5fab6b9b9b86Structure;
         }
 
     }
@@ -11941,12 +12258,12 @@ define("tradershub.model$RL_6a534bbcb28aa4f96e8b5853e0208016", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6aefb6b34ff9f8b6e1084c5b438522bb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4820561c523dc84c471446a46147a065Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6aefb6b34ff9f8b6e1084c5b438522bb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4820561c523dc84c471446a46147a065Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6aefb6b34ff9f8b6e1084c5b438522bb extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_4820561c523dc84c471446a46147a065Structure;
+            return RESTAPIWebsocketOfficialModel.ST_4820561c523dc84c471446a46147a065Structure;
         }
 
     }
@@ -11955,15 +12272,15 @@ define("tradershub.model$RL_6aefb6b34ff9f8b6e1084c5b438522bb", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_6afb7faf6b2a5fdc14e3fd34318f5ba5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_15693c4dffeb1c18ce04ec8c251678cfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_6afb7faf6b2a5fdc14e3fd34318f5ba5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_15693c4dffeb1c18ce04ec8c251678cfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_6afb7faf6b2a5fdc14e3fd34318f5ba5Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Authentication", "authenticationAttr", "Authentication", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure());
-                    }, true, RESTAPIWebsocketModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_15693c4dffeb1c18ce04ec8c251678cfStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -11984,15 +12301,15 @@ define("tradershub.model$RC_6afb7faf6b2a5fdc14e3fd34318f5ba5", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_6bf0b0ffc6301cb068818135121fba90", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_6bf0b0ffc6301cb068818135121fba90", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_6bf0b0ffc6301cb068818135121fba90Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Website_status", "website_statusAttr", "Website_status2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure());
-                    }, true, RESTAPIWebsocketModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_bbf8c5d47c5db3fd5346cb42e483a9fdStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -12013,12 +12330,12 @@ define("tradershub.model$RC_6bf0b0ffc6301cb068818135121fba90", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_6c06f81aeda50ab8c2d5788ceef7d4fc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_60a5d7a279694c475c6cf2585b652410Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6c06f81aeda50ab8c2d5788ceef7d4fc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_60a5d7a279694c475c6cf2585b652410Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6c06f81aeda50ab8c2d5788ceef7d4fc extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_60a5d7a279694c475c6cf2585b652410Structure;
+            return RESTAPIWebsocketOfficialModel.ST_60a5d7a279694c475c6cf2585b652410Structure;
         }
 
     }
@@ -12070,12 +12387,12 @@ define("tradershub.model$RC_6ceb0a54ddbc92446ab66e8c847870c1", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_6d35299704f3eec23ed812a5a367da37", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6d35299704f3eec23ed812a5a367da37", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6d35299704f3eec23ed812a5a367da37 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure;
+            return RESTAPIWebsocketOfficialModel.ST_94d54d268b2cff4f4ed014a5df48da20Structure;
         }
 
     }
@@ -12098,12 +12415,12 @@ define("tradershub.model$RL_6d7013ea27cc1b7ceda40a17d3205e61", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6d8078983e84d9f62576b9b597c42453", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6d8078983e84d9f62576b9b597c42453", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6d8078983e84d9f62576b9b597c42453 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure;
+            return RESTAPIWebsocketOfficialModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure;
         }
 
     }
@@ -12112,12 +12429,12 @@ define("tradershub.model$RL_6d8078983e84d9f62576b9b597c42453", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6daa7fd7043bd22e153f9e359a31e19f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4e063a3cef8e9e085284fb57c1326006Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6daa7fd7043bd22e153f9e359a31e19f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4e063a3cef8e9e085284fb57c1326006Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6daa7fd7043bd22e153f9e359a31e19f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_4e063a3cef8e9e085284fb57c1326006Structure;
+            return RESTAPIWebsocketOfficialModel.ST_4e063a3cef8e9e085284fb57c1326006Structure;
         }
 
     }
@@ -12140,12 +12457,12 @@ define("tradershub.model$RL_6ded88896f4420155f9228fa8926d25d", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_6e4709c964d7b46a3afebff315d0d559", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_6e4709c964d7b46a3afebff315d0d559", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_6e4709c964d7b46a3afebff315d0d559 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure;
+            return RESTAPIWebsocketOfficialModel.ST_1e4e8e93f82bd7d0c82446a55ed8dee2Structure;
         }
 
     }
@@ -12197,15 +12514,15 @@ define("tradershub.model$RL_703668b187ab39de3436f6485526e12a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_7096ca0099728124fcaff6ac0bf8440c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6669f981cb8653c55787de44bdd42a18Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7096ca0099728124fcaff6ac0bf8440c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6669f981cb8653c55787de44bdd42a18Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7096ca0099728124fcaff6ac0bf8440cInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Service", "serviceAttr", "Service2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6669f981cb8653c55787de44bdd42a18Structure());
-                    }, true, RESTAPIWebsocketModel.ST_6669f981cb8653c55787de44bdd42a18Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_6669f981cb8653c55787de44bdd42a18Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_6669f981cb8653c55787de44bdd42a18Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -12296,15 +12613,15 @@ define("tradershub.model$RL_72d1939a3c0be1d010649f2d48d51148", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_72deccc4588dd4c59ea212c47055f933", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_72deccc4588dd4c59ea212c47055f933", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_72deccc4588dd4c59ea212c47055f933Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Residence_listItem", "residence_listItemAttr", "Residence_listItem", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure());
-                    }, true, RESTAPIWebsocketModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_bf5d4ab423fae3ff38a977653adc8398Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -12541,12 +12858,12 @@ define("tradershub.model$RL_7532eb1a749cdb2e1bdeb116afe0962b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7649b6f3b5d31da383ad943effdeab99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7649b6f3b5d31da383ad943effdeab99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4dc58b9edb8582c76248b762d6650913Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7649b6f3b5d31da383ad943effdeab99 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_4dc58b9edb8582c76248b762d6650913Structure;
+            return RESTAPIWebsocketOfficialModel.ST_4dc58b9edb8582c76248b762d6650913Structure;
         }
 
     }
@@ -12598,15 +12915,15 @@ define("tradershub.model$RL_7682dd80718b550d6c5a921d5990d04e", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_769b74cf243bca7e23f6d8b3e094aafe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_83fbd707f872e92b597918150eff1f3eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_769b74cf243bca7e23f6d8b3e094aafe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_83fbd707f872e92b597918150eff1f3eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_769b74cf243bca7e23f6d8b3e094aafeInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Compliance", "complianceAttr", "Compliance", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_83fbd707f872e92b597918150eff1f3eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_83fbd707f872e92b597918150eff1f3eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_83fbd707f872e92b597918150eff1f3eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -12625,6 +12942,20 @@ define("tradershub.model$RC_769b74cf243bca7e23f6d8b3e094aafe", ["exports", "@out
         var RC_769b74cf243bca7e23f6d8b3e094aafe = RC_769b74cf243bca7e23f6d8b3e094aafeInner;
         RC_769b74cf243bca7e23f6d8b3e094aafe.init();
     }
+});
+
+define("tradershub.model$RL_76a4a5b2c454ce7cb9d8436e9849949e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1e493399566287dd50f49a441f58a8caStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_76a4a5b2c454ce7cb9d8436e9849949e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1e493399566287dd50f49a441f58a8caStructure;
+        }
+
+    }
+
+    tradershubModel.RL_76a4a5b2c454ce7cb9d8436e9849949e = RL_76a4a5b2c454ce7cb9d8436e9849949e;
+
 });
 
 define("tradershub.model$RL_772c639d5f2b42cac14d8692a69e34d1", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_2a9ff13787033a384677b0fe3115c25c"], function(exports, OSRuntimeCore, tradershubModel) {
@@ -12655,15 +12986,15 @@ define("tradershub.model$RL_7765d9c764f8ac0e53bfee533b337ff3", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_854dbd2804fbb731b1468b879331bbde", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_854dbd2804fbb731b1468b879331bbde", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_854dbd2804fbb731b1468b879331bbdeInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Error", "errorAttr", "Error", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
-                    }, true, RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -12783,12 +13114,12 @@ define("tradershub.model$RL_799b7146a2a08781a419c46b161fba52", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_79e5f7b3f667162d18056364b5add7d4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_79e5f7b3f667162d18056364b5add7d4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_79e5f7b3f667162d18056364b5add7d4 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure;
         }
 
     }
@@ -12797,12 +13128,12 @@ define("tradershub.model$RL_79e5f7b3f667162d18056364b5add7d4", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7a119d08ddaa03a9adb755d998da5288", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7a119d08ddaa03a9adb755d998da5288", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7a119d08ddaa03a9adb755d998da5288 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_e9af53f34f5d2c71a49407f1ed42d7f7Structure;
         }
 
     }
@@ -12868,12 +13199,12 @@ define("tradershub.model$RL_7a3e7e67e6b503a4b7645b10892b1ed3", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7a61959884cd1d97a8df26308775a5c7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d845e9af38689337f2bff5d766253a88Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7a61959884cd1d97a8df26308775a5c7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d845e9af38689337f2bff5d766253a88Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7a61959884cd1d97a8df26308775a5c7 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d845e9af38689337f2bff5d766253a88Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d845e9af38689337f2bff5d766253a88Structure;
         }
 
     }
@@ -12882,12 +13213,12 @@ define("tradershub.model$RL_7a61959884cd1d97a8df26308775a5c7", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7aafab926cc9835b50687e3590d16e83", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_4fa180d49a839964a4a640104b10a272Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7aafab926cc9835b50687e3590d16e83", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4fa180d49a839964a4a640104b10a272Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7aafab926cc9835b50687e3590d16e83 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_4fa180d49a839964a4a640104b10a272Structure;
+            return RESTAPIWebsocketOfficialModel.ST_4fa180d49a839964a4a640104b10a272Structure;
         }
 
     }
@@ -12924,15 +13255,15 @@ define("tradershub.model$RL_7afe2e3802b1138fe7c019f238334de4", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_7b274cb5f96a8ac297db685000547ab1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7b274cb5f96a8ac297db685000547ab1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7b274cb5f96a8ac297db685000547ab1Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Trading_platform_statusItem", "trading_platform_statusItemAttr", "Trading_platform_statusItem", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9d1062fa4257a03d2f3c4e1f302af3d7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -13024,15 +13355,15 @@ define("tradershub.model$RL_7c4605673564471d88af1f24f7fd0a58", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_7c67e52a2329c05d78ed79fcc452835e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_13505e54da5ba49238f8f2a40834f63fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7c67e52a2329c05d78ed79fcc452835e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_13505e54da5ba49238f8f2a40834f63fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7c67e52a2329c05d78ed79fcc452835eInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Geolocation", "geolocationAttr", "Geolocation", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_13505e54da5ba49238f8f2a40834f63fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_13505e54da5ba49238f8f2a40834f63fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_13505e54da5ba49238f8f2a40834f63fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_13505e54da5ba49238f8f2a40834f63fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -13067,12 +13398,12 @@ define("tradershub.model$RL_7c73ffe7de28a58cc5b0bcd605c8d174", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7c9f790fa5c2ed1fbdf0de41347402fa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_628e5221d510e98bcfe00cce5f107d21Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7c9f790fa5c2ed1fbdf0de41347402fa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_628e5221d510e98bcfe00cce5f107d21Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7c9f790fa5c2ed1fbdf0de41347402fa extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_628e5221d510e98bcfe00cce5f107d21Structure;
+            return RESTAPIWebsocketOfficialModel.ST_628e5221d510e98bcfe00cce5f107d21Structure;
         }
 
     }
@@ -13138,21 +13469,21 @@ define("tradershub.model$RL_7d169bd7c22bd4fc5143477f3a7cef9a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_7de6f1e2c99800d3c6e1aaeb14f3afdd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7de6f1e2c99800d3c6e1aaeb14f3afdd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_7de6f1e2c99800d3c6e1aaeb14f3afddInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("Trading_platform_available_accountItem", "trading_platform_available_accountItemAttr", "Trading_platform_available_accountItem", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure());
-                    }, true, RESTAPIWebsocketModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure)
+                    this.attr("Trading_platform_available_accountItemMT5", "trading_platform_available_accountItemMT5Attr", "Trading_platform_available_accountItemMT5", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9b3eaf42648c2b28591e8ee92b7ce159Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
             static fromStructure(str) {
                 return new RC_7de6f1e2c99800d3c6e1aaeb14f3afdd(new RC_7de6f1e2c99800d3c6e1aaeb14f3afdd.RecordClass({
-                    trading_platform_available_accountItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                    trading_platform_available_accountItemMT5Attr: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -13210,12 +13541,12 @@ define("tradershub.model$RL_7e823839a7f836a297fa8d09d5b77858", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7ea0e409b1b42e8e6d7ca54869209a73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_55ea19c18b42991c3f5575c063ad7ca7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7ea0e409b1b42e8e6d7ca54869209a73", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_55ea19c18b42991c3f5575c063ad7ca7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7ea0e409b1b42e8e6d7ca54869209a73 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_55ea19c18b42991c3f5575c063ad7ca7Structure;
         }
 
     }
@@ -13224,12 +13555,12 @@ define("tradershub.model$RL_7ea0e409b1b42e8e6d7ca54869209a73", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_7ec701d4086b9503e816fe47fc7b3996", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6cf1ba858957788c000fe8d27578f9c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_7ec701d4086b9503e816fe47fc7b3996", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6cf1ba858957788c000fe8d27578f9c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_7ec701d4086b9503e816fe47fc7b3996 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure;
+            return RESTAPIWebsocketOfficialModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure;
         }
 
     }
@@ -13252,15 +13583,44 @@ define("tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_86cda441e1db9e62e574ab54636ea9ea", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_7f36dbf26349b8c78224f133e993735e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1e493399566287dd50f49a441f58a8caStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7f36dbf26349b8c78224f133e993735eInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Cashier", "cashierAttr", "Cashier", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1e493399566287dd50f49a441f58a8caStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1e493399566287dd50f49a441f58a8caStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7f36dbf26349b8c78224f133e993735e(new RC_7f36dbf26349b8c78224f133e993735e.RecordClass({
+                    cashierAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_7f36dbf26349b8c78224f133e993735e = RC_7f36dbf26349b8c78224f133e993735eInner;
+
+        RC_7f36dbf26349b8c78224f133e993735eInner._isAnonymousRecord = true;
+        RC_7f36dbf26349b8c78224f133e993735eInner.UniqueId = "7f36dbf2-6349-b8c7-8224-f133e993735e";
+        var RC_7f36dbf26349b8c78224f133e993735e = RC_7f36dbf26349b8c78224f133e993735eInner;
+        RC_7f36dbf26349b8c78224f133e993735e.init();
+    }
+});
+
+define("tradershub.model$RC_86cda441e1db9e62e574ab54636ea9ea", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_07c55c1e5241bcf8a9665901701e0dbfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_86cda441e1db9e62e574ab54636ea9eaInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformPasswordResetResponse", "postTradingPlatformPasswordResetResponseAttr", "PostTradingPlatformPasswordResetResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure());
-                    }, true, RESTAPIWebsocketModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -13467,12 +13827,12 @@ define("tradershub.model$RL_815d85007a1f216f0067d3825a34d1a7", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_81d2bc71eb1c605f53ae134ad3caa1c0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8812c3cbc0a0d322acb5354526a670b4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_81d2bc71eb1c605f53ae134ad3caa1c0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8812c3cbc0a0d322acb5354526a670b4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_81d2bc71eb1c605f53ae134ad3caa1c0 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure;
+            return RESTAPIWebsocketOfficialModel.ST_8812c3cbc0a0d322acb5354526a670b4Structure;
         }
 
     }
@@ -13638,15 +13998,15 @@ define("tradershub.model$RL_848d56b8d953088a0f1dbc9b1b919b2e", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_890f16fe63a6b66b2130ac1a285dc1bf", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d845e9af38689337f2bff5d766253a88Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_890f16fe63a6b66b2130ac1a285dc1bf", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d845e9af38689337f2bff5d766253a88Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_890f16fe63a6b66b2130ac1a285dc1bfInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("RiskLevel_LandingCompany", "riskLevel_LandingCompanyAttr", "RiskLevel_LandingCompany", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d845e9af38689337f2bff5d766253a88Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d845e9af38689337f2bff5d766253a88Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d845e9af38689337f2bff5d766253a88Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d845e9af38689337f2bff5d766253a88Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -13724,6 +14084,35 @@ define("tradershub.model$RL_8684980c742003ee8436e74bed61dae5", ["exports", "@out
 
 });
 
+define("tradershub.model$RC_8688a658a83b6884b85d11d8db4546d3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_8688a658a83b6884b85d11d8db4546d3Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Account_opening", "account_openingAttr", "Account_opening", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_8688a658a83b6884b85d11d8db4546d3(new RC_8688a658a83b6884b85d11d8db4546d3.RecordClass({
+                    account_openingAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_8688a658a83b6884b85d11d8db4546d3 = RC_8688a658a83b6884b85d11d8db4546d3Inner;
+
+        RC_8688a658a83b6884b85d11d8db4546d3Inner._isAnonymousRecord = true;
+        RC_8688a658a83b6884b85d11d8db4546d3Inner.UniqueId = "8688a658-a83b-6884-b85d-11d8db4546d3";
+        var RC_8688a658a83b6884b85d11d8db4546d3 = RC_8688a658a83b6884b85d11d8db4546d3Inner;
+        RC_8688a658a83b6884b85d11d8db4546d3.init();
+    }
+});
+
 define("tradershub.model$RC_87351e3b0fa2ca59cf6c6749c6405006", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "tradershub.model", "OutSystemsUI.model$EN_849d11ab47adc426b5ce8d8c815c4fbfEntityRecord", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_87351e3b0fa2ca59cf6c6749c6405006Inner extends
@@ -13753,12 +14142,12 @@ define("tradershub.model$RC_87351e3b0fa2ca59cf6c6749c6405006", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_87e06844679358e0f8214e75ce605df1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_87e06844679358e0f8214e75ce605df1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_87e06844679358e0f8214e75ce605df1 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure;
+            return RESTAPIWebsocketOfficialModel.ST_433eb5ffcea5c3c69d4be061c9113711Structure;
         }
 
     }
@@ -13767,12 +14156,12 @@ define("tradershub.model$RL_87e06844679358e0f8214e75ce605df1", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_87e64e62a021a7f641dffaaa73541aa5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e184b5e893ff6633d3c7357dd29941faStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_87e64e62a021a7f641dffaaa73541aa5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e184b5e893ff6633d3c7357dd29941faStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_87e64e62a021a7f641dffaaa73541aa5 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e184b5e893ff6633d3c7357dd29941faStructure;
+            return RESTAPIWebsocketOfficialModel.ST_e184b5e893ff6633d3c7357dd29941faStructure;
         }
 
     }
@@ -13823,12 +14212,12 @@ define("tradershub.model$RL_886e75f265a0a7fbc13b3d74d89a8d0b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_88893b2b6478ca91e7c481f161053cfa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_af97180714ce3993e80d246ca4429825Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_88893b2b6478ca91e7c481f161053cfa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_af97180714ce3993e80d246ca4429825Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_88893b2b6478ca91e7c481f161053cfa extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_af97180714ce3993e80d246ca4429825Structure;
+            return RESTAPIWebsocketOfficialModel.ST_af97180714ce3993e80d246ca4429825Structure;
         }
 
     }
@@ -13851,12 +14240,12 @@ define("tradershub.model$RL_8972d3be5f5c984833af7ea32d6710e8", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_89efb8ec15cf4e133db42b43e8a70d31", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_89efb8ec15cf4e133db42b43e8a70d31", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_89efb8ec15cf4e133db42b43e8a70d31 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_8517d9c8b73e866553a1a7b806af5079Structure;
+            return RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure;
         }
 
     }
@@ -13893,12 +14282,12 @@ define("tradershub.model$RL_8add23b891a53c086b7017fd4cdd211b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_8b3193777919a00b12740a1aa0e7a669", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_30cf47a274820f1ac96cf412803888fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_8b3193777919a00b12740a1aa0e7a669", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_30cf47a274820f1ac96cf412803888fdStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_8b3193777919a00b12740a1aa0e7a669 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_30cf47a274820f1ac96cf412803888fdStructure;
+            return RESTAPIWebsocketOfficialModel.ST_30cf47a274820f1ac96cf412803888fdStructure;
         }
 
     }
@@ -13921,15 +14310,15 @@ define("tradershub.model$RL_8b34cec2d3a4e3170e329009c7e2bef8", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_8b362302b5966cedd4e8c7c42d7e46f8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ae40a5e8008c1f0252b9952ccf57ee94Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_8b362302b5966cedd4e8c7c42d7e46f8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae40a5e8008c1f0252b9952ccf57ee94Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_8b362302b5966cedd4e8c7c42d7e46f8Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req8", "echo_req8Attr", "Echo_req13", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure());
-                    }, true, RESTAPIWebsocketModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -14107,15 +14496,15 @@ define("tradershub.model$RL_8cb164b27a70600521e3160acb211c45", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_8ccc091579545400bb5558b597337647", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_803bffb999fad6a38040b2086877902eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_8ccc091579545400bb5558b597337647", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_803bffb999fad6a38040b2086877902eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_8ccc091579545400bb5558b597337647Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Passport", "passportAttr", "Passport", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_803bffb999fad6a38040b2086877902eStructure());
-                    }, true, RESTAPIWebsocketModel.ST_803bffb999fad6a38040b2086877902eStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_803bffb999fad6a38040b2086877902eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_803bffb999fad6a38040b2086877902eStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -14277,15 +14666,15 @@ define("tradershub.model$RL_8ed7a0e74bf62a56d225f393fa1fdf35", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_8f3efc29bef911e74df222fdba36c135", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_605da9a1009ce00d8c64718f9c13e284Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_8f3efc29bef911e74df222fdba36c135", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_605da9a1009ce00d8c64718f9c13e284Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_8f3efc29bef911e74df222fdba36c135Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Right", "rightAttr", "Right", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_605da9a1009ce00d8c64718f9c13e284Structure());
-                    }, true, RESTAPIWebsocketModel.ST_605da9a1009ce00d8c64718f9c13e284Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_605da9a1009ce00d8c64718f9c13e284Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_605da9a1009ce00d8c64718f9c13e284Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -14464,12 +14853,12 @@ define("tradershub.model$RC_90ce9b105644724abc69e3ff1232bf2f", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_90dfebee20aff7c26e30042add874567", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_0543ba6e58ccc819d0ba65db33df025eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_90dfebee20aff7c26e30042add874567", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_0543ba6e58ccc819d0ba65db33df025eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_90dfebee20aff7c26e30042add874567 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_0543ba6e58ccc819d0ba65db33df025eStructure;
         }
 
     }
@@ -14520,12 +14909,12 @@ define("tradershub.model$RL_919d8bc896529858c8cc8f0f3e5cb019", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_91f3ef19dd1007f7116bdf96cd006384", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5ba9c80e587385c94102779d8eab301cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_91f3ef19dd1007f7116bdf96cd006384", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5ba9c80e587385c94102779d8eab301cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_91f3ef19dd1007f7116bdf96cd006384 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_5ba9c80e587385c94102779d8eab301cStructure;
+            return RESTAPIWebsocketOfficialModel.ST_5ba9c80e587385c94102779d8eab301cStructure;
         }
 
     }
@@ -14703,12 +15092,12 @@ define("tradershub.model$RL_94ca10f95bc08099d22d4041842d1e37", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_94cd9fdaaf1a67a3bfa0e32663c1fe70", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_94cd9fdaaf1a67a3bfa0e32663c1fe70", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_94cd9fdaaf1a67a3bfa0e32663c1fe70 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure;
+            return RESTAPIWebsocketOfficialModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure;
         }
 
     }
@@ -14886,6 +15275,20 @@ define("tradershub.model$RL_991bc10cec4f3f7ada888ab5c86dde1d", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_996bbb10b9805c390cf8671b30f6d3a4", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_18cf7a633c2eb19c8f4a71d50c228fa8"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_996bbb10b9805c390cf8671b30f6d3a4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_18cf7a633c2eb19c8f4a71d50c228fa8;
+        }
+
+    }
+
+    tradershubModel.RL_996bbb10b9805c390cf8671b30f6d3a4 = RL_996bbb10b9805c390cf8671b30f6d3a4;
+
+});
+
 define("tradershub.model$RC_ab72f035aa34ddb5ec313dc02adb1f18", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "tradershub.model", "OutSystemsUI.model$EN_7f8fd02aa7ee2ac6182b6b36e46460d9EntityRecord", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_ab72f035aa34ddb5ec313dc02adb1f18Inner extends
@@ -15015,12 +15418,12 @@ define("tradershub.model$RL_9a0ed26a3ed5a7c44e984266a4c0a0df", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_9a37b428e209f265109cf020c957ba69", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ac4f1b4870aba80de82d4c04f7b530ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_9a37b428e209f265109cf020c957ba69", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ac4f1b4870aba80de82d4c04f7b530ceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_9a37b428e209f265109cf020c957ba69 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure;
+            return RESTAPIWebsocketOfficialModel.ST_ac4f1b4870aba80de82d4c04f7b530ceStructure;
         }
 
     }
@@ -15057,12 +15460,12 @@ define("tradershub.model$RL_9b54e3c9ffe7cf86f1ca908f7e701fd3", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_9b5ff325fa2b1963afc7ac5fe1fefcac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_9b5ff325fa2b1963afc7ac5fe1fefcac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_9b5ff325fa2b1963afc7ac5fe1fefcac extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_42e091eee706086ba45ab77d0ef6821fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_42e091eee706086ba45ab77d0ef6821fStructure;
         }
 
     }
@@ -15071,15 +15474,15 @@ define("tradershub.model$RL_9b5ff325fa2b1963afc7ac5fe1fefcac", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_fed8226e055119cda9775f74ac223ef2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_fed8226e055119cda9775f74ac223ef2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_fed8226e055119cda9775f74ac223ef2Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Currency_config", "currency_configAttr", "Currency_config", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_72e91b438c2e206bca7398a7a69902dfStructure());
-                    }, true, RESTAPIWebsocketModel.ST_72e91b438c2e206bca7398a7a69902dfStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_72e91b438c2e206bca7398a7a69902dfStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_72e91b438c2e206bca7398a7a69902dfStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15114,12 +15517,12 @@ define("tradershub.model$RL_9b9241a2f74aae5dad6a96c423cf89d8", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_9ba938eac8f7611815bf878625e7d65e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e5081373b9c17bf97c001a46f1739ffeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_9ba938eac8f7611815bf878625e7d65e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e5081373b9c17bf97c001a46f1739ffeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_9ba938eac8f7611815bf878625e7d65e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure;
+            return RESTAPIWebsocketOfficialModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure;
         }
 
     }
@@ -15167,6 +15570,20 @@ define("tradershub.model$RL_9c28fba2ad5d9bbe6b5a769d4094590b", ["exports", "@out
     }
 
     tradershubModel.RL_9c28fba2ad5d9bbe6b5a769d4094590b = RL_9c28fba2ad5d9bbe6b5a769d4094590b;
+
+});
+
+define("tradershub.model$RL_9c3b367f2c06676be4f28fe9c7a59a38", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_8688a658a83b6884b85d11d8db4546d3"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9c3b367f2c06676be4f28fe9c7a59a38 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_8688a658a83b6884b85d11d8db4546d3;
+        }
+
+    }
+
+    tradershubModel.RL_9c3b367f2c06676be4f28fe9c7a59a38 = RL_9c3b367f2c06676be4f28fe9c7a59a38;
 
 });
 
@@ -15227,12 +15644,12 @@ define("tradershub.model$RL_9d1958014f679eb9c889e84d23be0482", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_9d69b2d3ce2ad95c00706adc74706b15", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bccc1fae1833449eea329fa137ba885aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_9d69b2d3ce2ad95c00706adc74706b15", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bccc1fae1833449eea329fa137ba885aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_9d69b2d3ce2ad95c00706adc74706b15 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_bccc1fae1833449eea329fa137ba885aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_bccc1fae1833449eea329fa137ba885aStructure;
         }
 
     }
@@ -15327,6 +15744,49 @@ define("tradershub.model$RL_9e18711d0e128678787e38cf96c062ee", ["exports", "@out
 
 });
 
+define("tradershub.model$RC_9ea5c08ae16800a64582da5745fe48cf", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4814bb948c1b48da4f5ecccbe35da450Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_9ea5c08ae16800a64582da5745fe48cfInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Deposit", "depositAttr", "Deposit", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4814bb948c1b48da4f5ecccbe35da450Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4814bb948c1b48da4f5ecccbe35da450Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_9ea5c08ae16800a64582da5745fe48cf(new RC_9ea5c08ae16800a64582da5745fe48cf.RecordClass({
+                    depositAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_9ea5c08ae16800a64582da5745fe48cf = RC_9ea5c08ae16800a64582da5745fe48cfInner;
+
+        RC_9ea5c08ae16800a64582da5745fe48cfInner._isAnonymousRecord = true;
+        RC_9ea5c08ae16800a64582da5745fe48cfInner.UniqueId = "9ea5c08a-e168-00a6-4582-da5745fe48cf";
+        var RC_9ea5c08ae16800a64582da5745fe48cf = RC_9ea5c08ae16800a64582da5745fe48cfInner;
+        RC_9ea5c08ae16800a64582da5745fe48cf.init();
+    }
+});
+
+define("tradershub.model$RL_9e1ff0949548eb09d4dbb455a422d959", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_9ea5c08ae16800a64582da5745fe48cf"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9e1ff0949548eb09d4dbb455a422d959 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_9ea5c08ae16800a64582da5745fe48cf;
+        }
+
+    }
+
+    tradershubModel.RL_9e1ff0949548eb09d4dbb455a422d959 = RL_9e1ff0949548eb09d4dbb455a422d959;
+
+});
+
 define("tradershub.model$RL_9e3aaefe5e623a2bc41930de8b795d08", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_2a77ab94ed6fec349962a10d5680464f"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_9e3aaefe5e623a2bc41930de8b795d08 extends
@@ -15411,15 +15871,15 @@ define("tradershub.model$RL_9f994d3152d7383b2658e32522530002", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_9fdefb1423ae0af9c1d321109b8695e4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ef2ca9573c3bd1e27b35145a902be10bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_9fdefb1423ae0af9c1d321109b8695e4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ef2ca9573c3bd1e27b35145a902be10bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_9fdefb1423ae0af9c1d321109b8695e4Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Phone_number_verification", "phone_number_verificationAttr", "Phone_number_verification", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure());
-                    }, true, RESTAPIWebsocketModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ef2ca9573c3bd1e27b35145a902be10bStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15438,6 +15898,20 @@ define("tradershub.model$RC_9fdefb1423ae0af9c1d321109b8695e4", ["exports", "@out
         var RC_9fdefb1423ae0af9c1d321109b8695e4 = RC_9fdefb1423ae0af9c1d321109b8695e4Inner;
         RC_9fdefb1423ae0af9c1d321109b8695e4.init();
     }
+});
+
+define("tradershub.model$RL_a08f65ffe8aa106df28c69272e328037", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_412ed7113d9105960615d1c5b5f37301Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a08f65ffe8aa106df28c69272e328037 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure;
+        }
+
+    }
+
+    tradershubModel.RL_a08f65ffe8aa106df28c69272e328037 = RL_a08f65ffe8aa106df28c69272e328037;
+
 });
 
 define("tradershub.model$RL_a0d33d282a082e36edde3e445101c333", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model", "tradershub.model", "OutSystemsMaps.model$ST_d609eacb476c603df8b92eb374da99faStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsMaps"], function(exports, OSRuntimeCore, OutSystemsMapsModel, tradershubModel) {
@@ -15524,6 +15998,20 @@ define("tradershub.model$RC_a20800587bde28a242c1314f9567b1fb", ["exports", "@out
         var RC_a20800587bde28a242c1314f9567b1fb = RC_a20800587bde28a242c1314f9567b1fbInner;
         RC_a20800587bde28a242c1314f9567b1fb.init();
     }
+});
+
+define("tradershub.model$RL_a269dfd9a948aad7cbddba837f8c095f", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_31254dd0eceb66de83ea4d3f76038ef7"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a269dfd9a948aad7cbddba837f8c095f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_31254dd0eceb66de83ea4d3f76038ef7;
+        }
+
+    }
+
+    tradershubModel.RL_a269dfd9a948aad7cbddba837f8c095f = RL_a269dfd9a948aad7cbddba837f8c095f;
+
 });
 
 define("tradershub.model$RL_a2a3d623cff8db0b23d39b4d88a9486f", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_9fdefb1423ae0af9c1d321109b8695e4"], function(exports, OSRuntimeCore, tradershubModel) {
@@ -15683,15 +16171,15 @@ define("tradershub.model$RL_a5b6b975942e234f0350205b728240be", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_a5fc3d62312a89b32ae393e0571bcad7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a5fc3d62312a89b32ae393e0571bcad7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a5fc3d62312a89b32ae393e0571bcad7Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostNewAccountVirtualRequest", "postNewAccountVirtualRequestAttr", "PostNewAccountVirtualRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d4ed48681c55954edc02f19b0ed492e7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15754,12 +16242,12 @@ define("tradershub.model$RL_a68a1924f216276514d0d72b01e76ad7", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_a6ed4fd2e7e0b79f06fecc8c65713a43", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_a6ed4fd2e7e0b79f06fecc8c65713a43", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_a6ed4fd2e7e0b79f06fecc8c65713a43 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure;
+            return RESTAPIWebsocketOfficialModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure;
         }
 
     }
@@ -15782,12 +16270,12 @@ define("tradershub.model$RL_a7094b4040c9bc1f29f799c201256c99", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_a85951adc11db15827205a4c30d6e88f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_a85951adc11db15827205a4c30d6e88f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_a85951adc11db15827205a4c30d6e88f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_50afbe86b1f98695d7a2eacc451587a7Structure;
         }
 
     }
@@ -15796,15 +16284,15 @@ define("tradershub.model$RL_a85951adc11db15827205a4c30d6e88f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_a8681099a96d9738667779eaaccedc4a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6e7638d850b78b46a75a04e2dcd58f58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a8681099a96d9738667779eaaccedc4a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6e7638d850b78b46a75a04e2dcd58f58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a8681099a96d9738667779eaaccedc4aInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("IDR", "iDRAttr", "IDR", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure());
-                    }, true, RESTAPIWebsocketModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_6e7638d850b78b46a75a04e2dcd58f58Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15839,15 +16327,15 @@ define("tradershub.model$RL_a8b7c276560c35af141714ac8a51d257", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_a9755f38b0542dfb6acdd8617637c169", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_a9755f38b0542dfb6acdd8617637c169", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_a9755f38b0542dfb6acdd8617637c169Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostResetPasswordRequest", "postResetPasswordRequestAttr", "PostResetPasswordRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure());
-                    }, true, RESTAPIWebsocketModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15882,12 +16370,12 @@ define("tradershub.model$RL_a9a9108148017b3108e7788d5e0b597c", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_a9ea31b939f652b4b427fa383c80cdbb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_98319758945048a72386b9e9466c220aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_a9ea31b939f652b4b427fa383c80cdbb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_98319758945048a72386b9e9466c220aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_a9ea31b939f652b4b427fa383c80cdbb extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_98319758945048a72386b9e9466c220aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_98319758945048a72386b9e9466c220aStructure;
         }
 
     }
@@ -15910,15 +16398,15 @@ define("tradershub.model$RL_aa02ec10f0665a9ad9726b842466f302", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b7ccb1d374819fabb1f3fad7a6c0dd99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d1246d83c419f598cf8e4e18d5276097Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b7ccb1d374819fabb1f3fad7a6c0dd99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d1246d83c419f598cf8e4e18d5276097Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b7ccb1d374819fabb1f3fad7a6c0dd99Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformPasswordChangeRequest", "postTradingPlatformPasswordChangeRequestAttr", "PostTradingPlatformPasswordChangeRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_d1246d83c419f598cf8e4e18d5276097Structure());
-                    }, true, RESTAPIWebsocketModel.ST_d1246d83c419f598cf8e4e18d5276097Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d1246d83c419f598cf8e4e18d5276097Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d1246d83c419f598cf8e4e18d5276097Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -15967,6 +16455,20 @@ define("tradershub.model$RL_aa804f22c3f564ff1d4a4fb28230a6c8", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_aae9a3766bc818ac211c0ea434d05161", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_4814bb948c1b48da4f5ecccbe35da450Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_aae9a3766bc818ac211c0ea434d05161 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_4814bb948c1b48da4f5ecccbe35da450Structure;
+        }
+
+    }
+
+    tradershubModel.RL_aae9a3766bc818ac211c0ea434d05161 = RL_aae9a3766bc818ac211c0ea434d05161;
+
+});
+
 define("tradershub.model$RC_d687bfbe104d17346737149645109738", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model", "tradershub.model", "OutSystemsMaps.model$ST_30625b4ad0f3e10abf82b61ea58e8644Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsMaps"], function(exports, OSRuntimeCore, OutSystemsMapsModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d687bfbe104d17346737149645109738Inner extends
@@ -16010,12 +16512,12 @@ define("tradershub.model$RL_ab79b46414538632e058912e7b4492f7", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_abbb06caa2dc3007694c8b499e93ac42", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_abbb06caa2dc3007694c8b499e93ac42", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_abbb06caa2dc3007694c8b499e93ac42 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure;
+            return RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure;
         }
 
     }
@@ -16038,15 +16540,15 @@ define("tradershub.model$RL_ac145e33ab4afdc045b3b68efad3e2af", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_d69d31319b581746ce9d01515b7635df", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_d69d31319b581746ce9d01515b7635df", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d69d31319b581746ce9d01515b7635dfInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetPartnerSettingsResponse", "getPartnerSettingsResponseAttr", "GetPartnerSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16081,15 +16583,15 @@ define("tradershub.model$RL_ac6093dc6d88ec6d2280dfd00ae486ca", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_aca073df88d40d31252fa904cba1bb39", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6cf1ba858957788c000fe8d27578f9c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_aca073df88d40d31252fa904cba1bb39", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6cf1ba858957788c000fe8d27578f9c1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_aca073df88d40d31252fa904cba1bb39Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Standard", "standardAttr", "Standard", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure());
-                    }, true, RESTAPIWebsocketModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_6cf1ba858957788c000fe8d27578f9c1Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16110,21 +16612,50 @@ define("tradershub.model$RC_aca073df88d40d31252fa904cba1bb39", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_ad160031f42d1788007448cccfc906ac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_ad1368b49b01cac105fab51dcf07c686", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_ad1368b49b01cac105fab51dcf07c686Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostCashierFiatResponse", "postCashierFiatResponseAttr", "PostCashierFiatResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_ad1368b49b01cac105fab51dcf07c686(new RC_ad1368b49b01cac105fab51dcf07c686.RecordClass({
+                    postCashierFiatResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_ad1368b49b01cac105fab51dcf07c686 = RC_ad1368b49b01cac105fab51dcf07c686Inner;
+
+        RC_ad1368b49b01cac105fab51dcf07c686Inner._isAnonymousRecord = true;
+        RC_ad1368b49b01cac105fab51dcf07c686Inner.UniqueId = "ad1368b4-9b01-cac1-05fa-b51dcf07c686";
+        var RC_ad1368b49b01cac105fab51dcf07c686 = RC_ad1368b49b01cac105fab51dcf07c686Inner;
+        RC_ad1368b49b01cac105fab51dcf07c686.init();
+    }
+});
+
+define("tradershub.model$RC_ad160031f42d1788007448cccfc906ac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_ad160031f42d1788007448cccfc906acInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("PostTradingPlatformAvailableAccountResponse", "postTradingPlatformAvailableAccountResponseAttr", "PostTradingPlatformAvailableAccountResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure());
-                    }, true, RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure)
+                    this.attr("PostTradingPlatformAvailableAccountResponseMT5", "postTradingPlatformAvailableAccountResponseMT5Attr", "PostTradingPlatformAvailableAccountResponseMT5", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
             static fromStructure(str) {
                 return new RC_ad160031f42d1788007448cccfc906ac(new RC_ad160031f42d1788007448cccfc906ac.RecordClass({
-                    postTradingPlatformAvailableAccountResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                    postTradingPlatformAvailableAccountResponseMT5Attr: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -16182,15 +16713,15 @@ define("tradershub.model$RL_ad5d26c70131beb1bb02efe2051407b2", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_ada7ae2f7fcadfe9ad4cb9dbd1c4caf8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_159cd2ead3b4ce7cf017e33699885453Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_ada7ae2f7fcadfe9ad4cb9dbd1c4caf8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_159cd2ead3b4ce7cf017e33699885453Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_ada7ae2f7fcadfe9ad4cb9dbd1c4caf8Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Zero_spread", "zero_spreadAttr", "Zero_spread", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_159cd2ead3b4ce7cf017e33699885453Structure());
-                    }, true, RESTAPIWebsocketModel.ST_159cd2ead3b4ce7cf017e33699885453Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_159cd2ead3b4ce7cf017e33699885453Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_159cd2ead3b4ce7cf017e33699885453Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16254,15 +16785,15 @@ define("tradershub.model$RC_ae2fdfd8cc48be4dcc0710ae53b1008e", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_e62fa91ce8ed0a38e810cad8c726da2f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5b838c70a2bbb273d7a479efa1e8ea87Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e62fa91ce8ed0a38e810cad8c726da2f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5b838c70a2bbb273d7a479efa1e8ea87Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e62fa91ce8ed0a38e810cad8c726da2fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Commodity", "commodityAttr", "Commodity", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure());
-                    }, true, RESTAPIWebsocketModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16353,6 +16884,20 @@ define("tradershub.model$RL_af98e667e22024fcd3f4c2355613ad7f", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_b045e9b0e4d1bde192865267e3d1c52b", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_7f36dbf26349b8c78224f133e993735e"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b045e9b0e4d1bde192865267e3d1c52b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_7f36dbf26349b8c78224f133e993735e;
+        }
+
+    }
+
+    tradershubModel.RL_b045e9b0e4d1bde192865267e3d1c52b = RL_b045e9b0e4d1bde192865267e3d1c52b;
+
+});
+
 define("tradershub.model$RL_b0bd1de0887c53705059fc5b650a5849", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_34d6c170734fc7af4a993baeeceeb6cd"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b0bd1de0887c53705059fc5b650a5849 extends
@@ -16381,17 +16926,31 @@ define("tradershub.model$RL_b115fffa775eacd174e4dc6056343607", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_b12f7a71666929e6ceec6559f200d213", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_1c923b28044712e7268167783ecfdfbeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b12f7a71666929e6ceec6559f200d213", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_1c923b28044712e7268167783ecfdfbeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b12f7a71666929e6ceec6559f200d213 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_1c923b28044712e7268167783ecfdfbeStructure;
+            return RESTAPIWebsocketOfficialModel.ST_1c923b28044712e7268167783ecfdfbeStructure;
         }
 
     }
 
     tradershubModel.RL_b12f7a71666929e6ceec6559f200d213 = RL_b12f7a71666929e6ceec6559f200d213;
+
+});
+
+define("tradershub.model$RL_b15112cdeeac0d3ba922a9de50cd9ca3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b15112cdeeac0d3ba922a9de50cd9ca3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure;
+        }
+
+    }
+
+    tradershubModel.RL_b15112cdeeac0d3ba922a9de50cd9ca3 = RL_b15112cdeeac0d3ba922a9de50cd9ca3;
 
 });
 
@@ -16438,15 +16997,15 @@ define("tradershub.model$RL_b17522b541f7e019c0443ba6658c825f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b17c3526d6deec2ea51fe6ca6895e3ea", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_95720c0132c7c8b07166d48790a0a129Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b17c3526d6deec2ea51fe6ca6895e3ea", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_95720c0132c7c8b07166d48790a0a129Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b17c3526d6deec2ea51fe6ca6895e3eaInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req7", "echo_req7Attr", "Echo_req7", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_95720c0132c7c8b07166d48790a0a129Structure());
-                    }, true, RESTAPIWebsocketModel.ST_95720c0132c7c8b07166d48790a0a129Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_95720c0132c7c8b07166d48790a0a129Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_95720c0132c7c8b07166d48790a0a129Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16467,15 +17026,15 @@ define("tradershub.model$RC_b17c3526d6deec2ea51fe6ca6895e3ea", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_f1102e0e903c36b89dd3a8ad41701e5f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f1102e0e903c36b89dd3a8ad41701e5f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f1102e0e903c36b89dd3a8ad41701e5fInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostTradingPlatformAvailableAccountsRequest", "postTradingPlatformAvailableAccountsRequestAttr", "PostTradingPlatformAvailableAccountsRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure());
-                    }, true, RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16510,15 +17069,15 @@ define("tradershub.model$RL_b180a59f8f5def3150ec40c96b1bacf2", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b1f9a62aa1eb0e7979aaceb89243cea9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5ba9c80e587385c94102779d8eab301cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b1f9a62aa1eb0e7979aaceb89243cea9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5ba9c80e587385c94102779d8eab301cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b1f9a62aa1eb0e7979aaceb89243cea9Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("AllAccountTypePlatforms", "allAccountTypePlatformsAttr", "AllAccountTypePlatforms", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_5ba9c80e587385c94102779d8eab301cStructure());
-                    }, true, RESTAPIWebsocketModel.ST_5ba9c80e587385c94102779d8eab301cStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5ba9c80e587385c94102779d8eab301cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5ba9c80e587385c94102779d8eab301cStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16610,12 +17169,12 @@ define("tradershub.model$RL_b2061216c3d82010dc8c3226204dac46", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_b2117356ef65d3231f992a69f03538c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b2117356ef65d3231f992a69f03538c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b2117356ef65d3231f992a69f03538c4 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_75725e65d106c1568a850780233a08baStructure;
+            return RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure;
         }
 
     }
@@ -16793,12 +17352,12 @@ define("tradershub.model$RL_b4549892bc3bf08015a7ca4a1045c46e", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_b50ecc69bf1d35f5563a812d2e69bf9c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d1246d83c419f598cf8e4e18d5276097Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b50ecc69bf1d35f5563a812d2e69bf9c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d1246d83c419f598cf8e4e18d5276097Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b50ecc69bf1d35f5563a812d2e69bf9c extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d1246d83c419f598cf8e4e18d5276097Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d1246d83c419f598cf8e4e18d5276097Structure;
         }
 
     }
@@ -16836,12 +17395,12 @@ define("tradershub.model$RC_b52eabac43eed7268a0f740e5048ba41", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_b60c30f70d5c7d39a851eeb74ad499d4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d12f6a9e29cbb97250918a3fc7bc632aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b60c30f70d5c7d39a851eeb74ad499d4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d12f6a9e29cbb97250918a3fc7bc632aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b60c30f70d5c7d39a851eeb74ad499d4 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_d12f6a9e29cbb97250918a3fc7bc632aStructure;
         }
 
     }
@@ -16891,6 +17450,35 @@ define("tradershub.model$RL_b6498e49fbb2e1630ceacc662eaf9045", ["exports", "@out
 
     tradershubModel.RL_b6498e49fbb2e1630ceacc662eaf9045 = RL_b6498e49fbb2e1630ceacc662eaf9045;
 
+});
+
+define("tradershub.model$RC_b66f106ffca3ec8b9893c19faf2ae442", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_711f7ad16da273bf9e6563303a17ad00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b66f106ffca3ec8b9893c19faf2ae442Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req11", "echo_req11Attr", "Echo_req16", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_711f7ad16da273bf9e6563303a17ad00Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_711f7ad16da273bf9e6563303a17ad00Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b66f106ffca3ec8b9893c19faf2ae442(new RC_b66f106ffca3ec8b9893c19faf2ae442.RecordClass({
+                    echo_req11Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_b66f106ffca3ec8b9893c19faf2ae442 = RC_b66f106ffca3ec8b9893c19faf2ae442Inner;
+
+        RC_b66f106ffca3ec8b9893c19faf2ae442Inner._isAnonymousRecord = true;
+        RC_b66f106ffca3ec8b9893c19faf2ae442Inner.UniqueId = "b66f106f-fca3-ec8b-9893-c19faf2ae442";
+        var RC_b66f106ffca3ec8b9893c19faf2ae442 = RC_b66f106ffca3ec8b9893c19faf2ae442Inner;
+        RC_b66f106ffca3ec8b9893c19faf2ae442.init();
+    }
 });
 
 define("tradershub.model$RL_b693780c9c2e91ec100b6cde72ab3ad5", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "tradershub.model", "OutSystemsUI.model$EN_f9178b4aae1879ea388b92402c64db4cEntityRecord", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, tradershubModel) {
@@ -16964,12 +17552,12 @@ define("tradershub.model$RL_b7369d5f4cafbbcd5483c083235b9d49", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9eb2d1268b055c9ba20852d2758a5050Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9eb2d1268b055c9ba20852d2758a5050Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b7a05579761da982186db0cb56ca5900 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure;
+            return RESTAPIWebsocketOfficialModel.ST_9eb2d1268b055c9ba20852d2758a5050Structure;
         }
 
     }
@@ -16978,15 +17566,15 @@ define("tradershub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_b8272ebcb560c4fc5c96482b705582ba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_b8272ebcb560c4fc5c96482b705582ba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_b8272ebcb560c4fc5c96482b705582baInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Ownership", "ownershipAttr", "Ownership", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure());
-                    }, true, RESTAPIWebsocketModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -17007,12 +17595,12 @@ define("tradershub.model$RC_b8272ebcb560c4fc5c96482b705582ba", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_b88c0ed17712805463deb6be1a1ca760", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5b838c70a2bbb273d7a479efa1e8ea87Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b88c0ed17712805463deb6be1a1ca760", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5b838c70a2bbb273d7a479efa1e8ea87Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b88c0ed17712805463deb6be1a1ca760 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure;
+            return RESTAPIWebsocketOfficialModel.ST_5b838c70a2bbb273d7a479efa1e8ea87Structure;
         }
 
     }
@@ -17021,12 +17609,12 @@ define("tradershub.model$RL_b88c0ed17712805463deb6be1a1ca760", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_b903ad96980478d7874f689155c88d6c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_b903ad96980478d7874f689155c88d6c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_b903ad96980478d7874f689155c88d6c extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e3b9823599cdef8012785f8875d8da38Structure;
+            return RESTAPIWebsocketOfficialModel.ST_e3b9823599cdef8012785f8875d8da38Structure;
         }
 
     }
@@ -17161,6 +17749,49 @@ define("tradershub.model$RC_bb80a04f7ea6a5bb3d33db9b2bca4c88", ["exports", "@out
         var RC_bb80a04f7ea6a5bb3d33db9b2bca4c88 = RC_bb80a04f7ea6a5bb3d33db9b2bca4c88Inner;
         RC_bb80a04f7ea6a5bb3d33db9b2bca4c88.init();
     }
+});
+
+define("tradershub.model$RC_cdef44d865812d5f122c87c3e4a61605", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_cdef44d865812d5f122c87c3e4a61605Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Api", "apiAttr", "Api2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_cdef44d865812d5f122c87c3e4a61605(new RC_cdef44d865812d5f122c87c3e4a61605.RecordClass({
+                    apiAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_cdef44d865812d5f122c87c3e4a61605 = RC_cdef44d865812d5f122c87c3e4a61605Inner;
+
+        RC_cdef44d865812d5f122c87c3e4a61605Inner._isAnonymousRecord = true;
+        RC_cdef44d865812d5f122c87c3e4a61605Inner.UniqueId = "cdef44d8-6581-2d5f-122c-87c3e4a61605";
+        var RC_cdef44d865812d5f122c87c3e4a61605 = RC_cdef44d865812d5f122c87c3e4a61605Inner;
+        RC_cdef44d865812d5f122c87c3e4a61605.init();
+    }
+});
+
+define("tradershub.model$RL_bbe2c440b74c8377ca81d2556840a89a", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_cdef44d865812d5f122c87c3e4a61605"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_bbe2c440b74c8377ca81d2556840a89a extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_cdef44d865812d5f122c87c3e4a61605;
+        }
+
+    }
+
+    tradershubModel.RL_bbe2c440b74c8377ca81d2556840a89a = RL_bbe2c440b74c8377ca81d2556840a89a;
+
 });
 
 define("tradershub.model$RL_bbeebcaa7514f10220c4e4bc48aee508", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_a99e5b4d6b08ee1b808de2fbce23bf4fStructure"], function(exports, OSRuntimeCore, tradershubModel) {
@@ -17332,12 +17963,12 @@ define("tradershub.model$RL_c1b551b639cf44782c03b977f31ed021", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_c229edfd5a861b3989c3898b88a89f90", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ae40a5e8008c1f0252b9952ccf57ee94Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_c229edfd5a861b3989c3898b88a89f90", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae40a5e8008c1f0252b9952ccf57ee94Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_c229edfd5a861b3989c3898b88a89f90 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure;
+            return RESTAPIWebsocketOfficialModel.ST_ae40a5e8008c1f0252b9952ccf57ee94Structure;
         }
 
     }
@@ -17375,15 +18006,15 @@ define("tradershub.model$RC_c2cb4dd7ff3a47ae1bb181caacd2a267", ["exports", "@out
     }
 });
 
-define("tradershub.model$RC_e3b76e5c6918ce63091acb36b11f3fe2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2361699202fda01d7c8ade7cab583650Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e3b76e5c6918ce63091acb36b11f3fe2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2361699202fda01d7c8ade7cab583650Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e3b76e5c6918ce63091acb36b11f3fe2Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Mt5_login_listItem", "mt5_login_listItemAttr", "Mt5_login_listItem", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_2361699202fda01d7c8ade7cab583650Structure());
-                    }, true, RESTAPIWebsocketModel.ST_2361699202fda01d7c8ade7cab583650Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2361699202fda01d7c8ade7cab583650Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2361699202fda01d7c8ade7cab583650Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -17432,12 +18063,12 @@ define("tradershub.model$RL_c336d58dd96d2c1d5470075e96b2dfe2", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_c35bbded731f8ecb695157b429b6b213", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_ec58aaccd7b190d47a2dd7159fa0d866Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_c35bbded731f8ecb695157b429b6b213", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ec58aaccd7b190d47a2dd7159fa0d866Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_c35bbded731f8ecb695157b429b6b213 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure;
+            return RESTAPIWebsocketOfficialModel.ST_ec58aaccd7b190d47a2dd7159fa0d866Structure;
         }
 
     }
@@ -17516,15 +18147,15 @@ define("tradershub.model$RL_c564b1e63d41953ea9734fb248f40109", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_c567cbac2969babec31508d5ba9b8248", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_c567cbac2969babec31508d5ba9b8248", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_c567cbac2969babec31508d5ba9b8248Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostAccountListResponse", "postAccountListResponseAttr", "PostAccountListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_42e091eee706086ba45ab77d0ef6821fStructure());
-                    }, true, RESTAPIWebsocketModel.ST_42e091eee706086ba45ab77d0ef6821fStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_42e091eee706086ba45ab77d0ef6821fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_42e091eee706086ba45ab77d0ef6821fStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -17570,6 +18201,20 @@ define("tradershub.model$RL_c5909a8b1377430a2e36d2ce210bb739", ["exports", "@out
     }
 
     tradershubModel.RL_c5909a8b1377430a2e36d2ce210bb739 = RL_c5909a8b1377430a2e36d2ce210bb739;
+
+});
+
+define("tradershub.model$RL_c5c6c21effa285fee00f8dc17d9ba72f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c5c6c21effa285fee00f8dc17d9ba72f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_2f46c6fecf81fe9d91763f789141eec9Structure;
+        }
+
+    }
+
+    tradershubModel.RL_c5c6c21effa285fee00f8dc17d9ba72f = RL_c5c6c21effa285fee00f8dc17d9ba72f;
 
 });
 
@@ -17629,12 +18274,12 @@ define("tradershub.model$RL_c8ec1067f658d445cb4bb406a536d6e4", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_c9802391ccf1fcf76850377db0a5a2bd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_c9802391ccf1fcf76850377db0a5a2bd", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_c9802391ccf1fcf76850377db0a5a2bd extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure;
+            return RESTAPIWebsocketOfficialModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure;
         }
 
     }
@@ -17671,12 +18316,12 @@ define("tradershub.model$RL_ca4befaa7d5de5d9bbcd4bf59c44b15c", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_cb7f36c20c1100a526f054e4bd5ee331", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_870defcbb5bf4a58a2a009971edc7d07Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_cb7f36c20c1100a526f054e4bd5ee331", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_870defcbb5bf4a58a2a009971edc7d07Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_cb7f36c20c1100a526f054e4bd5ee331 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure;
+            return RESTAPIWebsocketOfficialModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure;
         }
 
     }
@@ -17699,12 +18344,12 @@ define("tradershub.model$RL_cbac71e3b2383e8c0c384139f6b34f78", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_cbd45ffb64bc9c47450a3b6cf63434c5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_cbd45ffb64bc9c47450a3b6cf63434c5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_cbd45ffb64bc9c47450a3b6cf63434c5 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_f502318fbe2f943e6cfbba125766780aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure;
         }
 
     }
@@ -17770,12 +18415,12 @@ define("tradershub.model$RL_ce208b31a967d977f5ffca07857f3775", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_cead5d196d772d870bc3f7d4fa164d8c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6eafdf6bd9852632690d0672a511a98fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_cead5d196d772d870bc3f7d4fa164d8c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6eafdf6bd9852632690d0672a511a98fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_cead5d196d772d870bc3f7d4fa164d8c extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_6eafdf6bd9852632690d0672a511a98fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_6eafdf6bd9852632690d0672a511a98fStructure;
         }
 
     }
@@ -17798,12 +18443,12 @@ define("tradershub.model$RL_cedacd4f40272195bb61df08532044c2", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_ceea93824bcd8ed549fcfcd4e2f5b807", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_ceea93824bcd8ed549fcfcd4e2f5b807", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cef0b20847ad169551dbf51efb01e613Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_ceea93824bcd8ed549fcfcd4e2f5b807 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure;
+            return RESTAPIWebsocketOfficialModel.ST_cef0b20847ad169551dbf51efb01e613Structure;
         }
 
     }
@@ -17812,12 +18457,12 @@ define("tradershub.model$RL_ceea93824bcd8ed549fcfcd4e2f5b807", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d020274c0ef0b03336f86133d39e8e5d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c77c7364c5e093c1d601fe854bbf1fd7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d020274c0ef0b03336f86133d39e8e5d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c77c7364c5e093c1d601fe854bbf1fd7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d020274c0ef0b03336f86133d39e8e5d extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure;
+            return RESTAPIWebsocketOfficialModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure;
         }
 
     }
@@ -17925,12 +18570,12 @@ define("tradershub.model$RL_d170df24c2e1d399274b953b3ea7ee8d", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d1730959bead5ace9709263653c5c805", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d1730959bead5ace9709263653c5c805", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_84a0cd0731252abf8ed782a87ccaad58Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d1730959bead5ace9709263653c5c805 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure;
+            return RESTAPIWebsocketOfficialModel.ST_84a0cd0731252abf8ed782a87ccaad58Structure;
         }
 
     }
@@ -18024,12 +18669,12 @@ define("tradershub.model$RL_d24415aae8bc2d864868eb4166823bd0", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d2789538425b9b75ea10631ae0abd383", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d2789538425b9b75ea10631ae0abd383", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d2789538425b9b75ea10631ae0abd383 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure;
         }
 
     }
@@ -18080,12 +18725,12 @@ define("tradershub.model$RL_d2c71de812e44763974172e04508cef5", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d2d0068f3a07cb94ca20f9308415ffee", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d2d0068f3a07cb94ca20f9308415ffee", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d2d0068f3a07cb94ca20f9308415ffee extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure;
+            return RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure;
         }
 
     }
@@ -18122,12 +18767,12 @@ define("tradershub.model$RL_d3a11822db8b6719d712c99cd29ac96a", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d3a7744852f4b782bcbb3dc9b2b5a3a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_123df4fc5615aac2800d1fa4847bc440Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d3a7744852f4b782bcbb3dc9b2b5a3a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_123df4fc5615aac2800d1fa4847bc440Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d3a7744852f4b782bcbb3dc9b2b5a3a2 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_123df4fc5615aac2800d1fa4847bc440Structure;
+            return RESTAPIWebsocketOfficialModel.ST_123df4fc5615aac2800d1fa4847bc440Structure;
         }
 
     }
@@ -18136,15 +18781,15 @@ define("tradershub.model$RL_d3a7744852f4b782bcbb3dc9b2b5a3a2", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_da31320f88166d864fc396c0fddbecc9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_c77c7364c5e093c1d601fe854bbf1fd7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_da31320f88166d864fc396c0fddbecc9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_c77c7364c5e093c1d601fe854bbf1fd7Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_da31320f88166d864fc396c0fddbecc9Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Risk_level", "risk_levelAttr", "Risk_level", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure());
-                    }, true, RESTAPIWebsocketModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c77c7364c5e093c1d601fe854bbf1fd7Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18193,15 +18838,15 @@ define("tradershub.model$RL_d4f7893aa6d04f57395acc7bc2d61af1", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_d509bf89cda09ba78055eb96d496078b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_d509bf89cda09ba78055eb96d496078b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_d509bf89cda09ba78055eb96d496078bInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Forex", "forexAttr", "Forex", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure());
-                    }, true, RESTAPIWebsocketModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18278,15 +18923,15 @@ define("tradershub.model$RL_d689c0ceaaa6201af233ffc179beef2f", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_f0c73e6dbd84280986cd2f30c5ab1891", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f0c73e6dbd84280986cd2f30c5ab1891", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f0c73e6dbd84280986cd2f30c5ab1891Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostLogoutResponse", "postLogoutResponseAttr", "PostLogoutResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18335,12 +18980,12 @@ define("tradershub.model$RL_d6f53713c8f8a22faf327cf7af7c6d89", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d7120c737b749736ea0a72e73d61514e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_04eaf04e4147681bc07ba614af4e7e78Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d7120c737b749736ea0a72e73d61514e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_04eaf04e4147681bc07ba614af4e7e78Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_d7120c737b749736ea0a72e73d61514e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure;
+            return RESTAPIWebsocketOfficialModel.ST_04eaf04e4147681bc07ba614af4e7e78Structure;
         }
 
     }
@@ -18391,17 +19036,17 @@ define("tradershub.model$RL_d7cde0d346486a854aee07525f121a90", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_d85e4c67416f974767ee94f9ffec8e89", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_d879fd0f70d45798161ae7b5ea69146c", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_b66f106ffca3ec8b9893c19faf2ae442"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
-    class RL_d85e4c67416f974767ee94f9ffec8e89 extends
+    class RL_d879fd0f70d45798161ae7b5ea69146c extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_178833eaf81da5980f461500f3f98736Structure;
+            return tradershubModel.RC_b66f106ffca3ec8b9893c19faf2ae442;
         }
 
     }
 
-    tradershubModel.RL_d85e4c67416f974767ee94f9ffec8e89 = RL_d85e4c67416f974767ee94f9ffec8e89;
+    tradershubModel.RL_d879fd0f70d45798161ae7b5ea69146c = RL_d879fd0f70d45798161ae7b5ea69146c;
 
 });
 
@@ -18462,6 +19107,20 @@ define("tradershub.model$RC_d9c7c205570dc850fb84a9195fd4397b", ["exports", "@out
     }
 });
 
+define("tradershub.model$RL_da6c5178f53e986289bf2ed71791858d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_839b1aebc8b507d4259e4312bdc21d4bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_da6c5178f53e986289bf2ed71791858d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_839b1aebc8b507d4259e4312bdc21d4bStructure;
+        }
+
+    }
+
+    tradershubModel.RL_da6c5178f53e986289bf2ed71791858d = RL_da6c5178f53e986289bf2ed71791858d;
+
+});
+
 define("tradershub.model$RL_da9f97f6a3c8b98228b608b130222591", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_623a04a7e1c688b7ec133f2b7ca28f8e"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_da9f97f6a3c8b98228b608b130222591 extends
@@ -18519,12 +19178,12 @@ define("tradershub.model$RL_db517726bd3ccb8cadfd2631a2f814c6", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_dba1429f774712c36d3ea0b48ab6b63d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_dba1429f774712c36d3ea0b48ab6b63d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_dba1429f774712c36d3ea0b48ab6b63d extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure;
+            return RESTAPIWebsocketOfficialModel.ST_709b151c5172b8ff1042e5fecf4be0ecStructure;
         }
 
     }
@@ -18603,15 +19262,15 @@ define("tradershub.model$RL_dd299c02eac5eb3e7ba5132848a21b2a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_dd79bf27114cbc810592c451d8bd2280", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_dd79bf27114cbc810592c451d8bd2280", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_dd79bf27114cbc810592c451d8bd2280Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("White_label_link", "white_label_linkAttr", "White_label_link", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure());
-                    }, true, RESTAPIWebsocketModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18674,12 +19333,12 @@ define("tradershub.model$RL_df14cb7d037d8e09a588540e15f4e722", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_dfdebdca8e822b537628659338ad0660", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_159cd2ead3b4ce7cf017e33699885453Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_dfdebdca8e822b537628659338ad0660", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_159cd2ead3b4ce7cf017e33699885453Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_dfdebdca8e822b537628659338ad0660 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_159cd2ead3b4ce7cf017e33699885453Structure;
+            return RESTAPIWebsocketOfficialModel.ST_159cd2ead3b4ce7cf017e33699885453Structure;
         }
 
     }
@@ -18688,15 +19347,15 @@ define("tradershub.model$RL_dfdebdca8e822b537628659338ad0660", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_dfe43d1a19f2f910938805ce519a6be0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_dfe43d1a19f2f910938805ce519a6be0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_dfe43d1a19f2f910938805ce519a6be0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostAuthorizeResponse", "postAuthorizeResponseAttr", "PostAuthorizeResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_f502318fbe2f943e6cfbba125766780aStructure());
-                    }, true, RESTAPIWebsocketModel.ST_f502318fbe2f943e6cfbba125766780aStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18788,15 +19447,15 @@ define("tradershub.model$RL_e0db929d5070f51885140f6448e90343", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e0e41cb94b033378d9153e95b9660ef9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e0e41cb94b033378d9153e95b9660ef9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e0e41cb94b033378d9153e95b9660ef9Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Document_type", "document_typeAttr", "Document_type", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure());
-                    }, true, RESTAPIWebsocketModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_3b8df1b0da2c2bbfdff9bb6416b86701Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18817,12 +19476,12 @@ define("tradershub.model$RC_e0e41cb94b033378d9153e95b9660ef9", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_e1278fe9427d99d4150ff61ea3f65e79", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e1278fe9427d99d4150ff61ea3f65e79", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e1278fe9427d99d4150ff61ea3f65e79 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure;
+            return RESTAPIWebsocketOfficialModel.ST_24b97ac8060a9349e09da2d88e1dea00Structure;
         }
 
     }
@@ -18831,12 +19490,12 @@ define("tradershub.model$RL_e1278fe9427d99d4150ff61ea3f65e79", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e14755a881df87b3e885c798489a1f9a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e14755a881df87b3e885c798489a1f9a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e14755a881df87b3e885c798489a1f9a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure;
+            return RESTAPIWebsocketOfficialModel.ST_6168fd7b9ba43ed0f5fe1ccbd8f82e90Structure;
         }
 
     }
@@ -18845,12 +19504,12 @@ define("tradershub.model$RL_e14755a881df87b3e885c798489a1f9a", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e17c98c9ebad9849b38663a52005be50", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_a37989da54adde60afe7657f5bc1d06eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e17c98c9ebad9849b38663a52005be50", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a37989da54adde60afe7657f5bc1d06eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e17c98c9ebad9849b38663a52005be50 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_a37989da54adde60afe7657f5bc1d06eStructure;
+            return RESTAPIWebsocketOfficialModel.ST_a37989da54adde60afe7657f5bc1d06eStructure;
         }
 
     }
@@ -18859,12 +19518,12 @@ define("tradershub.model$RL_e17c98c9ebad9849b38663a52005be50", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e27fd9e7224bf0c7e999a01ff4028f6a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_091b86786925fd05b892541280481403Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e27fd9e7224bf0c7e999a01ff4028f6a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_091b86786925fd05b892541280481403Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e27fd9e7224bf0c7e999a01ff4028f6a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_091b86786925fd05b892541280481403Structure;
+            return RESTAPIWebsocketOfficialModel.ST_091b86786925fd05b892541280481403Structure;
         }
 
     }
@@ -18916,15 +19575,15 @@ define("tradershub.model$RL_e377a277aec73abf25e2c35110f340eb", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_e3ab321471af4ded6c61cc352ee47ad1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_cef0b20847ad169551dbf51efb01e613Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_e3ab321471af4ded6c61cc352ee47ad1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cef0b20847ad169551dbf51efb01e613Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_e3ab321471af4ded6c61cc352ee47ad1Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("TradingPlatformPasswordReset", "tradingPlatformPasswordResetAttr", "TradingPlatformPasswordReset", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure());
-                    }, true, RESTAPIWebsocketModel.ST_cef0b20847ad169551dbf51efb01e613Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_cef0b20847ad169551dbf51efb01e613Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_cef0b20847ad169551dbf51efb01e613Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -18959,6 +19618,20 @@ define("tradershub.model$RL_e4039f49ef635e04c7570b28167d4738", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_e40d2b9c559a333983e00711676426d8", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_ad1368b49b01cac105fab51dcf07c686"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e40d2b9c559a333983e00711676426d8 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_ad1368b49b01cac105fab51dcf07c686;
+        }
+
+    }
+
+    tradershubModel.RL_e40d2b9c559a333983e00711676426d8 = RL_e40d2b9c559a333983e00711676426d8;
+
+});
+
 define("tradershub.model$RL_e42632965fbacac756c3d935f97df7a8", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_dac62773434cf92b52368fd089bbfc2a"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e42632965fbacac756c3d935f97df7a8 extends
@@ -18973,17 +19646,31 @@ define("tradershub.model$RL_e42632965fbacac756c3d935f97df7a8", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e4cc4242bd1a5b513b2d0e5945f5ee99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e4cc4242bd1a5b513b2d0e5945f5ee99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e4cc4242bd1a5b513b2d0e5945f5ee99 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure;
+            return RESTAPIWebsocketOfficialModel.ST_d15d22dc3a60a2e6365116c61a16aaa0Structure;
         }
 
     }
 
     tradershubModel.RL_e4cc4242bd1a5b513b2d0e5945f5ee99 = RL_e4cc4242bd1a5b513b2d0e5945f5ee99;
+
+});
+
+define("tradershub.model$RL_e4faad65a5799477101b50d791cb6c4b", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_13f257eb273389bc73abe0351586bf1c"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e4faad65a5799477101b50d791cb6c4b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_13f257eb273389bc73abe0351586bf1c;
+        }
+
+    }
+
+    tradershubModel.RL_e4faad65a5799477101b50d791cb6c4b = RL_e4faad65a5799477101b50d791cb6c4b;
 
 });
 
@@ -19071,12 +19758,12 @@ define("tradershub.model$RL_e6f62edda3a21839341eb4809ad142a0", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e76c00ddf7abece102174559911adf6e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_39c69c310b1fed6e6a637381cf367162Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e76c00ddf7abece102174559911adf6e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_39c69c310b1fed6e6a637381cf367162Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e76c00ddf7abece102174559911adf6e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_39c69c310b1fed6e6a637381cf367162Structure;
+            return RESTAPIWebsocketOfficialModel.ST_39c69c310b1fed6e6a637381cf367162Structure;
         }
 
     }
@@ -19099,12 +19786,12 @@ define("tradershub.model$RL_e76ce0f7deb6f6a812e61bd92e29120f", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_e80a0f2e1d0d40303b1a689b4ad27a7b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e80a0f2e1d0d40303b1a689b4ad27a7b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_5a8f9ede296ad9cf5b81205656c8b54fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e80a0f2e1d0d40303b1a689b4ad27a7b extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_5a8f9ede296ad9cf5b81205656c8b54fStructure;
         }
 
     }
@@ -19155,15 +19842,15 @@ define("tradershub.model$RL_e856867ee566a669975deb559ed261d0", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_ee239f88c5d7794fe9f69be69a94411a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_ee239f88c5d7794fe9f69be69a94411a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_ee239f88c5d7794fe9f69be69a94411aInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetTradingPlatformStatusResponse", "getTradingPlatformStatusResponseAttr", "GetTradingPlatformStatusResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e3b9823599cdef8012785f8875d8da38Structure());
-                    }, true, RESTAPIWebsocketModel.ST_e3b9823599cdef8012785f8875d8da38Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e3b9823599cdef8012785f8875d8da38Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e3b9823599cdef8012785f8875d8da38Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -19241,12 +19928,12 @@ define("tradershub.model$RC_e99125879052944de51c7e07c0b316fb", ["exports", "@out
     }
 });
 
-define("tradershub.model$RL_e9b4b68e021e5613bf728dccd1cf9139", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_41688d261db663d4544900081e65767bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_e9b4b68e021e5613bf728dccd1cf9139", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_41688d261db663d4544900081e65767bStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_e9b4b68e021e5613bf728dccd1cf9139 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_41688d261db663d4544900081e65767bStructure;
+            return RESTAPIWebsocketOfficialModel.ST_41688d261db663d4544900081e65767bStructure;
         }
 
     }
@@ -19269,12 +19956,12 @@ define("tradershub.model$RL_e9f9ae4b0e62db2b4a5d4df1812a8c5b", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_ea69c6358f758ea1e34787db7dc19db9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_605da9a1009ce00d8c64718f9c13e284Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_ea69c6358f758ea1e34787db7dc19db9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_605da9a1009ce00d8c64718f9c13e284Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_ea69c6358f758ea1e34787db7dc19db9 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_605da9a1009ce00d8c64718f9c13e284Structure;
+            return RESTAPIWebsocketOfficialModel.ST_605da9a1009ce00d8c64718f9c13e284Structure;
         }
 
     }
@@ -19509,12 +20196,12 @@ define("tradershub.model$RL_f006da440cdd3cb71ee0b0bad6ee9b09", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_f067ae7af5eafa7f1242db8deda5f8c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_f067ae7af5eafa7f1242db8deda5f8c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_f067ae7af5eafa7f1242db8deda5f8c4 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure;
+            return RESTAPIWebsocketOfficialModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure;
         }
 
     }
@@ -19523,12 +20210,12 @@ define("tradershub.model$RL_f067ae7af5eafa7f1242db8deda5f8c4", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_f078853eb4e1ea502520482773117b08", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_f078853eb4e1ea502520482773117b08", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_f078853eb4e1ea502520482773117b08 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure;
+            return RESTAPIWebsocketOfficialModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure;
         }
 
     }
@@ -19551,12 +20238,12 @@ define("tradershub.model$RL_f07d4ee6d8af2ad822d0947b26fdf6f3", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_f09c659879e2269528f7b678199b971f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_f09c659879e2269528f7b678199b971f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_f09c659879e2269528f7b678199b971f extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_e25657c96fdb654707c20af3bb230787Structure;
+            return RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure;
         }
 
     }
@@ -19579,15 +20266,15 @@ define("tradershub.model$RL_f115a666c5540eef6697d9968af9fe8e", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_fcf4341f7efd9506f671d9240030f6a0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_fcf4341f7efd9506f671d9240030f6a0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_3d96747747f3d41e23c92ff9ec0f78ebStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_fcf4341f7efd9506f671d9240030f6a0Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Echo_req12", "echo_req12Attr", "Echo_req14", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure());
-                    }, true, RESTAPIWebsocketModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_3d96747747f3d41e23c92ff9ec0f78ebStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -19959,12 +20646,12 @@ define("tradershub.model$RL_f898b92d666caff04b8ec558b53a2f60", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_f8eb431cfa3719b526bb3d4eaa81a60a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_f8eb431cfa3719b526bb3d4eaa81a60a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_f8eb431cfa3719b526bb3d4eaa81a60a extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_63a473e932ef99f5271718b62399e682Structure;
+            return RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure;
         }
 
     }
@@ -19987,15 +20674,15 @@ define("tradershub.model$RL_f90829e8248d7dd911b648b9522ef82a", ["exports", "@out
 
 });
 
-define("tradershub.model$RC_f92c9dfdeaaba0d06f3a62c3b604cf58", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_e5081373b9c17bf97c001a46f1739ffeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RC_f92c9dfdeaaba0d06f3a62c3b604cf58", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e5081373b9c17bf97c001a46f1739ffeStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore; {
         class RC_f92c9dfdeaaba0d06f3a62c3b604cf58Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Authorize", "authorizeAttr", "Authorize2", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure());
-                    }, true, RESTAPIWebsocketModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e5081373b9c17bf97c001a46f1739ffeStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -20100,12 +20787,12 @@ define("tradershub.model$RL_fa7dab07e8682b9feaee7f3f61a4e712", ["exports", "@out
 
 });
 
-define("tradershub.model$RL_fbb2fb86c40f3e5602392d2ab7885f06", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "tradershub.model", "RESTAPIWebsocket.model$ST_b47d3155c531939aabdd10ec3a99049dStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, tradershubModel) {
+define("tradershub.model$RL_fbb2fb86c40f3e5602392d2ab7885f06", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_b47d3155c531939aabdd10ec3a99049dStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_fbb2fb86c40f3e5602392d2ab7885f06 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketModel.ST_b47d3155c531939aabdd10ec3a99049dStructure;
+            return RESTAPIWebsocketOfficialModel.ST_b47d3155c531939aabdd10ec3a99049dStructure;
         }
 
     }

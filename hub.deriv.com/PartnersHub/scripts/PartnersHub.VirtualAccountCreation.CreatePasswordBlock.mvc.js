@@ -70,7 +70,7 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$model", ["@ou
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$model", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponents.PasswordPolicy.PasswordPolicy.mvc$view", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_e76ad42f067f0e001aaa1c3ada36905eStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_model, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$model", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponentsOfficial.PasswordPolicy.PasswordPolicy.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_e76ad42f067f0e001aaa1c3ada36905eStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_model, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -101,7 +101,7 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$view", ["@out
         }
 
         static getBlocks() {
-            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -249,7 +249,7 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$view", ["@out
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables.isPasswordValidVar), asPrimitiveValue(model.variables.createPasswordVar.passwordAttr)]
-            })), React.createElement(CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view, {
+            })), React.createElement(CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -282,7 +282,7 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$view", ["@out
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 _dependencies: []
-            }), React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

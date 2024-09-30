@@ -294,7 +294,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$vie
                 },
                 isDefault: true,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("Form1"));
+                    _this.validateWidget(idService.getId("Form1"));
                     var eventHandlerContext = callContext.clone();
                     controller.onClickCarrier$Action("whatsapp", controller.callContext(eventHandlerContext));
 
@@ -323,7 +323,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$vie
                 },
                 isDefault: false,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("Form1"));
+                    _this.validateWidget(idService.getId("Form1"));
                     var eventHandlerContext = callContext.clone();
                     controller.onClickCarrier$Action("sms", controller.callContext(eventHandlerContext));
 

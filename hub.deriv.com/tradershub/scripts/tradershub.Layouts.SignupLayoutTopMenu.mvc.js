@@ -1,4 +1,4 @@
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController, OutSystemsUIModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "OutSystemsUI.controller$LayoutReady"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -119,7 +119,7 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$model", ["@outsystems/runtime
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_Layouts_SignupLayoutTopMenu_mvc_model, tradershub_Layouts_SignupLayoutTopMenu_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "OutSystemsUI.controller$LayoutReady"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_Layouts_SignupLayoutTopMenu_mvc_model, tradershub_Layouts_SignupLayoutTopMenu_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -419,7 +419,7 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$view", ["@outsystems/runtime-
 
     return View;
 });
-define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RudderstackIdentifyEvent", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$SetLang", "tradershub.controller$InitGrowthbookAndRudderStack", "OutSystemsUI.controller$LayoutReady", "tradershub.controller$InitizalizeDerivApi"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.controller$LayoutDestroy", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "OutSystemsUI.controller$LayoutReady"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -543,7 +543,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var addFaviconVar = new OS.DataTypes.VariableHolder();
                                 var setLangVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: LayoutReady
@@ -552,15 +551,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
                                         // Execute Action: SetLang
                                         setLangVar.value = OutSystemsUIController.default.setLang$Action("", callContext);
 
-                                        // Execute Action: AddFavicon
-                                        addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("/tradershub/favicon.png", callContext);
-
-                                        // Execute Action: InitGrowthbookAndRudderStack
-                                        model.flush();
-                                        return tradershubController.default.initGrowthbookAndRudderStack$Action(callContext);
-                                    }).then(function() {
-                                        // Execute Action: RudderstackIdentifyEvent
-                                        tradershubController.default.rudderstackIdentifyEvent$Action(callContext);
                                     });
                                 });
                             }, function() {
@@ -597,8 +587,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
                             try {
                                 controller.ensureControllerAlive("OnInitialize");
                                 callContext = controller.callContext(callContext);
-                                // Execute Action: InitizalizeDerivApi
-                                tradershubController.default.initizalizeDerivApi$Action(callContext);
                             } finally {
                                 if (span) {
                                     span.end();

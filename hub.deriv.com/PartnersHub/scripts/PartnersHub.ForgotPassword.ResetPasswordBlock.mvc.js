@@ -90,7 +90,7 @@ define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$model", ["@outsystems/
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$model", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponents.PasswordPolicy.PasswordPolicy.mvc$view", "PartnersHub.model$ST_e76ad42f067f0e001aaa1c3ada36905eStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.model$ST_589441840ccb78b5cd4edd1d387aefc9Structure", "PartnersHub.controller$SendResetPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_model, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view) {
+define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$model", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponentsOfficial.PasswordPolicy.PasswordPolicy.mvc$view", "PartnersHub.model$ST_e76ad42f067f0e001aaa1c3ada36905eStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.model$ST_589441840ccb78b5cd4edd1d387aefc9Structure", "PartnersHub.controller$SendResetPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_model, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -121,7 +121,7 @@ define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$view", ["@outsystems/r
         }
 
         static getBlocks() {
-            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view];
+            return [OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view];
         }
 
         get modelFactory() {
@@ -281,7 +281,7 @@ define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$view", ["@outsystems/r
                     uuid: "5"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

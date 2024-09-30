@@ -11,7 +11,7 @@ if (window.location.hostname === "hub.deriv.com") {
 
 iframe.id = 'localstorage-sync';
 iframe.src = url;
-iframe.style.visibility = 'hidden';
+iframe.style.display = 'none';
 iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts');
 
 document.body.appendChild(iframe);

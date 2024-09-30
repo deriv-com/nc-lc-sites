@@ -1,0 +1,31 @@
+﻿.wallet-overlay-content {
+    max-width: 560px;
+    margin-inline: auto;
+}
+.wallet-overlay-container,
+.wallet-overlay-content {
+    width: 100%;
+}
+
+.desktop .wallet-overlay-container {
+    padding: 8px 72px;
+}
+
+.phone .wallet-overlay-container,
+.tablet.wallet-overlay-container {
+    padding: 16px;
+}
+
+.phone .wallet-overlay-container,
+.tablet.wallet-overlay-container {
+    margin-bottom: calc(20px + 64px);
+}
+
+.desktop .wallet-overlay-content {
+    margin-top: 8px;
+}
+
+.phone .wallet-overlay-content,
+.tablet .wallet-overlay-content {
+    margin-top: 16px;
+}

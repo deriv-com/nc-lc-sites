@@ -38,7 +38,14 @@ z-index: 2;
     background-color: var(--color-neutral-2);
 }
 
+.osui-btn-loading {
+    width: 100% !important;
+}
+
 div[data-block="ButtonVariants.PrimaryButton"] {
     width: 100% !important;
 }
 
+div[data-block="Utilities.ButtonLoading"] {
+    width: 100% !important;
+}

@@ -317,7 +317,7 @@ define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$view", ["@o
                 },
                 isDefault: false,
                 onClick: function() {
-                    controller.validationService.validateWidget(idService.getId("Form2"));
+                    _this.validateWidget(idService.getId("Form2"));
                     var eventHandlerContext = callContext.clone();
                     controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
 

@@ -55,7 +55,7 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$model", ["@outsyst
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$model", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponents.PasswordPolicy.PasswordPolicy.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_model, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$model", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "CustomComponentsOfficial.PasswordPolicy.PasswordPolicy.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_model, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -86,7 +86,7 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$view", ["@outsyste
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view];
+            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, OutSystemsUI_Interaction_InputWithIcon_mvc_view, CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view];
         }
 
         get modelFactory() {
@@ -329,7 +329,7 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$view", ["@outsyste
                                     })
                                 },
                                 _dependencies: [asPrimitiveValue(model.variables.isPasswordValidVar), asPrimitiveValue(model.variables.passwordVar), asPrimitiveValue(model.variables.isPasswordVisibleVar)]
-                            })), React.createElement(CustomComponents_PasswordPolicy_PasswordPolicy_mvc_view, {
+                            })), React.createElement(CustomComponentsOfficial_PasswordPolicy_PasswordPolicy_mvc_view, {
                                 getOwnerSpan: function() {
                                     return _this.getChildSpan("render");
                                 },

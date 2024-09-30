@@ -1,4 +1,4 @@
-define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "CustomComponents.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, CustomComponents_ButtonVariants_PrimaryButton_mvcModel) {
+define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -6,7 +6,14 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
         class VariablesRecordInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
-                return [].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+                return [
+                    this.attr("website_platform_url", "website_platform_urlIn", "website_platform_url", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("_website_platform_urlInDataFetchStatus", "_website_platform_urlInDataFetchStatus", "_website_platform_urlInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
         }
@@ -23,7 +30,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
     }
 
     class Model extends
-    OS.Model.VariablelessViewModel {
+    OS.Model.BaseViewModel {
         static getVariablesRecordConstructor() {
             return VariablesRecord;
         }
@@ -34,12 +41,21 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = CustomComponents_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
+                Model._hasValidationWidgetsValue = CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
             }
 
             return Model._hasValidationWidgetsValue;
         }
-        setInputs(inputs) {}
+        setInputs(inputs) {
+            if ("website_platform_url" in inputs) {
+                this.variables.website_platform_urlIn = inputs.website_platform_url;
+                if ("_website_platform_urlInDataFetchStatus" in inputs) {
+                    this.variables._website_platform_urlInDataFetchStatus = inputs._website_platform_urlInDataFetchStatus;
+                }
+
+            }
+
+        }
 
     }
 
@@ -47,7 +63,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.ReferralLinksReports.mvc$model", "PartnersHub.Home.ReferralLinksReports.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_ReferralLinksReports_mvc_model, PartnersHub_Home_ReferralLinksReports_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.ReferralLinksReports.mvc$model", "PartnersHub.Home.ReferralLinksReports.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_ReferralLinksReports_mvc_model, PartnersHub_Home_ReferralLinksReports_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +94,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-c
         }
 
         static getBlocks() {
-            return [CustomComponents_ButtonVariants_PrimaryButton_mvc_view];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -125,7 +141,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-c
                 extendedProperties: {
                     style: "font-size: 16px; font-weight: bold; padding: 0px 10px 0px 0px;"
                 },
-                text: [$text(getTranslation("J5lNcrQnik2aXzdyKncEuA#Value", "My referral links and reports"))],
+                text: [$text(getTranslation("J5lNcrQnik2aXzdyKncEuA#Value", "Access your referral links and reports"))],
                 _idProps: {
                     service: idService,
                     uuid: "1"
@@ -140,7 +156,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-c
                     uuid: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -244,7 +260,9 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller", ["@outsystems/run
                                     }
 
                                     try {
-                                        return controller.safeExecuteJSNode(PartnersHub_Home_ReferralLinksReports_mvc_controller_OpenDashboardOnClick_JavaScript1JS, "JavaScript1", "OpenDashboardOnClick", null, function($parameters) {}, {}, {});
+                                        return controller.safeExecuteJSNode(PartnersHub_Home_ReferralLinksReports_mvc_controller_OpenDashboardOnClick_JavaScript1JS, "JavaScript1", "OpenDashboardOnClick", {
+                                            website_platform_url: OS.DataConversion.JSNodeParamConverter.to(model.variables.website_platform_urlIn, OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
                                     } finally {
                                         if (span) {
                                             span.end();
@@ -383,8 +401,8 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller", ["@outsystems/run
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$controller.OpenDashboardOnClick.JavaScript1JS", [], function() {
-    return function($actions, $roles, $public) {
-        window.open("https://login.deriv.com/signin.php?lang=0")
+    return function($parameters, $actions, $roles, $public) {
+        window.open($parameters.website_platform_url, '_blank')
     };
 });
 

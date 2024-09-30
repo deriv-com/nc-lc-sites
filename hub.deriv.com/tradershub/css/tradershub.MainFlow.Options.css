@@ -253,8 +253,6 @@
     width: 100%;
 }
 
-
-
 .product-card-disabled {
     width: 4 col;
     padding: 16px;
@@ -312,10 +310,6 @@
 
 .button-group-selected-item {
     color: #4F575E !important;
-}
-
-.rating-item {
-    width: 24px;
 }
 
 .deriv-go-section {

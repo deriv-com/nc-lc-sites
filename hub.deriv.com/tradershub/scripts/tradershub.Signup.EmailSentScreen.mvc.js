@@ -1,4 +1,4 @@
-define("tradershub.Signup.EmailSentScreen.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Layouts_SignupLayoutTopMenu_mvcModel) {
+define("tradershub.Signup.EmailSentScreen.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershub_Layouts_SignupLayoutTopMenu_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.Signup.EmailSentScreen.mvc$model", ["@outsystems/runtime-core
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.EmailSentScreen.mvc$model", "tradershub.Signup.EmailSentScreen.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Signup_EmailSentScreen_mvc_model, tradershub_Signup_EmailSentScreen_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets) {
+define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.EmailSentScreen.mvc$model", "tradershub.Signup.EmailSentScreen.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_Signup_EmailSentScreen_mvc_model, tradershub_Signup_EmailSentScreen_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -334,7 +334,7 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
 
     return View;
 });
-define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.EmailSentScreen.mvc$controller.OnReady.RudderStackJS", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_EmailSentScreen_mvc_controller_ResendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_EmailSentScreen_mvc_controller_OnReady_RudderStackJS) {
+define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.EmailSentScreen.mvc$controller.OnReady.RudderStackJS", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_EmailSentScreen_mvc_controller_ResendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_EmailSentScreen_mvc_controller_OnReady_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -383,8 +383,9 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.Signup.EmailSentScreen.ResendVerifyEmail$vars"))());
                                 vars.value.userEmailInLocal = userEmailIn;
-                                var derivApiSendMessageVar = new OS.DataTypes.VariableHolder();
+                                var verifyEmailVar = new OS.DataTypes.VariableHolder();
                                 var verifyEmailPayloadJSResult = new OS.DataTypes.VariableHolder();
+                                var jSONDeserializePostVerifyEmailRequestVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure))());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     verifyEmailPayloadJSResult.value = OS.Logger.startActiveSpan("VerifyEmailPayload", function(span) {
                                         if (span) {
@@ -412,12 +413,20 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
                                         }
 
                                     }, 1);
-                                    // Execute Action: DerivApiSendMessage
+                                    // JSON Deserialize: JSONDeserializePostVerifyEmailRequest
+                                    jSONDeserializePostVerifyEmailRequestVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(verifyEmailPayloadJSResult.value.payloadOut, RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure, false);
+                                    // Execute Action: VerifyEmail
                                     model.flush();
-                                    return tradershubController.default.derivApiSendMessage$Action(verifyEmailPayloadJSResult.value.payloadOut, "", false, callContext).then(function(value) {
-                                        derivApiSendMessageVar.value = value;
+                                    return RESTAPIWebsocketOfficialController.default.verifyEmail$Action(function() {
+                                        var rec = new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
+                                        rec.verify_emailAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.verify_emailAttr;
+                                        rec.typeAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.typeAttr;
+                                        rec.url_parametersAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.url_parametersAttr;
+                                        return rec;
+                                    }(), tradershubClientVariables.getURL(), tradershubClientVariables.getAppId(), tradershubClientVariables.getLang(), callContext).then(function(value) {
+                                        verifyEmailVar.value = value;
                                     }).then(function() {
-                                        if ((derivApiSendMessageVar.value.isErrorOut)) {
+                                        if ((verifyEmailVar.value.hasNetworkErrorOut)) {
                                             OS.FeedbackMessageService.showFeedbackMessage("Maximum resend attempts reached. Try again in a few minutes.", /*Error*/ 3);
                                         } else {
                                             OS.FeedbackMessageService.showFeedbackMessage("Email sent", /*Success*/ 1);

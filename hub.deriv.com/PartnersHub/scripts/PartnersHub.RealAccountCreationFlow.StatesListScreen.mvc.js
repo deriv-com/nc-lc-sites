@@ -1,4 +1,4 @@
-define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.Common.StatesList.mvc$model"], function(OSRuntimeCore, PartnersHubModel, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel, PartnersHub_Common_StatesList_mvcModel) {
+define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$model", "PartnersHub.Common.StatesList.mvc$model"], function(OSRuntimeCore, PartnersHubModel, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel, PartnersHub_Common_StatesList_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", ["@outs
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets || PartnersHub_Common_StatesList_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvcModel.hasValidationWidgets || PartnersHub_Common_StatesList_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", ["@outs
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", "PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$controller", "PartnersHub.clientVariables", "CustomComponents.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.StatesList.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_StatesListScreen_mvc_model, PartnersHub_RealAccountCreationFlow_StatesListScreen_mvc_controller, PartnersHubClientVariables, CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, OSWidgets, PartnersHub_Common_StatesList_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$model", "PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$controller", "PartnersHub.clientVariables", "CustomComponentsOfficial.FullScreenMobileModal.FullScreenMobileModal.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.StatesList.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_RealAccountCreationFlow_StatesListScreen_mvc_model, PartnersHub_RealAccountCreationFlow_StatesListScreen_mvc_controller, PartnersHubClientVariables, CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, OSWidgets, PartnersHub_Common_StatesList_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$view", ["@outsy
         }
 
         static getBlocks() {
-            return [CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, PartnersHub_Common_StatesList_mvc_view];
+            return [CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, PartnersHub_Common_StatesList_mvc_view];
         }
 
         get modelFactory() {
@@ -108,7 +108,7 @@ define("PartnersHub.RealAccountCreationFlow.StatesListScreen.mvc$view", ["@outsy
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(CustomComponents_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
+            return React.createElement("div", this.getRootNodeProperties(), React.createElement(CustomComponentsOfficial_FullScreenMobileModal_FullScreenMobileModal_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },

@@ -64,7 +64,7 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$model"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.DeviceLayout.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponents.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "PartnersHub.model$ST_9a29ef26037f71a833a7717922f3c172Structure", "PartnersHub.model$RL_d9adde0b03f648d52095292753e14389", "RESTAPIWebsocket.model$ST_63a473e932ef99f5271718b62399e682Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.model$ST_fd472dd876adddab32395354eb83b1e8Structure", "PartnersHub.model$ST_3b8f7a9e49bbec7ed0ab55bd440bab7dStructure", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStep", "RESTAPIWebsocket.controller$ResidenceList", "PartnersHub.controller$GetToken", "RESTAPIWebsocket.controller$GetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_RealAccountCreationFlow_IdentityVerificationBlock_mvc_model, PartnersHub_RealAccountCreationFlow_IdentityVerificationBlock_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_DeviceLayout_mvc_view, OSWidgets, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view) {
+define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$model", "PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.DeviceLayout.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "PartnersHub.model$ST_9a29ef26037f71a833a7717922f3c172Structure", "PartnersHub.model$RL_d9adde0b03f648d52095292753e14389", "RESTAPIWebsocket.model$ST_63a473e932ef99f5271718b62399e682Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.model$ST_fd472dd876adddab32395354eb83b1e8Structure", "PartnersHub.model$ST_3b8f7a9e49bbec7ed0ab55bd440bab7dStructure", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStep", "RESTAPIWebsocket.controller$ResidenceList", "PartnersHub.controller$GetToken", "RESTAPIWebsocket.controller$GetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_RealAccountCreationFlow_IdentityVerificationBlock_mvc_model, PartnersHub_RealAccountCreationFlow_IdentityVerificationBlock_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_DeviceLayout_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -95,7 +95,7 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view",
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponents_ButtonVariants_PrimaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view];
+            return [PartnersHub_Layouts_DeviceLayout_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view];
         }
 
         get modelFactory() {
@@ -411,7 +411,7 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view",
                                 uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+                        }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -601,7 +601,9 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view",
                                     getOwnerDisposeSpan: function() {
                                         return _this.getChildSpan("destroy");
                                     },
-                                    inputs: {},
+                                    inputs: {
+                                        IsLoading: true
+                                    },
                                     events: {
                                         _handleError: function(ex) {
                                             controller.handleError(ex);
@@ -616,6 +618,9 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view",
                                         alias: "3"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider,
+                                    placeholders: {
+                                        content: PlaceholderContent.Empty
+                                    },
                                     _dependencies: []
                                 }))];
                             }))];
@@ -805,7 +810,7 @@ define("PartnersHub.RealAccountCreationFlow.IdentityVerificationBlock.mvc$view",
                                     uuid: "41"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(CustomComponents_ButtonVariants_PrimaryButton_mvc_view, {
+                            }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
                                 getOwnerSpan: function() {
                                     return _this.getChildSpan("render");
                                 },

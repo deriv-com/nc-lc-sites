@@ -1,0 +1,55 @@
+﻿.primary-button {
+display: inline-flex;
+height: 48px;
+max-height: 48px;
+padding: 0px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+flex-shrink: 0;
+border-radius: 16px;
+background: #FF444F;
+border: none;
+cursor: pointer;
+}
+
+.primary-label {
+color: #FFF;
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+flex: 1 0 0;
+}
+
+.secondary-button {
+display: flex;
+width: 76px;
+height: 32px;
+padding: 0px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 100px;
+border: 1px solid #000000b8;
+background: var(--Neutral-Neutral-0, #FFF);
+cursor: pointer;
+transition: background-color 0.16s !important;
+color: #000000b8;
+}
+
+.secondary-button:hover{
+    background-color: #00000014;
+}
+
+.secondary-label {
+color: #000000b8;
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* Actions / XS */
+font-size: 14px;
+font-weight: 700 !important;
+line-height: 18px; /* 150% */
+}

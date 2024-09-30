@@ -1,14 +1,25 @@
-﻿.phone .referral-links-reports {
+﻿.tablet .referral-links-reports {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column !important;
+    justify-content: center !important;
 }
 
-.desktop .referral-links-reports {
-    display: flex;
-    flex-direction: row;
+.tablet .referral-links-reports__button {
     align-items: center;
-    justify-content: space-between;
+    background: var(--Brand-Primary-Base, #FF444F);
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 14px 16px;
+    width: 100% !important;
+    margin-left: 0;
+}
+
+.phone .referral-links-reports {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
 }
 
 .phone .referral-links-reports__button {
@@ -22,3 +33,15 @@
     width: 100% !important;
     margin-left: 0;
 }
+
+.desktop .referral-links-reports__button {
+        width: auto !important;
+}
+
+.desktop .referral-links-reports {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+

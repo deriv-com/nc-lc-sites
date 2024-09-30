@@ -21,5 +21,17 @@ loadScript("https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js", func
         trackResources: true,
         trackLongTasks: true,
         defaultPrivacyLevel: 'mask-user-input',
+        beforeSend: event => {
+            if (event.type === 'resource') {
+                // Mask Telegram token
+                event.resource.url = event.resource.url.replace(
+                    /^(https:\/\/api\.telegram\.org\/)[a-zA-Z0-9]+(\?[a-zA-Z0-9_=&]+)?$/,
+                    '$1REDACTED$2'
+                );
+                // Mask acct{number}=, token{number}=, and token= values from any URL
+                event.resource.url = event.resource.url.replace(/(acct\d+=|token\d+=|token=)[^&]+/g, '$1REDACTED');
+            }
+            return true;
+        },
     });
 })

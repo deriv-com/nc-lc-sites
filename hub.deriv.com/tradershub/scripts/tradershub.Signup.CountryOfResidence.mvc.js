@@ -768,7 +768,7 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                         // JSON Deserialize: JSONDeserializeWebsiteStatus
                                         jSONDeserializeWebsiteStatusVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawWebsiteStatusResponse(), tradershubModel.ST_268c8bb28743388aadc6c4f1ff502e41Structure, false);
                                         // Execute Action: RudderstackIdentifyEvent
-                                        tradershubController.default.rudderstackIdentifyEvent$Action(callContext);
+                                        tradershubController.default.rudderstackIdentifyEvent$Action("", callContext);
                                         getCurrentResidenceBasedOnWebsiteStatus2JSResult.value = OS.Logger.startActiveSpan("GetCurrentResidenceBasedOnWebsiteStatus2", function(span) {
                                             if (span) {
                                                 span.setAttribute("code.function", "GetCurrentResidenceBasedOnWebsiteStatus2");
@@ -1104,8 +1104,8 @@ define("tradershub.Signup.CountryOfResidence.mvc$controller", ["@outsystems/runt
                                         tradershubClientVariables.setSelectedResidence(model.variables.selectedResidenceVar);
                                         // SelectedResidenceLabel = SelectedResidenceLabel
                                         tradershubClientVariables.setSelectedResidenceLabel(model.variables.selectedResidenceLabelVar);
-                                        // SelectedCitizenship = SelectedResidence
-                                        tradershubClientVariables.setSelectedCitizenship(model.variables.selectedResidenceVar);
+                                        // SelectedCitizenship = If
+                                        tradershubClientVariables.setSelectedCitizenship(((((tradershubClientVariables.getSelectedCitizenship()) !== (""))) ? (tradershubClientVariables.getSelectedCitizenship()) : (model.variables.selectedResidenceVar)));
                                         // Destination: /tradershub/Citizenship
                                         return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "citizenship", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.SlideFromRight), callContext, true);
                                     } else {

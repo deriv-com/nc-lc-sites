@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController) {
     var OS = OSRuntimeCore;
 
 
@@ -48,7 +48,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -146,9 +146,11 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                     content: new PlaceholderContent(function() {
                         return [React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
-                            animate: false,
+                            animate: true,
                             style: "full-width personal-details-section__desktop",
-                            visible: true,
+                            visible: model.getCachedValue(idService.getId("wyspHXC0QECSxiMx+W123w.Visible"), function() {
+                                return OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut;
+                            }),
                             _idProps: {
                                 service: idService,
                                 uuid: "1"
@@ -554,9 +556,11 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             _widgetRecordProvider: widgetsRecordProvider
                         }, "Next"))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
-                            animate: false,
+                            animate: true,
                             style: "full-width personal-details-section__mobile",
-                            visible: true,
+                            visible: model.getCachedValue(idService.getId("LifJMx9T4kq6GQm0jnLl7g.Visible"), function() {
+                                return !(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut);
+                            }),
                             _idProps: {
                                 service: idService,
                                 uuid: "33"
@@ -595,7 +599,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
 
     return View;
 });
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -781,29 +785,32 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                             try {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                OS.Logger.startActiveSpan("InitializeFlatpickr", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "InitializeFlatpickr");
-                                        span.setAttribute("outsystems.function.key", "702dfc7d-f688-453f-af2d-4047eddd24c6");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, "InitializeFlatpickr", "OnReady", {
-                                            Date: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupDateofBirth(), OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {}, {
-                                            DatePickerOnSelected: controller.clientActionProxies.datePickerOnSelected$Action
-                                        }, {});
-                                    } finally {
+                                if ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut)) {
+                                    OS.Logger.startActiveSpan("InitializeFlatpickr", function(span) {
                                         if (span) {
-                                            span.end();
+                                            span.setAttribute("code.function", "InitializeFlatpickr");
+                                            span.setAttribute("outsystems.function.key", "702dfc7d-f688-453f-af2d-4047eddd24c6");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                         }
 
-                                    }
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, "InitializeFlatpickr", "OnReady", {
+                                                Date: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupDateofBirth(), OS.DataTypes.DataTypes.Text)
+                                            }, function($parameters) {}, {
+                                                DatePickerOnSelected: controller.clientActionProxies.datePickerOnSelected$Action
+                                            }, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
 
-                                }, 1);
+                                        }
+
+                                    }, 1);
+                                }
+
                             } finally {
                                 if (span) {
                                     span.end();
@@ -839,7 +846,6 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                             try {
                                 controller.ensureControllerAlive("SaveOnClick");
                                 callContext = controller.callContext(callContext);
-                                var featureFlagValueByNameVar = new OS.DataTypes.VariableHolder();
                                 var validateJSResult = new OS.DataTypes.VariableHolder();
                                 var jSONDeserializePersonalDetailsValidFieldsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_3a6e5c84ccd1db0dd256408ff639cec5Structure))());
                                 var jSONDeserializePersonalDetailsValidationErrorVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_89997516e5fa7eccf341304acb63651bStructure))());
@@ -913,23 +919,8 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                                         }
 
                                     }, 1);
-                                    // Execute Action: FeatureFlagValueByName
-                                    featureFlagValueByNameVar.value = tradershubController.default.featureFlagValueByName$Action("AddtionalPersonalDetails", callContext);
-
-                                    if ((featureFlagValueByNameVar.value.isEnabledOut)) {
-                                        // Destination: /tradershub/PersonalDetailsAdditional
-                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/additional", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                    } else {
-                                        if ((tradershubClientVariables.getRealSignupIsIDVSupported())) {
-                                            // Destination: /tradershub/IdentityVerification
-                                            return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "identity-verification", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                        } else {
-                                            // Destination: /tradershub/EmploymentDetails
-                                            return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "employment-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                        }
-
-                                    }
-
+                                    // Destination: /tradershub/PersonalDetailsAdditional
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/additional", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
 
                             } finally {

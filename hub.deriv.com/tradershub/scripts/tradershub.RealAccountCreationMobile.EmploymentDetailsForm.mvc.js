@@ -646,6 +646,51 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
             }
 
             // Client Actions - Methods
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "0ab39a42-0c62-4252-9c01-bb852186643d");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                var listFilterVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: ListFilter
+                                listFilterVar.value = OS.SystemActions.listFilter(model.variables.residenceListVar, function(p) {
+                                    return ((((tradershubClientVariables.getRealSignupTaxResidence()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? ((p.valueAttr === tradershubClientVariables.getRealSignupTaxResidence())) : ((p.valueAttr === tradershubClientVariables.getSelectedResidence())));
+                                }, callContext);
+
+                                // RealSignupTaxResidenceLabel = ListFilter.FilteredList.Current.Text
+                                tradershubClientVariables.setRealSignupTaxResidenceLabel(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).textAttr);
+                                // RealSignupTaxResidence = ListFilter.FilteredList.Current.Value
+                                tradershubClientVariables.setRealSignupTaxResidence(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).valueAttr);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onReady$Action;
+            }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
+            }
+
             get _countryOfTaxResidenceSelectorOnClickCountry$Action() {
                 if (!(this.hasOwnProperty("__countryOfTaxResidenceSelectorOnClickCountry$Action"))) {
                     this.__countryOfTaxResidenceSelectorOnClickCountry$Action = function(residenceIn, labelIn, callContext) {
@@ -935,6 +980,30 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
             }
 
 
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "0ab39a42-0c62-4252-9c01-bb852186643d");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
             countryOfTaxResidenceSelectorOnClickCountry$Action(residenceIn, labelIn, callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("CountryOfTaxResidenceSelectorOnClickCountry__proxy", function(span) {
@@ -1101,7 +1170,14 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;

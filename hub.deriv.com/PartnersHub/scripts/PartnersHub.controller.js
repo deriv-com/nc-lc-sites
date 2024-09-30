@@ -1,3 +1,95 @@
+define("PartnersHub.controller$AssignFeatureFlag", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$AssignFeatureFlag.AssignFeaturesJS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_AssignFeatureFlag_AssignFeaturesJS, PartnersHubClientVariables) {
+    var OS = OSRuntimeCore;
+    PartnersHubController.default.assignFeatureFlag$Action = function(callContext) {
+        return OS.Logger.startActiveSpan("AssignFeatureFlag", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "AssignFeatureFlag");
+                span.setAttribute("outsystems.function.key", "51767223-1669-4361-bd08-75ce45bb8cdf");
+                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            try {
+                callContext = controller.callContext(callContext);
+                var assignFeaturesJSResult = new OS.DataTypes.VariableHolder();
+                assignFeaturesJSResult.value = OS.Logger.startActiveSpan("AssignFeatures", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "AssignFeatures");
+                        span.setAttribute("outsystems.function.key", "c5b3a830-6e53-4fb9-bf37-372637863bed");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                    }
+
+                    try {
+                        return controller.safeExecuteJSNode(PartnersHub_controller_AssignFeatureFlag_AssignFeaturesJS, "AssignFeatures", "AssignFeatureFlag", {
+                            isCompleteMyProfileEnabledGB: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
+                            isCommissionPlansEnabled: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                        }, function($parameters) {
+                            var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.AssignFeatureFlag$assignFeaturesJSResult"))();
+                            jsNodeResult.isCompleteMyProfileEnabledGBOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCompleteMyProfileEnabledGB, OS.DataTypes.DataTypes.Boolean);
+                            jsNodeResult.isCommissionPlansEnabledOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCommissionPlansEnabled, OS.DataTypes.DataTypes.Boolean);
+                            return jsNodeResult;
+                        }, {}, {});
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 1);
+                // isCommisionsPlansEnabledFF = AssignFeatures.isCommissionPlansEnabled
+                PartnersHubClientVariables.setisCommisionsPlansEnabledFF(assignFeaturesJSResult.value.isCommissionPlansEnabledOut);
+                // isCompleteMyProfileEnabledFF = AssignFeatures.isCompleteMyProfileEnabledGB
+                PartnersHubClientVariables.setisCompleteMyProfileEnabledFF(assignFeaturesJSResult.value.isCompleteMyProfileEnabledGBOut);
+                return;
+            } finally {
+                if (span) {
+                    span.end();
+                }
+
+            }
+
+        }, 1);
+    };
+    var controller = PartnersHubController.default;
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.AssignFeatureFlag$assignFeaturesJSResult", [{
+        name: "isCompleteMyProfileEnabledGB",
+        attrName: "isCompleteMyProfileEnabledGBOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "isCommissionPlansEnabled",
+        attrName: "isCommissionPlansEnabledOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    PartnersHubController.default.clientActionProxies.assignFeatureFlag$Action = function() {
+        return controller.executeActionInsideJSNode(PartnersHubController.default.assignFeatureFlag$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("PartnersHub.controller$AssignFeatureFlag.AssignFeaturesJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const isCompleteMyProfileEnabledGB = window.Analytics.Analytics.getFeatureValue("enable-dashboard-stepper");
+        const isCommissionPlansEnabled = window.Analytics.Analytics.getFeatureValue("enable-commission-plan");
+
+        $parameters.isCompleteMyProfileEnabledGB = isCompleteMyProfileEnabledGB ?? false
+        $parameters.isCommissionPlansEnabled = isCommissionPlansEnabled ?? false
+    };
+});
+
+
 define("PartnersHub.controller$DatadogSetUser", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$DatadogSetUser.JavaScript1JS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_DatadogSetUser_JavaScript1JS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.datadogSetUser$Action = function(loginIdIn, userIdIn, emailIn, callContext) {
@@ -589,85 +681,7 @@ define("PartnersHub.controller$GetToken.JavaScript1JS", [], function() {
 });
 
 
-define("PartnersHub.controller$GTMPushDataLayer", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$GTMPushDataLayer.PushDataLayerJS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_GTMPushDataLayer_PushDataLayerJS, PartnersHubClientVariables) {
-    var OS = OSRuntimeCore;
-    PartnersHubController.default.gTMPushDataLayer$Action = function(eventNameIn, callContext) {
-        return OS.Logger.startActiveSpan("GTMPushDataLayer", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "GTMPushDataLayer");
-                span.setAttribute("outsystems.function.key", "8845cc47-983a-4374-b8ec-4d5e41e7fad0");
-                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            try {
-                callContext = controller.callContext(callContext);
-                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.GTMPushDataLayer$vars"))());
-                vars.value.eventNameInLocal = eventNameIn;
-                OS.Logger.startActiveSpan("PushDataLayer", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "PushDataLayer");
-                        span.setAttribute("outsystems.function.key", "c75690ca-352d-4176-b0dd-f06024d0ef67");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                    }
-
-                    try {
-                        return controller.safeExecuteJSNode(PartnersHub_controller_GTMPushDataLayer_PushDataLayerJS, "PushDataLayer", "GTMPushDataLayer", {
-                            EventName: OS.DataConversion.JSNodeParamConverter.to(vars.value.eventNameInLocal, OS.DataTypes.DataTypes.Text)
-                        }, function($parameters) {}, {}, {});
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 1);
-                return;
-            } finally {
-                if (span) {
-                    span.end();
-                }
-
-            }
-
-        }, 1);
-    };
-    var controller = PartnersHubController.default;
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.GTMPushDataLayer$vars", [{
-        name: "EventName",
-        attrName: "eventNameInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
-    PartnersHubController.default.clientActionProxies.gTMPushDataLayer$Action = function(eventNameIn) {
-        eventNameIn = (eventNameIn === undefined) ? "" : eventNameIn;
-        return controller.executeActionInsideJSNode(PartnersHubController.default.gTMPushDataLayer$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(eventNameIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {};
-        });
-    };
-});
-
-define("PartnersHub.controller$GTMPushDataLayer.PushDataLayerJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        if (window?.dataLayer) {
-            window.dataLayer.push({
-                event: $parameters.EventName,
-                platform: "Partnershub",
-                loggedIn: true
-            })
-        }
-    };
-});
-
-
-define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "PartnersHub.controller$HandleRedirectOnLogin.CheckAndStoreRedirectParamsJS", "PartnersHub.controller$HandleRedirectOnLogin.SetuseridJS", "PartnersHub.controller$HandleRedirectOnLogin.ClearParamsJS", "PartnersHub.clientVariables", "PartnersHub.controller$DatadogSetUser", "PartnersHub.model$ST_e00c986a2a7690520557f1ea58ae1d82Structure", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "PartnersHub.controller$SendAuthorize"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, PartnersHub_controller_HandleRedirectOnLogin_CheckAndStoreRedirectParamsJS, PartnersHub_controller_HandleRedirectOnLogin_SetuseridJS, PartnersHub_controller_HandleRedirectOnLogin_ClearParamsJS, PartnersHubClientVariables) {
+define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.controller$HandleRedirectOnLogin.CheckAndStoreRedirectParamsJS", "PartnersHub.controller$HandleRedirectOnLogin.SetuseridJS", "PartnersHub.controller$HandleRedirectOnLogin.ClearParamsJS", "PartnersHub.clientVariables", "PartnersHub.controller$DatadogSetUser", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocket.controller$Authorize"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHub_controller_HandleRedirectOnLogin_CheckAndStoreRedirectParamsJS, PartnersHub_controller_HandleRedirectOnLogin_SetuseridJS, PartnersHub_controller_HandleRedirectOnLogin_ClearParamsJS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.handleRedirectOnLogin$Action = function(callContext) {
         return OS.Logger.startActiveSpan("HandleRedirectOnLogin", function(span) {
@@ -681,7 +695,7 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
 
             return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
-                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
+                var authorizeVar = new OS.DataTypes.VariableHolder();
                 var checkAndStoreRedirectParamsJSResult = new OS.DataTypes.VariableHolder();
                 var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.HandleRedirectOnLogin$outVars"))());
                 return OS.Flow.executeAsyncFlow(function() {
@@ -698,12 +712,14 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
                             return controller.safeExecuteJSNode(PartnersHub_controller_HandleRedirectOnLogin_CheckAndStoreRedirectParamsJS, "CheckAndStoreRedirectParams", "HandleRedirectOnLogin", {
                                 HasToken: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
                                 Token: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                LoginId: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                LoginId: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
+                                ActiveUserId: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
                             }, function($parameters) {
                                 var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.HandleRedirectOnLogin$checkAndStoreRedirectParamsJSResult"))();
                                 jsNodeResult.hasTokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.HasToken, OS.DataTypes.DataTypes.Boolean);
                                 jsNodeResult.tokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Token, OS.DataTypes.DataTypes.Text);
                                 jsNodeResult.loginIdOut = OS.DataConversion.JSNodeParamConverter.from($parameters.LoginId, OS.DataTypes.DataTypes.Text);
+                                jsNodeResult.activeUserIdOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ActiveUserId, OS.DataTypes.DataTypes.Text);
                                 return jsNodeResult;
                             }, {}, {});
                         } finally {
@@ -717,15 +733,15 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
                     // HasRedirectToken
                     return OS.Flow.executeSequence(function() {
                         if ((checkAndStoreRedirectParamsJSResult.value.hasTokenOut)) {
-                            // Execute Action: SendAuthorize
-                            return PartnersHubController.default.sendAuthorize$Action(function() {
-                                var rec = new PartnersHubModel.ST_e00c986a2a7690520557f1ea58ae1d82Structure();
+                            // Execute Action: Authorize
+                            return RESTAPIWebsocketController.default.authorize$Action(function() {
+                                var rec = new RESTAPIWebsocketModel.ST_450f06937a42e6bd68832beac9fd4297Structure();
                                 rec.authorizeAttr = checkAndStoreRedirectParamsJSResult.value.tokenOut;
                                 return rec;
-                            }(), callContext).then(function(value) {
-                                sendAuthorizeVar.value = value;
+                            }(), PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                authorizeVar.value = value;
                             }).then(function() {
-                                if ((!(sendAuthorizeVar.value.isErrorOut))) {
+                                if ((!((authorizeVar.value.hasNetworkErrorOut || ((authorizeVar.value.responseOut.errorAttr.messageAttr) !== ("")))))) {
                                     // IsLoggedIn = True
                                     outVars.value.isLoggedInOut = true;
                                     OS.Logger.startActiveSpan("Setuserid", function(span) {
@@ -739,7 +755,7 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
 
                                         try {
                                             return controller.safeExecuteJSNode(PartnersHub_controller_HandleRedirectOnLogin_SetuseridJS, "Setuserid", "HandleRedirectOnLogin", {
-                                                userid: OS.DataConversion.JSNodeParamConverter.to(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.authorizeResponseOut.authorizeAttr.user_idAttr), OS.DataTypes.DataTypes.Text)
+                                                userid: OS.DataConversion.JSNodeParamConverter.to(OS.BuiltinFunctions.longIntegerToText(authorizeVar.value.responseOut.authorizeAttr.user_idAttr), OS.DataTypes.DataTypes.Text)
                                             }, function($parameters) {}, {}, {});
                                         } finally {
                                             if (span) {
@@ -750,7 +766,7 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
 
                                     }, 1);
                                     // Execute Action: DatadogSetUser
-                                    PartnersHubController.default.datadogSetUser$Action(sendAuthorizeVar.value.authorizeResponseOut.authorizeAttr.loginidAttr, OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.authorizeResponseOut.authorizeAttr.user_idAttr), sendAuthorizeVar.value.authorizeResponseOut.authorizeAttr.emailAttr, callContext);
+                                    PartnersHubController.default.datadogSetUser$Action(authorizeVar.value.responseOut.authorizeAttr.loginidAttr, OS.BuiltinFunctions.longIntegerToText(authorizeVar.value.responseOut.authorizeAttr.user_idAttr), authorizeVar.value.responseOut.authorizeAttr.emailAttr, callContext);
                                     OS.Logger.startActiveSpan("ClearParams", function(span) {
                                         if (span) {
                                             span.setAttribute("code.function", "ClearParams");
@@ -817,6 +833,14 @@ define("PartnersHub.controller$HandleRedirectOnLogin", ["exports", "@outsystems/
         defaultValue: function() {
             return "";
         }
+    }, {
+        name: "ActiveUserId",
+        attrName: "activeUserIdOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
     }]);
     PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.HandleRedirectOnLogin$outVars", [{
         name: "IsLoggedIn",
@@ -858,8 +882,9 @@ define("PartnersHub.controller$HandleRedirectOnLogin.CheckAndStoreRedirectParams
             $parameters.HasToken = true
         } else {
             if (localStorage.getItem("token") && localStorage.getItem("loginId")) {
-                $parameters.Token = localStorage.getItem("token")
-                $parameters.LoginId = localStorage.getItem("loginId")
+                $parameters.Token = localStorage.getItem("token") ?? ''
+                $parameters.LoginId = localStorage.getItem("loginId") ?? ''
+                $parameters.ActiveUserId = localStorage.getItem("active_user_id") ?? ''
                 $parameters.HasToken = true
             } else {
                 $parameters.HasToken = false
@@ -882,39 +907,6 @@ define("PartnersHub.controller$HandleRedirectOnLogin.SetuseridJS", [], function(
 define("PartnersHub.controller$HandleRedirectOnLogin.ClearParamsJS", [], function() {
     return function($actions, $roles, $public) {
         window.history.replaceState(null, '', window.location.pathname);
-    };
-});
-
-
-define("PartnersHub.controller$HandleUTM", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubClientVariables) {
-    var OS = OSRuntimeCore;
-    PartnersHubController.default.handleUTM$Action = function(callContext) {
-        return OS.Logger.startActiveSpan("HandleUTM", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "HandleUTM");
-                span.setAttribute("outsystems.function.key", "ed8bc29b-a24e-495a-bed1-fdd2e4a5ad3d");
-                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            try {
-                callContext = controller.callContext(callContext);
-                return;
-            } finally {
-                if (span) {
-                    span.end();
-                }
-
-            }
-
-        }, 1);
-    };
-    var controller = PartnersHubController.default;
-    PartnersHubController.default.clientActionProxies.handleUTM$Action = function() {
-        return controller.executeActionInsideJSNode(PartnersHubController.default.handleUTM$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {};
-        });
     };
 });
 
@@ -1065,7 +1057,7 @@ define("PartnersHub.controller$IFrameLogout.IframeLogoutJSJS", [], function() {
 });
 
 
-define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$InitGrowthbook.JavaScript1JS", "PartnersHub.clientVariables", "PartnersHub.controller$GetDefaultAppId"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_InitGrowthbook_JavaScript1JS, PartnersHubClientVariables) {
+define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$InitGrowthbook.AssignFeatureFlagsJS", "PartnersHub.controller$InitGrowthbook.InitGrowthbookJS", "PartnersHub.clientVariables", "PartnersHub.controller$GetDefaultAppId", "PartnersHub.controller$AssignFeatureFlag"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_InitGrowthbook_AssignFeatureFlagsJS, PartnersHub_controller_InitGrowthbook_InitGrowthbookJS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.initGrowthbook$Action = function(countryIn, isMobileIn, callContext) {
         return OS.Logger.startActiveSpan("InitGrowthbook", function(span) {
@@ -1083,13 +1075,14 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                 vars.value.countryInLocal = countryIn;
                 vars.value.isMobileInLocal = isMobileIn;
                 var getDefaultAppIdVar = new OS.DataTypes.VariableHolder();
+                var assignFeatureFlagsJSResult = new OS.DataTypes.VariableHolder();
                 return OS.Flow.executeAsyncFlow(function() {
                     // Execute Action: GetDefaultAppId
                     getDefaultAppIdVar.value = PartnersHubController.default.getDefaultAppId$Action(callContext);
 
-                    return OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                    return OS.Logger.startActiveSpan("InitGrowthbook", function(span) {
                         if (span) {
-                            span.setAttribute("code.function", "JavaScript1");
+                            span.setAttribute("code.function", "InitGrowthbook");
                             span.setAttribute("outsystems.function.key", "b41c0dea-0f49-4a8e-97ff-758a58fb09d2");
                             span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                             span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
@@ -1097,7 +1090,7 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                         }
 
                         try {
-                            return controller.safeExecuteAsyncJSNode(PartnersHub_controller_InitGrowthbook_JavaScript1JS, "JavaScript1", "InitGrowthbook", {
+                            return controller.safeExecuteAsyncJSNode(PartnersHub_controller_InitGrowthbook_InitGrowthbookJS, "InitGrowthbook", "InitGrowthbook", {
                                 GROWTHBOOK_DEVELOPMENT_DECRYPTION_KEY: OS.DataConversion.JSNodeParamConverter.to("KJ7mk9CjXdOjHV9xWX9W1A==", OS.DataTypes.DataTypes.Text),
                                 GROWTHBOOK_DEVELOPMENT_CLIENT_KEY: OS.DataConversion.JSNodeParamConverter.to("sdk-EuOiRoxczSfyQ5e", OS.DataTypes.DataTypes.Text),
                                 country: OS.DataConversion.JSNodeParamConverter.to(vars.value.countryInLocal, OS.DataTypes.DataTypes.Text),
@@ -1119,7 +1112,41 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
 
                         }
 
-                    }, 1);
+                    }, 1).then(function() {
+                        assignFeatureFlagsJSResult.value = OS.Logger.startActiveSpan("AssignFeatureFlags", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "AssignFeatureFlags");
+                                span.setAttribute("outsystems.function.key", "9a2d65bf-e4e9-4177-a8e0-c9a323475df6");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
+
+                            try {
+                                return controller.safeExecuteJSNode(PartnersHub_controller_InitGrowthbook_AssignFeatureFlagsJS, "AssignFeatureFlags", "InitGrowthbook", {
+                                    isCompleteMyProfileEnabledGB: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
+                                    isCommissionPlansEnabled: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                                }, function($parameters) {
+                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.InitGrowthbook$assignFeatureFlagsJSResult"))();
+                                    jsNodeResult.isCompleteMyProfileEnabledGBOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCompleteMyProfileEnabledGB, OS.DataTypes.DataTypes.Boolean);
+                                    jsNodeResult.isCommissionPlansEnabledOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCommissionPlansEnabled, OS.DataTypes.DataTypes.Boolean);
+                                    return jsNodeResult;
+                                }, {
+                                    AssignFeatureFlag: PartnersHubController.default.clientActionProxies.assignFeatureFlag$Action
+                                }, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                        // isCommisionsPlansEnabledFF = AssignFeatureFlags.isCommissionPlansEnabled
+                        PartnersHubClientVariables.setisCommisionsPlansEnabledFF(assignFeatureFlagsJSResult.value.isCommissionPlansEnabledOut);
+                        // isCompleteMyProfileEnabledFF = AssignFeatureFlags.isCompleteMyProfileEnabledGB
+                        PartnersHubClientVariables.setisCompleteMyProfileEnabledFF(assignFeatureFlagsJSResult.value.isCompleteMyProfileEnabledGBOut);
+                    });
                 }).then(function() {
                     return;
                 });
@@ -1149,6 +1176,23 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
             return false;
         }
     }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitGrowthbook$assignFeatureFlagsJSResult", [{
+        name: "isCompleteMyProfileEnabledGB",
+        attrName: "isCompleteMyProfileEnabledGBOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "isCommissionPlansEnabled",
+        attrName: "isCommissionPlansEnabledOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
     PartnersHubController.default.clientActionProxies.initGrowthbook$Action = function(countryIn, isMobileIn) {
         countryIn = (countryIn === undefined) ? "" : countryIn;
         isMobileIn = (isMobileIn === undefined) ? false : isMobileIn;
@@ -1158,13 +1202,33 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
     };
 });
 
-define("PartnersHub.controller$InitGrowthbook.JavaScript1JS", [], function() {
+define("PartnersHub.controller$InitGrowthbook.AssignFeatureFlagsJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const checkInstancesInterval = setInterval(() => {
+            if (window.Analytics.Analytics &&
+                typeof window.Analytics.Analytics.getInstances === 'function') {
+                const instances = window.Analytics.Analytics.getInstances();
+                $actions.AssignFeatureFlag()
+
+                instances.ab?.GrowthBook?.setRenderer(() => {
+                    $actions.AssignFeatureFlag()
+                })
+                clearInterval(checkInstancesInterval);
+            } else {
+                console.log('Waiting for Analytics.getInstances...');
+            }
+        }, 500);
+
+    };
+});
+
+define("PartnersHub.controller$InitGrowthbook.InitGrowthbookJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         return new Promise(function($resolve, $reject) {
             const isProduction = window.location.hostname === $parameters.PRODUCTION_HOSTNAME
             const isStaging = window.location.hostname === $parameters.STAGING_HOSTNAME
 
-            const initAnalytics = () => new Promise((resolve, reject) => {
+            const initAnalytics = () => new Promise(async (resolve, reject) => {
                 const Analytics = window?.Analytics?.Analytics
                 if (Analytics) {
                     let credentials = {};
@@ -1207,10 +1271,15 @@ define("PartnersHub.controller$InitGrowthbook.JavaScript1JS", [], function() {
                     };
 
 
-
-
                     try {
-                        Analytics.initialise(initialiseConfig);
+                        let instances;
+                        if (Analytics?.getInstances()) {
+                            instances = Analytics.getInstances()
+                        }
+
+                        if (!instances?.tracking?.has_initialized && !instances?.ab?.GrowthBook?.ready) {
+                            Analytics.initialise(initialiseConfig);
+                        }
                         resolve()
                     } catch (error) {
                         console.error('Error during initialisation:', error);
@@ -1225,84 +1294,6 @@ define("PartnersHub.controller$InitGrowthbook.JavaScript1JS", [], function() {
             })
 
         });
-    };
-});
-
-
-define("PartnersHub.controller$InitGTM", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$InitGTM.InitialiseGTMJS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_InitGTM_InitialiseGTMJS, PartnersHubClientVariables) {
-    var OS = OSRuntimeCore;
-    PartnersHubController.default.initGTM$Action = function(callContext) {
-        return OS.Logger.startActiveSpan("InitGTM", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "InitGTM");
-                span.setAttribute("outsystems.function.key", "38c3aa3a-b0d4-4010-ae5c-9ae65347bdac");
-                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            try {
-                callContext = controller.callContext(callContext);
-                OS.Logger.startActiveSpan("InitialiseGTM", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "InitialiseGTM");
-                        span.setAttribute("outsystems.function.key", "35de470b-a21c-42c2-92b5-a7b91df07af8");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                    }
-
-                    try {
-                        return controller.safeExecuteJSNode(PartnersHub_controller_InitGTM_InitialiseGTMJS, "InitialiseGTM", "InitGTM", {
-                            PRODUCTION_HOSTNAME: OS.DataConversion.JSNodeParamConverter.to(PartnersHubClientVariables.getProductionHostName(), OS.DataTypes.DataTypes.Text)
-                        }, function($parameters) {}, {}, {});
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 1);
-                return;
-            } finally {
-                if (span) {
-                    span.end();
-                }
-
-            }
-
-        }, 1);
-    };
-    var controller = PartnersHubController.default;
-    PartnersHubController.default.clientActionProxies.initGTM$Action = function() {
-        return controller.executeActionInsideJSNode(PartnersHubController.default.initGTM$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {};
-        });
-    };
-});
-
-define("PartnersHub.controller$InitGTM.InitialiseGTMJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        try {
-            var gtm_id = 'GTM-NF7884S';
-            if (window.location.hostname !== $parameters.PRODUCTION_HOSTNAME) gtm_id = 'GTM-NF7884S';
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.defer = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', gtm_id);
-        } catch (err) {
-            console.log('Error inserting GTM script 1 ====>', err);
-        }
     };
 });
 
@@ -1471,21 +1462,24 @@ define("PartnersHub.controller$MountDatadogClient.DatadogScriptJS", [], function
         }
 
         // Usage to load the data-dog script
-        loadScript("https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js", function() {
-            window.DD_RUM && window.DD_RUM.init({
-                clientToken: $parameters.CLIENT_TOKEN,
-                applicationId: $parameters.APP_ID,
-                site: 'datadoghq.com',
-                service: 'partnershub-os',
-                env: environment,
-                version: version,
-                sessionSampleRate: 100,
-                trackUserInteractions: true,
-                trackResources: true,
-                trackLongTasks: true,
-                defaultPrivacyLevel: 'mask-user-input',
-            });
-        })
+        if (!window.DD_RUM?.version) {
+            loadScript("https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js", function() {
+                window.DD_RUM && window.DD_RUM.init({
+                    clientToken: $parameters.CLIENT_TOKEN,
+                    applicationId: $parameters.APP_ID,
+                    site: 'datadoghq.com',
+                    service: 'partnershub-os',
+                    env: environment,
+                    version: version,
+                    sessionSampleRate: 100,
+                    trackUserInteractions: true,
+                    trackResources: true,
+                    trackLongTasks: true,
+                    defaultPrivacyLevel: 'mask-user-input',
+                });
+            })
+        }
+
     };
 });
 
@@ -2260,6 +2254,78 @@ define("PartnersHub.controller$RealSignupResetStep", ["exports", "@outsystems/ru
 });
 
 
+define("PartnersHub.controller$RedirectToExternalNewTab", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$RedirectToExternalNewTab.OpenURLJS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_RedirectToExternalNewTab_OpenURLJS, PartnersHubClientVariables) {
+    var OS = OSRuntimeCore;
+    PartnersHubController.default.redirectToExternalNewTab$Action = function(uRLIn, callContext) {
+        return OS.Logger.startActiveSpan("RedirectToExternalNewTab", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "RedirectToExternalNewTab");
+                span.setAttribute("outsystems.function.key", "1995d820-dbd6-4b86-8063-44a6e49a2d27");
+                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            try {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.RedirectToExternalNewTab$vars"))());
+                vars.value.uRLInLocal = uRLIn;
+                OS.Logger.startActiveSpan("OpenURL", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OpenURL");
+                        span.setAttribute("outsystems.function.key", "720f438e-6fae-40d5-8fca-bcdd118bbc0e");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                    }
+
+                    try {
+                        return controller.safeExecuteJSNode(PartnersHub_controller_RedirectToExternalNewTab_OpenURLJS, "OpenURL", "RedirectToExternalNewTab", {
+                            URL: OS.DataConversion.JSNodeParamConverter.to(vars.value.uRLInLocal, OS.DataTypes.DataTypes.Text)
+                        }, function($parameters) {}, {}, {});
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 1);
+                return;
+            } finally {
+                if (span) {
+                    span.end();
+                }
+
+            }
+
+        }, 1);
+    };
+    var controller = PartnersHubController.default;
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.RedirectToExternalNewTab$vars", [{
+        name: "URL",
+        attrName: "uRLInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    PartnersHubController.default.clientActionProxies.redirectToExternalNewTab$Action = function(uRLIn) {
+        uRLIn = (uRLIn === undefined) ? "" : uRLIn;
+        return controller.executeActionInsideJSNode(PartnersHubController.default.redirectToExternalNewTab$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(uRLIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("PartnersHub.controller$RedirectToExternalNewTab.OpenURLJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        window.open($parameters.URL, '_blank')
+    };
+});
+
+
 define("PartnersHub.controller$RedirectToOauth", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$RedirectToOauth.JavaScript1JS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_RedirectToOauth_JavaScript1JS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.redirectToOauth$Action = function(callContext) {
@@ -2483,11 +2549,19 @@ define("PartnersHub.controller$RudderstackTrackEvent.JavaScript1JS", [], functio
         const accountType = matchesLoginId ? matchesLoginId[0] : null
         const payload = $parameters.payload ? JSON.parse($parameters.payload) : {};
 
+        const {
+            show_user_id: showUserId,
+            ...rest
+        } = payload;
+
         if (Analytics) {
             Analytics.trackEvent($parameters.eventName, {
                 deviceType,
                 accountType,
-                ...payload
+                ...(showUserId && {
+                    user_id: userId
+                }),
+                ...rest,
             })
         }
     };

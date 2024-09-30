@@ -93,7 +93,7 @@ define("tradershub.Signup.Citizenship.mvc$view", ["@outsystems/runtime-core-js",
         }
 
         static getJsDependencies() {
-            return [];
+            return ["scripts/tradershub.TrackEvent.js"];
         }
 
         static getBlocks() {
@@ -276,7 +276,7 @@ define("tradershub.Signup.Citizenship.mvc$view", ["@outsystems/runtime-core-js",
                                         var list = new tradershubModel.RL_c0f17d75c546075264f5d075e00ba65b();
                                         list.pushAll([function() {
                                             var rec = new OutSystemsUIModel.ST_60f22bd2e9b10a22278b8afe6d7f601aStructure();
-                                            rec.valueAttr = ((((tradershubClientVariables.getSelectedCitizenship()) !== ((OS.BuiltinFunctions.nullIdentifier()).toString()))) ? (tradershubClientVariables.getSelectedCitizenship()) : (tradershubClientVariables.getSelectedResidence()));
+                                            rec.valueAttr = ((((tradershubClientVariables.getSelectedCitizenship()) !== (""))) ? (tradershubClientVariables.getSelectedCitizenship()) : (tradershubClientVariables.getSelectedResidence()));
                                             rec.labelAttr = tradershubClientVariables.getSelectedResidenceLabel();
                                             return rec;
                                         }()]);
@@ -670,8 +670,6 @@ define("tradershub.Signup.Citizenship.mvc$controller", ["@outsystems/runtime-cor
                                     } else {
                                         // SelectedCitizenship = SelectedResidence
                                         tradershubClientVariables.setSelectedCitizenship(tradershubClientVariables.getSelectedResidence());
-                                        // SelectedCitizenship = SelectedResidence
-                                        model.variables.selectedCitizenshipVar = tradershubClientVariables.getSelectedResidence();
                                     }
 
                                 }
@@ -802,7 +800,7 @@ define("tradershub.Signup.Citizenship.mvc$controller", ["@outsystems/runtime-cor
                                 OS.Logger.startActiveSpan("RudderStack", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "RudderStack");
-                                        span.setAttribute("outsystems.function.key", "6950d696-4f72-4552-b51e-f16d1638be7a");
+                                        span.setAttribute("outsystems.function.key", "b1295f74-cfe6-43a3-a9a8-a03efbbf3f62");
                                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                         span.setAttribute("outsystems.function.type", "JAVASCRIPT");
