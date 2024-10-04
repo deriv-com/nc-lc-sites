@@ -8,6 +8,10 @@
   justify-content: center !important;
 }
 
+.desktop .dashboard {
+    padding: 24px;
+}
+
 .phone .dashboard {
     background: #ffffff !important;
     justify-content: center;

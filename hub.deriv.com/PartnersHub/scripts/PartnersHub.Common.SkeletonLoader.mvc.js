@@ -18,6 +18,12 @@ define("PartnersHub.Common.SkeletonLoader.mvc$model", ["@outsystems/runtime-core
                     }, false),
                     this.attr("_classNameInDataFetchStatus", "_classNameInDataFetchStatus", "_classNameInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("SkeletonHeight", "skeletonHeightIn", "SkeletonHeight", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("_skeletonHeightInDataFetchStatus", "_skeletonHeightInDataFetchStatus", "_skeletonHeightInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -61,6 +67,14 @@ define("PartnersHub.Common.SkeletonLoader.mvc$model", ["@outsystems/runtime-core
                 this.variables.classNameIn = inputs.ClassName;
                 if ("_classNameInDataFetchStatus" in inputs) {
                     this.variables._classNameInDataFetchStatus = inputs._classNameInDataFetchStatus;
+                }
+
+            }
+
+            if ("SkeletonHeight" in inputs) {
+                this.variables.skeletonHeightIn = inputs.SkeletonHeight;
+                if ("_skeletonHeightInDataFetchStatus" in inputs) {
+                    this.variables._skeletonHeightInDataFetchStatus = inputs._skeletonHeightInDataFetchStatus;
                 }
 
             }
@@ -137,14 +151,18 @@ define("PartnersHub.Common.SkeletonLoader.mvc$view", ["@outsystems/runtime-core-
             return React.createElement("div", this.getRootNodeProperties(), $if(model.variables.isLoadingIn, false, this, function() {
                 return [React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
-                    animate: false,
+                    animate: true,
+                    extendedProperties: {
+                        style: ("height: " + model.variables.skeletonHeightIn)
+                    },
                     style: "skeleton-loader",
-                    visible: true,
+                    visible: model.variables.isLoadingIn,
                     _idProps: {
                         service: idService,
                         uuid: "0"
                     },
-                    _widgetRecordProvider: widgetsRecordProvider
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    visible_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._isLoadingInDataFetchStatus)
                 })];
             }, function() {
                 return [React.createElement(OSWidgets.Placeholder, {

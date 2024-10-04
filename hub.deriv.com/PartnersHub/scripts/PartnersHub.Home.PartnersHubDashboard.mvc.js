@@ -1,5 +1,23 @@
-define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "PartnersHub.controller", "RESTAPIWebsocket.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.LoaderBlock.mvc$model", "PartnersHub.Home.ReferralLinksReports.mvc$model", "PartnersHub.Home.CompleteMyProfile.mvc$model", "PartnersHub.Home.CommissionPlans.mvc$model", "PartnersHub.Home.CommissionBanner.mvc$model", "PartnersHub.Home.PartnersAcademy.mvc$model", "PartnersHub.Home.AffiliateProgramme.mvc$model", "PartnersHub.Home.WhatsAppBanner.mvc$model", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, PartnersHubController, RESTAPIWebsocketController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_LoaderBlock_mvcModel, PartnersHub_Home_ReferralLinksReports_mvcModel, PartnersHub_Home_CompleteMyProfile_mvcModel, PartnersHub_Home_CommissionPlans_mvcModel, PartnersHub_Home_CommissionBanner_mvcModel, PartnersHub_Home_PartnersAcademy_mvcModel, PartnersHub_Home_AffiliateProgramme_mvcModel, PartnersHub_Home_WhatsAppBanner_mvcModel) {
-    var OS = OSRuntimeCore;
+define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "PartnersHub.controller", "RESTAPIWebsocket.controller", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$HandleRedirectOnLogin", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_1a05c904c294f37e92db8f7002105183", "PartnersHub.model$RL_1a5cf00c92b0ec1b5c534af85d952dbc"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, PartnersHubController, RESTAPIWebsocketController) {
+    var OS = OSRuntimeCore; {
+        class GetLanguagesAggrRecInner extends
+        OS.Model.AggregateRecord {
+            static attributesToDeclare() {
+                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new GetLanguagesAggrRec(new GetLanguagesAggrRec.RecordClass({
+                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        GetLanguagesAggrRecInner.RecordListType = PartnersHubModel.RL_1a5cf00c92b0ec1b5c534af85d952dbc;
+        var GetLanguagesAggrRec = GetLanguagesAggrRecInner;
+        GetLanguagesAggrRec.init();
+    }
 
 
     {
@@ -19,15 +37,18 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
                     this.attr("WebsiteStatusResponse", "websiteStatusResponseVar", "WebsiteStatusResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure());
                     }, false, RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure),
+                    this.attr("isNotAPartner", "isNotAPartnerVar", "isNotAPartner", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
                     this.attr("website_platform_url", "website_platform_urlVar", "website_platform_url", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, false),
                     this.attr("EnableWhatsappBanner", "enableWhatsappBannerVar", "EnableWhatsappBanner", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
-                    this.attr("isNotAPartner", "isNotAPartnerVar", "isNotAPartner", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false)
+                    this.attr("GetLanguages", "getLanguagesAggr", "GetLanguages", true, true, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new GetLanguagesAggrRec());
+                    }, true, GetLanguagesAggrRec)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -39,7 +60,9 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
     class WidgetsRecord extends
     OS.Model.BaseWidgetRecordMap {
         static getWidgetsType() {
-            return {};
+            return {
+                LanguageSwitcherDropdown: OS.Model.ValidationWidgetRecord
+            };
         }
 
     }
@@ -55,11 +78,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
         }
 
         static get hasValidationWidgets() {
-            if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = ((((((((PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_LoaderBlock_mvcModel.hasValidationWidgets) || PartnersHub_Home_ReferralLinksReports_mvcModel.hasValidationWidgets) || PartnersHub_Home_CompleteMyProfile_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionPlans_mvcModel.hasValidationWidgets) || PartnersHub_Home_CommissionBanner_mvcModel.hasValidationWidgets) || PartnersHub_Home_PartnersAcademy_mvcModel.hasValidationWidgets) || PartnersHub_Home_AffiliateProgramme_mvcModel.hasValidationWidgets) || PartnersHub_Home_WhatsAppBanner_mvcModel.hasValidationWidgets);
-            }
-
-            return Model._hasValidationWidgetsValue;
+            return true;
         }
         setInputs(inputs) {}
 
@@ -69,7 +88,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$model", ["@outsystems/runtime-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.PartnersHubDashboard.mvc$model", "PartnersHub.Home.PartnersHubDashboard.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.LoaderBlock.mvc$view", "PartnersHub.Home.ReferralLinksReports.mvc$view", "PartnersHub.Home.CompleteMyProfile.mvc$view", "PartnersHub.Home.CommissionPlans.mvc$view", "PartnersHub.Home.CommissionBanner.mvc$view", "PartnersHub.Home.PartnersAcademy.mvc$view", "PartnersHub.Home.AffiliateProgramme.mvc$view", "PartnersHub.Home.WhatsAppBanner.mvc$view", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Home_PartnersHubDashboard_mvc_model, PartnersHub_Home_PartnersHubDashboard_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view) {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.PartnersHubDashboard.mvc$model", "PartnersHub.Home.PartnersHubDashboard.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "PartnersHub.Home.ReferralLinksReports.mvc$view", "PartnersHub.Home.CompleteMyProfile.mvc$view", "PartnersHub.Home.CommissionPlans.mvc$view", "PartnersHub.Home.CommissionBanner.mvc$view", "PartnersHub.Home.PartnersAcademy.mvc$view", "PartnersHub.Home.AffiliateProgramme.mvc$view", "PartnersHub.Home.WhatsAppBanner.mvc$view", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$HandleRedirectOnLogin", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_1a05c904c294f37e92db8f7002105183", "PartnersHub.model$RL_1a5cf00c92b0ec1b5c534af85d952dbc"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Home_PartnersHubDashboard_mvc_model, PartnersHub_Home_PartnersHubDashboard_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -100,7 +119,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view];
+            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, PartnersHub_Home_ReferralLinksReports_mvc_view, PartnersHub_Home_CompleteMyProfile_mvc_view, PartnersHub_Home_CommissionPlans_mvc_view, PartnersHub_Home_CommissionBanner_mvc_view, PartnersHub_Home_PartnersAcademy_mvc_view, PartnersHub_Home_AffiliateProgramme_mvc_view, PartnersHub_Home_WhatsAppBanner_mvc_view];
         }
 
         get modelFactory() {
@@ -160,385 +179,713 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$view", ["@outsystems/runtime-c
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     mainContent: new PlaceholderContent(function() {
-                        return [$if((model.variables.isLoadingVar || model.variables.isNotAPartnerVar), false, this, function() {
-                            return [React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "height: 100%;"
+                        return [React.createElement(OSWidgets.Popup, {
+                            extendedProperties: {
+                                style: "border-radius: 8px; padding: 20px;"
+                            },
+                            showPopup: model.variables.isNotAPartnerVar,
+                            style: "popup-dialog",
+                            _idProps: {
+                                service: idService,
+                                uuid: "1"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: true,
+                            extendedProperties: {
+                                style: "display: flex; flex-direction: column; gap: 16px;"
+                            },
+                            visible: !(model.variables.isLoadingVar),
+                            _idProps: {
+                                service: idService,
+                                uuid: "2"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "font-size: 16px; font-weight: bold;"
+                            },
+                            text: ["Welcome to the Partner Hub!"],
+                            _idProps: {
+                                service: idService,
+                                uuid: "3"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), "It looks like you haven\'t signed up as a partner yet. To access our partner dashboard, please continue with your signup process.", React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "display: flex; gap: 16px;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "4"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                title: "Continue signup"
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
                                 },
-                                gridProperties: {
-                                    classes: "OSInline",
-                                    width: "100%"
+                                onClick$Action: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.continueSignupOnClick$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "5",
+                                alias: "2"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            _dependencies: []
+                        }), React.createElement(CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                title: "Log out"
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
                                 },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "1"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Common_LoaderBlock_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "2",
-                                    alias: "2"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            }))];
-                        }, function() {
-                            return [React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "OSInline"
-                                },
-                                style: "partners-hub-dashboard",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "3"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "partners-hub-title-container",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "PartnersHubTitle"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "align-items: center; display: flex; gap: 24px;"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "5"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "color: #222; font-size: 24px; font-weight: bold;"
-                                },
-                                text: [$text(getTranslation("6QftVDCBCUOUp+OG1UYZ_A#Value", "Partner\'s Hub"))],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "6"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "display: flex; gap: 16px;"
-                                },
-                                style: "referral-links-reports-whatsapp",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "7"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "OSInline",
-                                    width: "100%"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "8"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Home_ReferralLinksReports_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {
-                                    website_platform_url: model.variables.website_platform_urlVar
-                                },
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "9",
-                                    alias: "3"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            }))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "OSInline",
-                                    width: "100%"
-                                },
-                                style: "complete-profile-commission-banner",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "LesgoBanner"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "OSInline",
-                                    width: "100%"
-                                },
-                                visible: false,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "11"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Home_CompleteMyProfile_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "12",
-                                    alias: "4"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })), $if(PartnersHubClientVariables.getisCommisionsPlansEnabledFF(), false, this, function() {
-                                return [React.createElement(OSWidgets.Container, {
-                                    align: /*Default*/ 0,
-                                    animate: false,
-                                    gridProperties: {
-                                        classes: "OSInline",
-                                        width: "100%"
-                                    },
-                                    visible: true,
-                                    _idProps: {
-                                        service: idService,
-                                        uuid: "13"
-                                    },
-                                    _widgetRecordProvider: widgetsRecordProvider
-                                }, React.createElement(PartnersHub_Home_CommissionPlans_mvc_view, {
-                                    getOwnerSpan: function() {
-                                        return _this.getChildSpan("render");
-                                    },
-                                    getOwnerDisposeSpan: function() {
-                                        return _this.getChildSpan("destroy");
-                                    },
-                                    inputs: {},
-                                    events: {
-                                        _handleError: function(ex) {
-                                            controller.handleError(ex);
-                                        }
-                                    },
-                                    _validationProps: {
-                                        validationService: validationService
-                                    },
-                                    _idProps: {
-                                        service: idService,
-                                        uuid: "14",
-                                        alias: "5"
-                                    },
-                                    _widgetRecordProvider: widgetsRecordProvider,
-                                    _dependencies: []
-                                }))];
-                            }, function() {
-                                return [React.createElement(OSWidgets.Container, {
-                                    align: /*Default*/ 0,
-                                    animate: false,
-                                    gridProperties: {
-                                        classes: "OSInline",
-                                        width: "100%"
-                                    },
-                                    visible: true,
-                                    _idProps: {
-                                        service: idService,
-                                        uuid: "15"
-                                    },
-                                    _widgetRecordProvider: widgetsRecordProvider
-                                }, React.createElement(PartnersHub_Home_CommissionBanner_mvc_view, {
-                                    getOwnerSpan: function() {
-                                        return _this.getChildSpan("render");
-                                    },
-                                    getOwnerDisposeSpan: function() {
-                                        return _this.getChildSpan("destroy");
-                                    },
-                                    inputs: {},
-                                    events: {
-                                        _handleError: function(ex) {
-                                            controller.handleError(ex);
-                                        }
-                                    },
-                                    _validationProps: {
-                                        validationService: validationService
-                                    },
-                                    _idProps: {
-                                        service: idService,
-                                        uuid: "16",
-                                        alias: "6"
-                                    },
-                                    _widgetRecordProvider: widgetsRecordProvider,
-                                    _dependencies: []
-                                }))];
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "border: 1px solid #DEE2E6; border-radius: 8px; padding: 16px;"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "PartnersAcademy"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Home_PartnersAcademy_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "18",
-                                    alias: "7"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "border: 1px solid #DEE2E6; border-radius: 8px; padding: 16px;"
-                                },
-                                style: "affiliate-programme-block",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "AffiliateProgramme"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Home_AffiliateProgramme_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "20",
-                                    alias: "8"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "WhatsappBanner"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(PartnersHub_Home_WhatsAppBanner_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "22",
-                                    alias: "9"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })))];
-                        })];
+                                onClick$Action: function() {
+                                    return Promise.resolve().then(function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        return controller.onClickLogout$Action(controller.callContext(eventHandlerContext));
+                                    });;
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "6",
+                                alias: "3"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            _dependencies: []
+                        })))), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            gridProperties: {
+                                classes: "OSInline"
+                            },
+                            style: "partners-hub-dashboard",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "7"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar)
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                name: "PartnersHubTitle",
+                                alias: "4"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        extendedProperties: {
+                                            style: "display: flex;"
+                                        },
+                                        style: "partners-hub-title-container",
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "9"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        extendedProperties: {
+                                            style: "align-items: center; display: flex; gap: 24px;"
+                                        },
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "10"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(OSWidgets.Text, {
+                                        extendedProperties: {
+                                            style: "color: #222; font-size: 24px; font-weight: bold;"
+                                        },
+                                        text: [$text(getTranslation("NvCwF2fBDUmmXQJ5qQjFvg#Value", "Partner\'s Hub"))],
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "11"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    })), $if(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF(), false, this, function() {
+                                        return [React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            extendedProperties: {
+                                                style: "display: flex;"
+                                            },
+                                            gridProperties: {
+                                                classes: "OSInline",
+                                                width: "300px"
+                                            },
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                name: "LanguageSwitcher"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Dropdown, {
+                                            _validationProps: {
+                                                validationService: validationService
+                                            },
+                                            dropdownMode: /*Custom*/ 1,
+                                            enabled: true,
+                                            gridProperties: {
+                                                classes: "OSFillParent"
+                                            },
+                                            list: model.variables.getLanguagesAggr.listOut,
+                                            mandatory: false,
+                                            onChange: function() {
+                                                var eventHandlerContext = callContext.clone();
+                                                controller.onSwitchLanguage$Action(controller.callContext(eventHandlerContext));
+
+                                                ;
+                                            },
+                                            style: "dropdown",
+                                            values: function(elem) {
+                                                return elem.languagesAttr.codeAttr;
+                                            },
+                                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, PartnersHubClientVariables.getLanguage(), function(value) {
+                                                PartnersHubClientVariables.setLanguage(value);
+                                            }),
+                                            _idProps: {
+                                                service: idService,
+                                                name: "LanguageSwitcherDropdown"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider,
+                                            list_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getLanguagesAggr.dataFetchStatusAttr),
+                                            placeholders: {
+                                                content: new IteratorPlaceholderContent(function(idService, callContext) {
+                                                    return [React.createElement(OSWidgets.Container, {
+                                                        align: /*Default*/ 0,
+                                                        animate: false,
+                                                        extendedProperties: {
+                                                            style: "align-items: center; display: flex; gap: 10px;"
+                                                        },
+                                                        style: "",
+                                                        visible: true,
+                                                        _idProps: {
+                                                            service: idService,
+                                                            uuid: "14"
+                                                        },
+                                                        _widgetRecordProvider: widgetsRecordProvider,
+                                                        _dependencies: [asPrimitiveValue(model.variables.getLanguagesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getLanguagesAggr.listOut.getCurrent(callContext.iterationContext).languagesAttr.nameAttr), asPrimitiveValue(model.variables.getLanguagesAggr.listOut.getCurrent(callContext.iterationContext).languagesAttr.iconAttr)]
+                                                    }, React.createElement(OSWidgets.Image, {
+                                                        gridProperties: {
+                                                            width: "30px"
+                                                        },
+                                                        type: /*External*/ 1,
+                                                        url: model.variables.getLanguagesAggr.listOut.getCurrent(callContext.iterationContext).languagesAttr.iconAttr,
+                                                        _idProps: {
+                                                            service: idService,
+                                                            uuid: "15"
+                                                        },
+                                                        _widgetRecordProvider: widgetsRecordProvider,
+                                                        url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getLanguagesAggr.dataFetchStatusAttr)
+                                                    }), React.createElement(OSWidgets.Expression, {
+                                                        gridProperties: {
+                                                            classes: "ThemeGrid_MarginGutter"
+                                                        },
+                                                        value: model.variables.getLanguagesAggr.listOut.getCurrent(callContext.iterationContext).languagesAttr.nameAttr,
+                                                        _idProps: {
+                                                            service: idService,
+                                                            uuid: "16"
+                                                        },
+                                                        _widgetRecordProvider: widgetsRecordProvider,
+                                                        value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getLanguagesAggr.dataFetchStatusAttr)
+                                                    }))];
+                                                }, callContext, idService, "1")
+                                            },
+                                            _dependencies: [asPrimitiveValue(model.variables.getLanguagesAggr.dataFetchStatusAttr)]
+                                        }))];
+                                    }, function() {
+                                        return [];
+                                    }))];
+                                })
+                            },
+                            _dependencies: [asPrimitiveValue(model.variables.getLanguagesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getLanguagesAggr.listOut), asPrimitiveValue(PartnersHubClientVariables.getLanguage()), asPrimitiveValue(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF())]
+                        }), React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar)
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                name: "DashboarSection",
+                                alias: "5"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        extendedProperties: {
+                                            style: "display: flex; gap: 16px;"
+                                        },
+                                        style: "referral-links-reports-whatsapp",
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "18"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        gridProperties: {
+                                            classes: "OSInline",
+                                            width: "100%"
+                                        },
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "19"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(PartnersHub_Home_ReferralLinksReports_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {
+                                            website_platform_url: model.variables.website_platform_urlVar
+                                        },
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "20",
+                                            alias: "6"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    })))];
+                                })
+                            },
+                            _dependencies: [asPrimitiveValue(model.variables.website_platform_urlVar)]
+                        }), React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar),
+                                SkeletonHeight: "200px"
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                name: "LesgoBanner",
+                                alias: "7"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        gridProperties: {
+                                            classes: "OSInline",
+                                            width: "100%"
+                                        },
+                                        style: "complete-profile-commission-banner",
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "22"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        gridProperties: {
+                                            classes: "OSInline",
+                                            width: "100%"
+                                        },
+                                        visible: false,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "23"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(PartnersHub_Home_CompleteMyProfile_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {},
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "24",
+                                            alias: "8"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    })), $if(PartnersHubClientVariables.getisCommisionsPlansEnabledFF(), false, this, function() {
+                                        return [React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            gridProperties: {
+                                                classes: "OSInline",
+                                                width: "100%"
+                                            },
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "25"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(PartnersHub_Home_CommissionPlans_mvc_view, {
+                                            getOwnerSpan: function() {
+                                                return _this.getChildSpan("render");
+                                            },
+                                            getOwnerDisposeSpan: function() {
+                                                return _this.getChildSpan("destroy");
+                                            },
+                                            inputs: {},
+                                            events: {
+                                                _handleError: function(ex) {
+                                                    controller.handleError(ex);
+                                                }
+                                            },
+                                            _validationProps: {
+                                                validationService: validationService
+                                            },
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "26",
+                                                alias: "9"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider,
+                                            _dependencies: []
+                                        }))];
+                                    }, function() {
+                                        return [React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            gridProperties: {
+                                                classes: "OSInline",
+                                                width: "100%"
+                                            },
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "27"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(PartnersHub_Home_CommissionBanner_mvc_view, {
+                                            getOwnerSpan: function() {
+                                                return _this.getChildSpan("render");
+                                            },
+                                            getOwnerDisposeSpan: function() {
+                                                return _this.getChildSpan("destroy");
+                                            },
+                                            inputs: {},
+                                            events: {
+                                                _handleError: function(ex) {
+                                                    controller.handleError(ex);
+                                                }
+                                            },
+                                            _validationProps: {
+                                                validationService: validationService
+                                            },
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "28",
+                                                alias: "10"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider,
+                                            _dependencies: []
+                                        }))];
+                                    }))];
+                                })
+                            },
+                            _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisCommisionsPlansEnabledFF())]
+                        }), React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar),
+                                SkeletonHeight: "250px"
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                name: "PartnersAcademy",
+                                alias: "11"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(PartnersHub_Home_PartnersAcademy_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {},
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "30",
+                                            alias: "12"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    })];
+                                })
+                            },
+                            _dependencies: []
+                        }), React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                SkeletonHeight: "300px",
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar)
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                name: "AffiliateProgramme",
+                                alias: "13"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        style: "affiliate-programme-block",
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "32"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(PartnersHub_Home_AffiliateProgramme_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {},
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "33",
+                                            alias: "14"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    }))];
+                                })
+                            },
+                            _dependencies: []
+                        }), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: true,
+                            visible: model.variables.enableWhatsappBannerVar,
+                            _idProps: {
+                                service: idService,
+                                name: "WhatsappBanner"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                IsLoading: (model.variables.isLoadingVar || model.variables.isNotAPartnerVar)
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "35",
+                                alias: "15"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            placeholders: {
+                                content: new PlaceholderContent(function() {
+                                    return [React.createElement(PartnersHub_Home_WhatsAppBanner_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {},
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "36",
+                                            alias: "16"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    })];
+                                })
+                            },
+                            _dependencies: []
+                        })))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisCommisionsPlansEnabledFF()), asPrimitiveValue(model.variables.website_platform_urlVar), asPrimitiveValue(model.variables.isNotAPartnerVar), asPrimitiveValue(model.variables.isLoadingVar)]
+                _dependencies: [asPrimitiveValue(model.variables.enableWhatsappBannerVar), asPrimitiveValue(PartnersHubClientVariables.getisCommisionsPlansEnabledFF()), asPrimitiveValue(model.variables.website_platform_urlVar), asPrimitiveValue(model.variables.getLanguagesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getLanguagesAggr.listOut), asPrimitiveValue(PartnersHubClientVariables.getLanguage()), asPrimitiveValue(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()), asPrimitiveValue(model.variables.isLoadingVar), asPrimitiveValue(model.variables.isNotAPartnerVar)]
             }));
         }
     }
 
     return View;
 });
-define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatformURLJS", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_PartnersHubDashboard_mvc_TranslationsResources, PartnersHub_HomeController, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GetAuthTokenJS, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_ParsePlatformURLJS) {
+define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatformURLJS", "PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.controller$HandleRedirectOnLogin", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "RESTAPIWebsocket.controller$PartnerSettings", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_1a05c904c294f37e92db8f7002105183", "PartnersHub.model$RL_1a5cf00c92b0ec1b5c534af85d952dbc"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_PartnersHubDashboard_mvc_TranslationsResources, PartnersHub_HomeController, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_ParsePlatformURLJS, PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_GetAuthTokenJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -546,64 +893,36 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                 super(model, messagesProvider, idService, PartnersHub_Home_PartnersHubDashboard_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {};
-                this.dataFetchDependentsGraph = {};
+                this.dataFetchDependenciesOriginal = {
+                    getLanguages$AggrRefresh: 0
+                };
+                this.dataFetchDependentsGraph = {
+                    getLanguages$AggrRefresh: []
+                };
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
-            get getBDEnablePartnerAccount$ServerAction() {
-                if (!(this.hasOwnProperty("_getBDEnablePartnerAccount$ServerAction"))) {
-                    this._getBDEnablePartnerAccount$ServerAction = function(callContext) {
+            get getAllBDEnable$ServerAction() {
+                if (!(this.hasOwnProperty("_getAllBDEnable$ServerAction"))) {
+                    this._getAllBDEnable$ServerAction = function(callContext) {
                         var controller = this.controller;
-                        return OS.Logger.startActiveSpan("GetBDEnablePartnerAccount", function(span) {
+                        return OS.Logger.startActiveSpan("GetAllBDEnable", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "GetBDEnablePartnerAccount");
-                                span.setAttribute("outsystems.function.key", "5d7be442-8e46-4df7-b36d-1de79ae5c83f");
+                                span.setAttribute("code.function", "GetAllBDEnable");
+                                span.setAttribute("outsystems.function.key", "329b71ce-54ea-4245-8c81-097712850424");
                                 span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                 span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                 span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("GetBDEnablePartnerAccount", "screenservices/PartnersHub/Home/PartnersHubDashboard/ActionGetBDEnablePartnerAccount", "xAiHTtR3nnJI6XYuIrZWyA", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
-                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetBDEnablePartnerAccount"))();
-                                    executeServerActionResult.enablePartnerAccountOut = OS.DataConversion.ServerDataConverter.from(outputs.EnablePartnerAccount, OS.DataTypes.DataTypes.Boolean);
-                                    return executeServerActionResult;
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 0);
-                    };
-                }
-
-                return this._getBDEnablePartnerAccount$ServerAction;
-            }
-            set getBDEnablePartnerAccount$ServerAction(value) {
-                this._getBDEnablePartnerAccount$ServerAction = value;
-            }
-
-            get getEnableWhatsappBanner$ServerAction() {
-                if (!(this.hasOwnProperty("_getEnableWhatsappBanner$ServerAction"))) {
-                    this._getEnableWhatsappBanner$ServerAction = function(callContext) {
-                        var controller = this.controller;
-                        return OS.Logger.startActiveSpan("GetEnableWhatsappBanner", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "GetEnableWhatsappBanner");
-                                span.setAttribute("outsystems.function.key", "8a6aeaba-8069-42c2-a58f-7251d0854dc0");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("GetEnableWhatsappBanner", "screenservices/PartnersHub/Home/PartnersHubDashboard/ActionGetEnableWhatsappBanner", "pYv1IrVU1PoFUzQaOoL6AA", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
-                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetEnableWhatsappBanner"))();
+                                return controller.callServerAction("GetAllBDEnable", "screenservices/PartnersHub/Home/PartnersHubDashboard/ActionGetAllBDEnable", "KEkLAwfQYzbZxOQ+CUjVuw", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
+                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetAllBDEnable"))();
                                     executeServerActionResult.enableWhatsappBannerOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableWhatsappBanner, OS.DataTypes.DataTypes.Boolean);
+                                    executeServerActionResult.enablePartnerAccountOut = OS.DataConversion.ServerDataConverter.from(outputs.EnablePartnerAccount, OS.DataTypes.DataTypes.Boolean);
+                                    executeServerActionResult.enableCFDsScreensOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableCFDsScreens, OS.DataTypes.DataTypes.Boolean);
+                                    executeServerActionResult.enableLanguageSwitcherOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableLanguageSwitcher, OS.DataTypes.DataTypes.Boolean);
                                     return executeServerActionResult;
                                 });
                             }, function() {
@@ -616,18 +935,59 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                     };
                 }
 
-                return this._getEnableWhatsappBanner$ServerAction;
+                return this._getAllBDEnable$ServerAction;
             }
-            set getEnableWhatsappBanner$ServerAction(value) {
-                this._getEnableWhatsappBanner$ServerAction = value;
+            set getAllBDEnable$ServerAction(value) {
+                this._getAllBDEnable$ServerAction = value;
             }
 
 
             // Aggregates and Data Actions
+            get getLanguages$AggrRefresh() {
+                if (!(this.hasOwnProperty("_getLanguages$AggrRefresh"))) {
+                    this._getLanguages$AggrRefresh = function() {
+                        var innerBody = function(maxRecords, startIndex, callContext) {
+                            var model = this.model;
+                            var controller = this.controller;
+                            var callContext = controller.callContext(callContext);
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetLanguages", "screenservices/PartnersHub/Home/PartnersHubDashboard/ScreenDataSetGetLanguages", "YP20JwBEMRoaiRCqa1qOvA", maxRecords, startIndex, function(b) {
+                                model.variables.getLanguagesAggr.dataFetchStatusAttr = b;
+                            }, function(json) {
+                                model.variables.getLanguagesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getLanguagesAggr.constructor));
+                            }, undefined, undefined, undefined, callContext, undefined, true);
+                        }.bind(this);
+                        return OS.Logger.startActiveSpan("GetLanguages", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "GetLanguages");
+                                span.setAttribute("outsystems.function.key", "922d161e-3a7e-4d2a-b45d-248a65da8def");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return innerBody();
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 0);
+
+                    };
+                }
+
+                return this._getLanguages$AggrRefresh;
+            }
+            set getLanguages$AggrRefresh(value) {
+                this._getLanguages$AggrRefresh = value;
+            }
+
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = [];
+                    this._dataFetchActionNames = ["getLanguages$AggrRefresh"];
                 }
 
                 return this._dataFetchActionNames;
@@ -637,6 +997,43 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             }
 
             // Client Actions - Methods
+            get _continueSignupOnClick$Action() {
+                if (!(this.hasOwnProperty("__continueSignupOnClick$Action"))) {
+                    this.__continueSignupOnClick$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("ContinueSignupOnClick", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "ContinueSignupOnClick");
+                                span.setAttribute("outsystems.function.key", "1c95d980-0c46-4ecf-9bf8-4683d9c580f2");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("ContinueSignupOnClick");
+                                callContext = controller.callContext(callContext);
+                                // Destination: /PartnersHub/
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://signup.deriv.com/signup-affiliates", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__continueSignupOnClick$Action;
+            }
+            set _continueSignupOnClick$Action(value) {
+                this.__continueSignupOnClick$Action = value;
+            }
+
             get _onReady$Action() {
                 if (!(this.hasOwnProperty("__onReady$Action"))) {
                     this.__onReady$Action = function(callContext) {
@@ -646,7 +1043,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                         return OS.Logger.startActiveSpan("OnReady", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "8c4ae32d-9ef6-460e-84a3-871cfdd7a45f");
+                                span.setAttribute("outsystems.function.key", "671fe1a7-8029-4e40-a953-874338147259");
                                 span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                 span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -655,27 +1052,20 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var getBDEnablePartnerAccountVar = new OS.DataTypes.VariableHolder();
-                                var getEnableWhatsappBannerVar = new OS.DataTypes.VariableHolder();
-                                var partnerSettingsVar = new OS.DataTypes.VariableHolder();
-                                var getSettingsVar = new OS.DataTypes.VariableHolder();
+                                var getAllBDEnableVar = new OS.DataTypes.VariableHolder();
                                 var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
-                                var getAuthTokenJSResult = new OS.DataTypes.VariableHolder();
+                                var getSettingsVar = new OS.DataTypes.VariableHolder();
+                                var partnerSettingsVar = new OS.DataTypes.VariableHolder();
                                 var parsePlatformURLJSResult = new OS.DataTypes.VariableHolder();
+                                var getAuthTokenJSResult = new OS.DataTypes.VariableHolder();
                                 var jSONDeserializeGetWebsiteStatusResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketModel.ST_c864353821feed79663806f3e445d40eStructure))());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // IsLoading = True
                                     model.variables.isLoadingVar = true;
-                                    // Execute Action: GetEnableWhatsappBanner
+                                    // Execute Action: GetAllBDEnable
                                     model.flush();
-                                    return controller.getEnableWhatsappBanner$ServerAction(callContext).then(function(value) {
-                                        getEnableWhatsappBannerVar.value = value;
-                                    }).then(function() {
-                                        // Execute Action: GetBDEnablePartnerAccount
-                                        model.flush();
-                                        return controller.getBDEnablePartnerAccount$ServerAction(callContext).then(function(value) {
-                                            getBDEnablePartnerAccountVar.value = value;
-                                        });
+                                    return controller.getAllBDEnable$ServerAction(callContext).then(function(value) {
+                                        getAllBDEnableVar.value = value;
                                     }).then(function() {
                                         // Execute Action: HandleRedirectOnLogin
                                         model.flush();
@@ -690,7 +1080,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                                                 getAuthTokenJSResult.value = OS.Logger.startActiveSpan("GetAuthToken", function(span) {
                                                     if (span) {
                                                         span.setAttribute("code.function", "GetAuthToken");
-                                                        span.setAttribute("outsystems.function.key", "0493bfc5-739f-406c-978c-d154b26d228c");
+                                                        span.setAttribute("outsystems.function.key", "f0b3b508-9cd5-4137-9da2-9ff94757b9f8");
                                                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                                         span.setAttribute("outsystems.function.type", "JAVASCRIPT");
@@ -713,7 +1103,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
                                                 }, 1);
                                                 return OS.Flow.executeSequence(function() {
-                                                    if ((!(getBDEnablePartnerAccountVar.value.enablePartnerAccountOut))) {
+                                                    if ((!(getAllBDEnableVar.value.enablePartnerAccountOut))) {
                                                         // Execute Action: PartnerSettings
                                                         model.flush();
                                                         return RESTAPIWebsocketController.default.partnerSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
@@ -726,7 +1116,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                                                                 parsePlatformURLJSResult.value = OS.Logger.startActiveSpan("ParsePlatformURL", function(span) {
                                                                     if (span) {
                                                                         span.setAttribute("code.function", "ParsePlatformURL");
-                                                                        span.setAttribute("outsystems.function.key", "2e6b08f5-f80c-45f6-8716-9c62f621de7a");
+                                                                        span.setAttribute("outsystems.function.key", "b12c2602-ae1b-4bb2-b4ae-d7fdf2040bce");
                                                                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                                                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                                                         span.setAttribute("outsystems.function.type", "JAVASCRIPT");
@@ -734,8 +1124,8 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
                                                                     try {
                                                                         return controller.safeExecuteJSNode(PartnersHub_Home_PartnersHubDashboard_mvc_controller_OnReady_ParsePlatformURLJS, "ParsePlatformURL", "OnReady", {
-                                                                            provider: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.providerAttr, OS.DataTypes.DataTypes.Text),
                                                                             platform_url: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.platform_urlAttr, OS.DataTypes.DataTypes.Text),
+                                                                            provider: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.providerAttr, OS.DataTypes.DataTypes.Text),
                                                                             website_platform_url: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
                                                                         }, function($parameters) {
                                                                             var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$parsePlatformURLJSResult"))();
@@ -783,8 +1173,8 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                                                         model.variables.websiteStatusResponseVar = jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut;
                                                         // GetSettingsResponse = GetSettings.Response
                                                         model.variables.getSettingsResponseVar = getSettingsVar.value.responseOut;
-                                                        // EnableWhatsappBanner = GetEnableWhatsappBanner.EnableWhatsappBanner
-                                                        model.variables.enableWhatsappBannerVar = getEnableWhatsappBannerVar.value.enableWhatsappBannerOut;
+                                                        // EnableWhatsappBanner = GetAllBDEnable.EnableWhatsappBanner
+                                                        model.variables.enableWhatsappBannerVar = getAllBDEnableVar.value.enableWhatsappBannerOut;
                                                         // IsLoading = False
                                                         model.variables.isLoadingVar = false;
                                                     });
@@ -811,41 +1201,6 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             }
             set _onReady$Action(value) {
                 this.__onReady$Action = value;
-            }
-
-            get _onRender$Action() {
-                if (!(this.hasOwnProperty("__onRender$Action"))) {
-                    this.__onRender$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnRender", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnRender");
-                                span.setAttribute("outsystems.function.key", "9ade71bd-e602-415b-89d9-1681dcbb90c2");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnRender");
-                                callContext = controller.callContext(callContext);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onRender$Action;
-            }
-            set _onRender$Action(value) {
-                this.__onRender$Action = value;
             }
 
             get _onClickLogout$Action() {
@@ -887,6 +1242,43 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                 this.__onClickLogout$Action = value;
             }
 
+            get _onSwitchLanguage$Action() {
+                if (!(this.hasOwnProperty("__onSwitchLanguage$Action"))) {
+                    this.__onSwitchLanguage$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnSwitchLanguage", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnSwitchLanguage");
+                                span.setAttribute("outsystems.function.key", "de7987cd-5ac9-4590-b8c9-398180426cbf");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnSwitchLanguage");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: SetCurrentLocale
+                                OS.SystemActions.setCurrentLocale(PartnersHubClientVariables.getLanguage(), callContext);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onSwitchLanguage$Action;
+            }
+            set _onSwitchLanguage$Action(value) {
+                this.__onSwitchLanguage$Action = value;
+            }
+
             get _showLoader$Action() {
                 if (!(this.hasOwnProperty("__showLoader$Action"))) {
                     this.__showLoader$Action = function(callContext) {
@@ -925,12 +1317,36 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             }
 
 
+            continueSignupOnClick$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("ContinueSignupOnClick__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "ContinueSignupOnClick");
+                        span.setAttribute("outsystems.function.key", "1c95d980-0c46-4ecf-9bf8-4683d9c580f2");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._continueSignupOnClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
             onReady$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "8c4ae32d-9ef6-460e-84a3-871cfdd7a45f");
+                        span.setAttribute("outsystems.function.key", "671fe1a7-8029-4e40-a953-874338147259");
                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -944,30 +1360,6 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                         }
 
                     });
-                }, 0);
-
-            }
-
-            onRender$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnRender__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnRender");
-                        span.setAttribute("outsystems.function.key", "9ade71bd-e602-415b-89d9-1681dcbb90c2");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._onRender$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
                 }, 0);
 
             }
@@ -991,6 +1383,30 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                         }
 
                     });
+                }, 0);
+
+            }
+
+            onSwitchLanguage$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnSwitchLanguage__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnSwitchLanguage");
+                        span.setAttribute("outsystems.function.key", "de7987cd-5ac9-4590-b8c9-398180426cbf");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onSwitchLanguage$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
                 }, 0);
 
             }
@@ -1052,14 +1468,7 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
             get onRenderEventHandler() {
                 if (!(this.hasOwnProperty("_onRenderEventHandler"))) {
-                    this._onRenderEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onRender$Action(callContext);
-
-                    };
+                    this._onRenderEventHandler = null;
                 }
 
                 return this._onRenderEventHandler;
@@ -1113,7 +1522,15 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
 
         var Controller = ControllerInner;
         // Server Actions - Variables
-        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetBDEnablePartnerAccount", [{
+        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetAllBDEnable", [{
+            name: "EnableWhatsappBanner",
+            attrName: "enableWhatsappBannerOut",
+            mandatory: false,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return false;
+            }
+        }, {
             name: "EnablePartnerAccount",
             attrName: "enablePartnerAccountOut",
             mandatory: false,
@@ -1121,10 +1538,17 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
             defaultValue: function() {
                 return false;
             }
-        }]);
-        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard$ActionGetEnableWhatsappBanner", [{
-            name: "EnableWhatsappBanner",
-            attrName: "enableWhatsappBannerOut",
+        }, {
+            name: "EnableCFDsScreens",
+            attrName: "enableCFDsScreensOut",
+            mandatory: false,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return false;
+            }
+        }, {
+            name: "EnableLanguageSwitcher",
+            attrName: "enableLanguageSwitcherOut",
             mandatory: false,
             dataType: OS.DataTypes.DataTypes.Boolean,
             defaultValue: function() {
@@ -1133,15 +1557,6 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
         }]);
 
         // Client Actions - Variables
-        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$getAuthTokenJSResult", [{
-            name: "Token",
-            attrName: "tokenOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
         Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$parsePlatformURLJSResult", [{
             name: "website_platform_url",
             attrName: "website_platform_urlOut",
@@ -1151,17 +1566,18 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller", ["@outsystems/run
                 return "";
             }
         }]);
+        Controller.registerVariableGroupType("PartnersHub.Home.PartnersHubDashboard.OnReady$getAuthTokenJSResult", [{
+            name: "Token",
+            attrName: "tokenOut",
+            mandatory: true,
+            dataType: OS.DataTypes.DataTypes.Text,
+            defaultValue: function() {
+                return "";
+            }
+        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, PartnersHubLanguageResources);
-});
-
-define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const token = localStorage.getItem('token')
-
-        $parameters.Token = token
-    };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatformURLJS", [], function() {
@@ -1177,46 +1593,54 @@ define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.ParsePlatfo
     };
 });
 
+define("PartnersHub.Home.PartnersHubDashboard.mvc$controller.OnReady.GetAuthTokenJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const token = localStorage.getItem('token')
+
+        $parameters.Token = token
+    };
+});
+
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.de-DE", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Partner-Hub"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Partner-Hub"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.es-ES", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Hub del Socio"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Hub del Socio"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Hub Partenaire"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Hub Partenaire"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.it-IT", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Hub del Partner"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Hub del Partner"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Hub Partnera"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Hub Partnera"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Hub do Parceiro"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Hub do Parceiro"
     };
 });
 
 define("PartnersHub.Home.PartnersHubDashboard.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "6QftVDCBCUOUp+OG1UYZ_A#Value": "Хаб Партнера"
+        "NvCwF2fBDUmmXQJ5qQjFvg#Value": "Хаб Партнера"
     };
 });
 

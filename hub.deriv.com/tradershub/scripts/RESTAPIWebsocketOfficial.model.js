@@ -2577,8 +2577,47 @@ define("RESTAPIWebsocketOfficial.model$ST_d4ed48681c55954edc02f19b0ed492e7Struct
                     this.attr("Verification_code", "verification_codeAttr", "verification_code", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, true),
-                    this.attr("New_account_virtual", "new_account_virtualAttr", "new_account_virtual", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.BuiltinFunctions.integerToLongInteger(1);
+                    this.attr("Affiliate_token", "affiliate_tokenAttr", "affiliate_token", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Gclid_url", "gclid_urlAttr", "gclid_url", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_ad_id", "utm_ad_idAttr", "utm_ad_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_adgroup_id", "utm_adgroup_idAttr", "utm_adgroup_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_adrollclk_id", "utm_adrollclk_idAttr", "utm_adrollclk_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_campaign", "utm_campaignAttr", "utm_campaign", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_campaign_id", "utm_campaign_idAttr", "utm_campaign_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_content", "utm_contentAttr", "utm_content", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_fbcl_id", "utm_fbcl_idAttr", "utm_fbcl_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_gl_client_id", "utm_gl_client_idAttr", "utm_gl_client_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_medium", "utm_mediumAttr", "utm_medium", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_msclk_id", "utm_msclk_idAttr", "utm_msclk_id", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_source", "utm_sourceAttr", "utm_source", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Utm_term", "utm_termAttr", "utm_term", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
                     }, true)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -6760,12 +6799,6 @@ define("RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Struct
                     this.attr("platform", "platformAttr", "platform", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, true),
-                    this.attr("req_id", "req_idAttr", "req_id", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
                     this.attr("country_code", "country_codeAttr", "country_code", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, true)
@@ -7439,7 +7472,7 @@ define("RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Struct
     }
 });
 
-define("RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel) {
+define("RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "RESTAPIWebsocketOfficial.model$ST_8517d9c8b73e866553a1a7b806af5079Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel) {
     var OS = OSRuntimeCore; {
         class ST_b5532fbd5672db40752d556a46e96eaeStructureInner extends
         OS.DataTypes.GenericRecord {
@@ -7453,7 +7486,10 @@ define("RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStruct
                     }, true),
                     this.attr("Verify_email", "verify_emailAttr", "verify_email", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
                         return OS.DataTypes.LongInteger.defaultValue;
-                    }, true)
+                    }, true),
+                    this.attr("Error", "errorAttr", "Error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 

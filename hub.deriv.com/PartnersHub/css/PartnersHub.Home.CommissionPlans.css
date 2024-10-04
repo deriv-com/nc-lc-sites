@@ -1,5 +1,16 @@
-﻿.osui-carousel .splide__arrow{
-    display: none;
+﻿.desktop .options-trading-container {
+    width: 100%;
+    max-width: unset;
+}
+.options-trading-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    max-width: 228px;
+    border-radius: 8px;
+    border: 1px solid var(--Neutral-Neutral-2, #F1F3F5);
+    background: var(--Neutral-Neutral-1, #F8F9FA);
 }
 
 .desktop .learn-more {

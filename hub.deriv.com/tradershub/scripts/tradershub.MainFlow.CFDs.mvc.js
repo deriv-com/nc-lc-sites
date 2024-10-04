@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$model", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$model", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershub_Layouts_MainLayout_mvcModel, tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel, tradershub_CFDBlocks_TradingAppCardLarge_mvcModel, tradershub_CFDBlocks_TradingAppCardSmall_mvcModel) {
+define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$model", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$model", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershub_Layouts_MainLayout_mvcModel, tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel, tradershub_CFDBlocks_TradingAppCardLarge_mvcModel, tradershub_CFDBlocks_TradingAppCardSmall_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetCfdProductConfigsAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -31,7 +31,10 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
                     this.attr("CreatedCFDAccounts", "createdCFDAccountsVar", "CreatedCFDAccounts", true, false, OS.DataTypes.DataTypes.RecordList, function() {
                         return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_9eb97ad6cb81943972e368260e0cb936());
                     }, false, tradershubModel.RL_9eb97ad6cb81943972e368260e0cb936),
-                    this.attr("AuthToken", "authTokenVar", "AuthToken", true, false, OS.DataTypes.DataTypes.Text, function() {
+                    this.attr("isLoading", "isLoadingVar", "isLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("authToken", "authTokenVar", "authToken", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "a1-e08MVLrCEBvfaxReubwv0feKjiEYs";
                     }, false),
                     this.attr("GetCfdProductConfigs", "getCfdProductConfigsAggr", "GetCfdProductConfigs", true, true, OS.DataTypes.DataTypes.Record, function() {
@@ -65,7 +68,7 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = ((((tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardLarge_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardSmall_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (((((tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel.hasValidationWidgets) || tradershub_Common_LoaderBlock_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardLarge_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardSmall_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -78,7 +81,7 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.CFDs.mvc$model", "tradershub.MainFlow.CFDs.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$view", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_MainFlow_CFDs_mvc_model, tradershub_MainFlow_CFDs_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view) {
+define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.CFDs.mvc$model", "tradershub.MainFlow.CFDs.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$view", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_MainFlow_CFDs_mvc_model, tradershub_MainFlow_CFDs_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -109,7 +112,7 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view];
         }
 
         get modelFactory() {
@@ -188,373 +191,400 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
                             _dependencies: []
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "margin-top: 10px;"
-                            },
-                            style: "display-flex justify-content-flex-start",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "CFDsHeader"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "TitleAndTooltip"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "font-size: 24px; font-weight: bold;"
-                            },
-                            text: ["CFDs trading"],
-                            _idProps: {
-                                service: idService,
-                                name: "CFDsTrading"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OutSystemsUI_Content_Tooltip_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {},
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "5",
-                                alias: "3"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                content: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.info.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "6"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })];
-                                }),
-                                tooltip: new PlaceholderContent(function() {
-                                    return ["Trade bigger positions with less capital on a wide range of global markets."];
-                                })
-                            },
-                            _dependencies: []
-                        })), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "ThemeGrid_Width2"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "DemoRealSwitcher"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        })), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "display: flex; flex-direction: column; gap: 16px; height: 100vh;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "8"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "height: Fill;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "MyAccountsSection"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, $if((model.variables.availableCFDAccountsVar.length > 0), false, this, function() {
+                        }), $if(model.variables.isLoadingVar, false, this, function() {
+                            return [React.createElement(tradershub_Common_LoaderBlock_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {},
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "2",
+                                    alias: "3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
+                            })];
+                        }, function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
                                 extendedProperties: {
-                                    style: "margin-bottom: 20px; margin-top: 20px;"
+                                    style: "margin-top: 10px;"
                                 },
+                                style: "display-flex justify-content-flex-start",
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    name: "ExistingAccountsHeader"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "font-size: 16px; font-weight: bold; margin-top: 0px;"
-                                },
-                                text: ["My accounts"],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "11"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "height: Auto; margin-bottom: 10px; margin-right: 0px; margin-top: 0px;"
-                                },
-                                gridProperties: {
-                                    marginLeft: "0px"
-                                },
-                                style: "display-flex gap-s flex-wrap justify-content-space-between",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "ExistingAccountsCardsList"
+                                    name: "CFDsHeader"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
-                                gridProperties: {
-                                    classes: "ThemeGrid_Width4"
-                                },
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    name: "ListItem"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "14",
-                                    alias: "4"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "ThemeGrid_Width4"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "ListItem2"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "16",
-                                    alias: "5"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "ThemeGrid_Width4"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "ListItem3"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {},
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "18",
-                                    alias: "6"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                _dependencies: []
-                            })))];
-                        }, function() {
-                            return [];
-                        })), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "height: 100; margin-bottom: 0px; margin-right: 0px; margin-top: 0px;"
-                            },
-                            gridProperties: {
-                                marginLeft: "0px"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "AvailableAccountsSection"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, $if((model.variables.availableCFDAccountsVar.length > 0), false, this, function() {
-                            return [React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "margin-bottom: 20px; margin-top: 20px;"
-                                },
-                                style: "",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "AvailableAccountsHeader"
+                                    name: "TitleAndTooltip"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Text, {
                                 extendedProperties: {
-                                    style: "font-size: 16px; font-weight: bold; margin-top: 0px;"
+                                    style: "font-size: 24px; font-weight: bold;"
                                 },
-                                text: ["Available accounts"],
+                                text: ["CFDs trading"],
                                 _idProps: {
                                     service: idService,
-                                    uuid: "21"
+                                    name: "CFDsTrading"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OutSystemsUI_Content_Tooltip_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {},
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "6",
+                                    alias: "4"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                placeholders: {
+                                    content: new PlaceholderContent(function() {
+                                        return [React.createElement(OSWidgets.Image, {
+                                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.info.svg"),
+                                            type: /*Static*/ 0,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "7"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        })];
+                                    }),
+                                    tooltip: new PlaceholderContent(function() {
+                                        return ["Trade bigger positions with less capital on a wide range of global markets."];
+                                    })
+                                },
+                                _dependencies: []
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "ThemeGrid_Width2"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "DemoRealSwitcher"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })), React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
+                                extendedProperties: {
+                                    style: "display: flex; flex-direction: column; gap: 16px; height: 100vh;"
+                                },
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    name: "pedo"
+                                    uuid: "9"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.List, {
-                                animateItems: false,
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
                                 extendedProperties: {
-                                    "disable-virtualization": "True",
-                                    style: "display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); height: 100%;"
+                                    style: "height: Fill;"
                                 },
-                                gridProperties: {
-                                    width: "100%"
-                                },
-                                mode: /*Default*/ 0,
-                                source: model.variables.availableCFDAccountsVar,
-                                style: "",
-                                tag: "div",
+                                visible: true,
                                 _idProps: {
                                     service: idService,
-                                    name: "AvailableAccountsCardsList"
+                                    name: "MyAccountsSection"
                                 },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                placeholders: {
-                                    content: new IteratorPlaceholderContent(function(idService, callContext) {
-                                        return [React.createElement(tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, {
-                                            getOwnerSpan: function() {
-                                                return _this.getChildSpan("render");
-                                            },
-                                            getOwnerDisposeSpan: function() {
-                                                return _this.getChildSpan("destroy");
-                                            },
-                                            inputs: {
-                                                ProductIcon: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).iconAttr,
-                                                Name: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).titleAttr,
-                                                ProductDescription: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).descriptionAttr
-                                            },
-                                            events: {
-                                                _handleError: function(ex) {
-                                                    controller.handleError(ex);
-                                                }
-                                            },
-                                            _validationProps: {
-                                                validationService: validationService
-                                            },
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "24",
-                                                alias: "7"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: []
-                                        })];
-                                    }, callContext, idService, "1")
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $if((model.variables.availableCFDAccountsVar.length > 0), false, this, function() {
+                                return [React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 20px; margin-top: 20px;"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ExistingAccountsHeader"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "font-size: 16px; font-weight: bold; margin-top: 0px;"
+                                    },
+                                    text: ["My accounts"],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "12"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "height: Auto; margin-bottom: 10px; margin-right: 0px; margin-top: 0px;"
+                                    },
+                                    gridProperties: {
+                                        marginLeft: "0px"
+                                    },
+                                    style: "display-flex gap-s flex-wrap justify-content-space-between",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ExistingAccountsCardsList"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    gridProperties: {
+                                        classes: "ThemeGrid_Width4"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ListItem"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
+                                    getOwnerSpan: function() {
+                                        return _this.getChildSpan("render");
+                                    },
+                                    getOwnerDisposeSpan: function() {
+                                        return _this.getChildSpan("destroy");
+                                    },
+                                    inputs: {},
+                                    events: {
+                                        _handleError: function(ex) {
+                                            controller.handleError(ex);
+                                        }
+                                    },
+                                    _validationProps: {
+                                        validationService: validationService
+                                    },
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "15",
+                                        alias: "5"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    _dependencies: []
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    gridProperties: {
+                                        classes: "ThemeGrid_Width4"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ListItem2"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
+                                    getOwnerSpan: function() {
+                                        return _this.getChildSpan("render");
+                                    },
+                                    getOwnerDisposeSpan: function() {
+                                        return _this.getChildSpan("destroy");
+                                    },
+                                    inputs: {},
+                                    events: {
+                                        _handleError: function(ex) {
+                                            controller.handleError(ex);
+                                        }
+                                    },
+                                    _validationProps: {
+                                        validationService: validationService
+                                    },
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "17",
+                                        alias: "6"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    _dependencies: []
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    gridProperties: {
+                                        classes: "ThemeGrid_Width4"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ListItem3"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
+                                    getOwnerSpan: function() {
+                                        return _this.getChildSpan("render");
+                                    },
+                                    getOwnerDisposeSpan: function() {
+                                        return _this.getChildSpan("destroy");
+                                    },
+                                    inputs: {},
+                                    events: {
+                                        _handleError: function(ex) {
+                                            controller.handleError(ex);
+                                        }
+                                    },
+                                    _validationProps: {
+                                        validationService: validationService
+                                    },
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "19",
+                                        alias: "7"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    _dependencies: []
+                                })))];
+                            }, function() {
+                                return [];
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "height: 100; margin-bottom: 0px; margin-right: 0px; margin-top: 0px;"
                                 },
-                                _dependencies: []
-                            }))];
-                        }, function() {
-                            return [];
-                        })))];
+                                gridProperties: {
+                                    marginLeft: "0px"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "AvailableAccountsSection"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $if((model.variables.availableCFDAccountsVar.length > 0), false, this, function() {
+                                return [React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 20px; margin-top: 20px;"
+                                    },
+                                    style: "",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "AvailableAccountsHeader"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "font-size: 16px; font-weight: bold; margin-top: 0px;"
+                                    },
+                                    text: ["Available accounts"],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "22"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "pedo"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.List, {
+                                    animateItems: false,
+                                    extendedProperties: {
+                                        "disable-virtualization": "True",
+                                        style: "display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); height: 100%;"
+                                    },
+                                    gridProperties: {
+                                        width: "100%"
+                                    },
+                                    mode: /*Default*/ 0,
+                                    source: model.variables.availableCFDAccountsVar,
+                                    style: "",
+                                    tag: "div",
+                                    _idProps: {
+                                        service: idService,
+                                        name: "AvailableAccountsCardsList"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    placeholders: {
+                                        content: new IteratorPlaceholderContent(function(idService, callContext) {
+                                            return [React.createElement(tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, {
+                                                getOwnerSpan: function() {
+                                                    return _this.getChildSpan("render");
+                                                },
+                                                getOwnerDisposeSpan: function() {
+                                                    return _this.getChildSpan("destroy");
+                                                },
+                                                inputs: {
+                                                    ProductDescription: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).descriptionAttr,
+                                                    Name: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).titleAttr,
+                                                    ProductIcon: model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).iconAttr
+                                                },
+                                                events: {
+                                                    _handleError: function(ex) {
+                                                        controller.handleError(ex);
+                                                    }
+                                                },
+                                                _validationProps: {
+                                                    validationService: validationService
+                                                },
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "25",
+                                                    alias: "8"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: []
+                                            })];
+                                        }, callContext, idService, "1")
+                                    },
+                                    _dependencies: []
+                                }))];
+                            }, function() {
+                                return [];
+                            })))];
+                        })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.availableCFDAccountsVar)]
+                _dependencies: [asPrimitiveValue(model.variables.availableCFDAccountsVar), asPrimitiveValue(model.variables.isLoadingVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
+define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.CFDs.mvc$controller.GetAvailableCFDAccounts.consolelogJS", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsMt5", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_CFDs_mvc_controller_GetAvailableCFDAccounts_consolelogJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -727,17 +757,18 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("GetAvailableCFDAccounts");
                                 callContext = controller.callContext(callContext);
-                                var mt5TradingPlatformAvailableAccountsVar = new OS.DataTypes.VariableHolder();
                                 var cTraderTradingPlatformAvailableAccountsVar = new OS.DataTypes.VariableHolder();
-                                var ctraderAvailableAccountVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                                var mT5AvailableAccountVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var mt5TradingPlatformAvailableAccountsVar = new OS.DataTypes.VariableHolder();
                                 var cfdProductConfigsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var mT5AvailableAccountVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var ctraderAvailableAccountVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: cTraderTradingPlatformAvailableAccounts
                                     model.flush();
                                     return RESTAPIWebsocketOfficialController.default.tradingPlatformAvailableAccountsCtrader$Action("green.derivws.com", model.variables.authTokenVar, "1", "en", function() {
                                         var rec = new RESTAPIWebsocketOfficialModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure();
                                         rec.platformAttr = "ctrader";
+                                        rec.country_codeAttr = "za";
                                         return rec;
                                     }(), callContext).then(function(value) {
                                         cTraderTradingPlatformAvailableAccountsVar.value = value;
@@ -747,19 +778,44 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                                         return RESTAPIWebsocketOfficialController.default.tradingPlatformAvailableAccountsMt5$Action("green.derivws.com", model.variables.authTokenVar, "1", "en", function() {
                                             var rec = new RESTAPIWebsocketOfficialModel.ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure();
                                             rec.platformAttr = "mt5";
+                                            rec.country_codeAttr = "za";
                                             return rec;
                                         }(), callContext).then(function(value) {
                                             mt5TradingPlatformAvailableAccountsVar.value = value;
                                         });
                                     }).then(function() {
                                         // JSON Serialize: MT5AvailableAccount
-                                        mT5AvailableAccountVar.value.jSONOut = OS.JSONUtils.serializeToJSON(mt5TradingPlatformAvailableAccountsVar.value.responseMT5Out.trading_platform_available_accountsAttr, false, false);
+                                        mT5AvailableAccountVar.value.jSONOut = OS.JSONUtils.serializeToJSON(mt5TradingPlatformAvailableAccountsVar.value.responseMT5Out, false, false);
                                         // JSON Serialize: CtraderAvailableAccount
-                                        ctraderAvailableAccountVar.value.jSONOut = OS.JSONUtils.serializeToJSON(cTraderTradingPlatformAvailableAccountsVar.value.responseCtraderOut.trading_platform_available_accountsAttr, false, false);
+                                        ctraderAvailableAccountVar.value.jSONOut = OS.JSONUtils.serializeToJSON(cTraderTradingPlatformAvailableAccountsVar.value.responseCtraderOut, false, false);
                                         // JSON Serialize: CfdProductConfigs
                                         cfdProductConfigsVar.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.getCfdProductConfigsAggr.listOut, false, false);
-                                        // Execute Action: ConsoleLog
-                                        BrowserConsoleLoggingController.default.consoleLog$Action(mt5TradingPlatformAvailableAccountsVar.value.responseMT5Out.errorAttr.messageAttr, 0, callContext);
+                                        OS.Logger.startActiveSpan("consolelog", function(span) {
+                                            if (span) {
+                                                span.setAttribute("code.function", "consolelog");
+                                                span.setAttribute("outsystems.function.key", "09777d5b-b187-49ea-9730-dce13120595c");
+                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                            }
+
+                                            try {
+                                                return controller.safeExecuteJSNode(tradershub_MainFlow_CFDs_mvc_controller_GetAvailableCFDAccounts_consolelogJS, "consolelog", "GetAvailableCFDAccounts", {
+                                                    In5: OS.DataConversion.JSNodeParamConverter.to(ctraderAvailableAccountVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                    In2: OS.DataConversion.JSNodeParamConverter.to(ctraderAvailableAccountVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                    In1: OS.DataConversion.JSNodeParamConverter.to(mT5AvailableAccountVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                    In4: OS.DataConversion.JSNodeParamConverter.to(mT5AvailableAccountVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                    In6: OS.DataConversion.JSNodeParamConverter.to(cfdProductConfigsVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                    In3: OS.DataConversion.JSNodeParamConverter.to(cfdProductConfigsVar.value.jSONOut, OS.DataTypes.DataTypes.Text)
+                                                }, function($parameters) {}, {}, {});
+                                            } finally {
+                                                if (span) {
+                                                    span.end();
+                                                }
+
+                                            }
+
+                                        }, 1);
                                     });
                                 });
                             }, function() {
@@ -797,10 +853,15 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
                                 return OS.Flow.executeAsyncFlow(function() {
+                                    // isLoading = True
+                                    model.variables.isLoadingVar = true;
                                     // Execute Action: GetCreatedCFDAccounts
                                     controller._getCreatedCFDAccounts$Action(callContext);
                                     // Execute Action: GetAvailableCFDAccounts
-                                    return controller._getAvailableCFDAccounts$Action(callContext);
+                                    return controller._getAvailableCFDAccounts$Action(callContext).then(function() {
+                                        // isLoading = False
+                                        model.variables.isLoadingVar = false;
+                                    });
                                 });
                             }, function() {
                                 if (span) {
@@ -1005,4 +1066,12 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+define("tradershub.MainFlow.CFDs.mvc$controller.GetAvailableCFDAccounts.consolelogJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        console.log(JSON.parse($parameters.In1))
+        console.log(JSON.parse($parameters.In2))
+        console.log(JSON.parse($parameters.In3))
+    };
 });

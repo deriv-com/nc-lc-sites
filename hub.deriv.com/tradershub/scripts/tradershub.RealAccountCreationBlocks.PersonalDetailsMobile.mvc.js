@@ -766,8 +766,11 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
 
 define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller.OnClickNext.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent({
-            action: "signup_modal_next_button_os",
-        })
+        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
+            action: "step_passed",
+            step_num: 0.5,
+            step_codename: "personal_details_name",
+            form_name: "real_account_signup_form_outsystems"
+        });
     };
 });

@@ -364,17 +364,15 @@ define("tradershub.controller$DerivApiSendMessage.SendApiCallJS", [], function()
                     $resolve();
                 }).catch(error => {
                     $parameters.IsError = true;
-                    $parameters.response = JSON.stringify(error.error);
+                    $parameters.response = JSON.stringify(error?.error);
 
-                    $parameters.ErrorMessage = error.error.message || "";
-                    $parameters.ErrorCode = error.error.code || "";
+                    $parameters.ErrorMessage = error?.error?.message || "";
+                    $parameters.ErrorCode = error?.error?.code || "";
                     $resolve();
                 });
             }
 
             if (DerivAPI) {
-                // $parameters.Authorize && $parameters.Token && (async () => await DerivAPI.send({ authorize: $parameters.Token }))()
-
                 if ($parameters.Authorize && $parameters.Token) {
                     DerivAPI.send({
                         authorize: $parameters.Token
@@ -385,21 +383,6 @@ define("tradershub.controller$DerivApiSendMessage.SendApiCallJS", [], function()
 
             }
 
-            // if (DerivAPI) {
-            //     $parameters.Authorize && $parameters.Token && (async () => await DerivAPI.send({ authorize: $parameters.Token }))()
-            //     DerivAPI.send(request).then(response => {
-            //         $parameters.response = JSON.stringify(response);
-            //         $parameters.IsError = false;
-            //         $resolve();
-            //     }).catch(error => {
-            //         $parameters.IsError = true;
-            //         $parameters.response = JSON.stringify(error.error);
-
-            //         $parameters.ErrorMessage = error.error.message || "";
-            //         $parameters.ErrorCode = error.error.code || "";
-            //         $resolve();
-            //     });
-            // }
 
         });
     };
@@ -964,9 +947,9 @@ define("tradershub.controller$GetAllAccountsBalance.PayloadJS", [], function() {
 });
 
 
-define("tradershub.controller$GetCurrencyIcon", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$GetCurrencyIcon.getCurrencyIconJS", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_GetCurrencyIcon_getCurrencyIconJS, tradershubClientVariables) {
+define("tradershub.controller$GetCurrencyIcon", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.clientVariables", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$ServerAction.CurrenciesList"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershubClientVariables) {
     var OS = OSRuntimeCore;
-    tradershubController.default.getCurrencyIcon$Action = function(codeIn, currenciesListIn, callContext) {
+    tradershubController.default.getCurrencyIcon$Action = function(currencyCodeIn, callContext) {
         return OS.Logger.startActiveSpan("GetCurrencyIcon", function(span) {
             if (span) {
                 span.setAttribute("code.function", "GetCurrencyIcon");
@@ -976,73 +959,41 @@ define("tradershub.controller$GetCurrencyIcon", ["exports", "@outsystems/runtime
                 span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
             }
 
-            try {
+            return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.GetCurrencyIcon$vars"))());
-                vars.value.codeInLocal = codeIn;
-                vars.value.currenciesListInLocal = currenciesListIn;
-                var getCurrencyIconJSResult = new OS.DataTypes.VariableHolder();
+                vars.value.currencyCodeInLocal = currencyCodeIn;
+                var currenciesList2Var = new OS.DataTypes.VariableHolder();
+                var listFilterVar = new OS.DataTypes.VariableHolder();
                 var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.GetCurrencyIcon$outVars"))());
-                getCurrencyIconJSResult.value = OS.Logger.startActiveSpan("getCurrencyIcon", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "getCurrencyIcon");
-                        span.setAttribute("outsystems.function.key", "9fdc6cab-ce27-4f85-883f-dc01e6275a68");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                    }
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: CurrenciesList2
+                    return controller.currenciesList$ServerAction(callContext).then(function(value) {
+                        currenciesList2Var.value = value;
+                    }).then(function() {
+                        // Execute Action: ListFilter
+                        listFilterVar.value = OS.SystemActions.listFilter(currenciesList2Var.value.currenciesListOut, function(p) {
+                            return (p.codeAttr === vars.value.currencyCodeInLocal);
+                        }, callContext);
 
-                    try {
-                        return controller.safeExecuteJSNode(tradershub_controller_GetCurrencyIcon_getCurrencyIconJS, "getCurrencyIcon", "GetCurrencyIcon", {
-                            CurrenciesList: OS.DataConversion.JSNodeParamConverter.to(vars.value.currenciesListInLocal, OS.DataTypes.DataTypes.Text),
-                            Code: OS.DataConversion.JSNodeParamConverter.to(vars.value.codeInLocal, OS.DataTypes.DataTypes.Text),
-                            Icon: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                        }, function($parameters) {
-                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.GetCurrencyIcon$getCurrencyIconJSResult"))();
-                            jsNodeResult.iconOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Icon, OS.DataTypes.DataTypes.Text);
-                            return jsNodeResult;
-                        }, {}, {});
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 1);
-                // CurrencyIcon = getCurrencyIcon.Icon
-                outVars.value.currencyIconOut = getCurrencyIconJSResult.value.iconOut;
-                return outVars.value;
-            } finally {
+                        // CurrencyIcon = ListFilter.FilteredList.Current.Icon
+                        outVars.value.currencyIconOut = listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).iconAttr;
+                    });
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
                 if (span) {
                     span.end();
                 }
 
-            }
-
+            });
         }, 1);
     };
     var controller = tradershubController.default;
     tradershubController.default.constructor.registerVariableGroupType("tradershub.GetCurrencyIcon$vars", [{
-        name: "Code",
-        attrName: "codeInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "CurrenciesList",
-        attrName: "currenciesListInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
-    tradershubController.default.constructor.registerVariableGroupType("tradershub.GetCurrencyIcon$getCurrencyIconJSResult", [{
-        name: "Icon",
-        attrName: "iconOut",
+        name: "CurrencyCode",
+        attrName: "currencyCodeInLocal",
         mandatory: true,
         dataType: OS.DataTypes.DataTypes.Text,
         defaultValue: function() {
@@ -1058,28 +1009,13 @@ define("tradershub.controller$GetCurrencyIcon", ["exports", "@outsystems/runtime
             return "";
         }
     }]);
-    tradershubController.default.clientActionProxies.getCurrencyIcon$Action = function(codeIn, currenciesListIn) {
-        codeIn = (codeIn === undefined) ? "" : codeIn;
-        currenciesListIn = (currenciesListIn === undefined) ? "" : currenciesListIn;
-        return controller.executeActionInsideJSNode(tradershubController.default.getCurrencyIcon$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(codeIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(currenciesListIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+    tradershubController.default.clientActionProxies.getCurrencyIcon$Action = function(currencyCodeIn) {
+        currencyCodeIn = (currencyCodeIn === undefined) ? "" : currencyCodeIn;
+        return controller.executeActionInsideJSNode(tradershubController.default.getCurrencyIcon$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(currencyCodeIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {
                 CurrencyIcon: OS.DataConversion.JSNodeParamConverter.to(actionResults.currencyIconOut, OS.DataTypes.DataTypes.Text)
             };
         });
-    };
-});
-
-define("tradershub.controller$GetCurrencyIcon.getCurrencyIconJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const currenciesList = JSON.parse($parameters.CurrenciesList);
-
-        const getCurrencyIcon = (code) => {
-            const currency = currenciesList?.find((currency) => currency.Code === code);
-            return currency.Icon;
-        }
-
-        $parameters.Icon = getCurrencyIcon($parameters.Code);
-
     };
 });
 
@@ -1210,7 +1146,7 @@ define("tradershub.controller$GetSocialLoginRedirectURL.AffiliateUTMJS", [], fun
 });
 
 
-define("tradershub.controller$GetWebsiteStatus", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$GetWebsiteStatus.GetClientCountryJS", "tradershub.clientVariables", "tradershub.controller$DerivApiSendMessage"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_GetWebsiteStatus_GetClientCountryJS, tradershubClientVariables) {
+define("tradershub.controller$GetWebsiteStatus", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.clientVariables", "tradershub.controller$DerivApiSendMessage", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, tradershubClientVariables) {
     var OS = OSRuntimeCore;
     tradershubController.default.getWebsiteStatus$Action = function(callContext) {
         return OS.Logger.startActiveSpan("GetWebsiteStatus", function(span) {
@@ -1225,43 +1161,19 @@ define("tradershub.controller$GetWebsiteStatus", ["exports", "@outsystems/runtim
             return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
                 var derivApiSendMessageVar = new OS.DataTypes.VariableHolder();
-                var getClientCountryJSResult = new OS.DataTypes.VariableHolder();
+                var jSONDeserializeGetWebsiteStatusResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure))());
                 return OS.Flow.executeAsyncFlow(function() {
                     // Execute Action: DerivApiSendMessage
                     return tradershubController.default.derivApiSendMessage$Action("", "website_status", false, callContext).then(function(value) {
                         derivApiSendMessageVar.value = value;
                     }).then(function() {
                         if ((!(derivApiSendMessageVar.value.isErrorOut))) {
-                            getClientCountryJSResult.value = OS.Logger.startActiveSpan("GetClientCountry", function(span) {
-                                if (span) {
-                                    span.setAttribute("code.function", "GetClientCountry");
-                                    span.setAttribute("outsystems.function.key", "ff8f38b6-b0b3-4848-8578-ac872b86d73f");
-                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                }
-
-                                try {
-                                    return controller.safeExecuteJSNode(tradershub_controller_GetWebsiteStatus_GetClientCountryJS, "GetClientCountry", "GetWebsiteStatus", {
-                                        Response: OS.DataConversion.JSNodeParamConverter.to(derivApiSendMessageVar.value.responseOut, OS.DataTypes.DataTypes.Text),
-                                        ClientCountry: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                    }, function($parameters) {
-                                        var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.GetWebsiteStatus$getClientCountryJSResult"))();
-                                        jsNodeResult.clientCountryOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ClientCountry, OS.DataTypes.DataTypes.Text);
-                                        return jsNodeResult;
-                                    }, {}, {});
-                                } finally {
-                                    if (span) {
-                                        span.end();
-                                    }
-
-                                }
-
-                            }, 1);
+                            // JSON Deserialize: JSONDeserializeGetWebsiteStatusResponse
+                            jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(derivApiSendMessageVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure, false);
                             // RawWebsiteStatusResponse = DerivApiSendMessage.Response
                             tradershubClientVariables.setRawWebsiteStatusResponse(derivApiSendMessageVar.value.responseOut);
-                            // ClientCountry = GetClientCountry.ClientCountry
-                            tradershubClientVariables.setClientCountry(getClientCountryJSResult.value.clientCountryOut);
+                            // ClientCountry = JSONDeserializeGetWebsiteStatusResponse.Data.Website_status.Clients_country
+                            tradershubClientVariables.setClientCountry(jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut.website_statusAttr.clients_countryAttr);
                         }
 
                     });
@@ -1277,27 +1189,10 @@ define("tradershub.controller$GetWebsiteStatus", ["exports", "@outsystems/runtim
         }, 1);
     };
     var controller = tradershubController.default;
-    tradershubController.default.constructor.registerVariableGroupType("tradershub.GetWebsiteStatus$getClientCountryJSResult", [{
-        name: "ClientCountry",
-        attrName: "clientCountryOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
     tradershubController.default.clientActionProxies.getWebsiteStatus$Action = function() {
         return controller.executeActionInsideJSNode(tradershubController.default.getWebsiteStatus$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {};
         });
-    };
-});
-
-define("tradershub.controller$GetWebsiteStatus.GetClientCountryJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const data = JSON.parse($parameters.Response);
-        $parameters.ClientCountry = data.website_status.clients_country;
-
     };
 });
 
@@ -1409,6 +1304,7 @@ define("tradershub.controller$InitGrowthbookAndRudderStack.InitAnalyticsJS", [],
                                 country
                             }
                         },
+                        // disableRudderstackAMD: true,
                     };
                     try {
                         Analytics.initialise(initialiseConfig);
@@ -1430,7 +1326,7 @@ define("tradershub.controller$InitGrowthbookAndRudderStack.InitAnalyticsJS", [],
 });
 
 
-define("tradershub.controller$InitizalizeDerivApi", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$InitizalizeDerivApi.InitializeDerivApiJS", "tradershub.clientVariables", "tradershub.controller$GetWebsiteStatus", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_InitizalizeDerivApi_InitializeDerivApiJS, tradershubClientVariables) {
+define("tradershub.controller$InitizalizeDerivApi", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$InitizalizeDerivApi.InitializeDerivApiJS", "tradershub.clientVariables", "tradershub.controller$GetWebsiteStatus", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_InitizalizeDerivApi_InitializeDerivApiJS, tradershubClientVariables) {
     var OS = OSRuntimeCore;
     tradershubController.default.initizalizeDerivApi$Action = function(callContext) {
         return OS.Logger.startActiveSpan("InitizalizeDerivApi", function(span) {
@@ -1442,41 +1338,48 @@ define("tradershub.controller$InitizalizeDerivApi", ["exports", "@outsystems/run
                 span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
             }
 
-            try {
+            return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
-                OS.Logger.startActiveSpan("InitializeDerivApi", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "InitializeDerivApi");
-                        span.setAttribute("outsystems.function.key", "b0c52184-c6a5-4064-840e-3ed8f885b369");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                    }
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: RequireScriptDerivAPiBasic
+                    return OS.SystemActions.requireScript(OS.Navigation.VersionedURL.getVersionedUrl("scripts/tradershub.DerivAPIBasic.js"), callContext).then(function() {
+                        // Execute Action: RequireScriptReconnectingWebsocket
+                        return OS.SystemActions.requireScript(OS.Navigation.VersionedURL.getVersionedUrl("scripts/tradershub.ReconnectingWebsocket.js"), callContext);
+                    }).then(function() {
+                        OS.Logger.startActiveSpan("InitializeDerivApi", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "InitializeDerivApi");
+                                span.setAttribute("outsystems.function.key", "b0c52184-c6a5-4064-840e-3ed8f885b369");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
 
-                    try {
-                        return controller.safeExecuteJSNode(tradershub_controller_InitizalizeDerivApi_InitializeDerivApiJS, "InitializeDerivApi", "InitizalizeDerivApi", {
-                            WebsocketURL: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getWebsocketURL(), OS.DataTypes.DataTypes.Text)
-                        }, function($parameters) {}, {
-                            GetWebsiteStatus: tradershubController.default.clientActionProxies.getWebsiteStatus$Action,
-                            SendResidenceList: tradershubController.default.clientActionProxies.sendResidenceList$Action,
-                            SendAuthorize: tradershubController.default.clientActionProxies.sendAuthorize$Action
-                        }, {});
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
+                            try {
+                                return controller.safeExecuteJSNode(tradershub_controller_InitizalizeDerivApi_InitializeDerivApiJS, "InitializeDerivApi", "InitizalizeDerivApi", {
+                                    WebsocketURL: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getWebsocketURL(), OS.DataTypes.DataTypes.Text)
+                                }, function($parameters) {}, {
+                                    GetWebsiteStatus: tradershubController.default.clientActionProxies.getWebsiteStatus$Action,
+                                    SendResidenceList: tradershubController.default.clientActionProxies.sendResidenceList$Action
+                                }, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
 
-                    }
+                            }
 
-                }, 1);
-                return;
-            } finally {
+                        }, 1);
+                    });
+                }).then(function() {
+                    return;
+                });
+            }, function() {
                 if (span) {
                     span.end();
                 }
 
-            }
-
+            });
         }, 1);
     };
     var controller = tradershubController.default;
@@ -1512,7 +1415,6 @@ define("tradershub.controller$InitizalizeDerivApi.InitializeDerivApiJS", [], fun
 
                     $actions.GetWebsiteStatus()
                     $actions.SendResidenceList()
-                    $actions.SendAuthorize()
 
                     window.connectionAliveInterval = setInterval(() => {
                         window.___socket.readyState === 1 && DerivAPI.send({
@@ -1918,7 +1820,7 @@ define("tradershub.controller$NewAccountReal.NewAccountRealPayloadJS", [], funct
 });
 
 
-define("tradershub.controller$OnApplicationReady", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.clientVariables", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$RudderstackIdentifyEvent", "tradershub.controller$InitGrowthbookAndRudderStack", "tradershub.controller$InitizalizeDerivApi"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubClientVariables) {
+define("tradershub.controller$OnApplicationReady", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.controller$OnApplicationReady.GetConfigJS", "tradershub.clientVariables", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$RudderstackIdentifyEvent", "tradershub.controller$InitGrowthbookAndRudderStack", "tradershub.controller$InitizalizeDerivApi"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershub_controller_OnApplicationReady_GetConfigJS, tradershubClientVariables) {
     var OS = OSRuntimeCore;
     tradershubController.default.onApplicationReady$Action = function(callContext) {
         var model = this.model;
@@ -1936,16 +1838,60 @@ define("tradershub.controller$OnApplicationReady", ["exports", "@outsystems/runt
             return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
                 var addFaviconVar = new OS.DataTypes.VariableHolder();
+                var getConfigJSResult = new OS.DataTypes.VariableHolder();
                 return OS.Flow.executeAsyncFlow(function() {
                     // Execute Action: AddFavicon
                     addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("/tradershub/favicon.png", callContext);
 
-                    // Execute Action: InitGrowthbookAndRudderStack
-                    return tradershubController.default.initGrowthbookAndRudderStack$Action(callContext).then(function() {
+                    return OS.Logger.startActiveSpan("GetConfig", function(span) {
+                        if (span) {
+                            span.setAttribute("code.function", "GetConfig");
+                            span.setAttribute("outsystems.function.key", "e75ac88b-c8c0-48f9-92a5-db97155c7216");
+                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                        }
+
+                        try {
+                            return controller.safeExecuteAsyncJSNode(tradershub_controller_OnApplicationReady_GetConfigJS, "GetConfig", "On Application Ready", {
+                                URL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
+                                AppId: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                            }, function($parameters) {
+                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.OnApplicationReady$getConfigJSResult"))();
+                                jsNodeResult.uRLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.URL, OS.DataTypes.DataTypes.Text);
+                                jsNodeResult.appIdOut = OS.DataConversion.JSNodeParamConverter.from($parameters.AppId, OS.DataTypes.DataTypes.Text);
+                                return jsNodeResult;
+                            }, {}, {});
+                        } finally {
+                            if (span) {
+                                span.end();
+                            }
+
+                        }
+
+                    }, 1).then(function(results) {
+                        getConfigJSResult.value = results;
+                    }).then(function() {
+                        // AppId = GetConfig.AppId
+                        tradershubClientVariables.setAppId(getConfigJSResult.value.appIdOut);
+                        // URL = GetConfig.URL
+                        tradershubClientVariables.setURL(getConfigJSResult.value.uRLOut);
+                        // Execute Action: InitizalizeDerivApi
+                        return tradershubController.default.initizalizeDerivApi$Action(callContext);
+                    }).then(function() {
+                        // Execute Action: InitGrowthbookAndRudderStack
+                        return tradershubController.default.initGrowthbookAndRudderStack$Action(callContext);
+                    }).then(function() {
                         // Execute Action: RudderstackIdentifyEvent
                         tradershubController.default.rudderstackIdentifyEvent$Action("", callContext);
-                        // Execute Action: InitizalizeDerivApi
-                        tradershubController.default.initizalizeDerivApi$Action(callContext);
+                        // Execute Action: RequireScriptLoadFonts
+                        return OS.SystemActions.requireScript(OS.Navigation.VersionedURL.getVersionedUrl("scripts/tradershub.LoadFonts.js"), callContext);
+                    }).then(function() {
+                        // Execute Action: RequireScriptDatadog
+                        return OS.SystemActions.requireScript(OS.Navigation.VersionedURL.getVersionedUrl("scripts/tradershub.DerivDatadog.js"), callContext);
+                    }).then(function() {
+                        // Execute Action: RequireScriptTrackJS
+                        return OS.SystemActions.requireScript(OS.Navigation.VersionedURL.getVersionedUrl("scripts/tradershub.TrackJS.js"), callContext);
                     });
                 });
             }, function() {
@@ -1957,9 +1903,45 @@ define("tradershub.controller$OnApplicationReady", ["exports", "@outsystems/runt
         }, 1);
     };
     var controller = tradershubController.default;
+    tradershubController.default.constructor.registerVariableGroupType("tradershub.OnApplicationReady$getConfigJSResult", [{
+        name: "URL",
+        attrName: "uRLOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AppId",
+        attrName: "appIdOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
     tradershubController.default.clientActionProxies.onApplicationReady$Action = function() {
         return controller.executeActionInsideJSNode(tradershubController.default.onApplicationReady$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {};
+        });
+    };
+});
+
+define("tradershub.controller$OnApplicationReady.GetConfigJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        return new Promise(function($resolve, $reject) {
+            const url = localStorage.getItem('config.server_url')
+            const appid = localStorage.getItem('config.app_id')
+
+            if (url && appid) {
+                $parameters.URL = url;
+                $parameters.AppId = appid;
+            } else {
+                $parameters.URL = "green.derivws.com";
+                $parameters.AppId = location.hostname === "hub.deriv.com" ? "61554" : location.hostname.includes("dev-hub") ? "15438" : "53503";
+            }
+
+            $resolve()
         });
     };
 });
@@ -3094,7 +3076,7 @@ define("tradershub.controller$TopupVirtualAccount", ["exports", "@outsystems/run
 });
 
 
-define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$TradingPlatformProductListing.TradingPlatformPayloadJS", "tradershub.controller$TradingPlatformProductListing.ModifyDataJS", "tradershub.clientVariables", "tradershub.controller$DerivApiSendMessage"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_TradingPlatformProductListing_TradingPlatformPayloadJS, tradershub_controller_TradingPlatformProductListing_ModifyDataJS, tradershubClientVariables) {
+define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.controller$TradingPlatformProductListing.TradingPlatformPayloadJS", "tradershub.controller$TradingPlatformProductListing.ModifyDataJS", "tradershub.clientVariables", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_controller_TradingPlatformProductListing_TradingPlatformPayloadJS, tradershub_controller_TradingPlatformProductListing_ModifyDataJS, tradershubClientVariables) {
     var OS = OSRuntimeCore;
     tradershubController.default.tradingPlatformProductListing$Action = function(callContext) {
         return OS.Logger.startActiveSpan("TradingPlatformProductListing", function(span) {
@@ -3111,7 +3093,7 @@ define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outs
                 var derivApiSendMessageVar = new OS.DataTypes.VariableHolder();
                 var tradingPlatformPayloadJSResult = new OS.DataTypes.VariableHolder();
                 var modifyDataJSResult = new OS.DataTypes.VariableHolder();
-                var jSONDeserializeTextListVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(OS.DataTypes.TextList))());
+                var jSONDeserializeTradingPlatformProductListingResponVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure))());
                 var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.TradingPlatformProductListing$outVars"))());
                 return OS.Flow.executeAsyncFlow(function() {
                     tradingPlatformPayloadJSResult.value = OS.Logger.startActiveSpan("TradingPlatformPayload", function(span) {
@@ -3125,7 +3107,6 @@ define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outs
 
                         try {
                             return controller.safeExecuteJSNode(tradershub_controller_TradingPlatformProductListing_TradingPlatformPayloadJS, "TradingPlatformPayload", "TradingPlatformProductListing", {
-                                WebsiteData: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawWebsiteStatusResponse(), OS.DataTypes.DataTypes.Text),
                                 ClientCountry: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getClientCountry(), OS.DataTypes.DataTypes.Text),
                                 Payload: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
                             }, function($parameters) {
@@ -3158,18 +3139,10 @@ define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outs
                                 try {
                                     return controller.safeExecuteJSNode(tradershub_controller_TradingPlatformProductListing_ModifyDataJS, "ModifyData", "TradingPlatformProductListing", {
                                         Data: OS.DataConversion.JSNodeParamConverter.to(derivApiSendMessageVar.value.responseOut, OS.DataTypes.DataTypes.Text),
-                                        DTraderAvailableTradeTypes: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                        ShouldShowDBot: OS.DataConversion.JSNodeParamConverter.to(true, OS.DataTypes.DataTypes.Boolean),
-                                        ShouldShowSmartTrader: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
-                                        ShouldShowDerivGo: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
-                                        ShouldShowDTrader: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                                        Response: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
                                     }, function($parameters) {
                                         var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.TradingPlatformProductListing$modifyDataJSResult"))();
-                                        jsNodeResult.dTraderAvailableTradeTypesOut = OS.DataConversion.JSNodeParamConverter.from($parameters.DTraderAvailableTradeTypes, OS.DataTypes.DataTypes.Text);
-                                        jsNodeResult.shouldShowDBotOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ShouldShowDBot, OS.DataTypes.DataTypes.Boolean);
-                                        jsNodeResult.shouldShowSmartTraderOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ShouldShowSmartTrader, OS.DataTypes.DataTypes.Boolean);
-                                        jsNodeResult.shouldShowDerivGoOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ShouldShowDerivGo, OS.DataTypes.DataTypes.Boolean);
-                                        jsNodeResult.shouldShowDTraderOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ShouldShowDTrader, OS.DataTypes.DataTypes.Boolean);
+                                        jsNodeResult.responseOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Response, OS.DataTypes.DataTypes.Text);
                                         return jsNodeResult;
                                     }, {}, {});
                                 } finally {
@@ -3180,18 +3153,10 @@ define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outs
                                 }
 
                             }, 1);
-                            // JSON Deserialize: JSONDeserializeTextList
-                            jSONDeserializeTextListVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(modifyDataJSResult.value.dTraderAvailableTradeTypesOut, OS.DataTypes.TextList, false);
-                            // ShouldShowDBot = ModifyData.ShouldShowDBot
-                            outVars.value.shouldShowDBotOut = modifyDataJSResult.value.shouldShowDBotOut;
-                            // ShouldShowSmartTrader = ModifyData.ShouldShowSmartTrader
-                            outVars.value.shouldShowSmartTraderOut = modifyDataJSResult.value.shouldShowSmartTraderOut;
-                            // ShouldShowDerivGo = ModifyData.ShouldShowDerivGo
-                            outVars.value.shouldShowDerivGoOut = modifyDataJSResult.value.shouldShowDerivGoOut;
-                            // DTraderAvailableTradeTypes = JSONDeserializeTextList.Data
-                            outVars.value.dTraderAvailableTradeTypesOut = jSONDeserializeTextListVar.value.dataOut;
-                            // ShouldShowDTrader = ModifyData.ShouldShowDTrader
-                            outVars.value.shouldShowDTraderOut = modifyDataJSResult.value.shouldShowDTraderOut;
+                            // JSON Deserialize: JSONDeserializeTradingPlatformProductListingRespon
+                            jSONDeserializeTradingPlatformProductListingResponVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(modifyDataJSResult.value.responseOut, tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure, false);
+                            // Response = JSONDeserializeTradingPlatformProductListingRespon.Data
+                            outVars.value.responseOut = jSONDeserializeTradingPlatformProductListingResponVar.value.dataOut;
                         }
 
                     });
@@ -3217,96 +3182,28 @@ define("tradershub.controller$TradingPlatformProductListing", ["exports", "@outs
         }
     }]);
     tradershubController.default.constructor.registerVariableGroupType("tradershub.TradingPlatformProductListing$modifyDataJSResult", [{
-        name: "DTraderAvailableTradeTypes",
-        attrName: "dTraderAvailableTradeTypesOut",
+        name: "Response",
+        attrName: "responseOut",
         mandatory: true,
         dataType: OS.DataTypes.DataTypes.Text,
         defaultValue: function() {
             return "";
         }
-    }, {
-        name: "ShouldShowDBot",
-        attrName: "shouldShowDBotOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return true;
-        }
-    }, {
-        name: "ShouldShowSmartTrader",
-        attrName: "shouldShowSmartTraderOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }, {
-        name: "ShouldShowDerivGo",
-        attrName: "shouldShowDerivGoOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }, {
-        name: "ShouldShowDTrader",
-        attrName: "shouldShowDTraderOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
     }]);
     tradershubController.default.constructor.registerVariableGroupType("tradershub.TradingPlatformProductListing$outVars", [{
-        name: "DTraderAvailableTradeTypes",
-        attrName: "dTraderAvailableTradeTypesOut",
+        name: "Response",
+        attrName: "responseOut",
         mandatory: false,
-        dataType: OS.DataTypes.DataTypes.RecordList,
+        dataType: OS.DataTypes.DataTypes.Record,
         defaultValue: function() {
-            return new OS.DataTypes.TextList();
+            return new tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure();
         },
-        complexType: OS.DataTypes.TextList
-    }, {
-        name: "ShouldShowDBot",
-        attrName: "shouldShowDBotOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return true;
-        }
-    }, {
-        name: "ShouldShowSmartTrader",
-        attrName: "shouldShowSmartTraderOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return true;
-        }
-    }, {
-        name: "ShouldShowDerivGo",
-        attrName: "shouldShowDerivGoOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return true;
-        }
-    }, {
-        name: "ShouldShowDTrader",
-        attrName: "shouldShowDTraderOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
+        complexType: tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure
     }]);
     tradershubController.default.clientActionProxies.tradingPlatformProductListing$Action = function() {
         return controller.executeActionInsideJSNode(tradershubController.default.tradingPlatformProductListing$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {
-                DTraderAvailableTradeTypes: actionResults.dTraderAvailableTradeTypesOut,
-                ShouldShowDBot: OS.DataConversion.JSNodeParamConverter.to(actionResults.shouldShowDBotOut, OS.DataTypes.DataTypes.Boolean),
-                ShouldShowSmartTrader: OS.DataConversion.JSNodeParamConverter.to(actionResults.shouldShowSmartTraderOut, OS.DataTypes.DataTypes.Boolean),
-                ShouldShowDerivGo: OS.DataConversion.JSNodeParamConverter.to(actionResults.shouldShowDerivGoOut, OS.DataTypes.DataTypes.Boolean),
-                ShouldShowDTrader: OS.DataConversion.JSNodeParamConverter.to(actionResults.shouldShowDTraderOut, OS.DataTypes.DataTypes.Boolean)
+                Response: actionResults.responseOut
             };
         });
     };
@@ -3334,15 +3231,57 @@ define("tradershub.controller$TradingPlatformProductListing.ModifyDataJS", [], f
         const SmartTraderData = tradingPlatformProductListing['22168'];
         const DerivGoData = tradingPlatformProductListing['23789'];
 
-        $parameters.DTraderAvailableTradeTypes = JSON.stringify(DTraderData.available_trade_types);
-        $parameters.ShouldShowDBot = Boolean(DBotData?.name);
-        $parameters.ShouldShowSmartTrader = Boolean(SmartTraderData?.name);
-        $parameters.ShouldShowDerivGo = Boolean(DerivGoData?.name);
-        $parameters.ShouldShowDTrader = Boolean(DTraderData?.name);
+        $parameters.Response = JSON.stringify({
+            ShouldShowDBot: Boolean(DBotData?.name),
+            ShouldShowSmartTrader: Boolean(SmartTraderData?.name),
+            ShouldShowDerivGo: Boolean(DerivGoData?.name),
+            ShouldShowDTrader: Boolean(DTraderData?.name),
+            DTraderAvailableTradeTypes: DTraderData.available_trade_types,
+            IsTradingAllowed: Boolean(DerivGoData?.name) || Boolean(DTraderData?.name) || Boolean(DBotData?.name) || Boolean(SmartTraderData?.name)
+        })
 
     };
 });
 
+
+define("tradershub.controller$ServerAction.CurrenciesList", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d"], function(exports, OSRuntimeCore, tradershubModel, tradershubController) {
+    var OS = OSRuntimeCore;
+    tradershubController.default.currenciesList$ServerAction = function(callContext) {
+        var controller = this.controller;
+        return OS.Logger.startActiveSpan("CurrenciesList", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "CurrenciesList");
+                span.setAttribute("outsystems.function.key", "f15c4591-9739-418f-bc8d-14d275e849d1");
+                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/ActionCurrenciesList", "psznQM4XSL63xbToINuQZw", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub$ActionCurrenciesList"))();
+                    executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
+                    return executeServerActionResult;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 0);
+    };
+    tradershubController.default.constructor.registerVariableGroupType("tradershub$ActionCurrenciesList", [{
+        name: "CurrenciesList",
+        attrName: "currenciesListOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.RecordList,
+        defaultValue: function() {
+            return new tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d();
+        },
+        complexType: tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d
+    }]);
+});
 
 define("tradershub.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;

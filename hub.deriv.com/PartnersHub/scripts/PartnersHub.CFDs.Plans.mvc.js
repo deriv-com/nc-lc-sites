@@ -241,8 +241,8 @@ define("PartnersHub.CFDs.Plans.mvc$view", ["@outsystems/runtime-core-js", "Partn
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
-                                ClassName: "gap",
-                                IsLoading: model.variables.isLoadingVar
+                                IsLoading: model.variables.isLoadingVar,
+                                ClassName: "gap"
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -437,9 +437,9 @@ define("PartnersHub.CFDs.Plans.mvc$view", ["@outsystems/runtime-core-js", "Partn
                                                         inputs: {
                                                             PlanId: model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.listOut.getCurrent(callContext.iterationContext).cFDsAllSubPlansAttr.idAttr,
                                                             _planIdInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.dataFetchStatusAttr),
-                                                            IsSubPlan: true,
                                                             CommissionType: model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.listOut.getCurrent(callContext.iterationContext).commissionTypeAttr.typeAttr,
-                                                            _commissionTypeInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.dataFetchStatusAttr)
+                                                            _commissionTypeInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.dataFetchStatusAttr),
+                                                            IsSubPlan: true
                                                         },
                                                         events: {
                                                             _handleError: function(ex) {
@@ -502,7 +502,7 @@ define("PartnersHub.CFDs.Plans.mvc$controller", ["@outsystems/runtime-core-js", 
                             var model = this.model;
                             var controller = this.controller;
                             var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCFDsAllSubPlansByCFDsAllPlanId", "screenservices/PartnersHub/CFDs/Plans/ScreenDataSetGetCFDsAllSubPlansByCFDsAllPlanId", "VXb9uEwiTVrG+7AG1Lp67g", maxRecords, startIndex, function(b) {
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCFDsAllSubPlansByCFDsAllPlanId", "screenservices/PartnersHub/CFDs/Plans/ScreenDataSetGetCFDsAllSubPlansByCFDsAllPlanId", "Aepkhmoz7BEtmX8wsLy8Ew", maxRecords, startIndex, function(b) {
                                 model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCFDsAllSubPlansByCFDsAllPlanIdAggr.constructor));
@@ -895,7 +895,14 @@ define("PartnersHub.CFDs.Plans.mvc$controller", ["@outsystems/runtime-core-js", 
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;

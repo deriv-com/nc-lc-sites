@@ -1056,10 +1056,19 @@ define("PartnersHub.RealAccountCreationFlow.AccountCurrencyBlock.mvc$controller.
         const currencies = JSON.parse($parameters.RawCurrenciesList);
         const legalAllowedCurrencies = JSON.parse($parameters.LegalAllowedCurrencies);
 
+        const sortOrder = ['EUR', 'ETH', 'LTC', 'USDC', 'eUSDT', 'tUSDT', 'XRP'];
+
+
 
         const filteredRecommendedCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Recommended');
 
-        const filteredOtherCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Other');
+        const filteredOtherCurrencies = currencies
+            .filter(currency =>
+                legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Other'
+            )
+            .sort((a, b) => {
+                return sortOrder.indexOf(a.Code) - sortOrder.indexOf(b.Code);
+            });
 
 
         $parameters.RecommendedCurrencies = JSON.stringify(filteredRecommendedCurrencies)

@@ -31,12 +31,6 @@ define("PartnersHub.CFDs.PlanDetails.mvc$model", ["@outsystems/runtime-core-js",
                     this.attr("_noteInDataFetchStatus", "_noteInDataFetchStatus", "_noteInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
                     }, false),
-                    this.attr("TabRetention", "tabRetentionIn", "TabRetention", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, false),
-                    this.attr("_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false),
                     this.attr("IsSubPlan", "isSubPlanIn", "IsSubPlan", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
@@ -91,10 +85,6 @@ define("PartnersHub.CFDs.PlanDetails.mvc$model", ["@outsystems/runtime-core-js",
 
             if ("Note" in inputs) {
                 this.variables.noteIn = OS.DataConversion.ServerDataConverter.from(inputs.Note, OS.DataTypes.DataTypes.Text);
-            }
-
-            if ("TabRetention" in inputs) {
-                this.variables.tabRetentionIn = OS.DataConversion.ServerDataConverter.from(inputs.TabRetention, OS.DataTypes.DataTypes.Integer);
             }
 
             if ("IsSubPlan" in inputs) {
@@ -364,16 +354,8 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
                             try {
                                 controller.ensureControllerAlive("OnClickBackButton");
                                 callContext = controller.callContext(callContext);
-                                if ((model.variables.isSubPlanIn)) {
-                                    // Destination: (PreviousScreen)
-                                    return OS.Navigation.navigateBack(null, callContext, true);
-                                } else {
-                                    // Destination: /PartnersHub/CFDs
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "CFDs", {
-                                        TabRetention: OS.DataConversion.ServerDataConverter.to(model.variables.tabRetentionIn, OS.DataTypes.DataTypes.Integer)
-                                    }), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                                }
-
+                                // Destination: (PreviousScreen)
+                                return OS.Navigation.navigateBack(null, callContext, true);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -566,7 +548,14 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;

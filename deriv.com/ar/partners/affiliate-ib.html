@@ -2321,8 +2321,7 @@ a,
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ?
-                        {
+                    return parsedData.date_first_contact ? {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -2337,8 +2336,7 @@ a,
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ?
-                        {
+                    return parsedData.signup_device ? {
                             signup_device: parsedData.signup_device
                         } :
                         null;

@@ -1685,6 +1685,13 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.R
             form_name: "real_account_signup_form_outsystems"
         });
 
+        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
+            action: "step_paased",
+            form_name: "real_account_signup_form_outsystems",
+            step_codename: "terms_and_conditions",
+        });
+
+
     };
 });
 

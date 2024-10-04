@@ -1,4 +1,4 @@
-define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.controller$UseDevice", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
+define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-cor
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.NonPartnerAccount.mvc$model", "PartnersHub.Home.NonPartnerAccount.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.controller$UseDevice", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_NonPartnerAccount_mvc_model, PartnersHub_Home_NonPartnerAccount_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.NonPartnerAccount.mvc$model", "PartnersHub.Home.NonPartnerAccount.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_NonPartnerAccount_mvc_model, PartnersHub_Home_NonPartnerAccount_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -62,7 +62,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
         static getAttributes() {
             return {
                 codeFunction: "NonPartnerAccount",
-                functionKey: "398f127b-e4b6-4355-8f3d-15b00e571d2f",
+                functionKey: "d681fd12-042f-4a14-80ba-42fd0360c053",
                 functionOwnerName: "PartnersHub",
                 functionOwnerKey: "9587f849-ee05-428a-81d2-3be0a1b1dccc",
                 screen: ""
@@ -92,7 +92,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
         get title() {
 
 
-            return OSView.BaseView.BaseWebScreen.getTranslation("exKPObbkVUOPPRWwDlcdLw#Title", "NonPartnerAccount");
+            return OSView.BaseView.BaseWebScreen.getTranslation("Ev2B1i8EFEqAukL9A2DAUw#Title", "NonPartnerAccount");
         }
 
         internalRender() {
@@ -231,7 +231,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
 
     return View;
 });
-define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.controller$UseDevice", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_NonPartnerAccount_mvc_TranslationsResources, PartnersHub_HomeController) {
+define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources", "PartnersHub.Home.controller", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_NonPartnerAccount_mvc_TranslationsResources, PartnersHub_HomeController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -260,43 +260,6 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
             }
 
             // Client Actions - Methods
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "556e6fcf-09ba-463c-9c66-1b1cb79bf2d6");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnReady");
-                                callContext = controller.callContext(callContext);
-                                // Execute Action: UseDevice
-                                PartnersHubController.default.useDevice$Action(callContext);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onReady$Action;
-            }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
-            }
-
             get _createAccount$Action() {
                 if (!(this.hasOwnProperty("__createAccount$Action"))) {
                     this.__createAccount$Action = function(callContext) {
@@ -306,7 +269,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
                         return OS.Logger.startActiveSpan("CreateAccount", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "CreateAccount");
-                                span.setAttribute("outsystems.function.key", "90ac65f5-4bcd-471c-9ee1-af117c01291d");
+                                span.setAttribute("outsystems.function.key", "5c59a1ee-e70c-449c-a948-43e8af6a158e");
                                 span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                 span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -343,7 +306,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
                         return OS.Logger.startActiveSpan("ClosePage", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "ClosePage");
-                                span.setAttribute("outsystems.function.key", "c1b75577-100e-40e2-9064-639e91211aac");
+                                span.setAttribute("outsystems.function.key", "c12d3763-ef21-4004-8324-e13705845611");
                                 span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                                 span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -371,37 +334,50 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
                 this.__closePage$Action = value;
             }
 
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "c73544bc-f636-4b08-a366-4423a79fd892");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
 
-            onReady$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "556e6fcf-09ba-463c-9c66-1b1cb79bf2d6");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
+                            try {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: UseDevice
+                                PartnersHubController.default.useDevice$Action(callContext);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
 
-                    try {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
+                            }
 
-                    }
+                        }, 1);
+                    };
+                }
 
-                }, 0);
-
+                return this.__onReady$Action;
             }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
+            }
+
 
             createAccount$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("CreateAccount__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "CreateAccount");
-                        span.setAttribute("outsystems.function.key", "90ac65f5-4bcd-471c-9ee1-af117c01291d");
+                        span.setAttribute("outsystems.function.key", "5c59a1ee-e70c-449c-a948-43e8af6a158e");
                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -425,7 +401,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
                 return OS.Logger.startActiveSpan("ClosePage__proxy", function(span) {
                     if (span) {
                         span.setAttribute("code.function", "ClosePage");
-                        span.setAttribute("outsystems.function.key", "c1b75577-100e-40e2-9064-639e91211aac");
+                        span.setAttribute("outsystems.function.key", "c12d3763-ef21-4004-8324-e13705845611");
                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
@@ -433,6 +409,30 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
 
                     try {
                         return controller.safeExecuteClientAction(controller._closePage$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "c73544bc-f636-4b08-a366-4423a79fd892");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();

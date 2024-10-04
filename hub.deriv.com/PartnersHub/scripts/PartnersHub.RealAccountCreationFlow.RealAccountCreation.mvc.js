@@ -958,6 +958,7 @@ define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$view", ["@ou
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
+                                TextColor: "#FF444F",
                                 borderRadius: "100px",
                                 Width: "100%",
                                 height: "38px",

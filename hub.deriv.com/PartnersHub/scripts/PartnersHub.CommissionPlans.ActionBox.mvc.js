@@ -34,12 +34,6 @@ define("PartnersHub.CommissionPlans.ActionBox.mvc$model", ["@outsystems/runtime-
                     this.attr("_planIdInDataFetchStatus", "_planIdInDataFetchStatus", "_planIdInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
                     }, false),
-                    this.attr("TabRetention", "tabRetentionIn", "TabRetention", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, false),
-                    this.attr("_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false),
                     this.attr("GetCFDsAllPlansByTabID", "getCFDsAllPlansByTabIDAggr", "GetCFDsAllPlansByTabID", true, true, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new GetCFDsAllPlansByTabIDAggrRec());
                     }, true, GetCFDsAllPlansByTabIDAggrRec)
@@ -81,14 +75,6 @@ define("PartnersHub.CommissionPlans.ActionBox.mvc$model", ["@outsystems/runtime-
                 this.variables.planIdIn = inputs.PlanId;
                 if ("_planIdInDataFetchStatus" in inputs) {
                     this.variables._planIdInDataFetchStatus = inputs._planIdInDataFetchStatus;
-                }
-
-            }
-
-            if ("TabRetention" in inputs) {
-                this.variables.tabRetentionIn = inputs.TabRetention;
-                if ("_tabRetentionInDataFetchStatus" in inputs) {
-                    this.variables._tabRetentionInDataFetchStatus = inputs._tabRetentionInDataFetchStatus;
                 }
 
             }
@@ -366,18 +352,17 @@ define("PartnersHub.CommissionPlans.ActionBox.mvc$controller", ["@outsystems/run
                                 if (((model.variables.getCFDsAllPlansByTabIDAggr.listOut.getCurrent(callContext.iterationContext).cFDsAllPlansAttr.commissionTypesIdAttr === OS.BuiltinFunctions.nullIdentifier()))) {
                                     // Destination: /PartnersHub/Plans
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "Plans/:Title/:PlanId", {
-                                        Title: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.labelAttr, OS.DataTypes.DataTypes.Text),
-                                        PlanId: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.idAttr, OS.DataTypes.DataTypes.Integer)
+                                        PlanId: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.idAttr, OS.DataTypes.DataTypes.Integer),
+                                        Title: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.labelAttr, OS.DataTypes.DataTypes.Text)
                                     }), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 } else {
                                     // Destination: /PartnersHub/PlanDetails
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "PlanDetails", {
+                                        Note: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.noteAttr, OS.DataTypes.DataTypes.Text),
+                                        PlanId: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.idAttr, OS.DataTypes.DataTypes.Integer),
                                         Title: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.labelAttr, OS.DataTypes.DataTypes.Text),
                                         IsSubPlan: OS.DataConversion.ServerDataConverter.to(false, OS.DataTypes.DataTypes.Boolean),
-                                        Note: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.noteAttr, OS.DataTypes.DataTypes.Text),
-                                        CommissionType: OS.DataConversion.ServerDataConverter.to(model.variables.getCFDsAllPlansByTabIDAggr.listOut.getCurrent(callContext.iterationContext).commissionTypeAttr.typeAttr, OS.DataTypes.DataTypes.Text),
-                                        TabRetention: OS.DataConversion.ServerDataConverter.to(model.variables.tabRetentionIn, OS.DataTypes.DataTypes.Integer),
-                                        PlanId: OS.DataConversion.ServerDataConverter.to(vars.value.plansDataInLocal.idAttr, OS.DataTypes.DataTypes.Integer)
+                                        CommissionType: OS.DataConversion.ServerDataConverter.to(model.variables.getCFDsAllPlansByTabIDAggr.listOut.getCurrent(callContext.iterationContext).commissionTypeAttr.typeAttr, OS.DataTypes.DataTypes.Text)
                                     }), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
 

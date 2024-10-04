@@ -1,23 +1,5 @@
-define("PartnersHub.CommissionPlans.CFDs.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.TitleBlock.mvc$model", "PartnersHub.Common.SkeletonLoader.mvc$model", "OutSystemsUI.Navigation.Tabs.mvc$model", "OutSystemsUI.Navigation.TabsHeaderItem.mvc$model", "OutSystemsUI.Navigation.TabsContentItem.mvc$model", "OutSystemsUI.Utilities.InlineSVG.mvc$model", "PartnersHub.CommissionPlans.ActionBox.mvc$model", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_c9b451e33f0b1f65b4c84c971f12b1d0", "PartnersHub.model$RL_d33f26f168193562dc76ee2abb116b7d", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, PartnersHubController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_TitleBlock_mvcModel, PartnersHub_Common_SkeletonLoader_mvcModel, OutSystemsUI_Navigation_Tabs_mvcModel, OutSystemsUI_Navigation_TabsHeaderItem_mvcModel, OutSystemsUI_Navigation_TabsContentItem_mvcModel, OutSystemsUI_Utilities_InlineSVG_mvcModel, PartnersHub_CommissionPlans_ActionBox_mvcModel) {
+define("PartnersHub.CommissionPlans.CFDs.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.TitleBlock.mvc$model", "PartnersHub.Common.SkeletonLoader.mvc$model", "OutSystemsUI.Navigation.Tabs.mvc$model", "OutSystemsUI.Navigation.TabsHeaderItem.mvc$model", "OutSystemsUI.Navigation.TabsContentItem.mvc$model", "OutSystemsUI.Utilities.InlineSVG.mvc$model", "PartnersHub.CommissionPlans.ActionBox.mvc$model", "PartnersHub.CommissionPlans.CFDsTab.mvc$model", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.model$EN_88a0b98029aeb361728476a53c43c460EntityRecord", "PartnersHub.model$RL_9d46439f193576489847e7629b97a4f1", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, PartnersHubController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_TitleBlock_mvcModel, PartnersHub_Common_SkeletonLoader_mvcModel, OutSystemsUI_Navigation_Tabs_mvcModel, OutSystemsUI_Navigation_TabsHeaderItem_mvcModel, OutSystemsUI_Navigation_TabsContentItem_mvcModel, OutSystemsUI_Utilities_InlineSVG_mvcModel, PartnersHub_CommissionPlans_ActionBox_mvcModel, PartnersHub_CommissionPlans_CFDsTab_mvcModel) {
     var OS = OSRuntimeCore; {
-        class GetCFDsAllPlansByTabIDAggrRecInner extends
-        OS.Model.AggregateRecord {
-            static attributesToDeclare() {
-                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new GetCFDsAllPlansByTabIDAggrRec(new GetCFDsAllPlansByTabIDAggrRec.RecordClass({
-                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        GetCFDsAllPlansByTabIDAggrRecInner.RecordListType = PartnersHubModel.RL_d33f26f168193562dc76ee2abb116b7d;
-        var GetCFDsAllPlansByTabIDAggrRec = GetCFDsAllPlansByTabIDAggrRecInner;
-        GetCFDsAllPlansByTabIDAggrRec.init();
-    } {
         class GetCFDsTabInfoAggrRecInner extends
         OS.Model.AggregateRecord {
             static attributesToDeclare() {
@@ -49,15 +31,6 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$model", ["@outsystems/runtime-core-
                     this.attr("IsLoading", "isLoadingVar", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return true;
                     }, false),
-                    this.attr("TabRetention", "tabRetentionIn", "TabRetention", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, false),
-                    this.attr("_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", "_tabRetentionInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false),
-                    this.attr("GetCFDsAllPlansByTabID", "getCFDsAllPlansByTabIDAggr", "GetCFDsAllPlansByTabID", true, true, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new GetCFDsAllPlansByTabIDAggrRec());
-                    }, true, GetCFDsAllPlansByTabIDAggrRec),
                     this.attr("GetCFDsTabInfo", "getCFDsTabInfoAggr", "GetCFDsTabInfo", true, true, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new GetCFDsTabInfoAggrRec());
                     }, true, GetCFDsTabInfoAggrRec)
@@ -89,17 +62,12 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$model", ["@outsystems/runtime-core-
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((((((PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_TitleBlock_mvcModel.hasValidationWidgets) || PartnersHub_Common_SkeletonLoader_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_Tabs_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_TabsHeaderItem_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_TabsContentItem_mvcModel.hasValidationWidgets) || OutSystemsUI_Utilities_InlineSVG_mvcModel.hasValidationWidgets) || PartnersHub_CommissionPlans_ActionBox_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((((((((PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_TitleBlock_mvcModel.hasValidationWidgets) || PartnersHub_Common_SkeletonLoader_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_Tabs_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_TabsHeaderItem_mvcModel.hasValidationWidgets) || OutSystemsUI_Navigation_TabsContentItem_mvcModel.hasValidationWidgets) || OutSystemsUI_Utilities_InlineSVG_mvcModel.hasValidationWidgets) || PartnersHub_CommissionPlans_ActionBox_mvcModel.hasValidationWidgets) || PartnersHub_CommissionPlans_CFDsTab_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
         }
-        setInputs(inputs) {
-            if ("TabRetention" in inputs) {
-                this.variables.tabRetentionIn = OS.DataConversion.ServerDataConverter.from(inputs.TabRetention, OS.DataTypes.DataTypes.Integer);
-            }
-
-        }
+        setInputs(inputs) {}
 
     }
 
@@ -107,7 +75,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$model", ["@outsystems/runtime-core-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "PartnersHub.CommissionPlans.CFDs.mvc$model", "PartnersHub.CommissionPlans.CFDs.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.TitleBlock.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "OutSystemsUI.Navigation.Tabs.mvc$view", "OutSystemsUI.Navigation.TabsHeaderItem.mvc$view", "OutSystemsUI.Navigation.TabsContentItem.mvc$view", "OutSystemsUI.Utilities.InlineSVG.mvc$view", "PartnersHub.CommissionPlans.ActionBox.mvc$view", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_c9b451e33f0b1f65b4c84c971f12b1d0", "PartnersHub.model$RL_d33f26f168193562dc76ee2abb116b7d", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, React, OSView, PartnersHub_CommissionPlans_CFDs_mvc_model, PartnersHub_CommissionPlans_CFDs_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, OutSystemsUI_Navigation_Tabs_mvc_view, OutSystemsUI_Navigation_TabsHeaderItem_mvc_view, OutSystemsUI_Navigation_TabsContentItem_mvc_view, OutSystemsUI_Utilities_InlineSVG_mvc_view, PartnersHub_CommissionPlans_ActionBox_mvc_view) {
+define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "PartnersHub.CommissionPlans.CFDs.mvc$model", "PartnersHub.CommissionPlans.CFDs.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.TitleBlock.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "OutSystemsUI.Navigation.Tabs.mvc$view", "OutSystemsUI.Navigation.TabsHeaderItem.mvc$view", "OutSystemsUI.Navigation.TabsContentItem.mvc$view", "OutSystemsUI.Utilities.InlineSVG.mvc$view", "PartnersHub.CommissionPlans.ActionBox.mvc$view", "PartnersHub.CommissionPlans.CFDsTab.mvc$view", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.model$EN_88a0b98029aeb361728476a53c43c460EntityRecord", "PartnersHub.model$RL_9d46439f193576489847e7629b97a4f1", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, React, OSView, PartnersHub_CommissionPlans_CFDs_mvc_model, PartnersHub_CommissionPlans_CFDs_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, OutSystemsUI_Navigation_Tabs_mvc_view, OutSystemsUI_Navigation_TabsHeaderItem_mvc_view, OutSystemsUI_Navigation_TabsContentItem_mvc_view, OutSystemsUI_Utilities_InlineSVG_mvc_view, PartnersHub_CommissionPlans_ActionBox_mvc_view, PartnersHub_CommissionPlans_CFDsTab_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -138,7 +106,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-j
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, OutSystemsUI_Navigation_Tabs_mvc_view, OutSystemsUI_Navigation_TabsHeaderItem_mvc_view, OutSystemsUI_Navigation_TabsContentItem_mvc_view, OutSystemsUI_Utilities_InlineSVG_mvc_view, PartnersHub_CommissionPlans_ActionBox_mvc_view];
+            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view, OutSystemsUI_Navigation_Tabs_mvc_view, OutSystemsUI_Navigation_TabsHeaderItem_mvc_view, OutSystemsUI_Navigation_TabsContentItem_mvc_view, OutSystemsUI_Utilities_InlineSVG_mvc_view, PartnersHub_CommissionPlans_ActionBox_mvc_view, PartnersHub_CommissionPlans_CFDsTab_mvc_view];
         }
 
         get modelFactory() {
@@ -275,13 +243,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-j
                                             return _this.getChildSpan("destroy");
                                         },
                                         inputs: {
-                                            StartingTab: model.getCachedValue(idService.getId("0kWE5l+J2kKPvKmonEeXUw.StartingTab"), function() {
-                                                return (((model.variables.tabRetentionIn === OS.BuiltinFunctions.nullIdentifier())) ? (model.variables.activeTab1Var) : (model.variables.tabRetentionIn));
-                                            }, function() {
-                                                return model.variables.tabRetentionIn;
-                                            }, function() {
-                                                return model.variables.activeTab1Var;
-                                            })
+                                            StartingTab: model.variables.activeTab1Var
                                         },
                                         events: {
                                             _handleError: function(ex) {
@@ -465,7 +427,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-j
                                                                             _dependencies: []
                                                                         }), React.createElement(OSWidgets.Text, {
                                                                             style: "to-description",
-                                                                            text: [$text(getTranslation("T_61Yw75U0epGNXs8nNWJw#Value", "If your CFDs commissions aren’t activated, contact your account manager."))],
+                                                                            text: [$text(getTranslation("dhXk4Wy3TUOo6Uy1zERZsA#Value", "If your CFDs commissions aren’t activated, contact your account manager."))],
                                                                             _idProps: {
                                                                                 service: idService,
                                                                                 uuid: "13"
@@ -501,8 +463,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-j
                                                                             },
                                                                             inputs: {
                                                                                 PlanId: model.variables.getCFDsTabInfoAggr.listOut.getCurrent(callContext.iterationContext).cFDsTabInfoAttr.idAttr,
-                                                                                _planIdInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr),
-                                                                                TabRetention: model.variables.activeTab1Var
+                                                                                _planIdInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr)
                                                                             },
                                                                             events: {
                                                                                 _handleError: function(ex) {
@@ -559,30 +520,82 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$view", ["@outsystems/runtime-core-j
                                                                         }, "This plan is not available for partners who promote to clients residing in the EU."))))];
                                                                     })
                                                                 },
-                                                                _dependencies: [asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut.getCurrent(callContext.iterationContext).cFDsTabInfoAttr.idAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut.getCurrent(callContext.iterationContext).cFDsTabInfoAttr.tabsAttr)]
+                                                                _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut.getCurrent(callContext.iterationContext).cFDsTabInfoAttr.idAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut.getCurrent(callContext.iterationContext).cFDsTabInfoAttr.tabsAttr)]
                                                             })];
                                                         }, callContext, idService, "2")
                                                     },
-                                                    _dependencies: [asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr)]
+                                                    _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr)]
                                                 })];
                                             })
                                         },
-                                        _dependencies: [asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut)]
-                                    })];
+                                        _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut)]
+                                    }), React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        gridProperties: {
+                                            classes: "ThemeGrid_Width1 ThemeGrid_MarginGutter"
+                                        },
+                                        visible: false,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "21"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(PartnersHub_CommissionPlans_CFDsTab_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {
+                                            ActiveTab: model.variables.activeTab1Var,
+                                            TabData: model.getCachedValue(idService.getId("kW9wmlVtR0Op4qNLLergOw.TabData"), function() {
+                                                return OS.DataConversion.JSConversions.typeConvertRecordList(model.variables.getCFDsTabInfoAggr.listOut, new PartnersHubModel.RL_9d46439f193576489847e7629b97a4f1(), function(source, target) {
+                                                    target = source.cFDsTabInfoAttr;
+                                                    return target;
+                                                });
+                                            }, function() {
+                                                return model.variables.getCFDsTabInfoAggr.listOut;
+                                            }),
+                                            _tabDataInDataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr)
+                                        },
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            },
+                                            onTabChange$Action: function() {
+                                                var eventHandlerContext = callContext.clone();
+                                                controller.onTabChange$Action(model.variables.activeTab1Var, controller.callContext(eventHandlerContext));
+
+                                                ;
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "22",
+                                            alias: "9"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    }))];
                                 })
                             },
-                            _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut), asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.tabRetentionIn)]
+                            _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut), asPrimitiveValue(model.variables.activeTab1Var)]
                         }))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut), asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.tabRetentionIn), asPrimitiveValue(model.variables.isLoadingVar)]
+                _dependencies: [asPrimitiveValue(model.variables.getCFDsTabInfoAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCFDsTabInfoAggr.listOut), asPrimitiveValue(model.variables.activeTab1Var), asPrimitiveValue(model.variables.isLoadingVar)]
             }));
         }
     }
 
     return View;
 });
-define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.CommissionPlans.CFDs.mvc$translationsResources", "PartnersHub.CommissionPlans.controller", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_c9b451e33f0b1f65b4c84c971f12b1d0", "PartnersHub.model$RL_d33f26f168193562dc76ee2abb116b7d", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_CommissionPlans_CFDs_mvc_TranslationsResources, PartnersHub_CommissionPlansController) {
+define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.CommissionPlans.CFDs.mvc$translationsResources", "PartnersHub.CommissionPlans.controller", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "PartnersHub.model$EN_88a0b98029aeb361728476a53c43c460EntityRecord", "PartnersHub.model$RL_9d46439f193576489847e7629b97a4f1", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.model$RC_267bfdc597ed31281a85e5f086e458b7", "PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_CommissionPlans_CFDs_mvc_TranslationsResources, PartnersHub_CommissionPlansController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -591,11 +604,9 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
-                    getCFDsAllPlansByTabID$AggrRefresh: 0,
-                    getCFDsTabInfo$AggrRefresh: 0
+                    getCFDsTabInfo$AggrRefresh: -1
                 };
                 this.dataFetchDependentsGraph = {
-                    getCFDsAllPlansByTabID$AggrRefresh: [],
                     getCFDsTabInfo$AggrRefresh: []
                 };
                 this.shouldSendClientVarsToDataSources = false;
@@ -604,47 +615,6 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
             // Server Actions - Methods
 
             // Aggregates and Data Actions
-            get getCFDsAllPlansByTabID$AggrRefresh() {
-                if (!(this.hasOwnProperty("_getCFDsAllPlansByTabID$AggrRefresh"))) {
-                    this._getCFDsAllPlansByTabID$AggrRefresh = function() {
-                        var innerBody = function(maxRecords, startIndex, callContext) {
-                            var model = this.model;
-                            var controller = this.controller;
-                            var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCFDsAllPlansByTabID", "screenservices/PartnersHub/CommissionPlans/CFDs/ScreenDataSetGetCFDsAllPlansByTabID", "vodODdryIVet8me3wa5N_A", maxRecords, startIndex, function(b) {
-                                model.variables.getCFDsAllPlansByTabIDAggr.dataFetchStatusAttr = b;
-                            }, function(json) {
-                                model.variables.getCFDsAllPlansByTabIDAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCFDsAllPlansByTabIDAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, true);
-                        }.bind(this);
-                        return OS.Logger.startActiveSpan("GetCFDsAllPlansByTabID", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "GetCFDsAllPlansByTabID");
-                                span.setAttribute("outsystems.function.key", "313a7a09-c5d7-400e-b683-1d29d2417ff5");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return innerBody();
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 0);
-
-                    };
-                }
-
-                return this._getCFDsAllPlansByTabID$AggrRefresh;
-            }
-            set getCFDsAllPlansByTabID$AggrRefresh(value) {
-                this._getCFDsAllPlansByTabID$AggrRefresh = value;
-            }
-
             get getCFDsTabInfo$AggrRefresh() {
                 if (!(this.hasOwnProperty("_getCFDsTabInfo$AggrRefresh"))) {
                     this._getCFDsTabInfo$AggrRefresh = function() {
@@ -691,7 +661,7 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = ["getCFDsAllPlansByTabID$AggrRefresh", "getCFDsTabInfo$AggrRefresh"];
+                    this._dataFetchActionNames = ["getCFDsTabInfo$AggrRefresh"];
                 }
 
                 return this._dataFetchActionNames;
@@ -701,6 +671,57 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
             }
 
             // Client Actions - Methods
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "0e73d57f-23bf-40ae-9d42-31a998dafd16");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: HandleRedirectOnLogin
+                                    model.flush();
+                                    return PartnersHubController.default.handleRedirectOnLogin$Action(callContext).then(function(value) {
+                                        handleRedirectOnLoginVar.value = value;
+                                    }).then(function() {
+                                        return OS.Flow.executeSequence(function() {
+                                            if ((!(handleRedirectOnLoginVar.value.isLoggedInOut))) {
+                                                // Execute Action: IFrameLogout
+                                                model.flush();
+                                                return PartnersHubController.default.iFrameLogout$Action(callContext);
+                                            }
+
+                                        });
+                                    });
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__onReady$Action;
+            }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
+            }
+
             get _setIsLoading$Action() {
                 if (!(this.hasOwnProperty("__setIsLoading$Action"))) {
                     this.__setIsLoading$Action = function(valueIn, callContext) {
@@ -739,104 +760,6 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
             }
             set _setIsLoading$Action(value) {
                 this.__setIsLoading$Action = value;
-            }
-
-            get _onInitialize$Action() {
-                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
-                    this.__onInitialize$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "6ac5a606-e04f-4e3f-a03e-fdae488c601c");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnInitialize");
-                                callContext = controller.callContext(callContext);
-                                // ActiveTab1 = TabRetention
-                                model.variables.activeTab1Var = model.variables.tabRetentionIn;
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onInitialize$Action;
-            }
-            set _onInitialize$Action(value) {
-                this.__onInitialize$Action = value;
-            }
-
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "785cbffe-0cfb-4fe6-90c5-021713d537d0");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnReady");
-                                callContext = controller.callContext(callContext);
-                                var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: HandleRedirectOnLogin
-                                    model.flush();
-                                    return PartnersHubController.default.handleRedirectOnLogin$Action(callContext).then(function(value) {
-                                        handleRedirectOnLoginVar.value = value;
-                                    }).then(function() {
-                                        return OS.Flow.executeSequence(function() {
-                                            if ((handleRedirectOnLoginVar.value.isLoggedInOut)) {
-                                                // Refresh Query: GetCFDsTabInfo
-                                                var result = controller.getCFDsTabInfo$AggrRefresh(50, 0, callContext);
-                                                model.flush();
-                                                return result.then(function() {
-                                                    // Refresh Query: GetCFDsAllPlansByTabID
-                                                    var result = controller.getCFDsAllPlansByTabID$AggrRefresh(50, 0, callContext);
-                                                    model.flush();
-                                                    return result;
-                                                });
-                                            } else {
-                                                // Execute Action: IFrameLogout
-                                                model.flush();
-                                                return PartnersHubController.default.iFrameLogout$Action(callContext);
-                                            }
-
-                                        });
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__onReady$Action;
-            }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
             }
 
             get _onTabChange$Action() {
@@ -878,6 +801,46 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
                 this.__onTabChange$Action = value;
             }
 
+            get _onInitialize$Action() {
+                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
+                    this.__onInitialize$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnInitialize");
+                                span.setAttribute("outsystems.function.key", "de713f17-a16d-476a-9a15-ca9a7e60bdf0");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnInitialize");
+                                callContext = controller.callContext(callContext);
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Refresh Query: GetCFDsTabInfo
+                                    var result = controller.getCFDsTabInfo$AggrRefresh(50, 0, callContext);
+                                    model.flush();
+                                    return result;
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__onInitialize$Action;
+            }
+            set _onInitialize$Action(value) {
+                this.__onInitialize$Action = value;
+            }
+
             get _onClickCloseButton$Action() {
                 if (!(this.hasOwnProperty("__onClickCloseButton$Action"))) {
                     this.__onClickCloseButton$Action = function(callContext) {
@@ -916,6 +879,29 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
             }
 
 
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "0e73d57f-23bf-40ae-9d42-31a998dafd16");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
+                }, 0);
+
+            }
+
             setIsLoading$Action(valueIn, callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("SetIsLoading__proxy", function(span) {
@@ -940,53 +926,6 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
 
             }
 
-            onInitialize$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "6ac5a606-e04f-4e3f-a03e-fdae488c601c");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            onReady$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "785cbffe-0cfb-4fe6-90c5-021713d537d0");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
             onTabChange$Action(activeTabIn, callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnTabChange__proxy", function(span) {
@@ -1007,6 +946,29 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
 
                     }
 
+                }, 0);
+
+            }
+
+            onInitialize$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnInitialize");
+                        span.setAttribute("outsystems.function.key", "de713f17-a16d-476a-9a15-ca9a7e60bdf0");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
                 }, 0);
 
             }
@@ -1057,7 +1019,14 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;
@@ -1150,43 +1119,43 @@ define("PartnersHub.CommissionPlans.CFDs.mvc$controller", ["@outsystems/runtime-
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.de-DE", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.es-ES", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.it-IT", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Jeśli Twój plan Turnover nie jest aktywowany, skontaktuj się ze swoim menedżerem konta."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Jeśli Twój plan Turnover nie jest aktywowany, skontaktuj się ze swoim menedżerem konta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDs.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "T_61Yw75U0epGNXs8nNWJw#Value": "Если ваш план Turnover не активирован, свяжитесь с вашим менеджером по аккаунту."
+        "dhXk4Wy3TUOo6Uy1zERZsA#Value": "Если ваш план Turnover не активирован, свяжитесь с вашим менеджером по аккаунту."
     };
 });
 

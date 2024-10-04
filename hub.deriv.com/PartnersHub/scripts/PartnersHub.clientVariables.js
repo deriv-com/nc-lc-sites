@@ -286,6 +286,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("ProductionAppId", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getisLanguageSwitcherEnabledFF() {
+            return clientVarsService.getVariable("isLanguageSwitcherEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, false);
+        }
+
+        setisLanguageSwitcherEnabledFF(value) {
+            return clientVarsService.setVariable("isLanguageSwitcherEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getRealSignupTownCity() {
             return clientVarsService.getVariable("RealSignupTownCity", "PartnersHub", OS.DataTypes.DataTypes.Text);
         }
@@ -308,6 +316,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setSelectedCurrencyCode(value) {
             return clientVarsService.setVariable("SelectedCurrencyCode", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
+        }
+
+        getLanguage() {
+            return clientVarsService.getVariable("Language", "PartnersHub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setLanguage(value) {
+            return clientVarsService.setVariable("Language", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
         getIsDesktop() {
@@ -340,14 +356,6 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setRealSignupEmploymentDetailMobileScreen(value) {
             return clientVarsService.setVariable("RealSignupEmploymentDetailMobileScreen", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
-        }
-
-        getUserId() {
-            return clientVarsService.getVariable("UserId", "PartnersHub", OS.DataTypes.DataTypes.Text);
-        }
-
-        setUserId(value) {
-            return clientVarsService.setVariable("UserId", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
         getRealSignupCompanyWebsite() {
@@ -459,14 +467,15 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 ResetEmail: OS.DataConversion.ServerDataConverter.to(this.getResetEmail(), OS.DataTypes.DataTypes.Email),
                 IsResetEmailSent: OS.DataConversion.ServerDataConverter.to(this.getIsResetEmailSent(), OS.DataTypes.DataTypes.Boolean),
                 ProductionAppId: OS.DataConversion.ServerDataConverter.to(this.getProductionAppId(), OS.DataTypes.DataTypes.Text),
+                isLanguageSwitcherEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisLanguageSwitcherEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupTownCity: OS.DataConversion.ServerDataConverter.to(this.getRealSignupTownCity(), OS.DataTypes.DataTypes.Text),
                 isDateOfBirthVisible: OS.DataConversion.ServerDataConverter.to(this.getisDateOfBirthVisible(), OS.DataTypes.DataTypes.Boolean),
                 SelectedCurrencyCode: OS.DataConversion.ServerDataConverter.to(this.getSelectedCurrencyCode(), OS.DataTypes.DataTypes.Text),
+                Language: OS.DataConversion.ServerDataConverter.to(this.getLanguage(), OS.DataTypes.DataTypes.Text),
                 IsDesktop: OS.DataConversion.ServerDataConverter.to(this.getIsDesktop(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupIDVDocumentNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVDocumentNumber(), OS.DataTypes.DataTypes.Text),
                 RealSignupDateofBirth: OS.DataConversion.ServerDataConverter.to(this.getRealSignupDateofBirth(), OS.DataTypes.DataTypes.Date),
                 RealSignupEmploymentDetailMobileScreen: OS.DataConversion.ServerDataConverter.to(this.getRealSignupEmploymentDetailMobileScreen(), OS.DataTypes.DataTypes.Text),
-                UserId: OS.DataConversion.ServerDataConverter.to(this.getUserId(), OS.DataTypes.DataTypes.Text),
                 RealSignupCompanyWebsite: OS.DataConversion.ServerDataConverter.to(this.getRealSignupCompanyWebsite(), OS.DataTypes.DataTypes.Text),
                 ProductionHostName: OS.DataConversion.ServerDataConverter.to(this.getProductionHostName(), OS.DataTypes.DataTypes.Text),
                 ClientCountry: OS.DataConversion.ServerDataConverter.to(this.getClientCountry(), OS.DataTypes.DataTypes.Text),

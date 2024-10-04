@@ -594,7 +594,8 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$view", ["@o
                         OptionalConfigs: model.getCachedValue(idService.getId("DatePicker.OptionalConfigs"), function() {
                             return function() {
                                 var rec = new OutSystemsUIModel.ST_bc4abb4233d9ce894e855c520a20c76fStructure();
-                                rec.maxDateAttr = OS.BuiltinFunctions.currDate();
+                                rec.initialDateAttr = OS.BuiltinFunctions.addYears(OS.BuiltinFunctions.currDate(), -18);
+                                rec.maxDateAttr = OS.BuiltinFunctions.addYears(OS.BuiltinFunctions.currDate(), -18);
                                 return rec;
                             }();
                         }),

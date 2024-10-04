@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController) {
+define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -13,21 +13,9 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                     this.attr("AccountType", "accountTypeVar", "AccountType", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "demo";
                     }, false),
-                    this.attr("ShouldShowDBot", "shouldShowDBotVar", "ShouldShowDBot", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false),
-                    this.attr("ShouldShowSmartTrader", "shouldShowSmartTraderVar", "ShouldShowSmartTrader", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false),
-                    this.attr("ShouldShowDerivGo", "shouldShowDerivGoVar", "ShouldShowDerivGo", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false),
                     this.attr("DTraderAvailableTradeTypes", "dTraderAvailableTradeTypesVar", "DTraderAvailableTradeTypes", true, false, OS.DataTypes.DataTypes.RecordList, function() {
                         return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
                     }, false, OS.DataTypes.TextList),
-                    this.attr("AuthorizeResponse", "authorizeResponseVar", "AuthorizeResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_8d630435c078369fbe29222c857e96f2Structure());
-                    }, false, tradershubModel.ST_8d630435c078369fbe29222c857e96f2Structure),
                     this.attr("FilteredAccountList", "filteredAccountListVar", "FilteredAccountList", true, false, OS.DataTypes.DataTypes.RecordList, function() {
                         return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_5efabb620fce6e69244e61944ef4417d());
                     }, false, tradershubModel.RL_5efabb620fce6e69244e61944ef4417d),
@@ -37,16 +25,13 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                     this.attr("HasRealAccount", "hasRealAccountVar", "HasRealAccount", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
-                    this.attr("ShouldShowDTrader", "shouldShowDTraderVar", "ShouldShowDTrader", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false),
                     this.attr("SelectedAccountCurrency", "selectedAccountCurrencyVar", "SelectedAccountCurrency", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, false),
                     this.attr("SelectedAccountBalance", "selectedAccountBalanceVar", "SelectedAccountBalance", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, false),
-                    this.attr("IsEmptyPlatformModalVisible", "isEmptyPlatformModalVisibleVar", "IsEmptyPlatformModalVisible", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                    this.attr("ShouldShowWarningPopup", "shouldShowWarningPopupVar", "ShouldShowWarningPopup", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
                     this.attr("IsDisabled", "isDisabledVar", "IsDisabled", true, false, OS.DataTypes.DataTypes.Boolean, function() {
@@ -60,7 +45,10 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                     }, false),
                     this.attr("IsBalanceLoading", "isBalanceLoadingVar", "IsBalanceLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false)
+                    }, false),
+                    this.attr("TradingPlatformProductListingResponse", "tradingPlatformProductListingResponseVar", "TradingPlatformProductListingResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure());
+                    }, false, tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -100,7 +88,7 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view) {
+define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -1304,7 +1292,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             })];
                         }, function() {
                             return [];
-                        })), $if(model.variables.shouldShowDTraderVar, false, this, function() {
+                        })), $if(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr, false, this, function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
@@ -1674,7 +1662,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 name: "RestOfPlatforms"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, $if(model.variables.shouldShowDBotVar, false, this, function() {
+                        }, $if(model.variables.tradingPlatformProductListingResponseVar.shouldShowDBotAttr, false, this, function() {
                             return [React.createElement(OSWidgets.Link, {
                                 enabled: true,
                                 onClick: function() {
@@ -1774,7 +1762,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             }))))];
                         }, function() {
                             return [];
-                        }), $if(model.variables.shouldShowSmartTraderVar, false, this, function() {
+                        }), $if(model.variables.tradingPlatformProductListingResponseVar.shouldShowSmartTraderAttr, false, this, function() {
                             return [React.createElement(OSWidgets.Link, {
                                 enabled: true,
                                 onClick: function() {
@@ -1874,7 +1862,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             }))))];
                         }, function() {
                             return [];
-                        })), $if(model.variables.shouldShowDerivGoVar, false, this, function() {
+                        })), $if(model.variables.tradingPlatformProductListingResponseVar.shouldShowDerivGoAttr, false, this, function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
@@ -2321,7 +2309,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             return [];
                         }), $if((tradershubClientVariables.getAuthToken() === OS.BuiltinFunctions.nullTextIdentifier()), false, this, function() {
                             return [React.createElement(OSWidgets.Popup, {
-                                showPopup: model.variables.isEmptyPlatformModalVisibleVar,
+                                showPopup: model.variables.shouldShowWarningPopupVar,
                                 style: "popup-dialog display-flex flex-direction-column",
                                 _idProps: {
                                     service: idService,
@@ -2366,7 +2354,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.isEmptyPlatformModalVisibleVar), asPrimitiveValue(model.variables.isDerivGoModalVisibleVar), asPrimitiveValue(model.variables.shouldShowDerivGoVar), asPrimitiveValue(model.variables.shouldShowSmartTraderVar), asPrimitiveValue(model.variables.shouldShowDBotVar), asPrimitiveValue(model.variables.isDisabledVar), asPrimitiveValue(model.variables.shouldShowDTraderVar), asPrimitiveValue(model.variables.selectedAccountCurrencyVar), asPrimitiveValue(model.variables.selectedAccountBalanceVar), asPrimitiveValue(model.variables.isBalanceLoadingVar), asPrimitiveValue(tradershubClientVariables.getActiveLoginId()), asPrimitiveValue(model.variables.filteredAccountListVar), asPrimitiveValue(model.variables.isAccountSwitcherOpenVar), asPrimitiveValue(model.variables.hasRealAccountVar), asPrimitiveValue(tradershubClientVariables.getAuthToken()), asPrimitiveValue(model.variables.accountTypeVar)]
+                _dependencies: [asPrimitiveValue(model.variables.shouldShowWarningPopupVar), asPrimitiveValue(model.variables.isDerivGoModalVisibleVar), asPrimitiveValue(model.variables.isDisabledVar), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDerivGoAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowSmartTraderAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDBotAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr), asPrimitiveValue(model.variables.selectedAccountCurrencyVar), asPrimitiveValue(model.variables.selectedAccountBalanceVar), asPrimitiveValue(model.variables.isBalanceLoadingVar), asPrimitiveValue(tradershubClientVariables.getActiveLoginId()), asPrimitiveValue(model.variables.filteredAccountListVar), asPrimitiveValue(model.variables.isAccountSwitcherOpenVar), asPrimitiveValue(model.variables.hasRealAccountVar), asPrimitiveValue(tradershubClientVariables.getAuthToken()), asPrimitiveValue(model.variables.accountTypeVar)]
             }), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
@@ -2635,7 +2623,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
 
     return View;
 });
-define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript1JS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", "tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript1JS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS) {
+define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -2879,9 +2867,9 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var tradingPlatformProductListingVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     return OS.Flow.executeSequence(function() {
-                                        if ((model.variables.isEmptyPlatformModalVisibleVar)) {
-                                            // IsEmptyPlatformModalVisible = False
-                                            model.variables.isEmptyPlatformModalVisibleVar = false;
+                                        if ((model.variables.shouldShowWarningPopupVar)) {
+                                            // ShouldShowWarningPopup = False
+                                            model.variables.shouldShowWarningPopupVar = false;
                                             // ClientCountry = "id"
                                             tradershubClientVariables.setClientCountry("id");
                                             // TempClientCountry = "id"
@@ -2891,21 +2879,13 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                             return tradershubController.default.tradingPlatformProductListing$Action(callContext).then(function(value) {
                                                 tradingPlatformProductListingVar.value = value;
                                             }).then(function() {
-                                                // ShouldShowDBot = TradingPlatformProductListing.ShouldShowDBot
-                                                model.variables.shouldShowDBotVar = tradingPlatformProductListingVar.value.shouldShowDBotOut;
-                                                // ShouldShowSmartTrader = TradingPlatformProductListing.ShouldShowSmartTrader
-                                                model.variables.shouldShowSmartTraderVar = tradingPlatformProductListingVar.value.shouldShowSmartTraderOut;
-                                                // ShouldShowDerivGo = TradingPlatformProductListing.ShouldShowDerivGo
-                                                model.variables.shouldShowDerivGoVar = tradingPlatformProductListingVar.value.shouldShowDerivGoOut;
-                                                // DTraderAvailableTradeTypes = TradingPlatformProductListing.DTraderAvailableTradeTypes
-                                                model.variables.dTraderAvailableTradeTypesVar = tradingPlatformProductListingVar.value.dTraderAvailableTradeTypesOut;
-                                                // ShouldShowDTrader = TradingPlatformProductListing.ShouldShowDTrader
-                                                model.variables.shouldShowDTraderVar = tradingPlatformProductListingVar.value.shouldShowDTraderOut;
+                                                // DTraderAvailableTradeTypes = TradingPlatformProductListingResponse.DTraderAvailableTradeTypes
+                                                model.variables.dTraderAvailableTradeTypesVar = model.variables.tradingPlatformProductListingResponseVar.dTraderAvailableTradeTypesAttr;
                                             });
                                         } else {
                                             // OpenModal
-                                            // IsEmptyPlatformModalVisible = True
-                                            model.variables.isEmptyPlatformModalVisibleVar = true;
+                                            // ShouldShowWarningPopup = True
+                                            model.variables.shouldShowWarningPopupVar = true;
                                         }
 
                                     });
@@ -2981,93 +2961,43 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
                                 var sendGetSettingVar = new OS.DataTypes.VariableHolder();
                                 var tradingPlatformProductListingVar = new OS.DataTypes.VariableHolder();
-                                var javaScript1JSResult = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // IsLoading = True
                                     model.variables.isLoadingVar = true;
-                                    // IsTokenNull
-                                    return OS.Flow.executeSequence(function() {
-                                        if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
-                                            // Execute Action: FilterAccountListAction
-                                            return controller._filterAccountListAction$Action(callContext).then(function() {
-                                                // IsBalanceLoading = True
-                                                model.variables.isBalanceLoadingVar = true;
-                                                // Execute Action: SendAuthorize
-                                                model.flush();
-                                                return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                                    sendAuthorizeVar.value = value;
-                                                });
-                                            }).then(function() {
-                                                // IsBalanceLoading = False
-                                                model.variables.isBalanceLoadingVar = false;
-                                                // Execute Action: SendGetSetting
-                                                model.flush();
-                                                return tradershubController.default.sendGetSetting$Action(callContext).then(function(value) {
-                                                    sendGetSettingVar.value = value;
-                                                });
-                                            }).then(function() {
-                                                // ClientCountry = SendGetSetting.GetSettingResponse.Country_code
-                                                tradershubClientVariables.setClientCountry(sendGetSettingVar.value.getSettingResponseOut.country_codeAttr);
-                                                // TempClientCountry = ""
-                                                tradershubClientVariables.setTempClientCountry("");
-                                                // AuthorizeResponse = SendAuthorize.Response.Authorize
-                                                model.variables.authorizeResponseVar = sendAuthorizeVar.value.responseOut.authorizeAttr;
-                                            });
-                                        }
+                                    // IsBalanceLoading = True
+                                    model.variables.isBalanceLoadingVar = true;
+                                    // Execute Action: SendGetSetting
+                                    model.flush();
+                                    return tradershubController.default.sendGetSetting$Action(callContext).then(function(value) {
+                                        sendGetSettingVar.value = value;
+                                    }).then(function() {
+                                        // ClientCountry = SendGetSetting.GetSettingResponse.Country_code
+                                        tradershubClientVariables.setClientCountry(sendGetSettingVar.value.getSettingResponseOut.country_codeAttr);
+                                    }).then(function() {
+                                        // HasToken
+                                        return OS.Flow.executeSequence(function() {
+                                            if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
+                                                // Execute Action: FilterAccountListAction
+                                                return controller._filterAccountListAction$Action(callContext);
+                                            }
 
+                                        });
                                     }).then(function() {
                                         // Execute Action: TradingPlatformProductListing
                                         model.flush();
                                         return tradershubController.default.tradingPlatformProductListing$Action(callContext).then(function(value) {
                                             tradingPlatformProductListingVar.value = value;
                                         }).then(function() {
-                                            // ShouldShowDBot = TradingPlatformProductListing.ShouldShowDBot
-                                            model.variables.shouldShowDBotVar = tradingPlatformProductListingVar.value.shouldShowDBotOut;
-                                            // ShouldShowSmartTrader = TradingPlatformProductListing.ShouldShowSmartTrader
-                                            model.variables.shouldShowSmartTraderVar = tradingPlatformProductListingVar.value.shouldShowSmartTraderOut;
-                                            // ShouldShowDerivGo = TradingPlatformProductListing.ShouldShowDerivGo
-                                            model.variables.shouldShowDerivGoVar = tradingPlatformProductListingVar.value.shouldShowDerivGoOut;
-                                            // DTraderAvailableTradeTypes = TradingPlatformProductListing.DTraderAvailableTradeTypes
-                                            model.variables.dTraderAvailableTradeTypesVar = tradingPlatformProductListingVar.value.dTraderAvailableTradeTypesOut;
-                                            // ShouldShowDTrader = TradingPlatformProductListing.ShouldShowDTrader
-                                            model.variables.shouldShowDTraderVar = tradingPlatformProductListingVar.value.shouldShowDTraderOut;
-                                            javaScript1JSResult.value = OS.Logger.startActiveSpan("JavaScript1", function(span) {
-                                                if (span) {
-                                                    span.setAttribute("code.function", "JavaScript1");
-                                                    span.setAttribute("outsystems.function.key", "cbe3d8d7-47e3-4312-8677-6838520cdfae");
-                                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                }
-
-                                                try {
-                                                    return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_OnReady_JavaScript1JS, "JavaScript1", "OnReady", {
-                                                        ShouldShowDTrader: OS.DataConversion.JSNodeParamConverter.to(model.variables.shouldShowDTraderVar, OS.DataTypes.DataTypes.Boolean),
-                                                        ShouldShowSmartTrader: OS.DataConversion.JSNodeParamConverter.to(model.variables.shouldShowSmartTraderVar, OS.DataTypes.DataTypes.Boolean),
-                                                        ShouldShowDGo: OS.DataConversion.JSNodeParamConverter.to(model.variables.shouldShowDerivGoVar, OS.DataTypes.DataTypes.Boolean),
-                                                        ShouldShowDBot: OS.DataConversion.JSNodeParamConverter.to(model.variables.shouldShowDBotVar, OS.DataTypes.DataTypes.Boolean),
-                                                        AllOptionsAvailability: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
-                                                    }, function($parameters) {
-                                                        var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.OnReady$javaScript1JSResult"))();
-                                                        jsNodeResult.allOptionsAvailabilityOut = OS.DataConversion.JSNodeParamConverter.from($parameters.AllOptionsAvailability, OS.DataTypes.DataTypes.Boolean);
-                                                        return jsNodeResult;
-                                                    }, {}, {});
-                                                } finally {
-                                                    if (span) {
-                                                        span.end();
-                                                    }
-
-                                                }
-
-                                            }, 1);
-                                            // IsEmptyPlatformModalVisible = If
-                                            model.variables.isEmptyPlatformModalVisibleVar = ((javaScript1JSResult.value.allOptionsAvailabilityOut) ? (false) : (true));
-                                            // IsLoadingDone
+                                            // TradingPlatformProductListingResponse = TradingPlatformProductListing.Response
+                                            model.variables.tradingPlatformProductListingResponseVar = tradingPlatformProductListingVar.value.responseOut;
+                                            // ShouldShowWarningPopup = If
+                                            model.variables.shouldShowWarningPopupVar = ((model.variables.tradingPlatformProductListingResponseVar.isTradingAllowedAttr) ? (false) : (true));
                                             // IsLoading = False
                                             model.variables.isLoadingVar = false;
+                                            // IsBalanceLoading = False
+                                            model.variables.isBalanceLoadingVar = false;
                                         });
                                     });
                                 });
@@ -4314,15 +4244,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 return "";
             }
         }]);
-        Controller.registerVariableGroupType("tradershub.MainFlow.Options.OnReady$javaScript1JSResult", [{
-            name: "AllOptionsAvailability",
-            attrName: "allOptionsAvailabilityOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Boolean,
-            defaultValue: function() {
-                return false;
-            }
-        }]);
         Controller.registerVariableGroupType("tradershub.MainFlow.Options.SmarttraderRedirection$generateRedirectURLJSResult", [{
             name: "SmartTraderURL",
             attrName: "smartTraderURLOut",
@@ -4389,12 +4310,6 @@ define("tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAcco
 
         $parameters.Token = data[VRTCAccount]?.token;
 
-    };
-});
-
-define("tradershub.MainFlow.Options.mvc$controller.OnReady.JavaScript1JS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        $parameters.AllOptionsAvailability = $parameters.ShouldShowDGo || $parameters.ShouldShowDTrader || $parameters.ShouldShowDBot || $parameters.ShouldShowSmartTrader;
     };
 });
 

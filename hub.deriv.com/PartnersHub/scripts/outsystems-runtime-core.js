@@ -2642,8 +2642,8 @@
             return this.settingExists(e) ? null !== (t = Number(this.settingsValue[e])) && void 0 !== t ? t : 0 : (fi(ui, `Value for setting ${e} was not found.`), 0);
         }
         readBool(e) {
-            var t, n;
-            return this.settingExists(e) ? null !== (n = "true" === (null === (t = this.settingsValue[e]) || void 0 === t ? void 0 : t.toLowerCase())) && void 0 !== n ? n : ci : (fi(ui, `Value for setting ${e} was not found.`), ci);
+            var t;
+            return this.settingExists(e) ? "true" === (null !== (t = this.settingsValue[e]) && void 0 !== t ? t : "false").toLowerCase() : (fi(ui, `Value for setting ${e} was not found.`), ci);
         }
         readLogLevel() {
             const e = this.settingsValue.LogLevel,
@@ -16902,7 +16902,7 @@
             }(n, a) : void km("Variable Type didn't match any case. " + typeof n);
         };
     }(qm || (qm = {}));
-    const Gm = "6.19.2";
+    const Gm = "6.19.3";
     Ue("client-runtime-core", Gm);
     ("undefined" != typeof window ? window : global).OutSystemsDebugger = new class extends jm {
         callDebugger(e) {
@@ -16910,6 +16910,7 @@
                 n = t.callContextId;
             try {
                 t.callContextId = e;
+                debugger;
             } finally {
                 t.callContextId = n;
             }
@@ -16940,6 +16941,6 @@
             __proto__: null
         });
     Se();
-    const Ym = _exports.Version = "6.19.2";
+    const Ym = _exports.Version = "6.19.3";
     Ue("client-runtime-core", Ym);
 });

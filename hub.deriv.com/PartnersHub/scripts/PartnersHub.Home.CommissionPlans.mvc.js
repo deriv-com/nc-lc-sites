@@ -176,7 +176,7 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "section-subtitle",
-                text: [$text(getTranslation("gFPe6yylxEaejJx_2HySgQ#Value", "CFDs"))],
+                text: [$text(getTranslation("gFPe6yylxEaejJx_2HySgQ#Value", "CFDs trading"))],
                 _idProps: {
                     service: idService,
                     uuid: "6"
@@ -316,13 +316,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                         }, React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                            },
                             gridProperties: {
-                                classes: "OSInline",
-                                width: "100%"
+                                classes: "OSInline"
                             },
+                            style: "options-trading-container",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -400,13 +397,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                         }))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                            },
                             gridProperties: {
-                                classes: "OSInline",
-                                width: "100%"
+                                classes: "OSInline"
                             },
+                            style: "options-trading-container",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -496,13 +490,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                         }, React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                            },
                             gridProperties: {
-                                classes: "OSInline",
-                                width: "100%"
+                                classes: "OSInline"
                             },
+                            style: "options-trading-container",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -580,13 +571,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                         }))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                            },
                             gridProperties: {
-                                classes: "OSInline",
-                                width: "100%"
+                                classes: "OSInline"
                             },
+                            style: "options-trading-container",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -666,12 +654,13 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
+                                Navigation: PartnersHubModel.staticEntities.carouselNavigation.dots,
                                 OptionalConfigs: model.getCachedValue(idService.getId("+UgS1hIjN0K9wz4MCX1UUQ.OptionalConfigs"), function() {
                                     return function() {
                                         var rec = new OutSystemsUIModel.ST_7d99fd1de65649f174aff6854b052539Structure();
                                         rec.autoPlayAttr = false;
                                         rec.loopAttr = false;
-                                        rec.itemsGapAttr = "8";
+                                        rec.itemsGapAttr = "8px";
                                         return rec;
                                     }();
                                 })
@@ -695,13 +684,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                     return [React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
-                                        extendedProperties: {
-                                            style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                                        },
                                         gridProperties: {
-                                            classes: "OSInline",
-                                            width: "228px"
+                                            classes: "OSInline"
                                         },
+                                        style: "options-trading-container",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
@@ -769,14 +755,10 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
                                     }))))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
-                                        extendedProperties: {
-                                            style: "border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; padding: 16px;"
-                                        },
                                         gridProperties: {
-                                            classes: "OSInline",
-                                            width: "228px",
-                                            marginLeft: "8px"
+                                            classes: "OSInline"
                                         },
+                                        style: "options-trading-container",
                                         visible: true,
                                         _idProps: {
                                             service: idService,

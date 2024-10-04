@@ -463,5 +463,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
 define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller.OnReady.GetIconJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         $parameters.Icon = $actions.GetCurrencyIcon($parameters.Currency, $parameters.CurrencyList)?.CurrencyIcon;
+
+        console.log("$parameters.Currency")
     };
 });

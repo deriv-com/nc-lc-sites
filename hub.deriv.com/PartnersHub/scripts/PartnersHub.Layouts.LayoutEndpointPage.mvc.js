@@ -304,6 +304,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
+                    BorderColor: "#FF444F",
                     title: "Cancel",
                     height: "40px",
                     Width: "100%",
@@ -620,7 +621,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
             }, React.createElement(OSWidgets.Placeholder, {
                 align: /*Default*/ 0,
                 content: _this.props.placeholders.mainContent,
-                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1", "dashboard"),
+                style: "dashboard",
                 _idProps: {
                     service: idService,
                     name: "MainContent"
@@ -1287,7 +1288,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnClickLogout.Java
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Dashboard",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Anmelden",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Abmelden",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1299,7 +1299,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.es-ES", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Panel de control",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Iniciar sesión",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Cerrar sesión",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1311,7 +1310,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.es-ES",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.fr-FR", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Tableau de bord",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Se connecter",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Se déconnecter",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1323,7 +1321,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.fr-FR",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.it-IT", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Cruscotto",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Accedi",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Disconnettersi",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1335,7 +1332,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.it-IT",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pl-PL", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Panel sterowania",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Zaloguj się",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Wyloguj się",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1347,7 +1343,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pl-PL",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pt-PT", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Painel de controle",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Iniciar sessão",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Sair",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
@@ -1359,7 +1354,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pt-PT",
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ru-RU", [], function() {
     return {
         "GEy4JXgKwEmTE4e9nNrJBw#Value.3343801.1": "main",
-        "0EZftxQS8kG6pOMo6NM6Gg#Style.-1047860588.1": "Панель управления",
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "Войти",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Выйти",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",

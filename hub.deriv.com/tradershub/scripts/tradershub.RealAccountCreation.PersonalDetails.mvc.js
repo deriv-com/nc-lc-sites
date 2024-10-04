@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController) {
     var OS = OSRuntimeCore;
 
 
@@ -48,7 +48,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -599,7 +599,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
 
     return View;
 });
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -846,10 +846,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                             try {
                                 controller.ensureControllerAlive("SaveOnClick");
                                 callContext = controller.callContext(callContext);
-                                var validateJSResult = new OS.DataTypes.VariableHolder();
-                                var jSONDeserializePersonalDetailsValidFieldsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_3a6e5c84ccd1db0dd256408ff639cec5Structure))());
-                                var jSONDeserializePersonalDetailsValidationErrorVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_89997516e5fa7eccf341304acb63651bStructure))());
-                                validateJSResult.value = OS.Logger.startActiveSpan("Validate", function(span) {
+                                OS.Logger.startActiveSpan("Validate", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Validate");
                                         span.setAttribute("outsystems.function.key", "d6e47b07-5527-488c-956b-6461b8200a89");
@@ -860,17 +857,13 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
 
                                     try {
                                         return controller.safeExecuteJSNode(tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS, "Validate", "SaveOnClick", {
+                                            InputDateOfBirthWidgetId: OS.DataConversion.JSNodeParamConverter.to(idService.getId("Input_Date"), OS.DataTypes.DataTypes.Text),
                                             DateOfBirth: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupDateofBirth(), OS.DataTypes.DataTypes.Text),
+                                            InputFirstNameWidgetId: OS.DataConversion.JSNodeParamConverter.to(idService.getId("Input_FirstName"), OS.DataTypes.DataTypes.Text),
                                             FirstName: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupFirstName(), OS.DataTypes.DataTypes.Text),
                                             LastName: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupLastName(), OS.DataTypes.DataTypes.Text),
-                                            ValidationErrors: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                            ValidFields: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {
-                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreation.PersonalDetails.SaveOnClick$validateJSResult"))();
-                                            jsNodeResult.validationErrorsOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ValidationErrors, OS.DataTypes.DataTypes.Text);
-                                            jsNodeResult.validFieldsOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ValidFields, OS.DataTypes.DataTypes.Text);
-                                            return jsNodeResult;
-                                        }, {}, {});
+                                            InputLastNameWidgetId: OS.DataConversion.JSNodeParamConverter.to(idService.getId("Input_LastName"), OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
                                     } finally {
                                         if (span) {
                                             span.end();
@@ -879,26 +872,6 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                                     }
 
                                 }, 1);
-                                // JSON Deserialize: JSONDeserializePersonalDetailsValidationError
-                                jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(validateJSResult.value.validationErrorsOut, tradershubModel.ST_89997516e5fa7eccf341304acb63651bStructure, false);
-                                // JSON Deserialize: JSONDeserializePersonalDetailsValidFields
-                                jSONDeserializePersonalDetailsValidFieldsVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(validateJSResult.value.validFieldsOut, tradershubModel.ST_3a6e5c84ccd1db0dd256408ff639cec5Structure, false);
-                                // Input_Date.Valid = JSONDeserializePersonalDetailsValidFields.Data.DateOfBirth
-                                model.widgets.get(idService.getId("Input_Date")).validAttr = jSONDeserializePersonalDetailsValidFieldsVar.value.dataOut.dateOfBirthAttr;
-                                // Input_Date.ValidationMessage = JSONDeserializePersonalDetailsValidationError.Data.DateOfBirth
-                                model.widgets.get(idService.getId("Input_Date")).validationMessageAttr = jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut.dateOfBirthAttr;
-                                // Input_FirstName.Valid = JSONDeserializePersonalDetailsValidFields.Data.FirstName
-                                model.widgets.get(idService.getId("Input_FirstName")).validAttr = jSONDeserializePersonalDetailsValidFieldsVar.value.dataOut.firstNameAttr;
-                                // Input_FirstName.ValidationMessage = JSONDeserializePersonalDetailsValidationError.Data.FirstName
-                                model.widgets.get(idService.getId("Input_FirstName")).validationMessageAttr = jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut.firstNameAttr;
-                                // Input_LastName.Valid = JSONDeserializePersonalDetailsValidFields.Data.LastName
-                                model.widgets.get(idService.getId("Input_LastName")).validAttr = jSONDeserializePersonalDetailsValidFieldsVar.value.dataOut.lastNameAttr;
-                                // Input_LastName.ValidationMessage = JSONDeserializePersonalDetailsValidationError.Data.LastName
-                                model.widgets.get(idService.getId("Input_LastName")).validationMessageAttr = jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut.lastNameAttr;
-                                // Input_FirstName.Valid = JSONDeserializePersonalDetailsValidFields.Data.FirstName
-                                model.widgets.get(idService.getId("Input_FirstName")).validAttr = jSONDeserializePersonalDetailsValidFieldsVar.value.dataOut.firstNameAttr;
-                                // Input_FirstName.ValidationMessage = JSONDeserializePersonalDetailsValidationError.Data.FirstName
-                                model.widgets.get(idService.getId("Input_FirstName")).validationMessageAttr = jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut.firstNameAttr;
                                 if ((model.widgets.get(idService.getId("DesktopForm")).validAttr)) {
                                     OS.Logger.startActiveSpan("RudderStack", function(span) {
                                         if (span) {
@@ -1166,23 +1139,6 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                 return "";
             }
         }]);
-        Controller.registerVariableGroupType("tradershub.RealAccountCreation.PersonalDetails.SaveOnClick$validateJSResult", [{
-            name: "ValidationErrors",
-            attrName: "validationErrorsOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }, {
-            name: "ValidFields",
-            attrName: "validFieldsOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
@@ -1233,7 +1189,8 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.In
                 defaultDate: $parameters.Date,
                 onChange: function(selectedDate) {
                     $actions.DatePickerOnSelected(formatDate(selectedDate[0]))
-                }
+                },
+                allowInput: true
             });
         }
     };
@@ -1320,14 +1277,13 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClic
                     }
                 ),
         });
-
         const {
             errors,
             validFields
         } = validate(validationSchema, payload)
 
-        $parameters.ValidationErrors = JSON.stringify(errors)
-
-        $parameters.ValidFields = JSON.stringify(validFields)
+        errors.FirstName && $public.Validation.setWidgetAsInvalid($parameters.InputFirstNameWidgetId, errors.FirstName)
+        errors.LastName && $public.Validation.setWidgetAsInvalid($parameters.InputLastNameWidgetId, errors.LastName)
+        errors.DateOfBirth && $public.Validation.setWidgetAsInvalid($parameters.InputDateOfBirthWidgetId, errors.DateOfBirth)
     };
 });

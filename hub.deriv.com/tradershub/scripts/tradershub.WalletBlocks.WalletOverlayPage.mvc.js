@@ -1,4 +1,4 @@
-define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.WalletBlocks.OverlayTitleBar.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershub_WalletBlocks_OverlayTitleBar_mvcModel, tradershub_WalletBlocks_WalletCashierHeader_mvcModel, tradershub_Common_LoaderBlock_mvcModel) {
+define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.Utilities.Separator.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUI_Utilities_Separator_mvcModel, tradershub_WalletBlocks_WalletCashierHeader_mvcModel, tradershub_Common_LoaderBlock_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -11,6 +11,18 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
                         return false;
                     }, false),
                     this.attr("_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("HideBackButton", "hideBackButtonIn", "HideBackButton", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_hideBackButtonInDataFetchStatus", "_hideBackButtonInDataFetchStatus", "_hideBackButtonInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("PageTitle", "pageTitleIn", "PageTitle", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("_pageTitleInDataFetchStatus", "_pageTitleInDataFetchStatus", "_pageTitleInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -41,7 +53,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = ((tradershub_WalletBlocks_OverlayTitleBar_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletCashierHeader_mvcModel.hasValidationWidgets) || tradershub_Common_LoaderBlock_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((OutSystemsUI_Utilities_Separator_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletCashierHeader_mvcModel.hasValidationWidgets) || tradershub_Common_LoaderBlock_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -55,6 +67,22 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
 
             }
 
+            if ("HideBackButton" in inputs) {
+                this.variables.hideBackButtonIn = inputs.HideBackButton;
+                if ("_hideBackButtonInDataFetchStatus" in inputs) {
+                    this.variables._hideBackButtonInDataFetchStatus = inputs._hideBackButtonInDataFetchStatus;
+                }
+
+            }
+
+            if ("PageTitle" in inputs) {
+                this.variables.pageTitleIn = inputs.PageTitle;
+                if ("_pageTitleInDataFetchStatus" in inputs) {
+                    this.variables._pageTitleInDataFetchStatus = inputs._pageTitleInDataFetchStatus;
+                }
+
+            }
+
         }
 
     }
@@ -63,7 +91,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.OverlayTitleBar.mvc$view", "tradershub.WalletBlocks.WalletCashierHeader.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletBlocks_WalletOverlayPage_mvc_model, tradershub_WalletBlocks_WalletOverlayPage_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_WalletBlocks_OverlayTitleBar_mvc_view, tradershub_WalletBlocks_WalletCashierHeader_mvc_view, tradershub_Common_LoaderBlock_mvc_view) {
+define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.WalletBlocks.WalletCashierHeader.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletBlocks_WalletOverlayPage_mvc_model, tradershub_WalletBlocks_WalletOverlayPage_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Utilities_Separator_mvc_view, tradershub_WalletBlocks_WalletCashierHeader_mvc_view, tradershub_Common_LoaderBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -94,7 +122,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
         }
 
         static getBlocks() {
-            return [tradershub_WalletBlocks_OverlayTitleBar_mvc_view, tradershub_WalletBlocks_WalletCashierHeader_mvc_view, tradershub_Common_LoaderBlock_mvc_view];
+            return [OutSystemsUI_Utilities_Separator_mvc_view, tradershub_WalletBlocks_WalletCashierHeader_mvc_view, tradershub_Common_LoaderBlock_mvc_view];
         }
 
         get modelFactory() {
@@ -134,7 +162,89 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     name: "PageWrapper"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(tradershub_WalletBlocks_OverlayTitleBar_mvc_view, {
+            }, React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: false,
+                extendedProperties: {
+                    style: "border-color: #F1F3F5; border-style: solid; border-width: 0px; margin-bottom: 0px; margin-right: 0px; padding: 0px;"
+                },
+                gridProperties: {
+                    marginLeft: "px"
+                },
+                style: model.getCachedValue(idService.getId("TitleWrapper.Style"), function() {
+                    return ("display-flex align-items-center justify-content-space-between padding-y-xs" + ((!(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut)) ? (" margin-x-base") : ("")));
+                }),
+                visible: true,
+                _idProps: {
+                    service: idService,
+                    name: "TitleWrapper"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            }, $if(model.variables.hideBackButtonIn, false, this, function() {
+                return [];
+            }, function() {
+                return [React.createElement(OSWidgets.Image, {
+                    extendedProperties: {
+                        style: "font-size: 16px;"
+                    },
+                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.backicon2.png"),
+                    type: /*Static*/ 0,
+                    _idProps: {
+                        service: idService,
+                        name: "BackBtn"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }), React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: false,
+                gridProperties: {
+                    classes: "ThemeGrid_Width1 ThemeGrid_MarginGutter"
+                },
+                style: "flex-1",
+                visible: true,
+                _idProps: {
+                    service: idService,
+                    name: "TitleContainer"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            }, React.createElement(OSWidgets.Expression, {
+                extendedProperties: {
+                    style: "font-size: 18px; font-weight: bold;"
+                },
+                value: model.variables.pageTitleIn,
+                _idProps: {
+                    service: idService,
+                    name: "OverlayTItle"
+                },
+                _widgetRecordProvider: widgetsRecordProvider,
+                value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._pageTitleInDataFetchStatus)
+            })), React.createElement(OSWidgets.Image, {
+                extendedProperties: {
+                    style: "font-size: 16px; padding: 0px 6px 0px 0px;"
+                },
+                gridProperties: {
+                    classes: "ThemeGrid_MarginGutter"
+                },
+                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.close.png"),
+                type: /*Static*/ 0,
+                _idProps: {
+                    service: idService,
+                    name: "CloseBtn"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            })), React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: false,
+                visible: model.getCachedValue(idService.getId("wo5j5RwbrUiheA2qJWIo1g.Visible"), function() {
+                    return !(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut);
+                }),
+                _idProps: {
+                    service: idService,
+                    uuid: "6"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");
                 },
@@ -142,7 +252,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    Title: "Deposit"
+                    Space: tradershubModel.staticEntities.space.small
                 },
                 events: {
                     _handleError: function(ex) {
@@ -154,12 +264,12 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "1",
+                    uuid: "7",
                     alias: "1"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 _dependencies: []
-            }), React.createElement(OSWidgets.Container, {
+            })), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
                 extendedProperties: {
@@ -190,7 +300,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "3",
+                    uuid: "9",
                     alias: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
@@ -214,7 +324,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     },
                     _idProps: {
                         service: idService,
-                        uuid: "4",
+                        uuid: "10",
                         alias: "3"
                     },
                     _widgetRecordProvider: widgetsRecordProvider,

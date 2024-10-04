@@ -27,7 +27,8 @@ define("PartnersHub.Developer.Endpoint.mvc$model", ["@outsystems/runtime-core-js
             return {
                 Form1: OS.Model.ValidationWidgetRecord,
                 Server: OS.Model.ValidationWidgetRecord,
-                OAuthAppID: OS.Model.ValidationWidgetRecord
+                OAuthAppID: OS.Model.ValidationWidgetRecord,
+                LanguageSwitcherToggle: OS.Model.ValidationWidgetRecord
             };
         }
 
@@ -187,7 +188,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "4"
+                                name: "Server2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -240,7 +241,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "8"
+                                name: "AppID"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Label, {
@@ -342,7 +343,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "15"
+                                name: "SubmitButtons"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Button, {
@@ -402,10 +403,53 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                                 uuid: "19"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })))))];
+                        }))), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "align-items: center; display: flex;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "FeatureFlag"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Label, {
+                            gridProperties: {
+                                classes: "OSFillParent"
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "21"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            text: ["Language Switcher"],
+                            _idProps: {
+                                service: idService,
+                                name: "LanguageSwitcherLabel"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Switch, {
+                            _validationProps: {
+                                validationService: validationService,
+                                validationParentId: idService.getId("Form1")
+                            },
+                            enabled: true,
+                            style: "switch",
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Boolean, PartnersHubClientVariables.getisLanguageSwitcherEnabledFF(), function(value) {
+                                PartnersHubClientVariables.setisLanguageSwitcherEnabledFF(value);
+                            }),
+                            _idProps: {
+                                service: idService,
+                                name: "LanguageSwitcherToggle"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.oAuthAppID2Var), asPrimitiveValue(model.variables.serverURLVar)]
+                _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()), asPrimitiveValue(model.variables.oAuthAppID2Var), asPrimitiveValue(model.variables.serverURLVar)]
             }));
         }
     }
@@ -441,6 +485,43 @@ define("PartnersHub.Developer.Endpoint.mvc$controller", ["@outsystems/runtime-co
             }
 
             // Client Actions - Methods
+            get _toggleLanguageSwitcherFF$Action() {
+                if (!(this.hasOwnProperty("__toggleLanguageSwitcherFF$Action"))) {
+                    this.__toggleLanguageSwitcherFF$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("ToggleLanguageSwitcherFF", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "ToggleLanguageSwitcherFF");
+                                span.setAttribute("outsystems.function.key", "037882ac-72e7-47fb-8d21-680682985b5d");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("ToggleLanguageSwitcherFF");
+                                callContext = controller.callContext(callContext);
+                                // isLanguageSwitcherEnabledFF = notisLanguageSwitcherEnabledFF
+                                PartnersHubClientVariables.setisLanguageSwitcherEnabledFF(!(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()));
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__toggleLanguageSwitcherFF$Action;
+            }
+            set _toggleLanguageSwitcherFF$Action(value) {
+                this.__toggleLanguageSwitcherFF$Action = value;
+            }
+
             get _resetEndpoint$Action() {
                 if (!(this.hasOwnProperty("__resetEndpoint$Action"))) {
                     this.__resetEndpoint$Action = function(callContext) {
@@ -659,6 +740,30 @@ define("PartnersHub.Developer.Endpoint.mvc$controller", ["@outsystems/runtime-co
                 this.__onClick$Action = value;
             }
 
+
+            toggleLanguageSwitcherFF$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("ToggleLanguageSwitcherFF__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "ToggleLanguageSwitcherFF");
+                        span.setAttribute("outsystems.function.key", "037882ac-72e7-47fb-8d21-680682985b5d");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._toggleLanguageSwitcherFF$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
             resetEndpoint$Action(callContext) {
                 var controller = this.controller;

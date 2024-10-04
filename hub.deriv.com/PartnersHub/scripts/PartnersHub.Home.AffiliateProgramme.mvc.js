@@ -165,7 +165,7 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$view", ["@outsystems/runtime-cor
                 extendedProperties: {
                     style: "color: #222; font-size: 20px;"
                 },
-                text: [$text(getTranslation("T7D85Ou3vE61yWtLCd1Qjw#Value", "Video library"))],
+                text: [$text(getTranslation("T7D85Ou3vE61yWtLCd1Qjw#Value", "Learn more on YouTube"))],
                 _idProps: {
                     service: idService,
                     uuid: "2"
@@ -203,6 +203,8 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$view", ["@outsystems/runtime-cor
                         return function() {
                             var rec = new OutSystemsUIModel.ST_7d99fd1de65649f174aff6854b052539Structure();
                             rec.autoPlayAttr = false;
+                            rec.paddingAttr = "16px";
+                            rec.itemsGapAttr = "16px";
                             return rec;
                         }();
                     })
@@ -256,7 +258,7 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$view", ["@outsystems/runtime-cor
 
                                             ;
                                         },
-                                        style: "list-item",
+                                        style: "list-item custom-ph-list-item",
                                         triggerActionOnFullSwipeLeft: true,
                                         triggerActionOnFullSwipeRight: true,
                                         _idProps: {
@@ -841,7 +843,7 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$controller.OnSlideMove.AttachCli
                     }
                 })
             }
-        }
+        };
     };
 });
 

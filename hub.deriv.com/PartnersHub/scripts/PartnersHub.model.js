@@ -367,62 +367,6 @@ define("PartnersHub.model$RL_016ebe8f15c3060e53dd56f2fea28791", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$ST_01d741f79542148df9ffe6146152c5f0Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_01d741f79542148df9ffe6146152c5f0StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Landing_company", "landing_companyAttr", "landing_company", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_01d741f79542148df9ffe6146152c5f0Structure(new ST_01d741f79542148df9ffe6146152c5f0Structure.RecordClass({
-                    landing_companyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.ST_01d741f79542148df9ffe6146152c5f0Structure = ST_01d741f79542148df9ffe6146152c5f0StructureInner;
-
-        var ST_01d741f79542148df9ffe6146152c5f0Structure = ST_01d741f79542148df9ffe6146152c5f0StructureInner;
-        ST_01d741f79542148df9ffe6146152c5f0Structure.init();
-    }
-});
-
-define("PartnersHub.model$RC_0204bb6c63da4390a2e7b2aad750f108", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_01d741f79542148df9ffe6146152c5f0Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_0204bb6c63da4390a2e7b2aad750f108Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("LandingCompanyPayload", "landingCompanyPayloadAttr", "LandingCompanyPayload", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_01d741f79542148df9ffe6146152c5f0Structure());
-                    }, true, PartnersHubModel.ST_01d741f79542148df9ffe6146152c5f0Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_0204bb6c63da4390a2e7b2aad750f108(new RC_0204bb6c63da4390a2e7b2aad750f108.RecordClass({
-                    landingCompanyPayloadAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_0204bb6c63da4390a2e7b2aad750f108 = RC_0204bb6c63da4390a2e7b2aad750f108Inner;
-
-        RC_0204bb6c63da4390a2e7b2aad750f108Inner._isAnonymousRecord = true;
-        RC_0204bb6c63da4390a2e7b2aad750f108Inner.UniqueId = "0204bb6c-63da-4390-a2e7-b2aad750f108";
-        var RC_0204bb6c63da4390a2e7b2aad750f108 = RC_0204bb6c63da4390a2e7b2aad750f108Inner;
-        RC_0204bb6c63da4390a2e7b2aad750f108.init();
-    }
-});
-
 define("PartnersHub.model$RC_9589ecc0629788c2aca6b47bcbae782c", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_bc915b2fa9297a72fb4d1b227ebe2573EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_9589ecc0629788c2aca6b47bcbae782cInner extends
@@ -646,104 +590,6 @@ define("PartnersHub.model$RL_02cff45c25b99caaf51dba44a0e0b754", ["exports", "@ou
     }
 
     PartnersHubModel.RL_02cff45c25b99caaf51dba44a0e0b754 = RL_02cff45c25b99caaf51dba44a0e0b754;
-
-});
-
-define("PartnersHub.model$ST_c662afc4a55685596fd9199a04b718f1Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_c662afc4a55685596fd9199a04b718f1StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Text", "textAttr", "text", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Value", "valueAttr", "value", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure = ST_c662afc4a55685596fd9199a04b718f1StructureInner;
-
-        var ST_c662afc4a55685596fd9199a04b718f1Structure = ST_c662afc4a55685596fd9199a04b718f1StructureInner;
-        ST_c662afc4a55685596fd9199a04b718f1Structure.init();
-    }
-});
-
-define("PartnersHub.model$ST_9f22b560a90438747cb673cbedddc4d7Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_c662afc4a55685596fd9199a04b718f1Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_9f22b560a90438747cb673cbedddc4d7StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Type", "typeAttr", "type", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("AdditionalProperties", "additionalPropertiesAttr", "additionalProperties", false, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, true),
-                    this.attr("Properties", "propertiesAttr", "properties", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure());
-                    }, true, PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure),
-                    this.attr("Description", "descriptionAttr", "description", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure = ST_9f22b560a90438747cb673cbedddc4d7StructureInner;
-
-        var ST_9f22b560a90438747cb673cbedddc4d7Structure = ST_9f22b560a90438747cb673cbedddc4d7StructureInner;
-        ST_9f22b560a90438747cb673cbedddc4d7Structure.init();
-    }
-});
-
-define("PartnersHub.model$ST_e79f2a411ab40cb74322f1790f687b01Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f22b560a90438747cb673cbedddc4d7Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_e79f2a411ab40cb74322f1790f687b01StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Title", "titleAttr", "title", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Description", "descriptionAttr", "description", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Type", "typeAttr", "type", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Items", "itemsAttr", "items", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure());
-                    }, true, PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_e79f2a411ab40cb74322f1790f687b01Structure = ST_e79f2a411ab40cb74322f1790f687b01StructureInner;
-
-        var ST_e79f2a411ab40cb74322f1790f687b01Structure = ST_e79f2a411ab40cb74322f1790f687b01StructureInner;
-        ST_e79f2a411ab40cb74322f1790f687b01Structure.init();
-    }
-});
-
-define("PartnersHub.model$RL_02dfc236270d2126915e5a0b08f02757", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_e79f2a411ab40cb74322f1790f687b01Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_02dfc236270d2126915e5a0b08f02757 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_e79f2a411ab40cb74322f1790f687b01Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_02dfc236270d2126915e5a0b08f02757 = RL_02dfc236270d2126915e5a0b08f02757;
 
 });
 
@@ -2245,33 +2091,6 @@ define("PartnersHub.model$RL_08493c76d04a33db201691368d61ec98", ["exports", "@ou
 
     PartnersHubModel.RL_08493c76d04a33db201691368d61ec98 = RL_08493c76d04a33db201691368d61ec98;
 
-});
-
-define("PartnersHub.model$ST_0851aaf31b0e92891278c4a514aa29cdStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_0851aaf31b0e92891278c4a514aa29cdStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("legal_allowed_currencies", "legal_allowed_currenciesAttr", "legal_allowed_currencies", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_0851aaf31b0e92891278c4a514aa29cdStructure(new ST_0851aaf31b0e92891278c4a514aa29cdStructure.RecordClass({
-                    legal_allowed_currenciesAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure = ST_0851aaf31b0e92891278c4a514aa29cdStructureInner;
-
-        var ST_0851aaf31b0e92891278c4a514aa29cdStructure = ST_0851aaf31b0e92891278c4a514aa29cdStructureInner;
-        ST_0851aaf31b0e92891278c4a514aa29cdStructure.init();
-    }
 });
 
 define("PartnersHub.model$RL_085f95fe6d8c0993316da931c0bd457a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_c4a5ea0056d7d4d64b0630a9fc26f60bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
@@ -4539,76 +4358,6 @@ define("PartnersHub.model$RL_1a5cf00c92b0ec1b5c534af85d952dbc", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$ST_5997443eb5326ff1de640a7b3b2688f0Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0851aaf31b0e92891278c4a514aa29cdStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_5997443eb5326ff1de640a7b3b2688f0StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("gaming_company", "gaming_companyAttr", "gaming_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure());
-                    }, true, PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_5997443eb5326ff1de640a7b3b2688f0Structure(new ST_5997443eb5326ff1de640a7b3b2688f0Structure.RecordClass({
-                    gaming_companyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure = ST_5997443eb5326ff1de640a7b3b2688f0StructureInner;
-
-        var ST_5997443eb5326ff1de640a7b3b2688f0Structure = ST_5997443eb5326ff1de640a7b3b2688f0StructureInner;
-        ST_5997443eb5326ff1de640a7b3b2688f0Structure.init();
-    }
-});
-
-define("PartnersHub.model$RC_bca3b469c12fb16efadfb852197260bd", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_5997443eb5326ff1de640a7b3b2688f0Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_bca3b469c12fb16efadfb852197260bdInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("landing_company", "landing_companyAttr", "landing_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure());
-                    }, true, PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_bca3b469c12fb16efadfb852197260bd(new RC_bca3b469c12fb16efadfb852197260bd.RecordClass({
-                    landing_companyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_bca3b469c12fb16efadfb852197260bd = RC_bca3b469c12fb16efadfb852197260bdInner;
-
-        RC_bca3b469c12fb16efadfb852197260bdInner._isAnonymousRecord = true;
-        RC_bca3b469c12fb16efadfb852197260bdInner.UniqueId = "bca3b469-c12f-b16e-fadf-b852197260bd";
-        var RC_bca3b469c12fb16efadfb852197260bd = RC_bca3b469c12fb16efadfb852197260bdInner;
-        RC_bca3b469c12fb16efadfb852197260bd.init();
-    }
-});
-
-define("PartnersHub.model$RL_1a8a92c45644c5300ad1f3bda15e19d4", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_bca3b469c12fb16efadfb852197260bd"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_1a8a92c45644c5300ad1f3bda15e19d4 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_bca3b469c12fb16efadfb852197260bd;
-        }
-
-    }
-
-    PartnersHubModel.RL_1a8a92c45644c5300ad1f3bda15e19d4 = RL_1a8a92c45644c5300ad1f3bda15e19d4;
-
-});
-
 define("PartnersHub.model$RC_5d5d5f00a6d0b41c664d5621f366190d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_7e91f0d7966642cf0627c6392e43ce45EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_5d5d5f00a6d0b41c664d5621f366190dInner extends
@@ -4649,49 +4398,6 @@ define("PartnersHub.model$RL_1ac3d3ab269762306321bb7760937f2c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_1ac3d3ab269762306321bb7760937f2c = RL_1ac3d3ab269762306321bb7760937f2c;
-
-});
-
-define("PartnersHub.model$RC_b2b69422e93d880677329d8cb90d6371", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0851aaf31b0e92891278c4a514aa29cdStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_b2b69422e93d880677329d8cb90d6371Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("gaming_company", "gaming_companyAttr", "gaming_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure());
-                    }, true, PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_b2b69422e93d880677329d8cb90d6371(new RC_b2b69422e93d880677329d8cb90d6371.RecordClass({
-                    gaming_companyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_b2b69422e93d880677329d8cb90d6371 = RC_b2b69422e93d880677329d8cb90d6371Inner;
-
-        RC_b2b69422e93d880677329d8cb90d6371Inner._isAnonymousRecord = true;
-        RC_b2b69422e93d880677329d8cb90d6371Inner.UniqueId = "b2b69422-e93d-8806-7732-9d8cb90d6371";
-        var RC_b2b69422e93d880677329d8cb90d6371 = RC_b2b69422e93d880677329d8cb90d6371Inner;
-        RC_b2b69422e93d880677329d8cb90d6371.init();
-    }
-});
-
-define("PartnersHub.model$RL_1ae8df2779c096f095c22ecf6335164b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_b2b69422e93d880677329d8cb90d6371"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_1ae8df2779c096f095c22ecf6335164b extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_b2b69422e93d880677329d8cb90d6371;
-        }
-
-    }
-
-    PartnersHubModel.RL_1ae8df2779c096f095c22ecf6335164b = RL_1ae8df2779c096f095c22ecf6335164b;
 
 });
 
@@ -6162,6 +5868,59 @@ define("PartnersHub.model$RL_29080a69ee1ce69b9b697bf94281f9ff", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$EN_b615032722132edb47d3deb011649e6eEntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class EN_b615032722132edb47d3deb011649e6eEntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Type", "typeAttr", "Type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.EN_b615032722132edb47d3deb011649e6eEntityRecord = EN_b615032722132edb47d3deb011649e6eEntityRecordInner;
+
+        var EN_b615032722132edb47d3deb011649e6eEntityRecord = EN_b615032722132edb47d3deb011649e6eEntityRecordInner;
+        EN_b615032722132edb47d3deb011649e6eEntityRecord.init();
+    }
+});
+
+define("PartnersHub.model$RC_291d094a0327504d13f978f6f681c13c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_b615032722132edb47d3deb011649e6eEntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_291d094a0327504d13f978f6f681c13cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TypeOfEvents", "typeOfEventsAttr", "TypeOfEvents", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_b615032722132edb47d3deb011649e6eEntityRecord());
+                    }, true, PartnersHubModel.EN_b615032722132edb47d3deb011649e6eEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_291d094a0327504d13f978f6f681c13c(new RC_291d094a0327504d13f978f6f681c13c.RecordClass({
+                    typeOfEventsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_291d094a0327504d13f978f6f681c13c = RC_291d094a0327504d13f978f6f681c13cInner;
+
+        RC_291d094a0327504d13f978f6f681c13cInner._isAnonymousRecord = true;
+        RC_291d094a0327504d13f978f6f681c13cInner.UniqueId = "291d094a-0327-504d-13f9-78f6f681c13c";
+        var RC_291d094a0327504d13f978f6f681c13c = RC_291d094a0327504d13f978f6f681c13cInner;
+        RC_291d094a0327504d13f978f6f681c13c.init();
+    }
+});
+
 define("PartnersHub.model$RC_cd5e42a0793d8eb69fbc5056fff3f372", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_55ea19c18b42991c3f5575c063ad7ca7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_cd5e42a0793d8eb69fbc5056fff3f372Inner extends
@@ -6202,6 +5961,20 @@ define("PartnersHub.model$RL_296c80117ea3feed92d93a9342c06001", ["exports", "@ou
     }
 
     PartnersHubModel.RL_296c80117ea3feed92d93a9342c06001 = RL_296c80117ea3feed92d93a9342c06001;
+
+});
+
+define("PartnersHub.model$RL_2a0f1c4ef67973a55bb831bcedc69b77", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_b615032722132edb47d3deb011649e6eEntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2a0f1c4ef67973a55bb831bcedc69b77 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.EN_b615032722132edb47d3deb011649e6eEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_2a0f1c4ef67973a55bb831bcedc69b77 = RL_2a0f1c4ef67973a55bb831bcedc69b77;
 
 });
 
@@ -6360,6 +6133,79 @@ define("PartnersHub.model$RL_2bc6600c37d3f99d4190f0fccf1bad67", ["exports", "@ou
     }
 
     PartnersHubModel.RL_2bc6600c37d3f99d4190f0fccf1bad67 = RL_2bc6600c37d3f99d4190f0fccf1bad67;
+
+});
+
+define("PartnersHub.model$EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Banner", "bannerAttr", "Banner", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Title", "titleAttr", "Title", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("DateTime", "dateTimeAttr", "DateTime", false, false, OS.DataTypes.DataTypes.Date, function() {
+                        return OS.DataTypes.DateTime.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord = EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecordInner;
+
+        var EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord = EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecordInner;
+        EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord.init();
+    }
+});
+
+define("PartnersHub.model$RC_d421a5e9c52f0e3a20beae45438b42fa", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_d421a5e9c52f0e3a20beae45438b42faInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventDetails", "eventDetailsAttr", "EventDetails", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord());
+                    }, true, PartnersHubModel.EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_d421a5e9c52f0e3a20beae45438b42fa(new RC_d421a5e9c52f0e3a20beae45438b42fa.RecordClass({
+                    eventDetailsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_d421a5e9c52f0e3a20beae45438b42fa = RC_d421a5e9c52f0e3a20beae45438b42faInner;
+
+        RC_d421a5e9c52f0e3a20beae45438b42faInner._isAnonymousRecord = true;
+        RC_d421a5e9c52f0e3a20beae45438b42faInner.UniqueId = "d421a5e9-c52f-0e3a-20be-ae45438b42fa";
+        var RC_d421a5e9c52f0e3a20beae45438b42fa = RC_d421a5e9c52f0e3a20beae45438b42faInner;
+        RC_d421a5e9c52f0e3a20beae45438b42fa.init();
+    }
+});
+
+define("PartnersHub.model$RL_2bca6789e6c2d38268c17d93fc1bce56", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d421a5e9c52f0e3a20beae45438b42fa"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2bca6789e6c2d38268c17d93fc1bce56 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_d421a5e9c52f0e3a20beae45438b42fa;
+        }
+
+    }
+
+    PartnersHubModel.RL_2bca6789e6c2d38268c17d93fc1bce56 = RL_2bca6789e6c2d38268c17d93fc1bce56;
 
 });
 
@@ -6619,64 +6465,6 @@ define("PartnersHub.model$RC_2e6da4a898d55ae96aab51b6e09d6a22", ["exports", "@ou
         var RC_2e6da4a898d55ae96aab51b6e09d6a22 = RC_2e6da4a898d55ae96aab51b6e09d6a22Inner;
         RC_2e6da4a898d55ae96aab51b6e09d6a22.init();
     }
-});
-
-define("PartnersHub.model$ST_88f2df009156055846dc2e8f18566d7dStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_88f2df009156055846dc2e8f18566d7dStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Next_attempt", "next_attemptAttr", "next_attempt", false, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, true),
-                    this.attr("Next_email_attempt", "next_email_attemptAttr", "next_email_attempt", false, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, true),
-                    this.attr("Next_verify_attempt", "next_verify_attemptAttr", "next_verify_attempt", false, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, true),
-                    this.attr("Verified", "verifiedAttr", "verified", false, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return 0;
-                    }, true)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure = ST_88f2df009156055846dc2e8f18566d7dStructureInner;
-
-        var ST_88f2df009156055846dc2e8f18566d7dStructure = ST_88f2df009156055846dc2e8f18566d7dStructureInner;
-        ST_88f2df009156055846dc2e8f18566d7dStructure.init();
-    }
-});
-
-define("PartnersHub.model$RL_2e9c9922555661a07a0ae5f290c1c0ac", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_88f2df009156055846dc2e8f18566d7dStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_2e9c9922555661a07a0ae5f290c1c0ac extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure;
-        }
-
-    }
-
-    PartnersHubModel.RL_2e9c9922555661a07a0ae5f290c1c0ac = RL_2e9c9922555661a07a0ae5f290c1c0ac;
-
-});
-
-define("PartnersHub.model$RL_2eb9294c2171a9f3d4046a24f0f3a436", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_5997443eb5326ff1de640a7b3b2688f0Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_2eb9294c2171a9f3d4046a24f0f3a436 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_2eb9294c2171a9f3d4046a24f0f3a436 = RL_2eb9294c2171a9f3d4046a24f0f3a436;
-
 });
 
 define("PartnersHub.model$RC_700a042c18a52538bbda09226917700a", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$EN_c206e072354abd28c734a686a107801eEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -7354,6 +7142,36 @@ define("PartnersHub.model$RC_373fec8a2329a8b1ecd55cf717893131", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$EN_384f341162719e327ba9135d3cf8afb2EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class EN_384f341162719e327ba9135d3cf8afb2EntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("Name", "nameAttr", "Name", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Role", "roleAttr", "Role", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Image", "imageAttr", "Image", false, false, OS.DataTypes.DataTypes.BinaryData, function() {
+                        return OS.DataTypes.BinaryData.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.EN_384f341162719e327ba9135d3cf8afb2EntityRecord = EN_384f341162719e327ba9135d3cf8afb2EntityRecordInner;
+
+        var EN_384f341162719e327ba9135d3cf8afb2EntityRecord = EN_384f341162719e327ba9135d3cf8afb2EntityRecordInner;
+        EN_384f341162719e327ba9135d3cf8afb2EntityRecord.init();
+    }
+});
+
 define("PartnersHub.model$RC_60071085ccdc1a939c98b76e05aec53e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_60071085ccdc1a939c98b76e05aec53eInner extends
@@ -7523,176 +7341,6 @@ define("PartnersHub.model$RC_3a2d986a770a9c3e6f1096b16961e5a9", ["exports", "@ou
         var RC_3a2d986a770a9c3e6f1096b16961e5a9 = RC_3a2d986a770a9c3e6f1096b16961e5a9Inner;
         RC_3a2d986a770a9c3e6f1096b16961e5a9.init();
     }
-});
-
-define("PartnersHub.model$ST_9f80c4e8dbd08377be883c073be1c044Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_88f2df009156055846dc2e8f18566d7dStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_9f80c4e8dbd08377be883c073be1c044StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Description", "descriptionAttr", "description", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Type", "typeAttr", "type", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("AdditionalProperties", "additionalPropertiesAttr", "additionalProperties", false, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, true),
-                    this.attr("Required", "requiredAttr", "required", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList),
-                    this.attr("Properties", "propertiesAttr", "properties", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure());
-                    }, true, PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure = ST_9f80c4e8dbd08377be883c073be1c044StructureInner;
-
-        var ST_9f80c4e8dbd08377be883c073be1c044Structure = ST_9f80c4e8dbd08377be883c073be1c044StructureInner;
-        ST_9f80c4e8dbd08377be883c073be1c044Structure.init();
-    }
-});
-
-define("PartnersHub.model$ST_cd720662d62c87faf4dd5ea5ef8052cbStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f80c4e8dbd08377be883c073be1c044Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_cd720662d62c87faf4dd5ea5ef8052cbStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Account_opening_reason", "account_opening_reasonAttr", "account_opening_reason", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Address_city", "address_cityAttr", "address_city", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Address_line_1", "address_line_1Attr", "address_line_1", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Address_line_2", "address_line_2Attr", "address_line_2", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Address_postcode", "address_postcodeAttr", "address_postcode", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Address_state", "address_stateAttr", "address_state", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Allow_copiers", "allow_copiersAttr", "allow_copiers", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Citizen", "citizenAttr", "citizen", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Client_tnc_status", "client_tnc_statusAttr", "client_tnc_status", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Cooling_off_expiration_date", "cooling_off_expiration_dateAttr", "cooling_off_expiration_date", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Country", "countryAttr", "country", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Country_code", "country_codeAttr", "country_code", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Date_of_birth", "date_of_birthAttr", "date_of_birth", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Dxtrade_user_exception", "dxtrade_user_exceptionAttr", "dxtrade_user_exception", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Email", "emailAttr", "email", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Email_consent", "email_consentAttr", "email_consent", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Employment_status", "employment_statusAttr", "employment_status", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Fatca_declaration", "fatca_declarationAttr", "fatca_declaration", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("First_name", "first_nameAttr", "first_name", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Has_secret_answer", "has_secret_answerAttr", "has_secret_answer", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Immutable_fields", "immutable_fieldsAttr", "immutable_fields", false, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new OS.DataTypes.TextList());
-                    }, true, OS.DataTypes.TextList),
-                    this.attr("Is_authenticated_payment_agent", "is_authenticated_payment_agentAttr", "is_authenticated_payment_agent", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Last_name", "last_nameAttr", "last_name", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Non_pep_declaration", "non_pep_declarationAttr", "non_pep_declaration", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Phone", "phoneAttr", "phone", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Place_of_birth", "place_of_birthAttr", "place_of_birth", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Preferred_language", "preferred_languageAttr", "preferred_language", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Request_professional_status", "request_professional_statusAttr", "request_professional_status", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("Residence", "residenceAttr", "residence", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Salutation", "salutationAttr", "salutation", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Tax_identification_number", "tax_identification_numberAttr", "tax_identification_number", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Tax_residence", "tax_residenceAttr", "tax_residence", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Trading_hub", "trading_hubAttr", "trading_hub", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
-                    }, true),
-                    this.attr("User_hash", "user_hashAttr", "user_hash", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Phone_number_verification", "phone_number_verificationAttr", "phone_number_verification", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure());
-                    }, true, PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure = ST_cd720662d62c87faf4dd5ea5ef8052cbStructureInner;
-
-        var ST_cd720662d62c87faf4dd5ea5ef8052cbStructure = ST_cd720662d62c87faf4dd5ea5ef8052cbStructureInner;
-        ST_cd720662d62c87faf4dd5ea5ef8052cbStructure.init();
-    }
-});
-
-define("PartnersHub.model$RL_3a76b15ae1a5530a31162c7058dbf8a2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_cd720662d62c87faf4dd5ea5ef8052cbStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_3a76b15ae1a5530a31162c7058dbf8a2 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure;
-        }
-
-    }
-
-    PartnersHubModel.RL_3a76b15ae1a5530a31162c7058dbf8a2 = RL_3a76b15ae1a5530a31162c7058dbf8a2;
-
 });
 
 define("PartnersHub.model$RL_3a7769295a90f3ebda84fe6e535bb92a", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_0dcda44afe6ec5d5c1d41878a92983e1EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -8202,49 +7850,6 @@ define("PartnersHub.model$RC_4028c83435ff8f3fa19c27e5a3252dd5", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RC_54fc6ab982c2dba44934665039f00766", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_88f2df009156055846dc2e8f18566d7dStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_54fc6ab982c2dba44934665039f00766Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Property3", "property3Attr", "Property3", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure());
-                    }, true, PartnersHubModel.ST_88f2df009156055846dc2e8f18566d7dStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_54fc6ab982c2dba44934665039f00766(new RC_54fc6ab982c2dba44934665039f00766.RecordClass({
-                    property3Attr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_54fc6ab982c2dba44934665039f00766 = RC_54fc6ab982c2dba44934665039f00766Inner;
-
-        RC_54fc6ab982c2dba44934665039f00766Inner._isAnonymousRecord = true;
-        RC_54fc6ab982c2dba44934665039f00766Inner.UniqueId = "54fc6ab9-82c2-dba4-4934-665039f00766";
-        var RC_54fc6ab982c2dba44934665039f00766 = RC_54fc6ab982c2dba44934665039f00766Inner;
-        RC_54fc6ab982c2dba44934665039f00766.init();
-    }
-});
-
-define("PartnersHub.model$RL_40ba38fed215fb9a1495c51ccf4e580f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_54fc6ab982c2dba44934665039f00766"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_40ba38fed215fb9a1495c51ccf4e580f extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_54fc6ab982c2dba44934665039f00766;
-        }
-
-    }
-
-    PartnersHubModel.RL_40ba38fed215fb9a1495c51ccf4e580f = RL_40ba38fed215fb9a1495c51ccf4e580f;
-
-});
-
 define("PartnersHub.model$RL_4153455d8943850f971d65d82f35900b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_19aa89641c7398ceacf4370c69126f64"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_4153455d8943850f971d65d82f35900b extends
@@ -8342,33 +7947,6 @@ define("PartnersHub.model$RC_424d57a2d666c8edb0343600d6705eee", ["exports", "@ou
         RC_424d57a2d666c8edb0343600d6705eeeInner.UniqueId = "424d57a2-d666-c8ed-b034-3600d6705eee";
         var RC_424d57a2d666c8edb0343600d6705eee = RC_424d57a2d666c8edb0343600d6705eeeInner;
         RC_424d57a2d666c8edb0343600d6705eee.init();
-    }
-});
-
-define("PartnersHub.model$ST_4286a56d180b6bb5649e20efadd675fdStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_cd720662d62c87faf4dd5ea5ef8052cbStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_4286a56d180b6bb5649e20efadd675fdStructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("get_settings", "get_settingsAttr", "get_settings", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure());
-                    }, true, PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_4286a56d180b6bb5649e20efadd675fdStructure(new ST_4286a56d180b6bb5649e20efadd675fdStructure.RecordClass({
-                    get_settingsAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.ST_4286a56d180b6bb5649e20efadd675fdStructure = ST_4286a56d180b6bb5649e20efadd675fdStructureInner;
-
-        var ST_4286a56d180b6bb5649e20efadd675fdStructure = ST_4286a56d180b6bb5649e20efadd675fdStructureInner;
-        ST_4286a56d180b6bb5649e20efadd675fdStructure.init();
     }
 });
 
@@ -9611,6 +9189,20 @@ define("PartnersHub.model$RL_50d3e0774fce43a1ce1cf3a9009855f8", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_515a92f2c6fa8a06a2f1256cda8147d3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_384f341162719e327ba9135d3cf8afb2EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_515a92f2c6fa8a06a2f1256cda8147d3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.EN_384f341162719e327ba9135d3cf8afb2EntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_515a92f2c6fa8a06a2f1256cda8147d3 = RL_515a92f2c6fa8a06a2f1256cda8147d3;
+
+});
+
 define("PartnersHub.model$RC_51b1c15949308af5f9b2dba7043d5ae6", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_b4e36c9529d7446e086560192df48d7cEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_51b1c15949308af5f9b2dba7043d5ae6Inner extends
@@ -9723,49 +9315,6 @@ define("PartnersHub.model$RL_51cb6ee93d723ed4d67f527a1090ade3", ["exports", "@ou
     }
 
     PartnersHubModel.RL_51cb6ee93d723ed4d67f527a1090ade3 = RL_51cb6ee93d723ed4d67f527a1090ade3;
-
-});
-
-define("PartnersHub.model$RC_fc6ba00c0199e91a89c8c6d81dc1ff50", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_e79f2a411ab40cb74322f1790f687b01Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_fc6ba00c0199e91a89c8c6d81dc1ff50Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Array", "arrayAttr", "Array", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_e79f2a411ab40cb74322f1790f687b01Structure());
-                    }, true, PartnersHubModel.ST_e79f2a411ab40cb74322f1790f687b01Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_fc6ba00c0199e91a89c8c6d81dc1ff50(new RC_fc6ba00c0199e91a89c8c6d81dc1ff50.RecordClass({
-                    arrayAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_fc6ba00c0199e91a89c8c6d81dc1ff50 = RC_fc6ba00c0199e91a89c8c6d81dc1ff50Inner;
-
-        RC_fc6ba00c0199e91a89c8c6d81dc1ff50Inner._isAnonymousRecord = true;
-        RC_fc6ba00c0199e91a89c8c6d81dc1ff50Inner.UniqueId = "fc6ba00c-0199-e91a-89c8-c6d81dc1ff50";
-        var RC_fc6ba00c0199e91a89c8c6d81dc1ff50 = RC_fc6ba00c0199e91a89c8c6d81dc1ff50Inner;
-        RC_fc6ba00c0199e91a89c8c6d81dc1ff50.init();
-    }
-});
-
-define("PartnersHub.model$RL_527e35b1151b9ffe04662e77ccf1ad84", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_fc6ba00c0199e91a89c8c6d81dc1ff50"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_527e35b1151b9ffe04662e77ccf1ad84 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_fc6ba00c0199e91a89c8c6d81dc1ff50;
-        }
-
-    }
-
-    PartnersHubModel.RL_527e35b1151b9ffe04662e77ccf1ad84 = RL_527e35b1151b9ffe04662e77ccf1ad84;
 
 });
 
@@ -11045,35 +10594,6 @@ define("PartnersHub.model$RL_63c0d280fae1c76c130bb4eaa6325fae", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_64027d4be973e97c7c265e68fb475a55", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f22b560a90438747cb673cbedddc4d7Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_64027d4be973e97c7c265e68fb475a55Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Object", "objectAttr", "Object", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure());
-                    }, true, PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_64027d4be973e97c7c265e68fb475a55(new RC_64027d4be973e97c7c265e68fb475a55.RecordClass({
-                    objectAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_64027d4be973e97c7c265e68fb475a55 = RC_64027d4be973e97c7c265e68fb475a55Inner;
-
-        RC_64027d4be973e97c7c265e68fb475a55Inner._isAnonymousRecord = true;
-        RC_64027d4be973e97c7c265e68fb475a55Inner.UniqueId = "64027d4b-e973-e97c-7c26-5e68fb475a55";
-        var RC_64027d4be973e97c7c265e68fb475a55 = RC_64027d4be973e97c7c265e68fb475a55Inner;
-        RC_64027d4be973e97c7c265e68fb475a55.init();
-    }
-});
-
 define("PartnersHub.model$RC_645e6d99c62950d533c673c938aae9c2", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_92400cc7724ed583cb86d67e1fc7e7c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_645e6d99c62950d533c673c938aae9c2Inner extends
@@ -12140,47 +11660,6 @@ define("PartnersHub.model$RC_6f106c951dc697db2b84044542653e21", ["exports", "@ou
         var RC_6f106c951dc697db2b84044542653e21 = RC_6f106c951dc697db2b84044542653e21Inner;
         RC_6f106c951dc697db2b84044542653e21.init();
     }
-});
-
-define("PartnersHub.model$ST_d2265ea20cfa443b1c068fbda918f468Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_5997443eb5326ff1de640a7b3b2688f0Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_d2265ea20cfa443b1c068fbda918f468StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Landing_company", "landing_companyAttr", "landing_company", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure());
-                    }, true, PartnersHubModel.ST_5997443eb5326ff1de640a7b3b2688f0Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new ST_d2265ea20cfa443b1c068fbda918f468Structure(new ST_d2265ea20cfa443b1c068fbda918f468Structure.RecordClass({
-                    landing_companyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.ST_d2265ea20cfa443b1c068fbda918f468Structure = ST_d2265ea20cfa443b1c068fbda918f468StructureInner;
-
-        var ST_d2265ea20cfa443b1c068fbda918f468Structure = ST_d2265ea20cfa443b1c068fbda918f468StructureInner;
-        ST_d2265ea20cfa443b1c068fbda918f468Structure.init();
-    }
-});
-
-define("PartnersHub.model$RL_6f43b1663a969d13f73eba22d1db9928", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_d2265ea20cfa443b1c068fbda918f468Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_6f43b1663a969d13f73eba22d1db9928 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_d2265ea20cfa443b1c068fbda918f468Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_6f43b1663a969d13f73eba22d1db9928 = RL_6f43b1663a969d13f73eba22d1db9928;
-
 });
 
 define("PartnersHub.model$RC_6f4c6d643c38fc7393e869b67917268e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_b5010cf570b4e39f4aa14db0ae11cfbfStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -13293,35 +12772,6 @@ define("PartnersHub.model$RL_81d2bc71eb1c605f53ae134ad3caa1c0", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_840543697b5a35bfebb2ff69b9d84fbd", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_cd720662d62c87faf4dd5ea5ef8052cbStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_840543697b5a35bfebb2ff69b9d84fbdInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("GetSettings", "getSettingsAttr", "GetSettings", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure());
-                    }, true, PartnersHubModel.ST_cd720662d62c87faf4dd5ea5ef8052cbStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_840543697b5a35bfebb2ff69b9d84fbd(new RC_840543697b5a35bfebb2ff69b9d84fbd.RecordClass({
-                    getSettingsAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_840543697b5a35bfebb2ff69b9d84fbd = RC_840543697b5a35bfebb2ff69b9d84fbdInner;
-
-        RC_840543697b5a35bfebb2ff69b9d84fbdInner._isAnonymousRecord = true;
-        RC_840543697b5a35bfebb2ff69b9d84fbdInner.UniqueId = "84054369-7b5a-35bf-ebb2-ff69b9d84fbd";
-        var RC_840543697b5a35bfebb2ff69b9d84fbd = RC_840543697b5a35bfebb2ff69b9d84fbdInner;
-        RC_840543697b5a35bfebb2ff69b9d84fbd.init();
-    }
-});
-
 define("PartnersHub.model$RC_ced013358a82a813f1d9a5108f17ce79", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$ENUserEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_ced013358a82a813f1d9a5108f17ce79Inner extends
@@ -13777,44 +13227,6 @@ define("PartnersHub.model$RC_8b362302b5966cedd4e8c7c42d7e46f8", ["exports", "@ou
         var RC_8b362302b5966cedd4e8c7c42d7e46f8 = RC_8b362302b5966cedd4e8c7c42d7e46f8Inner;
         RC_8b362302b5966cedd4e8c7c42d7e46f8.init();
     }
-});
-
-define("PartnersHub.model$ST_ab1efc94555a1980f3a18bff4891b468Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class ST_ab1efc94555a1980f3a18bff4891b468StructureInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Description", "descriptionAttr", "description", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Type", "typeAttr", "type", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-        }
-
-        PartnersHubModel.ST_ab1efc94555a1980f3a18bff4891b468Structure = ST_ab1efc94555a1980f3a18bff4891b468StructureInner;
-
-        var ST_ab1efc94555a1980f3a18bff4891b468Structure = ST_ab1efc94555a1980f3a18bff4891b468StructureInner;
-        ST_ab1efc94555a1980f3a18bff4891b468Structure.init();
-    }
-});
-
-define("PartnersHub.model$RL_8b86b0c4bea7305fa7f4a3cf1596d012", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_ab1efc94555a1980f3a18bff4891b468Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_8b86b0c4bea7305fa7f4a3cf1596d012 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_ab1efc94555a1980f3a18bff4891b468Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_8b86b0c4bea7305fa7f4a3cf1596d012 = RL_8b86b0c4bea7305fa7f4a3cf1596d012;
-
 });
 
 define("PartnersHub.model$RL_a401bbc515f324607832f48e5f845362", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$ST_8ceac0b3cf282b6c0c3a95ffb4156762Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -14462,46 +13874,17 @@ define("PartnersHub.model$RL_93708d7bb7d0fbdca673f09a924bcdb7", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_ddf455813269431f810096041bed9987", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_4286a56d180b6bb5649e20efadd675fdStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_ddf455813269431f810096041bed9987Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("GetSettingsResponse", "getSettingsResponseAttr", "GetSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_4286a56d180b6bb5649e20efadd675fdStructure());
-                    }, true, PartnersHubModel.ST_4286a56d180b6bb5649e20efadd675fdStructure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_ddf455813269431f810096041bed9987(new RC_ddf455813269431f810096041bed9987.RecordClass({
-                    getSettingsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_ddf455813269431f810096041bed9987 = RC_ddf455813269431f810096041bed9987Inner;
-
-        RC_ddf455813269431f810096041bed9987Inner._isAnonymousRecord = true;
-        RC_ddf455813269431f810096041bed9987Inner.UniqueId = "ddf45581-3269-431f-8100-96041bed9987";
-        var RC_ddf455813269431f810096041bed9987 = RC_ddf455813269431f810096041bed9987Inner;
-        RC_ddf455813269431f810096041bed9987.init();
-    }
-});
-
-define("PartnersHub.model$RL_943fc1934aeaf26cc5cde0aa4f83ee9a", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_ddf455813269431f810096041bed9987"], function(exports, OSRuntimeCore, PartnersHubModel) {
+define("PartnersHub.model$RL_94b3cc09ac2ff9d1d7132e1358c0d4e9", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_291d094a0327504d13f978f6f681c13c"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
-    class RL_943fc1934aeaf26cc5cde0aa4f83ee9a extends
+    class RL_94b3cc09ac2ff9d1d7132e1358c0d4e9 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return PartnersHubModel.RC_ddf455813269431f810096041bed9987;
+            return PartnersHubModel.RC_291d094a0327504d13f978f6f681c13c;
         }
 
     }
 
-    PartnersHubModel.RL_943fc1934aeaf26cc5cde0aa4f83ee9a = RL_943fc1934aeaf26cc5cde0aa4f83ee9a;
+    PartnersHubModel.RL_94b3cc09ac2ff9d1d7132e1358c0d4e9 = RL_94b3cc09ac2ff9d1d7132e1358c0d4e9;
 
 });
 
@@ -14909,20 +14292,6 @@ define("PartnersHub.model$RL_9c28fba2ad5d9bbe6b5a769d4094590b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_9c28fba2ad5d9bbe6b5a769d4094590b = RL_9c28fba2ad5d9bbe6b5a769d4094590b;
-
-});
-
-define("PartnersHub.model$RL_9c7dd64bc69086e714d43d899044d3f9", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0204bb6c63da4390a2e7b2aad750f108"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_9c7dd64bc69086e714d43d899044d3f9 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_0204bb6c63da4390a2e7b2aad750f108;
-        }
-
-    }
-
-    PartnersHubModel.RL_9c7dd64bc69086e714d43d899044d3f9 = RL_9c7dd64bc69086e714d43d899044d3f9;
 
 });
 
@@ -15337,20 +14706,6 @@ define("PartnersHub.model$RL_a55e145b92d730f4363e159cde35442b", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_a580acbe575fa8663ce4d1779b8345a6", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_64027d4be973e97c7c265e68fb475a55"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_a580acbe575fa8663ce4d1779b8345a6 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_64027d4be973e97c7c265e68fb475a55;
-        }
-
-    }
-
-    PartnersHubModel.RL_a580acbe575fa8663ce4d1779b8345a6 = RL_a580acbe575fa8663ce4d1779b8345a6;
-
-});
-
 define("PartnersHub.model$RL_a580b6522f03efa46ba6d394dc540c4d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_6c51c66649f8fcb29b35426854249357"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_a580b6522f03efa46ba6d394dc540c4d extends
@@ -15707,49 +15062,6 @@ define("PartnersHub.model$RL_abbb06caa2dc3007694c8b499e93ac42", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_f9bcc3504841111cb3941eef1d0c2284", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_c662afc4a55685596fd9199a04b718f1Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_f9bcc3504841111cb3941eef1d0c2284Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Property", "propertyAttr", "Property", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure());
-                    }, true, PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_f9bcc3504841111cb3941eef1d0c2284(new RC_f9bcc3504841111cb3941eef1d0c2284.RecordClass({
-                    propertyAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_f9bcc3504841111cb3941eef1d0c2284 = RC_f9bcc3504841111cb3941eef1d0c2284Inner;
-
-        RC_f9bcc3504841111cb3941eef1d0c2284Inner._isAnonymousRecord = true;
-        RC_f9bcc3504841111cb3941eef1d0c2284Inner.UniqueId = "f9bcc350-4841-111c-b394-1eef1d0c2284";
-        var RC_f9bcc3504841111cb3941eef1d0c2284 = RC_f9bcc3504841111cb3941eef1d0c2284Inner;
-        RC_f9bcc3504841111cb3941eef1d0c2284.init();
-    }
-});
-
-define("PartnersHub.model$RL_ac3cd438d50e23f6ce21dc9210844d74", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_f9bcc3504841111cb3941eef1d0c2284"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_ac3cd438d50e23f6ce21dc9210844d74 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_f9bcc3504841111cb3941eef1d0c2284;
-        }
-
-    }
-
-    PartnersHubModel.RL_ac3cd438d50e23f6ce21dc9210844d74 = RL_ac3cd438d50e23f6ce21dc9210844d74;
-
-});
-
 define("PartnersHub.model$RC_d69d31319b581746ce9d01515b7635df", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_d69d31319b581746ce9d01515b7635dfInner extends
@@ -15962,49 +15274,6 @@ define("PartnersHub.model$RL_af071f8b45f2932e1364f15bc3e90819", ["exports", "@ou
     }
 
     PartnersHubModel.RL_af071f8b45f2932e1364f15bc3e90819 = RL_af071f8b45f2932e1364f15bc3e90819;
-
-});
-
-define("PartnersHub.model$RC_e6a1dce963242bf05b2488e33fe798d8", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_ab1efc94555a1980f3a18bff4891b468Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_e6a1dce963242bf05b2488e33fe798d8Inner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Integer", "integerAttr", "Integer", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_ab1efc94555a1980f3a18bff4891b468Structure());
-                    }, true, PartnersHubModel.ST_ab1efc94555a1980f3a18bff4891b468Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_e6a1dce963242bf05b2488e33fe798d8(new RC_e6a1dce963242bf05b2488e33fe798d8.RecordClass({
-                    integerAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_e6a1dce963242bf05b2488e33fe798d8 = RC_e6a1dce963242bf05b2488e33fe798d8Inner;
-
-        RC_e6a1dce963242bf05b2488e33fe798d8Inner._isAnonymousRecord = true;
-        RC_e6a1dce963242bf05b2488e33fe798d8Inner.UniqueId = "e6a1dce9-6324-2bf0-5b24-88e33fe798d8";
-        var RC_e6a1dce963242bf05b2488e33fe798d8 = RC_e6a1dce963242bf05b2488e33fe798d8Inner;
-        RC_e6a1dce963242bf05b2488e33fe798d8.init();
-    }
-});
-
-define("PartnersHub.model$RL_af4b2a28be4fb6529a0adbdf699e5c42", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_e6a1dce963242bf05b2488e33fe798d8"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_af4b2a28be4fb6529a0adbdf699e5c42 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_e6a1dce963242bf05b2488e33fe798d8;
-        }
-
-    }
-
-    PartnersHubModel.RL_af4b2a28be4fb6529a0adbdf699e5c42 = RL_af4b2a28be4fb6529a0adbdf699e5c42;
 
 });
 
@@ -16351,6 +15620,20 @@ define("PartnersHub.model$RC_b27f0b968b0f7cea61506ac9d6ee7c27", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_b358d3a4cb449cc14e3e7bb5b7c5b657", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b358d3a4cb449cc14e3e7bb5b7c5b657 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.EN_3d2c91c8731e79927aa9dafadf0a83c9EntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_b358d3a4cb449cc14e3e7bb5b7c5b657 = RL_b358d3a4cb449cc14e3e7bb5b7c5b657;
+
+});
+
 define("PartnersHub.model$RL_b36cbf00535b19d854633a6aebe03044", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7b274cb5f96a8ac297db685000547ab1"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_b36cbf00535b19d854633a6aebe03044 extends
@@ -16649,49 +15932,6 @@ define("PartnersHub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_cc09849af49e0ff0064bbe24d1baecda", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_d2265ea20cfa443b1c068fbda918f468Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_cc09849af49e0ff0064bbe24d1baecdaInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("LandingCompanyResponse", "landingCompanyResponseAttr", "LandingCompanyResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_d2265ea20cfa443b1c068fbda918f468Structure());
-                    }, true, PartnersHubModel.ST_d2265ea20cfa443b1c068fbda918f468Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_cc09849af49e0ff0064bbe24d1baecda(new RC_cc09849af49e0ff0064bbe24d1baecda.RecordClass({
-                    landingCompanyResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_cc09849af49e0ff0064bbe24d1baecda = RC_cc09849af49e0ff0064bbe24d1baecdaInner;
-
-        RC_cc09849af49e0ff0064bbe24d1baecdaInner._isAnonymousRecord = true;
-        RC_cc09849af49e0ff0064bbe24d1baecdaInner.UniqueId = "cc09849a-f49e-0ff0-064b-be24d1baecda";
-        var RC_cc09849af49e0ff0064bbe24d1baecda = RC_cc09849af49e0ff0064bbe24d1baecdaInner;
-        RC_cc09849af49e0ff0064bbe24d1baecda.init();
-    }
-});
-
-define("PartnersHub.model$RL_b7a630f185854d271f04c8febe1b3c72", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_cc09849af49e0ff0064bbe24d1baecda"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_b7a630f185854d271f04c8febe1b3c72 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_cc09849af49e0ff0064bbe24d1baecda;
-        }
-
-    }
-
-    PartnersHubModel.RL_b7a630f185854d271f04c8febe1b3c72 = RL_b7a630f185854d271f04c8febe1b3c72;
-
-});
-
 define("PartnersHub.model$RC_d4817385d3db168633301f8c73e2d828", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_3782d35f5f28ff9dd18fb6881ab471a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_d4817385d3db168633301f8c73e2d828Inner extends
@@ -16789,20 +16029,6 @@ define("PartnersHub.model$RL_b903ad96980478d7874f689155c88d6c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_b903ad96980478d7874f689155c88d6c = RL_b903ad96980478d7874f689155c88d6c;
-
-});
-
-define("PartnersHub.model$RL_b90d2832d0af79c38d26b257cfa05db7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_4286a56d180b6bb5649e20efadd675fdStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_b90d2832d0af79c38d26b257cfa05db7 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_4286a56d180b6bb5649e20efadd675fdStructure;
-        }
-
-    }
-
-    PartnersHubModel.RL_b90d2832d0af79c38d26b257cfa05db7 = RL_b90d2832d0af79c38d26b257cfa05db7;
 
 });
 
@@ -17046,20 +16272,6 @@ define("PartnersHub.model$RL_c0f17d75c546075264f5d075e00ba65b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_c0f17d75c546075264f5d075e00ba65b = RL_c0f17d75c546075264f5d075e00ba65b;
-
-});
-
-define("PartnersHub.model$RL_c167efc18d511ce71c2696ede87e9ce7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_c662afc4a55685596fd9199a04b718f1Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_c167efc18d511ce71c2696ede87e9ce7 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_c662afc4a55685596fd9199a04b718f1Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_c167efc18d511ce71c2696ede87e9ce7 = RL_c167efc18d511ce71c2696ede87e9ce7;
 
 });
 
@@ -17935,20 +17147,6 @@ define("PartnersHub.model$RL_d24415aae8bc2d864868eb4166823bd0", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_d25a86da947988cb29c05c740fc01b23", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_840543697b5a35bfebb2ff69b9d84fbd"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_d25a86da947988cb29c05c740fc01b23 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_840543697b5a35bfebb2ff69b9d84fbd;
-        }
-
-    }
-
-    PartnersHubModel.RL_d25a86da947988cb29c05c740fc01b23 = RL_d25a86da947988cb29c05c740fc01b23;
-
-});
-
 define("PartnersHub.model$RL_d2789538425b9b75ea10631ae0abd383", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_d2789538425b9b75ea10631ae0abd383 extends
@@ -18287,35 +17485,6 @@ define("PartnersHub.model$RL_d6c2b0b2d82cc83f0e12ff8864bc303a", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_d70de5895c15876a351972489c06939e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f80c4e8dbd08377be883c073be1c044Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore; {
-        class RC_d70de5895c15876a351972489c06939eInner extends
-        OS.DataTypes.GenericRecord {
-            static attributesToDeclare() {
-                return [
-                    this.attr("Object7", "object7Attr", "Object7", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure());
-                    }, true, PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new RC_d70de5895c15876a351972489c06939e(new RC_d70de5895c15876a351972489c06939e.RecordClass({
-                    object7Attr: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        PartnersHubModel.RC_d70de5895c15876a351972489c06939e = RC_d70de5895c15876a351972489c06939eInner;
-
-        RC_d70de5895c15876a351972489c06939eInner._isAnonymousRecord = true;
-        RC_d70de5895c15876a351972489c06939eInner.UniqueId = "d70de589-5c15-876a-3519-72489c06939e";
-        var RC_d70de5895c15876a351972489c06939e = RC_d70de5895c15876a351972489c06939eInner;
-        RC_d70de5895c15876a351972489c06939e.init();
-    }
-});
-
 define("PartnersHub.model$RL_d7120c737b749736ea0a72e73d61514e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_04eaf04e4147681bc07ba614af4e7e78Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_d7120c737b749736ea0a72e73d61514e extends
@@ -18442,20 +17611,6 @@ define("PartnersHub.model$RL_da9f97f6a3c8b98228b608b130222591", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_dab4d62f4bd7f27f6010a113f1a898bf", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f22b560a90438747cb673cbedddc4d7Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_dab4d62f4bd7f27f6010a113f1a898bf extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_9f22b560a90438747cb673cbedddc4d7Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_dab4d62f4bd7f27f6010a113f1a898bf = RL_dab4d62f4bd7f27f6010a113f1a898bf;
-
-});
-
 define("PartnersHub.model$RC_dac62773434cf92b52368fd089bbfc2a", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_660adb7a9db48bff1b12c6e03515b415Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_dac62773434cf92b52368fd089bbfc2aInner extends
@@ -18483,20 +17638,6 @@ define("PartnersHub.model$RC_dac62773434cf92b52368fd089bbfc2a", ["exports", "@ou
         var RC_dac62773434cf92b52368fd089bbfc2a = RC_dac62773434cf92b52368fd089bbfc2aInner;
         RC_dac62773434cf92b52368fd089bbfc2a.init();
     }
-});
-
-define("PartnersHub.model$RL_db9943e3ffe064be0c24cc204575dc10", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d70de5895c15876a351972489c06939e"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_db9943e3ffe064be0c24cc204575dc10 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.RC_d70de5895c15876a351972489c06939e;
-        }
-
-    }
-
-    PartnersHubModel.RL_db9943e3ffe064be0c24cc204575dc10 = RL_db9943e3ffe064be0c24cc204575dc10;
-
 });
 
 define("PartnersHub.model$RL_dba1429f774712c36d3ea0b48ab6b63d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocket.model", "PartnersHub.model", "RESTAPIWebsocket.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket"], function(exports, OSRuntimeCore, RESTAPIWebsocketModel, PartnersHubModel) {
@@ -18624,20 +17765,6 @@ define("PartnersHub.model$RL_deb2cdc1dcbdc9c277346305677d36aa", ["exports", "@ou
     }
 
     PartnersHubModel.RL_deb2cdc1dcbdc9c277346305677d36aa = RL_deb2cdc1dcbdc9c277346305677d36aa;
-
-});
-
-define("PartnersHub.model$RL_deca15382249d2aa73a2bf88389f60ec", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f80c4e8dbd08377be883c073be1c044Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_deca15382249d2aa73a2bf88389f60ec extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_9f80c4e8dbd08377be883c073be1c044Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_deca15382249d2aa73a2bf88389f60ec = RL_deca15382249d2aa73a2bf88389f60ec;
 
 });
 
@@ -19090,20 +18217,6 @@ define("PartnersHub.model$RL_e80a0f2e1d0d40303b1a689b4ad27a7b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_e80a0f2e1d0d40303b1a689b4ad27a7b = RL_e80a0f2e1d0d40303b1a689b4ad27a7b;
-
-});
-
-define("PartnersHub.model$RL_e8186b169da893d8fbcd4962fcfe8cec", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_01d741f79542148df9ffe6146152c5f0Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_e8186b169da893d8fbcd4962fcfe8cec extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_01d741f79542148df9ffe6146152c5f0Structure;
-        }
-
-    }
-
-    PartnersHubModel.RL_e8186b169da893d8fbcd4962fcfe8cec = RL_e8186b169da893d8fbcd4962fcfe8cec;
 
 });
 
@@ -19616,20 +18729,6 @@ define("PartnersHub.model$RL_f15b302598caef69c6cdd4e0690795f9", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_f1ca5b3fe2534fd268e54d6748cc94de", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0851aaf31b0e92891278c4a514aa29cdStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
-    var OS = OSRuntimeCore;
-    class RL_f1ca5b3fe2534fd268e54d6748cc94de extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return PartnersHubModel.ST_0851aaf31b0e92891278c4a514aa29cdStructure;
-        }
-
-    }
-
-    PartnersHubModel.RL_f1ca5b3fe2534fd268e54d6748cc94de = RL_f1ca5b3fe2534fd268e54d6748cc94de;
-
-});
-
 define("PartnersHub.model$RL_f1db162aca08aae7be68b7aedc571752", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_e3607d6b92545e5793fbeb99fc16b7e7"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_f1db162aca08aae7be68b7aedc571752 extends
@@ -19839,6 +18938,35 @@ define("PartnersHub.model$RL_f6efe1d0cb8a4c0cbddb4a5846a82246", ["exports", "@ou
 
     PartnersHubModel.RL_f6efe1d0cb8a4c0cbddb4a5846a82246 = RL_f6efe1d0cb8a4c0cbddb4a5846a82246;
 
+});
+
+define("PartnersHub.model$RC_f7c0af70e1b46afd24f791ec4fe75b94", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_384f341162719e327ba9135d3cf8afb2EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f7c0af70e1b46afd24f791ec4fe75b94Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventSpeakers", "eventSpeakersAttr", "EventSpeakers", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_384f341162719e327ba9135d3cf8afb2EntityRecord());
+                    }, true, PartnersHubModel.EN_384f341162719e327ba9135d3cf8afb2EntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f7c0af70e1b46afd24f791ec4fe75b94(new RC_f7c0af70e1b46afd24f791ec4fe75b94.RecordClass({
+                    eventSpeakersAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_f7c0af70e1b46afd24f791ec4fe75b94 = RC_f7c0af70e1b46afd24f791ec4fe75b94Inner;
+
+        RC_f7c0af70e1b46afd24f791ec4fe75b94Inner._isAnonymousRecord = true;
+        RC_f7c0af70e1b46afd24f791ec4fe75b94Inner.UniqueId = "f7c0af70-e1b4-6afd-24f7-91ec4fe75b94";
+        var RC_f7c0af70e1b46afd24f791ec4fe75b94 = RC_f7c0af70e1b46afd24f791ec4fe75b94Inner;
+        RC_f7c0af70e1b46afd24f791ec4fe75b94.init();
+    }
 });
 
 define("PartnersHub.model$RL_f895ce68953fdb97b2f37d55699f4e66", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4835a3b0a2d4ab28e154f8a8831a00ef"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -20203,6 +19331,20 @@ define("PartnersHub.model$RL_fecb3d01dc7f0a1e775ad9d43b2b41ce", ["exports", "@ou
     }
 
     PartnersHubModel.RL_fecb3d01dc7f0a1e775ad9d43b2b41ce = RL_fecb3d01dc7f0a1e775ad9d43b2b41ce;
+
+});
+
+define("PartnersHub.model$RL_fee39a08481d7a8296769831386a33ce", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_f7c0af70e1b46afd24f791ec4fe75b94"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fee39a08481d7a8296769831386a33ce extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_f7c0af70e1b46afd24f791ec4fe75b94;
+        }
+
+    }
+
+    PartnersHubModel.RL_fee39a08481d7a8296769831386a33ce = RL_fee39a08481d7a8296769831386a33ce;
 
 });
 

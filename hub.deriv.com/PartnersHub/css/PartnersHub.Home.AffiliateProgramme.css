@@ -63,3 +63,6 @@
     background-color: rgba(222,0,64,.08) !important;
 }
 
+.desktop .custom-ph-list-item {
+    padding: 0px !important;
+}

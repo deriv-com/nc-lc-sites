@@ -383,7 +383,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                         return [React.createElement(OSWidgets.AdvancedHtml, {
                             extendedProperties: {
                                 role: "banner",
-                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1", "header")
+                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1", "header")
                             },
                             tag: "header",
                             _idProps: {
@@ -465,8 +465,8 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
-                                Position: PartnersHubModel.staticEntities.position.bottom,
-                                ExtendedClass: "tooltip"
+                                ExtendedClass: "tooltip",
+                                Position: PartnersHubModel.staticEntities.position.bottom
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -909,7 +909,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
             }, React.createElement(OSWidgets.Placeholder, {
                 align: /*Default*/ 0,
                 content: _this.props.placeholders.mainContent,
-                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1", "dashboard"),
+                style: "dashboard",
                 _idProps: {
                     service: idService,
                     name: "MainContent"
@@ -1935,8 +1935,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleL
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Dashboard",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Abmelden",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Live-Chat",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Bist du dir sicher, dass du dich abmelden möchtest?"
@@ -1945,8 +1944,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Panel",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Cerrar sesión",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "¿Estás seguro de que quieres cerrar sesión?"
@@ -1955,8 +1953,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Tableau de bord",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Se déconnecter",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en direct",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Êtes-vous sûr de vouloir vous déconnecter ?"
@@ -1965,8 +1962,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Cruscotto",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Disconnettersi",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat dal vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Sei sicuro di voler effettuare il logout?"
@@ -1975,8 +1971,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Panel",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Wyloguj się",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Czat na żywo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Czy jesteś pewien, że chcesz się wylogować?"
@@ -1985,8 +1980,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Painel",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Sair",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat ao vivo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Tem certeza de que deseja sair?"
@@ -1995,8 +1989,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", []
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "PU7gknieWkOx_ByEMNdLqQ#Style.-1047860588.1": "Панель управления",
-        "KRqntOVVQUaOSKjkQ2c_CQ#Value.-1221270899.1": "header",
+        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
         "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Выйти",
         "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Живой чат",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Вы уверены, что хотите выйти?"

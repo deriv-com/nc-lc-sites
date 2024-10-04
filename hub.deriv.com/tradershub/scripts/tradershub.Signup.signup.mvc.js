@@ -1,4 +1,4 @@
-define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
+define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -7,7 +7,7 @@ define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tr
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("IsSubmittins", "isSubmittinsVar", "IsSubmittins", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                    this.attr("IsSubmitting", "isSubmittingVar", "IsSubmitting", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -15,7 +15,7 @@ define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tr
 
             static fromStructure(str) {
                 return new VariablesRecord(new VariablesRecord.RecordClass({
-                    isSubmittinsVar: OS.DataTypes.ImmutableBase.getData(str)
+                    isSubmittingVar: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -56,7 +56,7 @@ define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tr
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.signup.mvc$model", "tradershub.Signup.signup.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.Signup.SocialLogin.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_Signup_signup_mvc_model, tradershub_Signup_signup_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Utilities_ButtonLoading_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view, tradershub_Signup_SocialLogin_mvc_view) {
+define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.signup.mvc$model", "tradershub.Signup.signup.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.Signup.SocialLogin.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_Signup_signup_mvc_model, tradershub_Signup_signup_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Utilities_ButtonLoading_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view, tradershub_Signup_SocialLogin_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -521,7 +521,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             inputs: {
                                 ShowLabelOnLoading: true,
-                                IsLoading: model.variables.isSubmittinsVar
+                                IsLoading: model.variables.isSubmittingVar
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -541,7 +541,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             placeholders: {
                                 button: new PlaceholderContent(function() {
                                     return [React.createElement(OSWidgets.Button, {
-                                        enabled: !(model.variables.isSubmittinsVar),
+                                        enabled: !(model.variables.isSubmittingVar),
                                         extendedProperties: {
                                             style: "border-radius: 100px; height: 40px; margin-top: 24px;"
                                         },
@@ -588,7 +588,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                                     }))];
                                 })
                             },
-                            _dependencies: [asPrimitiveValue(model.variables.isSubmittinsVar)]
+                            _dependencies: [asPrimitiveValue(model.variables.isSubmittingVar)]
                         }))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
@@ -727,7 +727,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                                 uuid: "41"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Already have an account?", React.createElement(OSWidgets.Link, {
+                        }, "Already have an account? ", React.createElement(OSWidgets.Link, {
                             enabled: true,
                             gridProperties: {
                                 classes: "ThemeGrid_MarginGutter"
@@ -753,14 +753,14 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.isSubmittinsVar), asPrimitiveValue(tradershubClientVariables.getEmail())]
+                _dependencies: [asPrimitiveValue(model.variables.isSubmittingVar), asPrimitiveValue(tradershubClientVariables.getEmail())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$VerifyEmail", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS) {
+define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -905,9 +905,8 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.Signup.signup.SendVerifyEmail$vars"))());
                                 vars.value.userEmailInLocal = userEmailIn;
-                                var verifyEmailVar = new OS.DataTypes.VariableHolder();
+                                var derivApiSendMessageVar = new OS.DataTypes.VariableHolder();
                                 var verifyEmailPayloadJSResult = new OS.DataTypes.VariableHolder();
-                                var jSONDeserializePostVerifyEmailRequestVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure))());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     verifyEmailPayloadJSResult.value = OS.Logger.startActiveSpan("VerifyEmailPayload", function(span) {
                                         if (span) {
@@ -935,22 +934,15 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                         }
 
                                     }, 1);
-                                    // JSON Deserialize: JSONDeserializePostVerifyEmailRequest
-                                    jSONDeserializePostVerifyEmailRequestVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(verifyEmailPayloadJSResult.value.payloadOut, RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure, false);
-                                    // Execute Action: VerifyEmail
+                                    // Execute Action: DerivApiSendMessage
                                     model.flush();
-                                    return RESTAPIWebsocketOfficialController.default.verifyEmail$Action(function() {
-                                        var rec = new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
-                                        rec.verify_emailAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.verify_emailAttr;
-                                        rec.typeAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.typeAttr;
-                                        rec.url_parametersAttr = jSONDeserializePostVerifyEmailRequestVar.value.dataOut.url_parametersAttr;
-                                        return rec;
-                                    }(), tradershubClientVariables.getURL(), "61554", tradershubClientVariables.getLang(), callContext).then(function(value) {
-                                        verifyEmailVar.value = value;
+                                    return tradershubController.default.derivApiSendMessage$Action(verifyEmailPayloadJSResult.value.payloadOut, "", false, callContext).then(function(value) {
+                                        derivApiSendMessageVar.value = value;
                                     }).then(function() {
-                                        if ((verifyEmailVar.value.hasNetworkErrorOut)) {
-                                            // IsSubmittins = False
-                                            model.variables.isSubmittinsVar = false;
+                                        if ((derivApiSendMessageVar.value.isErrorOut)) {
+                                            // IsSubmitting = False
+                                            model.variables.isSubmittingVar = false;
+                                            OS.FeedbackMessageService.showFeedbackMessage("Maximum resend attempts reached. Try again in a few minutes.", /*Error*/ 3);
                                         } else {
                                             OS.Logger.startActiveSpan("RudderStack", function(span) {
                                                 if (span) {
@@ -1084,8 +1076,8 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                     controller._validate$Action(callContext);
                                     return OS.Flow.executeSequence(function() {
                                         if ((model.widgets.get(idService.getId("Form")).validAttr)) {
-                                            // IsSubmittins = True
-                                            model.variables.isSubmittinsVar = true;
+                                            // IsSubmitting = True
+                                            model.variables.isSubmittingVar = true;
                                             // Execute Action: SendVerifyEmail
                                             return controller._sendVerifyEmail$Action(tradershubClientVariables.getEmail(), callContext);
                                         } else {
@@ -1126,6 +1118,43 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
             }
             set _submitOnClick$Action(value) {
                 this.__submitOnClick$Action = value;
+            }
+
+            get _onInitialize$Action() {
+                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
+                    this.__onInitialize$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnInitialize");
+                                span.setAttribute("outsystems.function.key", "c2f6facd-c9d5-4a9e-9299-84dbd4547ddf");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnInitialize");
+                                callContext = controller.callContext(callContext);
+                                // IsSubmitting = False
+                                model.variables.isSubmittingVar = false;
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onInitialize$Action;
+            }
+            set _onInitialize$Action(value) {
+                this.__onInitialize$Action = value;
             }
 
 
@@ -1223,11 +1252,42 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
 
             }
 
+            onInitialize$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnInitialize");
+                        span.setAttribute("outsystems.function.key", "c2f6facd-c9d5-4a9e-9299-84dbd4547ddf");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
 
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = null;
+                    this._onInitializeEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onInitialize$Action(callContext);
+
+                    };
                 }
 
                 return this._onInitializeEventHandler;

@@ -380,7 +380,7 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
                     getCFDsPlansTableDataByCFDsAllSubPlanId$AggrRefresh: -1,
-                    getCFDsPlansTableDataByCFDsAllPlanId$AggrRefresh: -1
+                    getCFDsPlansTableDataByCFDsAllPlanId$AggrRefresh: 0
                 };
                 this.dataFetchDependentsGraph = {
                     getCFDsPlansTableDataByCFDsAllSubPlanId$AggrRefresh: [],
@@ -399,7 +399,7 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
                             var model = this.model;
                             var controller = this.controller;
                             var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCFDsPlansTableDataByCFDsAllSubPlanId", "screenservices/PartnersHub/CFDs/PlanDetailsTable/ScreenDataSetGetCFDsPlansTableDataByCFDsAllSubPlanId", "QKOwZupF_0y+94leQse2IQ", maxRecords, startIndex, function(b) {
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCFDsPlansTableDataByCFDsAllSubPlanId", "screenservices/PartnersHub/CFDs/PlanDetailsTable/ScreenDataSetGetCFDsPlansTableDataByCFDsAllSubPlanId", "loLIe5JEKYIrmp278twNnw", maxRecords, startIndex, function(b) {
                                 model.variables.getCFDsPlansTableDataByCFDsAllSubPlanIdAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getCFDsPlansTableDataByCFDsAllSubPlanIdAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCFDsPlansTableDataByCFDsAllSubPlanIdAggr.constructor));
@@ -447,7 +447,7 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
                             }, function(json) {
                                 model.variables.getCFDsPlansTableDataByCFDsAllPlanIdAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCFDsPlansTableDataByCFDsAllPlanIdAggr.constructor));
                             }, undefined, undefined, undefined, callContext, undefined, true).then(function() {
-                                controller._onAfterFetchAllPlan$Action(controller.callContext(callContext));
+                                return controller._onAfterFetchAllPlan$Action(controller.callContext(callContext));
                             });
                         }.bind(this);
                         return OS.Logger.startActiveSpan("GetCFDsPlansTableDataByCFDsAllPlanId", function(span) {
@@ -598,23 +598,34 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
+                            return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnAfterFetchAllPlan");
                                 callContext = controller.callContext(callContext);
-                                // Data = GetCFDsPlansTableDataByCFDsAllPlanId.List
-                                model.variables.dataVar = OS.DataConversion.JSConversions.typeConvertRecordList(model.variables.getCFDsPlansTableDataByCFDsAllPlanIdAggr.listOut, new PartnersHubModel.RL_67489198c39fbcf1ac201784c943f33a(), function(source, target) {
-                                    target = source.cFDsPlansTableDataAttr;
-                                    return target;
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    return OS.Flow.executeSequence(function() {
+                                        if ((model.variables.isSubPlanIn)) {
+                                            // Refresh Query: GetCFDsPlansTableDataByCFDsAllSubPlanId
+                                            var result = controller.getCFDsPlansTableDataByCFDsAllSubPlanId$AggrRefresh(50, 0, callContext);
+                                            model.flush();
+                                            return result;
+                                        } else {
+                                            // Data = GetCFDsPlansTableDataByCFDsAllPlanId.List
+                                            model.variables.dataVar = OS.DataConversion.JSConversions.typeConvertRecordList(model.variables.getCFDsPlansTableDataByCFDsAllPlanIdAggr.listOut, new PartnersHubModel.RL_67489198c39fbcf1ac201784c943f33a(), function(source, target) {
+                                                target = source.cFDsPlansTableDataAttr;
+                                                return target;
+                                            });
+                                            // IsLoading = False
+                                            model.variables.isLoadingVar = false;
+                                        }
+
+                                    });
                                 });
-                                // IsLoading = False
-                                model.variables.isLoadingVar = false;
-                            } finally {
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
@@ -684,15 +695,14 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onAfterFetchAllPlan$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -712,14 +722,7 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onParametersChanged$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;

@@ -96,10 +96,10 @@ flex-direction: column;
 
 .partners-hub-dashboard {
     display: flex;
-flex-direction: column;
-gap: 16px;
-height: auto;
-padding: 0px !important;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    padding: 0px !important;
 }
 
 /* NOTE: this fixes the flickering issue with the carousel */
@@ -209,22 +209,24 @@ box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0
 
 .inline-message {
     display: flex;
-padding: 16px;
-align-items: flex-start;
-gap: 8px;
-align-self: stretch;
-border-radius: 16px;
-background: rgba(44, 154, 255, 0.08);
+    padding: 16px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: rgba(44, 154, 255, 0.08);
 }
 
+.desktop .partners-hub-dashboard {
+    gap: 24px;
+}
 .partners-hub-dashboard {
     display: flex;
-flex-direction: column;
-gap: 16px;
-height: auto;
-padding-top: 20px;
-padding-bottom: 40px;;
-max-width: 1069px;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    width: 100%;
+    max-width: 1069px;
 }
 
 .complete-profile-commission-banner{
@@ -243,10 +245,6 @@ max-width: 1069px;
     justify-content: space-evenly;
     align-items: center;
 }
-}
-
-.phone .partners-hub-dashboard {
-    padding: 36px 16px 16px
 }
 
 .links-report-tab .osui-tabs__header-item.osui-tabs--is-active {

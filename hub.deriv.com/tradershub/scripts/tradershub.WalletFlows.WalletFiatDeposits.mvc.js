@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletFiatDeposits.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel) {
+define("tradershub.WalletFlows.WalletFiatDeposits.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -12,6 +12,12 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$model", ["@outsystems/runt
                     }, false),
                     this.attr("isLoading", "isLoadingVar", "isLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
+                    }, false),
+                    this.attr("HasError", "hasErrorVar", "HasError", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("ErrorMessage", "errorMessageVar", "ErrorMessage", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -54,7 +60,7 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$model", ["@outsystems/runt
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletFiatDeposits.mvc$model", "tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_WalletFlows_WalletFiatDeposits_mvc_model, tradershub_WalletFlows_WalletFiatDeposits_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view) {
+define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletFiatDeposits.mvc$model", "tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, tradershub_WalletFlows_WalletFiatDeposits_mvc_model, tradershub_WalletFlows_WalletFiatDeposits_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -141,7 +147,86 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runti
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     content: new PlaceholderContent(function() {
-                        return [React.createElement(tradershub_WalletBlocks_WalletOverlayPage_mvc_view, {
+                        return [React.createElement(OSWidgets.Popup, {
+                            showPopup: model.variables.hasErrorVar,
+                            style: "popup-dialog",
+                            _idProps: {
+                                service: idService,
+                                uuid: "1"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "2"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            style: "font-bold font-size-h3 margin-bottom-s",
+                            text: ["Error"],
+                            _idProps: {
+                                service: idService,
+                                uuid: "3"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Expression, {
+                            gridProperties: {
+                                marginLeft: "0px"
+                            },
+                            style: "display-flex flex-direction-column margin-bottom-base",
+                            value: model.variables.errorMessageVar,
+                            _idProps: {
+                                service: idService,
+                                uuid: "4"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            style: "full-width display-flex justify-content-flex-end",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "5"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Button, {
+                            enabled: true,
+                            extendedProperties: {
+                                style: "border-color: #222;"
+                            },
+                            isDefault: false,
+                            onClick: function() {
+                                try {
+                                    OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade), null, true);
+                                } catch (ex) {
+                                    if (((ex.name) !== ("RedirectOccurredException"))) {
+                                        throw ex;
+                                    }
+
+                                };
+                            },
+                            style: "btn",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "6"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "color: #222;"
+                            },
+                            text: ["Go back"],
+                            _idProps: {
+                                service: idService,
+                                uuid: "7"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })))), React.createElement(tradershub_WalletBlocks_WalletOverlayPage_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -161,7 +246,7 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runti
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "1",
+                                uuid: "8",
                                 alias: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -174,7 +259,7 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runti
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "2"
+                                            uuid: "9"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.AdvancedHtml, {
@@ -194,14 +279,14 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$view", ["@outsystems/runti
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.iFrameURLVar), asPrimitiveValue(model.variables.isLoadingVar)]
+                _dependencies: [asPrimitiveValue(model.variables.iFrameURLVar), asPrimitiveValue(model.variables.isLoadingVar), asPrimitiveValue(model.variables.errorMessageVar), asPrimitiveValue(model.variables.hasErrorVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
+define("tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "RESTAPIWebsocketOfficial.controller$CashierFIAT"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -254,7 +339,7 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", ["@outsystems
                                     model.variables.isLoadingVar = true;
                                     // Execute Action: CashierFIAT
                                     model.flush();
-                                    return RESTAPIWebsocketOfficialController.default.cashierFIAT$Action("1", "1", "en", tradershubClientVariables.getAuthToken(), function() {
+                                    return RESTAPIWebsocketOfficialController.default.cashierFIAT$Action(tradershubClientVariables.getURL(), tradershubClientVariables.getAppId(), tradershubClientVariables.getLang(), tradershubClientVariables.getAuthToken(), function() {
                                         var rec = new RESTAPIWebsocketOfficialModel.ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure();
                                         rec.cashierAttr = "deposit";
                                         rec.providerAttr = "doughflow";
@@ -262,12 +347,18 @@ define("tradershub.WalletFlows.WalletFiatDeposits.mvc$controller", ["@outsystems
                                     }(), callContext).then(function(value) {
                                         cashierFIATVar.value = value;
                                     }).then(function() {
-                                        // Execute Action: ConsoleLog
-                                        BrowserConsoleLoggingController.default.consoleLog$Action(cashierFIATVar.value.responseOut.errorAttr.messageAttr, 0, callContext);
-                                        // iFrameURL = CashierFIAT.Response.Cashier
-                                        model.variables.iFrameURLVar = cashierFIATVar.value.responseOut.cashierAttr;
-                                        // isLoading = False
-                                        model.variables.isLoadingVar = false;
+                                        if ((((cashierFIATVar.value.responseOut.errorAttr.messageAttr) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
+                                            // HasError = True
+                                            model.variables.hasErrorVar = true;
+                                            // ErrorMessage = CashierFIAT.Response.Error.Message
+                                            model.variables.errorMessageVar = cashierFIATVar.value.responseOut.errorAttr.messageAttr;
+                                        } else {
+                                            // iFrameURL = CashierFIAT.Response.Cashier
+                                            model.variables.iFrameURLVar = cashierFIATVar.value.responseOut.cashierAttr;
+                                            // isLoading = False
+                                            model.variables.isLoadingVar = false;
+                                        }
+
                                     });
                                 });
                             }, function() {

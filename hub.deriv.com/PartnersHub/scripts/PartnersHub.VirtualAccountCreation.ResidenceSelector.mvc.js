@@ -968,7 +968,7 @@ define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$controller.OnSe
         const filteredResidenceListResponse = JSON.stringify({
             ...residenceListResponse,
             residence_list: residenceListResponse.filter(country => country["text"].toLowerCase().startsWith($parameters.SearchedResidence.toLowerCase()))
-        })
+        });
 
         $parameters.FilteredResidenceList = filteredResidenceListResponse
     };

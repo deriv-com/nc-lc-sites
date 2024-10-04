@@ -20,9 +20,9 @@ define("PartnersHub.appDefinition", ["@outsystems/runtime-core-js"], function(OS
         isWeb: true,
         personalArea: null,
         showWatermark: false,
-        buildServiceVersion: "v17.1626.0.0",
-        clientRuntimeVersion: "6.12.1",
+        buildServiceVersion: "v17.1637.0.0",
+        clientRuntimeVersion: "6.13.2",
         useESM: false,
-        appVersion: "5505"
+        appVersion: "5705"
     };
 });

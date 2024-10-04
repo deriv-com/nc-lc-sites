@@ -1,4 +1,4 @@
-define("PartnersHub.Home.WhatsAppBanner.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model"], function(OSRuntimeCore, PartnersHubModel) {
+define("PartnersHub.Home.WhatsAppBanner.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -43,7 +43,11 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$model", ["@outsystems/runtime-core-j
         }
 
         static get hasValidationWidgets() {
-            return false;
+            if ((Model._hasValidationWidgetsValue === undefined)) {
+                Model._hasValidationWidgetsValue = CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets;
+            }
+
+            return Model._hasValidationWidgetsValue;
         }
         setInputs(inputs) {}
 
@@ -53,7 +57,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$model", ["@outsystems/runtime-core-j
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.WhatsAppBanner.mvc$model", "PartnersHub.Home.WhatsAppBanner.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_WhatsAppBanner_mvc_model, PartnersHub_Home_WhatsAppBanner_mvc_controller, PartnersHubClientVariables, OSWidgets) {
+define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.WhatsAppBanner.mvc$model", "PartnersHub.Home.WhatsAppBanner.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_WhatsAppBanner_mvc_model, PartnersHub_Home_WhatsAppBanner_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -76,7 +80,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/PartnersHub.Home.WhatsAppBanner.css"];
         }
 
         static getJsDependencies() {
@@ -84,7 +88,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
         }
 
         static getBlocks() {
-            return [];
+            return [CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -116,23 +120,19 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
 
             return React.createElement("div", this.getRootNodeProperties(), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
-                animate: true,
-                extendedProperties: {
-                    style: "align-items: flex-start; background: url(/PartnersHub/img/PartnersHub.whatsapp_banner_bg.jpg) lightgray 50% / cover no-repeat; border-radius: 8px; display: flex; flex-direction: column; gap: 16px; padding: 24px 36px;"
-                },
+                animate: false,
                 gridProperties: {
                     classes: "OSInline"
                 },
-                visible: model.variables.enableWhatsappBannerVar,
+                style: "whatsapp-banner-container",
+                visible: true,
                 _idProps: {
                     service: idService,
                     name: "WhatsappSection"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
-                extendedProperties: {
-                    style: "color: var(--Neutral-Neutral-0, #FFF); font-size: 24px; font-style: normal; font-weight: 700; line-height: normal;"
-                },
+                style: "banner-description",
                 text: ["WhatsApp updates exclusively for Partners"],
                 _idProps: {
                     service: idService,
@@ -141,22 +141,54 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
                 _widgetRecordProvider: widgetsRecordProvider
             }), React.createElement(OSWidgets.Image, {
                 gridProperties: {
-                    classes: "ThemeGrid_MarginGutter"
+                    classes: "OSFillParent"
                 },
                 image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.phone2501.png"),
+                style: "phone-image",
                 type: /*Static*/ 0,
                 _idProps: {
                     service: idService,
                     uuid: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
+            }), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
+                getOwnerSpan: function() {
+                    return _this.getChildSpan("render");
+                },
+                getOwnerDisposeSpan: function() {
+                    return _this.getChildSpan("destroy");
+                },
+                inputs: {
+                    title: "Join Now"
+                },
+                events: {
+                    _handleError: function(ex) {
+                        controller.handleError(ex);
+                    },
+                    onClick$Action: function() {
+                        var eventHandlerContext = callContext.clone();
+                        controller.onClickJoinNow$Action(controller.callContext(eventHandlerContext));
+
+                        ;
+                    }
+                },
+                _validationProps: {
+                    validationService: validationService
+                },
+                _idProps: {
+                    service: idService,
+                    uuid: "3",
+                    alias: "1"
+                },
+                _widgetRecordProvider: widgetsRecordProvider,
+                _dependencies: []
             })));
         }
     }
 
     return View;
 });
-define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_WhatsAppBanner_mvc_TranslationsResources) {
+define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$RedirectToExternalNewTab"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Home_WhatsAppBanner_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -265,6 +297,51 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-c
                 this.__onReady$Action = value;
             }
 
+            get _onClickJoinNow$Action() {
+                if (!(this.hasOwnProperty("__onClickJoinNow$Action"))) {
+                    this.__onClickJoinNow$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnClickJoinNow", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnClickJoinNow");
+                                span.setAttribute("outsystems.function.key", "e524bd03-1380-4a32-a549-a330b0d629f1");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnClickJoinNow");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: RudderstackTrackEvent
+                                PartnersHubController.default.rudderstackTrackEvent$Action(function() {
+                                    var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
+                                    rec.actionAttr = "click_cta";
+                                    rec.cta_nameAttr = "Join Now";
+                                    rec.cta_placementAttr = "whatsapp banner join now button";
+                                    return rec;
+                                }(), "ce_partnershub_form", callContext);
+                                // Execute Action: RedirectToExternalNewTab
+                                PartnersHubController.default.redirectToExternalNewTab$Action("https://www.whatsapp.com/channel/0029VajV7cY8fewr35BOkF06", callContext);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onClickJoinNow$Action;
+            }
+            set _onClickJoinNow$Action(value) {
+                this.__onClickJoinNow$Action = value;
+            }
+
 
             onReady$Action(callContext) {
                 var controller = this.controller;
@@ -285,6 +362,30 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-c
                         }
 
                     });
+                }, 0);
+
+            }
+
+            onClickJoinNow$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnClickJoinNow__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnClickJoinNow");
+                        span.setAttribute("outsystems.function.key", "e524bd03-1380-4a32-a549-a330b0d629f1");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onClickJoinNow$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
                 }, 0);
 
             }

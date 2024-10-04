@@ -128,7 +128,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-c
                 align: /*Default*/ 0,
                 animate: false,
                 extendedProperties: {
-                    style: "display: flex; gap: 16px;"
+                    style: "background: var(--Neutral-Neutral-1, #F8F9FA); border: 1px solid var(--Neutral-Neutral-2, #F1F3F5); border-radius: 8px; display: flex; gap: 16px; padding: 16px;"
                 },
                 style: "referral-links-reports",
                 visible: true,

@@ -12,7 +12,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global global, define, Symbol, Reflect, Promise, SuppressedError */
+/* global global, define, Symbol, Reflect, Promise, SuppressedError, Iterator */
 var __extends;
 var __assign;
 var __rest;
@@ -235,12 +235,8 @@ var __disposeResources;
                 trys: [],
                 ops: []
             },
-            f, y, t, g;
-        return g = {
-            next: verb(0),
-            "throw": verb(1),
-            "return": verb(2)
-        }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+            f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+        return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() {
             return this;
         }), g;
 
@@ -408,16 +404,25 @@ var __disposeResources;
         if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
         var g = generator.apply(thisArg, _arguments || []),
             i, q = [];
-        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
             return this;
         }, i;
 
-        function verb(n) {
-            if (g[n]) i[n] = function(v) {
-                return new Promise(function(a, b) {
-                    q.push([n, v, a, b]) > 1 || resume(n, v);
-                });
+        function awaitReturn(f) {
+            return function(v) {
+                return Promise.resolve(v).then(f, reject);
             };
+        }
+
+        function verb(n, f) {
+            if (g[n]) {
+                i[n] = function(v) {
+                    return new Promise(function(a, b) {
+                        q.push([n, v, a, b]) > 1 || resume(n, v);
+                    });
+                };
+                if (f) i[n] = f(i[n]);
+            }
         }
 
         function resume(n, v) {
@@ -546,7 +551,7 @@ var __disposeResources;
     __addDisposableResource = function(env, value, async) {
         if (value !== null && value !== void 0) {
             if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-            var dispose;
+            var dispose, inner;
             if (async) {
                 if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
                 dispose = value[Symbol.asyncDispose];
@@ -554,8 +559,16 @@ var __disposeResources;
             if (dispose === void 0) {
                 if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
                 dispose = value[Symbol.dispose];
+                if (async) inner = dispose;
             }
             if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+            if (inner) dispose = function() {
+                try {
+                    inner.call(this);
+                } catch (e) {
+                    return Promise.reject(e);
+                }
+            };
             env.stack.push({
                 value: value,
                 dispose: dispose,
@@ -579,20 +592,24 @@ var __disposeResources;
             env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
             env.hasError = true;
         }
+        var r, s = 0;
 
         function next() {
-            while (env.stack.length) {
-                var rec = env.stack.pop();
+            while (r = env.stack.pop()) {
                 try {
-                    var result = rec.dispose && rec.dispose.call(rec.value);
-                    if (rec.async) return Promise.resolve(result).then(next, function(e) {
-                        fail(e);
-                        return next();
-                    });
+                    if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
+                    if (r.dispose) {
+                        var result = r.dispose.call(r.value);
+                        if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) {
+                            fail(e);
+                            return next();
+                        });
+                    } else s |= 1;
                 } catch (e) {
                     fail(e);
                 }
             }
+            if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
             if (env.hasError) throw env.error;
         }
         return next();
