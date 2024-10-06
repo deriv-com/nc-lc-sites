@@ -455,9 +455,6 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 return [React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
-                    extendedProperties: {
-                        style: "height: 100%;"
-                    },
                     style: "content-wrapper",
                     visible: true,
                     _idProps: {
@@ -468,9 +465,6 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 }, React.createElement(OSWidgets.Placeholder, {
                     align: /*Default*/ 0,
                     content: _this.props.placeholders.content,
-                    extendedProperties: {
-                        style: "height: 100%; margin: 0;"
-                    },
                     gridProperties: {
                         classes: "ThemeGrid_Width10"
                     },

@@ -1565,5 +1565,14 @@ define("tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", []
             signup_provider: "email",
             form_name: "virtual_signup_form_outsystems"
         })
+
+        // cacheTrackEvents.track({
+        //     name: "ce_virtual_signup_form",
+        //     properties: {
+        //         action: "continue_attempt",
+        //         signup_provider: "email",
+        //         form_name: "virtual_signup_form_outsystems"
+        //     }
+        // }, false); 
     };
 });

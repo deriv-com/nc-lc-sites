@@ -1,5 +1,23 @@
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController) {
-    var OS = OSRuntimeCore;
+define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController) {
+    var OS = OSRuntimeCore; {
+        class GetCurrenciesAggrRecInner extends
+        OS.Model.AggregateRecord {
+            static attributesToDeclare() {
+                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new GetCurrenciesAggrRec(new GetCurrenciesAggrRec.RecordClass({
+                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        GetCurrenciesAggrRecInner.RecordListType = tradershubModel.RL_5ee36d8deb03b51810340e621ea66d4b;
+        var GetCurrenciesAggrRec = GetCurrenciesAggrRecInner;
+        GetCurrenciesAggrRec.init();
+    }
 
 
     {
@@ -7,15 +25,15 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/ru
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("Icon", "iconVar", "Icon", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, false),
-                    this.attr("Currency", "currencyVar", "Currency", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, false),
+                    this.attr("Currency", "currencyVar", "Currency", true, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord());
+                    }, false, tradershubModel.EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord),
                     this.attr("Balance", "balanceVar", "Balance", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
-                    }, false)
+                    }, false),
+                    this.attr("GetCurrencies", "getCurrenciesAggr", "GetCurrencies", true, true, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new GetCurrenciesAggrRec());
+                    }, true, GetCurrenciesAggrRec)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -53,7 +71,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/ru
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_WalletBlocks_WalletCashierHeader_mvc_model, tradershub_WalletBlocks_WalletCashierHeader_mvc_controller, tradershubClientVariables, OSWidgets) {
+define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_WalletBlocks_WalletCashierHeader_mvc_model, tradershub_WalletBlocks_WalletCashierHeader_mvc_controller, tradershubClientVariables, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -132,7 +150,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
                     width: "32px"
                 },
                 type: /*External*/ 1,
-                url: model.variables.iconVar,
+                url: model.variables.currencyVar.iconAttr,
                 _idProps: {
                     service: idService,
                     name: "WalletCashierHeaderIcon"
@@ -143,7 +161,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
                     marginLeft: "0"
                 },
                 style: "font-bold font-size-s",
-                value: (model.variables.currencyVar + " Wallet"),
+                value: (model.variables.currencyVar.codeAttr + " Wallet"),
                 _idProps: {
                     service: idService,
                     uuid: "2"
@@ -154,7 +172,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
                     classes: "ThemeGrid_MarginGutter"
                 },
                 style: "font-size-s font-bold flex-1 text-align-right",
-                value: model.variables.balanceVar,
+                value: ((model.variables.balanceVar + " ") + model.variables.currencyVar.codeAttr),
                 _idProps: {
                     service: idService,
                     uuid: "3"
@@ -166,7 +184,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
 
     return View;
 });
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletBlocks.WalletCashierHeader.mvc$controller.OnReady.GetIconJS", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletBlocks_WalletCashierHeader_mvc_controller_OnReady_GetIconJS) {
+define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -174,31 +192,44 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
                 super(model, messagesProvider, idService);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {};
-                this.dataFetchDependentsGraph = {};
+                this.dataFetchDependenciesOriginal = {
+                    getCurrencies$AggrRefresh: 0
+                };
+                this.dataFetchDependentsGraph = {
+                    getCurrencies$AggrRefresh: []
+                };
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
-            get currenciesList$ServerAction() {
-                if (!(this.hasOwnProperty("_currenciesList$ServerAction"))) {
-                    this._currenciesList$ServerAction = function(callContext) {
-                        var controller = this.controller;
-                        return OS.Logger.startActiveSpan("CurrenciesList", function(span) {
+
+            // Aggregates and Data Actions
+            get getCurrencies$AggrRefresh() {
+                if (!(this.hasOwnProperty("_getCurrencies$AggrRefresh"))) {
+                    this._getCurrencies$AggrRefresh = function() {
+                        var innerBody = function(maxRecords, startIndex, callContext) {
+                            var model = this.model;
+                            var controller = this.controller;
+                            var callContext = controller.callContext(callContext);
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCurrencies", "screenservices/tradershub/WalletBlocks/WalletCashierHeader/ScreenDataSetGetCurrencies", "7ZDQVZcK1tWZhNuYKqZ8hQ", maxRecords, startIndex, function(b) {
+                                model.variables.getCurrenciesAggr.dataFetchStatusAttr = b;
+                            }, function(json) {
+                                model.variables.getCurrenciesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCurrenciesAggr.constructor));
+                            }, undefined, undefined, undefined, callContext, undefined, false).then(function() {
+                                return controller._getCurrenciesOnAfterFetch$Action(controller.callContext(callContext));
+                            });
+                        }.bind(this);
+                        return OS.Logger.startActiveSpan("GetCurrencies", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "CurrenciesList");
-                                span.setAttribute("outsystems.function.key", "f15c4591-9739-418f-bc8d-14d275e849d1");
+                                span.setAttribute("code.function", "GetCurrencies");
+                                span.setAttribute("outsystems.function.key", "b67fa15b-ce5d-4269-8edd-659b8a7cdfd1");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/WalletBlocks/WalletCashierHeader/ActionCurrenciesList", "psznQM4XSL63xbToINuQZw", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
-                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.WalletBlocks.WalletCashierHeader$ActionCurrenciesList"))();
-                                    executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
-                                    return executeServerActionResult;
-                                });
+                                return innerBody();
                             }, function() {
                                 if (span) {
                                     span.end();
@@ -206,21 +237,20 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
 
                             });
                         }, 0);
+
                     };
                 }
 
-                return this._currenciesList$ServerAction;
+                return this._getCurrencies$AggrRefresh;
             }
-            set currenciesList$ServerAction(value) {
-                this._currenciesList$ServerAction = value;
+            set getCurrencies$AggrRefresh(value) {
+                this._getCurrencies$AggrRefresh = value;
             }
 
-
-            // Aggregates and Data Actions
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = [];
+                    this._dataFetchActionNames = ["getCurrencies$AggrRefresh"];
                 }
 
                 return this._dataFetchActionNames;
@@ -230,81 +260,45 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
             }
 
             // Client Actions - Methods
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
+            get _getCurrenciesOnAfterFetch$Action() {
+                if (!(this.hasOwnProperty("__getCurrenciesOnAfterFetch$Action"))) {
+                    this.__getCurrenciesOnAfterFetch$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                        return OS.Logger.startActiveSpan("GetCurrenciesOnAfterFetch", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "aa315fdb-b60f-4e25-80e8-48027bd62ba6");
+                                span.setAttribute("code.function", "GetCurrenciesOnAfterFetch");
+                                span.setAttribute("outsystems.function.key", "0d4e3418-97da-44ba-a575-43f06206830e");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnReady");
+                                controller.ensureControllerAlive("GetCurrenciesOnAfterFetch");
                                 callContext = controller.callContext(callContext);
-                                var currenciesListVar = new OS.DataTypes.VariableHolder();
-                                var formatMoneyVar = new OS.DataTypes.VariableHolder();
                                 var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
-                                var getIconJSResult = new OS.DataTypes.VariableHolder();
-                                var jSONSerializeCurrenciesListVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var listFilterVar = new OS.DataTypes.VariableHolder();
+                                var formatMoneyVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: SendAuthorize
                                     model.flush();
                                     return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
                                         sendAuthorizeVar.value = value;
                                     }).then(function() {
+                                        // Execute Action: ListFilter
+                                        listFilterVar.value = OS.SystemActions.listFilter(model.variables.getCurrenciesAggr.listOut, function(p) {
+                                            return (p.currenciesAttr.codeAttr === sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr);
+                                        }, callContext);
+
                                         // Execute Action: FormatMoney
-                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(OS.BuiltinFunctions.longIntegerToText(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr), sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
+                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).currenciesAttr.codeAttr, "en-US", "", callContext);
 
-                                        // Execute Action: CurrenciesList
-                                        model.flush();
-                                        return controller.currenciesList$ServerAction(callContext).then(function(value) {
-                                            currenciesListVar.value = value;
-                                        });
-                                    }).then(function() {
-                                        // JSON Serialize: JSONSerializeCurrenciesList
-                                        jSONSerializeCurrenciesListVar.value.jSONOut = OS.JSONUtils.serializeToJSON(currenciesListVar.value.currenciesListOut, false, false);
-                                        getIconJSResult.value = OS.Logger.startActiveSpan("GetIcon", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "GetIcon");
-                                                span.setAttribute("outsystems.function.key", "29bba0fe-f615-4442-a0f8-1284a1bce55a");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_WalletBlocks_WalletCashierHeader_mvc_controller_OnReady_GetIconJS, "GetIcon", "OnReady", {
-                                                    CurrencyList: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeCurrenciesListVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
-                                                    Currency: OS.DataConversion.JSNodeParamConverter.to(sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, OS.DataTypes.DataTypes.Text),
-                                                    Icon: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                                }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.WalletBlocks.WalletCashierHeader.OnReady$getIconJSResult"))();
-                                                    jsNodeResult.iconOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Icon, OS.DataTypes.DataTypes.Text);
-                                                    return jsNodeResult;
-                                                }, {
-                                                    GetCurrencyIcon: tradershubController.default.clientActionProxies.getCurrencyIcon$Action
-                                                }, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
-
-                                            }
-
-                                        }, 1);
-                                        // Icon = GetIcon.Icon
-                                        model.variables.iconVar = getIconJSResult.value.iconOut;
+                                        // Currency = ListFilter.FilteredList.Current
+                                        model.variables.currencyVar = listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).currenciesAttr;
                                         // Balance = FormatMoney.FormattedNumber
                                         model.variables.balanceVar = formatMoneyVar.value.formattedNumberOut;
-                                        // Currency = SendAuthorize.Response.Authorize.Currency
-                                        model.variables.currencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
                                     });
                                 });
                             }, function() {
@@ -317,26 +311,26 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
                     };
                 }
 
-                return this.__onReady$Action;
+                return this.__getCurrenciesOnAfterFetch$Action;
             }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
+            set _getCurrenciesOnAfterFetch$Action(value) {
+                this.__getCurrenciesOnAfterFetch$Action = value;
             }
 
 
-            onReady$Action(callContext) {
+            getCurrenciesOnAfterFetch$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                return OS.Logger.startActiveSpan("GetCurrenciesOnAfterFetch__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "aa315fdb-b60f-4e25-80e8-48027bd62ba6");
+                        span.setAttribute("code.function", "GetCurrenciesOnAfterFetch");
+                        span.setAttribute("outsystems.function.key", "0d4e3418-97da-44ba-a575-43f06206830e");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
                     return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                        return controller.safeExecuteClientAction(controller._getCurrenciesOnAfterFetch$Action, callContext);
                     }, function() {
                         if (span) {
                             span.end();
@@ -362,14 +356,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;
@@ -434,36 +421,9 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
 
         var Controller = ControllerInner;
         // Server Actions - Variables
-        Controller.registerVariableGroupType("tradershub.WalletBlocks.WalletCashierHeader$ActionCurrenciesList", [{
-            name: "CurrenciesList",
-            attrName: "currenciesListOut",
-            mandatory: false,
-            dataType: OS.DataTypes.DataTypes.RecordList,
-            defaultValue: function() {
-                return new tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d();
-            },
-            complexType: tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d
-        }]);
 
         // Client Actions - Variables
-        Controller.registerVariableGroupType("tradershub.WalletBlocks.WalletCashierHeader.OnReady$getIconJSResult", [{
-            name: "Icon",
-            attrName: "iconOut",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Text,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
-});
-
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller.OnReady.GetIconJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        $parameters.Icon = $actions.GetCurrencyIcon($parameters.Currency, $parameters.CurrencyList)?.CurrencyIcon;
-
-        console.log("$parameters.Currency")
-    };
 });

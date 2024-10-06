@@ -945,7 +945,9 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller"
                                         }
 
                                         try {
-                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {}, {});
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreation_PersonalDetailsAdditional_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {
+                                                IsDesktop: OutSystemsUIController.default.clientActionProxies.isDesktop$Action
+                                            }, {});
                                         } finally {
                                             if (span) {
                                                 span.end();
@@ -1485,7 +1487,7 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.
     return function($actions, $roles, $public) {
         Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
             action: "step_passed",
-            step_num: 1,
+            step_num: $actions.IsDesktop() ? 1 : 0.75,
             step_codename: "personal_details",
             form_name: "real_account_signup_form_outsystems"
         });

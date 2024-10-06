@@ -1,0 +1,13 @@
+﻿.product-card {
+    padding: 16px;
+    min-width: 368px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #DEE2E6;
+    cursor: pointer;
+}
+
+.tablet .product-card,
+.phone .product-card {
+    width: 100%;
+}

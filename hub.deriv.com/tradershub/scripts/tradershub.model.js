@@ -3477,6 +3477,76 @@ define("tradershub.model$RL_13f4e7ea22b9e316259c119567103cf9", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e615c73f7c49d5c9a1b81b0e5505c2d5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_ae15e885fd6defd7e40491664a35bff0Structure;
+        }
+
+    }
+
+    tradershubModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5 = RL_e615c73f7c49d5c9a1b81b0e5505c2d5;
+
+});
+
+define("tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class ST_3c6ba624991ba71a1d179d7c7ef27261StructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5());
+                    }, true, tradershubModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        tradershubModel.ST_3c6ba624991ba71a1d179d7c7ef27261Structure = ST_3c6ba624991ba71a1d179d7c7ef27261StructureInner;
+
+        var ST_3c6ba624991ba71a1d179d7c7ef27261Structure = ST_3c6ba624991ba71a1d179d7c7ef27261StructureInner;
+        ST_3c6ba624991ba71a1d179d7c7ef27261Structure.init();
+    }
+});
+
+define("tradershub.model$RC_1422fe5b1c23bd120d0e2aa9028feb6b", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_1422fe5b1c23bd120d0e2aa9028feb6bInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TradingPlatformAvailableAccountsResponseCtrader", "tradingPlatformAvailableAccountsResponseCtraderAttr", "TradingPlatformAvailableAccountsResponseCtrader", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_3c6ba624991ba71a1d179d7c7ef27261Structure());
+                    }, true, tradershubModel.ST_3c6ba624991ba71a1d179d7c7ef27261Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_1422fe5b1c23bd120d0e2aa9028feb6b(new RC_1422fe5b1c23bd120d0e2aa9028feb6b.RecordClass({
+                    tradingPlatformAvailableAccountsResponseCtraderAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_1422fe5b1c23bd120d0e2aa9028feb6b = RC_1422fe5b1c23bd120d0e2aa9028feb6bInner;
+
+        RC_1422fe5b1c23bd120d0e2aa9028feb6bInner._isAnonymousRecord = true;
+        RC_1422fe5b1c23bd120d0e2aa9028feb6bInner.UniqueId = "1422fe5b-1c23-bd12-0d0e-2aa9028feb6b";
+        var RC_1422fe5b1c23bd120d0e2aa9028feb6b = RC_1422fe5b1c23bd120d0e2aa9028feb6bInner;
+        RC_1422fe5b1c23bd120d0e2aa9028feb6b.init();
+    }
+});
+
 define("tradershub.model$RL_143abbfebca3c373ef0923e4c8b26336", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_cea376e9e95ae6d491d188174483cdceStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_143abbfebca3c373ef0923e4c8b26336 extends
@@ -5745,20 +5815,6 @@ define("tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", ["export
     }
 });
 
-define("tradershub.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
-    var OS = OSRuntimeCore;
-    class RL_e615c73f7c49d5c9a1b81b0e5505c2d5 extends
-    OS.DataTypes.GenericRecordList {
-        static getItemType() {
-            return RESTAPIWebsocketOfficialModel.ST_ae15e885fd6defd7e40491664a35bff0Structure;
-        }
-
-    }
-
-    tradershubModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5 = RL_e615c73f7c49d5c9a1b81b0e5505c2d5;
-
-});
-
 define("tradershub.model$RL_24d00c079b23f7e47e2ee86991545c06", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_24d00c079b23f7e47e2ee86991545c06 extends
@@ -6540,6 +6596,50 @@ define("tradershub.model$RL_296c80117ea3feed92d93a9342c06001", ["exports", "@out
 
 });
 
+define("tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_e25657c96fdb654707c20af3bb230787Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "tradershub.model$RL_016ebe8f15c3060e53dd56f2fea28791", "RESTAPIWebsocketOfficial.model$ST_8517d9c8b73e866553a1a7b806af5079Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class ST_8907948f85abfce9f41b7aac6149d55eStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Echo_req", "echo_reqAttr", "echo_req", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e25657c96fdb654707c20af3bb230787Structure),
+                    this.attr("Msg_type", "msg_typeAttr", "msg_type", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("trading_platform_available_accounts", "trading_platform_available_accountsAttr", "trading_platform_available_accounts", false, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_016ebe8f15c3060e53dd56f2fea28791());
+                    }, true, tradershubModel.RL_016ebe8f15c3060e53dd56f2fea28791),
+                    this.attr("Error", "errorAttr", "error", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8517d9c8b73e866553a1a7b806af5079Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        tradershubModel.ST_8907948f85abfce9f41b7aac6149d55eStructure = ST_8907948f85abfce9f41b7aac6149d55eStructureInner;
+
+        var ST_8907948f85abfce9f41b7aac6149d55eStructure = ST_8907948f85abfce9f41b7aac6149d55eStructureInner;
+        ST_8907948f85abfce9f41b7aac6149d55eStructure.init();
+    }
+});
+
+define("tradershub.model$RL_297acd7c437f547f880ff3fb1da31bab", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_297acd7c437f547f880ff3fb1da31bab extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.ST_8907948f85abfce9f41b7aac6149d55eStructure;
+        }
+
+    }
+
+    tradershubModel.RL_297acd7c437f547f880ff3fb1da31bab = RL_297acd7c437f547f880ff3fb1da31bab;
+
+});
+
 define("tradershub.model$RL_2a702ffc9c0b13df355efec0d2156b96", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_c73d23121ed7b75585394958b5922504Structure"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_2a702ffc9c0b13df355efec0d2156b96 extends
@@ -6856,8 +6956,8 @@ define("tradershub.model$ST_8d630435c078369fbe29222c857e96f2Structure", ["export
                     this.attr("Account_list", "account_listAttr", "account_list", false, false, OS.DataTypes.DataTypes.RecordList, function() {
                         return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_93aac6f383f04a9d0a0e078d2dec0d9f());
                     }, true, tradershubModel.RL_93aac6f383f04a9d0a0e078d2dec0d9f),
-                    this.attr("Balance", "balanceAttr", "balance", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
-                        return OS.DataTypes.LongInteger.defaultValue;
+                    this.attr("Balance", "balanceAttr", "balance", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
                     }, true),
                     this.attr("Country", "countryAttr", "country", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
@@ -11506,8 +11606,8 @@ define("tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", ["exp
                     this.attr("Category", "categoryAttr", "Category", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, true),
-                    this.attr("Type", "typeAttr", "Type", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
+                    this.attr("IsFiat", "isFiatAttr", "IsFiat", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
                     }, true)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -12421,6 +12521,20 @@ define("tradershub.model$RC_6ceb0a54ddbc92446ab66e8c847870c1", ["exports", "@out
         var RC_6ceb0a54ddbc92446ab66e8c847870c1 = RC_6ceb0a54ddbc92446ab66e8c847870c1Inner;
         RC_6ceb0a54ddbc92446ab66e8c847870c1.init();
     }
+});
+
+define("tradershub.model$RL_6d03fd39b2ea34429b987c6779e61da8", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_6d03fd39b2ea34429b987c6779e61da8 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.ST_3c6ba624991ba71a1d179d7c7ef27261Structure;
+        }
+
+    }
+
+    tradershubModel.RL_6d03fd39b2ea34429b987c6779e61da8 = RL_6d03fd39b2ea34429b987c6779e61da8;
+
 });
 
 define("tradershub.model$RL_6d35299704f3eec23ed812a5a367da37", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "tradershub.model", "RESTAPIWebsocketOfficial.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, tradershubModel) {
@@ -13918,6 +14032,35 @@ define("tradershub.model$RL_81ee15f1f34f9dff4c4f316479d40b9e", ["exports", "@out
 
     tradershubModel.RL_81ee15f1f34f9dff4c4f316479d40b9e = RL_81ee15f1f34f9dff4c4f316479d40b9e;
 
+});
+
+define("tradershub.model$RC_83a31fb6387a726b0108bb0e0a584bd4", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_83a31fb6387a726b0108bb0e0a584bd4Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TradingPlatformAvailableAccountsResponseMT5", "tradingPlatformAvailableAccountsResponseMT5Attr", "TradingPlatformAvailableAccountsResponseMT5", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_8907948f85abfce9f41b7aac6149d55eStructure());
+                    }, true, tradershubModel.ST_8907948f85abfce9f41b7aac6149d55eStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_83a31fb6387a726b0108bb0e0a584bd4(new RC_83a31fb6387a726b0108bb0e0a584bd4.RecordClass({
+                    tradingPlatformAvailableAccountsResponseMT5Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        tradershubModel.RC_83a31fb6387a726b0108bb0e0a584bd4 = RC_83a31fb6387a726b0108bb0e0a584bd4Inner;
+
+        RC_83a31fb6387a726b0108bb0e0a584bd4Inner._isAnonymousRecord = true;
+        RC_83a31fb6387a726b0108bb0e0a584bd4Inner.UniqueId = "83a31fb6-387a-726b-0108-bb0e0a584bd4";
+        var RC_83a31fb6387a726b0108bb0e0a584bd4 = RC_83a31fb6387a726b0108bb0e0a584bd4Inner;
+        RC_83a31fb6387a726b0108bb0e0a584bd4.init();
+    }
 });
 
 define("tradershub.model$RC_ced013358a82a813f1d9a5108f17ce79", ["exports", "@outsystems/runtime-core-js", "System_.model", "tradershub.model", "System_.model$ENUserEntityRecord", "tradershub.referencesHealth", "tradershub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, tradershubModel) {
@@ -17999,6 +18142,20 @@ define("tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", ["exports", "@out
 
 });
 
+define("tradershub.model$RL_c0f685dc818eb8e9cc21c528820e7f5c", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_83a31fb6387a726b0108bb0e0a584bd4"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c0f685dc818eb8e9cc21c528820e7f5c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_83a31fb6387a726b0108bb0e0a584bd4;
+        }
+
+    }
+
+    tradershubModel.RL_c0f685dc818eb8e9cc21c528820e7f5c = RL_c0f685dc818eb8e9cc21c528820e7f5c;
+
+});
+
 define("tradershub.model$RL_c1b551b639cf44782c03b977f31ed021", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_a5fc3d62312a89b32ae393e0571bcad7"], function(exports, OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
     class RL_c1b551b639cf44782c03b977f31ed021 extends
@@ -19154,6 +19311,20 @@ define("tradershub.model$RL_d8959d4c81c965e073d03471f545ed85", ["exports", "@out
     }
 
     tradershubModel.RL_d8959d4c81c965e073d03471f545ed85 = RL_d8959d4c81c965e073d03471f545ed85;
+
+});
+
+define("tradershub.model$RL_d8a2aa7bbdd3d0098ee91313f187b5d5", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_1422fe5b1c23bd120d0e2aa9028feb6b"], function(exports, OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
+    class RL_d8a2aa7bbdd3d0098ee91313f187b5d5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return tradershubModel.RC_1422fe5b1c23bd120d0e2aa9028feb6b;
+        }
+
+    }
+
+    tradershubModel.RL_d8a2aa7bbdd3d0098ee91313f187b5d5 = RL_d8a2aa7bbdd3d0098ee91313f187b5d5;
 
 });
 
@@ -21062,12 +21233,6 @@ define("tradershub.model", ["exports", "@outsystems/runtime-core-js"], function(
     var getCfdProductConfigRecord = function(record) {
         return tradershubModel.module.staticEntities["022f05f8-c7c8-480e-94df-dc466e0621c8"][record];
     };
-    Object.defineProperty(tradershubModel.staticEntities.cfdProductConfig, "financialStp", {
-        get: function() {
-            return 3;
-        }
-    });
-
     Object.defineProperty(tradershubModel.staticEntities.cfdProductConfig, "zeroSpread", {
         get: function() {
             return 5;
@@ -21077,6 +21242,12 @@ define("tradershub.model", ["exports", "@outsystems/runtime-core-js"], function(
     Object.defineProperty(tradershubModel.staticEntities.cfdProductConfig, "ctrader", {
         get: function() {
             return 6;
+        }
+    });
+
+    Object.defineProperty(tradershubModel.staticEntities.cfdProductConfig, "stp", {
+        get: function() {
+            return 3;
         }
     });
 

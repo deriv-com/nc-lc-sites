@@ -1,0 +1,11 @@
+﻿.desktop .crypto-address-container {
+    max-width: 296px;
+    width: 100%;
+}
+
+.crypto-address-input {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

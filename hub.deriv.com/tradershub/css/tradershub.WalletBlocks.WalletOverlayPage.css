@@ -7,13 +7,9 @@
     width: 100%;
 }
 
-.desktop .wallet-overlay-container {
-    padding: 8px 72px;
-}
-
 .phone .wallet-overlay-container,
 .tablet.wallet-overlay-container {
-    padding: 16px;
+    padding: 16px 0px;
 }
 
 .phone .wallet-overlay-container,

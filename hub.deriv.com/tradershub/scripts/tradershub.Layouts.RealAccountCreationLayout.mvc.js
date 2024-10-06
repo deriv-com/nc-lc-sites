@@ -1524,7 +1524,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
 
     return View;
 });
-define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.LoadDerivAppIframeJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.FlatpickrJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnOpenModal.RudderStackJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.PreviousScreen.RudderStackJS", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_LoadDerivAppIframeJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_FlatpickrJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnOpenModal_RudderStackJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_PreviousScreen_RudderStackJS) {
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.FlatpickrJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnOpenModal.RudderStackJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.PreviousScreen.RudderStackJS", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_FlatpickrJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnOpenModal_RudderStackJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_PreviousScreen_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1612,25 +1612,6 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsyst
                                 // Execute Action: ScrollToElement
                                 scrollToElementVar.value = OutSystemsUIController.default.scrollToElement$Action(idService.getId("HeaderContainer"), true, 0, model.variables.titleIn, 0, callContext);
 
-                                OS.Logger.startActiveSpan("LoadDerivAppIframe", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "LoadDerivAppIframe");
-                                        span.setAttribute("outsystems.function.key", "4585299a-1d52-4ac9-8145-9cdb9cb3b308");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_LoadDerivAppIframeJS, "LoadDerivAppIframe", "OnReady", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                                 OS.Logger.startActiveSpan("Flatpickr", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Flatpickr");
@@ -1946,14 +1927,15 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsyst
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    return OS.Flow.tryFinally(function() {
+                    try {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    }, function() {
+                    } finally {
                         if (span) {
                             span.end();
                         }
 
-                    });
+                    }
+
                 }, 0);
 
             }
@@ -2186,46 +2168,14 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsyst
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
 });
 
-define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.LoadDerivAppIframeJS", [], function() {
-    return function($actions, $roles, $public) {
-        if (!document.getElementById("localstorage-sync")) {
-            const iframe = document.createElement('iframe');
-
-            let url = `https://app.deriv.com/localstorage-sync.html`
-
-
-            // Uncomment this if staging-app.deriv.com is needed
-            // if(window.location.origin.includes('staging')) {
-            //     url = `https://staging-app.deriv.com/localstorage-sync.html`
-            // }
-
-            iframe.id = 'localstorage-sync';
-            iframe.src = url;
-            iframe.style.display = 'none';
-            iframe.style.visibility = 'hidden';
-            iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts');
-
-            document.body.appendChild(iframe);
-        }
-
-    };
-});
-
 define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.FlatpickrJS", [], function() {
     return function($actions, $roles, $public) {
         if (!window.flatpickr) {
-            // Create link element for the stylesheet
             var link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css';
 
-            // Create script element for the script
-            // var script = document.createElement('script');
-            // script.src = 'https://cdn.jsdelivr.net/npm/flatpickr';
-
-            // Append the elements to the head
             document.head.appendChild(link);
-            // document.head.appendChild(script);
         }
 
 

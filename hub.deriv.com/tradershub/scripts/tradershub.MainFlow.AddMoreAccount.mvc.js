@@ -272,7 +272,7 @@ define("tradershub.MainFlow.AddMoreAccount.mvc$controller", ["@outsystems/runtim
                             var model = this.model;
                             var controller = this.controller;
                             var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCurrencies", "screenservices/tradershub/MainFlow/AddMoreAccount/ScreenDataSetGetCurrencies", "el3q6xUDbT96BdxI71hhpQ", maxRecords, startIndex, function(b) {
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCurrencies", "screenservices/tradershub/MainFlow/AddMoreAccount/ScreenDataSetGetCurrencies", "7ZDQVZcK1tWZhNuYKqZ8hQ", maxRecords, startIndex, function(b) {
                                 model.variables.getCurrenciesAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getCurrenciesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCurrenciesAggr.constructor));

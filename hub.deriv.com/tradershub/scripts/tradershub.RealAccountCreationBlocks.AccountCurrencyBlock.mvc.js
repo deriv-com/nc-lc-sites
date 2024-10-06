@@ -519,7 +519,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/RealAccountCreationBlocks/AccountCurrencyBlock/ActionCurrenciesList", "psznQM4XSL63xbToINuQZw", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/RealAccountCreationBlocks/AccountCurrencyBlock/ActionCurrenciesList", "mfqCJ8dyBBlp7VBala4nSQ", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock$ActionCurrenciesList"))();
                                     executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
                                     return executeServerActionResult;

@@ -1283,6 +1283,170 @@ define("RESTAPIWebsocketOfficial.controller$GetAccountStatus", ["exports", "@out
 });
 
 
+define("RESTAPIWebsocketOfficial.controller$GetMt5LoginList", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.GetMT5LoginList", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocketOfficial.model$ST_2361699202fda01d7c8ade7cab583650Structure", "RESTAPIWebsocketOfficial.model$RL_d214456dc511920f517885542ecb318a"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
+    var OS = OSRuntimeCore;
+    RESTAPIWebsocketOfficialController.default.getMt5LoginList$Action = function(hostIn, authTokenIn, appIdIn, languageIn, callContext) {
+        return OS.Logger.startActiveSpan("GetMt5LoginList", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "GetMt5LoginList");
+                span.setAttribute("outsystems.function.key", "117b3aa6-4772-4586-8615-7354e8063167");
+                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.GetMt5LoginList$vars"))());
+                vars.value.hostInLocal = hostIn;
+                vars.value.authTokenInLocal = authTokenIn;
+                vars.value.appIdInLocal = appIdIn;
+                vars.value.languageInLocal = languageIn;
+                var allExceptionsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.ErrorHandlerOutputType());
+                var postMt5LoginListVar = new OS.DataTypes.VariableHolder();
+                var fetchDataVar = new OS.DataTypes.VariableHolder();
+                var checkHostVar = new OS.DataTypes.VariableHolder();
+                var responseDeserializeVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure))());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.GetMt5LoginList$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: CheckHost
+                    checkHostVar.value = RESTAPIWebsocketOfficialController.default.checkHost$Action(vars.value.hostInLocal, callContext);
+
+                    return OS.Flow.executeSequence(function() {
+                        if ((checkHostVar.value.isGreenOut)) {
+                            // Execute Action: PostMt5LoginList
+                            return controller.getMT5LoginList$ServerAction(vars.value.appIdInLocal, vars.value.languageInLocal, vars.value.authTokenInLocal, callContext).then(function(value) {
+                                postMt5LoginListVar.value = value;
+                            }).then(function() {
+                                // Response = PostMt5LoginList.Response
+                                outVars.value.responseOut = postMt5LoginListVar.value.responseOut;
+                            });
+                        } else {
+                            // Execute Action: FetchData
+                            return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, "", vars.value.hostInLocal, "GET", "mt5_login_list", vars.value.authTokenInLocal, callContext).then(function(value) {
+                                fetchDataVar.value = value;
+                            }).then(function() {
+                                // JSON Deserialize: ResponseDeserialize
+                                responseDeserializeVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure, false);
+                                // Response = ResponseDeserialize.Data
+                                outVars.value.responseOut = OS.DataConversion.JSConversions.typeConvertRecord(responseDeserializeVar.value.dataOut, new RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure(), function(source, target) {
+                                    target.msg_typeAttr = source.msg_typeAttr;
+                                    return target;
+                                });
+                            });
+                        }
+
+                    });
+                }).catch(function(ex) {
+                    OS.Logger.debug("GetMt5LoginList.GetMt5LoginList", OS.Exceptions.getMessage(ex));
+                    // Handle Error: AllExceptions
+                    if (!(OS.Exceptions.isSystem(ex))) {
+                        OS.Logger.error(null, ex, null, null, 1);
+                        allExceptionsVar.value.exceptionMessageAttr = OS.Exceptions.getMessage(ex);
+                        return OS.Logger.startActiveSpan("AllExceptions", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "AllExceptions");
+                                span.setAttribute("outsystems.function.key", "481ebedc-ca57-4c8a-8a01-e6c1527985e5");
+                                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                                span.setAttribute("outsystems.function.type", "CLIENT_EXCEPTION_HANDLER");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // HasNetworkError = True
+                                    outVars.value.hasNetworkErrorOut = true;
+                                    return OS.Flow.returnAsync(outVars.value);
+
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    }
+
+                    throw ex;
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = RESTAPIWebsocketOfficialController.default;
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.GetMt5LoginList$vars", [{
+        name: "Host",
+        attrName: "hostInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AuthToken",
+        attrName: "authTokenInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AppId",
+        attrName: "appIdInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return (1).toString();
+        }
+    }, {
+        name: "Language",
+        attrName: "languageInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "en";
+        }
+    }]);
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.GetMt5LoginList$outVars", [{
+        name: "Response",
+        attrName: "responseOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure
+    }, {
+        name: "HasNetworkError",
+        attrName: "hasNetworkErrorOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    RESTAPIWebsocketOfficialController.default.clientActionProxies.getMt5LoginList$Action = function(hostIn, authTokenIn, appIdIn, languageIn) {
+        hostIn = (hostIn === undefined) ? "" : hostIn;
+        authTokenIn = (authTokenIn === undefined) ? "" : authTokenIn;
+        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
+        languageIn = (languageIn === undefined) ? "en" : languageIn;
+        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.getMt5LoginList$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(authTokenIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                Response: actionResults.responseOut,
+                HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean)
+            };
+        });
+    };
+});
+
+
 define("RESTAPIWebsocketOfficial.controller$GetSettings", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.GetSettings", "RESTAPIWebsocketOfficial.controller$CheckHost"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.getSettings$Action = function(hostIn, authTokenIn, appIdIn, languageIn, callContext) {
@@ -1439,6 +1603,111 @@ define("RESTAPIWebsocketOfficial.controller$GetSettings", ["exports", "@outsyste
             return {
                 Response: actionResults.responseOut,
                 HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean)
+            };
+        });
+    };
+});
+
+
+define("RESTAPIWebsocketOfficial.controller$GetVerifyEmail", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
+    var OS = OSRuntimeCore;
+    RESTAPIWebsocketOfficialController.default.getVerifyEmail$Action = function(requestIn, hostIn, appIdIn, languageIn, callContext) {
+        return OS.Logger.startActiveSpan("GetVerifyEmail", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "GetVerifyEmail");
+                span.setAttribute("outsystems.function.key", "67863067-9852-4e97-82d7-5cc48f4c431f");
+                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.GetVerifyEmail$vars"))());
+                vars.value.requestInLocal = requestIn.clone();
+                vars.value.hostInLocal = hostIn;
+                vars.value.appIdInLocal = appIdIn;
+                vars.value.languageInLocal = languageIn;
+                var fetchDataVar = new OS.DataTypes.VariableHolder();
+                var requestBodyVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                var fetchResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure))());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.GetVerifyEmail$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // JSON Serialize: RequestBody
+                    requestBodyVar.value.jSONOut = OS.JSONUtils.serializeToJSON(vars.value.requestInLocal, false, false);
+                    // Execute Action: FetchData
+                    return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, requestBodyVar.value.jSONOut, vars.value.hostInLocal, "POST", "verify_email", "", callContext).then(function(value) {
+                        fetchDataVar.value = value;
+                    }).then(function() {
+                        // JSON Deserialize: FetchResponse
+                        fetchResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure, false);
+                        // Response = FetchResponse.Data
+                        outVars.value.responseOut = fetchResponseVar.value.dataOut;
+                    });
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = RESTAPIWebsocketOfficialController.default;
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.GetVerifyEmail$vars", [{
+        name: "Request",
+        attrName: "requestInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure
+    }, {
+        name: "Host",
+        attrName: "hostInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AppId",
+        attrName: "appIdInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return (1).toString();
+        }
+    }, {
+        name: "Language",
+        attrName: "languageInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "en";
+        }
+    }]);
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.GetVerifyEmail$outVars", [{
+        name: "Response",
+        attrName: "responseOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure
+    }]);
+    RESTAPIWebsocketOfficialController.default.clientActionProxies.getVerifyEmail$Action = function(requestIn, hostIn, appIdIn, languageIn) {
+        requestIn = (requestIn === undefined) ? new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure() : requestIn;
+        hostIn = (hostIn === undefined) ? "" : hostIn;
+        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
+        languageIn = (languageIn === undefined) ? "en" : languageIn;
+        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.getVerifyEmail$Action.bind(controller, requestIn, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                Response: actionResults.responseOut
             };
         });
     };
@@ -1937,170 +2206,6 @@ define("RESTAPIWebsocketOfficial.controller$LandingCompany", ["exports", "@outsy
 });
 
 
-define("RESTAPIWebsocketOfficial.controller$Mt5LoginList", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.GetMT5LoginList", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocketOfficial.model$ST_2361699202fda01d7c8ade7cab583650Structure", "RESTAPIWebsocketOfficial.model$RL_d214456dc511920f517885542ecb318a"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
-    var OS = OSRuntimeCore;
-    RESTAPIWebsocketOfficialController.default.mt5LoginList$Action = function(hostIn, authTokenIn, appIdIn, languageIn, callContext) {
-        return OS.Logger.startActiveSpan("Mt5LoginList", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "Mt5LoginList");
-                span.setAttribute("outsystems.function.key", "117b3aa6-4772-4586-8615-7354e8063167");
-                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            return OS.Flow.tryFinally(function() {
-                callContext = controller.callContext(callContext);
-                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.Mt5LoginList$vars"))());
-                vars.value.hostInLocal = hostIn;
-                vars.value.authTokenInLocal = authTokenIn;
-                vars.value.appIdInLocal = appIdIn;
-                vars.value.languageInLocal = languageIn;
-                var allExceptionsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.ErrorHandlerOutputType());
-                var postMt5LoginListVar = new OS.DataTypes.VariableHolder();
-                var fetchDataVar = new OS.DataTypes.VariableHolder();
-                var checkHostVar = new OS.DataTypes.VariableHolder();
-                var responseDeserializeVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure))());
-                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.Mt5LoginList$outVars"))());
-                return OS.Flow.executeAsyncFlow(function() {
-                    // Execute Action: CheckHost
-                    checkHostVar.value = RESTAPIWebsocketOfficialController.default.checkHost$Action(vars.value.hostInLocal, callContext);
-
-                    return OS.Flow.executeSequence(function() {
-                        if ((checkHostVar.value.isGreenOut)) {
-                            // Execute Action: PostMt5LoginList
-                            return controller.getMT5LoginList$ServerAction(vars.value.appIdInLocal, vars.value.languageInLocal, vars.value.authTokenInLocal, callContext).then(function(value) {
-                                postMt5LoginListVar.value = value;
-                            }).then(function() {
-                                // Response = PostMt5LoginList.Response
-                                outVars.value.responseOut = postMt5LoginListVar.value.responseOut;
-                            });
-                        } else {
-                            // Execute Action: FetchData
-                            return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, "", vars.value.hostInLocal, "GET", "mt5_login_list", vars.value.authTokenInLocal, callContext).then(function(value) {
-                                fetchDataVar.value = value;
-                            }).then(function() {
-                                // JSON Deserialize: ResponseDeserialize
-                                responseDeserializeVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure, false);
-                                // Response = ResponseDeserialize.Data
-                                outVars.value.responseOut = OS.DataConversion.JSConversions.typeConvertRecord(responseDeserializeVar.value.dataOut, new RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure(), function(source, target) {
-                                    target.msg_typeAttr = source.msg_typeAttr;
-                                    return target;
-                                });
-                            });
-                        }
-
-                    });
-                }).catch(function(ex) {
-                    OS.Logger.debug("Mt5LoginList.Mt5LoginList", OS.Exceptions.getMessage(ex));
-                    // Handle Error: AllExceptions
-                    if (!(OS.Exceptions.isSystem(ex))) {
-                        OS.Logger.error(null, ex, null, null, 1);
-                        allExceptionsVar.value.exceptionMessageAttr = OS.Exceptions.getMessage(ex);
-                        return OS.Logger.startActiveSpan("AllExceptions", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "AllExceptions");
-                                span.setAttribute("outsystems.function.key", "481ebedc-ca57-4c8a-8a01-e6c1527985e5");
-                                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                                span.setAttribute("outsystems.function.type", "CLIENT_EXCEPTION_HANDLER");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // HasNetworkError = True
-                                    outVars.value.hasNetworkErrorOut = true;
-                                    return OS.Flow.returnAsync(outVars.value);
-
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    }
-
-                    throw ex;
-                }).then(function() {
-                    return outVars.value;
-                });
-            }, function() {
-                if (span) {
-                    span.end();
-                }
-
-            });
-        }, 1);
-    };
-    var controller = RESTAPIWebsocketOfficialController.default;
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.Mt5LoginList$vars", [{
-        name: "Host",
-        attrName: "hostInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "AuthToken",
-        attrName: "authTokenInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "AppId",
-        attrName: "appIdInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return (1).toString();
-        }
-    }, {
-        name: "Language",
-        attrName: "languageInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "en";
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.Mt5LoginList$outVars", [{
-        name: "Response",
-        attrName: "responseOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure
-    }, {
-        name: "HasNetworkError",
-        attrName: "hasNetworkErrorOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.clientActionProxies.mt5LoginList$Action = function(hostIn, authTokenIn, appIdIn, languageIn) {
-        hostIn = (hostIn === undefined) ? "" : hostIn;
-        authTokenIn = (authTokenIn === undefined) ? "" : authTokenIn;
-        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
-        languageIn = (languageIn === undefined) ? "en" : languageIn;
-        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.mt5LoginList$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(authTokenIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {
-                Response: actionResults.responseOut,
-                HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean)
-            };
-        });
-    };
-});
-
-
 define("RESTAPIWebsocketOfficial.controller$NewAccountVirtual", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "RESTAPIWebsocketOfficial.model$ST_72900159fa859d96c9b5e8531e637a4cStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostNewAccountVirtual", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.controller$CheckHost"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.newAccountVirtual$Action = function(newAccountVirtualRequestIn, hostIn, appIdIn, languageIn, callContext) {
@@ -2429,6 +2534,178 @@ define("RESTAPIWebsocketOfficial.controller$PartnerSettings", ["exports", "@outs
 });
 
 
+define("RESTAPIWebsocketOfficial.controller$PostTradingPlatformAccounts", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.model$ST_091b86786925fd05b892541280481403Structure", "RESTAPIWebsocketOfficial.model$ST_711f7ad16da273bf9e6563303a17ad00Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAccounts", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
+    var OS = OSRuntimeCore;
+    RESTAPIWebsocketOfficialController.default.postTradingPlatformAccounts$Action = function(hostIn, authTokenIn, appIdIn, languageIn, platformIn, callContext) {
+        return OS.Logger.startActiveSpan("PostTradingPlatformAccounts", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "PostTradingPlatformAccounts");
+                span.setAttribute("outsystems.function.key", "071ec432-55f0-4936-ad93-a77edf7641dd");
+                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.PostTradingPlatformAccounts$vars"))());
+                vars.value.hostInLocal = hostIn;
+                vars.value.authTokenInLocal = authTokenIn;
+                vars.value.appIdInLocal = appIdIn;
+                vars.value.languageInLocal = languageIn;
+                vars.value.platformInLocal = platformIn;
+                var allExceptionsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.ErrorHandlerOutputType());
+                var postTradingPlatformAccountsVar = new OS.DataTypes.VariableHolder();
+                var checkHostVar = new OS.DataTypes.VariableHolder();
+                var fetchDataVar = new OS.DataTypes.VariableHolder();
+                var responseDeserializeVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure))());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.PostTradingPlatformAccounts$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: CheckHost
+                    checkHostVar.value = RESTAPIWebsocketOfficialController.default.checkHost$Action(vars.value.hostInLocal, callContext);
+
+                    return OS.Flow.executeSequence(function() {
+                        if ((checkHostVar.value.isGreenOut)) {
+                            // Execute Action: PostTradingPlatformAccounts
+                            return controller.postTradingPlatformAccounts$ServerAction(vars.value.appIdInLocal, vars.value.languageInLocal, function() {
+                                var rec = new RESTAPIWebsocketOfficialModel.ST_091b86786925fd05b892541280481403Structure();
+                                rec.platformAttr = vars.value.platformInLocal;
+                                return rec;
+                            }(), vars.value.authTokenInLocal, "application/json", callContext).then(function(value) {
+                                postTradingPlatformAccountsVar.value = value;
+                            });
+                        } else {
+                            // Execute Action: FetchData
+                            return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, "", vars.value.hostInLocal, "POST", "trading_platform_accounts", vars.value.authTokenInLocal, callContext).then(function(value) {
+                                fetchDataVar.value = value;
+                            }).then(function() {
+                                // JSON Deserialize: ResponseDeserialize
+                                responseDeserializeVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure, false);
+                                // Response = ResponseDeserialize.Data
+                                outVars.value.responseOut = responseDeserializeVar.value.dataOut;
+                            });
+                        }
+
+                    });
+                }).catch(function(ex) {
+                    OS.Logger.debug("PostTradingPlatformAccounts.PostTradingPlatformAccounts", OS.Exceptions.getMessage(ex));
+                    // Handle Error: AllExceptions
+                    if (!(OS.Exceptions.isSystem(ex))) {
+                        OS.Logger.error(null, ex, null, null, 1);
+                        allExceptionsVar.value.exceptionMessageAttr = OS.Exceptions.getMessage(ex);
+                        return OS.Logger.startActiveSpan("AllExceptions", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "AllExceptions");
+                                span.setAttribute("outsystems.function.key", "86bfe18e-7764-4afe-ad93-e36dd03c5393");
+                                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                                span.setAttribute("outsystems.function.type", "CLIENT_EXCEPTION_HANDLER");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // HasNetworkError = True
+                                    outVars.value.hasNetworkErrorOut = true;
+                                    return OS.Flow.returnAsync(outVars.value);
+
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    }
+
+                    throw ex;
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = RESTAPIWebsocketOfficialController.default;
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.PostTradingPlatformAccounts$vars", [{
+        name: "Host",
+        attrName: "hostInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AuthToken",
+        attrName: "authTokenInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "AppId",
+        attrName: "appIdInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return (1).toString();
+        }
+    }, {
+        name: "Language",
+        attrName: "languageInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "en";
+        }
+    }, {
+        name: "Platform",
+        attrName: "platformInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.PostTradingPlatformAccounts$outVars", [{
+        name: "Response",
+        attrName: "responseOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure
+    }, {
+        name: "HasNetworkError",
+        attrName: "hasNetworkErrorOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    RESTAPIWebsocketOfficialController.default.clientActionProxies.postTradingPlatformAccounts$Action = function(hostIn, authTokenIn, appIdIn, languageIn, platformIn) {
+        hostIn = (hostIn === undefined) ? "" : hostIn;
+        authTokenIn = (authTokenIn === undefined) ? "" : authTokenIn;
+        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
+        languageIn = (languageIn === undefined) ? "en" : languageIn;
+        platformIn = (platformIn === undefined) ? "" : platformIn;
+        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.postTradingPlatformAccounts$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(authTokenIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(platformIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                Response: actionResults.responseOut,
+                HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean)
+            };
+        });
+    };
+});
+
+
 define("RESTAPIWebsocketOfficial.controller$ResetPassword", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "RESTAPIWebsocketOfficial.model$ST_b8e1602bee02fb2422c9742384775a7bStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostResetPassword"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.resetPassword$Action = function(requestIn, hostIn, appIdIn, languageIn, callContext) {
@@ -2747,178 +3024,6 @@ define("RESTAPIWebsocketOfficial.controller$ResidenceList", ["exports", "@outsys
 });
 
 
-define("RESTAPIWebsocketOfficial.controller$TradingPlatformAccounts", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.model$ST_091b86786925fd05b892541280481403Structure", "RESTAPIWebsocketOfficial.model$ST_711f7ad16da273bf9e6563303a17ad00Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAccounts", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
-    var OS = OSRuntimeCore;
-    RESTAPIWebsocketOfficialController.default.tradingPlatformAccounts$Action = function(hostIn, authTokenIn, appIdIn, languageIn, platformIn, callContext) {
-        return OS.Logger.startActiveSpan("TradingPlatformAccounts", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "TradingPlatformAccounts");
-                span.setAttribute("outsystems.function.key", "071ec432-55f0-4936-ad93-a77edf7641dd");
-                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            return OS.Flow.tryFinally(function() {
-                callContext = controller.callContext(callContext);
-                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.TradingPlatformAccounts$vars"))());
-                vars.value.hostInLocal = hostIn;
-                vars.value.authTokenInLocal = authTokenIn;
-                vars.value.appIdInLocal = appIdIn;
-                vars.value.languageInLocal = languageIn;
-                vars.value.platformInLocal = platformIn;
-                var allExceptionsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.ErrorHandlerOutputType());
-                var postTradingPlatformAccountsVar = new OS.DataTypes.VariableHolder();
-                var checkHostVar = new OS.DataTypes.VariableHolder();
-                var fetchDataVar = new OS.DataTypes.VariableHolder();
-                var responseDeserializeVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure))());
-                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.TradingPlatformAccounts$outVars"))());
-                return OS.Flow.executeAsyncFlow(function() {
-                    // Execute Action: CheckHost
-                    checkHostVar.value = RESTAPIWebsocketOfficialController.default.checkHost$Action(vars.value.hostInLocal, callContext);
-
-                    return OS.Flow.executeSequence(function() {
-                        if ((checkHostVar.value.isGreenOut)) {
-                            // Execute Action: PostTradingPlatformAccounts
-                            return controller.postTradingPlatformAccounts$ServerAction(vars.value.appIdInLocal, vars.value.languageInLocal, function() {
-                                var rec = new RESTAPIWebsocketOfficialModel.ST_091b86786925fd05b892541280481403Structure();
-                                rec.platformAttr = vars.value.platformInLocal;
-                                return rec;
-                            }(), vars.value.authTokenInLocal, "application/json", callContext).then(function(value) {
-                                postTradingPlatformAccountsVar.value = value;
-                            });
-                        } else {
-                            // Execute Action: FetchData
-                            return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, "", vars.value.hostInLocal, "POST", "trading_platform_accounts", vars.value.authTokenInLocal, callContext).then(function(value) {
-                                fetchDataVar.value = value;
-                            }).then(function() {
-                                // JSON Deserialize: ResponseDeserialize
-                                responseDeserializeVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure, false);
-                                // Response = ResponseDeserialize.Data
-                                outVars.value.responseOut = responseDeserializeVar.value.dataOut;
-                            });
-                        }
-
-                    });
-                }).catch(function(ex) {
-                    OS.Logger.debug("TradingPlatformAccounts.TradingPlatformAccounts", OS.Exceptions.getMessage(ex));
-                    // Handle Error: AllExceptions
-                    if (!(OS.Exceptions.isSystem(ex))) {
-                        OS.Logger.error(null, ex, null, null, 1);
-                        allExceptionsVar.value.exceptionMessageAttr = OS.Exceptions.getMessage(ex);
-                        return OS.Logger.startActiveSpan("AllExceptions", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "AllExceptions");
-                                span.setAttribute("outsystems.function.key", "86bfe18e-7764-4afe-ad93-e36dd03c5393");
-                                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                                span.setAttribute("outsystems.function.type", "CLIENT_EXCEPTION_HANDLER");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // HasNetworkError = True
-                                    outVars.value.hasNetworkErrorOut = true;
-                                    return OS.Flow.returnAsync(outVars.value);
-
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    }
-
-                    throw ex;
-                }).then(function() {
-                    return outVars.value;
-                });
-            }, function() {
-                if (span) {
-                    span.end();
-                }
-
-            });
-        }, 1);
-    };
-    var controller = RESTAPIWebsocketOfficialController.default;
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.TradingPlatformAccounts$vars", [{
-        name: "Host",
-        attrName: "hostInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "AuthToken",
-        attrName: "authTokenInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "AppId",
-        attrName: "appIdInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return (1).toString();
-        }
-    }, {
-        name: "Language",
-        attrName: "languageInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "en";
-        }
-    }, {
-        name: "Platform",
-        attrName: "platformInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.TradingPlatformAccounts$outVars", [{
-        name: "Response",
-        attrName: "responseOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_75725e65d106c1568a850780233a08baStructure
-    }, {
-        name: "HasNetworkError",
-        attrName: "hasNetworkErrorOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.clientActionProxies.tradingPlatformAccounts$Action = function(hostIn, authTokenIn, appIdIn, languageIn, platformIn) {
-        hostIn = (hostIn === undefined) ? "" : hostIn;
-        authTokenIn = (authTokenIn === undefined) ? "" : authTokenIn;
-        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
-        languageIn = (languageIn === undefined) ? "en" : languageIn;
-        platformIn = (platformIn === undefined) ? "" : platformIn;
-        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.tradingPlatformAccounts$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(authTokenIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(platformIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {
-                Response: actionResults.responseOut,
-                HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean)
-            };
-        });
-    };
-});
-
-
 define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccounts", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "RESTAPIWebsocketOfficial.model$ST_7a752455e27bb9ea87d724bbb902dd16Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAvailableAccountsMt5", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.tradingPlatformAvailableAccounts$Action = function(hostIn, authTokenIn, appIdIn, languageIn, requestIn, callContext) {
@@ -3112,7 +3217,7 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccounts", [
 });
 
 
-define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.controller$CheckHost"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
+define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader.JavaScript2JS", "RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader.JavaScript1JS", "RESTAPIWebsocketOfficial.controller$FetchData", "RESTAPIWebsocketOfficial.model$ST_3a8fd8b28bfeab1bd267f04e730ca9e6Structure", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAvailableAccountsCtrader", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_ae15e885fd6defd7e40491664a35bff0Structure", "RESTAPIWebsocketOfficial.model$RL_e615c73f7c49d5c9a1b81b0e5505c2d5"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, RESTAPIWebsocketOfficial_controller_TradingPlatformAvailableAccountsCtrader_JavaScript2JS, RESTAPIWebsocketOfficial_controller_TradingPlatformAvailableAccountsCtrader_JavaScript1JS) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.tradingPlatformAvailableAccountsCtrader$Action = function(hostIn, authTokenIn, appIdIn, languageIn, requestIn, callContext) {
         return OS.Logger.startActiveSpan("TradingPlatformAvailableAccountsCtrader", function(span) {
@@ -3136,6 +3241,8 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtra
                 var postTradingPlatformAvailableAccountsCtraderVar = new OS.DataTypes.VariableHolder();
                 var fetchDataVar = new OS.DataTypes.VariableHolder();
                 var checkHostVar = new OS.DataTypes.VariableHolder();
+                var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                var jSONSerialize2Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                 var responseCtraderDeserializeVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure))());
                 var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.TradingPlatformAvailableAccountsCtrader$outVars"))());
                 return OS.Flow.executeAsyncFlow(function() {
@@ -3153,9 +3260,55 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtra
                             }(), callContext).then(function(value) {
                                 postTradingPlatformAvailableAccountsCtraderVar.value = value;
                             }).then(function() {
+                                // JSON Serialize: JSONSerialize1
+                                jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(postTradingPlatformAvailableAccountsCtraderVar.value.responseOut, false, false);
+                                OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "JavaScript1");
+                                        span.setAttribute("outsystems.function.key", "ce87cb83-8827-41c6-94aa-4275b7107c9c");
+                                        span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                                        span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
+
+                                    try {
+                                        return controller.safeExecuteJSNode(RESTAPIWebsocketOfficial_controller_TradingPlatformAvailableAccountsCtrader_JavaScript1JS, "JavaScript1", "TradingPlatformAvailableAccountsCtrader", {
+                                            In1: OS.DataConversion.JSNodeParamConverter.to(jSONSerialize1Var.value.jSONOut, OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
+
+                                    }
+
+                                }, 1);
                                 // Set ResponseCtrader
-                                // ResponseCtrader = PostTradingPlatformAvailableAccountsCtrader.Response
-                                outVars.value.responseCtraderOut = postTradingPlatformAvailableAccountsCtraderVar.value.responseOut;
+                                // ResponseCtrader = PostTradingPlatformAvailableAccountsCtrader.Response.trading_platform_available_accounts
+                                outVars.value.responseCtraderOut = postTradingPlatformAvailableAccountsCtraderVar.value.responseOut.trading_platform_available_accountsAttr;
+                                // JSON Serialize: JSONSerialize2
+                                jSONSerialize2Var.value.jSONOut = OS.JSONUtils.serializeToJSON(outVars.value.responseCtraderOut, false, false);
+                                OS.Logger.startActiveSpan("JavaScript2", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "JavaScript2");
+                                        span.setAttribute("outsystems.function.key", "cd7e76ce-ac76-4461-8480-1f13161fd0f9");
+                                        span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
+                                        span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
+
+                                    try {
+                                        return controller.safeExecuteJSNode(RESTAPIWebsocketOfficial_controller_TradingPlatformAvailableAccountsCtrader_JavaScript2JS, "JavaScript2", "TradingPlatformAvailableAccountsCtrader", {
+                                            In1: OS.DataConversion.JSNodeParamConverter.to(jSONSerialize2Var.value.jSONOut, OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
+
+                                    }
+
+                                }, 1);
                             });
                         } else {
                             // Execute Action: FetchData
@@ -3164,8 +3317,8 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtra
                             }).then(function() {
                                 // JSON Deserialize: ResponseCtraderDeserialize
                                 responseCtraderDeserializeVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure, false);
-                                // ResponseCtrader = ResponseCtraderDeserialize.Data
-                                outVars.value.responseCtraderOut = responseCtraderDeserializeVar.value.dataOut;
+                                // ResponseCtrader = ResponseCtraderDeserialize.Data.trading_platform_available_accounts
+                                outVars.value.responseCtraderOut = responseCtraderDeserializeVar.value.dataOut.trading_platform_available_accountsAttr;
                             });
                         }
 
@@ -3268,11 +3421,11 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtra
         name: "ResponseCtrader",
         attrName: "responseCtraderOut",
         mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
+        dataType: OS.DataTypes.DataTypes.RecordList,
         defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure();
+            return new RESTAPIWebsocketOfficialModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5();
         },
-        complexType: RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure
+        complexType: RESTAPIWebsocketOfficialModel.RL_e615c73f7c49d5c9a1b81b0e5505c2d5
     }]);
     RESTAPIWebsocketOfficialController.default.clientActionProxies.tradingPlatformAvailableAccountsCtrader$Action = function(hostIn, authTokenIn, appIdIn, languageIn, requestIn) {
         hostIn = (hostIn === undefined) ? "" : hostIn;
@@ -3286,6 +3439,18 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtra
                 ResponseCtrader: actionResults.responseCtraderOut
             };
         });
+    };
+});
+
+define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader.JavaScript2JS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        console.log($parameters.In1)
+    };
+});
+
+define("RESTAPIWebsocketOfficial.controller$TradingPlatformAvailableAccountsCtrader.JavaScript1JS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        console.log($parameters.In1)
     };
 });
 
@@ -3955,183 +4120,6 @@ define("RESTAPIWebsocketOfficial.controller$TradingPlatformStatus", ["exports", 
 });
 
 
-define("RESTAPIWebsocketOfficial.controller$VerifyEmail", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostVerifyEmail", "RESTAPIWebsocketOfficial.controller$FetchData"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
-    var OS = OSRuntimeCore;
-    RESTAPIWebsocketOfficialController.default.verifyEmail$Action = function(requestIn, hostIn, appIdIn, languageIn, callContext) {
-        return OS.Logger.startActiveSpan("VerifyEmail", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "VerifyEmail");
-                span.setAttribute("outsystems.function.key", "67863067-9852-4e97-82d7-5cc48f4c431f");
-                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
-            }
-
-            return OS.Flow.tryFinally(function() {
-                callContext = controller.callContext(callContext);
-                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.VerifyEmail$vars"))());
-                vars.value.requestInLocal = requestIn.clone();
-                vars.value.hostInLocal = hostIn;
-                vars.value.appIdInLocal = appIdIn;
-                vars.value.languageInLocal = languageIn;
-                var allExceptionsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.ErrorHandlerOutputType());
-                var postVerifyEmailVar = new OS.DataTypes.VariableHolder();
-                var checkHostVar = new OS.DataTypes.VariableHolder();
-                var fetchDataVar = new OS.DataTypes.VariableHolder();
-                var requestBodyVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                var fetchResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure))());
-                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial.VerifyEmail$outVars"))());
-                return OS.Flow.executeAsyncFlow(function() {
-                    // Execute Action: CheckHost
-                    checkHostVar.value = RESTAPIWebsocketOfficialController.default.checkHost$Action(vars.value.hostInLocal, callContext);
-
-                    // IsGreen
-                    return OS.Flow.executeSequence(function() {
-                        if ((checkHostVar.value.isGreenOut)) {
-                            // Execute Action: PostVerifyEmail
-                            return controller.postVerifyEmail$ServerAction(vars.value.appIdInLocal, vars.value.languageInLocal, vars.value.requestInLocal, callContext).then(function(value) {
-                                postVerifyEmailVar.value = value;
-                            }).then(function() {
-                                // Response = PostVerifyEmail.Response
-                                outVars.value.responseOut = postVerifyEmailVar.value.responseOut;
-                            });
-                        } else {
-                            // JSON Serialize: RequestBody
-                            requestBodyVar.value.jSONOut = OS.JSONUtils.serializeToJSON(vars.value.requestInLocal, false, false);
-                            // Execute Action: FetchData
-                            return RESTAPIWebsocketOfficialController.default.fetchData$Action(vars.value.appIdInLocal, vars.value.languageInLocal, requestBodyVar.value.jSONOut, vars.value.hostInLocal, "POST", "verify_email", "", callContext).then(function(value) {
-                                fetchDataVar.value = value;
-                            }).then(function() {
-                                // JSON Deserialize: FetchResponse
-                                fetchResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(fetchDataVar.value.responseOut, RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure, false);
-                                // Response = FetchResponse.Data
-                                outVars.value.responseOut = fetchResponseVar.value.dataOut;
-                            });
-                        }
-
-                    });
-                }).catch(function(ex) {
-                    OS.Logger.debug("VerifyEmail.VerifyEmail", OS.Exceptions.getMessage(ex));
-                    // Handle Error: AllExceptions
-                    if (!(OS.Exceptions.isSystem(ex))) {
-                        OS.Logger.error(null, ex, null, null, 1);
-                        allExceptionsVar.value.exceptionMessageAttr = OS.Exceptions.getMessage(ex);
-                        return OS.Logger.startActiveSpan("AllExceptions", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "AllExceptions");
-                                span.setAttribute("outsystems.function.key", "7fa613b8-396a-4cd1-b63e-c4218e64c94a");
-                                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                                span.setAttribute("outsystems.function.type", "CLIENT_EXCEPTION_HANDLER");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // HasNetworkError = True
-                                    outVars.value.hasNetworkErrorOut = true;
-                                    // ErrorMessage = AllExceptions.ExceptionMessage
-                                    outVars.value.errorMessageOut = allExceptionsVar.value.exceptionMessageAttr;
-                                    return OS.Flow.returnAsync(outVars.value);
-
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    }
-
-                    throw ex;
-                }).then(function() {
-                    return outVars.value;
-                });
-            }, function() {
-                if (span) {
-                    span.end();
-                }
-
-            });
-        }, 1);
-    };
-    var controller = RESTAPIWebsocketOfficialController.default;
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.VerifyEmail$vars", [{
-        name: "Request",
-        attrName: "requestInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure
-    }, {
-        name: "Host",
-        attrName: "hostInLocal",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }, {
-        name: "AppId",
-        attrName: "appIdInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return (1).toString();
-        }
-    }, {
-        name: "Language",
-        attrName: "languageInLocal",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "en";
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial.VerifyEmail$outVars", [{
-        name: "Response",
-        attrName: "responseOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure
-    }, {
-        name: "HasNetworkError",
-        attrName: "hasNetworkErrorOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }, {
-        name: "ErrorMessage",
-        attrName: "errorMessageOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
-    RESTAPIWebsocketOfficialController.default.clientActionProxies.verifyEmail$Action = function(requestIn, hostIn, appIdIn, languageIn) {
-        requestIn = (requestIn === undefined) ? new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure() : requestIn;
-        hostIn = (hostIn === undefined) ? "" : hostIn;
-        appIdIn = (appIdIn === undefined) ? 1 : appIdIn;
-        languageIn = (languageIn === undefined) ? "en" : languageIn;
-        return controller.executeActionInsideJSNode(RESTAPIWebsocketOfficialController.default.verifyEmail$Action.bind(controller, requestIn, OS.DataConversion.JSNodeParamConverter.from(hostIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(appIdIn, OS.DataTypes.DataTypes.Text), OS.DataConversion.JSNodeParamConverter.from(languageIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
-            return {
-                Response: actionResults.responseOut,
-                HasNetworkError: OS.DataConversion.JSNodeParamConverter.to(actionResults.hasNetworkErrorOut, OS.DataTypes.DataTypes.Boolean),
-                ErrorMessage: OS.DataConversion.JSNodeParamConverter.to(actionResults.errorMessageOut, OS.DataTypes.DataTypes.Text)
-            };
-        });
-    };
-});
-
-
 define("RESTAPIWebsocketOfficial.controller$WebsocketLogout", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.controller$CheckHost", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocketOfficial.controller$ServerAction.PostLogout", "RESTAPIWebsocketOfficial.controller$FetchData"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.websocketLogout$Action = function(hostIn, appIdIn, languageIn, authTokenIn, callContext) {
@@ -4312,7 +4300,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.Authorize", ["exports",
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("Authorize", "screenservices/RESTAPIWebsocketOfficial/ActionAuthorize", "TAq302wOrV_XpUl9H5tMJA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("Authorize", "screenservices/RESTAPIWebsocketOfficial/ActionAuthorize", "NgRv4ZzOPaONG+NHAnAMrQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionAuthorize"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_f502318fbe2f943e6cfbba125766780aStructure);
                     return executeServerActionResult;
@@ -4356,7 +4344,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetAccountStatus", ["ex
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     AuthToken: OS.DataConversion.ServerDataConverter.to(authTokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetAccountStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetAccountStatus", "kHk+izaMPup5bb7D_vNnDQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetAccountStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetAccountStatus", "yFxmZkHFcM7oM+fH8E1xEw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetAccountStatus"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure);
                     return executeServerActionResult;
@@ -4399,7 +4387,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetAssetIndex", ["expor
                     AppId: OS.DataConversion.ServerDataConverter.to(appIdIn, OS.DataTypes.DataTypes.Text),
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetAssetIndex", "screenservices/RESTAPIWebsocketOfficial/ActionGetAssetIndex", "yZPDwV2p_L4nXdY4zyRZzA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetAssetIndex", "screenservices/RESTAPIWebsocketOfficial/ActionGetAssetIndex", "pKBfE7lgJG2df5F1frSYKg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetAssetIndex"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_870defcbb5bf4a58a2a009971edc7d07Structure);
                     return executeServerActionResult;
@@ -4444,7 +4432,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetKYCAuthStatus", ["ex
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("GetKYCAuthStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetKYCAuthStatus", "UsQkaT7nEdYdV29XFU_vEQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetKYCAuthStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetKYCAuthStatus", "DulELWlLX8Bu_+S5QFIMxg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetKYCAuthStatus"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_4820561c523dc84c471446a46147a065Structure);
                     return executeServerActionResult;
@@ -4488,7 +4476,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetLandingCompany", ["e
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("GetLandingCompany", "screenservices/RESTAPIWebsocketOfficial/ActionGetLandingCompany", "Fi_ktD_nqNCiE6d7etxL4A", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetLandingCompany", "screenservices/RESTAPIWebsocketOfficial/ActionGetLandingCompany", "sNyaznLYAqWrRuW0JWj0AA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetLandingCompany"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_55477c48be760e041c4dbfa365f63009Structure);
                     return executeServerActionResult;
@@ -4532,7 +4520,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetMT5LoginList", ["exp
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     XToken: OS.DataConversion.ServerDataConverter.to(xTokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetMT5LoginList", "screenservices/RESTAPIWebsocketOfficial/ActionGetMT5LoginList", "RtCzSp9MtxgyM4IS8X4oQA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetMT5LoginList", "screenservices/RESTAPIWebsocketOfficial/ActionGetMT5LoginList", "ORywtUkXn+kEL0dRLzCK7g", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetMT5LoginList"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_2f457e0a5b13526850516eea23ae0e9aStructure);
                     return executeServerActionResult;
@@ -4575,7 +4563,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetResidenceList", ["ex
                     AppId: OS.DataConversion.ServerDataConverter.to(appIdIn, OS.DataTypes.DataTypes.Text),
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetResidenceList", "screenservices/RESTAPIWebsocketOfficial/ActionGetResidenceList", "4QBRvfLfUZnrLsPwSVmLug", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetResidenceList", "screenservices/RESTAPIWebsocketOfficial/ActionGetResidenceList", "33AkzvB80Gmv1Bxfn7Odkw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetResidenceList"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure);
                     return executeServerActionResult;
@@ -4619,7 +4607,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetSettings", ["exports
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     AuthToken: OS.DataConversion.ServerDataConverter.to(authTokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetSettings", "screenservices/RESTAPIWebsocketOfficial/ActionGetSettings", "zshCpOVdICPpWSu0rNtICw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetSettings", "screenservices/RESTAPIWebsocketOfficial/ActionGetSettings", "hDnHloVQ5O7DYcjYjk2Piw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetSettings"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure);
                     return executeServerActionResult;
@@ -4663,7 +4651,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.GetTradingPlatformStatu
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     XToken: OS.DataConversion.ServerDataConverter.to(xTokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("GetTradingPlatformStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetTradingPlatformStatus", "vETC+TCtESnr+_Z6DwkBpQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("GetTradingPlatformStatus", "screenservices/RESTAPIWebsocketOfficial/ActionGetTradingPlatformStatus", "p2eYt4alVdBFgmdZDw21wg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionGetTradingPlatformStatus"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_e3b9823599cdef8012785f8875d8da38Structure);
                     return executeServerActionResult;
@@ -4707,7 +4695,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PartnerSettings", ["exp
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     AuthToken: OS.DataConversion.ServerDataConverter.to(authTokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PartnerSettings", "screenservices/RESTAPIWebsocketOfficial/ActionPartnerSettings", "qJi8pVvsYYzC1roBpQltAw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PartnerSettings", "screenservices/RESTAPIWebsocketOfficial/ActionPartnerSettings", "w+rcPwA56rPtNVfbgLXkig", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPartnerSettings"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_e89429535bbc3a843fdfa9ff6a750a5fStructure);
                     return executeServerActionResult;
@@ -4751,7 +4739,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostAccountList", ["exp
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Xtoken: OS.DataConversion.ServerDataConverter.to(xtokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PostAccountList", "screenservices/RESTAPIWebsocketOfficial/ActionPostAccountList", "u5AYbMHq0MWbgcdjzjQCWA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostAccountList", "screenservices/RESTAPIWebsocketOfficial/ActionPostAccountList", "gCmB6WnGKYZH7LUTCSKzww", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostAccountList"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_42e091eee706086ba45ab77d0ef6821fStructure);
                     return executeServerActionResult;
@@ -4796,7 +4784,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostCashierCrypto", ["e
                     XToken: OS.DataConversion.ServerDataConverter.to(xTokenIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostCashierCrypto", "screenservices/RESTAPIWebsocketOfficial/ActionPostCashierCrypto", "6zshVWqg8L6wnYDpGfOhuQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostCashierCrypto", "screenservices/RESTAPIWebsocketOfficial/ActionPostCashierCrypto", "x+LwHd1SpkvWkQFJjhz+OA", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostCashierCrypto"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_2f46c6fecf81fe9d91763f789141eec9Structure);
                     return executeServerActionResult;
@@ -4841,7 +4829,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostCashierFiat", ["exp
                     XToken: OS.DataConversion.ServerDataConverter.to(xTokenIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostCashierFiat", "screenservices/RESTAPIWebsocketOfficial/ActionPostCashierFiat", "DJL4j_wZxE5fpR+SNVKMkg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostCashierFiat", "screenservices/RESTAPIWebsocketOfficial/ActionPostCashierFiat", "GXrIy2A1ADK6hsMmLeMCrg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostCashierFiat"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure);
                     return executeServerActionResult;
@@ -4885,7 +4873,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostLogout", ["exports"
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Xtoken: OS.DataConversion.ServerDataConverter.to(xtokenIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PostLogout", "screenservices/RESTAPIWebsocketOfficial/ActionPostLogout", "3vE205u7lEBkAkkoPCcfzQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostLogout", "screenservices/RESTAPIWebsocketOfficial/ActionPostLogout", "IozYP2BQ3UHot5lqhKn9hg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostLogout"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure);
                     return executeServerActionResult;
@@ -4929,7 +4917,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostNewAccountVirtual",
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record),
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PostNewAccountVirtual", "screenservices/RESTAPIWebsocketOfficial/ActionPostNewAccountVirtual", "aKgInBLIMKUSivLpEvXGNw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostNewAccountVirtual", "screenservices/RESTAPIWebsocketOfficial/ActionPostNewAccountVirtual", "w8qGT7lIx+_XQM21lL8PYw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostNewAccountVirtual"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_72900159fa859d96c9b5e8531e637a4cStructure);
                     return executeServerActionResult;
@@ -4973,7 +4961,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostResetPassword", ["e
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostResetPassword", "screenservices/RESTAPIWebsocketOfficial/ActionPostResetPassword", "QY1jz0Dz2oV_gqfOtewVDQ", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostResetPassword", "screenservices/RESTAPIWebsocketOfficial/ActionPostResetPassword", "Nyh_GL9U_SckQlzHJb3L4Q", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostResetPassword"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_b8e1602bee02fb2422c9742384775a7bStructure);
                     return executeServerActionResult;
@@ -5019,7 +5007,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAcco
                     Xtoken: OS.DataConversion.ServerDataConverter.to(xtokenIn, OS.DataTypes.DataTypes.Text),
                     ContentType: OS.DataConversion.ServerDataConverter.to(contentTypeIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PostTradingPlatformAccounts", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAccounts", "+vzXznILIXsuIACetClo2w", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostTradingPlatformAccounts", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAccounts", "tx1sKSGc+WzfsJjuh8db7Q", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostTradingPlatformAccounts"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_711f7ad16da273bf9e6563303a17ad00Structure);
                     return executeServerActionResult;
@@ -5064,7 +5052,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAvai
                     Xtoken: OS.DataConversion.ServerDataConverter.to(xtokenIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostTradingPlatformAvailableAccountsCtrader", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAvailableAccountsCtrader", "JHHZrPRDxzGp3+jYLlcpqw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostTradingPlatformAvailableAccountsCtrader", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAvailableAccountsCtrader", "klnwSVCC7aLnevsY6T2SQg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostTradingPlatformAvailableAccountsCtrader"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_a6a60f46ebdfbc286beab7fb13984df8Structure);
                     return executeServerActionResult;
@@ -5109,7 +5097,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformAvai
                     Xtoken: OS.DataConversion.ServerDataConverter.to(xtokenIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostTradingPlatformAvailableAccountsMt5", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAvailableAccountsMt5", "5bBYtTIuGB5VdrgxClrq4g", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostTradingPlatformAvailableAccountsMt5", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformAvailableAccountsMt5", "Zal+5HB_ZjLToLoes0zMjg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostTradingPlatformAvailableAccountsMt5"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_7a752455e27bb9ea87d724bbb902dd16Structure);
                     return executeServerActionResult;
@@ -5155,7 +5143,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformPass
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record),
                     ContentType: OS.DataConversion.ServerDataConverter.to(contentTypeIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("PostTradingPlatformPasswordChange", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformPasswordChange", "39+vQlaCQe1nfZPX0X2Iqw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostTradingPlatformPasswordChange", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformPasswordChange", "Z_CAV3BxOgIbmKZXNr3C1Q", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostTradingPlatformPasswordChange"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_e184b5e893ff6633d3c7357dd29941faStructure);
                     return executeServerActionResult;
@@ -5199,7 +5187,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformPass
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
                     Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
                 };
-                return controller.callServerAction("PostTradingPlatformPasswordReset", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformPasswordReset", "f0HcKJzMZfuxSOKKaRl9tg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("PostTradingPlatformPasswordReset", "screenservices/RESTAPIWebsocketOfficial/ActionPostTradingPlatformPasswordReset", "m55RzSBPztE7EQzbAWqPbw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostTradingPlatformPasswordReset"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_07c55c1e5241bcf8a9665901701e0dbfStructure);
                     return executeServerActionResult;
@@ -5224,50 +5212,6 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.PostTradingPlatformPass
     }]);
 });
 
-define("RESTAPIWebsocketOfficial.controller$ServerAction.PostVerifyEmail", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
-    var OS = OSRuntimeCore;
-    RESTAPIWebsocketOfficialController.default.postVerifyEmail$ServerAction = function(appIdIn, languageIn, requestIn, callContext) {
-        var controller = this.controller;
-        return OS.Logger.startActiveSpan("PostVerifyEmail", function(span) {
-            if (span) {
-                span.setAttribute("code.function", "PostVerifyEmail");
-                span.setAttribute("outsystems.function.key", "415b5de1-68fd-4d46-b7b1-6e83ec77e4e9");
-                span.setAttribute("outsystems.function.owner.name", "RESTAPIWebsocketOfficial");
-                span.setAttribute("outsystems.function.owner.key", "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017");
-                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
-            }
-
-            return OS.Flow.tryFinally(function() {
-                var inputs = {
-                    AppId: OS.DataConversion.ServerDataConverter.to(appIdIn, OS.DataTypes.DataTypes.Text),
-                    Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text),
-                    Request: OS.DataConversion.ServerDataConverter.to(requestIn, OS.DataTypes.DataTypes.Record)
-                };
-                return controller.callServerAction("PostVerifyEmail", "screenservices/RESTAPIWebsocketOfficial/ActionPostVerifyEmail", "4YwwgbgxSnzFhD1akcmIXw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
-                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionPostVerifyEmail"))();
-                    executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure);
-                    return executeServerActionResult;
-                });
-            }, function() {
-                if (span) {
-                    span.end();
-                }
-
-            });
-        }, 0);
-    };
-    RESTAPIWebsocketOfficialController.default.constructor.registerVariableGroupType("RESTAPIWebsocketOfficial$ActionPostVerifyEmail", [{
-        name: "Response",
-        attrName: "responseOut",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_b5532fbd5672db40752d556a46e96eaeStructure
-    }]);
-});
-
 define("RESTAPIWebsocketOfficial.controller$ServerAction.WebsiteStatus", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
     RESTAPIWebsocketOfficialController.default.websiteStatus$ServerAction = function(appIdIn, languageIn, callContext) {
@@ -5286,7 +5230,7 @@ define("RESTAPIWebsocketOfficial.controller$ServerAction.WebsiteStatus", ["expor
                     AppId: OS.DataConversion.ServerDataConverter.to(appIdIn, OS.DataTypes.DataTypes.Text),
                     Language: OS.DataConversion.ServerDataConverter.to(languageIn, OS.DataTypes.DataTypes.Text)
                 };
-                return controller.callServerAction("WebsiteStatus", "screenservices/RESTAPIWebsocketOfficial/ActionWebsiteStatus", "riH89cA7NzuwJA8quPU6bg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                return controller.callServerAction("WebsiteStatus", "screenservices/RESTAPIWebsocketOfficial/ActionWebsiteStatus", "8S3MJKx41BPiU6edr4+SOg", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("RESTAPIWebsocketOfficial$ActionWebsiteStatus"))();
                     executeServerActionResult.responseOut = OS.DataConversion.ServerDataConverter.from(outputs.Response, RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure);
                     return executeServerActionResult;

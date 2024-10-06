@@ -24,6 +24,12 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
                     }, false),
                     this.attr("_pageTitleInDataFetchStatus", "_pageTitleInDataFetchStatus", "_pageTitleInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("HideWalletHeader", "hideWalletHeaderIn", "HideWalletHeader", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_hideWalletHeaderInDataFetchStatus", "_hideWalletHeaderInDataFetchStatus", "_hideWalletHeaderInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -79,6 +85,14 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$model", ["@outsystems/runt
                 this.variables.pageTitleIn = inputs.PageTitle;
                 if ("_pageTitleInDataFetchStatus" in inputs) {
                     this.variables._pageTitleInDataFetchStatus = inputs._pageTitleInDataFetchStatus;
+                }
+
+            }
+
+            if ("HideWalletHeader" in inputs) {
+                this.variables.hideWalletHeaderIn = inputs.HideWalletHeader;
+                if ("_hideWalletHeaderInDataFetchStatus" in inputs) {
+                    this.variables._hideWalletHeaderInDataFetchStatus = inputs._hideWalletHeaderInDataFetchStatus;
                 }
 
             }
@@ -171,9 +185,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                 gridProperties: {
                     marginLeft: "px"
                 },
-                style: model.getCachedValue(idService.getId("TitleWrapper.Style"), function() {
-                    return ("display-flex align-items-center justify-content-space-between padding-y-xs" + ((!(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut)) ? (" margin-x-base") : ("")));
-                }),
+                style: "display-flex align-items-center justify-content-space-between padding-y-xs gap-base",
                 visible: true,
                 _idProps: {
                     service: idService,
@@ -282,29 +294,33 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     name: "ContentWrapper"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(tradershub_WalletBlocks_WalletCashierHeader_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {},
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "9",
-                    alias: "2"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                _dependencies: []
+            }, $if(model.variables.hideWalletHeaderIn, false, this, function() {
+                return [];
+            }, function() {
+                return [React.createElement(tradershub_WalletBlocks_WalletCashierHeader_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "9",
+                        alias: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                })];
             }), $if(model.variables.isLoadingIn, false, this, function() {
                 return [React.createElement(tradershub_Common_LoaderBlock_mvc_view, {
                     getOwnerSpan: function() {

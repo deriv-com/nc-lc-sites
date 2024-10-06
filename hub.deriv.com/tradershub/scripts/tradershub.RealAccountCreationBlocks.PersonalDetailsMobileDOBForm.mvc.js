@@ -943,8 +943,8 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
     return function($actions, $roles, $public) {
         Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
             action: "step_passed",
-            step_num: 1,
-            step_codename: "personal_details",
+            step_num: 0.5,
+            step_codename: "personal_details_2",
             form_name: "real_account_signup_form_outsystems"
         });
 

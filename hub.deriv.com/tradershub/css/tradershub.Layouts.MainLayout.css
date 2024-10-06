@@ -75,6 +75,10 @@
     max-width: 1136px;
 }
 
+.tablet .content {
+    max-width: 600px;
+}
+
 
 .bottom-navigation {
     height: 64px;
@@ -147,7 +151,7 @@
 
 .tablet .content-wrapper,
 .phone .content-wrapper {
-    padding: 0 16px;
+    padding: 16px;
     margin-top: 48px;
     margin-bottom: 64px;
 }

@@ -3,7 +3,8 @@ function loadScript(url, callback) {
     script.onload = function() {
         if (callback) callback()
     }
-    script.src = url
+    script.src = url;
+    script.async = true;
     document.head.appendChild(script)
 }
 

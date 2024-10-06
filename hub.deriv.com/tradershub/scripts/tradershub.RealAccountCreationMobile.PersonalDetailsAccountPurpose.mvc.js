@@ -281,7 +281,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -375,6 +375,25 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.ListItemOnClick$vars"))());
                                 vars.value.accountPurposeInLocal = accountPurposeIn.clone();
+                                OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "RudderStack");
+                                        span.setAttribute("outsystems.function.key", "06a6c557-ac8d-49e5-8731-832bf3d49709");
+                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
+
+                                    try {
+                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS, "RudderStack", "ListItemOnClick", null, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
+
+                                    }
+
+                                }, 1);
                                 // RealSignupAccountOpeningReason = AccountPurpose.Value
                                 tradershubClientVariables.setRealSignupAccountOpeningReason(vars.value.accountPurposeInLocal.valueAttr);
                                 if ((tradershubClientVariables.getRealSignupIsIDVSupported())) {
@@ -522,4 +541,15 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", [], function() {
+    return function($actions, $roles, $public) {
+        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
+            action: "step_passed",
+            step_num: 1,
+            step_codename: "personal_details",
+            form_name: "real_account_signup_form_outsystems"
+        });
+    };
 });

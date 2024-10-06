@@ -158,7 +158,7 @@ define("tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", ["@outsystems/runtim
                     classes: "OSInline",
                     width: "100%"
                 },
-                style: "display-flex align-items-center",
+                style: "display-flex",
                 visible: true,
                 _idProps: {
                     service: idService,
@@ -167,10 +167,10 @@ define("tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", ["@outsystems/runtim
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Image, {
                 extendedProperties: {
-                    style: "height: 32px;"
+                    style: "height: 40px; margin-right: 16px;"
                 },
                 gridProperties: {
-                    width: "32px"
+                    width: "40px"
                 },
                 style: "display-flex ",
                 type: /*External*/ 1,
@@ -237,13 +237,17 @@ define("tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", ["@outsystems/runtim
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productDescriptionInDataFetchStatus)
-            }))), React.createElement(OSWidgets.Image, {
-                gridProperties: {
-                    classes: "ThemeGrid_MarginGutter",
-                    width: "32px"
+            }))), React.createElement(OSWidgets.Icon, {
+                extendedProperties: {
+                    style: "font-size: 32px;"
                 },
-                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.circleplusmd.svg"),
-                type: /*Static*/ 0,
+                gridProperties: {
+                    classes: "ThemeGrid_MarginGutter"
+                },
+                icon: "angle-right",
+                iconSize: /*Twotimes*/ 1,
+                style: "icon align-self-center",
+                visible: true,
                 _idProps: {
                     service: idService,
                     uuid: "7"

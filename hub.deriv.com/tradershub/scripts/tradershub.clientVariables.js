@@ -239,7 +239,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
         }
 
         getClientCountry() {
-            return clientVarsService.getVariable("ClientCountry", "tradershub", OS.DataTypes.DataTypes.Text);
+            return clientVarsService.getVariable("ClientCountry", "tradershub", OS.DataTypes.DataTypes.Text, "");
         }
 
         setClientCountry(value) {
@@ -350,6 +350,14 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
             return clientVarsService.setVariable("RealSignupIDVDocumentNumber", "tradershub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getconfirmedNotResident() {
+            return clientVarsService.getVariable("confirmedNotResident", "tradershub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setconfirmedNotResident(value) {
+            return clientVarsService.setVariable("confirmedNotResident", "tradershub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getStagingHostName() {
             return clientVarsService.getVariable("StagingHostName", "tradershub", OS.DataTypes.DataTypes.Text, "staging-hub.deriv.com");
         }
@@ -391,7 +399,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
         }
 
         getAuthToken() {
-            return clientVarsService.getVariable("AuthToken", "tradershub", OS.DataTypes.DataTypes.Text);
+            return clientVarsService.getVariable("AuthToken", "tradershub", OS.DataTypes.DataTypes.Text, "");
         }
 
         setAuthToken(value) {
@@ -571,6 +579,7 @@ define("tradershub.clientVariables", ["@outsystems/runtime-core-js"], function(O
                 SelectedCitizenship: OS.DataConversion.ServerDataConverter.to(this.getSelectedCitizenship(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddressTown: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddressTown(), OS.DataTypes.DataTypes.Text),
                 RealSignupIDVDocumentNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVDocumentNumber(), OS.DataTypes.DataTypes.Text),
+                confirmedNotResident: OS.DataConversion.ServerDataConverter.to(this.getconfirmedNotResident(), OS.DataTypes.DataTypes.Boolean),
                 StagingHostName: OS.DataConversion.ServerDataConverter.to(this.getStagingHostName(), OS.DataTypes.DataTypes.Text),
                 Lang: OS.DataConversion.ServerDataConverter.to(this.getLang(), OS.DataTypes.DataTypes.Text),
                 ActiveLoginId: OS.DataConversion.ServerDataConverter.to(this.getActiveLoginId(), OS.DataTypes.DataTypes.Text),

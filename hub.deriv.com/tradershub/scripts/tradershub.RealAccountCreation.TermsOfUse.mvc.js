@@ -94,7 +94,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
         }
 
         static getJsDependencies() {
-            return [];
+            return ["scripts/tradershub.CachingScript.js"];
         }
 
         static getBlocks() {
@@ -1686,10 +1686,36 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.R
         });
 
         Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_paased",
+            action: "step_passed",
             form_name: "real_account_signup_form_outsystems",
+            step_num: 4,
             step_codename: "terms_and_conditions",
         });
+
+
+        // cacheTrackEvents.track({
+        //     name: "ce_real_account_signup_form",
+        //     properties: {
+        //         action: "real_signup_finished",
+        //         form_name: "real_account_signup_form_outsystems"
+        //     }
+        // }, false); 
+
+        // cacheTrackEvents.track({
+        //     name: "ce_real_account_signup_form",
+        //     properties: {
+        //         action: "step_passed",
+        //         form_name: "real_account_signup_form_outsystems",
+        //         step_num: 4,
+        //         step_codename: "terms_and_conditions"
+        //     }
+        // }, false); 
+
+
+
+
+
+
 
 
     };

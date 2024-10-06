@@ -6,7 +6,7 @@ require(["tslib"], function(tslib) {
         }
 
         Promise.all([OS.Application.default.initialize(tradershubAppDefinition, OS.Interfaces.Application.InitializationType.Full, new OS.Format.DateTimeFormatInfo("yyyy-MM-dd", "HH:mm:ss"), new OS.Format.NumberFormatInfo(".", ""), function() {
-            return Promise.all(["scripts/tradershub.LoadDerivAppIframe.js", "scripts/tradershub.FeatureFlags.js", "scripts/tradershub.DerivUTM.js", "scripts/tradershub.DerivAnalytics.js"].map(function(script) {
+            return Promise.all(["scripts/tradershub.FeatureFlags.js", "scripts/tradershub.DerivUTM.js", "scripts/tradershub.DerivAnalytics.js", "scripts/tradershub.DerivAPIBasic.js", "scripts/tradershub.ReconnectingWebsocket.js", "scripts/tradershub.GTM.js"].map(function(script) {
                 return OS.SystemActions.requireScript(script);
             }));
         }).then(function(success) {

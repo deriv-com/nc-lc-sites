@@ -1,4 +1,13 @@
-﻿.banner {
+﻿.banner-container {
+    margin-bottom: 24px;
+}
+
+.tablet .banner-container,
+.phone .banner-container {
+    margin-bottom: 16px;
+}
+
+.banner {
     height: 180px;
     border-radius: 16px 16px 0px 0px;
     background-color: #F3F4F5;

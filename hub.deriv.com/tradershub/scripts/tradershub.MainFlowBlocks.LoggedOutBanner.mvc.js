@@ -146,6 +146,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                 return [React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
+                    style: "banner-container",
                     visible: true,
                     _idProps: {
                         service: idService,

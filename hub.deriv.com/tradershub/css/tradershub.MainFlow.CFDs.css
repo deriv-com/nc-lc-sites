@@ -40,3 +40,7 @@
     flex-direction: column;
     width: 100%;
 }
+
+[data-popup-backdrop] {
+    z-index: 200;
+}

@@ -1366,6 +1366,10 @@ define("tradershub.Signup.CreatePassword.mvc$controller.CreateVirtualAccount.Rud
             signup_provider: "email",
             form_name: "virtual_signup_form_outsystems"
         })
+
+        window?.dataLayer.push({
+            event: 'virtual_signup'
+        })
     };
 });
 

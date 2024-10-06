@@ -569,41 +569,6 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
                 this.__onReady$Action = value;
             }
 
-            get _onInitialize$Action() {
-                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
-                    this.__onInitialize$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnInitialize");
-                                span.setAttribute("outsystems.function.key", "f8321bbe-aaad-457c-bc67-a34b22bac864");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("OnInitialize");
-                                callContext = controller.callContext(callContext);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__onInitialize$Action;
-            }
-            set _onInitialize$Action(value) {
-                this.__onInitialize$Action = value;
-            }
-
 
             onLogoClick$Action(callContext) {
                 var controller = this.controller;
@@ -676,41 +641,11 @@ define("tradershub.Layouts.SignupLayoutTopMenu.mvc$controller", ["@outsystems/ru
 
             }
 
-            onInitialize$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnInitialize");
-                        span.setAttribute("outsystems.function.key", "f8321bbe-aaad-457c-bc67-a34b22bac864");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
 
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onInitialize$Action(callContext);
-
-                    };
+                    this._onInitializeEventHandler = null;
                 }
 
                 return this._onInitializeEventHandler;
