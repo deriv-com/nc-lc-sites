@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetAccountPurposesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -75,7 +75,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$m
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_model, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_model, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -153,6 +153,14 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
+                    Analytics: model.getCachedValue(idService.getId("MdGYiAATDkiqhs7AD2BdqA.Analytics"), function() {
+                        return function() {
+                            var rec = new tradershubModel.ST_0dd6e149ce474591a764bb53175023a1Structure();
+                            rec.stepCodenameAttr = "personal_details";
+                            rec.stepNumberAttr = "1";
+                            return rec;
+                        }();
+                    }),
                     Title: "Personal details"
                 },
                 events: {
@@ -281,7 +289,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {

@@ -640,7 +640,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         enabled: true,
                                         style: "remove-hover",
                                         transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "AddMoreAccount", {}),
+                                        url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
                                         visible: true,
                                         _idProps: {
                                             service: idService,
@@ -1100,7 +1100,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         enabled: true,
                                         style: "remove-hover",
                                         transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "AddMoreAccount", {}),
+                                        url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
                                         visible: true,
                                         _idProps: {
                                             service: idService,
@@ -2472,7 +2472,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 enabled: true,
                                 style: "remove-hover",
                                 transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
-                                url: OS.Navigation.generateScreenURL("tradershub", "AddMoreAccount", {}),
+                                url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
                                 visible: true,
                                 _idProps: {
                                     service: idService,
@@ -2693,51 +2693,56 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var formatMoneyVar = new OS.DataTypes.VariableHolder();
                                 var generateDemoAccountTokenJSResult = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
-                                    // AccountType = "demo"
-                                    model.variables.accountTypeVar = "demo";
-                                    generateDemoAccountTokenJSResult.value = OS.Logger.startActiveSpan("GenerateDemoAccountToken", function(span) {
-                                        if (span) {
-                                            span.setAttribute("code.function", "GenerateDemoAccountToken");
-                                            span.setAttribute("outsystems.function.key", "9ede4f3f-ba3a-4921-b749-af69f8b99121");
-                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    return OS.Flow.executeSequence(function() {
+                                        if ((!((model.variables.accountTypeVar === "demo")))) {
+                                            // AccountType = "demo"
+                                            model.variables.accountTypeVar = "demo";
+                                            generateDemoAccountTokenJSResult.value = OS.Logger.startActiveSpan("GenerateDemoAccountToken", function(span) {
+                                                if (span) {
+                                                    span.setAttribute("code.function", "GenerateDemoAccountToken");
+                                                    span.setAttribute("outsystems.function.key", "9ede4f3f-ba3a-4921-b749-af69f8b99121");
+                                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                }
+
+                                                try {
+                                                    return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, "GenerateDemoAccountToken", "SetDemoValue", {
+                                                        Token: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                                    }, function($parameters) {
+                                                        var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.SetDemoValue$generateDemoAccountTokenJSResult"))();
+                                                        jsNodeResult.tokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Token, OS.DataTypes.DataTypes.Text);
+                                                        return jsNodeResult;
+                                                    }, {}, {});
+                                                } finally {
+                                                    if (span) {
+                                                        span.end();
+                                                    }
+
+                                                }
+
+                                            }, 1);
+                                            // AuthToken = GenerateDemoAccountToken.Token
+                                            tradershubClientVariables.setAuthToken(generateDemoAccountTokenJSResult.value.tokenOut);
+                                            // IsBalanceLoading = True
+                                            model.variables.isBalanceLoadingVar = true;
+                                            // Execute Action: SendAuthorize
+                                            model.flush();
+                                            return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
+                                                sendAuthorizeVar.value = value;
+                                            }).then(function() {
+                                                // Execute Action: FormatMoney
+                                                formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
+
+                                                // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
+                                                model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
+                                                // SelectedAccountBalance = FormatMoney.FormattedNumber
+                                                model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
+                                                // IsBalanceLoading = False
+                                                model.variables.isBalanceLoadingVar = false;
+                                            });
                                         }
 
-                                        try {
-                                            return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, "GenerateDemoAccountToken", "SetDemoValue", {
-                                                Token: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                            }, function($parameters) {
-                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.SetDemoValue$generateDemoAccountTokenJSResult"))();
-                                                jsNodeResult.tokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Token, OS.DataTypes.DataTypes.Text);
-                                                return jsNodeResult;
-                                            }, {}, {});
-                                        } finally {
-                                            if (span) {
-                                                span.end();
-                                            }
-
-                                        }
-
-                                    }, 1);
-                                    // AuthToken = GenerateDemoAccountToken.Token
-                                    tradershubClientVariables.setAuthToken(generateDemoAccountTokenJSResult.value.tokenOut);
-                                    // IsBalanceLoading = True
-                                    model.variables.isBalanceLoadingVar = true;
-                                    // Execute Action: SendAuthorize
-                                    model.flush();
-                                    return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                        sendAuthorizeVar.value = value;
-                                    }).then(function() {
-                                        // Execute Action: FormatMoney
-                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
-
-                                        // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
-                                        model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
-                                        // SelectedAccountBalance = FormatMoney.FormattedNumber
-                                        model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
-                                        // IsBalanceLoading = False
-                                        model.variables.isBalanceLoadingVar = false;
                                     });
                                 });
                             }, function() {

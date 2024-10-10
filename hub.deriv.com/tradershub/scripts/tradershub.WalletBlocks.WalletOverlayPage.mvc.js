@@ -196,6 +196,14 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                 return [];
             }, function() {
                 return [React.createElement(OSWidgets.Image, {
+                    extendedEvents: {
+                        onClick: function() {
+                            var eventHandlerContext = callContext.clone();
+                            controller.backBtnOnClick$Action(controller.callContext(eventHandlerContext));
+
+                            ;
+                        }
+                    },
                     extendedProperties: {
                         style: "font-size: 16px;"
                     },
@@ -232,6 +240,14 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                 _widgetRecordProvider: widgetsRecordProvider,
                 value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._pageTitleInDataFetchStatus)
             })), React.createElement(OSWidgets.Image, {
+                extendedEvents: {
+                    onClick: function() {
+                        var eventHandlerContext = callContext.clone();
+                        controller.closeBtnOnClick$Action(controller.callContext(eventHandlerContext));
+
+                        ;
+                    }
+                },
                 extendedProperties: {
                     style: "font-size: 16px; padding: 0px 6px 0px 0px;"
                 },
@@ -248,12 +264,12 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
             })), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
-                visible: model.getCachedValue(idService.getId("wo5j5RwbrUiheA2qJWIo1g.Visible"), function() {
+                visible: model.getCachedValue(idService.getId("DividerContainer.Visible"), function() {
                     return !(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut);
                 }),
                 _idProps: {
                     service: idService,
-                    uuid: "6"
+                    name: "DividerContainer"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
@@ -351,7 +367,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     align: /*Default*/ 0,
                     content: _this.props.placeholders.walletOverlayPageContent,
                     style: model.getCachedValue(idService.getId("WalletOverlayPageContent.Style"), function() {
-                        return ("full-width" + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? (" margin-top-m") : (" margin-top-xs")));
+                        return ("full-width " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("margin-top-m") : ("margin-top-xs")));
                     }),
                     _idProps: {
                         service: idService,
@@ -394,6 +410,128 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$controller", ["@outsystems
             }
 
             // Client Actions - Methods
+            get _closeBtnOnClick$Action() {
+                if (!(this.hasOwnProperty("__closeBtnOnClick$Action"))) {
+                    this.__closeBtnOnClick$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("CloseBtnOnClick", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "CloseBtnOnClick");
+                                span.setAttribute("outsystems.function.key", "055ef609-a027-4acf-b7dc-4bc57ce327b1");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("CloseBtnOnClick");
+                                callContext = controller.callContext(callContext);
+                                // Destination: /tradershub/Options
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__closeBtnOnClick$Action;
+            }
+            set _closeBtnOnClick$Action(value) {
+                this.__closeBtnOnClick$Action = value;
+            }
+
+            get _backBtnOnClick$Action() {
+                if (!(this.hasOwnProperty("__backBtnOnClick$Action"))) {
+                    this.__backBtnOnClick$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("BackBtnOnClick", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "BackBtnOnClick");
+                                span.setAttribute("outsystems.function.key", "e1b08f55-26ec-4299-aa92-2784af3e1ebc");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("BackBtnOnClick");
+                                callContext = controller.callContext(callContext);
+                                // Destination: (PreviousScreen)
+                                return OS.Navigation.navigateBack(null, callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__backBtnOnClick$Action;
+            }
+            set _backBtnOnClick$Action(value) {
+                this.__backBtnOnClick$Action = value;
+            }
+
+
+            closeBtnOnClick$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("CloseBtnOnClick__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "CloseBtnOnClick");
+                        span.setAttribute("outsystems.function.key", "055ef609-a027-4acf-b7dc-4bc57ce327b1");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._closeBtnOnClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            backBtnOnClick$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("BackBtnOnClick__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "BackBtnOnClick");
+                        span.setAttribute("outsystems.function.key", "e1b08f55-26ec-4299-aa92-2784af3e1ebc");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._backBtnOnClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
 
             // Event Handler Actions

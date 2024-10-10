@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * Highcharts variwide module
  *

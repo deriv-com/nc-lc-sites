@@ -513,14 +513,37 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
                                             uuid: "26"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Expression, {
-                                        style: model.getCachedValue(idService.getId("nPxpqu58uEuW8b__Szyk_w.Style"), function() {
+                                    }, React.createElement(OSWidgets.Text, {
+                                        style: model.getCachedValue(idService.getId("VdEsO1d1WE+jDaXxwvPUyg.Style"), function() {
                                             return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
                                         }),
-                                        value: (((("In your crypto wallet, select the " + model.variables.currencyVar.nameAttr) + " (") + model.variables.currencyVar.codeAttr) + ") network when transferring to Deriv. Incorrect transfers may result in loss of funds."),
+                                        text: ["In your crypto wallet, select the"],
                                         _idProps: {
                                             service: idService,
                                             uuid: "27"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }), React.createElement(OSWidgets.Expression, {
+                                        gridProperties: {
+                                            classes: "ThemeGrid_MarginGutter"
+                                        },
+                                        style: model.getCachedValue(idService.getId("8P4vj3ghhEORPTkZ7ojqqA.Style"), function() {
+                                            return ("font-bold " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs")));
+                                        }),
+                                        value: (((model.variables.currencyVar.nameAttr + " (") + model.variables.currencyVar.codeAttr) + ") "),
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "28"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }), React.createElement(OSWidgets.Text, {
+                                        style: model.getCachedValue(idService.getId("aS0uG5zS+0aboChDFz53Xg.Style"), function() {
+                                            return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
+                                        }),
+                                        text: [" network when transferring to Deriv. Incorrect transfers may result in loss of funds."],
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "29"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }))))), React.createElement(OSWidgets.Button, {
@@ -531,7 +554,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
                                         isDefault: false,
                                         onClick: function() {
                                             try {
-                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit-crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/deposit-crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                                             } catch (ex) {
                                                 if (((ex.name) !== ("RedirectOccurredException"))) {
                                                     throw ex;
@@ -543,7 +566,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "28"
+                                            uuid: "30"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
@@ -553,7 +576,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
                                         text: ["View transactions"],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "29"
+                                            uuid: "31"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })))];

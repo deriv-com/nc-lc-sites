@@ -291,20 +291,20 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
                                             // IsLoading = False
                                             model.variables.isLoadingVar = false;
                                             // Destination: /tradershub/WalletDisableDeposit
-                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "disable-deposit", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         } else {
                                             if ((currencyListVar.value.filteredListOut.getCurrent(callContext.iterationContext).currenciesAttr.isFiatAttr)) {
                                                 // Set IsLoading
                                                 // IsLoading = False
                                                 model.variables.isLoadingVar = false;
                                                 // Destination: /tradershub/WalletFiatDeposit
-                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit-fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                             } else {
                                                 // Set IsLoading
                                                 // IsLoading = False
                                                 model.variables.isLoadingVar = false;
-                                                // Destination: /tradershub/WalletCryptoDeposit
-                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit-crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                // Destination: /tradershub/WalletCryptoOptionDeposit
+                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                             }
 
                                         }

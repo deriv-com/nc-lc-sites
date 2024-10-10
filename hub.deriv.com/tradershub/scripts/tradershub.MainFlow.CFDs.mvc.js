@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$model", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$model", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$TradingPlatformAccounts", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.controller$MT5LoginList", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure", "tradershub.controller$MT5TradingPlatformAvailableAccounts", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure", "tradershub.controller$CtraderTradingPlatformAvailableAccounts"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, tradershub_Layouts_MainLayout_mvcModel, tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel, tradershub_CFDBlocks_TradingAppCardLarge_mvcModel, tradershub_CFDBlocks_TradingAppCardSmall_mvcModel) {
+define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$TradingPlatformAccounts", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.controller$MT5LoginList", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure", "tradershub.controller$MT5TradingPlatformAvailableAccounts", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure", "tradershub.controller$CtraderTradingPlatformAvailableAccounts"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel) {
     var OS = OSRuntimeCore; {
         class GetCfdProductConfigsAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -34,6 +34,18 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
                     this.attr("isLoading", "isLoadingVar", "isLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
+                    this.attr("ShouldShowWarningPopup", "shouldShowWarningPopupVar", "ShouldShowWarningPopup", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("ShouldShowPasswordModal", "shouldShowPasswordModalVar", "ShouldShowPasswordModal", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("ShouldShowTradeModal", "shouldShowTradeModalVar", "ShouldShowTradeModal", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("IsNotResident", "isNotResidentVar", "IsNotResident", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
                     this.attr("GetCfdProductConfigs", "getCfdProductConfigsAggr", "GetCfdProductConfigs", true, true, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new GetCfdProductConfigsAggrRec());
                     }, true, GetCfdProductConfigsAggrRec)
@@ -48,7 +60,9 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
     class WidgetsRecord extends
     OS.Model.BaseWidgetRecordMap {
         static getWidgetsType() {
-            return {};
+            return {
+                CheckIcon: OS.Model.ValidationWidgetRecord
+            };
         }
 
     }
@@ -64,11 +78,7 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
         }
 
         static get hasValidationWidgets() {
-            if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (((((tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel.hasValidationWidgets) || tradershub_Common_LoaderBlock_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardLarge_mvcModel.hasValidationWidgets) || tradershub_CFDBlocks_TradingAppCardSmall_mvcModel.hasValidationWidgets);
-            }
-
-            return Model._hasValidationWidgetsValue;
+            return true;
         }
         setInputs(inputs) {}
 
@@ -78,7 +88,7 @@ define("tradershub.MainFlow.CFDs.mvc$model", ["@outsystems/runtime-core-js", "tr
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.CFDs.mvc$model", "tradershub.MainFlow.CFDs.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$view", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$TradingPlatformAccounts", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.controller$MT5LoginList", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure", "tradershub.controller$MT5TradingPlatformAvailableAccounts", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure", "tradershub.controller$CtraderTradingPlatformAvailableAccounts"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_MainFlow_CFDs_mvc_model, tradershub_MainFlow_CFDs_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view) {
+define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.CFDs.mvc$model", "tradershub.MainFlow.CFDs.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.CFDBlocks.TradingAppCardLarge.mvc$view", "tradershub.CFDBlocks.TradingAppCardSmall.mvc$view", "tradershub.CFDBlocks.CfdPasswordModal.mvc$view", "tradershub.CFDBlocks.CfdTradeModal.mvc$view", "tradershub.model$EN_8212284ed6913c62a123b32716b72fbaEntityRecord", "tradershub.model$RL_9eb97ad6cb81943972e368260e0cb936", "tradershub.controller$FeatureFlagValueByName", "RESTAPIWebsocketOfficial.model$ST_75725e65d106c1568a850780233a08baStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$TradingPlatformAccounts", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "tradershub.controller$MT5LoginList", "tradershub.model$RC_07be8d7193ba16b1cc9d953b8fa48e9d", "tradershub.model$RL_ee1664da44e6893a731536d754684359", "tradershub.model$ST_8907948f85abfce9f41b7aac6149d55eStructure", "tradershub.controller$MT5TradingPlatformAvailableAccounts", "tradershub.model$ST_3c6ba624991ba71a1d179d7c7ef27261Structure", "tradershub.controller$CtraderTradingPlatformAvailableAccounts"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_MainFlow_CFDs_mvc_model, tradershub_MainFlow_CFDs_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, tradershub_CFDBlocks_CfdPasswordModal_mvc_view, tradershub_CFDBlocks_CfdTradeModal_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -109,7 +119,7 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, tradershub_CFDBlocks_CfdPasswordModal_mvc_view, tradershub_CFDBlocks_CfdTradeModal_mvc_view];
         }
 
         get modelFactory() {
@@ -306,7 +316,7 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "9"
+                                    name: "CFDsContent"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Container, {
@@ -377,7 +387,42 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                     _widgetRecordProvider: widgetsRecordProvider,
                                     placeholders: {
                                         content: new IteratorPlaceholderContent(function(idService, callContext) {
-                                            return [React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
+                                            return [React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedEvents: {
+                                                    onClick: function() {
+                                                        var eventHandlerContext = callContext.clone();
+                                                        controller.toggleTradeModal$Action(controller.callContext(eventHandlerContext));
+
+                                                        ;
+                                                    }
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "15"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: [asPrimitiveValue(model.variables.createdCFDAccountsVar.getCurrent(callContext.iterationContext).titleAttr), asPrimitiveValue(model.variables.createdCFDAccountsVar.getCurrent(callContext.iterationContext).descriptionAttr), asPrimitiveValue(model.variables.createdCFDAccountsVar.getCurrent(callContext.iterationContext).iconAttr)]
+                                            }, React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedEvents: {
+                                                    onClick: function() {
+                                                        var eventHandlerContext = callContext.clone();
+                                                        controller.toggleTradeModal$Action(controller.callContext(eventHandlerContext));
+
+                                                        ;
+                                                    }
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    name: "TradingAppCardLarge"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }, React.createElement(tradershub_CFDBlocks_TradingAppCardLarge_mvc_view, {
                                                 getOwnerSpan: function() {
                                                     return _this.getChildSpan("render");
                                                 },
@@ -399,12 +444,12 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                                 },
                                                 _idProps: {
                                                     service: idService,
-                                                    uuid: "15",
+                                                    uuid: "17",
                                                     alias: "5"
                                                 },
                                                 _widgetRecordProvider: widgetsRecordProvider,
                                                 _dependencies: []
-                                            })];
+                                            })))];
                                         }, callContext, idService, "1")
                                     },
                                     _dependencies: []
@@ -447,7 +492,7 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                     text: ["Available accounts"],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "18"
+                                        uuid: "20"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })), React.createElement(OSWidgets.Container, {
@@ -479,7 +524,25 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                     _widgetRecordProvider: widgetsRecordProvider,
                                     placeholders: {
                                         content: new IteratorPlaceholderContent(function(idService, callContext) {
-                                            return [React.createElement(tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, {
+                                            return [React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedEvents: {
+                                                    onClick: function() {
+                                                        var eventHandlerContext = callContext.clone();
+                                                        controller.togglePasswordModal$Action(controller.callContext(eventHandlerContext));
+
+                                                        ;
+                                                    }
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    name: "TradingAppCardSmall"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: [asPrimitiveValue(model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).iconAttr), asPrimitiveValue(model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).titleAttr), asPrimitiveValue(model.variables.availableCFDAccountsVar.getCurrent(callContext.iterationContext).descriptionAttr)]
+                                            }, React.createElement(tradershub_CFDBlocks_TradingAppCardSmall_mvc_view, {
                                                 getOwnerSpan: function() {
                                                     return _this.getChildSpan("render");
                                                 },
@@ -501,23 +564,345 @@ define("tradershub.MainFlow.CFDs.mvc$view", ["@outsystems/runtime-core-js", "tra
                                                 },
                                                 _idProps: {
                                                     service: idService,
-                                                    uuid: "21",
+                                                    uuid: "24",
                                                     alias: "6"
                                                 },
                                                 _widgetRecordProvider: widgetsRecordProvider,
                                                 _dependencies: []
-                                            })];
+                                            }))];
                                         }, callContext, idService, "2")
                                     },
                                     _dependencies: []
                                 }))];
                             }, function() {
                                 return [];
+                            })), React.createElement(OSWidgets.Popup, {
+                                showPopup: model.variables.shouldShowWarningPopupVar,
+                                style: "popup-dialog restricted-country-popup-dialog",
+                                _idProps: {
+                                    service: idService,
+                                    name: "WarningModal"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                style: "warning-modal",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "26"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 18px; font-weight: bold;"
+                                },
+                                text: ["Warning"],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "27"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin: 16px 0;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "content"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Expression, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 16px;"
+                                },
+                                value: ((("According to our policy, we do not provide services to residents or entities based in" + " ") + tradershubClientVariables.getClientCountry()) + "."),
+                                _idProps: {
+                                    service: idService,
+                                    name: "FirstParagraph"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin-top: 24px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "SecondParagraph"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Expression, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 16px;"
+                                },
+                                value: (("If you are not a resident of " + tradershubClientVariables.getClientCountry()) + ", you may proceed."),
+                                _idProps: {
+                                    service: idService,
+                                    name: "paragraph"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Button, {
+                                enabled: true,
+                                isDefault: false,
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.toggleWarningPopup$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                },
+                                style: "btn btn-primary",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "32"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, "Button")))), React.createElement(OSWidgets.Popup, {
+                                showPopup: model.variables.shouldShowWarningPopupVar,
+                                style: "popup-dialog restricted-country-popup-dialog",
+                                _idProps: {
+                                    service: idService,
+                                    name: "EmptyPlatformModal"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                style: "warning-modal",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "34"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 18px; font-weight: bold;"
+                                },
+                                text: ["Warning"],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "35"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin: 16px 0;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "content2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Expression, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 16px;"
+                                },
+                                value: ((("According to our policy, we do not provide services to residents or entities based in" + " ") + tradershubClientVariables.getClientCountry()) + "."),
+                                _idProps: {
+                                    service: idService,
+                                    name: "FirstParagraph2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin-top: 24px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "SecondParagraph2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Expression, {
+                                extendedProperties: {
+                                    style: "color: #101213; font-size: 16px;"
+                                },
+                                value: (("If you are not a resident of " + tradershubClientVariables.getClientCountry()) + ", you may proceed."),
+                                _idProps: {
+                                    service: idService,
+                                    name: "paragraph2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                style: "display-flex align-items-center gap-s checkbox-container",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "Checkbox"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Checkbox, {
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                enabled: true,
+                                style: "checkbox",
+                                variable: model.createVariable(OS.DataTypes.DataTypes.Boolean, model.variables.isNotResidentVar, function(value) {
+                                    model.variables.isNotResidentVar = value;
+                                }),
+                                _idProps: {
+                                    service: idService,
+                                    name: "CheckIcon"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Label, {
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                style: "cursor-pointer",
+                                targetWidget: "CheckIcon",
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "42"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Expression, {
+                                extendedProperties: {
+                                    style: "color: #272B30;"
+                                },
+                                value: (("I confirm that I am not a resident of " + tradershubClientVariables.getClientCountry()) + "."),
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "43"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), React.createElement(OSWidgets.Button, {
+                                enabled: model.variables.isNotResidentVar,
+                                extendedProperties: {
+                                    style: "margin-top: 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                isDefault: false,
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.confirmedNotResidentOnClick$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                },
+                                style: "btn btn-primary",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "44"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "font-size: 14px;"
+                                },
+                                text: ["Proceed"],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "45"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })))), React.createElement(OSWidgets.Popup, {
+                                extendedProperties: {
+                                    style: "margin-top: 0px; padding: 0px;"
+                                },
+                                showPopup: model.variables.shouldShowPasswordModalVar,
+                                style: "full-height-popup",
+                                _idProps: {
+                                    service: idService,
+                                    name: "PasswordModal"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(tradershub_CFDBlocks_CfdPasswordModal_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {},
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    },
+                                    onCloseClick$Action: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.togglePasswordModal$Action(controller.callContext(eventHandlerContext));
+
+                                        ;
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "47",
+                                    alias: "7"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
+                            })), React.createElement(OSWidgets.Popup, {
+                                extendedEvents: {
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.toggleTradeModal$Action(controller.callContext(eventHandlerContext));
+
+                                        ;
+                                    }
+                                },
+                                showPopup: model.variables.shouldShowTradeModalVar,
+                                style: "full-height-popup",
+                                _idProps: {
+                                    service: idService,
+                                    name: "TradeModal"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(tradershub_CFDBlocks_CfdTradeModal_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {},
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    },
+                                    onCloseClick$Action: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.toggleTradeModal$Action(controller.callContext(eventHandlerContext));
+
+                                        ;
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "49",
+                                    alias: "8"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
                             })))];
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.availableCFDAccountsVar), asPrimitiveValue(model.variables.createdCFDAccountsVar), asPrimitiveValue(model.variables.isLoadingVar)]
+                _dependencies: [asPrimitiveValue(model.variables.shouldShowTradeModalVar), asPrimitiveValue(model.variables.shouldShowPasswordModalVar), asPrimitiveValue(model.variables.isNotResidentVar), asPrimitiveValue(tradershubClientVariables.getClientCountry()), asPrimitiveValue(model.variables.shouldShowWarningPopupVar), asPrimitiveValue(model.variables.availableCFDAccountsVar), asPrimitiveValue(model.variables.createdCFDAccountsVar), asPrimitiveValue(model.variables.isLoadingVar)]
             }));
         }
     }
@@ -642,6 +1027,43 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
             }
             set _onInitialize$Action(value) {
                 this.__onInitialize$Action = value;
+            }
+
+            get _togglePasswordModal$Action() {
+                if (!(this.hasOwnProperty("__togglePasswordModal$Action"))) {
+                    this.__togglePasswordModal$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("TogglePasswordModal", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "TogglePasswordModal");
+                                span.setAttribute("outsystems.function.key", "14314a1c-dc5b-4731-b91c-3f4447a00188");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("TogglePasswordModal");
+                                callContext = controller.callContext(callContext);
+                                // ShouldShowPasswordModal = notShouldShowPasswordModal
+                                model.variables.shouldShowPasswordModalVar = !(model.variables.shouldShowPasswordModalVar);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__togglePasswordModal$Action;
+            }
+            set _togglePasswordModal$Action(value) {
+                this.__togglePasswordModal$Action = value;
             }
 
             get _getCreatedCFDAccounts$Action() {
@@ -777,12 +1199,12 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: MT5TradingPlatformAvailableAccounts
                                     model.flush();
-                                    return tradershubController.default.mT5TradingPlatformAvailableAccounts$Action(true, callContext).then(function(value) {
+                                    return tradershubController.default.mT5TradingPlatformAvailableAccounts$Action(((((tradershubClientVariables.getAuthToken()) !== (""))) ? (true) : (false)), callContext).then(function(value) {
                                         mT5TradingPlatformAvailableAccountsVar.value = value;
                                     }).then(function() {
                                         // Execute Action: CtraderTradingPlatformAvailableAccounts
                                         model.flush();
-                                        return tradershubController.default.ctraderTradingPlatformAvailableAccounts$Action(true, callContext).then(function(value) {
+                                        return tradershubController.default.ctraderTradingPlatformAvailableAccounts$Action(((((tradershubClientVariables.getAuthToken()) !== (""))) ? (true) : (false)), "ctrader", callContext).then(function(value) {
                                             ctraderTradingPlatformAvailableAccountsVar.value = value;
                                         });
                                     }).then(function() {
@@ -845,6 +1267,119 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                 this.__getAvailableCFDAccounts$Action = value;
             }
 
+            get _toggleTradeModal$Action() {
+                if (!(this.hasOwnProperty("__toggleTradeModal$Action"))) {
+                    this.__toggleTradeModal$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("ToggleTradeModal", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "ToggleTradeModal");
+                                span.setAttribute("outsystems.function.key", "677be329-43ae-405d-afa4-9068612dc492");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("ToggleTradeModal");
+                                callContext = controller.callContext(callContext);
+                                // ShouldShowTradeModal = notShouldShowTradeModal
+                                model.variables.shouldShowTradeModalVar = !(model.variables.shouldShowTradeModalVar);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__toggleTradeModal$Action;
+            }
+            set _toggleTradeModal$Action(value) {
+                this.__toggleTradeModal$Action = value;
+            }
+
+            get _confirmedNotResidentOnClick$Action() {
+                if (!(this.hasOwnProperty("__confirmedNotResidentOnClick$Action"))) {
+                    this.__confirmedNotResidentOnClick$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("confirmedNotResidentOnClick", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "confirmedNotResidentOnClick");
+                                span.setAttribute("outsystems.function.key", "78902a61-5f3b-4476-bd54-edd897c99682");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("confirmedNotResidentOnClick");
+                                callContext = controller.callContext(callContext);
+                                // confirmedNotResident = True
+                                tradershubClientVariables.setconfirmedNotResident(true);
+                                // ShouldShowWarningPopup = False
+                                model.variables.shouldShowWarningPopupVar = false;
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__confirmedNotResidentOnClick$Action;
+            }
+            set _confirmedNotResidentOnClick$Action(value) {
+                this.__confirmedNotResidentOnClick$Action = value;
+            }
+
+            get _toggleWarningPopup$Action() {
+                if (!(this.hasOwnProperty("__toggleWarningPopup$Action"))) {
+                    this.__toggleWarningPopup$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("ToggleWarningPopup", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "ToggleWarningPopup");
+                                span.setAttribute("outsystems.function.key", "97a72a8d-356f-440c-9333-53e71d198492");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("ToggleWarningPopup");
+                                callContext = controller.callContext(callContext);
+                                // ShouldShowWarningPopup = notShouldShowWarningPopup
+                                model.variables.shouldShowWarningPopupVar = !(model.variables.shouldShowWarningPopupVar);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__toggleWarningPopup$Action;
+            }
+            set _toggleWarningPopup$Action(value) {
+                this.__toggleWarningPopup$Action = value;
+            }
+
             get _onReady$Action() {
                 if (!(this.hasOwnProperty("__onReady$Action"))) {
                     this.__onReady$Action = function(callContext) {
@@ -868,17 +1403,31 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                                     model.variables.isLoadingVar = true;
                                     // isLoggedIn
                                     return OS.Flow.executeSequence(function() {
-                                        if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
+                                        if ((((tradershubClientVariables.getAuthToken()) !== ("")))) {
                                             // Execute Action: GetCreatedCFDAccounts
-                                            return controller._getCreatedCFDAccounts$Action(callContext);
+                                            return controller._getCreatedCFDAccounts$Action(callContext).then(function() {
+                                                // Execute Action: GetAvailableCFDAccounts2
+                                                return controller._getAvailableCFDAccounts$Action(callContext);
+                                            });
+                                        } else {
+                                            // Execute Action: GetAvailableCFDAccounts
+                                            return controller._getAvailableCFDAccounts$Action(callContext).then(function() {
+                                                if ((model.variables.availableCFDAccountsVar.isEmpty)) {
+                                                    // ShouldShowWarningPopup = True
+                                                    model.variables.shouldShowWarningPopupVar = true;
+                                                    // AvailableCFDAccounts = GetCfdProductConfigs.List
+                                                    model.variables.availableCFDAccountsVar = OS.DataConversion.JSConversions.typeConvertRecordList(model.variables.getCfdProductConfigsAggr.listOut, new tradershubModel.RL_9eb97ad6cb81943972e368260e0cb936(), function(source, target) {
+                                                        target = source.cfdProductConfigAttr;
+                                                        return target;
+                                                    });
+                                                }
+
+                                            });
                                         }
 
                                     }).then(function() {
-                                        // Execute Action: GetAvailableCFDAccounts
-                                        return controller._getAvailableCFDAccounts$Action(callContext).then(function() {
-                                            // isLoading = False
-                                            model.variables.isLoadingVar = false;
-                                        });
+                                        // isLoading = False
+                                        model.variables.isLoadingVar = false;
                                     });
                                 });
                             }, function() {
@@ -911,6 +1460,30 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
 
                     try {
                         return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            togglePasswordModal$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("TogglePasswordModal__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "TogglePasswordModal");
+                        span.setAttribute("outsystems.function.key", "14314a1c-dc5b-4731-b91c-3f4447a00188");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._togglePasswordModal$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -964,6 +1537,78 @@ define("tradershub.MainFlow.CFDs.mvc$controller", ["@outsystems/runtime-core-js"
                         }
 
                     });
+                }, 0);
+
+            }
+
+            toggleTradeModal$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("ToggleTradeModal__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "ToggleTradeModal");
+                        span.setAttribute("outsystems.function.key", "677be329-43ae-405d-afa4-9068612dc492");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._toggleTradeModal$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            confirmedNotResidentOnClick$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("confirmedNotResidentOnClick__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "confirmedNotResidentOnClick");
+                        span.setAttribute("outsystems.function.key", "78902a61-5f3b-4476-bd54-edd897c99682");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._confirmedNotResidentOnClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
+            toggleWarningPopup$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("ToggleWarningPopup__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "ToggleWarningPopup");
+                        span.setAttribute("outsystems.function.key", "97a72a8d-356f-440c-9333-53e71d198492");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._toggleWarningPopup$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
                 }, 0);
 
             }
@@ -1108,25 +1753,29 @@ define("tradershub.MainFlow.CFDs.mvc$controller.GetCreatedCFDAccounts.AggregateJ
         const mt5Res = JSON.parse($parameters.MT5Res);
         const ctraderRes = JSON.parse($parameters.CtraderRes);
         const dxtradeRes = JSON.parse($parameters.DxtradeRes);
-
         const cfdConfig = JSON.parse($parameters.CfdConfig);
 
+        // Early return to avoid "error: cannot read properties of undefined (reading map)"
+        const mt5Accounts = mt5Res.mt5_login_list || [];
+        const ctraderAccounts = ctraderRes.trading_platform_accounts || [];
+        const dxtradeAccounts = ctraderRes.trading_platform_accounts || []; // Assuming dxtrade is in the same response as cTrader
+
         // add 'identifier' property for mapping purpose (derived from platform+product)
-        const modifiedMt5Res = mt5Res.mt5_login_list.map(account => {
+        const modifiedMt5Res = mt5Accounts.map(account => {
             return {
                 ...account,
                 identifier: 'mt5_' + account.product
             }; // mt5_standard | mt5_financial | mt5_swap_free
         });
 
-        const modifiedCtraderRes = ctraderRes.trading_platform_accounts.map(account => {
+        const modifiedCtraderRes = ctraderAccounts.map(account => {
             return {
                 ...account,
                 identifier: account.platform + '_standard'
             }; // ctrader_standard
         });
 
-        const modifiedDxtradeRes = dxtradeRes.trading_platform_accounts.map(account => {
+        const modifiedDxtradeRes = dxtradeAccounts.map(account => {
             return {
                 ...account,
                 identifier: account.platform + '_standard'
@@ -1164,22 +1813,27 @@ define("tradershub.MainFlow.CFDs.mvc$controller.GetAvailableCFDAccounts.Aggregat
         const cfdConfig = JSON.parse($parameters.CfdConfig);
         const createdAccounts = JSON.parse($parameters.CreatedAccounts);
 
+        // Set trading_platform_available_accounts to an empty array if it's null or undefined (i.e. logged-out users)
+        const mt5Accounts = mt5Res.trading_platform_available_accounts || [];
+        const ctraderAccounts = ctraderRes.trading_platform_available_accounts || [];
+        const dxtradeAccounts = ctraderRes.trading_platform_available_accounts || []; // Assuming dxtrade is in the same response as cTrader
+
         // add 'identifier' property for mapping purpose (derived from platform+product)
-        const modifiedCtraderRes = ctraderRes.trading_platform_available_accounts.map(account => {
+        const modifiedCtraderRes = ctraderAccounts.map(account => {
             return {
                 ...account,
                 identifier: 'ctrader_standard'
             }; // ctrader_standard
         });
 
-        const modifiedMt5Res = mt5Res.trading_platform_available_accounts.map(account => {
+        const modifiedMt5Res = mt5Accounts.map(account => {
             return {
                 ...account,
                 identifier: 'mt5_' + account.product
             }; // mt5_standard | mt5_financial | mt5_swap_free
         });
 
-        const modifiedDxtradeRes = ctraderRes.trading_platform_available_accounts.map(account => {
+        const modifiedDxtradeRes = dxtradeAccounts.map(account => {
             return {
                 ...account,
                 identifier: 'dxtrade_standard'
@@ -1193,7 +1847,7 @@ define("tradershub.MainFlow.CFDs.mvc$controller.GetAvailableCFDAccounts.Aggregat
             ...modifiedDxtradeRes
         ];
 
-        // Remove duplicates based on ProductIdentifier (due to multiple accounts from different jurisdiction: )
+        // Remove duplicates based on ProductIdentifier (due to multiple accounts from different jurisdiction)
         const mappedResult = combinedPlatforms.reduce((acc, item) => {
             const matchedConfig = cfdConfig.find(c => c.CfdProductConfig.ProductIdentifier === item.identifier);
 
@@ -1204,14 +1858,12 @@ define("tradershub.MainFlow.CFDs.mvc$controller.GetAvailableCFDAccounts.Aggregat
             return acc;
         }, []);
 
-        // Remove from result when it's also existing in CreatedAccount
+        // Remove from result when it's also existing in CreatedAccount (TEMP: BE card will filter for us)
         const filteredAvailableAccounts = mappedResult.filter(availableAccount =>
             !createdAccounts.some(createdAccount => createdAccount.ProductIdentifier === availableAccount.ProductIdentifier)
         );
 
-
-
-        return $parameters.filteredAvailableAccounts = JSON.stringify(filteredAvailableAccounts)
+        return $parameters.filteredAvailableAccounts = JSON.stringify(filteredAvailableAccounts);
 
     };
 });

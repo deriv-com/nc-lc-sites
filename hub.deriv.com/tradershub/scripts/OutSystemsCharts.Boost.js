@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * Boost module
  *
@@ -358,8 +358,8 @@ function(e) {
                     D = l.zoneAxis || "y",
                     L = l.zones || !1,
                     z = l.threshold,
-                    _ = this.getPixelRatio(),
-                    G = e.chart.plotWidth,
+                    G = this.getPixelRatio(),
+                    _ = e.chart.plotWidth,
                     N = !1,
                     I = !1,
                     O, X, V = 0,
@@ -382,12 +382,12 @@ function(e) {
                         let i = n(e.color).rgba;
                         i[0] /= 255, i[1] /= 255, i[2] /= 255, er[t] = i, eo || void 0 !== e.value || (eo = i)
                     }
-                }), eo || (eo = n(e.pointAttribs && e.pointAttribs().fill || e.color).rgba, eo[0] /= 255, eo[1] /= 255, eo[2] /= 255)), a.inverted && (G = e.chart.plotHeight), e.closestPointRangePx = Number.MAX_VALUE;
+                }), eo || (eo = n(e.pointAttribs && e.pointAttribs().fill || e.color).rgba, eo[0] /= 255, eo[1] /= 255, eo[2] /= 255)), a.inverted && (_ = e.chart.plotHeight), e.closestPointRangePx = Number.MAX_VALUE;
                 let el = e => {
                         e && (t.colorData.push(e[0]), t.colorData.push(e[1]), t.colorData.push(e[2]), t.colorData.push(e[3]))
                     },
                     eh = (e, o, n, a = 1, l) => {
-                        el(l), 1 !== _ && (!s.useGPUTranslations || t.skipTranslation) && (e *= _, o *= _, a *= _), s.usePreallocated && r ? (r.push(e, o, n ? 1 : 0, a), ea += 4) : (i.push(e), i.push(o), i.push(n ? _ : 0), i.push(a))
+                        el(l), 1 !== G && (!s.useGPUTranslations || t.skipTranslation) && (e *= G, o *= G, a *= G), s.usePreallocated && r ? (r.push(e, o, n ? 1 : 0, a), ea += 4) : (i.push(e), i.push(o), i.push(n ? G : 0), i.push(a))
                     },
                     ed = () => {
                         t.segments.length && (t.segments[t.segments.length - 1].to = i.length || ea)
@@ -443,7 +443,7 @@ function(e) {
                                     return "x" === D ? void 0 !== t.value && F <= t.value && (er[i] && (!s || F >= s.value) && (e = er[i]), !0) : void 0 !== t.value && W <= t.value && (er[i] && (!s || W >= s.value) && (e = er[i]), !0)
                                 }), ee = e || eo || ee
                             }
-                            if (s.useGPUTranslations || (t.skipTranslation = !0, F = f.toPixels(F, !0), W = u.toPixels(W, !0), !(F > G) || "POINTS" !== t.drawMode)) {
+                            if (s.useGPUTranslations || (t.skipTranslation = !0, F = f.toPixels(F, !0), W = u.toPixels(W, !0), !(F > _) || "POINTS" !== t.drawMode)) {
                                 if (t.hasMarkers && et && !1 !== N && (e.closestPointRangePx = Math.min(e.closestPointRangePx, Math.abs(F - N))), !s.useGPUTranslations && !s.usePreallocated && N && 1 > Math.abs(F - N) && I && 1 > Math.abs(W - I)) {
                                     s.debug.showSkipSummary && ++V;
                                     continue
@@ -522,7 +522,7 @@ function(e) {
                         y = g(u.marker ? u.marker.enabled : null, !!t.series.xAxis.isRadial || null, t.series.closestPointRangePx > 2 * ((u.marker ? u.marker.radius : 10) || 10)),
                         P = this.textureHandles[c && c.symbol || t.series.symbol] || this.textureHandles.circle,
                         v, T, E, k = [];
-                    if (0 !== t.segments.length && t.segments[0].from !== t.segments[0].to && (P.isReady && (s.bindTexture(s.TEXTURE_2D, P.handle), a.setTexture(P.handle)), i.styledMode ? t.series.markerGroup === t.series.chart.boost?.markerGroup ? (delete t.series.markerGroup, t.series.markerGroup = t.series.plotGroup("markerGroup", "markers", "visible", 1, i.seriesGroup).addClass("highcharts-tracker"), E = t.series.markerGroup.getStyle("fill"), t.series.markerGroup.destroy(), t.series.markerGroup = t.series.chart.boost?.markerGroup) : E = t.series.markerGroup?.getStyle("fill") : (E = "POINTS" === t.drawMode && t.series.pointAttribs && t.series.pointAttribs().fill || t.series.color, u.colorByPoint && (E = t.series.chart.options.colors[f])), t.series.fillOpacity && u.fillOpacity && (E = new e(E).setOpacity(g(u.fillOpacity, 1)).get()), k = n(E).rgba, r.useAlpha || (k[3] = 1), "LINES" === t.drawMode && r.useAlpha && k[3] < 1 && (k[3] /= 10), "add" === u.boostBlending ? (s.blendFunc(s.SRC_ALPHA, s.ONE), s.blendEquation(s.FUNC_ADD)) : "mult" === u.boostBlending || "multiply" === u.boostBlending ? s.blendFunc(s.DST_COLOR, s.ZERO) : "darken" === u.boostBlending ? (s.blendFunc(s.ONE, s.ONE), s.blendEquation(s.FUNC_MIN)) : s.blendFuncSeparate(s.SRC_ALPHA, s.ONE_MINUS_SRC_ALPHA, s.ONE, s.ONE_MINUS_SRC_ALPHA), a.reset(), t.colorData.length > 0 ? (a.setUniform("hasColor", 1), (T = new o(s, a)).build(Array(t.segments[0].from).concat(t.colorData), "aColor", 4), T.bind()) : (a.setUniform("hasColor", 0), s.disableVertexAttribArray(s.getAttribLocation(a.getProgram(), "aColor"))), a.setColor(k), this.setXAxis(t.series.xAxis), this.setYAxis(t.series.yAxis), this.setThreshold(x, A), "POINTS" === t.drawMode && a.setPointSize(2 * g(u.marker && u.marker.radius, .5) * d), a.setSkipTranslation(t.skipTranslation), "bubble" === t.series.type && a.setBubbleUniforms(t.series, t.zMin, t.zMax, d), a.setDrawAsCircle(m[t.series.type] || !1), l)) {
+                    if (0 !== t.segments.length && t.segments[0].from !== t.segments[0].to && (P.isReady && (s.bindTexture(s.TEXTURE_2D, P.handle), a.setTexture(P.handle)), i.styledMode ? t.series.markerGroup === t.series.chart.boost?.markerGroup ? (delete t.series.markerGroup, t.series.markerGroup = t.series.plotGroup("markerGroup", "markers", "visible", 1, i.seriesGroup).addClass("highcharts-tracker"), E = t.series.markerGroup.getStyle("fill"), t.series.markerGroup.destroy(), t.series.markerGroup = t.series.chart.boost?.markerGroup) : E = t.series.markerGroup?.getStyle("fill") : (E = "POINTS" === t.drawMode && t.series.pointAttribs && t.series.pointAttribs().fill || t.series.color, u.colorByPoint && (E = t.series.chart.options.colors[f])), t.series.fillOpacity && u.fillOpacity && (E = new e(E).setOpacity(g(u.fillOpacity, 1)).get()), k = n(E).rgba, r.useAlpha || (k[3] = 1), "add" === u.boostBlending ? (s.blendFunc(s.SRC_ALPHA, s.ONE), s.blendEquation(s.FUNC_ADD)) : "mult" === u.boostBlending || "multiply" === u.boostBlending ? s.blendFunc(s.DST_COLOR, s.ZERO) : "darken" === u.boostBlending ? (s.blendFunc(s.ONE, s.ONE), s.blendEquation(s.FUNC_MIN)) : s.blendFuncSeparate(s.SRC_ALPHA, s.ONE_MINUS_SRC_ALPHA, s.ONE, s.ONE_MINUS_SRC_ALPHA), a.reset(), t.colorData.length > 0 ? (a.setUniform("hasColor", 1), (T = new o(s, a)).build(Array(t.segments[0].from).concat(t.colorData), "aColor", 4), T.bind()) : (a.setUniform("hasColor", 0), s.disableVertexAttribArray(s.getAttribLocation(a.getProgram(), "aColor"))), a.setColor(k), this.setXAxis(t.series.xAxis), this.setYAxis(t.series.yAxis), this.setThreshold(x, A), "POINTS" === t.drawMode && a.setPointSize(2 * g(u.marker && u.marker.radius, .5) * d), a.setSkipTranslation(t.skipTranslation), "bubble" === t.series.type && a.setBubbleUniforms(t.series, t.zMin, t.zMax, d), a.setDrawAsCircle(m[t.series.type] || !1), l)) {
                         if (p > 0 || "LINE_STRIP" !== t.drawMode)
                             for (v = 0; v < t.segments.length; v++) l.render(t.segments[v].from, t.segments[v].to, t.drawMode);
                         if (t.hasMarkers && y)
@@ -709,12 +709,12 @@ function(e) {
             e && e.canvas && e.target && (e.wgl && e.wgl.clear(), e.clear && e.clear())
         }
 
-        function _(e) {
+        function G(e) {
             let t = e.boost;
             t && t.canvas && t.target && t.wgl && !d(e.chart) && t.wgl.render(e.chart)
         }
 
-        function G(e, t) {
+        function _(e, t) {
             let i = e.options,
                 s = e.xAxis,
                 r = e.pointClass;
@@ -790,7 +790,7 @@ function(e) {
                 D = !n,
                 L = "x" === e.findNearestPointBy,
                 z = this.xData || this.options.xData || this.processedXData || !1,
-                G = T(e.lineWidth, 1),
+                _ = T(e.lineWidth, 1),
                 N = !1,
                 I, O = o.getThreshold(v),
                 X, V, j, F;
@@ -812,13 +812,13 @@ function(e) {
                         };
                     e = Math.ceil(e), a = L ? e : e + "," + i, P && (x[a] ? l === z[z.length - 1] && (W.length--, h(e)) : (x[a] = !0, h(e)))
                 };
-            this.buildKDTree = c, y(this, "renderCanvas"), this.is("line") && G > 1 && s?.target && i && !i.lineWidthFilter && (i.lineWidthFilter = t.renderer.definition({
+            this.buildKDTree = c, y(this, "renderCanvas"), this.is("line") && _ > 1 && s?.target && i && !i.lineWidthFilter && (i.lineWidthFilter = t.renderer.definition({
                 tagName: "filter",
                 children: [{
                     tagName: "feMorphology",
                     attributes: {
                         operator: "dilate",
-                        radius: .25 * G
+                        radius: .25 * _
                     }
                 }],
                 attributes: {
@@ -826,7 +826,7 @@ function(e) {
                 }
             }), s.target.attr({
                 filter: "url(#linewidth)"
-            })), N && (M(N, this), N.pushSeries(this), _(this));
+            })), N && (M(N, this), N.pushSeries(this), G(this));
             let Y = N.settings;
             t.renderer.forExport || (Y.debug.timeKDTree && console.time("kd tree building"), R(k ? this.data.slice(C) : n || h, function(e, i) {
                 let s = void 0 === t.index,
@@ -843,7 +843,7 @@ function(e) {
             if (this.chart.options && this.chart.options.boost && (t = void 0 === this.chart.options.boost.enabled || this.chart.options.boost.enabled), !t || !this.boosted) return e.call(this);
             this.chart.boosted = !0;
             let i = U(this.chart, this);
-            i && (M(i, this), i.pushSeries(this)), _(this)
+            i && (M(i, this), i.pushSeries(this)), G(this)
         }
 
         function X(e) {
@@ -857,7 +857,7 @@ function(e) {
         function V(t) {
             let i = this.options.data;
             if (C(this.chart) && e[this.type]) {
-                let e = this.is("scatter") && !this.is("bubble");
+                let e = this.is("scatter") && !this.is("bubble") && !this.is("heatmap");
                 if (!D(this, i) || e || this.options.stacking || !B(this, !0)) {
                     if (this.boosted && (this.xAxis?.isPanning || this.yAxis?.isPanning)) return;
                     e && !this.yAxis.treeGrid ? N.call(this, arguments[1]) : t.apply(this, [].slice.call(arguments, 1)), i = this.processedXData
@@ -867,7 +867,7 @@ function(e) {
                     this.options.data && this.options.data.length && !v(e = this.getFirstValidPoint(this.options.data)) && !P(e) && x(12, !1, this.chart),
                         function(e) {
                             e.boost = e.boost || {
-                                getPoint: t => G(e, t)
+                                getPoint: t => _(e, t)
                             };
                             let t = e.boost.altered = [];
                             if (["allowDG", "directTouch", "stickyTracking"].forEach(i => {
@@ -889,7 +889,7 @@ function(e) {
                         for (let e of (s.markerGroup.destroy(), s.markerGroup = void 0, i.series)) e.markerGroup = void 0, e.markerGroup = e.plotGroup("markerGroup", "markers", "visible", 1, i.seriesGroup).addClass("highcharts-tracker");
                     t && ((t.altered || []).forEach(t => {
                         t.own ? e[t.prop] = t.val : delete e[t.prop]
-                    }), t.clear && t.clear())
+                    }), t.clear && t.clear()), (i.seriesGroup || e.group)?.clip()
                 }(this)
             } else t.apply(this, [].slice.call(arguments, 1))
         }
@@ -949,7 +949,7 @@ function(e) {
             },
             destroyGraphics: w,
             eachAsync: R,
-            getPoint: G
+            getPoint: _
         }
     }), i(t, "Extensions/Boost/NamedColors.js", [], function() {
         return {

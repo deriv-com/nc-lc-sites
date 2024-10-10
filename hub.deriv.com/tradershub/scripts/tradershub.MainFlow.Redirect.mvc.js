@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.Redirect.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.LoaderBlock.mvc$model", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Common_LoaderBlock_mvcModel) {
+define("tradershub.MainFlow.Redirect.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Common.LoaderBlock.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Common_LoaderBlock_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.MainFlow.Redirect.mvc$model", ["@outsystems/runtime-core-js",
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.Redirect.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Redirect.mvc$model", "tradershub.MainFlow.Redirect.mvc$controller", "tradershub.clientVariables", "tradershub.Common.LoaderBlock.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_MainFlow_Redirect_mvc_model, tradershub_MainFlow_Redirect_mvc_controller, tradershubClientVariables, tradershub_Common_LoaderBlock_mvc_view, OSWidgets) {
+define("tradershub.MainFlow.Redirect.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Redirect.mvc$model", "tradershub.MainFlow.Redirect.mvc$controller", "tradershub.clientVariables", "tradershub.Common.LoaderBlock.mvc$view", "@outsystems/runtime-widgets-js"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_MainFlow_Redirect_mvc_model, tradershub_MainFlow_Redirect_mvc_controller, tradershubClientVariables, tradershub_Common_LoaderBlock_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -146,7 +146,7 @@ define("tradershub.MainFlow.Redirect.mvc$view", ["@outsystems/runtime-core-js", 
 
     return View;
 });
-define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.GetURLParamsJS", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParamJS", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParam2JS", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Redirect_mvc_controller_OnReady_GetURLParamsJS, tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS, tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParam2JS) {
+define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.GetURLParamsJS", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParamJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Redirect_mvc_controller_OnReady_GetURLParamsJS, tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -228,7 +228,6 @@ define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core
                             try {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var featureFlagValueByNameVar = new OS.DataTypes.VariableHolder();
                                 var getURLParamsJSResult = new OS.DataTypes.VariableHolder();
                                 getURLParamsJSResult.value = OS.Logger.startActiveSpan("GetURLParams", function(span) {
                                     if (span) {
@@ -285,51 +284,25 @@ define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core
                                         tradershubClientVariables.setSelectedResidenceLabel(OS.BuiltinFunctions.nullTextIdentifier());
                                         // SelectedCitizenship = NullTextIdentifier
                                         tradershubClientVariables.setSelectedCitizenship(OS.BuiltinFunctions.nullTextIdentifier());
-                                        // Execute Action: FeatureFlagValueByName
-                                        featureFlagValueByNameVar.value = tradershubController.default.featureFlagValueByName$Action("NewSignupUI", callContext);
+                                        OS.Logger.startActiveSpan("RedirectURLWithQueryParam", function(span) {
+                                            if (span) {
+                                                span.setAttribute("code.function", "RedirectURLWithQueryParam");
+                                                span.setAttribute("outsystems.function.key", "fd858047-b79b-4d15-9725-831de69ae67c");
+                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                            }
 
-                                        if ((featureFlagValueByNameVar.value.isEnabledOut)) {
-                                            OS.Logger.startActiveSpan("RedirectURLWithQueryParam", function(span) {
+                                            try {
+                                                return controller.safeExecuteJSNode(tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS, "RedirectURLWithQueryParam", "OnReady", null, function($parameters) {}, {}, {});
+                                            } finally {
                                                 if (span) {
-                                                    span.setAttribute("code.function", "RedirectURLWithQueryParam");
-                                                    span.setAttribute("outsystems.function.key", "fd858047-b79b-4d15-9725-831de69ae67c");
-                                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                    span.end();
                                                 }
 
-                                                try {
-                                                    return controller.safeExecuteJSNode(tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS, "RedirectURLWithQueryParam", "OnReady", null, function($parameters) {}, {}, {});
-                                                } finally {
-                                                    if (span) {
-                                                        span.end();
-                                                    }
+                                            }
 
-                                                }
-
-                                            }, 1);
-                                        } else {
-                                            OS.Logger.startActiveSpan("RedirectURLWithQueryParam2", function(span) {
-                                                if (span) {
-                                                    span.setAttribute("code.function", "RedirectURLWithQueryParam2");
-                                                    span.setAttribute("outsystems.function.key", "fde7d127-3eb0-45c8-9fc1-baa061b8e788");
-                                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                }
-
-                                                try {
-                                                    return controller.safeExecuteJSNode(tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParam2JS, "RedirectURLWithQueryParam2", "OnReady", null, function($parameters) {}, {}, {});
-                                                } finally {
-                                                    if (span) {
-                                                        span.end();
-                                                    }
-
-                                                }
-
-                                            }, 1);
-                                        }
-
+                                        }, 1);
                                     }
 
                                 }
@@ -555,17 +528,6 @@ define("tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQuery
         params.delete('code')
 
         const countryOfResidenceURL = "signup/country-of-residence?" + params.toString()
-
-        window.location.replace(countryOfResidenceURL)
-    };
-});
-
-define("tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParam2JS", [], function() {
-    return function($actions, $roles, $public) {
-        const params = new URLSearchParams(window.location.search)
-        params.delete('code')
-
-        const countryOfResidenceURL = "country-of-residence?" + params.toString()
 
         window.location.replace(countryOfResidenceURL)
     };

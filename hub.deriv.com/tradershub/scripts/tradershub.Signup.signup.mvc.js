@@ -1,4 +1,4 @@
-define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
+define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RedirectToExternalURL", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -56,7 +56,7 @@ define("tradershub.Signup.signup.mvc$model", ["@outsystems/runtime-core-js", "tr
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.signup.mvc$model", "tradershub.Signup.signup.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.Signup.SocialLogin.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_Signup_signup_mvc_model, tradershub_Signup_signup_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Utilities_ButtonLoading_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view, tradershub_Signup_SocialLogin_mvc_view) {
+define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Signup.signup.mvc$model", "tradershub.Signup.signup.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.Signup.SocialLogin.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RedirectToExternalURL", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_Signup_signup_mvc_model, tradershub_Signup_signup_mvc_controller, tradershubClientVariables, tradershub_Layouts_SignupLayoutTopMenu_mvc_view, OSWidgets, OutSystemsUI_Utilities_ButtonLoading_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view, tradershub_Signup_SocialLogin_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -470,46 +470,110 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             extendedProperties: {
                                 style: "margin-top: 16px;"
                             },
+                            style: "",
                             visible: true,
                             _idProps: {
                                 service: idService,
                                 uuid: "25"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "By pressing “Continue”, I agree to the ", React.createElement(OSWidgets.Link, {
+                        }, React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "font-size: 12px;"
+                            },
+                            style: "text-neutral-9",
+                            text: ["By creating an account, you confirm you are 18+ and understand we may send you updates and marketing materials (see "],
+                            _idProps: {
+                                service: idService,
+                                uuid: "26"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Link, {
+                            enabled: true,
+                            gridProperties: {
+                                classes: "ThemeGrid_MarginGutter"
+                            },
+                            onClick: function() {
+                                _this.validateWidget(idService.getId("Form"));
+                                var eventHandlerContext = callContext.clone();
+                                controller.linkOnClick$Action(controller.callContext(eventHandlerContext));
+
+
+                                ;
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "27"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Expression, {
+                            extendedProperties: {
+                                style: "font-size: 12px; font-weight: bold; text-decoration: underline;"
+                            },
+                            style: "text-neutral-9",
+                            value: "Security and privacy policy",
+                            _idProps: {
+                                service: idService,
+                                uuid: "28"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "font-size: 12px;"
+                            },
+                            style: "text-neutral-9",
+                            text: ["). Unsubscribe in your account settings anytime.", React.createElement("br"), "By signing up, you agree to our "],
+                            _idProps: {
+                                service: idService,
+                                uuid: "29"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             extendedProperties: {
-                                target: "_blank"
+                                target: "_blank",
+                                style: "font-size: 12px;"
                             },
                             gridProperties: {
                                 classes: "ThemeGrid_MarginGutter"
                             },
+                            style: "text-neutral-9",
                             transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
                             url: OS.Navigation.generateScreenURL("https://deriv.com/terms-and-conditions/#clients", {}),
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "26"
+                                uuid: "30"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "color: #272B30; font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["terms and conditions"],
+                            style: "text-neutral-9",
+                            text: ["Terms and conditions"],
                             _idProps: {
                                 service: idService,
                                 name: "ClientTncLink"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })), "."), React.createElement(OSWidgets.Container, {
+                        })), React.createElement(OSWidgets.Text, {
+                            style: "text-neutral-9",
+                            text: ["."],
+                            _idProps: {
+                                service: idService,
+                                uuid: "32"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "",
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "28"
+                                uuid: "33"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_ButtonLoading_mvc_view, {
@@ -534,7 +598,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "29",
+                                uuid: "34",
                                 alias: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -562,27 +626,30 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "30"
+                                            uuid: "35"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
+                                        extendedProperties: {
+                                            style: "font-size: 14px;"
+                                        },
                                         style: "osui-btn-loading__spinner-animation",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "31"
+                                            uuid: "36"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Text, {
                                         extendedProperties: {
                                             style: "font-size: 14px;"
                                         },
-                                        text: ["Continue"],
+                                        text: ["Create account"],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "32"
+                                            uuid: "37"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }))];
@@ -599,7 +666,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "33"
+                                uuid: "38"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -609,7 +676,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "34"
+                                uuid: "39"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
@@ -630,7 +697,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "35",
+                                uuid: "40",
                                 alias: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -642,7 +709,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             text: ["Or sign up with"],
                             _idProps: {
                                 service: idService,
-                                uuid: "36"
+                                uuid: "41"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }), React.createElement(OSWidgets.Container, {
@@ -652,7 +719,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "37"
+                                uuid: "42"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
@@ -673,7 +740,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "38",
+                                uuid: "43",
                                 alias: "4"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -687,7 +754,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "39"
+                                uuid: "44"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(tradershub_Signup_SocialLogin_mvc_view, {
@@ -710,7 +777,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "40",
+                                uuid: "45",
                                 alias: "5"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -724,7 +791,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "41"
+                                uuid: "46"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, "Already have an account? ", React.createElement(OSWidgets.Link, {
@@ -747,7 +814,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
                             text: ["Log in"],
                             _idProps: {
                                 service: idService,
-                                uuid: "43"
+                                uuid: "48"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })))))];
@@ -760,7 +827,7 @@ define("tradershub.Signup.signup.mvc$view", ["@outsystems/runtime-core-js", "tra
 
     return View;
 });
-define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS) {
+define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", "tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", "tradershub.Signup.signup.mvc$controller.SendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", "tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$RedirectToExternalURL", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_signup_mvc_controller_OnReady_CheckAuthURLParamJS, tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_RudderStackJS, tradershub_Signup_signup_mvc_controller_SendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_signup_mvc_controller_Validate_ValidateEmailJS, tradershub_Signup_signup_mvc_controller_SubmitOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -789,6 +856,43 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
             }
 
             // Client Actions - Methods
+            get _linkOnClick$Action() {
+                if (!(this.hasOwnProperty("__linkOnClick$Action"))) {
+                    this.__linkOnClick$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("LinkOnClick", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "LinkOnClick");
+                                span.setAttribute("outsystems.function.key", "1a3750cf-61d4-4cfe-9d28-5d187e343532");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("LinkOnClick");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: RedirectToExternalURL
+                                tradershubController.default.redirectToExternalURL$Action("https://docs.deriv.com/tnc/security-and-privacy.pdf", true, callContext);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__linkOnClick$Action;
+            }
+            set _linkOnClick$Action(value) {
+                this.__linkOnClick$Action = value;
+            }
+
             get _onReady$Action() {
                 if (!(this.hasOwnProperty("__onReady$Action"))) {
                     this.__onReady$Action = function(callContext) {
@@ -1157,6 +1261,30 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                 this.__onInitialize$Action = value;
             }
 
+
+            linkOnClick$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("LinkOnClick__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "LinkOnClick");
+                        span.setAttribute("outsystems.function.key", "1a3750cf-61d4-4cfe-9d28-5d187e343532");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._linkOnClick$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
             onReady$Action(callContext) {
                 var controller = this.controller;

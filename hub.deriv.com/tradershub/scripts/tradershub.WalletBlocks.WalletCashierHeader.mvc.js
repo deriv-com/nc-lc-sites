@@ -1,4 +1,4 @@
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController) {
+define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.Common.BalanceSkeletonLoader.mvc$model", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershub_Common_BalanceSkeletonLoader_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetCurrenciesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -31,6 +31,9 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/ru
                     this.attr("Balance", "balanceVar", "Balance", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
                     }, false),
+                    this.attr("isLoading", "isLoadingVar", "isLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
                     this.attr("GetCurrencies", "getCurrenciesAggr", "GetCurrencies", true, true, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new GetCurrenciesAggrRec());
                     }, true, GetCurrenciesAggrRec)
@@ -61,7 +64,11 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/ru
         }
 
         static get hasValidationWidgets() {
-            return false;
+            if ((Model._hasValidationWidgetsValue === undefined)) {
+                Model._hasValidationWidgetsValue = tradershub_Common_BalanceSkeletonLoader_mvcModel.hasValidationWidgets;
+            }
+
+            return Model._hasValidationWidgetsValue;
         }
         setInputs(inputs) {}
 
@@ -71,7 +78,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$model", ["@outsystems/ru
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_WalletBlocks_WalletCashierHeader_mvc_model, tradershub_WalletBlocks_WalletCashierHeader_mvc_controller, tradershubClientVariables, OSWidgets) {
+define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletBlocks.WalletCashierHeader.mvc$model", "tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_WalletBlocks_WalletCashierHeader_mvc_model, tradershub_WalletBlocks_WalletCashierHeader_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_BalanceSkeletonLoader_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -94,7 +101,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/tradershub.WalletBlocks.WalletCashierHeader.css"];
         }
 
         static getJsDependencies() {
@@ -102,7 +109,7 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
         }
 
         static getBlocks() {
-            return [];
+            return [tradershub_Common_BalanceSkeletonLoader_mvc_view];
         }
 
         get modelFactory() {
@@ -145,40 +152,115 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$view", ["@outsystems/run
                     name: "MainContainer"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Image, {
-                gridProperties: {
-                    width: "32px"
-                },
-                type: /*External*/ 1,
-                url: model.variables.currencyVar.iconAttr,
+            }, $if(model.variables.isLoadingVar, false, this, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "currency-icon-skeleton",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "1"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }, function() {
+                return [React.createElement(OSWidgets.Image, {
+                    gridProperties: {
+                        width: "32px"
+                    },
+                    type: /*External*/ 1,
+                    url: model.variables.currencyVar.iconAttr,
+                    _idProps: {
+                        service: idService,
+                        name: "WalletCashierHeaderIcon"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }), $if(model.variables.isLoadingVar, false, this, function() {
+                return [React.createElement(tradershub_Common_BalanceSkeletonLoader_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "3",
+                        alias: "1"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                })];
+            }, function() {
+                return [React.createElement(OSWidgets.Expression, {
+                    gridProperties: {
+                        marginLeft: "0"
+                    },
+                    style: "font-bold font-size-s",
+                    value: (model.variables.currencyVar.codeAttr + " Wallet"),
+                    _idProps: {
+                        service: idService,
+                        uuid: "4"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }), React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: false,
+                style: "flex-1 text-align-right",
+                visible: true,
                 _idProps: {
                     service: idService,
-                    name: "WalletCashierHeaderIcon"
+                    uuid: "5"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }), React.createElement(OSWidgets.Expression, {
-                gridProperties: {
-                    marginLeft: "0"
-                },
-                style: "font-bold font-size-s",
-                value: (model.variables.currencyVar.codeAttr + " Wallet"),
-                _idProps: {
-                    service: idService,
-                    uuid: "2"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }), React.createElement(OSWidgets.Expression, {
-                gridProperties: {
-                    classes: "ThemeGrid_MarginGutter"
-                },
-                style: "font-size-s font-bold flex-1 text-align-right",
-                value: ((model.variables.balanceVar + " ") + model.variables.currencyVar.codeAttr),
-                _idProps: {
-                    service: idService,
-                    uuid: "3"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            })));
+            }, $if(model.variables.isLoadingVar, false, this, function() {
+                return [React.createElement(tradershub_Common_BalanceSkeletonLoader_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "6",
+                        alias: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                })];
+            }, function() {
+                return [React.createElement(OSWidgets.Expression, {
+                    style: "font-size-s font-bold",
+                    value: ((model.variables.balanceVar + " ") + model.variables.currencyVar.codeAttr),
+                    _idProps: {
+                        service: idService,
+                        uuid: "7"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })];
+            }))));
         }
     }
 
@@ -282,6 +364,8 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
                                 var listFilterVar = new OS.DataTypes.VariableHolder();
                                 var formatMoneyVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
+                                    // isLoading = True
+                                    model.variables.isLoadingVar = true;
                                     // Execute Action: SendAuthorize
                                     model.flush();
                                     return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
@@ -299,6 +383,8 @@ define("tradershub.WalletBlocks.WalletCashierHeader.mvc$controller", ["@outsyste
                                         model.variables.currencyVar = listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).currenciesAttr;
                                         // Balance = FormatMoney.FormattedNumber
                                         model.variables.balanceVar = formatMoneyVar.value.formattedNumberOut;
+                                        // isLoading = False
+                                        model.variables.isLoadingVar = false;
                                     });
                                 });
                             }, function() {

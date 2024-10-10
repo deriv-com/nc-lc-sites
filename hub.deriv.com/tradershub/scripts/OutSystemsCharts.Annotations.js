@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * Annotations module
  *
@@ -1630,7 +1630,7 @@ function(t) {
         }
 
         function l(t) {
-            this.popup || (this.popup = new i(this.chart.container, this.chart.options.navigation.iconsURL || this.chart.options.stockTools && this.chart.options.stockTools.gui.iconsURL || "https://code.highcharts.com/11.4.6/gfx/stock-icons/", this.chart)), this.popup.showForm(t.formType, this.chart, t.options, t.onSubmit)
+            this.popup || (this.popup = new i(this.chart.container, this.chart.options.navigation.iconsURL || this.chart.options.stockTools && this.chart.options.stockTools.gui.iconsURL || "https://code.highcharts.com/11.4.8/gfx/stock-icons/", this.chart)), this.popup.showForm(t.formType, this.chart, t.options, t.onSubmit)
         }
 
         function h(t, i) {
@@ -1809,7 +1809,7 @@ function(t) {
                     e = C(this.userOptions, t),
                     o = s.annotations.indexOf(this),
                     n = v(!0, this.userOptions, t);
-                n.labels = e.labels, n.shapes = e.shapes, this.destroy(), this.initProperties(s, n), this.init(s, n), s.options.annotations[o] = n, this.isUpdating = !0, y(i, !0) && s.drawAnnotations(), b(this, "afterUpdate"), this.isUpdating = !1
+                n.labels = e.labels, n.shapes = e.shapes, this.destroy(), this.initProperties(s, n), this.init(s, n), s.options.annotations[o] = this.options, this.isUpdating = !0, y(i, !0) && s.drawAnnotations(), b(this, "afterUpdate"), this.isUpdating = !1
             }
         }
         return E.ControlPoint = h, E.MockPoint = d, E.shapesMap = {

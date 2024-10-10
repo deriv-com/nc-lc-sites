@@ -1,5 +1,5 @@
 /*!
-OutSystems UI 2.19.2 • ODC Platform
+OutSystems UI 2.20.3 • ODC Platform
 Website:
  • https://www.outsystems.com/outsystems-ui
 GitHub:
@@ -48,6 +48,29 @@ var osui;
     }
     osui.HideOnScroll = HideOnScroll;
 })(osui || (osui = {}));
+var OutSystems;
+(function(OutSystems) {
+    var OSUI;
+    (function(OSUI) {
+        var Utils;
+        (function(Utils) {
+            var Menu;
+            (function(Menu) {
+                function AddMenuOnOrientationChange(callback) {
+                    console.warn('OutSystems.OSUI.Utils.Menu.AddMenuOnOrientationChange(...), is deprecated. Please use the API `OutSystems.OSUI.Utils.Menu.OnReady(...)`.');
+                    return OutSystems.OSUI.Utils.Menu.addMenuOnOrientationChange(callback);
+                }
+                Menu.AddMenuOnOrientationChange = AddMenuOnOrientationChange;
+
+                function RemoveMenuOnOrientationChange() {
+                    console.warn('OutSystems.OSUI.Utils.Menu.RemoveMenuOnOrientationChange(), is deprecated. Please use the API `OutSystems.OSUI.Utils.Menu.OnDestroy()`.');
+                    return OutSystems.OSUI.Utils.Menu.removeMenuOnOrientationChange();
+                }
+                Menu.RemoveMenuOnOrientationChange = RemoveMenuOnOrientationChange;
+            })(Menu = Utils.Menu || (Utils.Menu = {}));
+        })(Utils = OSUI.Utils || (OSUI.Utils = {}));
+    })(OSUI = OutSystems.OSUI || (OutSystems.OSUI = {}));
+})(OutSystems || (OutSystems = {}));
 var OSFramework;
 (function(OSFramework) {
     var OSUI;
@@ -159,7 +182,7 @@ var OSFramework;
             ];
             Constants.NoTransition = 'no-transition';
             Constants.OSPlatform = 'ODC';
-            Constants.OSUIVersion = '2.19.2';
+            Constants.OSUIVersion = '2.20.3';
             Constants.ZeroValue = 0;
         })(Constants = OSUI.Constants || (OSUI.Constants = {}));
     })(OSUI = OSFramework.OSUI || (OSFramework.OSUI = {}));
@@ -804,7 +827,8 @@ var OSFramework;
                         directionDisplacement += velocity * frame_rate;
                         positions.push({
                             transform: isVertical ?
-                                `translateY(${directionDisplacement}px)` : `translateX(${directionDisplacement}px)`,
+                                `translateY(${directionDisplacement}px)` :
+                                `translateX(${directionDisplacement}px)`,
                         });
                         largest_displ =
                             largest_displ < 0 ?
@@ -1941,7 +1965,8 @@ var OSFramework;
                         var _a, _b, _c;
                         const opts = {
                             focusTargetElement: ((_a = this.featureOptions.focusOptions.focusTrapParams) === null || _a === void 0 ? void 0 : _a.focusTargetElement) === undefined ?
-                                this._floatingOptions.AnchorElem.parentElement : this.featureOptions.focusOptions.focusTrapParams.focusTargetElement,
+                                this._floatingOptions.AnchorElem.parentElement :
+                                this.featureOptions.focusOptions.focusTrapParams.focusTargetElement,
                             focusBottomCallback: (_b = this.featureOptions.focusOptions.focusTrapParams) === null || _b === void 0 ? void 0 : _b.focusBottomCallback,
                             focusTopCallback: (_c = this.featureOptions.focusOptions.focusTrapParams) === null || _c === void 0 ? void 0 : _c.focusTopCallback,
                         };
@@ -2260,7 +2285,16 @@ var OSFramework;
                     return false;
                 }
                 static IsValid(date) {
-                    return !isNaN(Number(new Date(date)));
+                    return !isNaN(Number(this.NormalizeDate(date)));
+                }
+                static NormalizeDate(date) {
+                    let currDate;
+                    if (date.indexOf('T') > -1) {
+                        currDate = new Date(date);
+                    } else {
+                        currDate = new Date(date.replace(/-/g, '/'));
+                    }
+                    return currDate;
                 }
                 static NormalizeDateTime(date, normalizeToMax) {
                     let _newDate = date;
@@ -2446,7 +2480,7 @@ var OSFramework;
                 }
                 static _getUserAgent(userAgent = '') {
                     let localUserAgent = userAgent;
-                    if (userAgent.replace(' ', '') === '') {
+                    if (userAgent.replace(/ /g, '') === '') {
                         if (sessionStorage.previewDevicesUserAgent) {
                             localUserAgent = sessionStorage.previewDevicesUserAgent;
                         } else {
@@ -5551,12 +5585,14 @@ var OSFramework;
                         _hasNoImplementation() {
                             throw new Error(`${OSUI.ErrorCodes.Dropdown.HasNoImplementation.code}: ${OSUI.ErrorCodes.Dropdown.HasNoImplementation.message}`);
                         }
-                        _onBodyClick() {
+                        _onBodyClick(eventName, event) {
                             if (this._isOpen === false) {
                                 return;
                             }
                             this._closeDynamically = true;
-                            if (OSUI.Helper.DeviceInfo.IsPhone) {
+                            const canClose = OSUI.Helper.DeviceInfo.IsPhone &&
+                                event.target.closest(`.${ServerSide.Enum.CssClass.BalloonSearchIcon}`) === null;
+                            if (canClose) {
                                 this._close();
                             }
                         }
@@ -6075,6 +6111,7 @@ var OSFramework;
                             CssClass["BalloonFooter"] = "osui-dropdown-serverside__balloon-footer";
                             CssClass["BalloonHasNotSearchInput"] = "osui-dropdown-serverside__balloon--has-not-search";
                             CssClass["BalloonSearch"] = "osui-dropdown-serverside__balloon-search";
+                            CssClass["BalloonSearchIcon"] = "osui-dropdown-serverside__balloon-search-icon";
                             CssClass["ErrorMessage"] = "osui-dropdown-serverside-error-message";
                             CssClass["IsDisabled"] = "osui-dropdown-serverside--is-disabled";
                             CssClass["IsOpened"] = "osui-dropdown-serverside--is-opened";
@@ -9621,6 +9658,7 @@ var OSFramework;
                         }
                     }
                     _keypressBalloonCallback(e) {
+                        e.stopPropagation();
                         if (e.key === OSUI.GlobalEnum.Keycodes.Escape && this._isOpen) {
                             this.close();
                             this._submenuHeaderElement.focus();
@@ -12135,6 +12173,7 @@ var OutSystems;
                 FailToggleNativeBehavior: 'OSUI-API-07015',
                 FailUpdateInitialDate: 'OSUI-API-07016',
                 FailUpdatePrompt: 'OSUI-API-07017',
+                FailOnRender: 'OSUI-API-07018',
             };
             ErrorCodes.FlipContent = {
                 FailChangeProperty: 'OSUI-API-08001',
@@ -12277,6 +12316,7 @@ var OutSystems;
                 FailUpdateInitialTime: 'OSUI-API-26013',
                 FailSetEditableInput: 'OSUI-API-26014',
                 FailUpdatePrompt: 'OSUI-API-26015',
+                FailOnRender: 'OSUI-API-26016',
             };
             ErrorCodes.MonthPicker = {
                 FailChangeProperty: 'OSUI-API-27001',
@@ -12293,6 +12333,7 @@ var OutSystems;
                 FailSetLanguage: 'OSUI-API-27012',
                 FailUpdateInitialMonth: 'OSUI-API-27013',
                 FailUpdatePrompt: 'OSUI-API-27014',
+                FailOnRender: 'OSUI-API-27015',
             };
             ErrorCodes.Utilities = {
                 FailGetInvalidInput: 'OSUI-API-28001',
@@ -12321,6 +12362,8 @@ var OutSystems;
                 FailSetExtendedMenuHide: 'OSUI-API-28024',
                 FailSetExtendedMenuShow: 'OSUI-API-28025',
                 FailCheckIsRTL: 'OSUI-API-28026',
+                FailSetMenuOnReady: 'OSUI-API-28027',
+                FailSetMenuOnDestroy: 'OSUI-API-28028',
             };
             ErrorCodes.InlineSvg = {
                 FailChangeProperty: 'OSUI-API-29001',
@@ -13184,6 +13227,18 @@ var OutSystems;
                 }
                 DatePickerAPI.Open = Open;
 
+                function OnRender(datePickerId) {
+                    const result = OutSystems.OSUI.Utils.CreateApiResponse({
+                        errorCode: OSUI.ErrorCodes.DatePicker.FailOnRender,
+                        callback: () => {
+                            const _datePickerItem = GetDatePickerItemById(datePickerId);
+                            _datePickerItem.onRender();
+                        },
+                    });
+                    return result;
+                }
+                DatePickerAPI.OnRender = OnRender;
+
                 function RegisterCallback(datePickerId, eventName, callback) {
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.DatePicker.FailRegisterCallback,
@@ -14001,6 +14056,18 @@ var OutSystems;
                     return result;
                 }
                 MonthPickerAPI.Open = Open;
+
+                function OnRender(monthPickerId) {
+                    const result = OutSystems.OSUI.Utils.CreateApiResponse({
+                        errorCode: OSUI.ErrorCodes.MonthPicker.FailOnRender,
+                        callback: () => {
+                            const _monthPicker = this.GetMonthPickerItemById(monthPickerId);
+                            _monthPicker.onRender();
+                        },
+                    });
+                    return result;
+                }
+                MonthPickerAPI.OnRender = OnRender;
 
                 function RegisterCallback(monthPickerId, eventName, callback) {
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
@@ -15667,6 +15734,18 @@ var OutSystems;
                 }
                 TimePickerAPI.Initialize = Initialize;
 
+                function OnRender(timePickerId) {
+                    const result = OutSystems.OSUI.Utils.CreateApiResponse({
+                        errorCode: OSUI.ErrorCodes.TimePicker.FailOnRender,
+                        callback: () => {
+                            const _timePickerItem = this.GetTimePickerItemById(timePickerId);
+                            _timePickerItem.onRender();
+                        },
+                    });
+                    return result;
+                }
+                TimePickerAPI.OnRender = OnRender;
+
                 function Open(timePickerId) {
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.TimePicker.FailOpen,
@@ -16979,34 +17058,212 @@ var OutSystems;
             var Menu;
             (function(Menu) {
                 let _onOrientationChangeCallback;
-
-                function _onOrientationChangeCallbackHandler(callback) {
-                    if (callback !== undefined) {
-                        setTimeout(function() {
-                            _onOrientationChangeCallback();
-                        }, 300);
+                const _appProp = {
+                    device: {
+                        isLandscape: false,
+                        type: undefined,
+                    },
+                    layout: {
+                        element: undefined,
+                        isAsideExpandable: false,
+                        isAsideMenu: false,
+                        isAsideMenuOverlay: false,
+                        isBlank: false,
+                        isTopMenu: false,
+                    },
+                    menu: {
+                        element: undefined,
+                        hasEventListeners: false,
+                        isOpen: false,
+                    },
+                };
+                const _menuFocusableElems = 'a[href]:not([disabled]), [tabindex], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])';
+                const _addMenuEventListeners = (hasTriggeredByAPI = false) => {
+                    if (hasTriggeredByAPI) {
+                        _removeMenuEventListeners();
                     }
-                }
-
-                function AddMenuOnOrientationChange(callback) {
-                    if (callback !== undefined) {
+                    const shouldKeyDownBeAdded = OSFramework.OSUI.Helper.DeviceInfo.IsDesktop === false ||
+                        _appProp.layout.isAsideMenuOverlay ||
+                        _appProp.layout.isAsideExpandable;
+                    if (shouldKeyDownBeAdded && _appProp.menu.hasEventListeners === false) {
+                        _appProp.menu.hasEventListeners = true;
+                        _appProp.menu.element.addEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.keyDown, _menuOnKeypress);
+                    }
+                };
+                const _addMenuOnResize = () => {
+                    OSFramework.OSUI.Event.DOMEvents.Listeners.GlobalListenerManager.Instance.addHandler(OSFramework.OSUI.Event.DOMEvents.Listeners.Type.WindowResize, _onResizeCallbackHandler);
+                };
+                const _addMenuOnOrientationChange = (callback) => {
+                    if (callback && OSFramework.OSUI.Helper.DeviceInfo.IsTablet) {
                         _onOrientationChangeCallback = callback;
                         OSFramework.OSUI.Event.DOMEvents.Listeners.GlobalListenerManager.Instance.addHandler(OSFramework.OSUI.Event.DOMEvents.Listeners.Type.OrientationChange, _onOrientationChangeCallbackHandler);
                     }
-                }
-                Menu.AddMenuOnOrientationChange = AddMenuOnOrientationChange;
+                };
+                const _hideMenu = () => {
+                    if (_appProp.menu.element === undefined || _appProp.layout.element === undefined) {
+                        _setAppProps();
+                    }
+                    const menuIcon = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu-icon');
+                    _appProp.layout.element.classList.remove('menu-visible');
+                    _appProp.menu.isOpen = false;
+                    menuIcon === null || menuIcon === void 0 ? void 0 : menuIcon.focus();
+                    _updatePropsAndAttrs();
+                };
+                const _menuOnKeypress = function(e) {
+                    const isTabPressed = e.key === 'Tab';
+                    const isEscapedPressed = e.key === 'Escape';
+                    const isShiftKey = e.shiftKey;
+                    const focusableEls = OSFramework.OSUI.Helper.Dom.TagSelectorAll(_appProp.menu.element, _menuFocusableElems);
+                    const firstFocusableEl = focusableEls[0];
+                    const lastFocusableEl = focusableEls[focusableEls.length - 1];
+                    if (!isTabPressed && !isEscapedPressed) {
+                        return;
+                    }
+                    if (isEscapedPressed && _appProp.menu.isOpen) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        _toggleMenu();
+                    }
+                    if (isShiftKey) {
+                        if (document.activeElement === firstFocusableEl) {
+                            lastFocusableEl.focus();
+                            e.preventDefault();
+                        }
+                    } else if (document.activeElement === lastFocusableEl) {
+                        firstFocusableEl.focus();
+                        e.preventDefault();
+                    }
+                };
+                const _onOrientationChangeCallbackHandler = (callback) => {
+                    if (callback) {
+                        OSFramework.OSUI.Helper.ApplySetTimeOut(() => {
+                            _onOrientationChangeCallback();
+                        }, 300);
+                    }
+                };
+                const _onResizeCallbackHandler = () => {
+                    const currentDeviceType = OSFramework.OSUI.Helper.DeviceInfo.GetDeviceType();
+                    if (_appProp.device.type === currentDeviceType) {
+                        return;
+                    }
+                    _appProp.device.type = currentDeviceType;
+                    if (_appProp.menu.isOpen) {
+                        _toggleMenu();
+                    } else {
+                        _updatePropsAndAttrs();
+                    }
+                    _removeMenuEventListeners();
+                    _addMenuEventListeners();
+                };
+                const _removeMenuEventListeners = () => {
+                    if (_appProp.menu.hasEventListeners) {
+                        _appProp.menu.hasEventListeners = false;
+                        _appProp.menu.element.removeEventListener('keydown', _menuOnKeypress);
+                    }
+                };
+                const _removeMenuOnOrientationChange = () => {
+                    if (_onOrientationChangeCallback && OSFramework.OSUI.Helper.DeviceInfo.IsTablet) {
+                        OSFramework.OSUI.Event.DOMEvents.Listeners.GlobalListenerManager.Instance.removeHandler(OSFramework.OSUI.Event.DOMEvents.Listeners.Type.OrientationChange, _onOrientationChangeCallbackHandler);
+                        _onOrientationChangeCallback = undefined;
+                    }
+                };
+                const _removeMenuOnResize = () => {
+                    OSFramework.OSUI.Event.DOMEvents.Listeners.GlobalListenerManager.Instance.removeHandler(OSFramework.OSUI.Event.DOMEvents.Listeners.Type.WindowResize, _onResizeCallbackHandler);
+                };
+                const _setA11YAttributes = (menu) => {
+                    if (menu === undefined) {
+                        menu = _appProp.menu.element;
+                    }
+                    const focusableEls = Array.from(menu.querySelectorAll(_menuFocusableElems));
+                    const menuItems = Array.from(menu.querySelectorAll('.app-menu-links > a'));
+                    for (let i = 0; i < focusableEls.length; ++i) {
+                        if (focusableEls[i].closest('.osui-submenu__items')) {
+                            focusableEls.splice(i, 1);
+                        }
+                    }
+                    if (menuItems.length > 0) {
+                        for (const item of menuItems) {
+                            if (!item.hasAttribute('role')) {
+                                item.setAttribute('role', 'menuitem');
+                            }
+                        }
+                    }
+                    const enableA11Y = _appProp.menu.isOpen ||
+                        (OSFramework.OSUI.Helper.DeviceInfo.IsDesktop &&
+                            _appProp.layout.isAsideMenuOverlay === false &&
+                            _appProp.layout.isAsideExpandable === false);
+                    if (enableA11Y) {
+                        OSFramework.OSUI.Helper.A11Y.TabIndexTrue(menu);
+                        OSFramework.OSUI.Helper.A11Y.AriaExpandedTrue(menu);
+                        for (const item of focusableEls) {
+                            OSFramework.OSUI.Helper.A11Y.TabIndexTrue(item);
+                        }
+                    } else {
+                        OSFramework.OSUI.Helper.A11Y.TabIndexFalse(menu);
+                        OSFramework.OSUI.Helper.A11Y.AriaExpandedFalse(menu);
+                        for (const item of focusableEls) {
+                            OSFramework.OSUI.Helper.A11Y.TabIndexFalse(item);
+                        }
+                    }
+                };
+                const _setAppProps = () => {
+                    _appProp.menu.element =
+                        OSFramework.OSUI.Helper.Dom.ClassSelector(document.body, 'app-menu-content') ||
+                        OSFramework.OSUI.Helper.Dom.ClassSelector(document.body, 'app-menu-container');
+                    _appProp.layout.element = OSFramework.OSUI.Helper.Dom.ClassSelector(document.body, 'layout');
+                    _appProp.device.type = OSFramework.OSUI.Helper.DeviceInfo.GetDeviceType();
+                    _appProp.device.isLandscape =
+                        OSFramework.OSUI.Helper.DeviceInfo.GetDeviceOrientation() ===
+                        OSFramework.OSUI.GlobalEnum.DeviceOrientation.landscape;
+                    _appProp.menu.isOpen = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'menu-visible');
+                    _appProp.layout.isTopMenu = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'layout-top');
+                    _appProp.layout.isAsideMenu = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'aside-visible');
+                    _appProp.layout.isAsideMenuOverlay = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'aside-overlay');
+                    _appProp.layout.isBlank = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'layout-blank');
+                    _appProp.layout.isAsideExpandable = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(_appProp.layout.element, 'aside-expandable');
+                };
+                const _showMenu = () => {
+                    const shouldShowMenu = OSFramework.OSUI.Helper.DeviceInfo.IsDesktop === false ||
+                        _appProp.layout.isAsideMenuOverlay ||
+                        _appProp.layout.isAsideExpandable;
+                    if (shouldShowMenu === false) {
+                        return;
+                    }
+                    if (_appProp.menu.element === undefined || _appProp.layout.element === undefined) {
+                        _setAppProps();
+                    }
+                    _appProp.layout.element.classList.add('menu-visible');
+                    _appProp.menu.element.focus();
+                    _appProp.menu.isOpen = true;
+                    _updatePropsAndAttrs();
+                };
+                const _toggleMenu = () => {
+                    if (_appProp.menu.isOpen) {
+                        _hideMenu();
+                    } else {
+                        _showMenu();
+                    }
+                };
+                const _updatePropsAndAttrs = () => {
+                    _setAppProps();
+                    _setA11YAttributes();
+                };
+                Menu.addMenuOnOrientationChange = _addMenuOnOrientationChange;
+                Menu.removeMenuOnOrientationChange = _removeMenuOnOrientationChange;
 
                 function IsMenuDraggable() {
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailCheckIsMenuDraggable,
                         hasValue: true,
                         callback: () => {
-                            const _layoutMenuVisible = OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.active-screen .aside-visible');
-                            const _isLandscape = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(document.body, 'landscape');
+                            _setAppProps();
+                            const _layoutSideMenuVisible = _appProp.layout.isAsideMenu;
                             let _addDragGestures = false;
                             if (window.cordova !== undefined && Utils.DeviceDetection.IsRunningAsPWA() === false) {
-                                if ((_layoutMenuVisible && OSFramework.OSUI.Helper.DeviceInfo.IsDesktop) ||
-                                    (_layoutMenuVisible && OSFramework.OSUI.Helper.DeviceInfo.IsTablet && _isLandscape)) {
+                                if ((_layoutSideMenuVisible && OSFramework.OSUI.Helper.DeviceInfo.IsDesktop) ||
+                                    (_layoutSideMenuVisible &&
+                                        OSFramework.OSUI.Helper.DeviceInfo.IsTablet &&
+                                        _appProp.device.isLandscape)) {
                                     _addDragGestures = false;
                                 } else {
                                     _addDragGestures = true;
@@ -17023,25 +17280,24 @@ var OutSystems;
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailSetExtendedMenuHide,
                         callback: () => {
-                            const menu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu');
-                            const appMenu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'app-menu-container');
-                            const menuOverlay = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu-background');
-                            if (menu) {
-                                OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(menu, 'menu--visible');
+                            const deprecatedMenu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu');
+                            if (deprecatedMenu) {
+                                const appMenu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'app-menu-container');
+                                const menuOverlay = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu-background');
+                                const onTransitionEnd = () => {
+                                    OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(deprecatedMenu, 'menu--animatable');
+                                    deprecatedMenu.removeEventListener('transitionend', onTransitionEnd);
+                                };
+                                OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(deprecatedMenu, 'menu--visible');
                                 if (menuOverlay) {
                                     menuOverlay.style.opacity = '';
                                 }
                                 appMenu.style.transform = '';
-                                menu.addEventListener('transitionend', OnTransitionEnd, false);
+                                deprecatedMenu.addEventListener('transitionend', onTransitionEnd, false);
                             } else {
-                                console.warn('The menu element is not present in the screen');
+                                _hideMenu();
                             }
-
-                            function OnTransitionEnd() {
-                                OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(menu, 'menu--animatable');
-                                menu.removeEventListener('transitionend', OnTransitionEnd);
-                            }
-                            SetMenuAttributes();
+                            _updatePropsAndAttrs();
                         },
                     });
                     return result;
@@ -17052,13 +17308,13 @@ var OutSystems;
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailSetExtendedMenuShow,
                         callback: () => {
-                            const myMenu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu');
-                            if (myMenu) {
-                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(myMenu, 'menu--visible');
-                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(myMenu, 'menu--animatable');
-                                SetMenuAttributes();
+                            const deprecatedMenu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu');
+                            if (deprecatedMenu) {
+                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(deprecatedMenu, 'menu--visible');
+                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(deprecatedMenu, 'menu--animatable');
+                                _updatePropsAndAttrs();
                             } else {
-                                console.warn('The menu element is not present in the screen');
+                                _showMenu();
                             }
                         },
                     });
@@ -17066,13 +17322,30 @@ var OutSystems;
                 }
                 Menu.MenuShow = MenuShow;
 
-                function RemoveMenuOnOrientationChange() {
-                    if (_onOrientationChangeCallback !== undefined) {
-                        OSFramework.OSUI.Event.DOMEvents.Listeners.GlobalListenerManager.Instance.removeHandler(OSFramework.OSUI.Event.DOMEvents.Listeners.Type.OrientationChange, _onOrientationChangeCallbackHandler);
-                        _onOrientationChangeCallback = undefined;
-                    }
+                function OnDestroy() {
+                    const result = OutSystems.OSUI.Utils.CreateApiResponse({
+                        errorCode: OSUI.ErrorCodes.Utilities.FailSetMenuOnDestroy,
+                        callback: () => {
+                            _removeMenuOnResize();
+                            _removeMenuOnOrientationChange();
+                        },
+                    });
+                    return result;
                 }
-                Menu.RemoveMenuOnOrientationChange = RemoveMenuOnOrientationChange;
+                Menu.OnDestroy = OnDestroy;
+
+                function OnReady(callback) {
+                    const result = OutSystems.OSUI.Utils.CreateApiResponse({
+                        errorCode: OSUI.ErrorCodes.Utilities.FailSetMenuOnReady,
+                        callback: () => {
+                            _updatePropsAndAttrs();
+                            _addMenuOnResize();
+                            _addMenuOnOrientationChange(callback);
+                        },
+                    });
+                    return result;
+                }
+                Menu.OnReady = OnReady;
 
                 function SetActiveMenuItems(WidgetId, ActiveItem, ActiveSubItem) {
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
@@ -17126,31 +17399,10 @@ var OutSystems;
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailSetMenuAttributes,
                         callback: () => {
-                            const layout = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'layout');
-                            const menu = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'app-menu-content') ||
-                                OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'app-menu-container');
-                            const isExpanded = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'menu-visible') ||
-                                OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'menu--visible');
-                            if (menu) {
-                                let focusableEls = menu.querySelectorAll(OSFramework.OSUI.Constants.FocusableElems);
-                                focusableEls = [].slice.call(focusableEls);
-                                if (isExpanded) {
-                                    menu.setAttribute('tabindex', '0');
-                                    menu.setAttribute('aria-expanded', 'true');
-                                } else {
-                                    menu.setAttribute('tabindex', '-1');
-                                    menu.setAttribute('aria-expanded', 'false');
-                                }
-                                if (isExpanded) {
-                                    focusableEls.forEach(function(item) {
-                                        item.setAttribute('tabindex', '0');
-                                    });
-                                } else {
-                                    focusableEls.forEach(function(item) {
-                                        item.setAttribute('tabindex', '-1');
-                                    });
-                                }
+                            if (_appProp.menu.element === undefined) {
+                                _setAppProps();
                             }
+                            _setA11YAttributes();
                         },
                     });
                     return result;
@@ -17198,13 +17450,13 @@ var OutSystems;
                             const menuIcon = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'menu-icon');
                             if (menuIcon) {
                                 const menuIconOnKeypress = function(e) {
-                                    if (e.keyCode === '32' || e.keyCode === '13') {
+                                    if (e.keyCode === 32 || e.keyCode === 13) {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        ToggleSideMenu();
+                                        _toggleMenu();
                                     }
                                 };
-                                menuIcon.addEventListener('keydown', menuIconOnKeypress);
+                                menuIcon.addEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.keyDown, menuIconOnKeypress);
                             }
                         },
                     });
@@ -17220,65 +17472,15 @@ var OutSystems;
                             if (WidgetId !== '') {
                                 widgetSelector = '#' + WidgetId;
                             }
-                            const layout = OSFramework.OSUI.Helper.Dom.ClassSelector(document, 'layout');
+                            if (_appProp.menu.element === undefined || _appProp.layout.element === undefined) {
+                                _setAppProps();
+                            }
                             const menu = OSFramework.OSUI.Helper.Dom.TagSelector(document.body, widgetSelector + '.app-menu-content');
-                            if (layout && menu) {
-                                let isTopMenuMobile;
-                                let isVisibleMobile;
-                                let isExpanded = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'menu-visible');
-                                const isOverlay = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'aside-overlay');
-                                const isExpandable = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'aside-expandable');
-                                const menuOnKeypress = function(e) {
-                                    const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-                                    const isEscapedPressed = e.key === 'Escape' || e.keyCode === 27;
-                                    const isShiftKey = e.shiftKey;
-                                    const focusableEls = OSFramework.OSUI.Helper.Dom.TagSelectorAll(menu, OSFramework.OSUI.Constants.FocusableElems);
-                                    const firstFocusableEl = focusableEls[0];
-                                    const lastFocusableEl = focusableEls[focusableEls.length - 1];
-                                    const isExpandableDesktop = OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.desktop .active-screen .layout-side.aside-expandable') ||
-                                        OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.tablet.landscape .active-screen .layout-side.aside-expandable');
-                                    if (!isTabPressed && !isEscapedPressed) {
-                                        return;
-                                    }
-                                    isExpanded = OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(layout, 'menu-visible');
-                                    if (isExpanded && isEscapedPressed) {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        ToggleSideMenu();
-                                    }
-                                    if (!isExpandableDesktop) {
-                                        if (isShiftKey) {
-                                            if (document.activeElement === firstFocusableEl) {
-                                                lastFocusableEl.focus();
-                                                e.preventDefault();
-                                            }
-                                        } else if (document.activeElement === lastFocusableEl) {
-                                            firstFocusableEl.focus();
-                                            e.preventDefault();
-                                        }
-                                    }
-                                };
-                                setTimeout(function() {
-                                    isTopMenuMobile =
-                                        OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.tablet .active-screen .layout-top') ||
-                                        OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.phone .active-screen .layout-top');
-                                    isVisibleMobile =
-                                        OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.tablet.portrait .active-screen .layout-side.aside-visible') ||
-                                        OSFramework.OSUI.Helper.Dom.TagSelector(document.body, '.phone .active-screen .layout-side.aside-visible');
-                                    if (isOverlay || isExpandable || isTopMenuMobile || isVisibleMobile) {
-                                        menu.addEventListener('keydown', menuOnKeypress);
-                                        SetMenuAttributes();
-                                    }
-                                }, 0);
-                                const menuLinks = OSFramework.OSUI.Helper.Dom.ClassSelector(menu, 'app-menu-links');
-                                if (menuLinks) {
-                                    const menuLinksChildren = menuLinks.children;
-                                    for (let i = 0; i < menuLinksChildren.length; i++) {
-                                        if (!menuLinksChildren[i].hasAttribute('role') && menuLinksChildren[i].tagName === 'A') {
-                                            menuLinksChildren[i].setAttribute('role', 'menuitem');
-                                        }
-                                    }
-                                }
+                            _appProp.menu.element = menu;
+                            if (_appProp.layout.element && menu) {
+                                OSFramework.OSUI.Helper.AsyncInvocation(() => {
+                                    _addMenuEventListeners(true);
+                                });
                             }
                         },
                     });
@@ -17290,22 +17492,7 @@ var OutSystems;
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailToggleSideMenu,
                         callback: () => {
-                            const layout = document.querySelector('.layout');
-                            const menu = document.querySelector('.app-menu-content');
-                            const menuIcon = document.querySelector('.menu-icon');
-                            if (layout && menu) {
-                                let isExpanded = layout.classList.contains('menu-visible');
-                                if (isExpanded && menuIcon) {
-                                    layout.classList.remove('menu-visible');
-                                    menuIcon.focus();
-                                    isExpanded = false;
-                                } else {
-                                    layout.classList.add('menu-visible');
-                                    menu.focus();
-                                    isExpanded = true;
-                                }
-                                SetMenuAttributes();
-                            }
+                            _toggleMenu();
                         },
                     });
                     return result;
@@ -18163,6 +18350,12 @@ var Providers;
                     _unsetParentMinHeight() {
                         OSFramework.OSUI.Helper.Dom.Styles.RemoveStyleAttribute(this.selfElement, OSFramework.OSUI.GlobalEnum.InlineStyle.Height);
                     }
+                    _updateA11yProperties() {
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, this._isPlatformInputDisabled ?
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden :
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, this._isPlatformInputDisabled.toString());
+                    }
                     addTodayBtn() {
                         this._todayButtonElem = document.createElement(OSFramework.OSUI.GlobalEnum.HTMLElement.Div);
                         this._todayButtonElem.classList.add(Flatpickr.Enum.CssClasses.TodayBtn);
@@ -18246,7 +18439,7 @@ var Providers;
                             OSFramework.OSUI.Helper.Dom.Attribute.Set(this.datePickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden);
                             OSFramework.OSUI.Helper.Dom.Attribute.Set(this.datePickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, OSFramework.OSUI.Constants.A11YAttributes.States.True);
                             OSFramework.OSUI.Helper.Dom.Attribute.Set(this._a11yInfoContainerElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, OSFramework.OSUI.Constants.A11YAttributes.States.True);
-                            OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                            this._updateA11yProperties();
                             let ariaLabelValue = Flatpickr.Enum.Attribute.DefaultAriaLabel;
                             if (this.datePickerPlatformInputElem.hasAttribute(OSFramework.OSUI.Constants.A11YAttributes.Aria.Label)) {
                                 ariaLabelValue = this.datePickerPlatformInputElem.getAttribute(OSFramework.OSUI.Constants.A11YAttributes.Aria.Label);
@@ -18267,6 +18460,7 @@ var Providers;
                     }
                     setHtmlElements() {
                         this.datePickerPlatformInputElem = this.selfElement.querySelector('input.form-control');
+                        this._isPlatformInputDisabled = this.datePickerPlatformInputElem.disabled;
                         this._a11yInfoContainerElem = OSFramework.OSUI.Helper.Dom.TagSelector(this.selfElement.parentElement, OSFramework.OSUI.Constants.Dot + Flatpickr.Enum.CssClasses.AccessibilityContainerInfo);
                         if (!this.datePickerPlatformInputElem) {
                             throw new Error(`The datepicker input at DatepickerId '${this.widgetId}' is missing`);
@@ -18336,6 +18530,13 @@ var Providers;
                             OSFramework.OSUI.Helper.AsyncInvocation(this.provider.destroy);
                         }
                         super.dispose();
+                    }
+                    onRender() {
+                        const isInputDisable = this.datePickerPlatformInputElem.disabled;
+                        if (this._isPlatformInputDisabled !== isInputDisable) {
+                            this._isPlatformInputDisabled = isInputDisable;
+                            this._updateA11yProperties();
+                        }
                     }
                     open() {
                         const isInputDisable = this.datePickerPlatformInputElem.disabled;
@@ -18486,7 +18687,8 @@ var Providers;
                                 disable: this.Disable.length === 0 ? undefined : this.Disable,
                                 disableMobile: this.DisableMobile,
                                 dateFormat: this._isUsingDateTime ?
-                                    this.ServerDateFormat + ' H:i:S' : this.ServerDateFormat,
+                                    this.ServerDateFormat + ' H:i:S' :
+                                    this.ServerDateFormat,
                                 maxDate: this._validateDate(this.MaxDate, true),
                                 minDate: this._validateDate(this.MinDate),
                                 onChange: this.OnChange,
@@ -18806,7 +19008,7 @@ var Providers;
                             if (OSFramework.OSUI.Helper.Dates.IsNull(this.configs.InitialDate)) {
                                 if (this.datePickerPlatformInputElem.value !== OSFramework.OSUI.Constants.EmptyString &&
                                     OSFramework.OSUI.Helper.Dates.IsValid(this.datePickerPlatformInputElem.value)) {
-                                    this.configs.InitialDate = new Date(this.datePickerPlatformInputElem.value);
+                                    this.configs.InitialDate = OSFramework.OSUI.Helper.Dates.NormalizeDate(this.datePickerPlatformInputElem.value);
                                 } else {
                                     clearPlatformInput = true;
                                 }
@@ -19711,7 +19913,8 @@ var Providers;
                                     label: key,
                                     options: groupedOptions[key],
                                     index: groupedOptions[previousKey] ?
-                                        options[options.length - 1].index + groupedOptions[previousKey].length + 1 : 0,
+                                        options[options.length - 1].index + groupedOptions[previousKey].length + 1 :
+                                        0,
                                 });
                                 previousKey = key;
                             }
@@ -19804,7 +20007,8 @@ var Providers;
                                 popupDropboxBreakpoint: this.PopupDropboxBreakpoint,
                                 silentInitialValueSet: true,
                                 textDirection: OutSystems.OSUI.Utils.GetIsRTL() ?
-                                    OSFramework.OSUI.GlobalEnum.Direction.RTL : OSFramework.OSUI.GlobalEnum.Direction.LTR,
+                                    OSFramework.OSUI.GlobalEnum.Direction.RTL :
+                                    OSFramework.OSUI.GlobalEnum.Direction.LTR,
                                 updatePositionThrottle: 0,
                                 useGroupValue: true,
                                 zIndex: 251,
@@ -19850,7 +20054,7 @@ var Providers;
                     let ProviderInfo;
                     (function(ProviderInfo) {
                         ProviderInfo["Name"] = "VirtualSelect";
-                        ProviderInfo["Version"] = "1.0.44";
+                        ProviderInfo["Version"] = "1.0.46";
                     })(ProviderInfo = Enum.ProviderInfo || (Enum.ProviderInfo = {}));
                     let CssClass;
                     (function(CssClass) {
@@ -20210,6 +20414,12 @@ var Providers;
                             OSFramework.OSUI.Helper.Dom.Styles.ExtendedClass(this.provider.calendarContainer, '', this.configs.ExtendedClass);
                         }
                     }
+                    _updateA11yProperties() {
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, this._isPlatformInputDisabled ?
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden :
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, this._isPlatformInputDisabled.toString());
+                    }
                     createProviderInstance() {
                         if (this.monthPickerPlatformInputElem && this._flatpickrOpts.defaultDate === undefined) {
                             this.monthPickerPlatformInputElem.value = OSFramework.OSUI.Constants.EmptyString;
@@ -20267,7 +20477,7 @@ var Providers;
                         OSFramework.OSUI.Helper.Dom.Attribute.Set(this.monthPickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden);
                         OSFramework.OSUI.Helper.Dom.Attribute.Set(this.monthPickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, OSFramework.OSUI.Constants.A11YAttributes.States.True);
                         OSFramework.OSUI.Helper.Dom.Attribute.Set(this._a11yInfoContainerElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, OSFramework.OSUI.Constants.A11YAttributes.States.True);
-                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                        this._updateA11yProperties();
                         let ariaLabelValue = Flatpickr.Enum.Attribute.DefaultAriaLabel;
                         if (this.monthPickerPlatformInputElem.hasAttribute(OSFramework.OSUI.Constants.A11YAttributes.Aria.Label)) {
                             ariaLabelValue = this.monthPickerPlatformInputElem.getAttribute(OSFramework.OSUI.Constants.A11YAttributes.Aria.Label);
@@ -20286,6 +20496,7 @@ var Providers;
                     }
                     setHtmlElements() {
                         this.monthPickerPlatformInputElem = this.selfElement.querySelector(OSFramework.OSUI.GlobalEnum.CSSSelectors.InputFormControl);
+                        this._isPlatformInputDisabled = this.monthPickerPlatformInputElem.disabled;
                         this._a11yInfoContainerElem = OSFramework.OSUI.Helper.Dom.TagSelector(this.selfElement.parentElement, OSFramework.OSUI.Constants.Dot + Flatpickr.Enum.CssClasses.AccessibilityContainerInfo);
                         if (!this.monthPickerPlatformInputElem) {
                             throw new Error(`The monthpicker input at MonthpickerId '${this.widgetId}' is missing`);
@@ -20350,6 +20561,13 @@ var Providers;
                             OSFramework.OSUI.Helper.AsyncInvocation(this.provider.destroy);
                         }
                         super.dispose();
+                    }
+                    onRender() {
+                        const isInputDisable = this.monthPickerPlatformInputElem.disabled;
+                        if (this._isPlatformInputDisabled !== isInputDisable) {
+                            this._isPlatformInputDisabled = isInputDisable;
+                            this._updateA11yProperties();
+                        }
                     }
                     open() {
                         const isInputDisable = this.monthPickerPlatformInputElem.disabled;
@@ -20915,7 +21133,8 @@ var Providers;
                         getProviderConfig() {
                             this._providerOptions = {
                                 direction: OutSystems.OSUI.Utils.GetIsRTL() ?
-                                    OSFramework.OSUI.GlobalEnum.Direction.RTL : OSFramework.OSUI.GlobalEnum.Direction.LTR,
+                                    OSFramework.OSUI.GlobalEnum.Direction.RTL :
+                                    OSFramework.OSUI.GlobalEnum.Direction.LTR,
                                 step: this.Step,
                                 orientation: this.Orientation,
                                 pips: this.ShowTickMarks ? this.getPipsConfig() : null,
@@ -21539,6 +21758,12 @@ var Providers;
                             OSFramework.OSUI.Helper.Dom.Styles.ExtendedClass(this.provider.calendarContainer, '', this.configs.ExtendedClass);
                         }
                     }
+                    _updateA11yProperties() {
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, this._isPlatformInputDisabled ?
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden :
+                            OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                        OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, this._isPlatformInputDisabled.toString());
+                    }
                     createProviderInstance() {
                         if (this.timePickerPlatformInputElem && this._flatpickrOpts.defaultDate === undefined) {
                             this.timePickerPlatformInputElem.value = OSFramework.OSUI.Constants.EmptyString;
@@ -21585,7 +21810,7 @@ var Providers;
                         if (this.provider.calendarContainer !== undefined) {
                             OSFramework.OSUI.Helper.Dom.Attribute.Set(this.timePickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexHidden);
                             OSFramework.OSUI.Helper.Dom.Attribute.Set(this.timePickerPlatformInputElem, OSFramework.OSUI.Constants.A11YAttributes.Aria.Hidden, OSFramework.OSUI.Constants.A11YAttributes.States.True);
-                            OSFramework.OSUI.Helper.Dom.Attribute.Set(this.flatpickrInputElem, OSFramework.OSUI.Constants.A11YAttributes.TabIndex, OSFramework.OSUI.Constants.A11YAttributes.States.TabIndexShow);
+                            this._updateA11yProperties();
                         }
                     }
                     setCallbacks() {
@@ -21593,6 +21818,7 @@ var Providers;
                     }
                     setHtmlElements() {
                         this.timePickerPlatformInputElem = this.selfElement.querySelector(OSFramework.OSUI.GlobalEnum.CSSSelectors.InputFormControl);
+                        this._isPlatformInputDisabled = this.timePickerPlatformInputElem.disabled;
                         if (!this.timePickerPlatformInputElem) {
                             throw new Error(`The timepicker input at TimepickerId '${this.widgetId}' is missing`);
                         }
@@ -21657,6 +21883,13 @@ var Providers;
                             OSFramework.OSUI.Helper.AsyncInvocation(this.provider.destroy);
                         }
                         super.dispose();
+                    }
+                    onRender() {
+                        const isInputDisable = this.timePickerPlatformInputElem.disabled;
+                        if (this._isPlatformInputDisabled !== isInputDisable) {
+                            this._isPlatformInputDisabled = isInputDisable;
+                            this._updateA11yProperties();
+                        }
                     }
                     open() {
                         const isInputDisable = this.timePickerPlatformInputElem.disabled;
@@ -21872,9 +22105,11 @@ var Providers;
                                 } = middlewareData.arrow;
                                 Object.assign(this.floatingConfigs.ArrowElem.style, {
                                     left: x !== undefined ?
-                                        `${x}${OSFramework.OSUI.GlobalEnum.Units.Pixel}` : OSFramework.OSUI.Constants.EmptyString,
+                                        `${x}${OSFramework.OSUI.GlobalEnum.Units.Pixel}` :
+                                        OSFramework.OSUI.Constants.EmptyString,
                                     top: y !== undefined ?
-                                        `${y}${OSFramework.OSUI.GlobalEnum.Units.Pixel}` : OSFramework.OSUI.Constants.EmptyString,
+                                        `${y}${OSFramework.OSUI.GlobalEnum.Units.Pixel}` :
+                                        OSFramework.OSUI.Constants.EmptyString,
                                     right: OSFramework.OSUI.Constants.EmptyString,
                                     bottom: OSFramework.OSUI.Constants.EmptyString,
                                     [staticSide]: `${-this.floatingConfigs.ArrowElem.offsetWidth / 2}${OSFramework.OSUI.GlobalEnum.Units.Pixel}`,

@@ -6,8 +6,8 @@ define("tradershub.referencesHealth$CommonPlugin", [], function() {
     // Reference to producer 'CommonPlugin' is OK.
 });
 
-define("tradershub.referencesHealth$CustomComponents", [], function() {
-    // Reference to producer 'CustomComponents' is OK.
+define("tradershub.referencesHealth$CustomComponentsOfficial", [], function() {
+    // Reference to producer 'CustomComponentsOfficial' is OK.
 });
 
 define("tradershub.referencesHealth$OutSystemsCharts", [], function() {
@@ -32,6 +32,10 @@ define("tradershub.referencesHealth$SharedUtilities", [], function() {
 
 define("tradershub.referencesHealth$System_", [], function() {
     // Reference to producer 'System_' is OK.
+});
+
+define("tradershub.referencesHealth$YupValidationsOfficial", [], function() {
+    // Reference to producer 'YupValidationsOfficial' is OK.
 });
 
 define("tradershub.referencesHealth", [], function() {});

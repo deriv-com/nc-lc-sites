@@ -23,6 +23,6 @@ define("OutSystemsCharts.appDefinition", ["@outsystems/runtime-core-js"], functi
         buildServiceVersion: "v17.1637.0.0",
         clientRuntimeVersion: "6.13.2",
         useESM: false,
-        appVersion: "3"
+        appVersion: "4"
     };
 });

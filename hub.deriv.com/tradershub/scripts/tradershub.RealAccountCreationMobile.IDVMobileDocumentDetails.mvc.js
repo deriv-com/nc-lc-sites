@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvcModel) {
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$model"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$model", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_model, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_view) {
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$model", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$view", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_model, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -176,7 +176,7 @@ define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$view",
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController) {
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {

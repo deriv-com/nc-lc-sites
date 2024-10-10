@@ -1,6 +1,6 @@
 !
 /**
- * Highmaps JS v11.4.6 (2024-07-08)
+ * Highmaps JS v11.4.8 (2024-08-29)
  *
  * Tilemap module
  *

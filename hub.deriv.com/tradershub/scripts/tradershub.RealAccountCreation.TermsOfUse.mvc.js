@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.TermsOfUse.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -67,7 +67,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$model", ["@outsystems/runt
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.TermsOfUse.mvc$model", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.Separator.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_TermsOfUse_mvc_model, tradershub_RealAccountCreation_TermsOfUse_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Utilities_Separator_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view) {
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.TermsOfUse.mvc$model", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.Separator.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_TermsOfUse_mvc_model, tradershub_RealAccountCreation_TermsOfUse_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Utilities_Separator_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -145,7 +145,15 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    Title: "Terms of use"
+                    Title: "Terms of use",
+                    Analytics: model.getCachedValue(idService.getId("VOwsODUdaUKApwXhNIgypg.Analytics"), function() {
+                        return function() {
+                            var rec = new tradershubModel.ST_0dd6e149ce474591a764bb53175023a1Structure();
+                            rec.stepCodenameAttr = "terms_of_use";
+                            rec.stepNumberAttr = "4";
+                            return rec;
+                        }();
+                    })
                 },
                 events: {
                     _handleError: function(ex) {
@@ -1048,7 +1056,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
 
     return View;
 });
-define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackFailureJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.ValidateJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.LiveChatOnClick.SyncLocalStorageJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackFailureJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_ValidateJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_LiveChatOnClick_SyncLocalStorageJS) {
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackFailureJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.ValidateJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.LiveChatOnClick.SyncLocalStorageJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackFailureJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_ValidateJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_LiveChatOnClick_SyncLocalStorageJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {

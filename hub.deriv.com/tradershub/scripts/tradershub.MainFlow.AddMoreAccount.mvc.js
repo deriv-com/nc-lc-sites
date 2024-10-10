@@ -169,7 +169,7 @@ define("tradershub.MainFlow.AddMoreAccount.mvc$view", ["@outsystems/runtime-core
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "1"
+                                name: "HeaderContainer"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Link, {
@@ -235,10 +235,101 @@ define("tradershub.MainFlow.AddMoreAccount.mvc$view", ["@outsystems/runtime-core
                                 uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }))))];
+                        })))), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            style: "add-more-accounts",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "CurrenciesContainer"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.List, {
+                            animateItems: true,
+                            gridProperties: {
+                                classes: "OSFillParent"
+                            },
+                            mode: /*Default*/ 0,
+                            source: model.variables.getCurrenciesAggr.listOut,
+                            style: "list list-group",
+                            tag: "div",
+                            _idProps: {
+                                service: idService,
+                                uuid: "8"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCurrenciesAggr.dataFetchStatusAttr),
+                            placeholders: {
+                                content: new IteratorPlaceholderContent(function(idService, callContext) {
+                                    return [React.createElement(OSWidgets.ListItem, {
+                                        style: "\"list-item\"",
+                                        triggerActionOnFullSwipeLeft: true,
+                                        triggerActionOnFullSwipeRight: true,
+                                        _idProps: {
+                                            service: idService,
+                                            name: "ListItem1"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        placeholders: {
+                                            leftActions: PlaceholderContent.Empty,
+                                            content: new PlaceholderContent(function() {
+                                                return [React.createElement(OSWidgets.Container, {
+                                                    align: /*Default*/ 0,
+                                                    animate: false,
+                                                    visible: true,
+                                                    _idProps: {
+                                                        service: idService,
+                                                        uuid: "10"
+                                                    },
+                                                    _widgetRecordProvider: widgetsRecordProvider
+                                                }, React.createElement(OSWidgets.Container, {
+                                                    align: /*Default*/ 0,
+                                                    animate: false,
+                                                    visible: true,
+                                                    _idProps: {
+                                                        service: idService,
+                                                        name: "LeftSide"
+                                                    },
+                                                    _widgetRecordProvider: widgetsRecordProvider
+                                                }, React.createElement(OSWidgets.Container, {
+                                                    align: /*Default*/ 0,
+                                                    animate: false,
+                                                    extendedProperties: {
+                                                        style: "border-radius: 100%; height: 24px; overflow: hidden;"
+                                                    },
+                                                    gridProperties: {
+                                                        classes: "OSInline",
+                                                        width: "24px"
+                                                    },
+                                                    visible: true,
+                                                    _idProps: {
+                                                        service: idService,
+                                                        name: "IconContainer"
+                                                    },
+                                                    _widgetRecordProvider: widgetsRecordProvider
+                                                }, React.createElement(OSWidgets.Image, {
+                                                    type: /*External*/ 1,
+                                                    url: model.variables.getCurrenciesAggr.listOut.getCurrent(callContext.iterationContext).currenciesAttr.iconAttr,
+                                                    _idProps: {
+                                                        service: idService,
+                                                        uuid: "13"
+                                                    },
+                                                    _widgetRecordProvider: widgetsRecordProvider,
+                                                    url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getCurrenciesAggr.dataFetchStatusAttr)
+                                                }))))];
+                                            }),
+                                            rightActions: PlaceholderContent.Empty
+                                        },
+                                        _dependencies: [asPrimitiveValue(model.variables.getCurrenciesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCurrenciesAggr.listOut.getCurrent(callContext.iterationContext).currenciesAttr.iconAttr)]
+                                    })];
+                                }, callContext, idService, "1")
+                            },
+                            _dependencies: [asPrimitiveValue(model.variables.getCurrenciesAggr.dataFetchStatusAttr)]
+                        }))];
                     })
                 },
-                _dependencies: []
+                _dependencies: [asPrimitiveValue(model.variables.getCurrenciesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getCurrenciesAggr.listOut)]
             }));
         }
     }

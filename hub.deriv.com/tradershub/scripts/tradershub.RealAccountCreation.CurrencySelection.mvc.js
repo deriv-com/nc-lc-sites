@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.CurrencySelection.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvcModel) {
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$model", ["@outsyste
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.CurrencySelection.mvc$model", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreation_CurrencySelection_mvc_model, tradershub_RealAccountCreation_CurrencySelection_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_view) {
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.CurrencySelection.mvc$model", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreation_CurrencySelection_mvc_model, tradershub_RealAccountCreation_CurrencySelection_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -125,7 +125,15 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystem
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    Title: "Account Currency"
+                    Title: "Account Currency",
+                    Analytics: model.getCachedValue(idService.getId("t5AZM2y2GkeaV0n0n4D55g.Analytics"), function() {
+                        return function() {
+                            var rec = new tradershubModel.ST_0dd6e149ce474591a764bb53175023a1Structure();
+                            rec.stepCodenameAttr = "account_currency";
+                            rec.stepNumberAttr = "0";
+                            return rec;
+                        }();
+                    })
                 },
                 events: {
                     _handleError: function(ex) {
@@ -182,7 +190,7 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystem
 
     return View;
 });
-define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.RudderStackJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_CurrencySelection_mvc_controller_OnReady_RudderStackJS) {
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_CurrencySelection_mvc_controller_OnReady_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {

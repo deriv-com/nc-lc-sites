@@ -205,7 +205,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
                                         isDefault: false,
                                         onClick: function() {
                                             try {
-                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "disable-deposit", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                                             } catch (ex) {
                                                 if (((ex.name) !== ("RedirectOccurredException"))) {
                                                     throw ex;

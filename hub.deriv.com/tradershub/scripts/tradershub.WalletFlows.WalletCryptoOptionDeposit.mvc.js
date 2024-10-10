@@ -80,7 +80,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css", "css/OutSystemsUI.OutSystemsUI.css", "css/tradershub.AccountCreation.css", "css/tradershub.AccountCreation.extra.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/OutSystemsUI.OutSystemsUI.css", "css/tradershub.AccountCreation.css", "css/tradershub.WalletFlows.WalletCryptoOptionDeposit.css", "css/tradershub.AccountCreation.extra.css"];
         }
 
         static getJsDependencies() {
@@ -210,7 +210,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                     }, React.createElement(OSWidgets.Link, {
                                         enabled: true,
                                         transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "deposit-crypto", {}),
+                                        url: OS.Navigation.generateScreenURL("tradershub", "deposit/deposit-crypto", {}),
                                         visible: true,
                                         _idProps: {
                                             service: idService,
@@ -240,22 +240,31 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                             uuid: "7"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Icon, {
-                                        icon: "qrcode",
-                                        iconSize: /*Twotimes*/ 1,
-                                        style: "icon",
+                                    }, React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        style: "wallet-deposit-method-icon",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
                                             uuid: "8"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
+                                    }, React.createElement(OSWidgets.Image, {
+                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.qr_code.svg"),
+                                        style: "display-grid",
+                                        type: /*Static*/ 0,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "9"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    })), React.createElement(OSWidgets.Text, {
                                         style: "font-bold flex-1",
                                         text: ["Crypto transfer"],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "9"
+                                            uuid: "10"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Image, {
@@ -266,7 +275,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         type: /*Static*/ 0,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "10"
+                                            uuid: "11"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })), React.createElement(OSWidgets.Text, {
@@ -276,20 +285,20 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         text: ["Scan QR code to deposit or copy wallet address."],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "11"
+                                            uuid: "12"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }))), React.createElement(OSWidgets.Link, {
                                         enabled: true,
                                         gridProperties: {
-                                            classes: "ThemeGrid_MarginGutter"
+                                            marginLeft: "0px"
                                         },
                                         transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "crypto-options", {}),
+                                        url: OS.Navigation.generateScreenURL("tradershub", "deposit/on-ramp", {}),
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "12"
+                                            uuid: "13"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Container, {
@@ -302,7 +311,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "13"
+                                            uuid: "14"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Container, {
@@ -312,25 +321,34 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "14"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Icon, {
-                                        icon: "qrcode",
-                                        iconSize: /*Twotimes*/ 1,
-                                        style: "icon",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
                                             uuid: "15"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
+                                    }, React.createElement(OSWidgets.Container, {
+                                        align: /*Default*/ 0,
+                                        animate: false,
+                                        style: "wallet-deposit-method-icon",
+                                        visible: true,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "16"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    }, React.createElement(OSWidgets.Image, {
+                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.Wallets_fiat_on_ramp.svg"),
+                                        style: "display-grid",
+                                        type: /*Static*/ 0,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "17"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    })), React.createElement(OSWidgets.Text, {
                                         style: "font-bold flex-1",
                                         text: ["Fiat onramp"],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "16"
+                                            uuid: "18"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Image, {
@@ -341,7 +359,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         type: /*Static*/ 0,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "17"
+                                            uuid: "19"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })), React.createElement(OSWidgets.Text, {
@@ -351,7 +369,7 @@ define("tradershub.WalletFlows.WalletCryptoOptionDeposit.mvc$view", ["@outsystem
                                         text: ["Convert fiat to crypto to fund your wallet."],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "18"
+                                            uuid: "20"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })))))];

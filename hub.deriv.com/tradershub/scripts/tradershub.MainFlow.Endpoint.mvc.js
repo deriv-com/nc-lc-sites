@@ -969,6 +969,11 @@ define("tradershub.MainFlow.Endpoint.mvc$controller.OnReady.GetConfigJS", [], fu
         return new Promise(function($resolve, $reject) {
             const url = localStorage.getItem('config.server_url')
             const appid = localStorage.getItem('config.app_id')
+            const hostname = location.hostname;
+            const appIdValue = hostname === "hub.deriv.com" ? "61554" :
+                hostname.includes("dev-hub") ? "15438" :
+                hostname.includes("staging-hub") ? "53503" :
+                null;
 
             $parameters.FeatureFlags = localStorage.featureFlags ?? JSON.stringify([])
 
@@ -977,7 +982,7 @@ define("tradershub.MainFlow.Endpoint.mvc$controller.OnReady.GetConfigJS", [], fu
                 $parameters.AppId = appid;
             } else {
                 $parameters.URL = "green.derivws.com";
-                $parameters.AppId = location.hostname === "hub.deriv.com" ? "61554" : location.hostname.includes("dev-hub") ? "15438" : "53503";
+                $parameters.AppId = appIdValue
             }
 
             $resolve()

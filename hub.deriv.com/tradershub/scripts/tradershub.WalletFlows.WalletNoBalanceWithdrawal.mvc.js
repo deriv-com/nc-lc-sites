@@ -350,10 +350,10 @@ define("tradershub.WalletFlows.WalletNoBalanceWithdrawal.mvc$controller", ["@out
                                 callContext = controller.callContext(callContext);
                                 if ((model.variables.isFiatIn)) {
                                     // Destination: /tradershub/WalletFiatDeposit
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit-fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 } else {
                                     // Destination: /tradershub/WalletCryptoDeposit
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit-crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/deposit-crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
 
                             } finally {
