@@ -900,6 +900,13 @@ define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$controller", ["@outsys
 });
 
 
+define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "tHI2NXdZ20KpxxsrLfXSaA#Value": "إعادة تعيين كلمة المرور الخاصة بي",
+        "+512wBgDnUWwPwxRl_kTfg#ValueExpression.-1310854240.1": "أدخل كلمة المرور"
+    };
+});
+
 define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "tHI2NXdZ20KpxxsrLfXSaA#Value": "Setzen Sie mein Passwort zurück",
@@ -949,8 +956,12 @@ define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.
     };
 });
 
-define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_esES, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.ar-001", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.ResetPasswordBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ar001, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_esES, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_ForgotPassword_ResetPasswordBlock_mvc_translationsResources_deDE,
             "isRTL": false

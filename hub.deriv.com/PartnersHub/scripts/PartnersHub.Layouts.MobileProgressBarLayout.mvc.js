@@ -893,6 +893,13 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$controller", ["@outsyste
 });
 
 
+define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "2iMvGgd9qEuJciPIJfkzRw#Value": "أكمل الإعداد للوصول إلى خطط العمولة المخصصة.",
+        "PUZk8rTKV0S6uWyOIu9xxQ#Value": "إعداد ملف الخروج؟"
+    };
+});
+
 define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.de-DE", [], function() {
     return {
         "2iMvGgd9qEuJciPIJfkzRw#Value": "Vervollständigen Sie die Einrichtung, um auf benutzerdefinierte Provisionspläne zuzugreifen.",
@@ -942,8 +949,12 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.ru
     };
 });
 
-define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_esES, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ruRU) {
+define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.ar-001", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ar001, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_esES, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Layouts_MobileProgressBarLayout_mvc_translationsResources_deDE,
             "isRTL": false

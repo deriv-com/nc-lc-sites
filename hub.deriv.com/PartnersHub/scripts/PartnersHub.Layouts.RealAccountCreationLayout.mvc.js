@@ -2059,6 +2059,27 @@ define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsys
 });
 
 
+define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "k4gPXOzX2E+h7qtfW9Q3Eg#Value": "أكمل الإعداد للوصول إلى خطط العمولة المخصصة.",
+        "JkpYM0ORA0W5DV6B_mF2Kg#Value": "إعداد ملف الخروج؟",
+        "sOpdF1jXe0aVJB8RctEMSg#Value": "شروط الاستخدام",
+        "5ycKwwc7KkytjvwmEJe4Ag#Value": "تفاصيل العنوان",
+        "rPOlfxqGXkGuqdRCco9X3w#Value": "تفاصيل التوظيف",
+        "TzCWE08vhEiMd46j9F_2pQ#Value": "التفاصيل الشخصية",
+        "_+B0FA+SSkKHk1HjYv340w#Value": "عملة الحساب",
+        "Bp86I9Ixv0OIhQly_f6eUA#Value": "نوع الحساب",
+        "JeN0p7uu00yd0gVlFMA4ng#Value": "شروط الاستخدام",
+        "LOHogPj7AkamPabzFF_m4w#Value": "تفاصيل العنوان",
+        "8KAIelA1vUOD1IBcV_3Bug#Value": "تفاصيل التوظيف",
+        "z6g2BoLl+U+IZ0Uh+onO3Q#Value": "التحقق من الهوية",
+        "2zT5ezvOfUufLEkacU1hWA#Value": "التفاصيل الشخصية",
+        "S3iQjwG8M0OPkqWRBiGV2w#Value": "عملة الحساب",
+        "YramVibtdUKPaIgj1OJ0kg#Value": "نوع الحساب",
+        "Pd1ZLA6XpE6fD+75qUoUXg#Value": "إضافة حساب حقيقي"
+    };
+});
+
 define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.de-DE", [], function() {
     return {
         "k4gPXOzX2E+h7qtfW9Q3Eg#Value": "Schließen Sie die Einrichtung ab, um auf benutzerdefinierte Provisionspläne zuzugreifen.",
@@ -2206,8 +2227,12 @@ define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.
     };
 });
 
-define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_esES, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ruRU) {
+define("PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.ar-001", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.RealAccountCreationLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ar001, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_esES, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Layouts_RealAccountCreationLayout_mvc_translationsResources_deDE,
             "isRTL": false

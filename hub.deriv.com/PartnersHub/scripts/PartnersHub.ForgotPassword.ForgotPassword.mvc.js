@@ -854,6 +854,18 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$controller", ["@outsystems
 });
 
 
+define("PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "0B5RuWgJTUiealfNUe3R0A#Value": "إرسال بريد إلكتروني",
+        "sXKPoLUybE2FHFmsCMZ4yg#Value": "بريد إلكتروني",
+        "FWCTvECwVEi6umdPrnYO+g#Value": "سنرسل لك تعليمات لإعادة تعيين كلمة المرور الخاصة بك.",
+        "vX58_Fqy6UG10yQ9Z1cm7w#Value": "إرسال بريد إلكتروني",
+        "5zG3vVwLSUmzxK8J2_EDJQ#Value": "بريد إلكتروني",
+        "rLgXlSTML0WrzZUE8llzYg#Value": "سنرسل لك تعليمات لإعادة تعيين كلمة المرور الخاصة بك.",
+        "YDh0MyyAak+VvW7qL38MXw#Value": "نسيت كلمة المرور"
+    };
+});
+
 define("PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.de-DE", [], function() {
     return {
         "0B5RuWgJTUiealfNUe3R0A#Value": "E-Mail senden",
@@ -938,8 +950,12 @@ define("PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.ru-R
     };
 });
 
-define("PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_esES, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ruRU) {
+define("PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.ar-001", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.ForgotPassword.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ar001, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_esES, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_ForgotPassword_ForgotPassword_mvc_translationsResources_deDE,
             "isRTL": false

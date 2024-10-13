@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Oct 03 2024 10:56:06 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Oct 11 2024 02:40:36 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d7fa" data-wf-site="66585fe0e1dc7e70cc75d440" lang="pl">
 
 <head>
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ca2dbee9a.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a79e5dcff.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,10 +54,32 @@
     <link href="https://deriv.com/pl/signup" rel="canonical" />
     <!--Analytics block starts here-->
     <script>
+        // Version 1.0.5
         const cacheTrackEvents = {
             interval: null,
             responses: [],
             isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
             trackPageUnload: () => {
                 window.addEventListener("beforeunload", (event) => {
                     if (!cacheTrackEvents.isPageViewSent()) {
@@ -112,7 +134,7 @@
                 }
 
                 const instances = Analytics.Analytics.getInstances();
-                return !!(instances?.tracking && instances?.ab);
+                return !!instances?.tracking;
             },
             parseCookies: (cookieName) => {
                 const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -140,7 +162,18 @@
         storedCookies
       )}; path=/; Domain=.deriv.com`;
             },
-            track: (event, cache) => {
+            processEvent: (event) => {
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
                 if (cacheTrackEvents.isReady() && !cache) {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
@@ -169,18 +202,28 @@
                     }
                 }, 1000);
             },
-            listen: (element, {
-                name,
-                properties
-            }, cache) => {
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
                 const addClickListener = (el) => {
                     if (!el.dataset.clickEventTracking) {
-                        el.addEventListener("click", function() {
-                            cacheTrackEvents.track({
+                        el.addEventListener("click", function(e) {
+                            let event = {
                                 name,
                                 properties,
                                 cache,
-                            });
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
                         });
                         el.dataset.clickEventTracking = "true";
                     }
@@ -196,25 +239,32 @@
                 cacheTrackEvents.interval = setInterval(() => {
                     let allListenersApplied = true;
 
-                    items.forEach(({
-                        element,
-                        event,
-                        cache = false
-                    }) => {
-                        const elem = document.querySelectorAll(element);
-                        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
 
-                        if (!elements.length) {
-                            allListenersApplied = false;
-                        }
-
-                        elements.forEach((el) => {
-                            if (!el.dataset.clickEventTracking) {
-                                cacheTrackEvents.listen(el, event, cache);
+                            if (!elements.length) {
                                 allListenersApplied = false;
                             }
-                        });
-                    });
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
 
                     if (allListenersApplied) {
                         clearInterval(cacheTrackEvents.interval);
@@ -244,11 +294,23 @@
 
                 items.forEach(({
                     pages = [],
+                    excludedPages = [],
                     event
                 }) => {
-                    if (pages.includes(pathname)) {
-                        console.log(`dispatching page load event for: ${event}`);
+                    let dispatch = false;
+                    if (pages.length) {
+                        if (pages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else if (excludedPages.length) {
+                        if (!excludedPages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else {
+                        dispatch = true;
+                    }
 
+                    if (dispatch) {
                         cacheTrackEvents.loadEvent([{
                             event
                         }]);
@@ -260,6 +322,31 @@
         };
 
         cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "email_confirmation_sent",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+            ])
             .addEventhandler([{
                     element: ".btn-free-demo .w-button",
                     event: {
@@ -340,6 +427,53 @@
                         },
                     },
                 },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                            },
+                        };
+                    },
+                },
             ])
             .pageView();
 
@@ -387,8 +521,8 @@
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
             const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
                 rudderstackKey: RUDDERSTACK_KEY,
                 growthbookOptions: {
                     navigate: (url) => window.location.replace(url),
@@ -429,18 +563,25 @@
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
             Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                const growthBookInstance = window.getGrowthbookInstance();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
                 function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
                     featureFlagValue = value;
                 }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
                 return featureFlagValue;
             };
         });
@@ -725,6 +866,77 @@
             loadJSCookie(setupCookies);
         })();
     </script>
+
+    <style>
+        /* Style for disabling scroll */
+        .disable-scroll {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        /* removing scroll bar(vertical) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* removing scroll bar (Firefox) */
+        * {
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .new-navbar_menu-left-desctop {
+                font-size: 14px;
+                /* Adjust the font size of menus in the custom breakpoint */
+            }
+
+            .new-navbar_dropdown-toggle,
+            .new-navbar_link {
+                padding: 0.5rem 0.75rem;
+                /* Adjust the padding of menus in the custom breakpoint */
+            }
+
+            header h1 {
+                font-size: 3rem;
+                /* Adjust the font size of header texts in the custom breakpoint */
+            }
+
+            header p {
+                font-size: 14px;
+                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
+                width: 81%;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            /* Adjusts for mobile landscape */
+            .tabs_menu-scroll-mobile {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS devices */
+                scrollbar-width: none;
+                /* For Firefox */
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        /* display only one text element for language switcher 
+.current-locale-list > .current-locale:first-of-type {
+    display: block;
+} */
+    </style>
 </head>
 
 <body>
@@ -1576,6 +1788,16 @@ a,
                     overflow-wrap: break-word;
 
                 }
+
+                a.deriv-tech-header_tablet-link.is-overlay:after {
+                    content: "";
+                    z-index: -1;
+                    opacity: .4;
+                    background-image: linear-gradient(181.93deg, #11141b00 3.15%, #11141b 50.01%);
+                    height: 71%;
+                    position: absolute;
+                    inset: auto 0% 0%;
+                }
             </style>
         </div>
         <div class="menu-wrapper">
@@ -1595,7 +1817,7 @@ a,
             <header class="section_page-header_sign-up">
                 <div class="padding-global">
                     <div id="full_form" class="sign-up_content-wrapper sn_form">
-                        <div class="sign-up_card-component">
+                        <section class="sign-up_card-component">
                             <div class="sign-up_card-content-left">
                                 <h1 class="heading-style-h2">Zarejestruj się</h1>
                                 <p class="heading-style-h3">Dołącz do ponad 2,5 miliona inwestorów</p>
@@ -1608,7 +1830,7 @@ a,
                                         </div><img id="email-sign-up-error-icon" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d807_icon%20-%20fail.svg" class="error-field-icon" />
                                     </div>
                                     <p class="text-size-tiny text-color-light-black">Tworząc konto, potwierdzasz, że masz 18 lat lub więcej i rozumiesz, że możemy wysyłać Ci aktualizacje oraz materiały marketingowe (patrz <a href="https://docs.deriv.com/tnc/security-and-privacy.pdf" data-attributes="lnk-text-signup">Polityka bezpieczeństwa i prywatności</a>). Zrezygnuj z subskrypcji w ustawieniach konta w dowolnym momencie.</p><label class="w-checkbox form_checkbox"><input type="checkbox" name="checkbox" id="checkbox-c-trader-signup" data-name="Checkbox" class="w-checkbox-input form_checkbox-icon" /><span class="form_checkbox-label w-form-label" for="checkbox">Akceptuję <a href="/terms-and-conditions" data-attributes="lnk-text-signup">Regulamin</a></span></label>
-                                    <div class="sign-up_card-form_cta-wrapper"><input id="create" type="submit" data-wait="Please wait..." data-attributes="btn-primary-cta" class="button w-button" value="Demo-Konto erstellen" /></div>
+                                    <div class="sign-up_card-form_cta-wrapper"><input id="create" type="submit" data-wait="Please wait..." data-attributes="btn-primary-cta" data-href="create-demo-account" class="button w-button" value="Demo-Konto erstellen" /></div>
                                     <div class="error-wrapper">
                                         <p id="checkbox-c-trader-signup-error-text" class="input-error-text">Prosimy wskazać, że przeczytałeś i akceptujesz powyższe warunki.</p>
                                     </div>
@@ -1620,7 +1842,7 @@ a,
                                     <div>Ups! Coś poszło nie tak podczas przesyłania formularza.</div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         <div class="sign-up_card-alternative">
                             <div class="sign-up_card-alternative_text-wrapper">
                                 <div class="sign-up_card-alternative_line-tablet"></div>
@@ -1661,7 +1883,7 @@ a,
                                     </div>
                                     <div class="sign-up_banner-label">Zarejestruj się przez Apple</div>
                                 </a></div>
-                            <div class="text-size-small text-align-center">Masz już konto?  <a id="signup_login" href="#" data-attributes="lnk-text-signup">Zaloguj się</a></div>
+                            <div class="text-size-small text-align-center">Masz już konto?  <a id="signup_login" href="#" data-attributes="lnk-text-signup" data-href="login">Zaloguj się</a></div>
                         </div>
                     </div>
                 </div>
@@ -1728,8 +1950,8 @@ a,
         </main>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b3f9562ab.js" type="text/javascript"></script> <!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.18/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.5fffeb20e.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.27/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -1847,7 +2069,8 @@ a,
                     "/eu-careers",
                     "/our-locations",
                     "/product-explorer",
-                    "/academy"
+                    "/academy",
+                    "/trading-terms-glossary"
                 ];
                 let path = window.location.pathname;
                 let targetPathUrl = false;
@@ -2498,7 +2721,8 @@ a,
                 "/eu-careers",
                 "/our-locations",
                 "/product-explorer",
-                "/academy"
+                "/academy",
+                "/trading-terms-glossary",
 
             ];
             var path = window.location.pathname;
@@ -2540,7 +2764,8 @@ a,
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
+                const growthbookInstance = window.getGrowthbookInstance()
+                const featureFlagValue = growthbookInstance.getFeatureValue(
                     "trigger_os_signup_wf"
                 );
                 const handleOutSystemsRedirection = () => {
@@ -2604,14 +2829,12 @@ a,
                     }
                 });
             };
-
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
-                });
+            const growthbookInstance = window.getGrowthbookInstance();
+            growthbookInstance?.loadFeatures().then(() => {
+                if (window.location.href.indexOf("/partners") > -1 === false) {
+                    updateLinkHrefs();
+                }
+            });
         });
     </script>
 
@@ -2698,7 +2921,10 @@ a,
 
         const loginUrl = () => {
             const server_url = localStorage.getItem("config.server_url");
-            const langCookie = window.parseCookies(document.cookie, "webflow-user-language");
+            const langCookie = window.parseCookies(
+                document.cookie,
+                "webflow-user-language"
+            );
             let language = langCookie ? langCookie.toLowerCase() : "en";
 
             if (language === "zh-cn" || language === "zh-tw") {
@@ -2707,7 +2933,10 @@ a,
             const cookies_value = getUTMData();
             const cookies_link = getDataLink(cookies_value);
 
-            const affiliate_token = window.parseCookies(document.cookie, "affiliate_tracking");
+            const affiliate_token = window.parseCookies(
+                document.cookie,
+                "affiliate_tracking"
+            );
 
             const affiliate_token_link = affiliate_token ?
                 `&affiliate_token=${affiliate_token}` :
@@ -2728,19 +2957,18 @@ a,
             return `${window.getOauthUrl()}/oauth2/authorize?app_id=${getDomainAppID()}&l=${language}&brand=deriv${affiliate_token_link}${cookies_link}&platform=${sub_url}`;
         };
 
-
         // Close button function
         var Webflow = Webflow || [];
         Webflow.push(function() {
-            const closeButton = document.querySelector('.sign-up-close-button');
+            const closeButton = document.querySelector(".sign-up-close-button");
 
             if (closeButton) {
-                closeButton.addEventListener('click', function() {
+                closeButton.addEventListener("click", function() {
                     const previousUrl = document.referrer;
                     const currentUrl = window.location.href;
 
                     if (!previousUrl) {
-                        window.location.href = '/';
+                        window.location.href = "/";
                     }
 
                     try {
@@ -2750,29 +2978,31 @@ a,
                         if (previousDomain === currentDomain) {
                             window.location.href = previousUrl;
                         } else {
-                            window.location.href = '/';
+                            window.location.href = "/";
                         }
                     } catch (error) {
-                        window.location.href = '/';
+                        window.location.href = "/";
                     }
                 });
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const submitBtn = document.getElementById('create');
-            const emailInput = document.getElementById('Email');
+        document.addEventListener("DOMContentLoaded", function() {
+            const submitBtn = document.getElementById("create");
+            const emailInput = document.getElementById("Email");
             const emailErrorText = document.getElementById("email-sign-up-error-text");
             const emailErrorIcon = document.getElementById("email-sign-up-error-icon");
-            const checkBox = document.getElementById('checkbox-c-trader-signup');
-            const checkBoxErrorText = document.getElementById("checkbox-c-trader-signup-error-text");
+            const checkBox = document.getElementById("checkbox-c-trader-signup");
+            const checkBoxErrorText = document.getElementById(
+                "checkbox-c-trader-signup-error-text"
+            );
             const emailPattern = window.emailRegex;
 
             // Function to disable the submit button
             function disableButton() {
                 if (submitBtn) {
                     submitBtn.disabled = true;
-                    submitBtn.style.opacity = '0.5';
+                    submitBtn.style.opacity = "0.5";
                 }
             }
 
@@ -2780,8 +3010,7 @@ a,
             function enableButton() {
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-
+                    submitBtn.style.opacity = "1";
                 }
             }
 
@@ -2817,20 +3046,29 @@ a,
             }
 
             if (emailInput) {
-                emailInput.addEventListener('input', handleInputValidation);
+                emailInput.addEventListener("input", handleInputValidation);
             }
 
             if (checkBox) {
-                checkBox.addEventListener('change', updateButtonState);
+                checkBox.addEventListener("change", updateButtonState);
             }
 
             // Initial state of the button
             disableButton();
 
             const getCookiesFields = () => [
-                'utm_source', 'utm_ad_id', 'utm_adgroup_id', 'utm_adrollclk_id',
-                'utm_campaign', 'utm_campaign_id', 'utm_content', 'utm_fbcl_id',
-                'utm_gl_client_id', 'utm_medium', 'utm_msclk_id', 'utm_term'
+                "utm_source",
+                "utm_ad_id",
+                "utm_adgroup_id",
+                "utm_adrollclk_id",
+                "utm_campaign",
+                "utm_campaign_id",
+                "utm_content",
+                "utm_fbcl_id",
+                "utm_gl_client_id",
+                "utm_medium",
+                "utm_msclk_id",
+                "utm_term",
             ];
 
             const getUTMData = () => {
@@ -2840,7 +3078,7 @@ a,
                     const cookiesFields = getCookiesFields();
                     const filteredData = {};
 
-                    cookiesFields.forEach(field => {
+                    cookiesFields.forEach((field) => {
                         if (utmData.hasOwnProperty(field)) {
                             filteredData[field] = utmData[field];
                         }
@@ -2852,23 +3090,33 @@ a,
             };
 
             const getDateFirstContact = () => {
-                const dateFirstContactString = window.parseCookies(document.cookie, "date_first_contact");
+                const dateFirstContactString = window.parseCookies(
+                    document.cookie,
+                    "date_first_contact"
+                );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
-                        date_first_contact: parsedData.date_first_contact
-                    } : null;
+                    return parsedData.date_first_contact ?
+                        {
+                            date_first_contact: parsedData.date_first_contact
+                        } :
+                        null;
                 }
                 return null;
             };
 
             const getSignupDevice = () => {
-                const signupDeviceString = window.parseCookies(document.cookie, "signup_device");
+                const signupDeviceString = window.parseCookies(
+                    document.cookie,
+                    "signup_device"
+                );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
-                        signup_device: parsedData.signup_device
-                    } : null;
+                    return parsedData.signup_device ?
+                        {
+                            signup_device: parsedData.signup_device
+                        } :
+                        null;
                 }
                 return null;
             };
@@ -2880,21 +3128,26 @@ a,
                 const dataObject = {
                     ...(utmData || {}),
                     ...(dateFirstContact || {}),
-                    ...(signupDevice || {})
+                    ...(signupDevice || {}),
                 };
 
                 // Remove keys with null values
-                Object.keys(dataObject).forEach(key => dataObject[key] == null && delete dataObject[key]);
+                Object.keys(dataObject).forEach(
+                    (key) => dataObject[key] == null && delete dataObject[key]
+                );
 
                 return Object.keys(dataObject).length ? dataObject : null;
             };
 
             const generateData = (formatted_email) => {
-                const affiliate_token = window.parseCookies(document.cookie, "affiliate_tracking");
+                const affiliate_token = window.parseCookies(
+                    document.cookie,
+                    "affiliate_tracking"
+                );
                 const cookieValues = createDataObject();
                 return {
                     verify_email: formatted_email,
-                    type: 'account_opening',
+                    type: "account_opening",
                     url_parameters: {
                         ...(affiliate_token && {
                             affiliate_token: affiliate_token
@@ -2907,18 +3160,10 @@ a,
             };
 
             if (submitBtn) {
-                submitBtn.addEventListener('click', function(event) {
-                    //Analytics tracking
-                    Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                        action: 'started',
-                        signup_provider: 'email',
-                        form_source: window.location.hostname,
-                        form_name: 'default_diel_deriv',
-                    })
-
+                submitBtn.addEventListener("click", function(event) {
                     event.preventDefault();
                     const email = emailInput?.value.trim();
-                    const checkbox = document.getElementById('checkbox-c-trader-signup');
+                    const checkbox = document.getElementById("checkbox-c-trader-signup");
 
                     if (!emailPattern.test(email)) {
                         emailInput?.classList.add("error-field-block");
@@ -2935,11 +3180,16 @@ a,
                     enableButton();
 
                     const data = generateData(email);
-                    const langCookie = window.parseCookies(document.cookie, "webflow-user-language");
-                    const language = langCookie ? langCookie.toLowerCase() : 'en';
+                    const langCookie = window.parseCookies(
+                        document.cookie,
+                        "webflow-user-language"
+                    );
+                    const language = langCookie ? langCookie.toLowerCase() : "en";
 
-                    window.socketMessageSend(JSON.stringify(data), "verify_email").then((res) => {
-                            if (language && language !== 'en') {
+                    window
+                        .socketMessageSend(JSON.stringify(data), "verify_email")
+                        .then((res) => {
+                            if (language && language !== "en") {
                                 window.location.href = `/${language}/signup-success?email=${email}`;
                             } else {
                                 window.location.href = `/signup-success?email=${email}`;
@@ -2947,35 +3197,43 @@ a,
                         })
                         .catch((error) => {
                             enableButton();
-                            Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                                action: 'signup_flow_error',
+                            Analytics?.Analytics?.trackEvent("ce_virtual_signup_form", {
+                                action: "signup_flow_error",
                                 form_source: window.location.hostname,
-                                form_name: 'default_diel_deriv',
-                            })
+                                form_name: "default_diel_deriv",
+                            });
                         });
                 });
             }
 
-            const googleButton = document.getElementById('dm-signup-google');
-            const facebookButton = document.getElementById('dm-signup-facebook');
-            const appleButton = document.getElementById('dm-signup-apple');
+            const googleButton = document.getElementById("dm-signup-google");
+            const facebookButton = document.getElementById("dm-signup-facebook");
+            const appleButton = document.getElementById("dm-signup-apple");
 
-            googleButton.addEventListener('click', handleSocialSignup);
-            facebookButton.addEventListener('click', handleSocialSignup);
-            appleButton.addEventListener('click', handleSocialSignup);
+            googleButton.addEventListener("click", handleSocialSignup);
+            facebookButton.addEventListener("click", handleSocialSignup);
+            appleButton.addEventListener("click", handleSocialSignup);
 
             const Login = (() => {
-                const app_id = '53503';
-                const brand = 'deriv';
-                const oauth_url = 'https://oauth.deriv.com/oauth2/authorize';
+                const app_id = "53503";
+                const brand = "deriv";
+                const oauth_url = "https://oauth.deriv.com/oauth2/authorize";
 
                 const dateFirstContact = getDateFirstContact()?.date_first_contact;
                 const signupDevice = getSignupDevice()?.signup_device;
-                const aff_token = window.parseCookies(document.cookie, "affiliate_tracking");
-                const langCookie = window.parseCookies(document.cookie, "webflow-user-language");
-                const lang = langCookie ? langCookie.toLowerCase() : 'en';
+                const aff_token = window.parseCookies(
+                    document.cookie,
+                    "affiliate_tracking"
+                );
+                const langCookie = window.parseCookies(
+                    document.cookie,
+                    "webflow-user-language"
+                );
+                const lang = langCookie ? langCookie.toLowerCase() : "en";
 
-                const affiliate_token_link = aff_token ? `&affiliate_token=${aff_token}` : '';
+                const affiliate_token_link = aff_token ?
+                    `&affiliate_token=${aff_token}` :
+                    "";
 
                 const initOneAll = (provider) => {
                     const social_login_url = `${oauth_url}?app_id=${app_id}&brand=${brand}&social_signup=${provider}${affiliate_token_link}&l=${lang}&date_first_contact=${dateFirstContact}&signup_device=${signupDevice}`;
@@ -2988,66 +3246,18 @@ a,
             })();
 
             function handleSocialSignup(e) {
-
                 e.preventDefault();
-                const data_provider = e.currentTarget.getAttribute('data-provider');
-                console.log('data_provider', data_provider)
-                if (data_provider === 'google') {
-                    Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                        signup_provider: 'google',
-                        action: 'started',
-                        form_source: window.location.hostname,
-                        form_name: 'default_diel_deriv',
-                    })
-                }
-                if (data_provider === 'facebook') {
-                    Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                        signup_provider: 'facebook',
-                        action: 'started',
-                        form_source: window.location.hostname,
-                        form_name: 'default_diel_deriv',
-                    })
-                }
-
-                if (data_provider === 'apple') {
-                    Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                        signup_provider: 'apple',
-                        action: 'started',
-                        form_source: window.location.hostname,
-                        form_name: 'default_diel_deriv',
-                    })
-                }
+                const data_provider = e.currentTarget.getAttribute("data-provider");
                 window.location.href = `${loginUrl()}&social_signup=${data_provider}`;
             }
 
-            const loginLink = document.getElementById('signup_login');
+            const loginLink = document.getElementById("signup_login");
             if (loginLink) {
-                loginLink.addEventListener('click', function(event) {
+                loginLink.addEventListener("click", function(event) {
                     event.preventDefault();
-                    Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                        action: 'go_to_login',
-                        form_source: window.location.hostname,
-                        form_name: 'default_diel_deriv',
-                    })
                     window.location.href = loginUrl();
                 });
             }
-        });
-    </script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function trackEvent() {
-                Analytics?.Analytics?.trackEvent('ce_virtual_signup_form', {
-                    action: 'open',
-                    form_source: window.location.hostname,
-                    form_name: 'default_diel_deriv',
-                });
-            }
-
-            // Set timeout to call the trackEvent function after 3 seconds
-            setTimeout(trackEvent, 500);
         });
     </script>
 </body>

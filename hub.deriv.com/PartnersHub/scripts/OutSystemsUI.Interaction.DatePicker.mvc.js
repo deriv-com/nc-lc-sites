@@ -1,4 +1,4 @@
-define("OutSystemsUI.Interaction.DatePicker.mvc$model", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController) {
+define("OutSystemsUI.Interaction.DatePicker.mvc$model", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerOnRender", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController) {
     var OS = OSRuntimeCore;
 
 
@@ -118,7 +118,7 @@ define("OutSystemsUI.Interaction.DatePicker.mvc$model", ["@outsystems/runtime-co
     return new OS.Model.ModelFactory(Model);
 });
 
-define("OutSystemsUI.Interaction.DatePicker.mvc$view", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "OutSystemsUI.Interaction.DatePicker.mvc$model", "OutSystemsUI.Interaction.DatePicker.mvc$controller", "@outsystems/runtime-widgets-js", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, React, OSView, OutSystemsUI_Interaction_DatePicker_mvc_model, OutSystemsUI_Interaction_DatePicker_mvc_controller, OSWidgets) {
+define("OutSystemsUI.Interaction.DatePicker.mvc$view", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "OutSystemsUI.Interaction.DatePicker.mvc$model", "OutSystemsUI.Interaction.DatePicker.mvc$controller", "@outsystems/runtime-widgets-js", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerOnRender", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, React, OSView, OutSystemsUI_Interaction_DatePicker_mvc_model, OutSystemsUI_Interaction_DatePicker_mvc_controller, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -211,7 +211,7 @@ define("OutSystemsUI.Interaction.DatePicker.mvc$view", ["@outsystems/runtime-cor
 
     return View;
 });
-define("OutSystemsUI.Interaction.DatePicker.mvc$controller", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.languageResources", "OutSystemsUI.Interaction.DatePicker.mvc$translationsResources", "OutSystemsUI.Interaction.DatePicker.mvc$controller.RegisterCallbacks.GetCallbackHandlersJS", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUILanguageResources, OutSystemsUI_Interaction_DatePicker_mvc_TranslationsResources, OutSystemsUI_Interaction_DatePicker_mvc_controller_RegisterCallbacks_GetCallbackHandlersJS) {
+define("OutSystemsUI.Interaction.DatePicker.mvc$controller", ["@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.languageResources", "OutSystemsUI.Interaction.DatePicker.mvc$translationsResources", "OutSystemsUI.Interaction.DatePicker.mvc$controller.RegisterCallbacks.GetCallbackHandlersJS", "OutSystemsUI.model$ST_cd3e064c4ee8b37ab96945c09d5d2155Structure", "OutSystemsUI.model$ST_bc4abb4233d9ce894e855c520a20c76fStructure", "OutSystemsUI.controller$SetServerDateFormat", "OutSystemsUI.controller$SetLocalLanguage", "OutSystemsUI.controller$LogEvent", "OutSystemsUI.controller$GenerateUniqueId", "OutSystemsUI.controller$DatePickerCreate", "OutSystemsUI.controller$DatePickerInitialize", "OutSystemsUI.controller$DatePickerDestroy", "OutSystemsUI.controller$DatePickerChangeIntegerProperty", "OutSystemsUI.controller$DatePickerChangeDateTimeProperty", "OutSystemsUI.controller$DatePickerChangeTextProperty", "OutSystemsUI.controller$DatePickerChangeBooleanProperty", "OutSystemsUI.controller$DatePickerOnRender", "OutSystemsUI.controller$DatePickerRegisterCallback"], function(OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUILanguageResources, OutSystemsUI_Interaction_DatePicker_mvc_TranslationsResources, OutSystemsUI_Interaction_DatePicker_mvc_controller_RegisterCallbacks_GetCallbackHandlersJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -572,6 +572,43 @@ define("OutSystemsUI.Interaction.DatePicker.mvc$controller", ["@outsystems/runti
                 this.__initializedHandler$Action = value;
             }
 
+            get _onRender$Action() {
+                if (!(this.hasOwnProperty("__onRender$Action"))) {
+                    this.__onRender$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnRender", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnRender");
+                                span.setAttribute("outsystems.function.key", "c6c1b635-84ee-446f-a29e-394e452b2937");
+                                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnRender");
+                                callContext = controller.callContext(callContext);
+                                // Execute Action: DatePickerOnRender
+                                OutSystemsUIController.default.datePickerOnRender$Action(model.variables.internal_ConfigsVar.uniqueIdAttr, callContext);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onRender$Action;
+            }
+            set _onRender$Action(value) {
+                this.__onRender$Action = value;
+            }
+
             get _onChangeDateHandler$Action() {
                 if (!(this.hasOwnProperty("__onChangeDateHandler$Action"))) {
                     this.__onChangeDateHandler$Action = function(datepickerIdIn, selectedDateIn, callContext) {
@@ -803,6 +840,30 @@ define("OutSystemsUI.Interaction.DatePicker.mvc$controller", ["@outsystems/runti
 
             }
 
+            onRender$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnRender__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnRender");
+                        span.setAttribute("outsystems.function.key", "c6c1b635-84ee-446f-a29e-394e452b2937");
+                        span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                        span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onRender$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
             onChangeDateHandler$Action(datepickerIdIn, selectedDateIn, callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnChangeDateHandler__proxy", function(span) {
@@ -916,7 +977,14 @@ define("OutSystemsUI.Interaction.DatePicker.mvc$controller", ["@outsystems/runti
 
             get onRenderEventHandler() {
                 if (!(this.hasOwnProperty("_onRenderEventHandler"))) {
-                    this._onRenderEventHandler = null;
+                    this._onRenderEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onRender$Action(callContext);
+
+                    };
                 }
 
                 return this._onRenderEventHandler;

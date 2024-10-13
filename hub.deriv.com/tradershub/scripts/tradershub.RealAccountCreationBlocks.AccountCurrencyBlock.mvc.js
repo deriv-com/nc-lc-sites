@@ -662,28 +662,27 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // SelectedCurrencyCode = FilteredRecommendedCurrencies.Current.Code
                                     tradershubClientVariables.setSelectedCurrencyCode(model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr);
-                                    // Trigger Event: NextStepEvent
-                                    return controller.nextStepEvent$Action(callContext).then(function() {
-                                        OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "30475e20-91dc-4312-b42e-e64b4a7e78fc");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_RecommendedListItemOnClick_RudderStackJS, "RudderStack", "RecommendedListItemOnClick", null, function($parameters) {}, {}, {});
+                                        } finally {
                                             if (span) {
-                                                span.setAttribute("code.function", "RudderStack");
-                                                span.setAttribute("outsystems.function.key", "30475e20-91dc-4312-b42e-e64b4a7e78fc");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                span.end();
                                             }
 
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_RecommendedListItemOnClick_RudderStackJS, "RudderStack", "RecommendedListItemOnClick", null, function($parameters) {}, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
+                                        }
 
-                                            }
-
-                                        }, 1);
-                                    });
+                                    }, 1);
+                                    // Trigger Event: NextStepEvent
+                                    return controller.nextStepEvent$Action(callContext);
                                 });
                             }, function() {
                                 if (span) {
@@ -722,28 +721,27 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // SelectedCurrencyCode = FilteredOtherCurrencies.Current.Code
                                     tradershubClientVariables.setSelectedCurrencyCode(model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr);
-                                    // Trigger Event: NextStepEvent
-                                    return controller.nextStepEvent$Action(callContext).then(function() {
-                                        OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "fc837aaa-b438-4fd9-9c3b-2a60d4f26403");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OtherCurrenciesItemOnClick_RudderStackJS, "RudderStack", "OtherCurrenciesItemOnClick", null, function($parameters) {}, {}, {});
+                                        } finally {
                                             if (span) {
-                                                span.setAttribute("code.function", "RudderStack");
-                                                span.setAttribute("outsystems.function.key", "fc837aaa-b438-4fd9-9c3b-2a60d4f26403");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                span.end();
                                             }
 
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OtherCurrenciesItemOnClick_RudderStackJS, "RudderStack", "OtherCurrenciesItemOnClick", null, function($parameters) {}, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
+                                        }
 
-                                            }
-
-                                        }, 1);
-                                    });
+                                    }, 1);
+                                    // Trigger Event: NextStepEvent
+                                    return controller.nextStepEvent$Action(callContext);
                                 });
                             }, function() {
                                 if (span) {
@@ -1156,55 +1154,29 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
 define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.RecommendedListItemOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        let rudderStackLoaded = false;
-
-        function checkForRudderStack() {
-            if (window?.rudderanalytics && !rudderStackLoaded) {
-                window.rudderanalytics.ready(() => {
-                    if (!rudderStackLoaded) {
-                        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-                            action: "step_passed",
-                            step_num: "0",
-                            step_codename: "account_currency",
-                            form_name: "real_account_signup_form_outsystems"
-                        });
-                        rudderStackLoaded = true;
-                    }
-                    clearInterval(intervalId);
-                });
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: "0",
+                step_codename: "account_currency",
+                form_name: "real_account_signup_form_outsystems"
             }
-        }
-
-        const intervalId = setInterval(() => {
-            checkForRudderStack();
-        }, 2000);
+        });
     };
 });
 
 define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.OtherCurrenciesItemOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        let rudderStackLoaded = false;
-
-        function checkForRudderStack() {
-            if (window?.rudderanalytics && !rudderStackLoaded) {
-                window.rudderanalytics.ready(() => {
-                    if (!rudderStackLoaded) {
-                        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-                            action: "step_passed",
-                            step_num: "0",
-                            step_codename: "account_currency",
-                            form_name: "real_account_signup_form_outsystems"
-                        });
-                        rudderStackLoaded = true;
-                    }
-                    clearInterval(intervalId);
-                });
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: "0",
+                step_codename: "account_currency",
+                form_name: "real_account_signup_form_outsystems"
             }
-        }
-
-        const intervalId = setInterval(() => {
-            checkForRudderStack();
-        }, 2000);
+        });
     };
 });
 

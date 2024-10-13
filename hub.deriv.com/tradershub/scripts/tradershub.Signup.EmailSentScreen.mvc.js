@@ -676,11 +676,12 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.Verif
 
 define("tradershub.Signup.EmailSentScreen.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        setTimeout(() => {
-            Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
+        cacheTrackEvents.track({
+            name: "ce_virtual_signup_form",
+            properties: {
                 action: "email_confirmation_sent",
                 form_name: "virtual_signup_form_outsystems"
-            })
-        }, 100);
+            }
+        });
     };
 });

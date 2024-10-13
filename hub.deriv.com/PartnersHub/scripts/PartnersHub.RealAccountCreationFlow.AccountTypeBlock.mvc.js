@@ -562,6 +562,17 @@ define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$controller", ["
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "9NaN8+TFmUSsrAHuQcHGQw#Condition.-1679829923.1": "شركة",
+        "jee0rhaeF0i47BhZaur4XQ#Value": "شركة",
+        "PP959Y1b3E+P+uig8CMpHg#Condition.1947172537.1": "فرد",
+        "BHu16PA31k+_xbV8XRVSxg#Value": "فرد",
+        "CLODEFLXaEKn9l9vYuDccA#Value.1947172537.1": "فرد",
+        "2mcqCxIKFE2Z9g7oZ9rFSQ#Value.-1679829923.1": "شركة"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "9NaN8+TFmUSsrAHuQcHGQw#Condition.-1679829923.1": "Unternehmen",
@@ -667,8 +678,12 @@ define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsRes
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.AccountTypeBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_AccountTypeBlock_mvc_translationsResources_deDE,
             "isRTL": false

@@ -1362,7 +1362,15 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ru-RU",
     };
 });
 
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", ["exports", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.es-ES", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.it-IT", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_deDE, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_esES, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_frFR, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_itIT, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_plPL, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ptPT, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ruRU) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "W7Kh4ThM_UWNlBaPdD6URg#Value": "تسجيل الدخول",
+        "oiMnGVHyYUyzhvGIqB3aNQ#Value": "تسجيل الخروج",
+        "RzfRPsfq0U+UE_D6UKErng#Value": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
+    };
+});
+
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", ["exports", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.es-ES", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.it-IT", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ru-RU", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_deDE, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_esES, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_frFR, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_itIT, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_plPL, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ptPT, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ruRU, PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ar001) {
     return {
         "de-DE": {
             "translations": PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_deDE,
@@ -1391,6 +1399,10 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", ["exp
         "ru-RU": {
             "translations": PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ruRU,
             "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_Layouts_LayoutEndpointPage_mvc_translationsResources_ar001,
+            "isRTL": true
         }
     };
 });

@@ -424,25 +424,6 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
                                 var validateJSResult = new OS.DataTypes.VariableHolder();
                                 var jSONDeserializePersonalDetailsValidFieldsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_3a6e5c84ccd1db0dd256408ff639cec5Structure))());
                                 var jSONDeserializePersonalDetailsValidationErrorVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_89997516e5fa7eccf341304acb63651bStructure))());
-                                OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "RudderStack");
-                                        span.setAttribute("outsystems.function.key", "36489585-237b-4642-9647-7c9fabd0cc30");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                                 validateJSResult.value = OS.Logger.startActiveSpan("Validate", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Validate");
@@ -480,6 +461,25 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
                                 // Input_date.ValidationMessage = JSONDeserializePersonalDetailsValidationError.Data.DateOfBirth
                                 model.widgets.get(idService.getId("Input_date")).validationMessageAttr = jSONDeserializePersonalDetailsValidationErrorVar.value.dataOut.dateOfBirthAttr;
                                 if ((model.widgets.get(idService.getId("DobForm")).validAttr)) {
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "36489585-237b-4642-9647-7c9fabd0cc30");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
+
+                                        }
+
+                                    }, 1);
                                     // Destination: /tradershub/PersonalDetailsAdditional
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/additional", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
@@ -941,13 +941,15 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
 
 define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.SaveOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: 0.5,
-            step_codename: "personal_details_2",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: 0.5,
+                step_codename: "personal_details_2",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
-
     };
 });
 

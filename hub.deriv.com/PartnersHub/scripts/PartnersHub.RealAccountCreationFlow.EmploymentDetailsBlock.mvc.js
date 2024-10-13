@@ -1023,6 +1023,17 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$controlle
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "obB82i3wxEa4P8ktIoDE0g#Value": "هذا مطلوب.",
+        "ylQm+QJmOUytDTkhdOfejA#Value": "أؤكد أن معلوماتي الضريبية دقيقة وكاملة.",
+        "jLW6Mhv1M0GrE6j8JcbJrg#Value": "رقم التعريف الضريبي (اختياري)",
+        "RwmV_j30t0GAfjHeCrcPdQ#Value": "محل الإقامة الضريبي",
+        "suBO6yoD+US09XOP81aFiA#Value": "ليس لدي رقم التعريف الضريبي الخاص بي",
+        "jat0lmSOJ0CcdjmPO_XKiQ#Value": "حالة العمل"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "obB82i3wxEa4P8ktIoDE0g#Value": "Dies ist erforderlich.",
@@ -1107,8 +1118,12 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translati
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_EmploymentDetailsBlock_mvc_translationsResources_deDE,
             "isRTL": false

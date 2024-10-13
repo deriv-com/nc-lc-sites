@@ -1,4 +1,4 @@
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.controller", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubController) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubController) {
     var OS = OSRuntimeCore;
 
 
@@ -82,7 +82,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$mod
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$model", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_model, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_controller, PartnersHubClientVariables, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -344,7 +344,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$vie
 
     return View;
 });
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller.OnClickChangePhoneNumber.GetAuthTokenJS", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_TranslationsResources, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_controller_OnClickChangePhoneNumber_GetAuthTokenJS) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$controller.OnClickChangePhoneNumber.GetAuthTokenJS", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_7ceca022f8a0e753c145701ba5d76f4eStructure", "PartnersHub.controller$SendSetSettings"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_TranslationsResources, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_controller_OnClickChangePhoneNumber_GetAuthTokenJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -517,7 +517,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$con
                                             } else {
                                                 // Execute Action: GetSettings
                                                 model.flush();
-                                                return RESTAPIWebsocketController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                                return RESTAPIWebsocketOfficialController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
                                                     getSettingsVar.value = value;
                                                 }).then(function() {
                                                     // PhoneNumberImpl = GetSettings.Response.Get_settings.Phone
@@ -808,6 +808,16 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$con
 });
 
 
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "mfUB2eWQjk+LYdrAvoYlVQ#Value": "أرسل عبر SMS",
+        "5Vnwh9ND_EC+rP2aN+ELVg#Value": "أرسل عبر واتساب",
+        "FxV7q67+PESG2K+jswQeTw#Value": "حفظ رقم الهاتف",
+        "2aFi2aZkSkiNURR5ww02yg#Value": "رقم الهاتف",
+        "W+1M6YSgM0SMwhiJ0B0niQ#Value": "أدخل رقم هاتفك لتلقي رمز التحقق عبر WhatsApp أو SMS."
+    };
+});
+
 define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "mfUB2eWQjk+LYdrAvoYlVQ#Value": "Per SMS senden",
@@ -878,8 +888,12 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$tra
     };
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.ar-001", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ar001, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_PhoneNumberVerification_PhoneNumberVerificationBlock_mvc_translationsResources_deDE,
             "isRTL": false

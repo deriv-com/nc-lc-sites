@@ -1286,6 +1286,29 @@ define("PartnersHub.Home.PartnersAcademy.mvc$controller.CheckOS.JavaScript1JS", 
 });
 
 
+define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "zkMPCyO8E0aYnIYzzJSMng#Value": "افتح تطبيق أكاديمية",
+        "mxqBfVnviEmFswLgQBO7ug#Value": "كل ما تحتاجه لتسويق الشركاء بنجاح.",
+        "bDqMK2mJ7kacvPDTaOF8rg#Value": "الرسوم البيانية",
+        "uS0lZPuU6kOmtCwieNWUtg#Value": "كتيبات التسويق",
+        "C987V+27QE+VKjDqaJ0p2w#Value": "الكتب الإلكترونية",
+        "FweTDdT9dkSF1or4BJf5JA#Value": "كتيبات التسويق",
+        "83dGwifhKk+YOiXkvULi4A#Value": "دورات",
+        "kwwc0W9pKE64IAQBhqqlsg#Value": "استمع، تعلم، اقرأ.",
+        "naoFGO4guEidXmQftx8rZg#Value": "أكاديمية الشركاء",
+        "4rZxxhDTVUWABiMTNsEpdQ#Value": "امسح لتحميل التطبيق المحمول",
+        "1adaFkSs6Eu8LQA1B4Z56w#Value": "كل ما تحتاجه لتسويق الشركاء بنجاح.",
+        "DZSAqbT4jkWfN4OqxOKCFA#Value": "الرسوم البيانية",
+        "QNt3K4z9s0mjesfDRLpl7A#Value": "الكتب الإلكترونية",
+        "FLk8QSyiOkuIqtmBfVo4Yw#Value": "كتيبات التسويق",
+        "bM7PjZ4q_EuS25rccTySQg#Value": "كتيبات التسويق",
+        "uHFImDRVWE2MA_64Li66Ww#Value": "دورات",
+        "sse4z6h_sU6gso1w6w59LA#Value": "استمع، تعلم، اقرأ.",
+        "O5WMN_I+K0mefv7hd8Ehnw#Value": "أكاديمية الشركاء"
+    };
+});
+
 define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.de-DE", [], function() {
     return {
         "zkMPCyO8E0aYnIYzzJSMng#Value": "Open Academy App",
@@ -1454,8 +1477,12 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ru-RU", [], f
     };
 });
 
-define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources", ["exports", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.de-DE", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.es-ES", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.fr-FR", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.it-IT", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pl-PL", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pt-PT", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_deDE, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_esES, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_frFR, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_itIT, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_plPL, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ptPT, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ruRU) {
+define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources", ["exports", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ar-001", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.de-DE", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.es-ES", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.fr-FR", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.it-IT", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pl-PL", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pt-PT", "PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ar001, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_deDE, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_esES, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_frFR, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_itIT, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_plPL, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ptPT, PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Home_PartnersAcademy_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_PartnersAcademy_mvc_translationsResources_deDE,
             "isRTL": false

@@ -735,6 +735,17 @@ define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$controller", ["@o
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "CF8ZgUr5U06MNfq+GKepag#Value": "التالي",
+        "k8QD9Tu5pEKxQ8W5PhXhZg#Value": "الرمز البريدي (اختياري)",
+        "VflU1Ll_2kKj16bUwcatLA#Value": "الدولة / المحافظة (اختياري)",
+        "oXf1D8XdYEu4kkW1oi+PEQ#Value": "الدولة / المقاطعة (اختياري)",
+        "vMrtBlSaikylH2KAcEW6IA#Value": "مدينة",
+        "zHHcoTVxk0CRNWD9hfFEWA#Value": "عنوان"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.de-DE", [], function() {
     return {
         "CF8ZgUr5U06MNfq+GKepag#Value": "Nächste",
@@ -812,8 +823,12 @@ define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResou
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_Addressdetails_mvc_translationsResources_deDE,
             "isRTL": false

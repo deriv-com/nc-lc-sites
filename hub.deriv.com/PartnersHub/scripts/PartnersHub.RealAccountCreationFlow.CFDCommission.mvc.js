@@ -700,6 +700,15 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$controller", ["@ou
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "D7GIKBcNckmFNlI5AzX_eg#Value": "إنشاء كلمة مرور",
+        "ryfwHuhUXEaeQiOWlRR9vQ#ValueExpression.1281629883.1": "كلمة المرور",
+        "Hb9Gdw4u8Eeak153q49qYA#Value": "كلمة المرور",
+        "w5Et4V_7ekuNEFI541nGmg#Value": "لتمكين عمولة CFDs، قم بإعداد كلمة مرور MT5 الخاصة بك"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.de-DE", [], function() {
     return {
         "D7GIKBcNckmFNlI5AzX_eg#Value": "Passwort erstellen",
@@ -763,8 +772,12 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResour
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_CFDCommission_mvc_translationsResources_deDE,
             "isRTL": false

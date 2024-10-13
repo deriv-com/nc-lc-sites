@@ -983,7 +983,15 @@ define("PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsRe
     };
 });
 
-define("PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ruRU) {
+define("PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "sr4xc85gqU+3m+jC+yrRCw#Value.-1726996070.1": "الخدمات غير متاحة",
+        "T3pPwyl00k64JlPCc3h4ug#Value.-1726996070.1": "الخدمات غير متاحة",
+        "Ed8Do_sIpk+7UdUSVVE0Iw#Value": "بلد الإقامة"
+    };
+});
+
+define("PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.ru-RU", "PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsResources.ar-001"], function(exports, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ruRU, PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ar001) {
     return {
         "de-DE": {
             "translations": PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_deDE,
@@ -1012,6 +1020,10 @@ define("PartnersHub.VirtualAccountCreation.CountryOfResidence.mvc$translationsRe
         "ru-RU": {
             "translations": PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ruRU,
             "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_VirtualAccountCreation_CountryOfResidence_mvc_translationsResources_ar001,
+            "isRTL": true
         }
     };
 });

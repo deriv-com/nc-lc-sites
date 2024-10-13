@@ -28,6 +28,27 @@ define("PartnersHub.languageResources", ["@outsystems/runtime-core-js", "Partner
     return new MessagesProvider(PartnersHubLanguageResources_translationsResources);
 });
 
+define("PartnersHub.languageResources.translationsResources.ar-001", [], function() {
+    return {
+        "Validation.Currency": "أدخل عملة صالحة.",
+        "Validation.DateTime": "أدخل تاريخًا ووقتًا صالحين.",
+        "Validation.Date": "أدخل تاريخًا صالحًا.",
+        "Validation.Decimal": "أدخل عدد عشري صحيح.",
+        "Validation.Integer": "أدخل عددًا صحيحًا صالحًا.",
+        "Validation.LongInteger": "أدخل عددًا صحيحًا صالحًا.",
+        "Validation.Mandatory": "هذا الحقل مطلوب.",
+        "SfiHlQXuikKB0jvgobHczA#NumericPasswordValidatorMsg": "أدخل كلمة مرور رقمية صحيحة.",
+        "Validation.PhoneNumber": "أدخل رقم هاتف صالح.",
+        "Validation.Text": "أدخل نصًا صالحًا.",
+        "Validation.Time": "أدخل وقتًا صالحًا.",
+        "AppInitError.Generic": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، قم بإعادة تشغيل التطبيق.",
+        "AppInitError.DataModel": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، قم بإعادة تشغيل التطبيق. إذا استمرت المشكلة، يمكنك إعادة التثبيت، ولكن ستفقد جميع البيانات المحلية.",
+        "AppInitError.Resources": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، أعد تشغيل التطبيق.",
+        "UpgradeRequiredDataLoss": "يحتاج تطبيقك إلى التحديث. ستفقد البيانات غير المحفوظة. انقر هنا للتحديث.",
+        "UpgradeRequired": "يجب تحديث تطبيقك. انقر هنا للتحديث."
+    };
+});
+
 define("PartnersHub.languageResources.translationsResources.de-DE", [], function() {
     return {
         "Validation.Currency": "Geben Sie eine gültige Währung ein.",
@@ -175,8 +196,12 @@ define("PartnersHub.languageResources.translationsResources.ru-RU", [], function
     };
 });
 
-define("PartnersHub.languageResources.translationsResources", ["exports", "PartnersHub.languageResources.translationsResources.de-DE", "PartnersHub.languageResources.translationsResources.es-ES", "PartnersHub.languageResources.translationsResources.fr-FR", "PartnersHub.languageResources.translationsResources.it-IT", "PartnersHub.languageResources.translationsResources.pl-PL", "PartnersHub.languageResources.translationsResources.pt-PT", "PartnersHub.languageResources.translationsResources.ru-RU"], function(exports, PartnersHub_languageResources_translationsResources_deDE, PartnersHub_languageResources_translationsResources_esES, PartnersHub_languageResources_translationsResources_frFR, PartnersHub_languageResources_translationsResources_itIT, PartnersHub_languageResources_translationsResources_plPL, PartnersHub_languageResources_translationsResources_ptPT, PartnersHub_languageResources_translationsResources_ruRU) {
+define("PartnersHub.languageResources.translationsResources", ["exports", "PartnersHub.languageResources.translationsResources.ar-001", "PartnersHub.languageResources.translationsResources.de-DE", "PartnersHub.languageResources.translationsResources.es-ES", "PartnersHub.languageResources.translationsResources.fr-FR", "PartnersHub.languageResources.translationsResources.it-IT", "PartnersHub.languageResources.translationsResources.pl-PL", "PartnersHub.languageResources.translationsResources.pt-PT", "PartnersHub.languageResources.translationsResources.ru-RU"], function(exports, PartnersHub_languageResources_translationsResources_ar001, PartnersHub_languageResources_translationsResources_deDE, PartnersHub_languageResources_translationsResources_esES, PartnersHub_languageResources_translationsResources_frFR, PartnersHub_languageResources_translationsResources_itIT, PartnersHub_languageResources_translationsResources_plPL, PartnersHub_languageResources_translationsResources_ptPT, PartnersHub_languageResources_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_languageResources_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_languageResources_translationsResources_deDE,
             "isRTL": false

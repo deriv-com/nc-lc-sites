@@ -986,6 +986,13 @@ define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$controller.OnRe
 });
 
 
+define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "NTn7X7AkMU+QdTPvRjMMCQ#Value": "الخدمات غير متاحة",
+        "zcf3NBTGL0CMeabI9yNT_g#ValueExpression.-1822469688.1": "بحث"
+    };
+});
+
 define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.de-DE", [], function() {
     return {
         "NTn7X7AkMU+QdTPvRjMMCQ#Value": "Dienste nicht verfügbar",
@@ -1035,8 +1042,12 @@ define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsRes
     };
 });
 
-define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ruRU) {
+define("PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.ar-001", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.ResidenceSelector.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ar001, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_VirtualAccountCreation_ResidenceSelector_mvc_translationsResources_deDE,
             "isRTL": false

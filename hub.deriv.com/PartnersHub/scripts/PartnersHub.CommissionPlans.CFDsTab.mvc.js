@@ -100,7 +100,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$view", ["@outsystems/runtime-cor
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/PartnersHub.CommissionPlans.CFDsTab.css"];
         }
 
         static getJsDependencies() {
@@ -398,7 +398,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$view", ["@outsystems/runtime-cor
                                                     _widgetRecordProvider: widgetsRecordProvider
                                                 }, React.createElement(OSWidgets.Text, {
                                                     style: "to-subtitle",
-                                                    text: ["Disclaimer: "],
+                                                    text: [$text(getTranslation("HvaQTXeMqEy7LlNODOdKuQ#Value", "Disclaimer: "))],
                                                     _idProps: {
                                                         service: idService,
                                                         uuid: "14"
@@ -406,7 +406,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$view", ["@outsystems/runtime-cor
                                                     _widgetRecordProvider: widgetsRecordProvider
                                                 }), React.createElement(OSWidgets.AdvancedHtml, {
                                                     extendedProperties: {
-                                                        style: "padding-inline-start: 30px"
+                                                        className: "disclaimer"
                                                     },
                                                     tag: "ul",
                                                     _idProps: {
@@ -421,7 +421,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$view", ["@outsystems/runtime-cor
                                                         uuid: "16"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }, "This plan is not available for partners who promote to clients residing in the EU."))))];
+                                                }, $text(getTranslation("lGVMjowhlESn00LuWQ6SJg#Value", "This plan is not available for partners who promote to clients residing in the EU."))))))];
                                             })
                                         },
                                         _dependencies: [asPrimitiveValue(model.variables._tabDataInDataFetchStatus), asPrimitiveValue(model.variables.tabDataIn.getCurrent(callContext.iterationContext).idAttr), asPrimitiveValue(model.variables.tabDataIn.getCurrent(callContext.iterationContext).tabsAttr)]
@@ -570,50 +570,76 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$controller", ["@outsystems/runti
 });
 
 
+define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "هذه الخطة غير متاحة للشركاء الذين يروجون للعملاء المقيمين في الاتحاد الأوروبي.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "إخلاء المسؤولية:",
+        "sQvdRiufbkqbBbseWgsSDg#Value": "إذا لم يتم تفعيل عمولات عقود الفروقات الخاصة بك، فاتصل بمدير حسابك."
+    };
+});
+
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.de-DE", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Dieser Plan ist für Partner, die Kunden mit Wohnsitz in der EU anwerben, nicht verfügbar.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Haftungsausschluss:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.es-ES", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Este plan no está disponible para socios que promocionen a clientes residentes en la UE.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Aviso legal:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.fr-FR", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Ce plan n\'est pas disponible pour les partenaires qui font la promotion auprès de clients résidant dans l\'UE.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Avertissement :",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.it-IT", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Questo piano non è disponibile per i partner che promuovono a clienti residenti nell\'UE.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Dichiarazione di non responsabilità:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pl-PL", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Ten plan nie jest dostępny dla partnerów, którzy promują klientów zamieszkałych w UE.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Zastrzeżenie:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Jeśli Twój plan Turnover nie jest aktywowany, skontaktuj się ze swoim menedżerem konta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pt-PT", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Este plano não está disponível para parceiros que promovem a clientes residentes na UE.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Isenção de responsabilidade:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta."
     };
 });
 
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ru-RU", [], function() {
     return {
+        "lGVMjowhlESn00LuWQ6SJg#Value": "Этот план недоступен для партнеров, которые продвигают клиентов, проживающих в ЕС.",
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Отказ от ответственности:",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Если ваш план Turnover не активирован, свяжитесь с вашим менеджером по аккаунту."
     };
 });
 
-define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_esES, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ruRU) {
+define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ar-001", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ar001, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_esES, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_CommissionPlans_CFDsTab_mvc_translationsResources_deDE,
             "isRTL": false

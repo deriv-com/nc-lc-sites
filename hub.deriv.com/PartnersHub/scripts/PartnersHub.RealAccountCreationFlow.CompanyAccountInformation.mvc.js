@@ -499,6 +499,15 @@ define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$contro
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "8TyiCledL0Ozu+dR9ojnVw#Value": "التالي",
+        "nMJSRyUyykWZMZAzopN+yQ#Value": "موقع الشركة",
+        "oPe5bjYhZUGMG_agdPtCGA#Value": "رقم تسجيل الشركة",
+        "RlEWszTL90ShMbKVY+FqdA#Value": "اسم الشركة"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.de-DE", [], function() {
     return {
         "8TyiCledL0Ozu+dR9ojnVw#Value": "Nächste",
@@ -562,8 +571,12 @@ define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$transl
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.CompanyAccountInformation.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_CompanyAccountInformation_mvc_translationsResources_deDE,
             "isRTL": false

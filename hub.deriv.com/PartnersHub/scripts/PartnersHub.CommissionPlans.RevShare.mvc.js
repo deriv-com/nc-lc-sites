@@ -1,4 +1,4 @@
-define("PartnersHub.CommissionPlans.RevShare.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.SkeletonLoader.mvc$model", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_6f106c951dc697db2b84044542653e21", "PartnersHub.model$RL_c7f6e3aeb0c29b42f5c7f4e8a4d38c61"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_SkeletonLoader_mvcModel) {
+define("PartnersHub.CommissionPlans.RevShare.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Common.LoaderBlock.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.SkeletonLoader.mvc$model", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_6f106c951dc697db2b84044542653e21", "PartnersHub.model$RL_c7f6e3aeb0c29b42f5c7f4e8a4d38c61"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Common_LoaderBlock_mvcModel, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_SkeletonLoader_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetRevShareInfoTablesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -59,7 +59,7 @@ define("PartnersHub.CommissionPlans.RevShare.mvc$model", ["@outsystems/runtime-c
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets || PartnersHub_Common_SkeletonLoader_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((PartnersHub_Common_LoaderBlock_mvcModel.hasValidationWidgets || PartnersHub_Layouts_LayoutDashboard_mvcModel.hasValidationWidgets) || PartnersHub_Common_SkeletonLoader_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -72,7 +72,7 @@ define("PartnersHub.CommissionPlans.RevShare.mvc$model", ["@outsystems/runtime-c
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.CommissionPlans.RevShare.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.CommissionPlans.RevShare.mvc$model", "PartnersHub.CommissionPlans.RevShare.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.SkeletonLoader.mvc$view", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_6f106c951dc697db2b84044542653e21", "PartnersHub.model$RL_c7f6e3aeb0c29b42f5c7f4e8a4d38c61"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_CommissionPlans_RevShare_mvc_model, PartnersHub_CommissionPlans_RevShare_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_SkeletonLoader_mvc_view) {
+define("PartnersHub.CommissionPlans.RevShare.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.CommissionPlans.RevShare.mvc$model", "PartnersHub.CommissionPlans.RevShare.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Common.LoaderBlock.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "PartnersHub.Common.SkeletonLoader.mvc$view", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout", "PartnersHub.model$RC_6f106c951dc697db2b84044542653e21", "PartnersHub.model$RL_c7f6e3aeb0c29b42f5c7f4e8a4d38c61"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_CommissionPlans_RevShare_mvc_model, PartnersHub_CommissionPlans_RevShare_mvc_controller, PartnersHubClientVariables, PartnersHub_Common_LoaderBlock_mvc_view, OSWidgets, PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -103,7 +103,7 @@ define("PartnersHub.CommissionPlans.RevShare.mvc$view", ["@outsystems/runtime-co
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view];
+            return [PartnersHub_Common_LoaderBlock_mvc_view, PartnersHub_Layouts_LayoutDashboard_mvc_view, PartnersHub_Common_SkeletonLoader_mvc_view];
         }
 
         get modelFactory() {
@@ -133,408 +133,435 @@ define("PartnersHub.CommissionPlans.RevShare.mvc$view", ["@outsystems/runtime-co
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(PartnersHub_Layouts_LayoutDashboard_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {
-                    HasFixedHeader: true
-                },
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "0",
-                    alias: "1"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                placeholders: {
-                    mainContent: new PlaceholderContent(function() {
-                        return [React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "OSInline"
-                            },
-                            style: "partners-hub-dashboard",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "1"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, $if(model.variables.isLoadingVar, false, this, function() {
-                            return [React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
-                                getOwnerSpan: function() {
-                                    return _this.getChildSpan("render");
-                                },
-                                getOwnerDisposeSpan: function() {
-                                    return _this.getChildSpan("destroy");
-                                },
-                                inputs: {
-                                    IsLoading: model.variables.isLoadingVar
-                                },
-                                events: {
-                                    _handleError: function(ex) {
-                                        controller.handleError(ex);
-                                    }
-                                },
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "2",
-                                    alias: "2"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                placeholders: {
-                                    content: PlaceholderContent.Empty
-                                },
-                                _dependencies: []
-                            })];
-                        }, function() {
+            return React.createElement("div", this.getRootNodeProperties(), $if(!(PartnersHubClientVariables.getIsAppReady()), false, this, function() {
+                return [React.createElement(PartnersHub_Common_LoaderBlock_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "0",
+                        alias: "1"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                })];
+            }, function() {
+                return [React.createElement(PartnersHub_Layouts_LayoutDashboard_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {
+                        HasFixedHeader: true
+                    },
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "1",
+                        alias: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    placeholders: {
+                        mainContent: new PlaceholderContent(function() {
                             return [React.createElement(OSWidgets.Container, {
                                 align: /*Default*/ 0,
                                 animate: false,
-                                style: "partners-hub-title-container",
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                style: "partners-hub-dashboard",
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    name: "TurnoverTitle"
+                                    uuid: "2"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "align-items: center; display: flex; gap: 24px;"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "4"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                style: "cp-title",
-                                text: [$text(getTranslation("AOXnRO_7+kyI_yNq6Mvo4A#Value", "RevShare"))],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "5"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedEvents: {
-                                    onClick: function() {
-                                        var eventHandlerContext = callContext.clone();
-                                        controller.onClick$Action(controller.callContext(eventHandlerContext));
+                            }, $if(model.variables.isLoadingVar, false, this, function() {
+                                return [React.createElement(PartnersHub_Common_SkeletonLoader_mvc_view, {
+                                    getOwnerSpan: function() {
+                                        return _this.getChildSpan("render");
+                                    },
+                                    getOwnerDisposeSpan: function() {
+                                        return _this.getChildSpan("destroy");
+                                    },
+                                    inputs: {
+                                        IsLoading: model.variables.isLoadingVar
+                                    },
+                                    events: {
+                                        _handleError: function(ex) {
+                                            controller.handleError(ex);
+                                        }
+                                    },
+                                    _validationProps: {
+                                        validationService: validationService
+                                    },
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "3",
+                                        alias: "3"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    placeholders: {
+                                        content: PlaceholderContent.Empty
+                                    },
+                                    _dependencies: []
+                                })];
+                            }, function() {
+                                return [React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "partners-hub-title-container",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "TurnoverTitle"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "align-items: center; display: flex; gap: 24px;"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "5"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    style: "cp-title",
+                                    text: [$text(getTranslation("oOL6hG8L806drtGAZ328Hw#Value", "RevShare"))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "6"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedEvents: {
+                                        onClick: function() {
+                                            var eventHandlerContext = callContext.clone();
+                                            controller.onClick$Action(controller.callContext(eventHandlerContext));
 
-                                        ;
-                                    }
-                                },
-                                extendedProperties: {
-                                    style: "cursor: pointer;"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "6"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.closenormal.png"),
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "7"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    classes: "OSInline"
-                                },
-                                style: "notification-banner",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "8"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                extendedProperties: {
-                                    style: "color: #3c33bf; font-size: 8px;"
-                                },
-                                gridProperties: {
-                                    width: "20px"
-                                },
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.info_black.svg"),
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "9"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.Label, {
-                                extendedProperties: {
-                                    style: "font-size: 12px;"
-                                },
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "10"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                style: "to-description",
-                                text: [$text(getTranslation("sVC8Ju_+VUKSNwMadXr89Q#Value", "If your RevShare plan isn\'t activated, contact your account manager."))],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "11"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "display: flex; flex-direction: column; gap: 6px;"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "12"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "font-weight: 400; line-height: 22px;"
-                                },
-                                text: [$text(getTranslation("teljIk_8_kWcC6XStb_uTA#Value", "Earn based on the monthly net revenue generated by your clients."))],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "13"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "14"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.TableRecords, {
-                                showHeader: true,
-                                source: model.variables.getRevShareInfoTablesAggr.listOut,
-                                style: "table",
-                                styleHeader: "table-header",
-                                styleRow: "table-row to-description",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "15"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider,
-                                source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr),
-                                placeholders: {
-                                    headerRow: new PlaceholderContent(function() {
-                                        return [React.createElement(OSWidgets.HeaderCell, {
-                                            style: "header-color",
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "16"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: []
-                                        }, React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            extendedProperties: {
-                                                style: "text-align: center;"
-                                            },
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "17"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Text, {
-                                            extendedProperties: {
-                                                style: "color: #222;"
-                                            },
-                                            text: [$text(getTranslation("PCEgw2bF10a54IF5LPD04g#Value", "Type of Rev Share Info Table"))],
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "18"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }))), React.createElement(OSWidgets.HeaderCell, {
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "19"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: []
-                                        }, React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            extendedProperties: {
-                                                style: "text-align: center;"
-                                            },
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "20"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Text, {
-                                            extendedProperties: {
-                                                style: "color: #222;"
-                                            },
-                                            text: [$text(getTranslation("te8Sop_7FEa71bX3IxH6fA#Value", "Commission"))],
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "21"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        })))];
-                                    }),
-                                    row: new IteratorPlaceholderContent(function(idService, callContext) {
-                                        return [React.createElement(OSWidgets.RowCell, {
-                                            style: "table-row-even",
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "22"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.netRevenueAttr)]
-                                        }, React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            extendedProperties: {
-                                                style: "text-align: center;"
-                                            },
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "23"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Expression, {
-                                            value: model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.netRevenueAttr,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "24"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)
-                                        }))), React.createElement(OSWidgets.RowCell, {
-                                            style: "table-row",
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "25"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.commissionAttr)]
-                                        }, React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            extendedProperties: {
-                                                style: "text-align: center;"
-                                            },
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "26"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Expression, {
-                                            value: model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.commissionAttr,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "27"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)
-                                        })))];
-                                    }, callContext, idService, "1_0")
-                                },
-                                _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)]
-                            })), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "display: flex; flex-direction: column;"
-                                },
-                                gridProperties: {
-                                    classes: "OSInline"
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "28"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                style: "to-subtitle",
-                                text: ["Disclaimer: "],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "29"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.AdvancedHtml, {
-                                extendedProperties: {
-                                    style: "padding-inline-start: 30px",
-                                    className: "disclaimer-container"
-                                },
-                                tag: "ul",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "30"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.AdvancedHtml, {
-                                tag: "li",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "31"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Affiliates residing in the EU can sign up for the Revenue Share plan but can only refer clients residing outside the EU."), React.createElement(OSWidgets.AdvancedHtml, {
-                                tag: "li",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "32"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Affiliates will earn commission from clients who trade on both official Deriv platforms (Deriv Trader, SmartTrader, Deriv Bot, etc) and third-party platforms via Deriv API."), React.createElement(OSWidgets.AdvancedHtml, {
-                                tag: "li",
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "33"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "All products are entitled to generate commission except Multiplier Financials.")))];
-                        }))];
-                    })
-                },
-                _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut), asPrimitiveValue(model.variables.isLoadingVar)]
+                                            ;
+                                        }
+                                    },
+                                    extendedProperties: {
+                                        style: "cursor: pointer;"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "7"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.closenormal.png"),
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "8"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }))), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    gridProperties: {
+                                        classes: "OSInline"
+                                    },
+                                    style: "notification-banner",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "9"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    extendedProperties: {
+                                        style: "color: #3c33bf; font-size: 8px;"
+                                    },
+                                    gridProperties: {
+                                        width: "20px"
+                                    },
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.info_black.svg"),
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "10"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }), React.createElement(OSWidgets.Label, {
+                                    extendedProperties: {
+                                        style: "font-size: 12px;"
+                                    },
+                                    gridProperties: {
+                                        classes: "OSFillParent"
+                                    },
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "11"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    style: "to-description",
+                                    text: [$text(getTranslation("0HhloJzYSESXxM8JPAEEhQ#Value", "If your RevShare plan isn\'t activated, contact your account manager."))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "12"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }))), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "display: flex; flex-direction: column; gap: 6px;"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "13"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "font-weight: 400; line-height: 22px;"
+                                    },
+                                    text: [$text(getTranslation("YkVCnz_UIku6cUqRLoNIOQ#Value", "Earn based on the monthly net revenue generated by your clients."))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "14"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "15"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.TableRecords, {
+                                    showHeader: true,
+                                    source: model.variables.getRevShareInfoTablesAggr.listOut,
+                                    style: "table",
+                                    styleHeader: "table-header",
+                                    styleRow: "table-row to-description",
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "16"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider,
+                                    source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr),
+                                    placeholders: {
+                                        headerRow: new PlaceholderContent(function() {
+                                            return [React.createElement(OSWidgets.HeaderCell, {
+                                                style: "header-color",
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "17"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: []
+                                            }, React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedProperties: {
+                                                    style: "text-align: center;"
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "18"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }, React.createElement(OSWidgets.Text, {
+                                                extendedProperties: {
+                                                    style: "color: #222;"
+                                                },
+                                                text: [$text(getTranslation("mRWuvFYduUmNAePoamXKug#Value", "Type of Rev Share Info Table"))],
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "19"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }))), React.createElement(OSWidgets.HeaderCell, {
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "20"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: []
+                                            }, React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedProperties: {
+                                                    style: "text-align: center;"
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "21"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }, React.createElement(OSWidgets.Text, {
+                                                extendedProperties: {
+                                                    style: "color: #222;"
+                                                },
+                                                text: [$text(getTranslation("QZboeWfl4EmsOb2da3Gj4w#Value", "Commission"))],
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "22"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            })))];
+                                        }),
+                                        row: new IteratorPlaceholderContent(function(idService, callContext) {
+                                            return [React.createElement(OSWidgets.RowCell, {
+                                                style: "table-row-even",
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "23"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.netRevenueAttr)]
+                                            }, React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedProperties: {
+                                                    style: "text-align: center;"
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "24"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }, React.createElement(OSWidgets.Expression, {
+                                                value: model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.netRevenueAttr,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "25"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)
+                                            }))), React.createElement(OSWidgets.RowCell, {
+                                                style: "table-row",
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "26"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.commissionAttr)]
+                                            }, React.createElement(OSWidgets.Container, {
+                                                align: /*Default*/ 0,
+                                                animate: false,
+                                                extendedProperties: {
+                                                    style: "text-align: center;"
+                                                },
+                                                visible: true,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "27"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider
+                                            }, React.createElement(OSWidgets.Expression, {
+                                                value: model.variables.getRevShareInfoTablesAggr.listOut.getCurrent(callContext.iterationContext).revShareInfoTableAttr.commissionAttr,
+                                                _idProps: {
+                                                    service: idService,
+                                                    uuid: "28"
+                                                },
+                                                _widgetRecordProvider: widgetsRecordProvider,
+                                                value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)
+                                            })))];
+                                        }, callContext, idService, "1_0")
+                                    },
+                                    _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr)]
+                                })), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "display: flex; flex-direction: column;"
+                                    },
+                                    gridProperties: {
+                                        classes: "OSInline"
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "29"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    style: "to-subtitle",
+                                    text: [$text(getTranslation("VjSXi_XJcEKOUbBlRDR72A#Value", "Disclaimer: "))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "30"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }), React.createElement(OSWidgets.AdvancedHtml, {
+                                    extendedProperties: {
+                                        style: "padding-inline-start: 30px",
+                                        className: "disclaimer-container"
+                                    },
+                                    tag: "ul",
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "31"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.AdvancedHtml, {
+                                    tag: "li",
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "32"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, $text(getTranslation("JTUNCZw9CkGlBIOiw8z_eA#Value", "Affiliates residing in the EU can sign up for the Revenue Share plan but can only refer clients residing outside the EU."))), React.createElement(OSWidgets.AdvancedHtml, {
+                                    tag: "li",
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "33"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, $text(getTranslation("qNIlOIiakk6sx8FEX7ITvw#Value", "Affiliates will earn commission from clients who trade on both official Deriv platforms (Deriv Trader, SmartTrader, Deriv Bot, etc) and third-party platforms via Deriv API."))), React.createElement(OSWidgets.AdvancedHtml, {
+                                    tag: "li",
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "34"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, $text(getTranslation("c1MxLXCzzk2WnIlkDTW5zw#Value", "All products are entitled to generate commission except Multiplier Financials.")))))];
+                            }))];
+                        })
+                    },
+                    _dependencies: [asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getRevShareInfoTablesAggr.listOut), asPrimitiveValue(model.variables.isLoadingVar)]
+                })];
             }));
         }
     }
@@ -844,78 +871,124 @@ define("PartnersHub.CommissionPlans.RevShare.mvc$controller", ["@outsystems/runt
 });
 
 
+define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "جميع المنتجات لها الحق في توليد عمولة باستثناء Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "سيكسب الشركاء عمولة من العملاء الذين يتداولون على كلا المنصتين الرسميتين لـ Deriv (Deriv Trader، SmartTrader، Deriv Bot، إلخ) ومنصات الطرف الثالث عبر واجهة برمجة التطبيقات الخاصة بـ Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "يمكن للمنتسبين المقيمين في الاتحاد الأوروبي التسجيل في خطة مشاركة الإيرادات ولكن يمكنهم فقط إحالة العملاء المقيمين خارج الاتحاد الأوروبي.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "إخلاء المسؤولية:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "عمولة",
+        "mRWuvFYduUmNAePoamXKug#Value": "نوع معلومات جدول مشاركة الإيرادات",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "اكسب بناءً على الإيرادات الصافية الشهرية التي يحققها عملاؤك.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "إذا لم يتم تفعيل خطة RevShare الخاصة بك، اتصل بمدير حسابك.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "ريفشير"
+    };
+});
+
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.de-DE", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Provision",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Art der Option",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Verdienen Sie basierend auf der Art der Option, die Ihre Kunden handeln.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Umsatz"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Alle Produkte haben Anspruch auf die Generierung von Provisionen, außer Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Affiliates erhalten eine Provision von Kunden, die auf beiden offiziellen Deriv-Plattformen (Deriv Trader, SmartTrader, Deriv Bot usw.) und auf Drittanbieter-Plattformen über die Deriv API handeln.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Affiliates, die in der EU ansässig sind, können sich für den Revenue Share-Plan anmelden, dürfen jedoch nur Kunden außerhalb der EU werben.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Haftungsausschluss:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Provision",
+        "mRWuvFYduUmNAePoamXKug#Value": "Art der Option",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Verdienen Sie basierend auf der Art der Option, die Ihre Kunden handeln.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Umsatz"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.es-ES", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Comisión",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Tipo de Opción",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Gane según el tipo de Opción que negocien sus clientes.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Volumen de negocios"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Todos los productos tienen derecho a generar comisiones, excepto Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Los afiliados ganarán comisiones de los clientes que operen en ambas plataformas oficiales de Deriv (Deriv Trader, SmartTrader, Deriv Bot, etc.) y en plataformas de terceros a través de la API de Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Los afiliados que residen en la UE pueden registrarse en el plan de Revenue Share, pero solo pueden referir clientes que residan fuera de la UE.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Descargo de responsabilidad:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Comisión",
+        "mRWuvFYduUmNAePoamXKug#Value": "Tipo de Opción",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Gane según el tipo de Opción que negocien sus clientes.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Volumen de negocios"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Commission",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Type d\'Option",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Gagnez en fonction du type d\'Option que négocient vos clients.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Chiffre d\'affaires"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Tous les produits ont droit de générer des commissions, sauf Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Les affiliés gagneront des commissions sur les clients qui tradent à la fois sur les plateformes officielles de Deriv (Deriv Trader, SmartTrader, Deriv Bot, etc.) et sur des plateformes tierces via l\'API de Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Les affiliés résidant dans l\'UE peuvent s\'inscrire au plan de Revenue Share, mais ne peuvent référer que des clients résidant en dehors de l\'UE.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Avertissement :",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Commission",
+        "mRWuvFYduUmNAePoamXKug#Value": "Type d\'Option",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Gagnez en fonction du type d\'Option que négocient vos clients.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Chiffre d\'affaires"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.it-IT", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Commissione",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Tipo di Opzione",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Guadagna in base al tipo di Opzione che i tuoi clienti scambiano.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Fatturato"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Tutti i prodotti hanno diritto a generare commissioni, eccetto Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Gli affiliati guadagneranno commissioni dai clienti che operano sia sulle piattaforme ufficiali di Deriv (Deriv Trader, SmartTrader, Deriv Bot, ecc.) che su piattaforme di terze parti tramite l\'API di Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Gli affiliati residenti nell\'UE possono iscriversi al piano Revenue Share, ma possono riferire solo clienti residenti al di fuori dell\'UE.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Dichiarazione di non responsabilità:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Commissione",
+        "mRWuvFYduUmNAePoamXKug#Value": "Tipo di Opzione",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Guadagna in base al tipo di Opzione che i tuoi clienti scambiano.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Fatturato"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Prowizja",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Rodzaj Opcji",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Zarabiaj w zależności od rodzaju Opcji, którymi handlują Twoi klienci.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Jeśli Twój plan Turnover nie jest aktywowany, skontaktuj się ze swoim menedżerem konta.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Obrót"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Wszystkie produkty mają prawo do generowania prowizji, z wyjątkiem Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Partnerzy będą otrzymywać prowizję od klientów, którzy handlują zarówno na oficjalnych platformach Deriv (Deriv Trader, SmartTrader, Deriv Bot itp.), jak i na platformach zewnętrznych za pośrednictwem API Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Partnerzy mieszkający w UE mogą zarejestrować się w planie Revenue Share, ale mogą polecać tylko klientów mieszkających poza UE.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Zastrzeżenie:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Prowizja",
+        "mRWuvFYduUmNAePoamXKug#Value": "Rodzaj Opcji",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Zarabiaj w zależności od rodzaju Opcji, którymi handlują Twoi klienci.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Jeśli Twój plan Turnover nie jest aktywowany, skontaktuj się ze swoim menedżerem konta.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Obrót"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Comissão",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Tipo de Opção",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Ganhe com base no tipo de Opção que os seus clientes negociam.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Volume de negócios"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Todos os produtos têm direito a gerar comissões, exceto Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Os afiliados ganharão comissões de clientes que negociam tanto nas plataformas oficiais da Deriv (Deriv Trader, SmartTrader, Deriv Bot, etc.) quanto em plataformas de terceiros através da API da Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Os afiliados que residem na UE podem inscrever-se no plano Revenue Share, mas podem apenas referir clientes que residam fora da UE.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Isenção de responsabilidade:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Comissão",
+        "mRWuvFYduUmNAePoamXKug#Value": "Tipo de Opção",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Ganhe com base no tipo de Opção que os seus clientes negociam.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Volume de negócios"
     };
 });
 
 define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "te8Sop_7FEa71bX3IxH6fA#Value": "Комиссия",
-        "PCEgw2bF10a54IF5LPD04g#Value": "Тип Опции",
-        "teljIk_8_kWcC6XStb_uTA#Value": "Зарабатывайте в зависимости от типа Опции, которую торгуют ваши клиенты.",
-        "sVC8Ju_+VUKSNwMadXr89Q#Value": "Если ваш план Turnover не активирован, свяжитесь с вашим менеджером по аккаунту.",
-        "AOXnRO_7+kyI_yNq6Mvo4A#Value": "Оборот"
+        "c1MxLXCzzk2WnIlkDTW5zw#Value": "Все продукты имеют право на получение комиссии, кроме Multiplier Financials.",
+        "qNIlOIiakk6sx8FEX7ITvw#Value": "Партнеры будут зарабатывать комиссионные от клиентов, которые торгуют как на официальных платформах Deriv (Deriv Trader, SmartTrader, Deriv Bot и т.д.), так и на сторонних платформах через API Deriv.",
+        "JTUNCZw9CkGlBIOiw8z_eA#Value": "Партнеры, проживающие в ЕС, могут зарегистрироваться в плане Revenue Share, но могут рекомендовать клиентов, проживающих за пределами ЕС.",
+        "VjSXi_XJcEKOUbBlRDR72A#Value": "Отказ от ответственности:",
+        "QZboeWfl4EmsOb2da3Gj4w#Value": "Комиссия",
+        "mRWuvFYduUmNAePoamXKug#Value": "Тип Опции",
+        "YkVCnz_UIku6cUqRLoNIOQ#Value": "Зарабатывайте в зависимости от типа Опции, которую торгуют ваши клиенты.",
+        "0HhloJzYSESXxM8JPAEEhQ#Value": "Если ваш план Turnover не активирован, свяжитесь с вашим менеджером по аккаунту.",
+        "oOL6hG8L806drtGAZ328Hw#Value": "Оборот"
     };
 });
 
-define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_esES, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ruRU) {
+define("PartnersHub.CommissionPlans.RevShare.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.ar-001", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.RevShare.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ar001, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_esES, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_CommissionPlans_RevShare_mvc_translationsResources_deDE,
             "isRTL": false

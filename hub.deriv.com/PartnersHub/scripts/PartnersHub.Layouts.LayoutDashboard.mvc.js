@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -94,7 +94,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-co
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -921,7 +921,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocket.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetWebsiteStatus", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocket.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "RESTAPIWebsocket.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1322,60 +1322,6 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                 this.__showLoader$Action = value;
             }
 
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "e05a15ee-c900-4094-a72a-c5d260032d80");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnReady");
-                                callContext = controller.callContext(callContext);
-                                var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
-                                var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: SetDefaultAppId
-                                    PartnersHubController.default.setDefaultAppId$Action(false, callContext);
-                                    // Execute Action: GetWebsiteStatus
-                                    model.flush();
-                                    return RESTAPIWebsocketController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                        getWebsiteStatusVar.value = value;
-                                    }).then(function() {
-                                        // Execute Action: InitGrowthbook
-                                        model.flush();
-                                        return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
-                                    }).then(function() {
-                                        // JSON Serialize: JSONSerialize1
-                                        jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(getWebsiteStatusVar.value.responseOut, false, false);
-                                        // WebsiteStatusResponse = JSONSerialize1.JSON
-                                        PartnersHubClientVariables.setWebsiteStatusResponse(jSONSerialize1Var.value.jSONOut);
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__onReady$Action;
-            }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
-            }
-
             get _onClickLogout$Action() {
                 if (!(this.hasOwnProperty("__onClickLogout$Action"))) {
                     this.__onClickLogout$Action = function(callContext) {
@@ -1421,7 +1367,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                                             }, function($parameters) {}, {
                                                 CloseLogoutModal: controller.clientActionProxies.closeLogoutModal$Action,
                                                 ShowLoader: controller.clientActionProxies.showLoader$Action,
-                                                WebsocketLogout: RESTAPIWebsocketController.default.clientActionProxies.websocketLogout$Action,
+                                                WebsocketLogout: RESTAPIWebsocketOfficialController.default.clientActionProxies.websocketLogout$Action,
                                                 RedirectToOauth: PartnersHubController.default.clientActionProxies.redirectToOauth$Action
                                             }, {});
                                         } finally {
@@ -1640,29 +1586,6 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
 
             }
 
-            onReady$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "e05a15ee-c900-4094-a72a-c5d260032d80");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
             onClickLogout$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("OnClickLogout__proxy", function(span) {
@@ -1721,14 +1644,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;
@@ -1996,7 +1912,15 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU", []
     };
 });
 
-define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", ["exports", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_deDE, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_esES, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_frFR, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_itIT, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_plPL, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ptPT, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ruRU) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "تسجيل الخروج",
+        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "دردشة حية",
+        "u6D_wbxGcUC2hnueavwrUA#Value": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
+    };
+});
+
+define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", ["exports", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_deDE, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_esES, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_frFR, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_itIT, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_plPL, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ptPT, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ruRU, PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ar001) {
     return {
         "de-DE": {
             "translations": PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_deDE,
@@ -2025,6 +1949,10 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", ["export
         "ru-RU": {
             "translations": PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ruRU,
             "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_Layouts_LayoutDashboard_mvc_translationsResources_ar001,
+            "isRTL": true
         }
     };
 });

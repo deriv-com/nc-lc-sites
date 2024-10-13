@@ -1644,13 +1644,15 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
 
 define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackFailureJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "real_signup_error",
-            step_num: 4,
-            step_codename: "terms_of_use",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "real_signup_error",
+                step_num: 4,
+                step_codename: "terms_of_use",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
-
     };
 });
 
@@ -1688,44 +1690,23 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.V
 
 define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "real_signup_finished",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "real_signup_finished",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
 
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            form_name: "real_account_signup_form_outsystems",
-            step_num: 4,
-            step_codename: "terms_and_conditions",
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                form_name: "real_account_signup_form_outsystems",
+                step_num: 4,
+                step_codename: "terms_and_conditions",
+            }
         });
-
-
-        // cacheTrackEvents.track({
-        //     name: "ce_real_account_signup_form",
-        //     properties: {
-        //         action: "real_signup_finished",
-        //         form_name: "real_account_signup_form_outsystems"
-        //     }
-        // }, false); 
-
-        // cacheTrackEvents.track({
-        //     name: "ce_real_account_signup_form",
-        //     properties: {
-        //         action: "step_passed",
-        //         form_name: "real_account_signup_form_outsystems",
-        //         step_num: 4,
-        //         step_codename: "terms_and_conditions"
-        //     }
-        // }, false); 
-
-
-
-
-
-
-
-
     };
 });
 

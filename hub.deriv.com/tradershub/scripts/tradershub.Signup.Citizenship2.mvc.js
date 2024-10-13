@@ -1172,11 +1172,12 @@ define("tradershub.Signup.Citizenship2.mvc$controller", ["@outsystems/runtime-co
 
 define("tradershub.Signup.Citizenship2.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        setTimeout(() => {
-            Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
+        cacheTrackEvents.track({
+            name: "ce_virtual_signup_form",
+            properties: {
                 action: "citizenship_selection_screen_opened",
                 form_name: "virtual_signup_form_outsystems"
-            })
-        }, 100);
+            }
+        });
     };
 });

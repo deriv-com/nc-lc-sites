@@ -182,6 +182,14 @@ define("PartnersHub.Common.controller", ["exports", "@outsystems/runtime-core-js
 });
 
 
+define("PartnersHub.Common.controller$translationsResources.ar-001", [], function() {
+    return {
+        "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "كانت هناك مشكلة في التواصل مع الخادم. يرجى المحاولة مرة أخرى أو الاتصال بالمسؤول الخاص بك.",
+        "hd35JhN3zEmey3w4Y9h7LQ#Message.-1973574713.1": "كانت هناك مشكلة. يرجى الاتصال بالمسؤول",
+        "h3fWDwmg3UeT0Bqt_cQgxw#Message.878067834.1": "كان هناك مشكلة في طلب قاعدة البيانات. يرجى الاتصال بالمسؤول."
+    };
+});
+
 define("PartnersHub.Common.controller$translationsResources.de-DE", [], function() {
     return {
         "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "Es gab ein Problem bei der Kommunikation mit dem Server. Bitte versuchen Sie es erneut oder kontaktieren Sie Ihren Administrator.",
@@ -238,8 +246,12 @@ define("PartnersHub.Common.controller$translationsResources.ru-RU", [], function
     };
 });
 
-define("PartnersHub.Common.controller$translationsResources", ["exports", "PartnersHub.Common.controller$translationsResources.de-DE", "PartnersHub.Common.controller$translationsResources.es-ES", "PartnersHub.Common.controller$translationsResources.fr-FR", "PartnersHub.Common.controller$translationsResources.it-IT", "PartnersHub.Common.controller$translationsResources.pl-PL", "PartnersHub.Common.controller$translationsResources.pt-PT", "PartnersHub.Common.controller$translationsResources.ru-RU"], function(exports, PartnersHub_Common_controller_translationsResources_deDE, PartnersHub_Common_controller_translationsResources_esES, PartnersHub_Common_controller_translationsResources_frFR, PartnersHub_Common_controller_translationsResources_itIT, PartnersHub_Common_controller_translationsResources_plPL, PartnersHub_Common_controller_translationsResources_ptPT, PartnersHub_Common_controller_translationsResources_ruRU) {
+define("PartnersHub.Common.controller$translationsResources", ["exports", "PartnersHub.Common.controller$translationsResources.ar-001", "PartnersHub.Common.controller$translationsResources.de-DE", "PartnersHub.Common.controller$translationsResources.es-ES", "PartnersHub.Common.controller$translationsResources.fr-FR", "PartnersHub.Common.controller$translationsResources.it-IT", "PartnersHub.Common.controller$translationsResources.pl-PL", "PartnersHub.Common.controller$translationsResources.pt-PT", "PartnersHub.Common.controller$translationsResources.ru-RU"], function(exports, PartnersHub_Common_controller_translationsResources_ar001, PartnersHub_Common_controller_translationsResources_deDE, PartnersHub_Common_controller_translationsResources_esES, PartnersHub_Common_controller_translationsResources_frFR, PartnersHub_Common_controller_translationsResources_itIT, PartnersHub_Common_controller_translationsResources_plPL, PartnersHub_Common_controller_translationsResources_ptPT, PartnersHub_Common_controller_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Common_controller_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Common_controller_translationsResources_deDE,
             "isRTL": false

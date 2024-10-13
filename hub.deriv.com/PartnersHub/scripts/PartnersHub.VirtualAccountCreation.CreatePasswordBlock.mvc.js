@@ -715,6 +715,12 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$controller", 
 });
 
 
+define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "HGRdi3QCaE6JIdJ3CeVYKA#ValueExpression.1281629883.1": "كلمة المرور"
+    };
+});
+
 define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "HGRdi3QCaE6JIdJ3CeVYKA#ValueExpression.1281629883.1": "Passwort"
@@ -757,8 +763,12 @@ define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsR
     };
 });
 
-define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.ar-001", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.CreatePasswordBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ar001, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_VirtualAccountCreation_CreatePasswordBlock_mvc_translationsResources_deDE,
             "isRTL": false

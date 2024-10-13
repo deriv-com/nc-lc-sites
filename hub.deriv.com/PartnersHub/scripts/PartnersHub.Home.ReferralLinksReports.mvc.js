@@ -6,14 +6,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
         class VariablesRecordInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
-                return [
-                    this.attr("website_platform_url", "website_platform_urlIn", "website_platform_url", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, false),
-                    this.attr("_website_platform_urlInDataFetchStatus", "_website_platform_urlInDataFetchStatus", "_website_platform_urlInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+                return [].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
         }
@@ -30,7 +23,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
     }
 
     class Model extends
-    OS.Model.BaseViewModel {
+    OS.Model.VariablelessViewModel {
         static getVariablesRecordConstructor() {
             return VariablesRecord;
         }
@@ -46,16 +39,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$model", ["@outsystems/runtime-
 
             return Model._hasValidationWidgetsValue;
         }
-        setInputs(inputs) {
-            if ("website_platform_url" in inputs) {
-                this.variables.website_platform_urlIn = inputs.website_platform_url;
-                if ("_website_platform_urlInDataFetchStatus" in inputs) {
-                    this.variables._website_platform_urlInDataFetchStatus = inputs._website_platform_urlInDataFetchStatus;
-                }
-
-            }
-
-        }
+        setInputs(inputs) {}
 
     }
 
@@ -166,7 +150,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$view", ["@outsystems/runtime-c
                 inputs: {
                     borderRadius: "100px",
                     class: "referral-links-reports__button",
-                    title: "Open dashboard"
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("sVTo9kryAEepay7RxEd2MA#Value.1524116574.1", "Open dashboard")
                 },
                 events: {
                     _handleError: function(ex) {
@@ -246,7 +230,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller", ["@outsystems/run
                                 PartnersHubController.default.rudderstackTrackEvent$Action(function() {
                                     var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
                                     rec.actionAttr = "click_cta";
-                                    rec.cta_nameAttr = "Open dashboard";
+                                    rec.cta_nameAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("lpEobJwz70WribG+jUqf7g#Value.1524116574.1", "Open dashboard");
                                     rec.cta_placementAttr = "referral link report section";
                                     return rec;
                                 }(), "ce_partnershub_form", callContext);
@@ -261,7 +245,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller", ["@outsystems/run
 
                                     try {
                                         return controller.safeExecuteJSNode(PartnersHub_Home_ReferralLinksReports_mvc_controller_OpenDashboardOnClick_JavaScript1JS, "JavaScript1", "OpenDashboardOnClick", {
-                                            website_platform_url: OS.DataConversion.JSNodeParamConverter.to(model.variables.website_platform_urlIn, OS.DataTypes.DataTypes.Text)
+                                            website_platform_url: OS.DataConversion.JSNodeParamConverter.to(PartnersHubClientVariables.getWebsitePlatformUrl(), OS.DataTypes.DataTypes.Text)
                                         }, function($parameters) {}, {}, {});
                                     } finally {
                                         if (span) {
@@ -409,47 +393,68 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller.OpenDashboardOnClic
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Meine Empfehlungslinks und Berichte"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Meine Empfehlungslinks und Berichte",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Dashboard öffnen"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Mis enlaces de referencia y reportes"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Mis enlaces de referencia y reportes",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Abrir el panel"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Mes liens de parrainage et rapports"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Mes liens de parrainage et rapports",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Ouvrir le tableau de bord"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "I miei link di referral e report"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "I miei link di referral e report",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Apri il cruscotto"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Moje linki polecające i raporty"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Moje linki polecające i raporty",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Otwórz pulpit"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Meus links de referência e relatórios"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Meus links de referência e relatórios",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Abrir o painel"
     };
 });
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "Мои реферальные ссылки и отчеты"
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "Мои реферальные ссылки и отчеты",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Открыть панель управления"
     };
 });
 
-define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["exports", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_esES, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_frFR, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_itIT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_plPL, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ptPT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU) {
+define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "J5lNcrQnik2aXzdyKncEuA#Value": "الوصول إلى روابط الإحالة والتقارير",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "افتح لوحة التحكم"
+    };
+});
+
+define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["exports", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_esES, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_frFR, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_itIT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_plPL, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ptPT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001) {
     return {
         "de-DE": {
             "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE,
@@ -478,6 +483,10 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["expo
         "ru-RU": {
             "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU,
             "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001,
+            "isRTL": true
         }
     };
 });

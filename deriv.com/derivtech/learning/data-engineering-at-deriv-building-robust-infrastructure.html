@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Oct 03 2024 10:56:06 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Oct 11 2024 02:40:36 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d9b6" data-wf-site="66585fe0e1dc7e70cc75d440" lang="en" data-wf-collection="66585fe0e1dc7e70cc75d8a8" data-wf-item-slug="data-engineering-at-deriv-building-robust-infrastructure">
 
 <head>
@@ -8,7 +8,7 @@
     <link rel="alternate" hrefLang="en" href="https://deriv.com/derivtech/learning/data-engineering-at-deriv-building-robust-infrastructure" />
     <meta content="Building a strong data infrastructure and using powerful data tools is key for becoming a data-driven organisation. Find out how Deriv does this." name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ca2dbee9a.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a79e5dcff.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -31,10 +31,32 @@
     <link href="https://deriv.com/derivtech/learning/data-engineering-at-deriv-building-robust-infrastructure" rel="canonical" />
     <!--Analytics block starts here-->
     <script>
+        // Version 1.0.5
         const cacheTrackEvents = {
             interval: null,
             responses: [],
             isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
             trackPageUnload: () => {
                 window.addEventListener("beforeunload", (event) => {
                     if (!cacheTrackEvents.isPageViewSent()) {
@@ -89,7 +111,7 @@
                 }
 
                 const instances = Analytics.Analytics.getInstances();
-                return !!(instances?.tracking && instances?.ab);
+                return !!instances?.tracking;
             },
             parseCookies: (cookieName) => {
                 const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -117,7 +139,18 @@
         storedCookies
       )}; path=/; Domain=.deriv.com`;
             },
-            track: (event, cache) => {
+            processEvent: (event) => {
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
                 if (cacheTrackEvents.isReady() && !cache) {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
@@ -146,18 +179,28 @@
                     }
                 }, 1000);
             },
-            listen: (element, {
-                name,
-                properties
-            }, cache) => {
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
                 const addClickListener = (el) => {
                     if (!el.dataset.clickEventTracking) {
-                        el.addEventListener("click", function() {
-                            cacheTrackEvents.track({
+                        el.addEventListener("click", function(e) {
+                            let event = {
                                 name,
                                 properties,
                                 cache,
-                            });
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
                         });
                         el.dataset.clickEventTracking = "true";
                     }
@@ -173,25 +216,32 @@
                 cacheTrackEvents.interval = setInterval(() => {
                     let allListenersApplied = true;
 
-                    items.forEach(({
-                        element,
-                        event,
-                        cache = false
-                    }) => {
-                        const elem = document.querySelectorAll(element);
-                        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
 
-                        if (!elements.length) {
-                            allListenersApplied = false;
-                        }
-
-                        elements.forEach((el) => {
-                            if (!el.dataset.clickEventTracking) {
-                                cacheTrackEvents.listen(el, event, cache);
+                            if (!elements.length) {
                                 allListenersApplied = false;
                             }
-                        });
-                    });
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
 
                     if (allListenersApplied) {
                         clearInterval(cacheTrackEvents.interval);
@@ -221,11 +271,23 @@
 
                 items.forEach(({
                     pages = [],
+                    excludedPages = [],
                     event
                 }) => {
-                    if (pages.includes(pathname)) {
-                        console.log(`dispatching page load event for: ${event}`);
+                    let dispatch = false;
+                    if (pages.length) {
+                        if (pages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else if (excludedPages.length) {
+                        if (!excludedPages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else {
+                        dispatch = true;
+                    }
 
+                    if (dispatch) {
                         cacheTrackEvents.loadEvent([{
                             event
                         }]);
@@ -237,6 +299,31 @@
         };
 
         cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "email_confirmation_sent",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+            ])
             .addEventhandler([{
                     element: ".btn-free-demo .w-button",
                     event: {
@@ -317,6 +404,53 @@
                         },
                     },
                 },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                            },
+                        };
+                    },
+                },
             ])
             .pageView();
 
@@ -364,8 +498,8 @@
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
             const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
                 rudderstackKey: RUDDERSTACK_KEY,
                 growthbookOptions: {
                     navigate: (url) => window.location.replace(url),
@@ -406,18 +540,25 @@
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
             Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                const growthBookInstance = window.getGrowthbookInstance();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
                 function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
                     featureFlagValue = value;
                 }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
                 return featureFlagValue;
             };
         });
@@ -702,6 +843,77 @@
             loadJSCookie(setupCookies);
         })();
     </script>
+
+    <style>
+        /* Style for disabling scroll */
+        .disable-scroll {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        /* removing scroll bar(vertical) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* removing scroll bar (Firefox) */
+        * {
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .new-navbar_menu-left-desctop {
+                font-size: 14px;
+                /* Adjust the font size of menus in the custom breakpoint */
+            }
+
+            .new-navbar_dropdown-toggle,
+            .new-navbar_link {
+                padding: 0.5rem 0.75rem;
+                /* Adjust the padding of menus in the custom breakpoint */
+            }
+
+            header h1 {
+                font-size: 3rem;
+                /* Adjust the font size of header texts in the custom breakpoint */
+            }
+
+            header p {
+                font-size: 14px;
+                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
+                width: 81%;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            /* Adjusts for mobile landscape */
+            .tabs_menu-scroll-mobile {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS devices */
+                scrollbar-width: none;
+                /* For Firefox */
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        /* display only one text element for language switcher 
+.current-locale-list > .current-locale:first-of-type {
+    display: block;
+} */
+    </style>
 </head>
 
 <body>
@@ -1553,11 +1765,21 @@ a,
                     overflow-wrap: break-word;
 
                 }
+
+                a.deriv-tech-header_tablet-link.is-overlay:after {
+                    content: "";
+                    z-index: -1;
+                    opacity: .4;
+                    background-image: linear-gradient(181.93deg, #11141b00 3.15%, #11141b 50.01%);
+                    height: 71%;
+                    position: absolute;
+                    inset: auto 0% 0%;
+                }
             </style>
         </div>
         <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
             <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
-            <div data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
+            <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
                 <div class="new-navbar_component-wrapper">
                     <div class="new-navbar_container">
                         <div class="logo-wrap is-adaptive"><a href="/" class="new-navbar_logo-link w-nav-brand">
@@ -1936,18 +2158,18 @@ a,
                                                                 </defs>
                                                             </svg></div>
                                                         <div>Trader&#x27;s Hub</div>
-                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">Log in</a><a data-attributes="btn-primary-nav" href="/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">Try free demo</a><a data-attributes="btn-primary-nav" href="/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">Try free demo</a></div>
+                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">Log in</a><a data-attributes="btn-primary-nav" href="/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">Try free demo</a><a data-attributes="btn-primary-nav" href="/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">Try free demo</a></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="new-navbar_container-wrapper"><a href="#" class="new-button tab new btn-free-demo w-button">Sign up</a><a href="#" class="new-button new-navbar tab w-button">Log in</a></div>
+                                    <div class="new-navbar_container-wrapper"><a data-href="signup" href="#" class="new-button tab new btn-free-demo w-button">Sign up</a><a data-href="signin" href="#" class="new-button new-navbar tab w-button">Log in</a></div>
                                 </div>
                             </div>
                         </nav>
                         <div class="new-show-tablet">
                             <div class="w-dyn-list">
                                 <div role="list" class="w-dyn-items">
-                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">Log in</a></div>
+                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">Log in</a></div>
                                 </div>
                             </div>
                             <div class="navbar_menu-button w-nav-button">
@@ -1966,7 +2188,7 @@ a,
                 <div class="new-navbar_dynamic-background"></div>
                 <div class="new-navbar_background-solid"></div>
                 <div class="new-navbar_dark-curtain"></div>
-            </div>
+            </section>
         </div>
         <div class="main-wrapper">
             <section class="section_blog-post no_border">
@@ -1975,7 +2197,7 @@ a,
                         <div class="bread-crumb_wrapper"><a href="/" class="bread-crumb_link">Home</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /><a href="/derivtech" class="bread-crumb_link">Deriv Tech</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /><a href="/derivtech/learning" class="bread-crumb_link">Learning</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" />
                             <div class="bread-crumb_link is-light">Data engineering at Deriv: Building robust infrastructure</div>
                         </div>
-                        <div class="blog-filters">
+                        <section class="blog-filters">
                             <div class="padding-vertical padding-small w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" method="get" fs-cmsfilter-element="filters" class="deriv-life-filters_form" data-wf-page-id="66585fe0e1dc7e70cc75d9b6" data-wf-element-id="544b5c60-e768-5da0-c345-845fca3a6a1d">
                                     <div class="deriv-life-filters_search-wrapper">
@@ -1998,8 +2220,8 @@ a,
                                     <div>Oops! Something went wrong while submitting the form.</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="deriv-life-post_content">
+                        </section>
+                        <section class="deriv-life-post_content">
                             <div class="deriv-life-post_header">
                                 <div class="blog-post_heading-wrapper">
                                     <h1 class="deriv-life-post-title-text">Data engineering at Deriv: Building robust infrastructure</h1>
@@ -2016,7 +2238,7 @@ a,
                                         <div class="text-block-9">September 19, 2024</div>
                                     </div>
                                 </div>
-                                <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1).jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 95vw, (max-width: 1439px) 90vw, 1232px" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1).jpg 2701w" class="blog-post_image" /></div>
+                                <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1).jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 95vw, 90vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1)-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fcb70f27c06614bafbbcaa_Deriv%20Tech%20Fauzan%20glassdoor%20copy%403x%20(1).jpg 2701w" class="blog-post_image" /></div>
                                 <div class="blog-post_video-wrapper w-condition-invisible">
                                     <div class="blog-post_video w-dyn-bind-empty w-video w-embed"></div>
                                 </div>
@@ -2128,7 +2350,7 @@ a,
                                     <div class="share-block_buttons"><a id="facebook-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d680_facebook-md.svg" loading="lazy" alt="" /></a><a id="twitter-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a><a id="twitter-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a><a id="linkedin-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a><a id="telegram-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a><a id="copy-url" href="#" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a5_icon%20-%20link.svg" loading="lazy" alt="" /></a></div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </section>
@@ -2773,8 +2995,8 @@ a,
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b3f9562ab.js" type="text/javascript"></script> <!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.18/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.5fffeb20e.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.27/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2892,7 +3114,8 @@ a,
                     "/eu-careers",
                     "/our-locations",
                     "/product-explorer",
-                    "/academy"
+                    "/academy",
+                    "/trading-terms-glossary"
                 ];
                 let path = window.location.pathname;
                 let targetPathUrl = false;
@@ -3543,7 +3766,8 @@ a,
                 "/eu-careers",
                 "/our-locations",
                 "/product-explorer",
-                "/academy"
+                "/academy",
+                "/trading-terms-glossary",
 
             ];
             var path = window.location.pathname;
@@ -3585,7 +3809,8 @@ a,
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
+                const growthbookInstance = window.getGrowthbookInstance()
+                const featureFlagValue = growthbookInstance.getFeatureValue(
                     "trigger_os_signup_wf"
                 );
                 const handleOutSystemsRedirection = () => {
@@ -3649,14 +3874,12 @@ a,
                     }
                 });
             };
-
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
-                });
+            const growthbookInstance = window.getGrowthbookInstance();
+            growthbookInstance?.loadFeatures().then(() => {
+                if (window.location.href.indexOf("/partners") > -1 === false) {
+                    updateLinkHrefs();
+                }
+            });
         });
     </script>
 

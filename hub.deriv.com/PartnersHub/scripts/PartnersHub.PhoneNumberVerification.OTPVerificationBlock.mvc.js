@@ -536,6 +536,12 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$controller"
 });
 
 
+define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "vQoJkjTA406ABKE+2dHP3A#Value": "تحقق"
+    };
+});
+
 define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "vQoJkjTA406ABKE+2dHP3A#Value": "Überprüfen"
@@ -578,8 +584,12 @@ define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translation
     };
 });
 
-define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.ar-001", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.OTPVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ar001, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_PhoneNumberVerification_OTPVerificationBlock_mvc_translationsResources_deDE,
             "isRTL": false

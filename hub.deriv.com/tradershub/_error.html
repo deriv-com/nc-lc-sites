@@ -1,52 +1,55 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no" />
 
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
-<script type="text/javascript">
-(function () {
-    function appendMetaTagAttributes(metaTag, attribute, values) {
-        var elem = document.querySelector("meta[name=" + metaTag + "]");
+    <script type="text/javascript">
+        (function() {
+            function appendMetaTagAttributes(metaTag, attribute, values) {
+                var elem = document.querySelector("meta[name=" + metaTag + "]");
 
-        if (elem) {
-            var attrContent = elem.getAttribute(attribute);
-            elem.setAttribute(attribute, (attrContent ? attrContent + "," : "") + values.join(","));
-        }
-    }
+                if (elem) {
+                    var attrContent = elem.getAttribute(attribute);
+                    elem.setAttribute(attribute, (attrContent ? attrContent + "," : "") + values.join(","));
+                }
+            }
 
-    if (navigator && /OutSystemsApp/i.test(navigator.userAgent)) {
-        // If this app is running on the native shell, we want to disable the zoom
-        appendMetaTagAttributes("viewport", "content", ["user-scalable=no", "minimum-scale=1.0"]);
-    }
-})();</script>
+            if (navigator && /OutSystemsApp/i.test(navigator.userAgent)) {
+                // If this app is running on the native shell, we want to disable the zoom
+                appendMetaTagAttributes("viewport", "content", ["user-scalable=no", "minimum-scale=1.0"]);
+            }
+        })();
+    </script>
 
     <script type="text/javascript" src="/tradershub/scripts/require__Wqa1zVfjfZ1X688rgPEbA.js?Wqa1zVfjfZ1X68+8rgPEbA"></script>
-<script type="text/javascript" src="/tradershub/scripts/tslib__SPy2QBGiJOm363221Y2tuA.js?SPy2QBGiJOm363221Y2tuA"></script>
-<script type="text/javascript">
-    (function() {
-        var req = window.require || window.requirejs;
-        req.config({
-            baseUrl: "scripts",
-        })
-    })();
-</script>
+    <script type="text/javascript" src="/tradershub/scripts/tslib__SPy2QBGiJOm363221Y2tuA.js?SPy2QBGiJOm363221Y2tuA"></script>
+    <script type="text/javascript">
+        (function() {
+            var req = window.require || window.requirejs;
+            req.config({
+                baseUrl: "scripts",
+            })
+        })();
+    </script>
 
-<script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-core__xcIJ572suYMOrpGxgHuBVg.js?xcIJ572suYMOrpGxgHuBVg"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-view__JcEXrj0qeZKZh2uek7G4lA.js?JcEXrj0qeZKZh2uek7G4lA"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-auth__4C4Pdr0nqvDuSRlmrVRfw.js?4C4+Pdr0nqvDuSRlmrVRfw"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-communication__ZO6GIA0M1Vbs08rwcueGmQ.js?ZO6GIA0M1Vbs08rwcueGmQ"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-logger__1pAnpv0LwrKR4DzQ1aQ.js?1+pAn+pv0LwrKR4DzQ1_aQ"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-settings__lmF8YHvVzz3zJLqjS7CA.js?lmF8YH_vVzz3zJLqjS_7CA"></script>
-<script type="text/javascript" src="/tradershub/scripts/cordova.js?7KqI9_oL9hClomz1RdzTqg"></script>
-<script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-widgets__dZeAjgkx0wlldMNXEYTBA.js?dZeAjgkx0wlldMNXE_YTBA"></script>
-<script type="text/javascript" src="/tradershub/scripts/NullDebugger__sZNH4IDYt711ILLE5w81OA.js?sZNH4IDYt711ILLE5w81OA"></script>
-<script type="text/javascript" src="/tradershub/scripts/tradershub.appDefinition__SVXjFUXnruJ3jOCSWUvd9A.js?SVXjFUXnruJ3jOCSWUvd9A"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-core__xcIJ572suYMOrpGxgHuBVg.js?xcIJ572suYMOrpGxgHuBVg"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-view__JcEXrj0qeZKZh2uek7G4lA.js?JcEXrj0qeZKZh2uek7G4lA"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-auth__4C4Pdr0nqvDuSRlmrVRfw.js?4C4+Pdr0nqvDuSRlmrVRfw"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-communication__ZO6GIA0M1Vbs08rwcueGmQ.js?ZO6GIA0M1Vbs08rwcueGmQ"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-logger__1pAnpv0LwrKR4DzQ1aQ.js?1+pAn+pv0LwrKR4DzQ1_aQ"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-settings__lmF8YHvVzz3zJLqjS7CA.js?lmF8YH_vVzz3zJLqjS_7CA"></script>
+    <script type="text/javascript" src="/tradershub/scripts/cordova.js?7KqI9_oL9hClomz1RdzTqg"></script>
+    <script type="text/javascript" src="/tradershub/scripts/outsystems-runtime-widgets__dZeAjgkx0wlldMNXEYTBA.js?dZeAjgkx0wlldMNXE_YTBA"></script>
+    <script type="text/javascript" src="/tradershub/scripts/NullDebugger__sZNH4IDYt711ILLE5w81OA.js?sZNH4IDYt711ILLE5w81OA"></script>
+    <script type="text/javascript" src="/tradershub/scripts/tradershub.appDefinition__db9z4GHcHMdGw5jMiZpUQA.js?db9z4GHcHMdGw5jMiZpUQA"></script>
 
 
-    
+
     <style>
         body {
             background-color: #f2f2f2;
@@ -104,7 +107,7 @@
             margin-bottom: 27px;
             -webkit-animation: 1s linear infinite errorSpinnerRotation;
             animation: 1s linear infinite errorSpinnerRotation;
-            border: 20px solid rgba(0,0,0,.2);
+            border: 20px solid rgba(0, 0, 0, .2);
             border-radius: 100%;
         }
 
@@ -117,7 +120,7 @@
             height: 100%;
             width: 100%;
             border: 6px solid transparent;
-            border-top: 6px solid rgba(0,0,0,.5);
+            border-top: 6px solid rgba(0, 0, 0, .5);
             border-radius: 100%;
         }
 
@@ -162,10 +165,11 @@
             }
         }
     </style>
-    
 
-    
+
+
 </head>
+
 <body>
     <div id="error-screen-wrapper">
         <div id="error-screen-message-wrapper">
@@ -186,4 +190,5 @@
     <script type="text/javascript" src="/tradershub/scripts/tradershub.error__3Iik1zDPG4ZEJ8WPecrNZA.js?3Iik1zDPG4ZEJ8WPecrNZA"></script>
 
 </body>
+
 </html>

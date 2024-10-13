@@ -1053,7 +1053,16 @@ define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources
     };
 });
 
-define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ruRU) {
+define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "ErifJ+AR6Eax2K9Df+hCjQ#Value": "اختر الجنسية/الهوية المعروضة على هويتك الرسمية.",
+        "VOklgSMAAUC0R0Un9xFeBw#Value.-1726996070.1": "الخدمات غير متاحة",
+        "mZWPxcZ8pUaBV52DCuAaPg#Value.-1726996070.1": "الخدمات غير متاحة",
+        "Dvlnn52Fpkygi+VBXSS2Dw#Value": "جنسية"
+    };
+});
+
+define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources", ["exports", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.de-DE", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.es-ES", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.fr-FR", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.it-IT", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.pl-PL", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.pt-PT", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.ru-RU", "PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.ar-001"], function(exports, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_deDE, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_esES, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_frFR, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_itIT, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_plPL, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ptPT, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ruRU, PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ar001) {
     return {
         "de-DE": {
             "translations": PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_deDE,
@@ -1082,6 +1091,10 @@ define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources
         "ru-RU": {
             "translations": PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ruRU,
             "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_VirtualAccountCreation_Citizenship_mvc_translationsResources_ar001,
+            "isRTL": true
         }
     };
 });

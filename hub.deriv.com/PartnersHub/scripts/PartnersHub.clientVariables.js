@@ -79,7 +79,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
         }
 
         getisCommisionsPlansEnabledFF() {
-            return clientVarsService.getVariable("isCommisionsPlansEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+            return clientVarsService.getVariable("isCommisionsPlansEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, true);
         }
 
         setisCommisionsPlansEnabledFF(value) {
@@ -198,6 +198,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("AppId", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getIsNotAPartner() {
+            return clientVarsService.getVariable("IsNotAPartner", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setIsNotAPartner(value) {
+            return clientVarsService.setVariable("IsNotAPartner", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getRealSignupTaxIdentificationNumber() {
             return clientVarsService.getVariable("RealSignupTaxIdentificationNumber", "PartnersHub", OS.DataTypes.DataTypes.Text, "");
         }
@@ -222,6 +230,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("Code", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getIsCheckingAuthentication() {
+            return clientVarsService.getVariable("IsCheckingAuthentication", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setIsCheckingAuthentication(value) {
+            return clientVarsService.setVariable("IsCheckingAuthentication", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getRealSignupPostalZip() {
             return clientVarsService.getVariable("RealSignupPostalZip", "PartnersHub", OS.DataTypes.DataTypes.Text);
         }
@@ -236,6 +252,22 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setisCompleteMyProfileEnabledFF(value) {
             return clientVarsService.setVariable("isCompleteMyProfileEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
+        getIsAppReady() {
+            return clientVarsService.getVariable("IsAppReady", "PartnersHub", OS.DataTypes.DataTypes.Boolean, false);
+        }
+
+        setIsAppReady(value) {
+            return clientVarsService.setVariable("IsAppReady", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
+        getWebsitePlatformUrl() {
+            return clientVarsService.getVariable("WebsitePlatformUrl", "PartnersHub", OS.DataTypes.DataTypes.Text);
+        }
+
+        setWebsitePlatformUrl(value) {
+            return clientVarsService.setVariable("WebsitePlatformUrl", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
         getisIDVMobileDocumentNumberContainerVisible() {
@@ -268,6 +300,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setResetEmail(value) {
             return clientVarsService.setVariable("ResetEmail", "PartnersHub", OS.DataTypes.DataTypes.Email, value);
+        }
+
+        getIsPhoneNumberVerified() {
+            return clientVarsService.getVariable("IsPhoneNumberVerified", "PartnersHub", OS.DataTypes.DataTypes.LongInteger);
+        }
+
+        setIsPhoneNumberVerified(value) {
+            return clientVarsService.setVariable("IsPhoneNumberVerified", "PartnersHub", OS.DataTypes.DataTypes.LongInteger, value);
         }
 
         getIsResetEmailSent() {
@@ -356,6 +396,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
 
         setRealSignupEmploymentDetailMobileScreen(value) {
             return clientVarsService.setVariable("RealSignupEmploymentDetailMobileScreen", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
+        }
+
+        getisWhatsappBannerEnabledFF() {
+            return clientVarsService.getVariable("isWhatsappBannerEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setisWhatsappBannerEnabledFF(value) {
+            return clientVarsService.setVariable("isWhatsappBannerEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
         getRealSignupCompanyWebsite() {
@@ -456,15 +504,20 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 LastURL: OS.DataConversion.ServerDataConverter.to(this.getLastURL(), OS.DataTypes.DataTypes.Text),
                 RealSignupTINCheckbox: OS.DataConversion.ServerDataConverter.to(this.getRealSignupTINCheckbox(), OS.DataTypes.DataTypes.Boolean),
                 AppId: OS.DataConversion.ServerDataConverter.to(this.getAppId(), OS.DataTypes.DataTypes.Text),
+                IsNotAPartner: OS.DataConversion.ServerDataConverter.to(this.getIsNotAPartner(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupTaxIdentificationNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupTaxIdentificationNumber(), OS.DataTypes.DataTypes.Text),
                 RealSignupIDVAdditionalDocumentNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVAdditionalDocumentNumber(), OS.DataTypes.DataTypes.Text),
                 Code: OS.DataConversion.ServerDataConverter.to(this.getCode(), OS.DataTypes.DataTypes.Text),
+                IsCheckingAuthentication: OS.DataConversion.ServerDataConverter.to(this.getIsCheckingAuthentication(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupPostalZip: OS.DataConversion.ServerDataConverter.to(this.getRealSignupPostalZip(), OS.DataTypes.DataTypes.Text),
                 isCompleteMyProfileEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisCompleteMyProfileEnabledFF(), OS.DataTypes.DataTypes.Boolean),
+                IsAppReady: OS.DataConversion.ServerDataConverter.to(this.getIsAppReady(), OS.DataTypes.DataTypes.Boolean),
+                WebsitePlatformUrl: OS.DataConversion.ServerDataConverter.to(this.getWebsitePlatformUrl(), OS.DataTypes.DataTypes.Text),
                 isIDVMobileDocumentNumberContainerVisible: OS.DataConversion.ServerDataConverter.to(this.getisIDVMobileDocumentNumberContainerVisible(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupStateProvince: OS.DataConversion.ServerDataConverter.to(this.getRealSignupStateProvince(), OS.DataTypes.DataTypes.Text),
                 CurrentStepperPage: OS.DataConversion.ServerDataConverter.to(this.getCurrentStepperPage(), OS.DataTypes.DataTypes.Integer),
                 ResetEmail: OS.DataConversion.ServerDataConverter.to(this.getResetEmail(), OS.DataTypes.DataTypes.Email),
+                IsPhoneNumberVerified: OS.DataConversion.ServerDataConverter.to(this.getIsPhoneNumberVerified(), OS.DataTypes.DataTypes.LongInteger),
                 IsResetEmailSent: OS.DataConversion.ServerDataConverter.to(this.getIsResetEmailSent(), OS.DataTypes.DataTypes.Boolean),
                 ProductionAppId: OS.DataConversion.ServerDataConverter.to(this.getProductionAppId(), OS.DataTypes.DataTypes.Text),
                 isLanguageSwitcherEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisLanguageSwitcherEnabledFF(), OS.DataTypes.DataTypes.Boolean),
@@ -476,6 +529,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 RealSignupIDVDocumentNumber: OS.DataConversion.ServerDataConverter.to(this.getRealSignupIDVDocumentNumber(), OS.DataTypes.DataTypes.Text),
                 RealSignupDateofBirth: OS.DataConversion.ServerDataConverter.to(this.getRealSignupDateofBirth(), OS.DataTypes.DataTypes.Date),
                 RealSignupEmploymentDetailMobileScreen: OS.DataConversion.ServerDataConverter.to(this.getRealSignupEmploymentDetailMobileScreen(), OS.DataTypes.DataTypes.Text),
+                isWhatsappBannerEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisWhatsappBannerEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupCompanyWebsite: OS.DataConversion.ServerDataConverter.to(this.getRealSignupCompanyWebsite(), OS.DataTypes.DataTypes.Text),
                 ProductionHostName: OS.DataConversion.ServerDataConverter.to(this.getProductionHostName(), OS.DataTypes.DataTypes.Text),
                 ClientCountry: OS.DataConversion.ServerDataConverter.to(this.getClientCountry(), OS.DataTypes.DataTypes.Text),

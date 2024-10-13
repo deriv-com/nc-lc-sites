@@ -1493,13 +1493,15 @@ define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller"
 
 define("tradershub.RealAccountCreation.PersonalDetailsAdditional.mvc$controller.SaveOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: $actions.IsDesktop() ? 1 : 0.75,
-            step_codename: "personal_details",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: $actions.IsDesktop().IsDesktop ? 1 : 0.75,
+                step_codename: $actions.IsDesktop().IsDesktop ? "personal_details" : "personal_details_3",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
-
     };
 });
 

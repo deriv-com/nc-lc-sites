@@ -367,7 +367,7 @@ define("tradershub.WalletBlocks.WalletOverlayPage.mvc$view", ["@outsystems/runti
                     align: /*Default*/ 0,
                     content: _this.props.placeholders.walletOverlayPageContent,
                     style: model.getCachedValue(idService.getId("WalletOverlayPageContent.Style"), function() {
-                        return ("full-width " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("margin-top-m") : ("margin-top-xs")));
+                        return ("full-width " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("margin-top-m") : ("margin-top-s")));
                     }),
                     _idProps: {
                         service: idService,

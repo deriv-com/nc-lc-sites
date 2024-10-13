@@ -594,12 +594,11 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$view", ["@o
                         OptionalConfigs: model.getCachedValue(idService.getId("DatePicker.OptionalConfigs"), function() {
                             return function() {
                                 var rec = new OutSystemsUIModel.ST_bc4abb4233d9ce894e855c520a20c76fStructure();
-                                rec.initialDateAttr = OS.BuiltinFunctions.addYears(OS.BuiltinFunctions.currDate(), -18);
                                 rec.maxDateAttr = OS.BuiltinFunctions.addYears(OS.BuiltinFunctions.currDate(), -18);
                                 return rec;
                             }();
                         }),
-                        DateFormat: "DD-MM-YYYY",
+                        DateFormat: "DD/MM/YYYY",
                         ShowTodayButton: true
                     },
                     events: {
@@ -1304,6 +1303,7 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$controller.
     return function($parameters, $actions, $roles, $public) {
         function convertToDateOfBirthFormat(yyyy_mm_dd) {
             const [year, month, day] = yyyy_mm_dd.split("-").map(Number);
+            console.log(`${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`)
             return `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`;
         }
 
@@ -1360,6 +1360,31 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$controller.
     };
 });
 
+
+define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "j_EPQ_tMEkOIVLHUSf5bHQ#Value": "التالي",
+        "lOBAHtZQGUmW9zPBauhtIg#ValueExpression.-1399232832.1": "dd/mm/yyyy",
+        "s_eGbmNoT06cMKSVqx3Zrw#Value": "تاريخ الميلاد",
+        "BNQBIV97LkG9yYb3KpfMtQ#ValueExpression.1572233360.1": "أدخل اسم العائلة",
+        "DsD3zjGmQU2YmaZO__txJA#Value": "اسم العائلة",
+        "8wPzweYOjEW2uxdLwdFzSA#ValueExpression.1197690936.1": "الاسم الأول (والاسم الأوسط)",
+        "2mZm2HFVgEyXiVPF5ncAMA#Value": "الاسم الأول (والأوسط)",
+        "WGq0RVZ5r0yEEwsOsR4JlA#Value": "تمامًا كما يظهر في وثيقة هويتك.",
+        "bfHfU4sxB0uZYsBvXwcV0g#Value": "تاريخ الميلاد",
+        "jjo7zQDjKEOzEB8rpTtC5Q#Value": "و",
+        "BH4xaTTRpkCbML18NugkfA#Value": "اسم",
+        "bjOi2lIQ_EqD3rHVXQZfsg#Value": "أدخل",
+        "RG70PEg8yEyXExOyPJcC6w#Value": "التالي",
+        "aP1vS54I5k2xlwZGB0k6Hw#Value": "بالضبط كما هو موجود في وثيقة هويتك.",
+        "J0V3L+sIAEqTue6JXMGP3A#Value": "اسم",
+        "4_2LZ2b5xEyZNd4uy9iZww#Value": "أدخل",
+        "16HlsEFl20aowcu+AUX2nQ#ValueExpression.1572233360.1": "أدخل اسم العائلة",
+        "zjJ1q5jYdkymqdJ0Ew8BAg#Value": "اسم العائلة",
+        "hBJlxfgynUmzZ9AhSwOZXw#ValueExpression.1197690936.1": "الاسم الأول (والاسم الأوسط)",
+        "0T3Wi9jMUEaxXFsiJf7cxQ#Value": "الاسم الأول (والثاني)"
+    };
+});
 
 define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.de-DE", [], function() {
     return {
@@ -1536,8 +1561,12 @@ define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translation
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.PersonalDetailsBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_PersonalDetailsBlock_mvc_translationsResources_deDE,
             "isRTL": false

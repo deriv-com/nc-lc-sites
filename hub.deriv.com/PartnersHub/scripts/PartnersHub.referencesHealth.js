@@ -34,8 +34,8 @@ define("PartnersHub.referencesHealth$QuillIcons", [], function() {
     // Reference to producer 'QuillIcons' is OK.
 });
 
-define("PartnersHub.referencesHealth$RESTAPIWebsocket", [], function() {
-    // Reference to producer 'RESTAPIWebsocket' is OK.
+define("PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", [], function() {
+    // Reference to producer 'RESTAPIWebsocketOfficial' is OK.
 });
 
 define("PartnersHub.referencesHealth$Security", [], function() {

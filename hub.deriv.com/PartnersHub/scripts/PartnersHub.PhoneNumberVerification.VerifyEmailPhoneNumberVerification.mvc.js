@@ -741,6 +741,14 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
 });
 
 
+define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "v5+MWDj2dkSNxfDF9HQMGA#Value": "أدخل الرمز أو انقر على الرابط في البريد الإلكتروني للتحقق من أن الحساب يعود لك.",
+        "Q5xGGMg4_Umu6dd_rTYEew#Value": "لقد أرسلنا رمز التحقق إلى",
+        "B3lrFIwzEE6kXtLKNxbdzQ#Value": "تأكد أنك أنت"
+    };
+});
+
 define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.de-DE", [], function() {
     return {
         "v5+MWDj2dkSNxfDF9HQMGA#Value": "Geben Sie den Code ein oder klicken Sie auf den Link in der E-Mail, um zu bestätigen, dass das Konto Ihnen gehört.",
@@ -797,8 +805,12 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
     };
 });
 
-define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ruRU) {
+define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.ar-001", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ar001, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_PhoneNumberVerification_VerifyEmailPhoneNumberVerification_mvc_translationsResources_deDE,
             "isRTL": false

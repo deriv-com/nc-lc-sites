@@ -1,5 +1,5 @@
 /*!
- * Virtual Select v1.0.44
+ * Virtual Select v1.0.46
  * https://sa-si-dev.github.io/virtual-select
  * Licensed under MIT (https://github.com/sa-si-dev/virtual-select/blob/master/LICENSE)
  */
@@ -505,8 +505,8 @@
             8: "onBackspaceOrDeletePress"
         },
         k = ["autofocus", "disabled", "multiple", "required"],
-        E = ["autofocus", "class", "disabled", "id", "multiple", "name", "placeholder", "required"],
-        C = ["additionalClasses", "aliasKey", "allOptionsSelectedText", "allowNewOption", "alwaysShowSelectedOptionsCount", "alwaysShowSelectedOptionsLabel", "ariaLabelledby", "ariaLabelText", "ariaLabelClearButtonText", "autoSelectFirstOption", "clearButtonText", "descriptionKey", "disableAllOptionsSelectedText", "disableOptionGroupCheckbox", "disableSelectAll", "disableValidation", "dropboxWidth", "dropboxWrapper", "emptyValue", "enableSecureText", "focusSelectedOptionOnOpen", "hasOptionDescription", "hideClearButton", "hideValueTooltipOnSelectAll", "keepAlwaysOpen", "labelKey", "markSearchResults", "maxValues", "maxWidth", "minValues", "moreText", "noOfDisplayValues", "noOptionsText", "noSearchResultsText", "optionHeight", "optionSelectedText", "optionsCount", "optionsSelectedText", "popupDropboxBreakpoint", "popupPosition", "position", "search", "searchByStartsWith", "searchDelay", "searchFormLabel", "searchGroup", "searchNormalize", "searchPlaceholderText", "selectAllOnlyVisible", "selectAllText", "setValueAsArray", "showDropboxAsPopup", "showOptionsOnlyOnSearch", "showSelectedOptionsFirst", "showValueAsTags", "silentInitialValueSet", "textDirection", "tooltipAlignment", "tooltipFontSize", "tooltipMaxWidth", "updatePositionThrottle", "useGroupValue", "valueKey", "zIndex"],
+        C = ["autofocus", "class", "disabled", "id", "multiple", "name", "placeholder", "required"],
+        E = ["additionalClasses", "additionalDropboxClasses", "additionalDropboxContainerClasses", "additionalToggleButtonClasses", "aliasKey", "allOptionsSelectedText", "allowNewOption", "alwaysShowSelectedOptionsCount", "alwaysShowSelectedOptionsLabel", "ariaLabelledby", "ariaLabelText", "ariaLabelClearButtonText", "autoSelectFirstOption", "clearButtonText", "descriptionKey", "disableAllOptionsSelectedText", "disableOptionGroupCheckbox", "disableSelectAll", "disableValidation", "dropboxWidth", "dropboxWrapper", "emptyValue", "enableSecureText", "focusSelectedOptionOnOpen", "hasOptionDescription", "hideClearButton", "hideValueTooltipOnSelectAll", "keepAlwaysOpen", "labelKey", "markSearchResults", "maxValues", "maxWidth", "minValues", "moreText", "noOfDisplayValues", "noOptionsText", "noSearchResultsText", "optionHeight", "optionSelectedText", "optionsCount", "optionsSelectedText", "popupDropboxBreakpoint", "popupPosition", "position", "search", "searchByStartsWith", "searchDelay", "searchFormLabel", "searchGroup", "searchNormalize", "searchPlaceholderText", "selectAllOnlyVisible", "selectAllText", "setValueAsArray", "showDropboxAsPopup", "showOptionsOnlyOnSearch", "showSelectedOptionsFirst", "showValueAsTags", "silentInitialValueSet", "textDirection", "tooltipAlignment", "tooltipFontSize", "tooltipMaxWidth", "updatePositionThrottle", "useGroupValue", "valueKey", "zIndex"],
         $ = function() {
             function e(t) {
                 ! function(e, t) {
@@ -525,17 +525,18 @@
                     if (this.$ele) {
                         var e = this.uniqueId,
                             t = "vscomp-wrapper",
-                            i = this.showValueAsTags ? "" : this.getTooltipAttrText(this.placeholder, !0, !0),
-                            o = this.getTooltipAttrText(this.clearButtonText),
-                            s = this.ariaLabelledby ? 'aria-labelledby="'.concat(this.ariaLabelledby, '"') : "",
-                            n = this.ariaLabelText ? 'aria-label="'.concat(this.ariaLabelText, '"') : "",
-                            r = this.ariaLabelClearButtonText ? 'aria-label="'.concat(this.ariaLabelClearButtonText, '"') : "",
-                            a = !1;
-                        this.additionalClasses && (t += " ".concat(this.additionalClasses)), this.multiple && (t += " multiple", this.disableSelectAll || (t += " has-select-all")), this.hideClearButton || (t += " has-clear-button"), this.keepAlwaysOpen ? (t += " keep-always-open", a = !0) : t += " closed", this.showAsPopup && (t += " show-as-popup"), this.hasSearch && (t += " has-search-input"), this.showValueAsTags && (t += " show-value-as-tags"), this.textDirection && (t += " text-direction-".concat(this.textDirection)), this.popupPosition && (t += " popup-position-".concat(this.popupPosition.toLowerCase()));
-                        var l = '<div id="vscomp-ele-wrapper-'.concat(e, '" class="vscomp-ele-wrapper ').concat(t, '" tabindex="0"\n        role="combobox" aria-haspopup="listbox" aria-controls="vscomp-dropbox-container-').concat(e, '"\n        aria-expanded="').concat(a, '" ').concat(s, " ").concat(n, '>\n        <input type="hidden" name="').concat(this.name, '" class="vscomp-hidden-input">\n        <div class="vscomp-toggle-button">\n          <div class="vscomp-value" ').concat(i, ">\n            ").concat(this.placeholder, '\n          </div>\n          <div class="vscomp-arrow"></div>\n          <div class="vscomp-clear-button toggle-button-child" ').concat(o, ' \n          tabindex="0" ').concat(r, '>\n            <i class="vscomp-clear-icon"></i>\n          </div>\n        </div>\n\n        ').concat(this.renderDropbox({
+                            i = "vscomp-toggle-button",
+                            o = this.showValueAsTags ? "" : this.getTooltipAttrText(this.placeholder, !0, !0),
+                            s = this.getTooltipAttrText(this.clearButtonText),
+                            n = this.ariaLabelledby ? 'aria-labelledby="'.concat(this.ariaLabelledby, '"') : "",
+                            r = this.ariaLabelText ? 'aria-label="'.concat(this.ariaLabelText, '"') : "",
+                            a = this.ariaLabelClearButtonText ? 'aria-label="'.concat(this.ariaLabelClearButtonText, '"') : "",
+                            l = !1;
+                        this.additionalClasses && (t += " ".concat(this.additionalClasses)), this.additionalToggleButtonClasses && (i += " ".concat(this.additionalToggleButtonClasses)), this.multiple && (t += " multiple", this.disableSelectAll || (t += " has-select-all")), this.hideClearButton || (t += " has-clear-button"), this.keepAlwaysOpen ? (t += " keep-always-open", l = !0) : t += " closed", this.showAsPopup && (t += " show-as-popup"), this.hasSearch && (t += " has-search-input"), this.showValueAsTags && (t += " show-value-as-tags"), this.textDirection && (t += " text-direction-".concat(this.textDirection)), this.popupPosition && (t += " popup-position-".concat(this.popupPosition.toLowerCase()));
+                        var u = '<div id="vscomp-ele-wrapper-'.concat(e, '" class="vscomp-ele-wrapper ').concat(t, '" tabindex="0"\n        role="combobox" aria-haspopup="listbox" aria-controls="vscomp-dropbox-container-').concat(e, '"\n        aria-expanded="').concat(l, '" ').concat(n, " ").concat(r, '>\n        <input type="hidden" name="').concat(this.name, '" class="vscomp-hidden-input">\n        <div class="').concat(i, '">\n          <div class="vscomp-value" ').concat(o, ">\n            ").concat(this.placeholder, '\n          </div>\n          <div class="vscomp-arrow"></div>\n          <div class="vscomp-clear-button toggle-button-child" ').concat(s, ' \n          tabindex="0" ').concat(a, '>\n            <i class="vscomp-clear-icon"></i>\n          </div>\n        </div>\n\n        ').concat(this.renderDropbox({
                             wrapperClasses: t
                         }), "\n      </div>");
-                        this.$ele.innerHTML = l, this.$body = document.querySelector("body"), this.$wrapper = this.$ele.querySelector(".vscomp-wrapper"), this.hasDropboxWrapper ? (this.$allWrappers = [this.$wrapper, this.$dropboxWrapper], this.$dropboxContainer = this.$dropboxWrapper.querySelector(".vscomp-dropbox-container"), p.addClass(this.$dropboxContainer, "pop-comp-wrapper")) : (this.$allWrappers = [this.$wrapper], this.$dropboxContainer = this.$wrapper.querySelector(".vscomp-dropbox-container")), this.$toggleButton = this.$ele.querySelector(".vscomp-toggle-button"), this.$clearButton = this.$ele.querySelector(".vscomp-clear-button"), this.$valueText = this.$ele.querySelector(".vscomp-value"), this.$hiddenInput = this.$ele.querySelector(".vscomp-hidden-input"), this.$dropbox = this.$dropboxContainer.querySelector(".vscomp-dropbox"), this.$dropboxCloseButton = this.$dropboxContainer.querySelector(".vscomp-dropbox-close-button"), this.$dropboxContainerBottom = this.$dropboxContainer.querySelector(".vscomp-dropbox-container-bottom"), this.$dropboxContainerTop = this.$dropboxContainer.querySelector(".vscomp-dropbox-container-top"), this.$search = this.$dropboxContainer.querySelector(".vscomp-search-wrapper"), this.$optionsContainer = this.$dropboxContainer.querySelector(".vscomp-options-container"), this.$optionsList = this.$dropboxContainer.querySelector(".vscomp-options-list"), this.$options = this.$dropboxContainer.querySelector(".vscomp-options"), this.$noOptions = this.$dropboxContainer.querySelector(".vscomp-no-options"), this.$noSearchResults = this.$dropboxContainer.querySelector(".vscomp-no-search-results"), this.afterRenderWrapper()
+                        this.$ele.innerHTML = u, this.$body = document.querySelector("body"), this.$wrapper = this.$ele.querySelector(".vscomp-wrapper"), this.hasDropboxWrapper ? (this.$allWrappers = [this.$wrapper, this.$dropboxWrapper], this.$dropboxContainer = this.$dropboxWrapper.querySelector(".vscomp-dropbox-container"), p.addClass(this.$dropboxContainer, "pop-comp-wrapper")) : (this.$allWrappers = [this.$wrapper], this.$dropboxContainer = this.$wrapper.querySelector(".vscomp-dropbox-container")), this.$toggleButton = this.$ele.querySelector(".vscomp-toggle-button"), this.$clearButton = this.$ele.querySelector(".vscomp-clear-button"), this.$valueText = this.$ele.querySelector(".vscomp-value"), this.$hiddenInput = this.$ele.querySelector(".vscomp-hidden-input"), this.$dropbox = this.$dropboxContainer.querySelector(".vscomp-dropbox"), this.$dropboxCloseButton = this.$dropboxContainer.querySelector(".vscomp-dropbox-close-button"), this.$dropboxContainerBottom = this.$dropboxContainer.querySelector(".vscomp-dropbox-container-bottom"), this.$dropboxContainerTop = this.$dropboxContainer.querySelector(".vscomp-dropbox-container-top"), this.$search = this.$dropboxContainer.querySelector(".vscomp-search-wrapper"), this.$optionsContainer = this.$dropboxContainer.querySelector(".vscomp-options-container"), this.$optionsList = this.$dropboxContainer.querySelector(".vscomp-options-list"), this.$options = this.$dropboxContainer.querySelector(".vscomp-options"), this.$noOptions = this.$dropboxContainer.querySelector(".vscomp-no-options"), this.$noSearchResults = this.$dropboxContainer.querySelector(".vscomp-no-search-results"), this.afterRenderWrapper()
                     }
                 }
             }, {
@@ -543,12 +544,16 @@
                 value: function(e) {
                     var t = e.wrapperClasses,
                         i = "self" !== this.dropboxWrapper ? document.querySelector(this.dropboxWrapper) : null,
-                        o = '<div id="vscomp-dropbox-container-'.concat(this.uniqueId, '" role="listbox" class="vscomp-dropbox-container">\n        <div class="vscomp-dropbox-container-top" aria-hidden="true" tabindex="0">&nbsp;</div>\n        <div class="vscomp-dropbox">\n          <div class="vscomp-search-wrapper"></div>\n\n          <div class="vscomp-options-container">\n            <div class="vscomp-options-loader"></div>\n\n            <div class="vscomp-options-list">\n              <div class="vscomp-options"></div>\n            </div>\n          </div>\n\n          <div class="vscomp-options-bottom-freezer"></div>\n          <div class="vscomp-no-options">').concat(this.noOptionsText, '</div>\n          <div class="vscomp-no-search-results">').concat(this.noSearchResultsText, '</div>\n\n          <span class="vscomp-dropbox-close-button"><i class="vscomp-clear-icon"></i></span>\n        </div>\n        <div class="vscomp-dropbox-container-bottom" aria-hidden="true" tabindex="0">&nbsp;</div>\n      </div>');
+                        o = "vscomp-dropbox";
+                    this.additionalDropboxClasses && (o += " ".concat(this.additionalDropboxClasses));
+                    var s = "vscomp-dropbox-container";
+                    this.additionalDropboxContainerClasses && (s += " ".concat(this.additionalDropboxContainerClasses));
+                    var n = '<div id="vscomp-dropbox-container-'.concat(this.uniqueId, '" role="listbox" class="').concat(s, '">\n        <div class="vscomp-dropbox-container-top" aria-hidden="true" tabindex="0">&nbsp;</div>\n        <div class="').concat(o, '">\n          <div class="vscomp-search-wrapper"></div>\n\n          <div class="vscomp-options-container">\n            <div class="vscomp-options-loader"></div>\n\n            <div class="vscomp-options-list">\n              <div class="vscomp-options"></div>\n            </div>\n          </div>\n\n          <div class="vscomp-options-bottom-freezer"></div>\n          <div class="vscomp-no-options">').concat(this.noOptionsText, '</div>\n          <div class="vscomp-no-search-results">').concat(this.noSearchResultsText, '</div>\n\n          <span class="vscomp-dropbox-close-button"><i class="vscomp-clear-icon"></i></span>\n        </div>\n        <div class="vscomp-dropbox-container-bottom" aria-hidden="true" tabindex="0">&nbsp;</div>\n      </div>');
                     if (i) {
-                        var s = document.createElement("div");
-                        return this.$dropboxWrapper = s, this.hasDropboxWrapper = !0, s.innerHTML = o, i.appendChild(s), p.addClass(s, "vscomp-dropbox-wrapper ".concat(t)), ""
+                        var r = document.createElement("div");
+                        return this.$dropboxWrapper = r, this.hasDropboxWrapper = !0, r.innerHTML = n, i.appendChild(r), p.addClass(r, "vscomp-dropbox-wrapper ".concat(t)), ""
                     }
-                    return this.hasDropboxWrapper = !1, o
+                    return this.hasDropboxWrapper = !1, n
                 }
             }, {
                 key: "renderOptions",
@@ -581,12 +586,12 @@
                             x = "",
                             w = "-1",
                             k = d(o.isSelected),
-                            E = "";
-                        if (o.classNames && (y += " ".concat(o.classNames)), o.isFocused && (w = "0", y += " focused"), o.isDisabled && (y += " disabled", E = 'aria-disabled="true"'), o.isGroupTitle && (v = o.label, y += " group-title", u && (m = "")), k && (y += " selected"), o.isGroupOption) {
-                            var C = "";
-                            y += " group-option", S = 'data-group-index="'.concat(o.groupIndex, '"'), o.customData ? (v = void 0 !== o.customData.group_name ? "".concat(o.customData.group_name, ", ") : "", C = void 0 !== o.customData.description ? " ".concat(o.customData.description, ",") : "", x = 'aria-label="'.concat(v, " ").concat(o.label, ", ").concat(C, '"')) : x = 'aria-label="'.concat(v, ", ").concat(o.label, '"')
+                            C = "";
+                        if (o.classNames && (y += " ".concat(o.classNames)), o.isFocused && (w = "0", y += " focused"), o.isDisabled && (y += " disabled", C = 'aria-disabled="true"'), o.isGroupTitle && (v = o.label, y += " group-title", u && (m = "")), k && (y += " selected"), o.isGroupOption) {
+                            var E = "";
+                            y += " group-option", S = 'data-group-index="'.concat(o.groupIndex, '"'), o.customData ? (v = void 0 !== o.customData.group_name ? "".concat(o.customData.group_name, ", ") : "", E = void 0 !== o.customData.description ? " ".concat(o.customData.description, ",") : "", x = 'aria-label="'.concat(v, " ").concat(o.label, ", ").concat(E, '"')) : x = 'aria-label="'.concat(v, ", ").concat(o.label, '"')
                         }
-                        s = h ? l(o) : o.label, o.description && (O = '<div class="vscomp-option-description" '.concat(b, ">").concat(o.description, "</div>")), o.isCurrentNew ? (y += " current-new", g += r) : !a || o.isGroupTitle && !p || (s = s.replace(e, "<mark>$1</mark>")), i += '<div role="option" aria-selected="'.concat(k, '" id="vscomp-option-').concat(c, "-").concat(f, '"\n          class="').concat(y, '" data-value="').concat(o.value, '" data-index="').concat(f, '" data-visible-index="').concat(o.visibleIndex, '"\n          tabindex=').concat(w, " ").concat(S, " ").concat(E, " ").concat(x, "\n        >\n          ").concat(m, '\n          <span class="vscomp-option-text" ').concat(b, ">\n            ").concat(s, "\n          </span>\n          ").concat(O, "\n          ").concat(g, "\n        </div>")
+                        s = h ? l(o) : o.label, o.description && (O = '<div class="vscomp-option-description" '.concat(b, ">").concat(o.description, "</div>")), o.isCurrentNew ? (y += " current-new", g += r) : !a || o.isGroupTitle && !p || (s = s.replace(e, "<mark>$1</mark>")), i += '<div role="option" aria-selected="'.concat(k, '" id="vscomp-option-').concat(c, "-").concat(f, '"\n          class="').concat(y, '" data-value="').concat(o.value, '" data-index="').concat(f, '" data-visible-index="').concat(o.visibleIndex, '"\n          tabindex=').concat(w, " ").concat(S, " ").concat(C, " ").concat(x, "\n        >\n          ").concat(m, '\n          <span class="vscomp-option-text" ').concat(b, ">\n            ").concat(s, "\n          </span>\n          ").concat(O, "\n          ").concat(g, "\n        </div>")
                     })), v = "", this.$options.innerHTML = i, this.$visibleOptions = this.$options.querySelectorAll(".vscomp-option"), this.afterRenderOptions()
                 }
             }, {
@@ -641,7 +646,13 @@
                 value: function(e) {
                     var t = e.which || e.keyCode,
                         i = w[t];
-                    return document.activeElement === this.$searchInput && e.shiftKey && 9 === t ? (e.preventDefault(), void this.$dropboxContainerTop.focus()) : document.activeElement === this.$searchInput && 9 === t ? (e.preventDefault(), void this.focusFirstVisibleOption()) : void(document.activeElement !== this.$wrapper || 27 !== t && "Escape" !== e.key || !this.showAsPopup ? i && this[i](e) : this.closeDropbox())
+                    if (document.activeElement === this.$searchInput && e.shiftKey && 9 === t) return e.preventDefault(), void(this.keepAlwaysOpen ? this.$dropboxContainerTop.focus() : (this.closeDropbox(), this.$wrapper.focus()));
+                    if (document.activeElement === this.$searchInput && 9 === t) return e.preventDefault(), void this.focusFirstVisibleOption();
+                    if (27 === t || "Escape" === e.key) {
+                        var o = this.showAsPopup ? this.$wrapper : this.$dropboxWrapper;
+                        if ((document.activeElement === o || o.contains(document.activeElement)) && !this.keepAlwaysOpen) return this.closeDropbox(), void this.$wrapper.focus()
+                    }
+                    i && this[i](e)
                 }
             }, {
                 key: "onEnterPress",
@@ -841,7 +852,7 @@
                     var t = this.setDefaultProps(e);
                     this.setPropsFromElementAttr(t);
                     var i = s.convertToBoolean;
-                    this.$ele = t.ele, this.dropboxWrapper = t.dropboxWrapper, this.valueKey = t.valueKey, this.labelKey = t.labelKey, this.descriptionKey = t.descriptionKey, this.aliasKey = t.aliasKey, this.optionHeightText = t.optionHeight, this.optionHeight = parseFloat(this.optionHeightText), this.multiple = i(t.multiple), this.hasSearch = i(t.search), this.searchByStartsWith = i(t.searchByStartsWith), this.searchGroup = i(t.searchGroup), this.hideClearButton = i(t.hideClearButton), this.autoSelectFirstOption = i(t.autoSelectFirstOption), this.hasOptionDescription = i(t.hasOptionDescription), this.silentInitialValueSet = i(t.silentInitialValueSet), this.allowNewOption = i(t.allowNewOption), this.markSearchResults = i(t.markSearchResults), this.showSelectedOptionsFirst = i(t.showSelectedOptionsFirst), this.disableSelectAll = i(t.disableSelectAll), this.keepAlwaysOpen = i(t.keepAlwaysOpen), this.showDropboxAsPopup = i(t.showDropboxAsPopup), this.hideValueTooltipOnSelectAll = i(t.hideValueTooltipOnSelectAll), this.showOptionsOnlyOnSearch = i(t.showOptionsOnlyOnSearch), this.selectAllOnlyVisible = i(t.selectAllOnlyVisible), this.alwaysShowSelectedOptionsCount = i(t.alwaysShowSelectedOptionsCount), this.alwaysShowSelectedOptionsLabel = i(t.alwaysShowSelectedOptionsLabel), this.disableAllOptionsSelectedText = i(t.disableAllOptionsSelectedText), this.showValueAsTags = i(t.showValueAsTags), this.disableOptionGroupCheckbox = i(t.disableOptionGroupCheckbox), this.enableSecureText = i(t.enableSecureText), this.setValueAsArray = i(t.setValueAsArray), this.disableValidation = i(t.disableValidation), this.initialDisabled = i(t.disabled), this.required = i(t.required), this.autofocus = i(t.autofocus), this.useGroupValue = i(t.useGroupValue), this.focusSelectedOptionOnOpen = i(t.focusSelectedOptionOnOpen), this.noOptionsText = t.noOptionsText, this.noSearchResultsText = t.noSearchResultsText, this.selectAllText = t.selectAllText, this.searchNormalize = t.searchNormalize, this.searchPlaceholderText = t.searchPlaceholderText, this.searchFormLabel = t.searchFormLabel, this.optionsSelectedText = t.optionsSelectedText, this.optionSelectedText = t.optionSelectedText, this.allOptionsSelectedText = t.allOptionsSelectedText, this.clearButtonText = t.clearButtonText, this.moreText = t.moreText, this.placeholder = t.placeholder, this.position = t.position, this.textDirection = t.textDirection, this.dropboxWidth = t.dropboxWidth, this.tooltipFontSize = t.tooltipFontSize, this.tooltipAlignment = t.tooltipAlignment, this.tooltipMaxWidth = t.tooltipMaxWidth, this.updatePositionThrottle = t.updatePositionThrottle, this.noOfDisplayValues = parseInt(t.noOfDisplayValues), this.zIndex = parseInt(t.zIndex), this.maxValues = parseInt(t.maxValues), this.minValues = parseInt(t.minValues), this.name = this.secureText(t.name), this.additionalClasses = t.additionalClasses, this.popupDropboxBreakpoint = t.popupDropboxBreakpoint, this.popupPosition = t.popupPosition, this.onServerSearch = t.onServerSearch, this.labelRenderer = t.labelRenderer, this.initialSelectedValue = 0 === t.selectedValue ? "0" : t.selectedValue, this.emptyValue = t.emptyValue, this.ariaLabelledby = t.ariaLabelledby, this.ariaLabelText = t.ariaLabelText, this.ariaLabelClearButtonText = t.ariaLabelClearButtonText, this.maxWidth = t.maxWidth, this.searchDelay = t.searchDelay, this.selectedValues = [], this.selectedOptions = [], this.newValues = [], this.events = {}, this.tooltipEnterDelay = 200, this.searchValue = "", this.searchValueOriginal = "", this.isAllSelected = !1, (void 0 === t.search && this.multiple || this.allowNewOption || this.showOptionsOnlyOnSearch) && (this.hasSearch = !0), this.hasServerSearch = "function" == typeof this.onServerSearch, (this.maxValues || this.hasServerSearch || this.showOptionsOnlyOnSearch) && (this.disableSelectAll = !0, this.disableOptionGroupCheckbox = !0), this.keepAlwaysOpen && (this.dropboxWrapper = "self"), this.showAsPopup = this.showDropboxAsPopup && !this.keepAlwaysOpen && window.innerWidth <= parseFloat(this.popupDropboxBreakpoint), this.hasSearchContainer = this.hasSearch || this.multiple && !this.disableSelectAll, this.optionsCount = this.getOptionsCount(t.optionsCount), this.halfOptionsCount = Math.ceil(this.optionsCount / 2), this.optionsHeight = this.getOptionsHeight(), this.uniqueId = this.getUniqueId()
+                    this.$ele = t.ele, this.dropboxWrapper = t.dropboxWrapper, this.valueKey = t.valueKey, this.labelKey = t.labelKey, this.descriptionKey = t.descriptionKey, this.aliasKey = t.aliasKey, this.optionHeightText = t.optionHeight, this.optionHeight = parseFloat(this.optionHeightText), this.multiple = i(t.multiple), this.hasSearch = i(t.search), this.searchByStartsWith = i(t.searchByStartsWith), this.searchGroup = i(t.searchGroup), this.hideClearButton = i(t.hideClearButton), this.autoSelectFirstOption = i(t.autoSelectFirstOption), this.hasOptionDescription = i(t.hasOptionDescription), this.silentInitialValueSet = i(t.silentInitialValueSet), this.allowNewOption = i(t.allowNewOption), this.markSearchResults = i(t.markSearchResults), this.showSelectedOptionsFirst = i(t.showSelectedOptionsFirst), this.disableSelectAll = i(t.disableSelectAll), this.keepAlwaysOpen = i(t.keepAlwaysOpen), this.showDropboxAsPopup = i(t.showDropboxAsPopup), this.hideValueTooltipOnSelectAll = i(t.hideValueTooltipOnSelectAll), this.showOptionsOnlyOnSearch = i(t.showOptionsOnlyOnSearch), this.selectAllOnlyVisible = i(t.selectAllOnlyVisible), this.alwaysShowSelectedOptionsCount = i(t.alwaysShowSelectedOptionsCount), this.alwaysShowSelectedOptionsLabel = i(t.alwaysShowSelectedOptionsLabel), this.disableAllOptionsSelectedText = i(t.disableAllOptionsSelectedText), this.showValueAsTags = i(t.showValueAsTags), this.disableOptionGroupCheckbox = i(t.disableOptionGroupCheckbox), this.enableSecureText = i(t.enableSecureText), this.setValueAsArray = i(t.setValueAsArray), this.disableValidation = i(t.disableValidation), this.initialDisabled = i(t.disabled), this.required = i(t.required), this.autofocus = i(t.autofocus), this.useGroupValue = i(t.useGroupValue), this.focusSelectedOptionOnOpen = i(t.focusSelectedOptionOnOpen), this.noOptionsText = t.noOptionsText, this.noSearchResultsText = t.noSearchResultsText, this.selectAllText = t.selectAllText, this.searchNormalize = t.searchNormalize, this.searchPlaceholderText = t.searchPlaceholderText, this.searchFormLabel = t.searchFormLabel, this.optionsSelectedText = t.optionsSelectedText, this.optionSelectedText = t.optionSelectedText, this.allOptionsSelectedText = t.allOptionsSelectedText, this.clearButtonText = t.clearButtonText, this.moreText = t.moreText, this.placeholder = t.placeholder, this.position = t.position, this.textDirection = t.textDirection, this.dropboxWidth = t.dropboxWidth, this.tooltipFontSize = t.tooltipFontSize, this.tooltipAlignment = t.tooltipAlignment, this.tooltipMaxWidth = t.tooltipMaxWidth, this.updatePositionThrottle = t.updatePositionThrottle, this.noOfDisplayValues = parseInt(t.noOfDisplayValues), this.zIndex = parseInt(t.zIndex), this.maxValues = parseInt(t.maxValues), this.minValues = parseInt(t.minValues), this.name = this.secureText(t.name), this.additionalClasses = t.additionalClasses, this.additionalDropboxClasses = t.additionalDropboxClasses, this.additionalDropboxContainerClasses = t.additionalDropboxContainerClasses, this.additionalToggleButtonClasses = t.additionalToggleButtonClasses, this.popupDropboxBreakpoint = t.popupDropboxBreakpoint, this.popupPosition = t.popupPosition, this.onServerSearch = t.onServerSearch, this.labelRenderer = t.labelRenderer, this.selectedLabelRenderer = t.selectedLabelRenderer, this.initialSelectedValue = 0 === t.selectedValue ? "0" : t.selectedValue, this.emptyValue = t.emptyValue, this.ariaLabelledby = t.ariaLabelledby, this.ariaLabelText = t.ariaLabelText, this.ariaLabelClearButtonText = t.ariaLabelClearButtonText, this.maxWidth = t.maxWidth, this.searchDelay = t.searchDelay, this.selectedValues = [], this.selectedOptions = [], this.newValues = [], this.events = {}, this.tooltipEnterDelay = 200, this.searchValue = "", this.searchValueOriginal = "", this.isAllSelected = !1, (void 0 === t.search && this.multiple || this.allowNewOption || this.showOptionsOnlyOnSearch) && (this.hasSearch = !0), this.hasServerSearch = "function" == typeof this.onServerSearch, (this.maxValues || this.hasServerSearch || this.showOptionsOnlyOnSearch) && (this.disableSelectAll = !0, this.disableOptionGroupCheckbox = !0), this.keepAlwaysOpen && (this.dropboxWrapper = "self"), this.showAsPopup = this.showDropboxAsPopup && !this.keepAlwaysOpen && window.innerWidth <= parseFloat(this.popupDropboxBreakpoint), this.hasSearchContainer = this.hasSearch || this.multiple && !this.disableSelectAll, this.optionsCount = this.getOptionsCount(t.optionsCount), this.halfOptionsCount = Math.ceil(this.optionsCount / 2), this.optionsHeight = this.getOptionsHeight(), this.uniqueId = this.getUniqueId()
                 }
             }, {
                 key: "setDefaultProps",
@@ -877,6 +888,9 @@
                         updatePositionThrottle: 100,
                         name: "",
                         additionalClasses: "",
+                        additionalDropboxClasses: "",
+                        additionalDropboxContainerClasses: "",
+                        additionalToggleButtonClasses: "",
                         maxValues: 0,
                         showDropboxAsPopup: !0,
                         popupDropboxBreakpoint: "576px",
@@ -1046,8 +1060,8 @@
                         var x = h(c(O[n])),
                             w = h(c(O[r])),
                             k = O.options,
-                            E = !!k,
-                            C = {
+                            C = !!k,
+                            E = {
                                 index: y,
                                 value: x,
                                 label: w,
@@ -1055,11 +1069,11 @@
                                 alias: d(O[l]),
                                 isVisible: p(O.isVisible, !0),
                                 isNew: O.isNew || !1,
-                                isGroupTitle: E,
+                                isGroupTitle: C,
                                 classNames: O.classNames
                             };
-                        if (g || "" !== x || (g = !0), o && (C.isDisabled = !0 === m[x]), O.isGroupOption && (C.isGroupOption = !0, C.groupIndex = O.groupIndex), u && (C.description = h(c(O[a]))), O.customData && (C.customData = O.customData), i.push(C), y += 1, E) {
-                            var $ = C.index;
+                        if (g || "" !== x || (g = !0), o && (E.isDisabled = !0 === m[x]), O.isGroupOption && (E.isGroupOption = !0, E.groupIndex = O.groupIndex), u && (E.description = h(c(O[a]))), O.customData && (E.customData = O.customData), i.push(E), y += 1, C) {
+                            var $ = E.index;
                             b = !0, k.forEach((function(e) {
                                 e.isGroupOption = !0, e.groupIndex = $, t(e)
                             }))
@@ -1155,46 +1169,47 @@
                         o = this.noOfDisplayValues,
                         n = this.showValueAsTags,
                         r = this.$valueText,
-                        a = [],
+                        a = this.selectedLabelRenderer,
                         l = [],
-                        u = i.length,
-                        c = 0,
-                        h = this.isAllSelected && !this.hasServerSearch && !this.disableAllOptionsSelectedText && !n;
-                    if (h && this.hideValueTooltipOnSelectAll) r.innerHTML = "".concat(this.allOptionsSelectedText, " (").concat(u, ")");
+                        u = [],
+                        c = i.length,
+                        h = 0,
+                        d = this.isAllSelected && !this.hasServerSearch && !this.disableAllOptionsSelectedText && !n;
+                    if (d && this.hideValueTooltipOnSelectAll) r.innerHTML = "".concat(this.allOptionsSelectedText, " (").concat(c, ")");
                     else {
                         this.getSelectedOptions({
                             fullDetails: !0,
                             keepSelectionOrder: !0
                         }).some((function(t) {
                             if (t.isCurrentNew) return !1;
-                            if (c >= o) return !0;
+                            if (h >= o) return !0;
                             var i = t.label;
-                            if (a.push(i), c += 1, n) {
-                                var u = s.willTextOverflow(r.parentElement, i) ? e.getTooltipAttrText(i, !1, !0) : "",
-                                    p = '<span class="vscomp-value-tag" data-index="'.concat(t.index, '" ').concat(u, '>\n                  <span class="vscomp-value-tag-content">').concat(i, '</span>\n                  <span class="vscomp-value-tag-clear-button">\n                    <i class="vscomp-clear-icon"></i>\n                  </span>\n                </span>');
-                                l.push(p)
-                            } else l.push(i);
+                            if ("function" == typeof a && (i = a(t)), l.push(i), h += 1, n) {
+                                var c = s.willTextOverflow(r.parentElement, i) ? e.getTooltipAttrText(i, !1, !0) : "",
+                                    p = '<span class="vscomp-value-tag" data-index="'.concat(t.index, '" ').concat(c, '>\n                  <span class="vscomp-value-tag-content">').concat(i, '</span>\n                  <span class="vscomp-value-tag-clear-button">\n                    <i class="vscomp-clear-icon"></i>\n                  </span>\n                </span>');
+                                u.push(p)
+                            } else u.push(i);
                             return !1
                         }));
-                        var d = u - o;
-                        d > 0 && l.push('<span class="vscomp-value-tag more-value-count">+ '.concat(d, " ").concat(this.moreText, "</span>"));
-                        var v = a.join(", ");
-                        if ("" === v) r.innerHTML = this.placeholder;
-                        else if (r.innerHTML = v, t) {
-                            var f = this.maxValues;
-                            if (this.alwaysShowSelectedOptionsCount || p.hasEllipsis(r) || f || n) {
-                                var y = '<span class="vscomp-selected-value-count">'.concat(u, "</span>");
-                                if (f && (y += ' / <span class="vscomp-max-value-count">'.concat(f, "</span>")), h) r.innerHTML = "".concat(this.allOptionsSelectedText, " (").concat(u, ")");
-                                else if (n) r.innerHTML = l.join(""), this.$valueTags = r.querySelectorAll(".vscomp-value-tag"), this.setValueTagAttr();
+                        var v = c - o;
+                        v > 0 && u.push('<span class="vscomp-value-tag more-value-count">+ '.concat(v, " ").concat(this.moreText, "</span>"));
+                        var f = l.join(", ");
+                        if ("" === f) r.innerHTML = this.placeholder;
+                        else if (r.innerHTML = f, t) {
+                            var y = this.maxValues;
+                            if (this.alwaysShowSelectedOptionsCount || p.hasEllipsis(r) || y || n) {
+                                var b = '<span class="vscomp-selected-value-count">'.concat(c, "</span>");
+                                if (y && (b += ' / <span class="vscomp-max-value-count">'.concat(y, "</span>")), d) r.innerHTML = "".concat(this.allOptionsSelectedText, " (").concat(c, ")");
+                                else if (n) r.innerHTML = u.join(""), this.$valueTags = r.querySelectorAll(".vscomp-value-tag"), this.setValueTagAttr();
                                 else if (!this.alwaysShowSelectedOptionsLabel) {
-                                    var b = 1 === u ? this.optionSelectedText : this.optionsSelectedText;
-                                    r.innerHTML = "".concat(y, " ").concat(b)
+                                    var m = 1 === c ? this.optionSelectedText : this.optionsSelectedText;
+                                    r.innerHTML = "".concat(b, " ").concat(m)
                                 }
-                            } else l = []
+                            } else u = []
                         }
                     }
-                    var m = "";
-                    0 === u ? m = this.placeholder : n || (m = l.join(", ")), n || p.setData(r, "tooltip", m), t && (n ? this.updatePosition() : p.setData(r, "tooltipEllipsisOnly", 0 === u))
+                    var g = "";
+                    0 === c ? g = this.placeholder : n || (g = u.join(", ")), n || p.setData(r, "tooltip", g), t && (n ? this.updatePosition() : p.setData(r, "tooltipEllipsisOnly", 0 === c))
                 }
             }, {
                 key: "setSearchValue",
@@ -2046,9 +2061,9 @@
                 value: function() {
                     var e = p.convertPropToDataAttr,
                         t = {};
-                    return E.forEach((function(e) {
+                    return C.forEach((function(e) {
                         t[e] = e
-                    })), C.forEach((function(i) {
+                    })), E.forEach((function(i) {
                         t[e(i)] = i
                     })), t
                 }
@@ -2423,8 +2438,8 @@ function() {
                         x = m - h,
                         w = S - f,
                         k = w,
-                        E = x,
-                        C = this.position,
+                        C = x,
+                        E = this.position,
                         $ = this.secondaryPosition,
                         A = y / 2 - c / 2,
                         T = b / 2 - p / 2,
@@ -2435,40 +2450,40 @@ function() {
                         M = window.scrollX - f,
                         F = r + M,
                         L = this.offset;
-                    L && (P += L, I -= L, M += L, F -= L), "auto" === C && (C = i.getMoreVisibleSides(this.$triggerEle).vertical);
+                    L && (P += L, I -= L, M += L, F -= L), "auto" === E && (E = i.getMoreVisibleSides(this.$triggerEle).vertical);
                     var G = {
                             top: {
-                                top: E - p - D,
+                                top: C - p - D,
                                 left: k + A
                             },
                             bottom: {
-                                top: E + b + D,
+                                top: C + b + D,
                                 left: k + A
                             },
                             right: {
-                                top: E + T,
+                                top: C + T,
                                 left: k + y + D
                             },
                             left: {
-                                top: E + T,
+                                top: C + T,
                                 left: k - c - D
                             }
                         },
-                        H = G[C];
-                    if (E = H.top, k = H.left, $ && ("top" === $ ? E = x : "bottom" === $ ? E = x + b - p : "left" === $ ? k = w : "right" === $ && (k = w + y - c)), k < M ? "left" === C ? n = "right" : k = M + f > g ? g - f : M : k + c > F && ("right" === C ? n = "left" : k = F + f < S ? S - d : F - c), E < P ? "top" === C ? n = "bottom" : E = P + h > O ? O - h : P : E + p > I && ("bottom" === C ? n = "top" : E = I + h < m ? m - v : I - p), n) {
+                        H = G[E];
+                    if (C = H.top, k = H.left, $ && ("top" === $ ? C = x : "bottom" === $ ? C = x + b - p : "left" === $ ? k = w : "right" === $ && (k = w + y - c)), k < M ? "left" === E ? n = "right" : k = M + f > g ? g - f : M : k + c > F && ("right" === E ? n = "left" : k = F + f < S ? S - d : F - c), C < P ? "top" === E ? n = "bottom" : C = P + h > O ? O - h : P : C + p > I && ("bottom" === E ? n = "top" : C = I + h < m ? m - v : I - p), n) {
                         var N = G[n];
-                        "top" === (C = n) || "bottom" === C ? E = N.top : "left" !== C && "right" !== C || (k = N.left)
+                        "top" === (E = n) || "bottom" === E ? C = N.top : "left" !== E && "right" !== E || (k = N.left)
                     }
-                    "top" === C ? (e = E + V, t = k) : "right" === C ? (e = E, t = k - V) : "left" === C ? (e = E, t = k + V) : (e = E - V, t = k);
+                    "top" === E ? (e = C + V, t = k) : "right" === E ? (e = C, t = k - V) : "left" === E ? (e = C, t = k + V) : (e = C - V, t = k);
                     var j = "translate3d(".concat(parseInt(t), "px, ").concat(parseInt(e), "px, 0)");
-                    if (i.setStyle(this.$popperEle, "transform", j), i.setData(this.$popperEle, "fromLeft", t), i.setData(this.$popperEle, "fromTop", e), i.setData(this.$popperEle, "top", E), i.setData(this.$popperEle, "left", k), i.removeClass(this.$popperEle, o.join(" ")), i.addClass(this.$popperEle, "position-".concat(C)), this.hasArrow) {
+                    if (i.setStyle(this.$popperEle, "transform", j), i.setData(this.$popperEle, "fromLeft", t), i.setData(this.$popperEle, "fromTop", e), i.setData(this.$popperEle, "top", C), i.setData(this.$popperEle, "left", k), i.removeClass(this.$popperEle, o.join(" ")), i.addClass(this.$popperEle, "position-".concat(E)), this.hasArrow) {
                         var W = 0,
-                            q = 0,
-                            B = k + f,
-                            R = E + h,
+                            B = 0,
+                            q = k + f,
+                            R = C + h,
                             z = this.$arrowEle.offsetWidth / 2,
-                            K = s[C] || "";
-                        "top" === C || "bottom" === C ? (W = y / 2 + S - B) < z ? W = z : W > c - z && (W = c - z) : "left" !== C && "right" !== C || ((q = b / 2 + m - R) < z ? q = z : q > p - z && (q = p - z)), i.setStyle(this.$arrowEle, "transform", "translate3d(".concat(parseInt(W), "px, ").concat(parseInt(q), "px, 0) ").concat(K))
+                            K = s[E] || "";
+                        "top" === E || "bottom" === E ? (W = y / 2 + S - q) < z ? W = z : W > c - z && (W = c - z) : "left" !== E && "right" !== E || ((B = b / 2 + m - R) < z ? B = z : B > p - z && (B = p - z)), i.setStyle(this.$arrowEle, "transform", "translate3d(".concat(parseInt(W), "px, ").concat(parseInt(B), "px, 0) ").concat(K))
                     }
                     i.hide(this.$popperEle)
                 }

@@ -963,6 +963,9 @@
          */
         function onYearInput(event) {
             var eventTarget = getEventTarget(event);
+            if (eventTarget !== self.yearElements[0]) {
+                return;
+            }
             var year = parseInt(eventTarget.value) + (event.delta || 0);
             if (year / 1000 > 1 ||
                 (event.key === "Enter" && !/[^\d]/.test(year.toString()))) {
@@ -1014,10 +1017,21 @@
                     break;
                     // Save the entered Date on the input
                 case "Enter":
-                    if (self.loadedPlugins.indexOf("monthSelect") !== -1 || self.config.noCalendar && self.config.enableTime) {
+                    if (self.loadedPlugins.indexOf("monthSelect") !== -1 ||
+                        (self.config.noCalendar && self.config.enableTime)) {
                         return;
                     }
-                    var newDate = new Date(self._input.value);
+                    // Get the input value
+                    var inputValue = self._input.value.trim();
+                    // With the input value, let's try to parse the date based on the defined altFormat
+                    var newDate = self.parseDate(inputValue, self.config.altFormat);
+                    // Check if the input is empty or the date is invalid, if so, prevent date to be set!
+                    if (inputValue === "") {
+                        return;
+                    } else if (isNaN(Number(newDate))) {
+                        console.error("Inserted date is not valid");
+                        return;
+                    }
                     setDate(newDate, true);
                     break;
                     // Close the calendar
@@ -1193,9 +1207,9 @@
             self.calendarContainer = createElement("div", "flatpickr-calendar");
             self.calendarContainer.id =
                 "flatpickr-calendar-" + self.utils.generateUniqueId();
-            self.calendarContainer.role = "dialog";
-            self.calendarContainer.ariaModal = "true";
-            self.calendarContainer.ariaLabel = self.l10n.ariaLabelCalendar;
+            self.calendarContainer.setAttribute("role", "dialog");
+            self.calendarContainer.setAttribute("ariaModal", "true");
+            self.calendarContainer.setAttribute("ariaLabel", self.l10n.ariaLabelCalendar);
             (_a = self.altInput) === null || _a === void 0 ? void 0 : _a.setAttribute("aria-controls", self.calendarContainer.id);
             self.calendarContainer.tabIndex = -1;
             if (!self.config.noCalendar) {
@@ -1518,8 +1532,8 @@
             self.nextMonthNav.tabIndex = self.isOpen ? 0 : -1;
             self.prevMonthNav.innerHTML = self.config.prevArrow;
             self.nextMonthNav.innerHTML = self.config.nextArrow;
-            self.prevMonthNav.ariaLabel = self.l10n.prevMonth;
-            self.nextMonthNav.ariaLabel = self.l10n.nextMonth;
+            self.prevMonthNav.setAttribute("ariaLabel", self.l10n.prevMonth);
+            self.nextMonthNav.setAttribute("ariaLabel", self.l10n.nextMonth);
             buildMonths();
             Object.defineProperty(self, "_hidePrevMonthArrow", {
                 get: function() {
@@ -1607,7 +1621,7 @@
                     self.config.defaultHour) > 11)]);
                 self.amPM.title = self.l10n.toggleTitle;
                 self.amPM.tabIndex = self.isOpen ? 0 : -1;
-                self.amPM.ariaLive = "polite";
+                self.amPM.setAttribute("ariaLive", "polite");
                 self.timeContainer.appendChild(self.amPM);
             }
             return self.timeContainer;
@@ -1712,7 +1726,7 @@
                     self.calendarContainer.classList.remove("open");
                 }
                 if (self._input !== undefined) {
-                    self._input.ariaExpanded = "false";
+                    self._input.setAttribute("ariaExpanded", "false");
                     self._input.classList.remove("active");
                 }
             }
@@ -1972,8 +1986,11 @@
                             e.preventDefault();
                             updateTime();
                             focusAndClose();
-                        } else
+                        } else if (eventTarget.tagName === "SELECT") {
+                            break;
+                        } else {
                             selectDate(e);
+                        }
                         break;
                     case 27: // escape
                         e.preventDefault();
@@ -2008,6 +2025,9 @@
                         break;
                     case 38:
                     case 40:
+                        if (eventTarget.tagName === "SELECT") {
+                            break;
+                        }
                         e.preventDefault();
                         var delta = e.keyCode === 40 ? 1 : -1;
                         if ((self.daysContainer &&
@@ -2174,7 +2194,7 @@
             manageElementsTabindex();
             if (!wasOpen) {
                 self.calendarContainer.classList.add("open");
-                self._input.ariaExpanded = "true";
+                self._input.setAttribute("ariaExpanded", "true");
                 self._input.classList.add("active");
                 triggerEvent("onOpen");
                 positionCalendar(positionElement);
@@ -2508,7 +2528,11 @@
             if (t === undefined)
                 return;
             var target = t;
-            var selectedDate = (self.latestSelectedDateObj = new Date(target.dateObj.getTime()));
+            var newDate = target ? new Date(target.dateObj.getTime()) : self.latestSelectedDateObj;
+            if (self.latestSelectedDateObj !== newDate) {
+                self.latestSelectedDateObj = newDate;
+            }
+            var selectedDate = newDate;
             var shouldChangeMonth = (selectedDate.getMonth() < self.currentMonth ||
                     selectedDate.getMonth() >
                     self.currentMonth + self.config.showMonths - 1) &&
@@ -2761,10 +2785,10 @@
                 self.altInput.tabIndex = self.input.tabIndex;
                 self.altInput.type = "text";
                 // add accessibility attributes
-                self.altInput.role = "combobox";
-                self.altInput.ariaHasPopup = "true";
-                self.altInput.ariaAutoComplete = "none";
-                self.altInput.ariaExpanded = "false";
+                self.altInput.setAttribute("role", "combobox");
+                self.altInput.setAttribute("ariaHasPopup", "true");
+                self.altInput.setAttribute("ariaAutoComplete", "none");
+                self.altInput.setAttribute("ariaExpanded", "false");
                 self.input.setAttribute("type", "hidden");
                 if (!self.config.static && self.input.parentNode)
                     self.input.parentNode.insertBefore(self.altInput, self.input.nextSibling);

@@ -256,7 +256,7 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.JavaScript1JS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_JavaScript1JS) {
+define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.JavaScript1JS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -415,25 +415,6 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
                                 var javaScript1JSResult = new OS.DataTypes.VariableHolder();
                                 var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                                 return OS.Flow.executeAsyncFlow(function() {
-                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                        if (span) {
-                                            span.setAttribute("code.function", "RudderStack");
-                                            span.setAttribute("outsystems.function.key", "da3c673a-2f9a-4f88-a022-a8a6e529eb8d");
-                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                        }
-
-                                        try {
-                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_RudderStackJS, "RudderStack", "ListItemOnClick", null, function($parameters) {}, {}, {});
-                                        } finally {
-                                            if (span) {
-                                                span.end();
-                                            }
-
-                                        }
-
-                                    }, 1);
                                     // RealSignupIDVDocumentName = DocumentName
                                     tradershubClientVariables.setRealSignupIDVDocumentName(vars.value.documentNameInLocal);
                                     // RealSignupIDVDocumentNumber = NullTextIdentifier
@@ -705,14 +686,6 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
         const supportedDocuments = Object.values(country.identity.services.idv.documents_supported)
 
         $parameters.SupportedDocuments = JSON.stringify(supportedDocuments)
-    };
-});
-
-define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.RudderStackJS", [], function() {
-    return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent({
-            action: "signup_modal_next_button_os",
-        })
     };
 });
 

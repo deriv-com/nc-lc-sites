@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Oct 03 2024 10:56:06 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Oct 11 2024 02:40:36 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d6cc" data-wf-site="66585fe0e1dc7e70cc75d440" lang="th" data-wf-collection="66585fe0e1dc7e70cc75d556" data-wf-item-slug="fraud-prevention">
 
 <head>
@@ -25,7 +25,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/help-centre/fraud-prevention" />
     <meta content="คําถามที่พบบ่อย - การป้องกันการฉ้อโกง" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ca2dbee9a.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a79e5dcff.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -48,10 +48,32 @@
     <link href="https://deriv.com/th/help-centre/fraud-prevention" rel="canonical" />
     <!--Analytics block starts here-->
     <script>
+        // Version 1.0.5
         const cacheTrackEvents = {
             interval: null,
             responses: [],
             isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
             trackPageUnload: () => {
                 window.addEventListener("beforeunload", (event) => {
                     if (!cacheTrackEvents.isPageViewSent()) {
@@ -106,7 +128,7 @@
                 }
 
                 const instances = Analytics.Analytics.getInstances();
-                return !!(instances?.tracking && instances?.ab);
+                return !!instances?.tracking;
             },
             parseCookies: (cookieName) => {
                 const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -134,7 +156,18 @@
         storedCookies
       )}; path=/; Domain=.deriv.com`;
             },
-            track: (event, cache) => {
+            processEvent: (event) => {
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
                 if (cacheTrackEvents.isReady() && !cache) {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
@@ -163,18 +196,28 @@
                     }
                 }, 1000);
             },
-            listen: (element, {
-                name,
-                properties
-            }, cache) => {
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
                 const addClickListener = (el) => {
                     if (!el.dataset.clickEventTracking) {
-                        el.addEventListener("click", function() {
-                            cacheTrackEvents.track({
+                        el.addEventListener("click", function(e) {
+                            let event = {
                                 name,
                                 properties,
                                 cache,
-                            });
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
                         });
                         el.dataset.clickEventTracking = "true";
                     }
@@ -190,25 +233,32 @@
                 cacheTrackEvents.interval = setInterval(() => {
                     let allListenersApplied = true;
 
-                    items.forEach(({
-                        element,
-                        event,
-                        cache = false
-                    }) => {
-                        const elem = document.querySelectorAll(element);
-                        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
 
-                        if (!elements.length) {
-                            allListenersApplied = false;
-                        }
-
-                        elements.forEach((el) => {
-                            if (!el.dataset.clickEventTracking) {
-                                cacheTrackEvents.listen(el, event, cache);
+                            if (!elements.length) {
                                 allListenersApplied = false;
                             }
-                        });
-                    });
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
 
                     if (allListenersApplied) {
                         clearInterval(cacheTrackEvents.interval);
@@ -238,11 +288,23 @@
 
                 items.forEach(({
                     pages = [],
+                    excludedPages = [],
                     event
                 }) => {
-                    if (pages.includes(pathname)) {
-                        console.log(`dispatching page load event for: ${event}`);
+                    let dispatch = false;
+                    if (pages.length) {
+                        if (pages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else if (excludedPages.length) {
+                        if (!excludedPages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else {
+                        dispatch = true;
+                    }
 
+                    if (dispatch) {
                         cacheTrackEvents.loadEvent([{
                             event
                         }]);
@@ -254,6 +316,31 @@
         };
 
         cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "email_confirmation_sent",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+            ])
             .addEventhandler([{
                     element: ".btn-free-demo .w-button",
                     event: {
@@ -334,6 +421,53 @@
                         },
                     },
                 },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                            },
+                        };
+                    },
+                },
             ])
             .pageView();
 
@@ -381,8 +515,8 @@
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
             const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
                 rudderstackKey: RUDDERSTACK_KEY,
                 growthbookOptions: {
                     navigate: (url) => window.location.replace(url),
@@ -423,18 +557,25 @@
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
             Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                const growthBookInstance = window.getGrowthbookInstance();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
                 function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
                     featureFlagValue = value;
                 }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
                 return featureFlagValue;
             };
         });
@@ -647,7 +788,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -718,6 +860,77 @@
             loadJSCookie(setupCookies);
         })();
     </script>
+
+    <style>
+        /* Style for disabling scroll */
+        .disable-scroll {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        /* removing scroll bar(vertical) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* removing scroll bar (Firefox) */
+        * {
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .new-navbar_menu-left-desctop {
+                font-size: 14px;
+                /* Adjust the font size of menus in the custom breakpoint */
+            }
+
+            .new-navbar_dropdown-toggle,
+            .new-navbar_link {
+                padding: 0.5rem 0.75rem;
+                /* Adjust the padding of menus in the custom breakpoint */
+            }
+
+            header h1 {
+                font-size: 3rem;
+                /* Adjust the font size of header texts in the custom breakpoint */
+            }
+
+            header p {
+                font-size: 14px;
+                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
+                width: 81%;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            /* Adjusts for mobile landscape */
+            .tabs_menu-scroll-mobile {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS devices */
+                scrollbar-width: none;
+                /* For Firefox */
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        /* display only one text element for language switcher 
+.current-locale-list > .current-locale:first-of-type {
+    display: block;
+} */
+    </style>
     <!-- [Attributes by Finsweet] Accordion -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js"></script>
     <!-- [Attributes by Finsweet] CMS Filter -->
@@ -1535,7 +1748,7 @@ a,
         <div class="main-wrapper">
             <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
                 <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
-                <div data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
+                <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
                     <div class="new-navbar_component-wrapper">
                         <div class="new-navbar_container">
                             <div class="logo-wrap is-adaptive"><a href="/th" class="new-navbar_logo-link w-nav-brand">
@@ -1958,7 +2171,7 @@ a,
                                                                     </defs>
                                                                 </svg></div>
                                                             <div>Trader&#x27;s Hub</div>
-                                                        </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">เข้าสู่ระบบ</a><a data-attributes="btn-primary-nav" href="/th/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">ลองใช้บัญชีทดลองฟรี</a><a data-attributes="btn-primary-nav" href="/th/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">ลองใช้บัญชีทดลองฟรี</a></div>
+                                                        </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">เข้าสู่ระบบ</a><a data-attributes="btn-primary-nav" href="/th/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">ลองใช้บัญชีทดลองฟรี</a><a data-attributes="btn-primary-nav" href="/th/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">ลองใช้บัญชีทดลองฟรี</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2008,14 +2221,14 @@ a,
                                                 </nav>
                                             </div>
                                         </div>
-                                        <div class="new-navbar_container-wrapper"><a href="#" class="new-button tab new btn-free-demo w-button">ลงทะเบียน</a><a href="#" class="new-button new-navbar tab w-button">เข้าสู่ระบบ</a></div>
+                                        <div class="new-navbar_container-wrapper"><a data-href="signup" href="#" class="new-button tab new btn-free-demo w-button">ลงทะเบียน</a><a data-href="signin" href="#" class="new-button new-navbar tab w-button">เข้าสู่ระบบ</a></div>
                                     </div>
                                 </div>
                             </nav>
                             <div class="new-show-tablet">
                                 <div class="w-dyn-list">
                                     <div role="list" class="w-dyn-items">
-                                        <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">เข้าสู่ระบบ</a></div>
+                                        <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">เข้าสู่ระบบ</a></div>
                                     </div>
                                 </div>
                                 <div class="navbar_menu-button w-nav-button">
@@ -2034,7 +2247,7 @@ a,
                     <div class="new-navbar_dynamic-background"></div>
                     <div class="new-navbar_background-solid"></div>
                     <div class="new-navbar_dark-curtain"></div>
-                </div>
+                </section>
             </div>
             <header class="section_help-category">
                 <div class="padding-global">
@@ -2056,7 +2269,7 @@ a,
                             </div>
                         </div>
                         <div class="padding-section-medium">
-                            <div class="principle_content">
+                            <section class="principle_content">
                                 <div class="padding-bottom padding-medium">
                                     <h1 class="heading-style-h2 text-align-center">การป้องกันการฉ้อโกง</h1>
                                 </div>
@@ -2075,7 +2288,7 @@ a,
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">ฟิชชิ่งเป็นการโจมตีทางไซเบอร์ที่นักหลอกลวงพยายามหลอกลวงลูกค้าให้เปิดเผยข้อมูลส่วนบุคคล เช่น รหัสผ่านหรือรายละเอียดธนาคาร นักหลอกลวงถือเป็นบริษัทจริงและสร้างอีเมล์ปลอมโปรไฟล์โซเชียลมีเดียและตัวเลขเพื่อให้คุณดำเนินการที่ส่งผลกระทบต่อข้อมูลและความปลอดภัยของคุณ การคลิกที่ลิงก์หรือไฟล์ที่เป็นอันตรายในอีเมล์ฟิชชิ่งอาจดาวน์โหลดไวรัสไปยังอุปกรณ์ของคุณและเปิดเผยข้อมูลของคุณ</p>
+                                                                <p id="">ฟิชชิ่งเป็นการโจมตีทางไซเบอร์ที่นักต้มตุ๋นพยายามหลอกลวงลูกค้าให้เปิดเผยข้อมูลส่วนบุคคลเช่น รหัสผ่านหรือรายละเอียดธนาคาร นักหลอกลวงอ้างตัวเป็นผู้มาจากบริษัทจริงและสร้างอีเมล์ปลอม โปรไฟล์โซเชียลมีเดีย และตัวเลขต่างๆ เพื่อให้คุณดำเนินการที่ส่งผลกระทบต่อข้อมูลและความปลอดภัยของคุณ การคลิกที่ลิงก์หรือไฟล์ที่เป็นอันตรายในอีเมล์ฟิชชิ่งอาจดาวน์โหลดไวรัสไปยังอุปกรณ์ของคุณและเปิดเผยข้อมูลของคุณ</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2086,19 +2299,19 @@ a,
                                                     <div id="best-practices-to-avoid-being-phished-scammed" fs-accordion-element="trigger" class="accordion_toggle-block">
                                                         <div class="accordion_toggle-content">
                                                             <div class="accordion_toggle-info">
-                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">แนวทางปฏิบัติที่ดีที่สุดเพื่อหลีกเลี่ยงการตกเป็นเหยื่อการฟิชชิ่ง/การหลอกลวงนั้น มีอะไรบ้าง?</h2>
+                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">แนวทางปฏิบัติที่ดีที่สุดเพื่อเลี่ยงการตกเป็นเหยื่อการฟิชชิ่ง/หลอกลวงนั้นมีอะไรบ้าง?</h2>
                                                             </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" loading="lazy" fs-accordion-element="arrow" alt="" class="accordion_arrow" />
                                                         </div>
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">จำถึง 5 สิ่งที่ไม่ควรพลาด:<br>‍</p>
+                                                                <p id="">โปรดจำ 5 สิ่งที่ไม่ควรปฏิบัติ:<br>‍</p>
                                                                 <p id="">1. อย่าคลิกลิงก์หรือดาวน์โหลดไฟล์ทันที</p>
                                                                 <p id="">2. อย่าเปิดเผยข้อมูลส่วนบุคคลของคุณ</p>
-                                                                <p id="">3. อย่ากระทำทันทีหากคุณถูกกดดันให้ </p>
+                                                                <p id="">3. อย่าดำเนินการทันทีหากคุณถูกกดดัน </p>
                                                                 <p id="">4. อย่าตอบอีเมล์ โทรศัพท์ และข้อความที่น่าสงสัย</p>
-                                                                <p id="">5. อย่ากลัวที่จะติดต่อฝ่ายสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">live chat</a> หากคุณมีข้อสงสัยหรือกังวล</p>
+                                                                <p id="">5. อย่ากลัวที่จะติดต่อฝ่ายสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> หากคุณมีข้อสงสัยหรือข้อกังวลใจใดๆ</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2119,12 +2332,12 @@ a,
                                                                 <p id="">สาเหตุบางประการที่อาจทำให้บัญชีของคุณเสียหายคือหากคุณ:</p>
                                                                 <p id="">‍</p>
                                                                 <p id="">- แบ่งปันข้อมูลส่วนบุคคลของคุณ</p>
-                                                                <p id="">- ใช้ wifi สาธารณะ</p>
+                                                                <p id="">- ใช้สัญญาณ wifi สาธารณะ</p>
                                                                 <p id="">- คลิกที่ลิงก์และไฟล์ที่ไม่เป็นทางการ</p>
-                                                                <p id="">- ใช้รหัสผ่านที่อ่อนแอ</p>
-                                                                <p id="">- อย่าตั้งค่าการรับรองความถูกต้องแบบสองปัจจัย </p>
+                                                                <p id="">- ใช้รหัสผ่านที่ไม่รัดกุม</p>
+                                                                <p id="">- ไม่ได้ตั้งค่าระบบยืนยันตัวตนสองขั้นตอน </p>
                                                                 <p id="">‍</p>
-                                                                <p id="">โปรดติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">live chat</a> หากคุณมีข้อสงสัยหรือข้อกังวล</p>
+                                                                <p id="">โปรดติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> หากคุณมีข้อสงสัยหรือข้อกังวลใดๆ</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2204,14 +2417,14 @@ a,
                                                     <div id="deriv-phishing-resources" fs-accordion-element="trigger" class="accordion_toggle-block">
                                                         <div class="accordion_toggle-content">
                                                             <div class="accordion_toggle-info">
-                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">Deriv มีทรัพยากรฟิชชิ่งอะไรบ้าง?</h2>
+                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">Deriv มีแหล่งข้อมูลฟิชชิ่งอะไรบ้าง?</h2>
                                                             </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" loading="lazy" fs-accordion-element="arrow" alt="" class="accordion_arrow" />
                                                         </div>
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">โปรดเยี่ยมชมบล็อก <a href="/blog/posts/identify-report-phishing-scams" target="_blank">ของเรา</a> และ <a href="/responsible/" target="_blank">ที่ปลอดภัยและมีความรับผิดชอบ</a> สำหรับเคล็ดลับเพิ่มเติมเกี่ยวกับการปกป้องตัวเองทางออนไลน์</p>
+                                                                <p id="">โปรดไปที่ <a href="/blog/posts/identify-report-phishing-scams" target="_blank">เว็บบล็อก</a> และ <a href="/responsible/" target="_blank">หน้าเพจการเทรดที่ปลอดภัยและมีความรับผิดชอบ</a> ของเราเพื่อดูเคล็ดลับเพิ่มเติมในการปกป้องตัวคุณเองทางออนไลน์</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2222,14 +2435,14 @@ a,
                                                     <div id="will-deriv-compensate-for-my-loss-under-scamming-phishing" fs-accordion-element="trigger" class="accordion_toggle-block">
                                                         <div class="accordion_toggle-content">
                                                             <div class="accordion_toggle-info">
-                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">Deriv จะชดเชยการสูญเสียของฉันหรือไม่หากบัญชีของฉันตกอยู่ภายใต้กับดักการหลอกลวง/ฟิชชิ่ง?</h2>
+                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">Deriv จะชดเชยการสูญเสียของฉันหรือไม่หากบัญชีของฉันตกเป็นเหยื่อการหลอกลวง/การโจมตีแบบฟิชชิ่ง?</h2>
                                                             </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" loading="lazy" fs-accordion-element="arrow" alt="" class="accordion_arrow" />
                                                         </div>
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">ไม่ ความปลอดภัยในบัญชีของคุณเป็นความรับผิดชอบของคุณเพียงผู้เดียว โปรดเยี่ยมชมบล็อก <a target="_blank" href="https://blog.deriv.com/posts/identify-report-phishing-scams/?_gl=1*uwqf8f*_gcl_au*NzU4NzM2NDI2LjE3MDQ3OTEzMTUuMzk3Njg1ODk3LjE3MDkyNjk2MTkuMTcwOTI2OTYxOA.." id=""></a> ของเราเพื่อเรียนรู้เคล็ดลับความปลอดภัยในการระบุและรายงานความพยายามในการฟิชชิ่ง</p>
+                                                                <p id="">ไม่ ความปลอดภัยของบัญชีของคุณเป็นความรับผิดชอบของคุณเพียงผู้เดียว โปรดอ่าน <a target="_blank" href="https://blog.deriv.com/posts/identify-report-phishing-scams/?_gl=1*uwqf8f*_gcl_au*NzU4NzM2NDI2LjE3MDQ3OTEzMTUuMzk3Njg1ODk3LjE3MDkyNjk2MTkuMTcwOTI2OTYxOA.." id="">บล็อก</a> ของเราเพื่อเรียนรู้เคล็ดลับความปลอดภัยในการระบุและรายงานความพยายามจะทำการฟิชชิ่ง</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2240,14 +2453,14 @@ a,
                                                     <div id="reward-if-report-scammer" fs-accordion-element="trigger" class="accordion_toggle-block">
                                                         <div class="accordion_toggle-content">
                                                             <div class="accordion_toggle-info">
-                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">ฉันจะได้รับรางวัลหรือไม่ หากฉันรายงานถึงกรณีนักหลอกลวงจริงๆ ที่แอบอ้างว่าเป็น Deriv?</h2>
+                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">ฉันจะได้รับรางวัลหรือไม่ หากรายงานถึงกรณีจริงที่มีผู้หลอกลวงแอบอ้างว่ามาจาก Deriv?</h2>
                                                             </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" loading="lazy" fs-accordion-element="arrow" alt="" class="accordion_arrow" />
                                                         </div>
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">ไม่ Deriv ไม่ได้ให้รางวัลสำหรับการรายงานผู้หลอกลวงหรือแสกมเมอร์</p>
+                                                                <p id="">ไม่ได้ เพราะ Deriv ไม่ได้เสนอรางวัลสำหรับการรายงานผู้หลอกลวงหรือแสกมเมอร์</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2283,13 +2496,13 @@ a,
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">หากคุณเชื่อว่าคุณถูกฟิชชิงหรือข้อมูลประจำตัวของคุณถูกบุกรุก สิ่งสำคัญคือต้องดำเนินการทันทีเพื่อปกป้องบัญชีออนไลน์และข้อมูลส่วนบุคคลของคุณ:</p>
-                                                                <p id="">- <strong id="">เปลี่ยนรหัสผ่าน: </strong>เปลี่ยนรหัสผ่านสำหรับบัญชีของคุณทันที ใช้รหัสผ่านที่แข็งแกร่งและไม่ซ้ำกันซึ่งสามารถสร้างได้ด้วยเครื่องมือจัดการรหัสผ่าน<br>‍</p>
-                                                                <p id="">- <strong id="">เปิดใช้งาน 2FA: </strong>หากบัญชีของคุณรองรับการตรวจสอบสิทธิ์แบบสองปัจจัย (2FA) ให้เปิดใช้งาน สิ่งนี้ให้ชั้นความปลอดภัยเพิ่มเติมโดยต้องใช้วิธีการยืนยันครั้งที่สอง (เช่น รหัสที่ส่งไปยังโทรศัพท์ของคุณ) เพื่อเข้าถึงบัญชีของคุณ<br>‍</p>
-                                                                <p id="">- <strong id="">ตรวจสอบบัญชีของคุณ:</strong> ตรวจสอบบัญชีออนไลน์อื่นๆ ทั้งหมดของคุณ (อีเมล์ โซเชียลมีเดีย, ธนาคาร ฯลฯ) เพื่อให้แน่ใจว่าพวกเขาไม่ได้ถูกบุกรุกเช่นกัน หากคุณใช้รหัสผ่านเดียวกันสำหรับหลายบัญชี ให้เปลี่ยนรหัสผ่านเหล่านั้นด้วย<br>‍</p>
-                                                                <p id="">- <strong id="">สแกนเพื่อหาไวรัส:</strong> เรียกใช้การสแกนระบบเต็มรูปแบบบนคอมพิวเตอร์และอุปกรณ์ใด ๆ ที่คุณใช้ในการเข้าถึงบัญชีของคุณ ตรวจสอบให้แน่ใจว่าซอฟต์แวร์ป้องกันไวรัสและป้องกันมัลแวร์ของคุณเป็นปัจจุบัน<br>‍</p>
-                                                                <p id="">- <strong id="">ตรวจสอบบัญชี: </strong>จับตาดูบัญชีของคุณอย่างใกล้ชิดสำหรับกิจกรรมที่น่าสงสัย ซึ่งรวมถึงการตรวจสอบธุรกรรมที่ไม่ได้รับอนุญาต การเปลี่ยนแปลงการตั้งค่าบัญชี หรือการพยายามเข้าสู่ระบบใหม่<br>‍</p>
-                                                                <p id="">- <strong id="">แจ้งให้ทราบ Deriv:</strong> ติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> โปรดเตรียมข้อมูลและหลักฐาน/ภาพหน้าจอของบัญชีหลอกลวงเพื่อให้เราสามารถดำเนินการที่เหมาะสมโดยเร็วที่สุด</p>
+                                                                <p id="">หากคุณเชื่อว่าคุณถูกฟิชชิ่งหรือข้อมูลประจำตัวของคุณถูกบุกรุก สิ่งสำคัญคือต้องดำเนินการดังนี้ทันทีเพื่อปกป้องบัญชีออนไลน์และข้อมูลส่วนบุคคลของคุณ:</p>
+                                                                <p id="">- <strong id="">เปลี่ยนรหัสผ่าน: </strong>เปลี่ยนรหัสผ่านสำหรับบัญชีของคุณทันที ทั้งนี้ ให้คุณใช้รหัสผ่านที่รัดกุมและไม่ซ้ำกัน ซึ่งสามารถสร้างได้ด้วยเครื่องมือจัดการรหัสผ่าน<br></p>
+                                                                <p id="">- <strong id="">เปิดใช้งาน 2FA: </strong>หากบัญชีของคุณรองรับระบบยืนยันตัวตนสองขั้นตอน (2FA) ให้เปิดใช้งานทันที สิ่งนี้เพิ่มชั้นความปลอดภัยอีกขั้นหนึ่งโดยการกำหนดให้มีวิธีการยืนยันตัวตนแบบที่สอง (เช่น รหัสที่ส่งไปยังโทรศัพท์ของคุณ) เพื่อเข้าถึงบัญชีของคุณ<br>‍</p>
+                                                                <p id="">- <strong id="">ตรวจสอบบัญชีของคุณ:</strong> ตรวจสอบบัญชีออนไลน์อื่นๆ ทั้งหมดของคุณ (อีเมล์ โซเชียลมีเดีย, ธนาคาร ฯลฯ) เพื่อให้แน่ใจว่าบัญชีเหล่านั้นยังไม่ถูกบุกรุกหรือเข้าถึงโดยไม่ได้รับอนุญาต หากคุณใช้รหัสผ่านเดียวกันสำหรับหลายบัญชี ให้เปลี่ยนรหัสผ่านเหล่านั้นด้วย<br>‍</p>
+                                                                <p id="">- <strong id="">สแกนเพื่อหาไวรัส:</strong> ทำการสแกนระบบแบบเต็มรูปแบบบนคอมพิวเตอร์และอุปกรณ์ทั้งหมดที่คุณใช้ในการเข้าถึงบัญชีของคุณ ตรวจสอบให้แน่ใจว่า ซอฟต์แวร์ป้องกันไวรัสและป้องกันมัลแวร์ของคุณเป็นเวอร์ชั่นล่าสุด<br>‍</p>
+                                                                <p id="">- <strong id="">ตรวจสอบจับตาดูบัญชี: </strong>จับตาดูบัญชีของคุณอย่างใกล้ชิดสำหรับกิจกรรมที่น่าสงสัย นี่รวมถึงการตรวจสอบหาธุรกรรมที่ไม่ได้รับอนุญาต การเปลี่ยนแปลงการตั้งค่าบัญชี หรือการพยายามเข้าสู่ระบบจากอุปกรณ์ใหม่<br></p>
+                                                                <p id="">- <strong id="">แจ้งให้ Deriv ได้ทราบ:</strong> ติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> โปรดเตรียมข้อมูลและหลักฐาน/ภาพหน้าจอของบัญชีผู้หลอกลวงเพื่อให้เราสามารถดำเนินการที่เหมาะสมโดยเร็วที่สุด</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2307,10 +2520,10 @@ a,
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">ต่อไปนี้เป็นขั้นตอนบางประการที่คุณสามารถทำได้ทันทีเมื่อพบธุรกรรมที่ไม่รู้จัก:</p>
-                                                                <p id="">- <strong id="">แจ้งให้ทราบ Deriv: </strong>ติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> โปรดเตรียมข้อมูลและหลักฐาน/ภาพหน้าจอของบัญชีหลอกลวงเพื่อให้เราสามารถดำเนินการที่เหมาะสมโดยเร็วที่สุด เราอาจหยุดหรือปิดบัญชีของคุณชั่วคราวเพื่อป้องกันการทำธุรกรรมที่ไม่ได้รับอนุญาตต่อไป ขึ้นอยู่กับความรุนแรงของสถานการณ์</p>
-                                                                <p id="">- <strong id="">เปลี่ยนรหัสผ่าน Deriv ของคุณ:</strong> เปลี่ยนรหัสผ่านสำหรับบัญชีของคุณทันที ใช้รหัสผ่านที่แข็งแกร่งและไม่ซ้ำกันซึ่งสามารถสร้างได้ด้วยเครื่องมือจัดการรหัสผ่าน หากคุณใช้รหัสผ่านเดียวกันนี้สำหรับบัญชีอื่น ตรวจสอบให้แน่ใจว่าคุณเปลี่ยนรหัสผ่านเหล่านั้นด้วย</p>
-                                                                <p id="">- <strong id="">ตรวจสอบบัญชีของคุณ: </strong>จับตาดูบัญชีของคุณอย่างใกล้ชิดสำหรับกิจกรรมที่น่าสงสัย ซึ่งรวมถึงการตรวจสอบธุรกรรมที่ไม่ได้รับอนุญาต การเปลี่ยนแปลงการตั้งค่าบัญชี หรือการพยายามเข้าสู่ระบบใหม่</p>
+                                                                <p id="">ต่อไปนี้เป็นขั้นตอนบางประการที่คุณสามารถทำได้ทันทีเมื่อคุณค้นพบธุรกรรมที่ไม่รู้จัก:</p>
+                                                                <p id="">- <strong id="">แจ้งให้ Deriv ได้ทราบ: </strong>ติดต่อทีมสนับสนุนลูกค้าของเราผ่าน <a href="#" rel="liveChatBtn">แชทสด</a> โปรดเตรียมข้อมูลและหลักฐาน/ภาพหน้าจอของบัญชีผู้หลอกลวงเพื่อให้เราสามารถดำเนินการที่เหมาะสมโดยเร็วที่สุด เราอาจหยุดหรือปิดบัญชีของคุณชั่วคราวเพื่อป้องกันการทำธุรกรรมที่ไม่ได้รับอนุญาตต่อไป ขึ้นอยู่กับความรุนแรงของสถานการณ์</p>
+                                                                <p id="">- <strong id="">เปลี่ยนรหัสผ่าน Deriv ของคุณ:</strong> เปลี่ยนรหัสผ่านสำหรับบัญชีของคุณทันที ใช้รหัสผ่านที่รัดกุมและไม่ซ้ำกันซึ่งสามารถสร้างได้ด้วยเครื่องมือจัดการรหัสผ่าน หากคุณใช้รหัสผ่านเดียวกันนี้สำหรับบัญชีอื่น ตรวจสอบให้แน่ใจว่าคุณเปลี่ยนรหัสผ่านเหล่านั้นด้วย</p>
+                                                                <p id="">- <strong id="">ตรวจสอบจับตาดูบัญชีของคุณ: </strong>จับตาดูบัญชีของคุณอย่างใกล้ชิดสำหรับกิจกรรมที่น่าสงสัย นี่รวมถึงการตรวจสอบหาธุรกรรมที่ไม่ได้รับอนุญาต การเปลี่ยนแปลงการตั้งค่าบัญชี หรือการพยายามเข้าสู่ระบบจากอุปกรณ์ใหม่</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2328,12 +2541,12 @@ a,
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">โปรไฟล์โซเชียลมีเดียของเราอยู่ที่ด้านล่างของเว็บไซต์ และอีเมล์ Deriv มีบัญชีอย่างเป็นทางการเพียงบัญชีเดียวต่อแพลตฟอร์มโซเชียลมีเดีย</p>
-                                                                <p id="">- เฟซบุ๊ก: <a href="https://www.facebook.com/derivdotcom" target="_blank">https://www.facebook.com/derivdotcom </a></p>
-                                                                <p id="">- อินสตาแกรม: <a href="https://www.instagram.com/deriv_official/" target="_blank">https://www.instagram.com/deriv_official/</a></p>
-                                                                <p id="">- ทวิตเตอร์/X: <a href="https://twitter.com/derivdotcom/" target="_blank">https://twitter.com/derivdotcom/</a></p>
-                                                                <p id="">- ยูทูบ: <a href="https://www.youtube.com/@deriv" target="_blank">https://www.youtube.com/@deriv</a></p>
-                                                                <p id="">- ลิงค์ด์อิน: <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">https://www.linkedin.com/company/derivdotcom/</a></p>
+                                                                <p id="">โปรไฟล์โซเชียลมีเดียของเราอยู่ที่ด้านล่างของเว็บไซต์และอีเมล์ Deriv มีบัญชีอย่างเป็นทางการเพียงบัญชีเดียวต่อแพลตฟอร์มโซเชียลมีเดีย</p>
+                                                                <p id="">- Facebook: <a href="https://www.facebook.com/derivdotcom" target="_blank">https://www.facebook.com/derivdotcom </a></p>
+                                                                <p id="">- Instagram: <a href="https://www.instagram.com/deriv_official/" target="_blank">https://www.instagram.com/deriv_official/</a></p>
+                                                                <p id="">- Twitter/X: <a href="https://twitter.com/derivdotcom/" target="_blank">https://twitter.com/derivdotcom/</a></p>
+                                                                <p id="">- Youtube: <a href="https://www.youtube.com/@deriv" target="_blank">https://www.youtube.com/@deriv</a></p>
+                                                                <p id="">- LinkedIn: <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">https://www.linkedin.com/company/derivdotcom/</a></p>
                                                                 <p id=""><a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank">- แอป WhatsApp</a></p>
                                                             </div>
                                                         </div>
@@ -2352,7 +2565,7 @@ a,
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -2765,8 +2978,8 @@ a,
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b3f9562ab.js" type="text/javascript"></script> <!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.18/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.5fffeb20e.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.27/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2884,7 +3097,8 @@ a,
                     "/eu-careers",
                     "/our-locations",
                     "/product-explorer",
-                    "/academy"
+                    "/academy",
+                    "/trading-terms-glossary"
                 ];
                 let path = window.location.pathname;
                 let targetPathUrl = false;
@@ -2976,7 +3190,8 @@ a,
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
+                    return parsedData.date_first_contact ?
+                        {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -2991,7 +3206,8 @@ a,
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
+                    return parsedData.signup_device ?
+                        {
                             signup_device: parsedData.signup_device
                         } :
                         null;
@@ -3533,7 +3749,8 @@ a,
                 "/eu-careers",
                 "/our-locations",
                 "/product-explorer",
-                "/academy"
+                "/academy",
+                "/trading-terms-glossary",
 
             ];
             var path = window.location.pathname;
@@ -3575,7 +3792,8 @@ a,
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
+                const growthbookInstance = window.getGrowthbookInstance()
+                const featureFlagValue = growthbookInstance.getFeatureValue(
                     "trigger_os_signup_wf"
                 );
                 const handleOutSystemsRedirection = () => {
@@ -3639,14 +3857,12 @@ a,
                     }
                 });
             };
-
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
-                });
+            const growthbookInstance = window.getGrowthbookInstance();
+            growthbookInstance?.loadFeatures().then(() => {
+                if (window.location.href.indexOf("/partners") > -1 === false) {
+                    updateLinkHrefs();
+                }
+            });
         });
     </script>
 

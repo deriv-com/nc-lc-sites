@@ -1,6 +1,6 @@
 !
 /**
- * Highmaps JS v11.4.6 (2024-07-08)
+ * Highmaps JS v11.4.8 (2024-08-29)
  *
  * (c) 2009-2024 Torstein Honsi
  *
@@ -88,7 +88,7 @@ function(t) {
                 }), this.series.buildKDTree()
             }
 
-            function g() {
+            function f() {
                 let t = this,
                     e = this.getPointsCollection(),
                     s = this.options.nullColor,
@@ -101,7 +101,7 @@ function(t) {
                 })
             }
 
-            function f() {
+            function g() {
                 this.elem.attr("fill", i(this.start).tweenTo(i(this.end), this.pos), void 0, !0)
             }
 
@@ -126,9 +126,9 @@ function(t) {
                             t.bindAxes(), t.isDirtyData = !0
                         }), a(i.redraw, !0) && this.redraw(i.animation), o
                     }
-                }(i), v.fillSetter = f, v.strokeSetter = x, o(y, "afterGetAllItems", h), o(y, "afterColorizeItem", d), o(y, "afterUpdate", p), r(A, {
+                }(i), v.fillSetter = g, v.strokeSetter = x, o(y, "afterGetAllItems", h), o(y, "afterColorizeItem", d), o(y, "afterUpdate", p), r(A, {
                     optionalAxis: "colorAxis",
-                    translateColors: g
+                    translateColors: f
                 }), r(A.pointClass.prototype, {
                     setVisible: m
                 }), o(C, "afterTranslate", c, {
@@ -219,11 +219,11 @@ function(t) {
             fireEvent: c,
             isArray: u,
             isNumber: m,
-            merge: g,
-            pick: f,
+            merge: f,
+            pick: g,
             relativeLength: x
         } = a;
-        n.colorAxis = g(n.xAxis, s);
+        n.colorAxis = f(n.xAxis, s);
         class y extends t {
             static compose(t, s, i, o) {
                 e.compose(y, t, s, i, o)
@@ -243,7 +243,7 @@ function(t) {
                 if (!this.dataClasses) return super.setTickPositions()
             }
             setOptions(t) {
-                let e = g(n.colorAxis, t, {
+                let e = f(n.colorAxis, t, {
                     showEmpty: !1,
                     title: null,
                     visible: this.chart.options.legend.enabled && !1 !== t.visible
@@ -291,13 +291,13 @@ function(t) {
                     i = t.padding,
                     o = t.options,
                     r = this.options.labels,
-                    l = f(o.itemDistance, 10),
+                    l = g(o.itemDistance, 10),
                     a = this.horiz,
                     {
                         width: n,
                         height: h
                     } = this.getSize(),
-                    d = f(o.labelPadding, a ? 16 : 30);
+                    d = g(o.labelPadding, a ? 16 : 30);
                 this.setLegendColor(), s.symbol || (s.symbol = this.chart.renderer.symbol("roundedRect").attr({
                     r: o.symbolRadius ?? 3,
                     zIndex: 1
@@ -306,7 +306,7 @@ function(t) {
                     y: (t.baseline || 0) - 11,
                     width: n,
                     height: h
-                }), s.labelWidth = n + i + (a ? l : f(r.x, r.distance) + (this.maxLabelLength || 0)), s.labelHeight = h + i + (a ? d : 0)
+                }), s.labelWidth = n + i + (a ? l : g(r.x, r.distance) + (this.maxLabelLength || 0)), s.labelHeight = h + i + (a ? d : 0)
             }
             setState(t) {
                 this.series.forEach(function(e) {
@@ -319,10 +319,10 @@ function(t) {
                     e, s, i, o, r, l, a = t.length,
                     n, p;
                 for (this.dataMin = 1 / 0, this.dataMax = -1 / 0; a--;) {
-                    if (s = (l = t[a]).colorKey = f(l.options.colorKey, l.colorKey, l.pointValKey, l.zoneAxis, "y"), o = l.pointArrayMap, r = l[s + "Min"] && l[s + "Max"], l[s + "Data"]) e = l[s + "Data"];
+                    if (s = (l = t[a]).colorKey = g(l.options.colorKey, l.colorKey, l.pointValKey, l.zoneAxis, "y"), o = l.pointArrayMap, r = l[s + "Min"] && l[s + "Max"], l[s + "Data"]) e = l[s + "Data"];
                     else if (o) {
                         if (e = [], i = o.indexOf(s), n = l.yData, i >= 0 && n)
-                            for (p = 0; p < n.length; p++) e.push(f(n[p][i], n[p]))
+                            for (p = 0; p < n.length; p++) e.push(g(n[p][i], n[p]))
                     } else e = l.yData;
                     if (r) l.minColorValue = l[s + "Min"], l.maxColorValue = l[s + "Max"];
                     else {
@@ -385,8 +385,8 @@ function(t) {
                     s = e.chart,
                     i = e.legendItem && e.legendItem.labels || [],
                     o = s.options.legend,
-                    l = f(o.valueDecimals, -1),
-                    a = f(o.valueSuffix, ""),
+                    l = g(o.valueDecimals, -1),
+                    a = g(o.valueSuffix, ""),
                     n = t => e.series.reduce((e, s) => (e.push(...s.points.filter(e => e.dataClass === t)), e), []);
                 return i.length || e.dataClasses.forEach((o, h) => {
                     let d = o.from,
@@ -394,7 +394,7 @@ function(t) {
                         {
                             numberFormatter: m
                         } = s,
-                        g = !0;
+                        f = !0;
                     t = "", void 0 === d ? t = "< " : void 0 === u && (t = "> "), void 0 !== d && (t += m(d, l) + a), void 0 !== d && void 0 !== u && (t += " - "), void 0 !== u && (t += m(u, l) + a), i.push(p({
                         chart: s,
                         name: t,
@@ -406,10 +406,10 @@ function(t) {
                             for (let e of n(h)) e.setState(t)
                         },
                         setVisible: function() {
-                            this.visible = g = e.visible = !g;
+                            this.visible = f = e.visible = !f;
                             let t = [];
-                            for (let e of n(h)) e.setVisible(g), e.hiddenInDataClass = !g, -1 === t.indexOf(e.series) && t.push(e.series);
-                            s.legend.colorizeItem(this, g), t.forEach(t => {
+                            for (let e of n(h)) e.setVisible(f), e.hiddenInDataClass = !f, -1 === t.indexOf(e.series) && t.push(e.series);
+                            s.legend.colorizeItem(this, f), t.forEach(t => {
                                 c(t, "afterDataClassLegendClick")
                             })
                         }
@@ -427,8 +427,8 @@ function(t) {
                     legend: o
                 } = t.options;
                 return {
-                    width: f(d(i) ? x(i, t.chartWidth) : void 0, o?.symbolWidth, e ? y.defaultLegendLength : 12),
-                    height: f(d(s) ? x(s, t.chartHeight) : void 0, o?.symbolHeight, e ? 12 : y.defaultLegendLength)
+                    width: g(d(i) ? x(i, t.chartWidth) : void 0, o?.symbolWidth, e ? y.defaultLegendLength : 12),
+                    height: g(d(s) ? x(s, t.chartHeight) : void 0, o?.symbolHeight, e ? 12 : y.defaultLegendLength)
                 }
             }
         }
@@ -649,8 +649,8 @@ function(t) {
             addEvent: c,
             extend: u,
             fireEvent: m,
-            isNumber: g,
-            merge: f,
+            isNumber: f,
+            merge: g,
             pick: x
         } = l, {
             colorFromPoint: y,
@@ -698,14 +698,14 @@ function(t) {
                         if (n && l && m) {
                             let {
                                 min: m,
-                                max: g
+                                max: f
                             } = i.getExtremes(), {
-                                min: f,
+                                min: g,
                                 max: x
-                            } = o.getExtremes(), C = g - m, b = x - f, v = Math.round(C / d / 8 * 8), A = Math.round(b / p / 8 * 8), [M, w] = [
+                            } = o.getExtremes(), C = f - m, b = x - g, v = Math.round(C / d / 8 * 8), A = Math.round(b / p / 8 * 8), [M, w] = [
                                 [v, v / C, r, "ceil"],
                                 [A, A / b, !a, "floor"]
-                            ].map(([t, e, s, i]) => s ? s => Math[i](t - e * s) : t => Math[i](e * t)), L = n.width = v + 1, k = L * (n.height = A + 1), S = (u - 1) / k, I = new Uint8ClampedArray(4 * k), D = (t, e) => 4 * Math.ceil(L * w(e - f) + M(t - m));
+                            ].map(([t, e, s, i]) => s ? s => Math[i](t - e * s) : t => Math[i](e * t)), L = n.width = v + 1, k = L * (n.height = A + 1), S = (u - 1) / k, I = new Uint8ClampedArray(4 * k), D = (t, e) => 4 * Math.ceil(L * w(e - g) + M(t - m));
                             t.buildKDTree();
                             for (let t = 0; t < k; t++) {
                                 let e = c[Math.ceil(S * t)],
@@ -731,18 +731,18 @@ function(t) {
                     dataMin: t,
                     dataMax: e
                 } = n.prototype.getExtremes.call(this, this.valueData);
-                return g(t) && (this.valueMin = t), g(e) && (this.valueMax = e), n.prototype.getExtremes.call(this)
+                return f(t) && (this.valueMin = t), f(e) && (this.valueMax = e), n.prototype.getExtremes.call(this)
             }
             getValidPoints(t, e) {
                 return n.prototype.getValidPoints.call(this, t, e, !0)
             }
             hasData() {
-                return !!this.processedXData.length
+                return !!this.xData
             }
             init() {
                 super.init.apply(this, arguments);
                 let t = this.options;
-                t.pointRange = x(t.pointRange, t.colsize || 1), this.yAxis.axisPointRange = t.rowsize || 1, p.ellipse = p.circle, t.marker && g(t.borderRadius) && (t.marker.r = t.borderRadius)
+                t.pointRange = x(t.pointRange, t.colsize || 1), this.yAxis.axisPointRange = t.rowsize || 1, p.ellipse = p.circle, t.marker && f(t.borderRadius) && (t.marker.r = t.borderRadius)
             }
             markerAttribs(t, e) {
                 let s = t.shapeArgs || {};
@@ -775,7 +775,7 @@ function(t) {
                     h = e && e.options.borderColor || o.borderColor || a.borderColor || l.borderColor,
                     d = e && e.options.borderWidth || o.borderWidth || a.borderWidth || l.borderWidth || i["stroke-width"];
                 if (i.stroke = e && e.marker && e.marker.lineColor || o.marker && o.marker.lineColor || h || this.color, i["stroke-width"] = d, s && "normal" !== s) {
-                    let r = f(o.states && o.states[s], o.marker && o.marker.states && o.marker.states[s], e && e.options.states && e.options.states[s] || {});
+                    let r = g(o.states && o.states[s], o.marker && o.marker.states && o.marker.states[s], e && e.options.states && e.options.states[s] || {});
                     i.fill = r.color || t.parse(i.fill).brighten(r.brightness || 0).get(), i.stroke = r.lineColor || i.stroke
                 }
                 return i
@@ -785,6 +785,13 @@ function(t) {
                     borderRadius: t,
                     marker: e
                 } = this.options, s = e && e.symbol || "rect", i = p[s] ? s : "rect", o = -1 !== ["circle", "square"].indexOf(i);
+                if (!this.processedXData) {
+                    let {
+                        xData: t,
+                        yData: e
+                    } = this.getProcessedData();
+                    this.processedXData = t, this.processedYData = e
+                }
                 for (let e of (this.generatePoints(), this.points)) {
                     let r = e.getCellAttributes(),
                         l = Math.min(r.x1, r.x2),
@@ -798,21 +805,21 @@ function(t) {
                     e.hasImage && (e.marker = {
                         width: n,
                         height: h
-                    }), e.plotX = e.clientX = (r.x1 + r.x2) / 2, e.plotY = (r.y1 + r.y2) / 2, e.shapeType = "path", e.shapeArgs = f(!0, {
+                    }), e.plotX = e.clientX = (r.x1 + r.x2) / 2, e.plotY = (r.y1 + r.y2) / 2, e.shapeType = "path", e.shapeArgs = g(!0, {
                         x: l,
                         y: a,
                         width: n,
                         height: h
                     }, {
                         d: p[i](l, a, n, h, {
-                            r: g(t) ? t : 0
+                            r: f(t) ? t : 0
                         })
                     })
                 }
                 m(this, "afterTranslate")
             }
         }
-        return b.defaultOptions = f(d.defaultOptions, i), c(b, "afterDataClassLegendClick", function() {
+        return b.defaultOptions = g(d.defaultOptions, i), c(b, "afterDataClassLegendClick", function() {
             this.isDirtyCanvas = !0, this.drawPoints()
         }), u(b.prototype, {
             axisTypes: e.seriesMembers.axisTypes,

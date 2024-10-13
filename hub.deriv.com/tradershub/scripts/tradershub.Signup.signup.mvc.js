@@ -912,25 +912,6 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
                                 var checkAuthURLParamJSResult = new OS.DataTypes.VariableHolder();
-                                OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "RudderStack");
-                                        span.setAttribute("outsystems.function.key", "2bfd512f-c457-43eb-8062-08362996b33b");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                                 checkAuthURLParamJSResult.value = OS.Logger.startActiveSpan("CheckAuthURLParam", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "CheckAuthURLParam");
@@ -970,6 +951,25 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                 } else {
                                     // Email = ""
                                     tradershubClientVariables.setEmail("");
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "2bfd512f-c457-43eb-8062-08362996b33b");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_Signup_signup_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
+
+                                        }
+
+                                    }, 1);
                                 }
 
                             } finally {
@@ -1204,6 +1204,8 @@ define("tradershub.Signup.signup.mvc$controller", ["@outsystems/runtime-core-js"
                                                 }
 
                                             }, 1);
+                                            // IsSubmitting = False
+                                            model.variables.isSubmittingVar = false;
                                         }
 
                                     });
@@ -1601,38 +1603,33 @@ define("tradershub.Signup.signup.mvc$controller.OnReady.CheckAuthURLParamJS", []
 
 define("tradershub.Signup.signup.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        let rudderStackLoaded = false;
+        // window.cacheTrackEvents.track({
+        //     name: "ce_virtual_signup_form",
+        //     properties: {
+        //         action: "open",
+        //         form_name: "virtual_signup_form_outsystems"
+        //     }
+        // });
 
-        function checkForRudderStack() {
-            if (window?.rudderanalytics && !rudderStackLoaded) {
-                window.rudderanalytics.ready(() => {
-                    if (!rudderStackLoaded) {
-                        Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
-                            action: "open",
-                            form_name: "virtual_signup_form_outsystems"
-                        });
-                        rudderStackLoaded = true;
-                    }
-                    clearInterval(intervalId);
-                });
-            }
-        }
-
-        const intervalId = setInterval(() => {
-            checkForRudderStack();
-        }, 2000);
+        setTimeout(() => {
+            Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
+                action: "open",
+                form_name: "virtual_signup_form_outsystems"
+            })
+        }, 5000)
     };
 });
 
 define("tradershub.Signup.signup.mvc$controller.SendVerifyEmail.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        setTimeout(() => {
-            Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
+        cacheTrackEvents.track({
+            name: "ce_virtual_signup_form",
+            properties: {
                 action: "started",
                 signup_provider: "email",
                 form_name: "virtual_signup_form_outsystems"
-            })
-        }, 100);
+            }
+        });
     };
 });
 
@@ -1688,19 +1685,13 @@ define("tradershub.Signup.signup.mvc$controller.Validate.ValidateEmailJS", [], f
 
 define("tradershub.Signup.signup.mvc$controller.SubmitOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_virtual_signup_form", {
-            action: "continue_attempt",
-            signup_provider: "email",
-            form_name: "virtual_signup_form_outsystems"
-        })
-
-        // cacheTrackEvents.track({
-        //     name: "ce_virtual_signup_form",
-        //     properties: {
-        //         action: "continue_attempt",
-        //         signup_provider: "email",
-        //         form_name: "virtual_signup_form_outsystems"
-        //     }
-        // }, false); 
+        cacheTrackEvents.track({
+            name: "ce_virtual_signup_form",
+            properties: {
+                action: "continue_attempt",
+                signup_provider: "email",
+                form_name: "virtual_signup_form_outsystems"
+            }
+        });
     };
 });

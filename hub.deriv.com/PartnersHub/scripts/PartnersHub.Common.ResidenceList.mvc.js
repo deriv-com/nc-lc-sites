@@ -792,6 +792,12 @@ define("PartnersHub.Common.ResidenceList.mvc$controller.OnSearch.JavaScript1JS",
 });
 
 
+define("PartnersHub.Common.ResidenceList.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "9UB8EXBBqUa1vQHHfJbvyA#ValueExpression.-1822469688.1": "بحث"
+    };
+});
+
 define("PartnersHub.Common.ResidenceList.mvc$translationsResources.de-DE", [], function() {
     return {
         "9UB8EXBBqUa1vQHHfJbvyA#ValueExpression.-1822469688.1": "Suche"
@@ -834,8 +840,12 @@ define("PartnersHub.Common.ResidenceList.mvc$translationsResources.ru-RU", [], f
     };
 });
 
-define("PartnersHub.Common.ResidenceList.mvc$translationsResources", ["exports", "PartnersHub.Common.ResidenceList.mvc$translationsResources.de-DE", "PartnersHub.Common.ResidenceList.mvc$translationsResources.es-ES", "PartnersHub.Common.ResidenceList.mvc$translationsResources.fr-FR", "PartnersHub.Common.ResidenceList.mvc$translationsResources.it-IT", "PartnersHub.Common.ResidenceList.mvc$translationsResources.pl-PL", "PartnersHub.Common.ResidenceList.mvc$translationsResources.pt-PT", "PartnersHub.Common.ResidenceList.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Common_ResidenceList_mvc_translationsResources_deDE, PartnersHub_Common_ResidenceList_mvc_translationsResources_esES, PartnersHub_Common_ResidenceList_mvc_translationsResources_frFR, PartnersHub_Common_ResidenceList_mvc_translationsResources_itIT, PartnersHub_Common_ResidenceList_mvc_translationsResources_plPL, PartnersHub_Common_ResidenceList_mvc_translationsResources_ptPT, PartnersHub_Common_ResidenceList_mvc_translationsResources_ruRU) {
+define("PartnersHub.Common.ResidenceList.mvc$translationsResources", ["exports", "PartnersHub.Common.ResidenceList.mvc$translationsResources.ar-001", "PartnersHub.Common.ResidenceList.mvc$translationsResources.de-DE", "PartnersHub.Common.ResidenceList.mvc$translationsResources.es-ES", "PartnersHub.Common.ResidenceList.mvc$translationsResources.fr-FR", "PartnersHub.Common.ResidenceList.mvc$translationsResources.it-IT", "PartnersHub.Common.ResidenceList.mvc$translationsResources.pl-PL", "PartnersHub.Common.ResidenceList.mvc$translationsResources.pt-PT", "PartnersHub.Common.ResidenceList.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Common_ResidenceList_mvc_translationsResources_ar001, PartnersHub_Common_ResidenceList_mvc_translationsResources_deDE, PartnersHub_Common_ResidenceList_mvc_translationsResources_esES, PartnersHub_Common_ResidenceList_mvc_translationsResources_frFR, PartnersHub_Common_ResidenceList_mvc_translationsResources_itIT, PartnersHub_Common_ResidenceList_mvc_translationsResources_plPL, PartnersHub_Common_ResidenceList_mvc_translationsResources_ptPT, PartnersHub_Common_ResidenceList_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Common_ResidenceList_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Common_ResidenceList_mvc_translationsResources_deDE,
             "isRTL": false

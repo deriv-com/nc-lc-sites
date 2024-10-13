@@ -1306,12 +1306,14 @@ define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnCl
 
 define("tradershub.RealAccountCreation.EmploymentDetails.mvc$controller.SaveOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: 2,
-            step_codename: "employment_details",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: 2,
+                step_codename: "employment_details",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
-
     };
 });

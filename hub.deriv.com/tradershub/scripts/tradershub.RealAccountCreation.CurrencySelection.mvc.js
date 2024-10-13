@@ -523,26 +523,13 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@out
 
 define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        let rudderStackLoaded = false;
-
-        function checkForRudderStack() {
-            if (window?.rudderanalytics && !rudderStackLoaded) {
-                window.rudderanalytics.ready(() => {
-                    if (!rudderStackLoaded) {
-                        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-                            step_num: 0,
-                            action: "open",
-                            form_name: "real_account_signup_form_outsystems"
-                        });
-                        rudderStackLoaded = true;
-                    }
-                    clearInterval(intervalId);
-                });
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                step_num: 0,
+                action: "open",
+                form_name: "real_account_signup_form_outsystems"
             }
-        }
-
-        const intervalId = setInterval(() => {
-            checkForRudderStack();
-        }, 2000);
+        });
     };
 });

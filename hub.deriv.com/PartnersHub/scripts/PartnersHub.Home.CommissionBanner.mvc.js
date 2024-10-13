@@ -426,6 +426,13 @@ define("PartnersHub.Home.CommissionBanner.mvc$controller.OnClickLearnMore.JavaSc
 });
 
 
+define("PartnersHub.Home.CommissionBanner.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "dZs_UaLNzkKgTcMnmeLywA#Value": "تعلم المزيد",
+        "fbMhprVBJUKl1tI+9HqV4w#Value": "كيفية حساب العمولات"
+    };
+});
+
 define("PartnersHub.Home.CommissionBanner.mvc$translationsResources.de-DE", [], function() {
     return {
         "dZs_UaLNzkKgTcMnmeLywA#Value": "Erfahren Sie mehr",
@@ -475,8 +482,12 @@ define("PartnersHub.Home.CommissionBanner.mvc$translationsResources.ru-RU", [], 
     };
 });
 
-define("PartnersHub.Home.CommissionBanner.mvc$translationsResources", ["exports", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.de-DE", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.es-ES", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.fr-FR", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.it-IT", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.pl-PL", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.pt-PT", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_CommissionBanner_mvc_translationsResources_deDE, PartnersHub_Home_CommissionBanner_mvc_translationsResources_esES, PartnersHub_Home_CommissionBanner_mvc_translationsResources_frFR, PartnersHub_Home_CommissionBanner_mvc_translationsResources_itIT, PartnersHub_Home_CommissionBanner_mvc_translationsResources_plPL, PartnersHub_Home_CommissionBanner_mvc_translationsResources_ptPT, PartnersHub_Home_CommissionBanner_mvc_translationsResources_ruRU) {
+define("PartnersHub.Home.CommissionBanner.mvc$translationsResources", ["exports", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.ar-001", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.de-DE", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.es-ES", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.fr-FR", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.it-IT", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.pl-PL", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.pt-PT", "PartnersHub.Home.CommissionBanner.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_CommissionBanner_mvc_translationsResources_ar001, PartnersHub_Home_CommissionBanner_mvc_translationsResources_deDE, PartnersHub_Home_CommissionBanner_mvc_translationsResources_esES, PartnersHub_Home_CommissionBanner_mvc_translationsResources_frFR, PartnersHub_Home_CommissionBanner_mvc_translationsResources_itIT, PartnersHub_Home_CommissionBanner_mvc_translationsResources_plPL, PartnersHub_Home_CommissionBanner_mvc_translationsResources_ptPT, PartnersHub_Home_CommissionBanner_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Home_CommissionBanner_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_CommissionBanner_mvc_translationsResources_deDE,
             "isRTL": false

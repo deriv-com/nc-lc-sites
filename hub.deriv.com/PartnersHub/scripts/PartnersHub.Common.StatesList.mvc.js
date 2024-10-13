@@ -1,4 +1,4 @@
-define("PartnersHub.Common.StatesList.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.controller", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubController) {
+define("PartnersHub.Common.StatesList.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubController) {
     var OS = OSRuntimeCore;
 
 
@@ -58,7 +58,7 @@ define("PartnersHub.Common.StatesList.mvc$model", ["@outsystems/runtime-core-js"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Common.StatesList.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Common.StatesList.mvc$model", "PartnersHub.Common.StatesList.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.Search.mvc$view", "PartnersHub.Common.LoaderBlock.mvc$view", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Common_StatesList_mvc_model, PartnersHub_Common_StatesList_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_Search_mvc_view, PartnersHub_Common_LoaderBlock_mvc_view) {
+define("PartnersHub.Common.StatesList.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Common.StatesList.mvc$model", "PartnersHub.Common.StatesList.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.Search.mvc$view", "PartnersHub.Common.LoaderBlock.mvc$view", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Common_StatesList_mvc_model, PartnersHub_Common_StatesList_mvc_controller, PartnersHubClientVariables, OSWidgets, OutSystemsUI_Interaction_Search_mvc_view, PartnersHub_Common_LoaderBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -367,7 +367,7 @@ define("PartnersHub.Common.StatesList.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("PartnersHub.Common.StatesList.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Common.StatesList.mvc$translationsResources", "PartnersHub.Common.StatesList.mvc$controller.OnSearch.JavaScript1JS", "PartnersHub.Common.StatesList.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocket.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Common_StatesList_mvc_TranslationsResources, PartnersHub_Common_StatesList_mvc_controller_OnSearch_JavaScript1JS, PartnersHub_Common_StatesList_mvc_controller_OnReady_GetAuthTokenJS) {
+define("PartnersHub.Common.StatesList.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Common.StatesList.mvc$translationsResources", "PartnersHub.Common.StatesList.mvc$controller.OnSearch.JavaScript1JS", "PartnersHub.Common.StatesList.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$MountDerivAPIClient"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Common_StatesList_mvc_TranslationsResources, PartnersHub_Common_StatesList_mvc_controller_OnSearch_JavaScript1JS, PartnersHub_Common_StatesList_mvc_controller_OnReady_GetAuthTokenJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -530,7 +530,7 @@ define("PartnersHub.Common.StatesList.mvc$controller", ["@outsystems/runtime-cor
                                     PartnersHubController.default.mountDerivAPIClient$Action(callContext);
                                     // Execute Action: GetSettings
                                     model.flush();
-                                    return RESTAPIWebsocketController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                    return RESTAPIWebsocketOfficialController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
                                         getSettingsVar.value = value;
                                     }).then(function() {
                                         // Execute Action: SendStatesList
@@ -857,6 +857,12 @@ define("PartnersHub.Common.StatesList.mvc$controller.OnReady.GetAuthTokenJS", []
 });
 
 
+define("PartnersHub.Common.StatesList.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "L6DcTU+GSkWmPl1ilbXMiQ#ValueExpression.-1822469688.1": "بحث"
+    };
+});
+
 define("PartnersHub.Common.StatesList.mvc$translationsResources.de-DE", [], function() {
     return {
         "L6DcTU+GSkWmPl1ilbXMiQ#ValueExpression.-1822469688.1": "Suche"
@@ -899,8 +905,12 @@ define("PartnersHub.Common.StatesList.mvc$translationsResources.ru-RU", [], func
     };
 });
 
-define("PartnersHub.Common.StatesList.mvc$translationsResources", ["exports", "PartnersHub.Common.StatesList.mvc$translationsResources.de-DE", "PartnersHub.Common.StatesList.mvc$translationsResources.es-ES", "PartnersHub.Common.StatesList.mvc$translationsResources.fr-FR", "PartnersHub.Common.StatesList.mvc$translationsResources.it-IT", "PartnersHub.Common.StatesList.mvc$translationsResources.pl-PL", "PartnersHub.Common.StatesList.mvc$translationsResources.pt-PT", "PartnersHub.Common.StatesList.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Common_StatesList_mvc_translationsResources_deDE, PartnersHub_Common_StatesList_mvc_translationsResources_esES, PartnersHub_Common_StatesList_mvc_translationsResources_frFR, PartnersHub_Common_StatesList_mvc_translationsResources_itIT, PartnersHub_Common_StatesList_mvc_translationsResources_plPL, PartnersHub_Common_StatesList_mvc_translationsResources_ptPT, PartnersHub_Common_StatesList_mvc_translationsResources_ruRU) {
+define("PartnersHub.Common.StatesList.mvc$translationsResources", ["exports", "PartnersHub.Common.StatesList.mvc$translationsResources.ar-001", "PartnersHub.Common.StatesList.mvc$translationsResources.de-DE", "PartnersHub.Common.StatesList.mvc$translationsResources.es-ES", "PartnersHub.Common.StatesList.mvc$translationsResources.fr-FR", "PartnersHub.Common.StatesList.mvc$translationsResources.it-IT", "PartnersHub.Common.StatesList.mvc$translationsResources.pl-PL", "PartnersHub.Common.StatesList.mvc$translationsResources.pt-PT", "PartnersHub.Common.StatesList.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Common_StatesList_mvc_translationsResources_ar001, PartnersHub_Common_StatesList_mvc_translationsResources_deDE, PartnersHub_Common_StatesList_mvc_translationsResources_esES, PartnersHub_Common_StatesList_mvc_translationsResources_frFR, PartnersHub_Common_StatesList_mvc_translationsResources_itIT, PartnersHub_Common_StatesList_mvc_translationsResources_plPL, PartnersHub_Common_StatesList_mvc_translationsResources_ptPT, PartnersHub_Common_StatesList_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Common_StatesList_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Common_StatesList_mvc_translationsResources_deDE,
             "isRTL": false

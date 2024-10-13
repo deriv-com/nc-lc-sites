@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  * Treegraph chart series type
  *
  *  (c) 2010-2024 Pawel Lysy Grzegorz Blachlinski
@@ -625,7 +625,7 @@ function(e) {
                 t.some(e => "collectorFunc" === e.name) || t.push(function() {
                     let t = [];
                     if (!C(e.options.dataLabels)[0].allowOverlap)
-                        for (let i of e.links) i.dataLabel && t.push(i.dataLabel);
+                        for (let i of e.links || []) i.dataLabel && t.push(i.dataLabel);
                     return t
                 })
             }

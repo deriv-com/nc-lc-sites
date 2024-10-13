@@ -704,6 +704,17 @@ define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$controller.
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "Rqe+i_NNF0udVEY3a2YZnA#Value": "التالي",
+        "CmBHFZFxMUKb6n_wooOCMQ#Value": "بالضبط كما يظهر في وثيقة هويتك.",
+        "R6QvSSYpZUKx2eKCmm6T+g#Value": "تاريخ الميلاد",
+        "QI2aTs_TxE6cIF7ETUf9sg#Value": "أدخل",
+        "w5xC+s7g0UaCuq6+6RZViA#ValueExpression.-591733248.1": "dd-mm-yyyy",
+        "bAVdkOUNBUG_U9GkVV0i6Q#Value": "تاريخ الميلاد"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.de-DE", [], function() {
     return {
         "Rqe+i_NNF0udVEY3a2YZnA#Value": "Nächste",
@@ -788,8 +799,12 @@ define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translation
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_DateOfBirthContainer_mvc_translationsResources_deDE,
             "isRTL": false

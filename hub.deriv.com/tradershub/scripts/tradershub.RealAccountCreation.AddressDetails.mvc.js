@@ -1469,13 +1469,15 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$controller", ["@outsys
 
 define("tradershub.RealAccountCreation.AddressDetails.mvc$controller.SaveOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: 3,
-            step_codename: "address_details",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: 3,
+                step_codename: "address_details",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
-
     };
 });
 

@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * (c) 2016-2024 Highsoft AS
  * Authors: Jon Arild Nygard

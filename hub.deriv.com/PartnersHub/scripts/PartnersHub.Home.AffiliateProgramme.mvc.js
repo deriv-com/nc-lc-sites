@@ -854,6 +854,13 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$controller.OnClickVideo.JavaScri
 });
 
 
+define("PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "hKoas_JkdUqaXBT9HahADw#Value": "شاهد جميع الفيديوهات",
+        "T7D85Ou3vE61yWtLCd1Qjw#Value": "تعرف على المزيد على يوتيوب"
+    };
+});
+
 define("PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.de-DE", [], function() {
     return {
         "hKoas_JkdUqaXBT9HahADw#Value": "Alle Videos ansehen",
@@ -903,8 +910,12 @@ define("PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.ru-RU", []
     };
 });
 
-define("PartnersHub.Home.AffiliateProgramme.mvc$translationsResources", ["exports", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.de-DE", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.es-ES", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.fr-FR", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.it-IT", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.pl-PL", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.pt-PT", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_deDE, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_esES, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_frFR, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_itIT, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_plPL, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ptPT, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ruRU) {
+define("PartnersHub.Home.AffiliateProgramme.mvc$translationsResources", ["exports", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.ar-001", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.de-DE", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.es-ES", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.fr-FR", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.it-IT", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.pl-PL", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.pt-PT", "PartnersHub.Home.AffiliateProgramme.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ar001, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_deDE, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_esES, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_frFR, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_itIT, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_plPL, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ptPT, PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_AffiliateProgramme_mvc_translationsResources_deDE,
             "isRTL": false

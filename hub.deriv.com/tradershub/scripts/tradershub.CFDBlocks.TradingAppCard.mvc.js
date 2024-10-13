@@ -24,6 +24,12 @@ define("tradershub.CFDBlocks.TradingAppCard.mvc$model", ["@outsystems/runtime-co
                     }, false),
                     this.attr("_productIconInDataFetchStatus", "_productIconInDataFetchStatus", "_productIconInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("Variant", "variantIn", "Variant", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, false),
+                    this.attr("_variantInDataFetchStatus", "_variantInDataFetchStatus", "_variantInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -75,6 +81,14 @@ define("tradershub.CFDBlocks.TradingAppCard.mvc$model", ["@outsystems/runtime-co
                 this.variables.productIconIn = inputs.ProductIcon;
                 if ("_productIconInDataFetchStatus" in inputs) {
                     this.variables._productIconInDataFetchStatus = inputs._productIconInDataFetchStatus;
+                }
+
+            }
+
+            if ("Variant" in inputs) {
+                this.variables.variantIn = inputs.Variant;
+                if ("_variantInDataFetchStatus" in inputs) {
+                    this.variables._variantInDataFetchStatus = inputs._variantInDataFetchStatus;
                 }
 
             }
@@ -148,99 +162,243 @@ define("tradershub.CFDBlocks.TradingAppCard.mvc$view", ["@outsystems/runtime-cor
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                style: "product-container display-flex align-items-center justify-content-space-between",
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    name: "CfdAccountCard"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                gridProperties: {
-                    classes: "ThemeGrid_Width8"
-                },
-                style: "display-flex flex-direction-column",
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    name: "ProductDetails"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Image, {
-                extendedProperties: {
-                    style: "height: 32px;"
-                },
-                gridProperties: {
-                    width: "32px"
-                },
-                type: /*External*/ 1,
-                url: model.variables.productIconIn,
-                _idProps: {
-                    service: idService,
-                    name: "Icon"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productIconInDataFetchStatus)
-            }), React.createElement(OSWidgets.Expression, {
-                extendedProperties: {
-                    style: "font-weight: bold;"
-                },
-                gridProperties: {
-                    marginLeft: "0"
-                },
-                value: model.variables.nameIn,
-                _idProps: {
-                    service: idService,
-                    name: "Product"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._nameInDataFetchStatus)
-            }), React.createElement(OSWidgets.Expression, {
-                gridProperties: {
-                    marginLeft: "0"
-                },
-                value: model.variables.productDescriptionIn,
-                _idProps: {
-                    service: idService,
-                    name: "Description"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productDescriptionInDataFetchStatus)
-            })), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                extendedProperties: {
-                    style: "text-align: center;"
-                },
-                gridProperties: {
-                    classes: "ThemeGrid_Width1"
-                },
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    name: "IconAdd"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Image, {
-                extendedProperties: {
-                    style: "font-size: 32px;"
-                },
-                gridProperties: {
-                    width: "32px"
-                },
-                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.circleplusmd.svg"),
-                type: /*Static*/ 0,
-                _idProps: {
-                    service: idService,
-                    uuid: "6"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }))));
+            return React.createElement("div", this.getRootNodeProperties(), $if((model.variables.variantIn === "Small"), false, this, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    extendedProperties: {
+                        style: "border-color: #DEE2E6; border-radius: 8px; border-style: solid; border-width: 1px; height: 100px; margin-bottom: 0px; margin-right: 0px; margin-top: 0px; padding: 16px;"
+                    },
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "100%"
+                    },
+                    style: "display-flex",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "Small"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Image, {
+                    extendedProperties: {
+                        style: "height: 40px; margin-right: 16px;"
+                    },
+                    gridProperties: {
+                        width: "40px"
+                    },
+                    style: "display-flex ",
+                    type: /*External*/ 1,
+                    url: model.variables.productIconIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Icon"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productIconInDataFetchStatus)
+                }), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    gridProperties: {
+                        classes: "OSInline ThemeGrid_MarginGutter",
+                        width: "100%"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "3"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Expression, {
+                    extendedProperties: {
+                        style: "font-weight: bold;"
+                    },
+                    gridProperties: {
+                        marginLeft: "0"
+                    },
+                    value: model.variables.nameIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Product"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._nameInDataFetchStatus)
+                })), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "5"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Expression, {
+                    gridProperties: {
+                        marginLeft: "0"
+                    },
+                    value: model.variables.productDescriptionIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Description"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productDescriptionInDataFetchStatus)
+                }))), React.createElement(OSWidgets.Icon, {
+                    extendedProperties: {
+                        style: "font-size: 32px;"
+                    },
+                    gridProperties: {
+                        classes: "ThemeGrid_MarginGutter"
+                    },
+                    icon: "angle-right",
+                    iconSize: /*Twotimes*/ 1,
+                    style: "icon align-self-center",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "7"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }))];
+            }, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    extendedProperties: {
+                        style: "border-color: #DEE2E6; border-radius: 8px; border-style: solid; border-width: 1px; height: 138px; margin-bottom: 0px; margin-right: 0px; margin-top: 0px; padding: 16px;"
+                    },
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "100%"
+                    },
+                    style: "display-flex flex-direction-column justify-content-space-between",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "Large"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "ProductIconContainer"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Image, {
+                    extendedProperties: {
+                        style: "height: 40px; margin-right: 16px;"
+                    },
+                    gridProperties: {
+                        width: "40px"
+                    },
+                    style: "display-flex ",
+                    type: /*External*/ 1,
+                    url: model.variables.productIconIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Icon2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productIconInDataFetchStatus)
+                })), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "display-flex justify-content-space-between",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "DescriptionContainer"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "display-block",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "TextContainer"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "ProductName"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Expression, {
+                    extendedProperties: {
+                        style: "font-weight: bold;"
+                    },
+                    gridProperties: {
+                        marginLeft: "0"
+                    },
+                    value: model.variables.nameIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Product2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._nameInDataFetchStatus)
+                })), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "AccountBalance"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Expression, {
+                    gridProperties: {
+                        marginLeft: "0"
+                    },
+                    value: model.variables.productDescriptionIn,
+                    _idProps: {
+                        service: idService,
+                        name: "Description2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._productDescriptionInDataFetchStatus)
+                }))), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        name: "IconRightContainer"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Icon, {
+                    extendedProperties: {
+                        style: "font-size: 32px;"
+                    },
+                    icon: "angle-right",
+                    iconSize: /*Twotimes*/ 1,
+                    style: "icon align-self-center",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "18"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }))))];
+            }));
         }
     }
 

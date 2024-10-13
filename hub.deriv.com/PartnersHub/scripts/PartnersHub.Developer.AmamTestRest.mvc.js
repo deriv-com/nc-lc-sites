@@ -1,4 +1,4 @@
-define("PartnersHub.Developer.AmamTestRest.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocket.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController) {
+define("PartnersHub.Developer.AmamTestRest.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocketOfficial.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocketOfficial.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController) {
     var OS = OSRuntimeCore;
 
 
@@ -54,7 +54,7 @@ define("PartnersHub.Developer.AmamTestRest.mvc$model", ["@outsystems/runtime-cor
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Developer.AmamTestRest.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Developer.AmamTestRest.mvc$model", "PartnersHub.Developer.AmamTestRest.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocket.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Developer_AmamTestRest_mvc_model, PartnersHub_Developer_AmamTestRest_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_view, OSWidgets) {
+define("PartnersHub.Developer.AmamTestRest.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Developer.AmamTestRest.mvc$model", "PartnersHub.Developer.AmamTestRest.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocketOfficial.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocketOfficial.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Developer_AmamTestRest_mvc_model, PartnersHub_Developer_AmamTestRest_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -354,7 +354,7 @@ define("PartnersHub.Developer.AmamTestRest.mvc$view", ["@outsystems/runtime-core
 
     return View;
 });
-define("PartnersHub.Developer.AmamTestRest.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources", "PartnersHub.Developer.controller", "PartnersHub.Developer.AmamTestRest.mvc$controller.ResetEndpoint.JavaScript1JS", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocket.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocket.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Developer_AmamTestRest_mvc_TranslationsResources, PartnersHub_DeveloperController, PartnersHub_Developer_AmamTestRest_mvc_controller_ResetEndpoint_JavaScript1JS) {
+define("PartnersHub.Developer.AmamTestRest.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources", "PartnersHub.Developer.controller", "PartnersHub.Developer.AmamTestRest.mvc$controller.ResetEndpoint.JavaScript1JS", "PartnersHub.controller$SetDefaultAppId", "PartnersHub.controller$SetServer", "RESTAPIWebsocketOfficial.model$ST_450f06937a42e6bd68832beac9fd4297Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "RESTAPIWebsocketOfficial.controller$Authorize", "PartnersHub.controller$InitGrowthbook"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Developer_AmamTestRest_mvc_TranslationsResources, PartnersHub_DeveloperController, PartnersHub_Developer_AmamTestRest_mvc_controller_ResetEndpoint_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -464,8 +464,8 @@ define("PartnersHub.Developer.AmamTestRest.mvc$controller", ["@outsystems/runtim
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: Authorize
                                     model.flush();
-                                    return RESTAPIWebsocketController.default.authorize$Action(function() {
-                                        var rec = new RESTAPIWebsocketModel.ST_450f06937a42e6bd68832beac9fd4297Structure();
+                                    return RESTAPIWebsocketOfficialController.default.authorize$Action(function() {
+                                        var rec = new RESTAPIWebsocketOfficialModel.ST_450f06937a42e6bd68832beac9fd4297Structure();
                                         rec.authorizeAttr = model.variables.userTokenVar;
                                         return rec;
                                     }(), model.variables.serverURLVar, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
@@ -703,6 +703,16 @@ define("PartnersHub.Developer.AmamTestRest.mvc$controller.ResetEndpoint.JavaScri
 });
 
 
+define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "uvD7belHcUSyXMrGZJWW8w#Value": "إعادة تعيين إلى الإعدادات الأصلية",
+        "U3Ya9XVpsE6UksqzSCPWsA#Value": "إرسال",
+        "jidQpjar20yZW+MM7GCMNA#Value": "رمز المستخدم",
+        "668BiAtrh0qFEzyWTJVN_w#Value": "خادم",
+        "HWpQT2_xsE6CBFCvVr23vw#Value": "تغيير نقطة نهاية واجهة برمجة التطبيقات"
+    };
+});
+
 define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources.de-DE", [], function() {
     return {
         "uvD7belHcUSyXMrGZJWW8w#Value": "Auf die ursprünglichen Einstellungen zurücksetzen",
@@ -773,8 +783,12 @@ define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ru-RU", [],
     };
 });
 
-define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources", ["exports", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.de-DE", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.es-ES", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.fr-FR", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.it-IT", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.pl-PL", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.pt-PT", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_deDE, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_esES, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_frFR, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_itIT, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_plPL, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ptPT, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ruRU) {
+define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources", ["exports", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ar-001", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.de-DE", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.es-ES", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.fr-FR", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.it-IT", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.pl-PL", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.pt-PT", "PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ar001, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_deDE, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_esES, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_frFR, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_itIT, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_plPL, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ptPT, PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Developer_AmamTestRest_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Developer_AmamTestRest_mvc_translationsResources_deDE,
             "isRTL": false

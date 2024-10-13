@@ -23,6 +23,6 @@ define("SharedUtilities.appDefinition", ["@outsystems/runtime-core-js"], functio
         buildServiceVersion: "v17.1637.0.0",
         clientRuntimeVersion: "6.13.2",
         useESM: false,
-        appVersion: "22"
+        appVersion: "24"
     };
 });

@@ -1,6 +1,6 @@
 ﻿@charset "UTF-8";
 /*!
-OutSystems UI 2.19.2 • ODC Platform
+OutSystems UI 2.20.3 • ODC Platform
 Website:
  • https://www.outsystems.com/outsystems-ui
 GitHub:
@@ -2838,6 +2838,13 @@ span.validation-message{
   background-color:var(--color-primary);
   color:var(--color-neutral-0);
 }
+.button-group.not-valid{
+  position:relative;
+}
+.button-group.not-valid .validation-message{
+  bottom:-12px;
+  position:relative;
+}
 .layout-native .header-top-content .button-group-item{
   background-color:var(--header-color);
   border:0;
@@ -4676,7 +4683,7 @@ span.flatpickr-weekday{
 }
 /*! 5.4. VirtualSelect */
 /*!
- * Virtual Select v1.0.44
+ * Virtual Select v1.0.46
  * https://sa-si-dev.github.io/virtual-select
  * Licensed under MIT (https://github.com/sa-si-dev/virtual-select/blob/master/LICENSE)
  */
@@ -7481,7 +7488,7 @@ span.flatpickr-weekday{
   z-index:var(--layer-global-negative);
 }
 .osui-bottom-sheet__header__top-bar:empty{
-  padding-bottom:none;
+  padding-bottom:unset;
 }
 .osui-bottom-sheet__content{
   max-height:var(--bottom-sheet-max-height);
@@ -8126,10 +8133,10 @@ body:has(.has-accessible-features) .osui-monthpicker__dropdown .flatpickr-monthS
   color:var(--color-neutral-6);
   pointer-events:none;
 }
-.osui-datepicker > span > input:first-of-type{
+.osui-datepicker input:first-of-type{
   display:none;
 }
-.osui-datepicker > span > input:first-of-type{
+.osui-datepicker input:first-of-type{
   
 }
 .osui-datepicker-calendar-ss-preview{
@@ -8866,8 +8873,8 @@ body.vscomp-popup-active .vscomp-wrapper{
           justify-content:flex-end;
   margin-bottom:var(--space-base);
   opacity:0;
-  -webkit-transform:translateY(--space-base) translateZ(0);
-          transform:translateY(--space-base) translateZ(0);
+  -webkit-transform:translateY(var(--space-base)) translateZ(0);
+          transform:translateY(var(--space-base)) translateZ(0);
   -webkit-transition:all 100ms ease-in;
   transition:all 100ms ease-in;
 }
@@ -9049,6 +9056,9 @@ body.vscomp-popup-active .vscomp-wrapper{
 .form .input-with-icon .input-with-icon-content-icon{
   padding-bottom:var(--space-m);
   z-index:var(--layer-local-tier-1);
+}
+.form .input-with-icon .form-control[class*=ThemeGrid_Width].not-valid ~ span.validation-message{
+  left:0;
 }
 /*! 6.3.11. Lightbox Image */
 .lightbox-item{

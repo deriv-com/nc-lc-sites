@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Oct 03 2024 10:56:06 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Oct 11 2024 02:40:36 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d74b" data-wf-site="66585fe0e1dc7e70cc75d440" lang="zh-TW" data-wf-collection="66585fe0e1dc7e70cc75d607" data-wf-item-slug="identify-report-phishing-scams">
 
 <head>
@@ -25,7 +25,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/blog/posts/identify-report-phishing-scams" />
     <meta content="" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ca2dbee9a.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a79e5dcff.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -48,10 +48,32 @@
     <link href="https://deriv.com/zh-tw/blog/posts/identify-report-phishing-scams" rel="canonical" />
     <!--Analytics block starts here-->
     <script>
+        // Version 1.0.5
         const cacheTrackEvents = {
             interval: null,
             responses: [],
             isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
             trackPageUnload: () => {
                 window.addEventListener("beforeunload", (event) => {
                     if (!cacheTrackEvents.isPageViewSent()) {
@@ -106,7 +128,7 @@
                 }
 
                 const instances = Analytics.Analytics.getInstances();
-                return !!(instances?.tracking && instances?.ab);
+                return !!instances?.tracking;
             },
             parseCookies: (cookieName) => {
                 const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -134,7 +156,18 @@
         storedCookies
       )}; path=/; Domain=.deriv.com`;
             },
-            track: (event, cache) => {
+            processEvent: (event) => {
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
                 if (cacheTrackEvents.isReady() && !cache) {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
@@ -163,18 +196,28 @@
                     }
                 }, 1000);
             },
-            listen: (element, {
-                name,
-                properties
-            }, cache) => {
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
                 const addClickListener = (el) => {
                     if (!el.dataset.clickEventTracking) {
-                        el.addEventListener("click", function() {
-                            cacheTrackEvents.track({
+                        el.addEventListener("click", function(e) {
+                            let event = {
                                 name,
                                 properties,
                                 cache,
-                            });
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
                         });
                         el.dataset.clickEventTracking = "true";
                     }
@@ -190,25 +233,32 @@
                 cacheTrackEvents.interval = setInterval(() => {
                     let allListenersApplied = true;
 
-                    items.forEach(({
-                        element,
-                        event,
-                        cache = false
-                    }) => {
-                        const elem = document.querySelectorAll(element);
-                        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
 
-                        if (!elements.length) {
-                            allListenersApplied = false;
-                        }
-
-                        elements.forEach((el) => {
-                            if (!el.dataset.clickEventTracking) {
-                                cacheTrackEvents.listen(el, event, cache);
+                            if (!elements.length) {
                                 allListenersApplied = false;
                             }
-                        });
-                    });
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
 
                     if (allListenersApplied) {
                         clearInterval(cacheTrackEvents.interval);
@@ -238,11 +288,23 @@
 
                 items.forEach(({
                     pages = [],
+                    excludedPages = [],
                     event
                 }) => {
-                    if (pages.includes(pathname)) {
-                        console.log(`dispatching page load event for: ${event}`);
+                    let dispatch = false;
+                    if (pages.length) {
+                        if (pages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else if (excludedPages.length) {
+                        if (!excludedPages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else {
+                        dispatch = true;
+                    }
 
+                    if (dispatch) {
                         cacheTrackEvents.loadEvent([{
                             event
                         }]);
@@ -254,6 +316,31 @@
         };
 
         cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "email_confirmation_sent",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+            ])
             .addEventhandler([{
                     element: ".btn-free-demo .w-button",
                     event: {
@@ -334,6 +421,53 @@
                         },
                     },
                 },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                            },
+                        };
+                    },
+                },
             ])
             .pageView();
 
@@ -381,8 +515,8 @@
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
             const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
                 rudderstackKey: RUDDERSTACK_KEY,
                 growthbookOptions: {
                     navigate: (url) => window.location.replace(url),
@@ -423,18 +557,25 @@
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
             Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                const growthBookInstance = window.getGrowthbookInstance();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
                 function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
                     featureFlagValue = value;
                 }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
                 return featureFlagValue;
             };
         });
@@ -647,7 +788,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -718,6 +860,77 @@
             loadJSCookie(setupCookies);
         })();
     </script>
+
+    <style>
+        /* Style for disabling scroll */
+        .disable-scroll {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        /* removing scroll bar(vertical) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* removing scroll bar (Firefox) */
+        * {
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .new-navbar_menu-left-desctop {
+                font-size: 14px;
+                /* Adjust the font size of menus in the custom breakpoint */
+            }
+
+            .new-navbar_dropdown-toggle,
+            .new-navbar_link {
+                padding: 0.5rem 0.75rem;
+                /* Adjust the padding of menus in the custom breakpoint */
+            }
+
+            header h1 {
+                font-size: 3rem;
+                /* Adjust the font size of header texts in the custom breakpoint */
+            }
+
+            header p {
+                font-size: 14px;
+                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
+                width: 81%;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            /* Adjusts for mobile landscape */
+            .tabs_menu-scroll-mobile {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS devices */
+                scrollbar-width: none;
+                /* For Firefox */
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        /* display only one text element for language switcher 
+.current-locale-list > .current-locale:first-of-type {
+    display: block;
+} */
+    </style>
 </head>
 
 <body>
@@ -1569,11 +1782,21 @@ a,
                     overflow-wrap: break-word;
 
                 }
+
+                a.deriv-tech-header_tablet-link.is-overlay:after {
+                    content: "";
+                    z-index: -1;
+                    opacity: .4;
+                    background-image: linear-gradient(181.93deg, #11141b00 3.15%, #11141b 50.01%);
+                    height: 71%;
+                    position: absolute;
+                    inset: auto 0% 0%;
+                }
             </style>
         </div>
         <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
             <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
-            <div data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
+            <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
                 <div class="new-navbar_component-wrapper">
                     <div class="new-navbar_container">
                         <div class="logo-wrap is-adaptive"><a href="/zh-tw" class="new-navbar_logo-link w-nav-brand">
@@ -1996,7 +2219,7 @@ a,
                                                                 </defs>
                                                             </svg></div>
                                                         <div>Trader&#x27;s Hub</div>
-                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">登入</a><a data-attributes="btn-primary-nav" href="/zh-tw/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">試用免費示範</a><a data-attributes="btn-primary-nav" href="/zh-tw/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">試用免費示範</a></div>
+                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">登入</a><a data-attributes="btn-primary-nav" href="/zh-tw/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">試用免費示範</a><a data-attributes="btn-primary-nav" href="/zh-tw/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">試用免費示範</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2046,14 +2269,14 @@ a,
                                             </nav>
                                         </div>
                                     </div>
-                                    <div class="new-navbar_container-wrapper"><a href="#" class="new-button tab new btn-free-demo w-button">註冊</a><a href="#" class="new-button new-navbar tab w-button">登入</a></div>
+                                    <div class="new-navbar_container-wrapper"><a data-href="signup" href="#" class="new-button tab new btn-free-demo w-button">註冊</a><a data-href="signin" href="#" class="new-button new-navbar tab w-button">登入</a></div>
                                 </div>
                             </div>
                         </nav>
                         <div class="new-show-tablet">
                             <div class="w-dyn-list">
                                 <div role="list" class="w-dyn-items">
-                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">登入</a></div>
+                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">登入</a></div>
                                 </div>
                             </div>
                             <div class="navbar_menu-button w-nav-button">
@@ -2072,7 +2295,7 @@ a,
                 <div class="new-navbar_dynamic-background"></div>
                 <div class="new-navbar_background-solid"></div>
                 <div class="new-navbar_dark-curtain"></div>
-            </div>
+            </section>
         </div>
         <main class="main-wrapper">
             <section class="section_blog-post">
@@ -2087,9 +2310,9 @@ a,
                                 </div>
                             </div>
                             <div class="bread-crumb_icon-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /></div>
-                            <div class="bread-crumb_link is-light">How to identify and report phishing scams</div>
+                            <div class="bread-crumb_link is-light">如何識別和報告網路釣魚詐騙</div>
                         </div>
-                        <div class="blog-filters">
+                        <section class="blog-filters">
                             <div class="padding-vertical padding-small w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" method="get" fs-cmsfilter-element="filters" class="blog-filters_form" data-wf-page-id="66585fe0e1dc7e70cc75d74b" data-wf-element-id="062dba9d-678d-598f-a28e-af19ef8a6854">
                                     <div class="blog-filters_search-wrapper">
@@ -2296,12 +2519,12 @@ a,
                                     <div>抱歉！ 提交表格時出現問題。</div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         <div class="padding-section-large">
                             <div class="blog-post_content">
-                                <div class="blog-post_header">
+                                <section class="blog-post_header">
                                     <div class="blog-post_heading-wrapper">
-                                        <h1 class="text-align-center">How to identify and report phishing scams</h1>
+                                        <h1 class="text-align-center">如何識別和報告網路釣魚詐騙</h1>
                                     </div>
                                     <div class="padding-bottom padding-xsmall">
                                         <div class="blog-post_date">October 3, 2023</div>
@@ -2317,107 +2540,107 @@ a,
                                     <div class="blog-post_video-wrapper w-condition-invisible">
                                         <div class="blog-post_video w-dyn-bind-empty w-video w-embed"></div>
                                     </div>
-                                </div>
+                                </section>
                                 <div class="container-medium">
                                     <div class="blog-post_post-text overflow-word w-richtext">
-                                        <p>Imagine you’re scrolling through your Instagram feed and you suddenly get a message in your DMs. It’s from an account you don’t follow, and it seems to be run by your favourite company’s brand ambassadors. In their message, they promise to send you some products for free if you click on an attached link. </p>
-                                        <p>Do you click on the link or not? </p>
-                                        <p>In this digital age, protecting your online identity and accounts is very important as scammers are becoming increasingly deceptive with their phishing attempts.</p>
-                                        <p>Phishing is a cyberattack where scammers try to trick you into revealing sensitive information like your passwords and bank details. They pose as real companies and create fake emails, social media profiles, and numbers to get you to take actions that compromise your safety. One wrong click can expose your data to scammers. </p>
-                                        <p>Read on to learn how to spot and report phishing scams to enhance your online security.</p>
-                                        <h2><strong>Emails</strong></h2>
-                                        <p>Spotting phishing emails can be tricky. Watch out for these warning signs of a scam email:</p>
-                                        <figure style="max-width:50%px" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965d9c85f3905ff43d7ea3_661e6e1f01dd2f56adc6f8d9_Vectors-04-853x1024.png" alt="phishing email example from deriv email" loading="lazy" /></div>
+                                        <p id="">想像一下，您正在滾動 Instagram 訊息，然後突然在 DM 中收到訊息。 這是來自一個你不關注的帳戶，似乎由你喜愛的公司的品牌大使運營。 在他們的訊息中，如果您點選附加鏈接，他們承諾免費向您傳送一些產品。 </p>
+                                        <p id="">您是否點選鏈接？ </p>
+                                        <p id="">在這個數位時代，保護你的在線身份和帳戶非常重要，因為詐騙者在網路釣魚攻擊中的詭計越來越狡猾。</p>
+                                        <p id="">網路釣魚是一種網路攻擊，詐騙者試圖欺騙您洩露密碼和銀行詳細資訊等敏感資訊。 他們扮演真實的公司，並建立虛假電子郵件，社交媒體個人詳細資訊和數字，以使您採取危害您的安全的行動。 點選錯誤可能會將您的數據暴露給騙子。 </p>
+                                        <p id="">繼續閱讀以了解如何發現和報告網路釣魚詐騙以增強您的線上安全性。</p>
+                                        <h2 id=""><strong id="">電子郵件</strong></h2>
+                                        <p id="">發現網路釣魚電子郵件可能很棘手。 留意這些詐騙電子郵件的警告信號：</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:50%" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="50%">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67065b5c6a455c7a57002bd2_66965d9c85f3905ff43d7ea3_661e6e1f01dd2f56adc6f8d9_Vectors-04-853x1024.png" alt="來自 deriv 電子郵件的網路釣魚電子郵件範例" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h4><strong>Common red flags of a phishing email:</strong></h4>
-                                        <ul role="list">
-                                            <li>Unfamiliar sender’s email address. Deriv sends emails with the address ending in <strong>@deriv.com.</strong></li>
-                                            <li>Spelling and grammatical errors.</li>
-                                            <li>They ask you to click suspicious links and attachments.</li>
-                                            <li>Promises of easy money and huge profits.</li>
-                                            <li>Requests to take immediate action like transferring your money to a bank account.</li>
+                                        <h4 id=""><strong id="">網路釣魚攻擊電子郵件的一些常見紅旗：</strong></h4>
+                                        <ul id="">
+                                            <li id="">不明寄件者的電子郵件地址。 德里夫傳送帶有結尾為 <strong id="">@deriv .com 的地址的電子郵件。</strong></li>
+                                            <li id="">拼寫和語法錯誤。</li>
+                                            <li id="">他們要求點選可疑的連結和附件。</li>
+                                            <li id="">承諾輕鬆賺錢和巨額利潤。</li>
+                                            <li id="">要求立即採取行動，例如將資金轉入銀行帳戶。</li>
                                         </ul>
-                                        <h4><strong>Less common red flags of a phishing email:</strong></h4>
-                                        <ul role="list">
-                                            <li><strong>Overly polite or formal language:</strong> Phishing emails sometimes use overly polite or formal language to create a false sense of professionalism and trust. </li>
-                                            <li><strong>Odd requests for information:</strong> Scam emails may ask for odd information, such as your mother&#x27;s maiden name, childhood pet&#x27;s name, or your childhood town’s name. These are common security questions which, if the scammer has the answers, can be used to reset your password and gain access to your account.</li>
-                                            <li><strong>Unexpected email signature changes:</strong> If you notice an abrupt change in the sender&#x27;s email signature, like a different name or contact details, this is most likely a phishing email. </li>
-                                            <li><strong>Shortened URLs:</strong> Scammers often use URL shortening services to hide malicious links. The URL is shortened so the link doesn’t display the website if you hover your cursor over it.</li>
+                                        <h4 id=""><strong id="">網路釣魚電子郵件的較不常見的紅旗標：</strong></h4>
+                                        <ul id="">
+                                            <li id=""><strong id="">過於禮貌或正式的語言：</strong> 網路釣魚電子郵件有時會使用過於禮貌或正式的語言來創造虛假的專業性和信任感。 </li>
+                                            <li id=""><strong id="">奇怪的資訊要求：</strong> 詐騙電子郵件可能會要求提供奇怪的資訊，例如您母親的女生姓，童年寵物的姓名或您童年小鎮的名字。 這些是常見的安全問題，如果騙子有答案，可用於重置密碼並瀏覽您的帳戶。</li>
+                                            <li id=""><strong id="">未預期的電子郵件簽名變更：</strong> 如果您發現寄件者的電子郵件簽名突然變更，例如不同的姓名或聯繫方式，這很可能是網路釣魚電子郵件。 </li>
+                                            <li id=""><strong id="">縮網址：</strong>詐騙者經常使用網址縮短服務來隱藏惡意鏈接。 縮短的 URL 使得在您將游標滑過鏈接時不顯示網站。</li>
                                         </ul>
-                                        <p>If you get an email from someone pretending to be Deriv, please report it to us via <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank">live chat.</a> Contact us if you have concerns, and we’ll confirm if we need anything from you.</p>
-                                        <h2><strong>Social media accounts</strong></h2>
-                                        <p>Now when it comes to fake social media profiles, we have to be more vigilant online. Look out for these warning signs to ensure you won’t become the next victim of a scam:</p>
-                                        <figure style="max-width:644pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965d9c85f3905ff43d7ea7_661e6e1f01dd2f56adc701ff_Screenshot-2023-10-03-at-6.webp" alt="" loading="lazy" /></div>
+                                        <p id="">如果您收到假裝是 Deriv 的人的電子郵件，請透過 <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">實時聊天向我們報告。</a> 如果您有疑問，請與我們聯繫，我們會確認是否需要您的任何信息。</p>
+                                        <h2 id=""><strong id="">社群媒體帳戶</strong></h2>
+                                        <p id="">現在，當談到假的社交媒體個人詳細資訊時，我們必須在線更加警覺。 留意這些警告信號，以確保你不會成為下一個詐騙的受害者：</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:644px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="644px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67065b5c6a455c7a57002bd6_66965d9c85f3905ff43d7ea7_661e6e1f01dd2f56adc701ff_Screenshot-2023-10-03-at-6.webp" alt="__wf_reserved_inherit" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h4><strong>Common red flags of a fake social media profile:</strong></h4>
-                                        <ul role="list">
-                                            <li>Frequent spelling and grammar errors.</li>
-                                            <li>Misspelling of the account name.</li>
-                                            <li>A high following-to-follow ratio. </li>
-                                            <li>Emoji-loaded offers that sound too good to be true. </li>
-                                            <li>Few or no friends/followers.</li>
+                                        <h4 id=""><strong id="">假社交媒體個人詳細資訊的常見紅旗：</strong></h4>
+                                        <ul id="">
+                                            <li id="">經常出現拼寫和語法錯誤。</li>
+                                            <li id="">帳戶名稱拼寫錯誤。</li>
+                                            <li id="">高追隨者與粉絲比例。 </li>
+                                            <li id="">充滿表情符號的優惠，聽起來太好以至於不真實。 </li>
+                                            <li id="">朋友或粉絲少或沒有。</li>
                                         </ul>
-                                        <h4><strong>Less common red flags of a fake social media profile:</strong></h4>
-                                        <ul role="list">
-                                            <li><strong>Too many posts in a short time: </strong>Scam accounts may post numerous images or stories in a short period to gain attention and followers fast.</li>
-                                            <li><strong>Promotion of fake products:</strong> Scammers often advertise counterfeit or random products, that is not related to the company.</li>
-                                            <li><strong>Strange friend/follow requests:</strong> Scammers often create fake profiles and send you friend /follow requests. These accounts typically have few friends, minimal personal information, and no mutual connections.</li>
-                                            <li><strong>Request for payment: </strong>Scammers may ask you to make payments or transfer money outside of the platform. Please note that if Deriv needs any personal information, the request will be made via our official email or live chat. </li>
+                                        <h4 id=""><strong id="">虛假社交媒體個人詳細資訊的較不常見的紅旗：</strong></h4>
+                                        <ul id="">
+                                            <li id=""><strong id="">短時間內的帖子太多： </strong>詐騙帳戶可能會在短時間內發佈許多圖片或故事，以快速吸引注意力和關注者。</li>
+                                            <li id=""><strong id="">促銷假冒產品：</strong>詐騙者經常宣傳假冒或與公司無關的隨機產品。</li>
+                                            <li id=""><strong id="">奇怪的朋友/關注要求：</strong> 騙子經常建立假的個人詳細資訊並向您傳送朋友/關注要求。 這些帳戶通常有少朋友，個人資訊最少，並且沒有相互聯繫。</li>
+                                            <li id=""><strong id="">要求付款：</strong>詐騙者可能會要求您在平台外進行付款或轉賬。 請注意，如果 Deriv 需要任何個人信息，請求將透過我們的官方電子郵件或實時聊天提出。 </li>
                                         </ul>
-                                        <figure style="max-width:644pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965d9c85f3905ff43d7e95_661e6e1f01dd2f56adc70200_Screenshot-2023-10-03-at-6%2520(1).webp" alt="" loading="lazy" /></div>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:644px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="644px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67065b5c6a455c7a57002bcf_66965d9c85f3905ff43d7e95_661e6e1f01dd2f56adc70200_Screenshot-2023-10-03-at-6%252520(1).webp" alt="__wf_reserved_inherit" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <p>If you come across a fake social media account, tap on the 3 dots on the profile and click <strong>Report</strong> to flag the account as fraudulent. This process will take less than a minute and helps the platform take appropriate action.</p>
-                                        <p>After reporting the fake profile, please provide screenshots of their account to our Customer Support team via <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank">live chat</a> so we can take additional measures.</p>
-                                        <h2><strong>Messaging app</strong></h2>
-                                        <p>On top of the fake social media profiles, scammers also create fake messaging accounts on WhatsApp to directly target a user. Make sure to check these signs of a scam messaging account and know how to report them effectively.</p>
-                                        <figure style="max-width:461pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965d9c85f3905ff43d7e9e_661e6e1f01dd2f56adc6f8da_WhatsApp-Image-2023-08-01-at-12.35.14-PM-461x1024.webp" alt="Whatsapp scam messages example from fake Deriv number" loading="lazy" /></div>
+                                        <p id="">如果您遇到虛假的社交媒體帳戶，請點選個人詳細資訊上的 3 個點，然後點選 <strong id="">報告</strong> 將該帳戶標記為欺詐。 這個過程將耗時不到一分鐘，有助於平台採取適當行動。</p>
+                                        <p id="">報告虛假個人資料後，請透過 <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">實時聊天</a> 向我們的客戶支持團隊提供他們帳戶的屏幕截圖，以便我們可以採取其他措施。</p>
+                                        <h2 id=""><strong id="">訊息應用程序</strong></h2>
+                                        <p id="">除了虛假的社交媒體個人詳細資訊外，騙子還在 WhatsApp 上建立虛假訊息傳遞帳戶以直接瞄準用戶。 請務必檢查這些欺詐訊息傳遞帳戶的跡象，並知道如何有效地報告它們。</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:461px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="461px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67065b5c6a455c7a57002bcb_66965d9c85f3905ff43d7e9e_661e6e1f01dd2f56adc6f8da_WhatsApp-Image-2023-08-01-at-12.35.14-PM-461x1024.webp" alt="來自假的德里夫號碼的 Whatsapp 詐騙訊息示例" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h4><strong>Common red flags of a scam messaging account:</strong></h4>
-                                        <ul role="list">
-                                            <li>Spelling and grammatical errors in the message.</li>
-                                            <li>Calls to click on links or download apps.</li>
-                                            <li>Promises of huge profits and easy money.</li>
-                                            <li>Urgent requests for personal data like your password and bank details.</li>
+                                        <h4 id=""><strong id="">詐騙訊息傳遞帳戶的常見紅旗：</strong></h4>
+                                        <ul id="">
+                                            <li id="">消息中的拼寫和語法錯誤。</li>
+                                            <li id="">呼叫點選鏈接或下載應用程序。</li>
+                                            <li id="">承諾巨額利潤和輕鬆賺錢。</li>
+                                            <li id="">緊急要求個人數據，例如密碼和銀行詳細資訊。</li>
                                         </ul>
-                                        <h4><strong>Less common red flags of a scam messaging account:</strong></h4>
-                                        <ul role="list">
-                                            <li><strong>Excessive use of bots:</strong> Scammers may employ bots to engage you with automated messages or links to fraudulent websites. If a conversation feels too scripted or unnatural, it could be a scam.</li>
-                                            <li><strong>Fake customer support:</strong> Some scammers pose as customer support agents and offer assistance with issues you didn&#x27;t request help for. </li>
-                                            <li><strong>Suspicious forwarded messages:</strong> If someone you don&#x27;t know well forwards you messages or files without context, it could be an attempt to spread scams or viruses.</li>
-                                            <li><strong>Impersonation of trusted contacts:</strong> Scammers may impersonate your trusted contacts by using similar profile pictures and usernames. </li>
+                                        <h4 id=""><strong id="">詐騙訊息傳遞帳戶的較不常見的紅旗：</strong></h4>
+                                        <ul id="">
+                                            <li id=""><strong id="">過度使用機器人：</strong> 騙子可能會利用機器人透過自動消息或鏈接到欺詐網站的鏈接與您吸引。 如果對話感覺過於生硬或不自然，可能是詐騙。</li>
+                                            <li id=""><strong id="">假客戶支援：</strong> 一些騙子扮演客戶支援代理，並針對您沒有要求幫助的問題提供幫助。 </li>
+                                            <li id=""><strong id="">可疑的轉發消息：</strong>如果您不熟悉的人轉發給您沒有上下文的消息或文件，這可能是試圖散布詐騙或病毒的行為。</li>
+                                            <li id=""><strong id="">模仿受信任聯絡人：</strong> 詐騙者可能會使用類似的個人詳細資訊圖片和用戶名稱模仿您的信任聯繫人。 </li>
                                         </ul>
-                                        <p>If you come across a fake profile on a messaging app, tap on the account’s profile and click <strong>Report</strong> to flag the account as fraudulent. This process will take less than a minute and helps the platform take appropriate action. </p>
-                                        <p>After reporting the fake profile, please provide screenshots of their account to our Customer Support team via <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank">live chat</a> so we can take additional measures.</p>
-                                        <h2><strong>Best practices to avoid phishing in general</strong></h2>
-                                        <p>Now that you can recognise and take action against phishing attempts, always remember the <strong>5 Don&#x27;ts </strong>when engaging with emails and online accounts:</p>
-                                        <ol role="list">
-                                            <li>Don’t instantly click on links or download files.</li>
-                                            <li>Don’t share your personal information.</li>
-                                            <li>Don’t act immediately if you’re being pressured to. </li>
-                                            <li>Don&#x27;t be afraid to contact our Customer Support via <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank">live chat</a> if you have doubts or concerns.</li>
-                                            <li>Don’t answer suspicious emails, calls, and messages. </li>
+                                        <p id="">如果您在訊息傳遞應用程序中遇到虛假的個人詳細資訊，請點選該帳戶的個人詳細資訊，然後點選 <strong id="">報告</strong> 將該帳戶標記為欺詐。 這個過程將耗時不到一分鐘，有助於平台採取適當行動。 </p>
+                                        <p id="">報告虛假個人詳細資訊後，請透過 <a href="https：//deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">即時聊天</a> 向我們的客戶支援團隊提供他們帳戶的屏幕截圖，以便我們可以採取其他措施。</p>
+                                        <h2 id=""><strong id="">一般避免網路釣魚的最佳做法</strong></h2>
+                                        <p id="">現在您可以識別並採取行動預防網路釣魚的嘗試，請務必在與電子郵件和線上帳戶互動時記住 <strong id="">5 不要做 </strong>：</p>
+                                        <ol id="">
+                                            <li id="">不要立即點選連結或下載檔案。</li>
+                                            <li id="">不要分享個人資訊。</li>
+                                            <li id="">如果受到壓力，不要立即行動。 </li>
+                                            <li id="">如果您有疑問或疑慮，請不要害怕透過 <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">實時聊天</a> 與我們的客戶支持聯繫。</li>
+                                            <li id="">不要回覆可疑的電子郵件、電話和訊息。 </li>
                                         </ol>
-                                        <p>Our official social media accounts for the EU are:</p>
-                                        <ul role="list">
-                                            <li>Facebook: <a href="https://www.facebook.com/DerivEU" target="_blank">@DerivEU</a></li>
-                                            <li>Instagram: <a href="https://www.instagram.com/deriv_eu/" target="_blank">@deriv_eu</a></li>
-                                            <li>Twitter: <a href="https://twitter.com/deriv_eu/" target="_blank">@Deriv_EU</a></li>
+                                        <p id="">我們的歐盟正式社交媒體帳戶是：</p>
+                                        <ul id="">
+                                            <li id="">臉書： <a href="https：//www.facebook.com/DerivEU" target="_blank" id="">@DerivEU</a></li>
+                                            <li id="">英文版： <a href="https：//www.instagram.com/deriv_eu/" target="_blank" id="">@deriv_eu</a></li>
+                                            <li id="">推特： <a href="https：//twitter.com/deriv_eu/" target="_blank" id="">@Deriv_EU</a></li>
                                         </ul>
-                                        <p>Our official social media accounts for the rest of the world are:</p>
-                                        <ul role="list">
-                                            <li>Facebook: <a href="https://www.facebook.com/derivdotcom" target="_blank">@derivdotcom</a></li>
-                                            <li>Instagram: <a href="https://www.instagram.com/deriv_official/" target="_blank">@deriv_official</a></li>
-                                            <li>Twitter: <a href="https://twitter.com/derivdotcom?lang=en" target="_blank">@Derivdotcom</a></li>
-                                            <li>LinkedIn: <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">@derivdotcom</a></li>
-                                            <li>YouTube: <a href="https://www.youtube.com/@deriv" target="_blank">@deriv</a></li>
-                                            <li>WhatsApp: <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">+356 9957 8341</a></li>
+                                        <p id="">我們為世界其他地區提供的正式社交媒體帳戶是：</p>
+                                        <ul id="">
+                                            <li id="">臉書： <a href="https：//www.facebook.com/derivdotcom" target="_blank" id="">@derivdotcom</a></li>
+                                            <li id="">英文版： <a href="https：//www.instagram.com/deriv_official/" target="_blank" id="">@deriv_official</a></li>
+                                            <li id="">推特： <a href="https：//twitter.com/derivdotcom?lang=en" target="_blank" id="">@Derivdotcom</a></li>
+                                            <li id="">林肯定： <a href="https：//www.linkedin.com/company/derivdotcom/" target="_blank" id="">@derivdotcom</a></li>
+                                            <li id="">YouTube： <a href="https：//www.youtube.com/@deriv" target="_blank" id="">@deriv</a></li>
+                                            <li id="">WhatsApp 電子郵件： <a href="https：//api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank" id="">+356 9957 8341</a></li>
                                         </ul>
-                                        <p>For more safety tips, check out our <a href="https://blog.deriv.com/posts/how-to-protect-your-online-trading-account/" target="_blank">How to protect your online trading account</a> blog post or our <a href="https://blog.deriv.com/posts/how-to-avoid-trading-scams/" target="_blank">How to avoid trading scams</a> blog post.</p>
-                                        <p>‍</p>
+                                        <p id="">有關更多安全提示，請查看我們的 <a href="https：//blog.deriv.com/posts/how-to-protect-your-online-trading-account/" target="_blank" id="">如何保護您的在線交易帳戶</a> 博客文章或我們的 <a href="https：//blog.deriv.com/posts/how-to-avoid-trading-scams/" target="_blank" id="">如何避免交易詐騙</a> 博客文章。</p>
+                                        <p id="">‍</p>
                                     </div>
                                     <div class="share-block">
                                         <div class="padding-bottom padding-xxsmall">
@@ -2877,8 +3100,8 @@ a,
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b3f9562ab.js" type="text/javascript"></script> <!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.18/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.5fffeb20e.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.27/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2996,7 +3219,8 @@ a,
                     "/eu-careers",
                     "/our-locations",
                     "/product-explorer",
-                    "/academy"
+                    "/academy",
+                    "/trading-terms-glossary"
                 ];
                 let path = window.location.pathname;
                 let targetPathUrl = false;
@@ -3088,7 +3312,8 @@ a,
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
+                    return parsedData.date_first_contact ?
+                        {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -3103,7 +3328,8 @@ a,
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
+                    return parsedData.signup_device ?
+                        {
                             signup_device: parsedData.signup_device
                         } :
                         null;
@@ -3645,7 +3871,8 @@ a,
                 "/eu-careers",
                 "/our-locations",
                 "/product-explorer",
-                "/academy"
+                "/academy",
+                "/trading-terms-glossary",
 
             ];
             var path = window.location.pathname;
@@ -3687,7 +3914,8 @@ a,
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
+                const growthbookInstance = window.getGrowthbookInstance()
+                const featureFlagValue = growthbookInstance.getFeatureValue(
                     "trigger_os_signup_wf"
                 );
                 const handleOutSystemsRedirection = () => {
@@ -3751,14 +3979,12 @@ a,
                     }
                 });
             };
-
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
-                });
+            const growthbookInstance = window.getGrowthbookInstance();
+            growthbookInstance?.loadFeatures().then(() => {
+                if (window.location.href.indexOf("/partners") > -1 === false) {
+                    updateLinkHrefs();
+                }
+            });
         });
     </script>
 

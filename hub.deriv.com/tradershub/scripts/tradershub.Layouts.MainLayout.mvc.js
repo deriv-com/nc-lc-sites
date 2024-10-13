@@ -1,4 +1,4 @@
-define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
+define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -77,7 +77,7 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Navigation.BottomBarItem.mvc$view", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
+define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Navigation.BottomBarItem.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -868,7 +868,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
+define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -912,45 +912,37 @@ define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-cor
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            return OS.Flow.tryFinally(function() {
+                            try {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: SendAuthorize
-                                    model.flush();
-                                    return tradershubController.default.sendAuthorize$Action(true, callContext).then(function(value) {
-                                        sendAuthorizeVar.value = value;
-                                    }).then(function() {
-                                        OS.Logger.startActiveSpan("AddActiveTab", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "AddActiveTab");
-                                                span.setAttribute("outsystems.function.key", "2e50b9a3-6bd0-4482-b4a4-80eb6a95ec91");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
+                                OS.Logger.startActiveSpan("AddActiveTab", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "AddActiveTab");
+                                        span.setAttribute("outsystems.function.key", "2e50b9a3-6bd0-4482-b4a4-80eb6a95ec91");
+                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
 
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS, "AddActiveTab", "OnReady", {
-                                                    Active: OS.DataConversion.JSNodeParamConverter.to(model.variables.activeTabIn, OS.DataTypes.DataTypes.Integer)
-                                                }, function($parameters) {}, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
+                                    try {
+                                        return controller.safeExecuteJSNode(tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS, "AddActiveTab", "OnReady", {
+                                            Active: OS.DataConversion.JSNodeParamConverter.to(model.variables.activeTabIn, OS.DataTypes.DataTypes.Integer)
+                                        }, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
 
-                                            }
+                                    }
 
-                                        }, 1);
-                                    });
-                                });
-                            }, function() {
+                                }, 1);
+                            } finally {
                                 if (span) {
                                     span.end();
                                 }
 
-                            });
+                            }
+
                         }, 1);
                     };
                 }

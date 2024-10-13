@@ -501,6 +501,17 @@ define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$controller", [
 });
 
 
+define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "8kih1_ff0UeIFc+ysew9NA#Value": "تأكد من أن البريد الإلكتروني غير محجوب بواسطة الجدران النارية أو الفلاتر.",
+        "7UEGGYTlwEKf1U81dhfqeQ#Value": "تحقق من مجلد البريد العشوائي.",
+        "zom7hmSWsUy5xgWgjn0ksg#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
+        "zMaPYVkUw0OD1za8TxdeeQ#Value": "إعادة إرسال البريد الإلكتروني",
+        "z3UBGtc1W0+RfXnqw3WdlA#Value": "لم تتلقَ بريدًا إلكترونيًا؟",
+        "OUP4_ngJ2U+KHS54a33Tbw#Value": "لقد أرسلنا رابط التحقق إلى"
+    };
+});
+
 define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "8kih1_ff0UeIFc+ysew9NA#Value": "Stellen Sie sicher, dass die E-Mail nicht von Firewalls oder Filtern blockiert wird.",
@@ -578,8 +589,12 @@ define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsRe
     };
 });
 
-define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_esES, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources", ["exports", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.ar-001", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.de-DE", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.es-ES", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.fr-FR", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.it-IT", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.pl-PL", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.pt-PT", "PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ar001, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_deDE, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_esES, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_frFR, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_itIT, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_plPL, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ptPT, PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_ForgotPassword_EmailVerificationSentBlock_mvc_translationsResources_deDE,
             "isRTL": false

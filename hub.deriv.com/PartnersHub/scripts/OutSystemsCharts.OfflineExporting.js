@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * Client side exporting module
  *
@@ -67,7 +67,7 @@ function(t) {
         }
     }), o(e, "Extensions/OfflineExporting/OfflineExportingDefaults.js", [], function() {
         return {
-            libURL: "https://code.highcharts.com/11.4.6/lib/",
+            libURL: "https://code.highcharts.com/11.4.8/lib/",
             menuItemDefinitions: {
                 downloadPNG: {
                     textKey: "downloadPNG",
@@ -303,7 +303,10 @@ function(t) {
                                         s(t, e)
                                     }), t.style.fontFamily = L && L.normal ? "HighchartsFont" : String(t.style.fontFamily && t.style.fontFamily.split(" ").splice(-1)), e = t.getElementsByTagName("title"), [].forEach.call(e, function(e) {
                                         t.removeChild(e)
-                                    }), n = t.getElementsByClassName("highcharts-text-outline"); n.length > 0;) t.removeChild(n[0])
+                                    }), n = t.getElementsByClassName("highcharts-text-outline"); n.length > 0;) {
+                                    let t = n[0];
+                                    t.parentNode && t.parentNode.removeChild(t)
+                                }
                             });
                             let c = a.querySelector("svg");
                             c && S(c, () => {

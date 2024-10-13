@@ -931,6 +931,20 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
 });
 
 
+define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "EZAjLJFDH06o8UEIYyToBw#Value": "تأكد من أن البريد الإلكتروني ليس محجوبًا بواسطة جدران الحماية أو الفلاتر.",
+        "rKpSsbFKDkuJdwtE_LVClA#Value": "تحقق من مجلد الرسائل غير المرغوب فيها.",
+        "q9Ce0nJ7LE2y1iDV05opbw#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
+        "t2V+7ijrtUC1usZPy65eUg#ValueExpression.-831934195.1": "إعادة إرسال الرمز في",
+        "t2V+7ijrtUC1usZPy65eUg#ValueExpression.1067057.1": "sec",
+        "h0PBgujWUEC88S0ttmjwkA#Value": "إعادة إرسال الرمز",
+        "cSOfWaac4EuZB2yHtv8uug#Value": "لم تستلم الرمز؟",
+        "Q9u_dsn2akyRVs7oPoyu_Q#ValueExpression.24546143.1": "أدخل رمز مكون من 6 أرقام",
+        "zErnXc+8rkejGu1pau+Mkw#Value": "لقد أرسلنا رمز التحقق إلى"
+    };
+});
+
 define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "EZAjLJFDH06o8UEIYyToBw#Value": "Stellen Sie sicher, dass die E-Mail nicht von Firewalls oder Filtern blockiert wird.",
@@ -1029,8 +1043,12 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
     };
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.ar-001", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ar001, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_PhoneNumberVerification_PhoneNumberEmailVerificationBlock_mvc_translationsResources_deDE,
             "isRTL": false

@@ -775,6 +775,20 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$controller", ["@
 });
 
 
+define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "LUFf5NOc9k+rogAz0AOq2g#Value": "أوافق على تلقي المواد الترويجية والإشعارات المتعلقة ببرنامج الشراكة مع Deriv.",
+        "u1wyVqIdrUu2AoUzziFrog#Value": "شروط وأحكام الشركاء والوسطاء المعرفين",
+        "tv_vYBYcz0+UfN5UFzWZkA#Value": "و",
+        "kHOr63YB0EeIo+eENGyzQQ#Value": "الشروط العامة لديريف لشركاء الأعمال",
+        "YZOevNXwRkiD5NJ9YA7JtQ#Value": "لقد قرأت ووافقت",
+        "4BRK3oZyVUi+KPRCJ4PBGQ#Value": "شروط وأحكام Deriv للعملاء.",
+        "xhbd6R06F069qBPrmfmluQ#Value": "لقد قرأت وقبلت",
+        "RLfb3cSw8UaqOgw46uRbbw#Value": "أنا لست شخصًا معرضًا سياسيًا (PEP).",
+        "rFYmz96HiEWPg06uCEFWdg#Value": "بالضغط على \"إنشاء حساب\"، أؤكد ما يلي:"
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "LUFf5NOc9k+rogAz0AOq2g#Value": "Ich stimme zu, Werbematerialien und Benachrichtigungen über das Deriv-Partnerschaftsprogramm zu erhalten.",
@@ -901,8 +915,12 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsReso
     };
 });
 
-define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources", ["exports", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.ar-001", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.de-DE", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.es-ES", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.fr-FR", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.it-IT", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.pl-PL", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.pt-PT", "PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ar001, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_deDE, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_esES, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_frFR, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_itIT, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_plPL, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ptPT, PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_RealAccountCreationFlow_TermsOfUseBlock_mvc_translationsResources_deDE,
             "isRTL": false

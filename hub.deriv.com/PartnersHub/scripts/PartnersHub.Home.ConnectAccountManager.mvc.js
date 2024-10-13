@@ -331,6 +331,12 @@ define("PartnersHub.Home.ConnectAccountManager.mvc$controller", ["@outsystems/ru
 });
 
 
+define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "1WvkBGwnZEe65CmHsO972g#Value": "اتصل بمدير حسابك"
+    };
+});
+
 define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.de-DE", [], function() {
     return {
         "1WvkBGwnZEe65CmHsO972g#Value": "Verbinden Sie sich mit Ihrem Kundenbetreuer"
@@ -373,8 +379,12 @@ define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ru-RU",
     };
 });
 
-define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources", ["exports", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.de-DE", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.es-ES", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.fr-FR", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.it-IT", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.pl-PL", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.pt-PT", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_deDE, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_esES, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_frFR, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_itIT, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_plPL, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ptPT, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ruRU) {
+define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources", ["exports", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ar-001", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.de-DE", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.es-ES", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.fr-FR", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.it-IT", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.pl-PL", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.pt-PT", "PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ar001, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_deDE, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_esES, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_frFR, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_itIT, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_plPL, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ptPT, PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_ConnectAccountManager_mvc_translationsResources_deDE,
             "isRTL": false

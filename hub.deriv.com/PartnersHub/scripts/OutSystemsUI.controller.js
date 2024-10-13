@@ -1923,7 +1923,7 @@ define("OutSystemsUI.controller$AddFavicon_Legacy.AddFaviconJS", [], function() 
 });
 
 
-define("OutSystemsUI.controller$AddRTLObserver", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$AddRTLObserver.ObserverJS"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_AddRTLObserver_ObserverJS) {
+define("OutSystemsUI.controller$AddRTLObserver", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$AddRTLObserver.ObserverJS", "OutSystemsUI.controller$LoadOutSystemsUIScript"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_AddRTLObserver_ObserverJS) {
     var OS = OSRuntimeCore;
     OutSystemsUIController.default.addRTLObserver$Action = function(callbackIn, callContext) {
         return OS.Logger.startActiveSpan("AddRTLObserver", function(span) {
@@ -1935,39 +1935,44 @@ define("OutSystemsUI.controller$AddRTLObserver", ["exports", "@outsystems/runtim
                 span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
             }
 
-            try {
+            return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.AddRTLObserver$vars"))());
                 vars.value.callbackInLocal = callbackIn;
-                OS.Logger.startActiveSpan("Observer", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "Observer");
-                        span.setAttribute("outsystems.function.key", "f9f52d40-82d7-4c10-829b-c5ced867f494");
-                        span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
-                        span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
-                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                    }
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: LoadOutSystemsUIScript
+                    return OutSystemsUIController.default.loadOutSystemsUIScript$Action(callContext).then(function() {
+                        OS.Logger.startActiveSpan("Observer", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "Observer");
+                                span.setAttribute("outsystems.function.key", "f9f52d40-82d7-4c10-829b-c5ced867f494");
+                                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
 
-                    try {
-                        return controller.safeExecuteJSNode(OutSystemsUI_controller_AddRTLObserver_ObserverJS, "Observer", "AddRTLObserver", {
-                            Callback: OS.DataConversion.JSNodeParamConverter.to(vars.value.callbackInLocal, OS.DataTypes.DataTypes.Object)
-                        }, function($parameters) {}, {}, {});
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
+                            try {
+                                return controller.safeExecuteJSNode(OutSystemsUI_controller_AddRTLObserver_ObserverJS, "Observer", "AddRTLObserver", {
+                                    Callback: OS.DataConversion.JSNodeParamConverter.to(vars.value.callbackInLocal, OS.DataTypes.DataTypes.Object)
+                                }, function($parameters) {}, {}, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
 
-                    }
+                            }
 
-                }, 1);
-                return;
-            } finally {
+                        }, 1);
+                    });
+                }).then(function() {
+                    return;
+                });
+            }, function() {
                 if (span) {
                     span.end();
                 }
 
-            }
-
+            });
         }, 1);
     };
     var controller = OutSystemsUIController.default;
@@ -6756,6 +6761,78 @@ define("OutSystemsUI.controller$DatePickerInitialize", ["exports", "@outsystems/
 define("OutSystemsUI.controller$DatePickerInitialize.InitializeDatePickerJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         OutSystems.OSUI.Patterns.DatePickerAPI.Initialize($parameters.UniqueId);
+    };
+});
+
+
+define("OutSystemsUI.controller$DatePickerOnRender", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$DatePickerOnRender.OnRenderDatePickerJS"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_DatePickerOnRender_OnRenderDatePickerJS) {
+    var OS = OSRuntimeCore;
+    OutSystemsUIController.default.datePickerOnRender$Action = function(uniqueIdIn, callContext) {
+        return OS.Logger.startActiveSpan("DatePickerOnRender", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "DatePickerOnRender");
+                span.setAttribute("outsystems.function.key", "c2dcf261-ff0d-4995-b297-60751f5ce894");
+                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            try {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.DatePickerOnRender$vars"))());
+                vars.value.uniqueIdInLocal = uniqueIdIn;
+                OS.Logger.startActiveSpan("OnRenderDatePicker", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnRenderDatePicker");
+                        span.setAttribute("outsystems.function.key", "da7d196d-714e-4482-a859-6e3905c3dd43");
+                        span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                        span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                    }
+
+                    try {
+                        return controller.safeExecuteJSNode(OutSystemsUI_controller_DatePickerOnRender_OnRenderDatePickerJS, "OnRenderDatePicker", "DatePickerOnRender", {
+                            UniqueId: OS.DataConversion.JSNodeParamConverter.to(vars.value.uniqueIdInLocal, OS.DataTypes.DataTypes.Text)
+                        }, function($parameters) {}, {}, {});
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 1);
+                return;
+            } finally {
+                if (span) {
+                    span.end();
+                }
+
+            }
+
+        }, 1);
+    };
+    var controller = OutSystemsUIController.default;
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.DatePickerOnRender$vars", [{
+        name: "UniqueId",
+        attrName: "uniqueIdInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    OutSystemsUIController.default.clientActionProxies.datePickerOnRender$Action = function(uniqueIdIn) {
+        uniqueIdIn = (uniqueIdIn === undefined) ? "" : uniqueIdIn;
+        return controller.executeActionInsideJSNode(OutSystemsUIController.default.datePickerOnRender$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(uniqueIdIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("OutSystemsUI.controller$DatePickerOnRender.OnRenderDatePickerJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        OutSystems.OSUI.Patterns.DatePickerAPI.OnRender($parameters.UniqueId);
     };
 });
 
@@ -18843,6 +18920,117 @@ define("OutSystemsUI.controller$MasterDetailSetContentFocus_Legacy.SetFocusBehav
 });
 
 
+define("OutSystemsUI.controller$MenuDestroy", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$MenuDestroy.OnDestroyJS", "OutSystemsUI.controller$LoadOutSystemsUIScript", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.model$ST_13c131829a33cb5bedb5c64aa6f4add2Structure"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_MenuDestroy_OnDestroyJS) {
+    var OS = OSRuntimeCore;
+    OutSystemsUIController.default.menuDestroy$Action = function(callContext) {
+        return OS.Logger.startActiveSpan("MenuDestroy", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "MenuDestroy");
+                span.setAttribute("outsystems.function.key", "dc48d926-1e8a-4a3f-be9d-65e49083e24e");
+                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var onDestroyJSResult = new OS.DataTypes.VariableHolder();
+                var jSONDeserializeReturnMessageVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(OutSystemsUIModel.ST_13c131829a33cb5bedb5c64aa6f4add2Structure))());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.MenuDestroy$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: LoadOutSystemsUIScript
+                    return OutSystemsUIController.default.loadOutSystemsUIScript$Action(callContext).then(function() {
+                        onDestroyJSResult.value = OS.Logger.startActiveSpan("OnDestroy", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnDestroy");
+                                span.setAttribute("outsystems.function.key", "8c010f8e-ec91-4a85-a219-e2842dc58be8");
+                                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
+
+                            try {
+                                return controller.safeExecuteJSNode(OutSystemsUI_controller_MenuDestroy_OnDestroyJS, "OnDestroy", "MenuDestroy", {
+                                    Response: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                }, function($parameters) {
+                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("OutSystemsUI.MenuDestroy$onDestroyJSResult"))();
+                                    jsNodeResult.responseOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Response, OS.DataTypes.DataTypes.Text);
+                                    return jsNodeResult;
+                                }, {}, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                        // JSON Deserialize: JSONDeserializeReturnMessage
+                        jSONDeserializeReturnMessageVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(onDestroyJSResult.value.responseOut, OutSystemsUIModel.ST_13c131829a33cb5bedb5c64aa6f4add2Structure, false);
+                        // Set Result Information
+                        // Success = JSONDeserializeReturnMessage.Data.IsSuccess
+                        outVars.value.successOut = jSONDeserializeReturnMessageVar.value.dataOut.isSuccessAttr;
+                        // ErrorMessage.Code = JSONDeserializeReturnMessage.Data.Code
+                        outVars.value.errorMessageOut.codeAttr = jSONDeserializeReturnMessageVar.value.dataOut.codeAttr;
+                        // ErrorMessage.Message = JSONDeserializeReturnMessage.Data.Message
+                        outVars.value.errorMessageOut.messageAttr = jSONDeserializeReturnMessageVar.value.dataOut.messageAttr;
+                    });
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = OutSystemsUIController.default;
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MenuDestroy$onDestroyJSResult", [{
+        name: "Response",
+        attrName: "responseOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MenuDestroy$outVars", [{
+        name: "Success",
+        attrName: "successOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "ErrorMessage",
+        attrName: "errorMessageOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new OutSystemsUIModel.ST_b7d405ca4407e572da091e54d07e3bd1Structure();
+        },
+        complexType: OutSystemsUIModel.ST_b7d405ca4407e572da091e54d07e3bd1Structure
+    }]);
+    OutSystemsUIController.default.clientActionProxies.menuDestroy$Action = function() {
+        return controller.executeActionInsideJSNode(OutSystemsUIController.default.menuDestroy$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                Success: OS.DataConversion.JSNodeParamConverter.to(actionResults.successOut, OS.DataTypes.DataTypes.Boolean),
+                ErrorMessage: actionResults.errorMessageOut
+            };
+        });
+    };
+});
+
+define("OutSystemsUI.controller$MenuDestroy.OnDestroyJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        $parameters.Response = OutSystems.OSUI.Utils.Menu.OnDestroy();
+    };
+});
+
+
 define("OutSystemsUI.controller$MenuHide", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$MenuHide.JsMenuHideJS", "OutSystemsUI.controller$LoadOutSystemsUIScript", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.model$ST_13c131829a33cb5bedb5c64aa6f4add2Structure"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_MenuHide_JsMenuHideJS) {
     var OS = OSRuntimeCore;
     OutSystemsUIController.default.menuHide$Action = function(callContext) {
@@ -18950,6 +19138,130 @@ define("OutSystemsUI.controller$MenuHide", ["exports", "@outsystems/runtime-core
 define("OutSystemsUI.controller$MenuHide.JsMenuHideJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         $parameters.Response = OutSystems.OSUI.Utils.Menu.MenuHide();
+    };
+});
+
+
+define("OutSystemsUI.controller$MenuReady", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$MenuReady.OnReadyJS", "OutSystemsUI.controller$LoadOutSystemsUIScript", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.model$ST_13c131829a33cb5bedb5c64aa6f4add2Structure"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_MenuReady_OnReadyJS) {
+    var OS = OSRuntimeCore;
+    OutSystemsUIController.default.menuReady$Action = function(callbackIn, callContext) {
+        return OS.Logger.startActiveSpan("MenuReady", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "MenuReady");
+                span.setAttribute("outsystems.function.key", "13596946-152b-4908-be54-8faf019a2db1");
+                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.MenuReady$vars"))());
+                vars.value.callbackInLocal = callbackIn;
+                var onReadyJSResult = new OS.DataTypes.VariableHolder();
+                var jSONDeserializeReturnMessageVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(OutSystemsUIModel.ST_13c131829a33cb5bedb5c64aa6f4add2Structure))());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.MenuReady$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: LoadOutSystemsUIScript
+                    return OutSystemsUIController.default.loadOutSystemsUIScript$Action(callContext).then(function() {
+                        onReadyJSResult.value = OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "f4a10a32-2c6a-4b7e-9eee-483e61ce6c25");
+                                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
+
+                            try {
+                                return controller.safeExecuteJSNode(OutSystemsUI_controller_MenuReady_OnReadyJS, "OnReady", "MenuReady", {
+                                    Callback: OS.DataConversion.JSNodeParamConverter.to(vars.value.callbackInLocal, OS.DataTypes.DataTypes.Object),
+                                    Response: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                }, function($parameters) {
+                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("OutSystemsUI.MenuReady$onReadyJSResult"))();
+                                    jsNodeResult.responseOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Response, OS.DataTypes.DataTypes.Text);
+                                    return jsNodeResult;
+                                }, {}, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                        // JSON Deserialize: JSONDeserializeReturnMessage
+                        jSONDeserializeReturnMessageVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(onReadyJSResult.value.responseOut, OutSystemsUIModel.ST_13c131829a33cb5bedb5c64aa6f4add2Structure, false);
+                        // Set Result Information
+                        // Success = JSONDeserializeReturnMessage.Data.IsSuccess
+                        outVars.value.successOut = jSONDeserializeReturnMessageVar.value.dataOut.isSuccessAttr;
+                        // ErrorMessage.Code = JSONDeserializeReturnMessage.Data.Code
+                        outVars.value.errorMessageOut.codeAttr = jSONDeserializeReturnMessageVar.value.dataOut.codeAttr;
+                        // ErrorMessage.Message = JSONDeserializeReturnMessage.Data.Message
+                        outVars.value.errorMessageOut.messageAttr = jSONDeserializeReturnMessageVar.value.dataOut.messageAttr;
+                    });
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = OutSystemsUIController.default;
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MenuReady$vars", [{
+        name: "Callback",
+        attrName: "callbackInLocal",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Object,
+        defaultValue: function() {
+            return null;
+        }
+    }]);
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MenuReady$onReadyJSResult", [{
+        name: "Response",
+        attrName: "responseOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MenuReady$outVars", [{
+        name: "Success",
+        attrName: "successOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "ErrorMessage",
+        attrName: "errorMessageOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new OutSystemsUIModel.ST_b7d405ca4407e572da091e54d07e3bd1Structure();
+        },
+        complexType: OutSystemsUIModel.ST_b7d405ca4407e572da091e54d07e3bd1Structure
+    }]);
+    OutSystemsUIController.default.clientActionProxies.menuReady$Action = function(callbackIn) {
+        callbackIn = (callbackIn === undefined) ? null : callbackIn;
+        return controller.executeActionInsideJSNode(OutSystemsUIController.default.menuReady$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(callbackIn, OS.DataTypes.DataTypes.Object)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                Success: OS.DataConversion.JSNodeParamConverter.to(actionResults.successOut, OS.DataTypes.DataTypes.Boolean),
+                ErrorMessage: actionResults.errorMessageOut
+            };
+        });
+    };
+});
+
+define("OutSystemsUI.controller$MenuReady.OnReadyJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        $parameters.Response = OutSystems.OSUI.Utils.Menu.OnReady($parameters.Callback);
     };
 });
 
@@ -19895,6 +20207,78 @@ define("OutSystemsUI.controller$MonthPickerInitialize", ["exports", "@outsystems
 define("OutSystemsUI.controller$MonthPickerInitialize.InitializeMonthPickerJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         OutSystems.OSUI.Patterns.MonthPickerAPI.Initialize($parameters.UniqueId);
+    };
+});
+
+
+define("OutSystemsUI.controller$MonthPickerOnRender", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$MonthPickerOnRender.OnRenderMonthPickerJS"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_MonthPickerOnRender_OnRenderMonthPickerJS) {
+    var OS = OSRuntimeCore;
+    OutSystemsUIController.default.monthPickerOnRender$Action = function(uniqueIdIn, callContext) {
+        return OS.Logger.startActiveSpan("MonthPickerOnRender", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "MonthPickerOnRender");
+                span.setAttribute("outsystems.function.key", "1dc6815d-4b67-42a7-8057-c93373914963");
+                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            try {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.MonthPickerOnRender$vars"))());
+                vars.value.uniqueIdInLocal = uniqueIdIn;
+                OS.Logger.startActiveSpan("OnRenderMonthPicker", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnRenderMonthPicker");
+                        span.setAttribute("outsystems.function.key", "845943ce-07c5-45df-9b30-7cecb3848a51");
+                        span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                        span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                    }
+
+                    try {
+                        return controller.safeExecuteJSNode(OutSystemsUI_controller_MonthPickerOnRender_OnRenderMonthPickerJS, "OnRenderMonthPicker", "MonthPickerOnRender", {
+                            UniqueId: OS.DataConversion.JSNodeParamConverter.to(vars.value.uniqueIdInLocal, OS.DataTypes.DataTypes.Text)
+                        }, function($parameters) {}, {}, {});
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 1);
+                return;
+            } finally {
+                if (span) {
+                    span.end();
+                }
+
+            }
+
+        }, 1);
+    };
+    var controller = OutSystemsUIController.default;
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.MonthPickerOnRender$vars", [{
+        name: "UniqueId",
+        attrName: "uniqueIdInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    OutSystemsUIController.default.clientActionProxies.monthPickerOnRender$Action = function(uniqueIdIn) {
+        uniqueIdIn = (uniqueIdIn === undefined) ? "" : uniqueIdIn;
+        return controller.executeActionInsideJSNode(OutSystemsUIController.default.monthPickerOnRender$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(uniqueIdIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("OutSystemsUI.controller$MonthPickerOnRender.OnRenderMonthPickerJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        OutSystems.OSUI.Patterns.MonthPickerAPI.OnRender($parameters.UniqueId);
     };
 });
 
@@ -37610,6 +37994,78 @@ define("OutSystemsUI.controller$TimePickerInitialize", ["exports", "@outsystems/
 define("OutSystemsUI.controller$TimePickerInitialize.InitializeTimePickerJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         OutSystems.OSUI.Patterns.TimePickerAPI.Initialize($parameters.UniqueId);
+    };
+});
+
+
+define("OutSystemsUI.controller$TimePickerOnRender", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.controller$TimePickerOnRender.OnRenderTimePickerJS"], function(exports, OSRuntimeCore, OutSystemsUIModel, OutSystemsUIController, OutSystemsUI_controller_TimePickerOnRender_OnRenderTimePickerJS) {
+    var OS = OSRuntimeCore;
+    OutSystemsUIController.default.timePickerOnRender$Action = function(uniqueIdIn, callContext) {
+        return OS.Logger.startActiveSpan("TimePickerOnRender", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "TimePickerOnRender");
+                span.setAttribute("outsystems.function.key", "50921b2f-de6f-4563-ad20-48b3872a7519");
+                span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            try {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("OutSystemsUI.TimePickerOnRender$vars"))());
+                vars.value.uniqueIdInLocal = uniqueIdIn;
+                OS.Logger.startActiveSpan("OnRenderTimePicker", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnRenderTimePicker");
+                        span.setAttribute("outsystems.function.key", "c6727a46-d96f-4c46-81b1-1d18bfdb1a50");
+                        span.setAttribute("outsystems.function.owner.name", "OutSystemsUI");
+                        span.setAttribute("outsystems.function.owner.key", "8be17f2a-431c-4958-b894-c77b988a7271");
+                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                    }
+
+                    try {
+                        return controller.safeExecuteJSNode(OutSystemsUI_controller_TimePickerOnRender_OnRenderTimePickerJS, "OnRenderTimePicker", "TimePickerOnRender", {
+                            UniqueId: OS.DataConversion.JSNodeParamConverter.to(vars.value.uniqueIdInLocal, OS.DataTypes.DataTypes.Text)
+                        }, function($parameters) {}, {}, {});
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 1);
+                return;
+            } finally {
+                if (span) {
+                    span.end();
+                }
+
+            }
+
+        }, 1);
+    };
+    var controller = OutSystemsUIController.default;
+    OutSystemsUIController.default.constructor.registerVariableGroupType("OutSystemsUI.TimePickerOnRender$vars", [{
+        name: "UniqueId",
+        attrName: "uniqueIdInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    OutSystemsUIController.default.clientActionProxies.timePickerOnRender$Action = function(uniqueIdIn) {
+        uniqueIdIn = (uniqueIdIn === undefined) ? "" : uniqueIdIn;
+        return controller.executeActionInsideJSNode(OutSystemsUIController.default.timePickerOnRender$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(uniqueIdIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("OutSystemsUI.controller$TimePickerOnRender.OnRenderTimePickerJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        OutSystems.OSUI.Patterns.TimePickerAPI.OnRender($parameters.UniqueId);
     };
 });
 

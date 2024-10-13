@@ -1,4 +1,4 @@
-define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel) {
+define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutSignup.mvc$model", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutSignup_mvcModel, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-cor
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = ((PartnersHub_Layouts_LayoutSignup_mvcModel.hasValidationWidgets || CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel.hasValidationWidgets) || CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$model", ["@outsystems/runtime-cor
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.NonPartnerAccount.mvc$model", "PartnersHub.Home.NonPartnerAccount.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_NonPartnerAccount_mvc_model, PartnersHub_Home_NonPartnerAccount_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Home.NonPartnerAccount.mvc$model", "PartnersHub.Home.NonPartnerAccount.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_Home_NonPartnerAccount_mvc_model, PartnersHub_Home_NonPartnerAccount_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -182,7 +182,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["We couldn’t find a partner account with this email address."],
+                            text: [$text(getTranslation("GSXpn47RvUqEYNp1DnG_0Q#Value", "We couldn’t find a partner account with this email address."))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -218,6 +218,41 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
                                 service: idService,
                                 uuid: "5",
                                 alias: "2"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            _dependencies: []
+                        }), React.createElement(CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {
+                                Width: "100%",
+                                borderRadius: "100px",
+                                title: "Go to Trader\'s Hub",
+                                BorderColor: "#FF444F",
+                                TextColor: "#FF444F"
+                            },
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                },
+                                onClick$Action: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.goToTradersHub$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "6",
+                                alias: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
                             _dependencies: []
@@ -260,6 +295,43 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
             }
 
             // Client Actions - Methods
+            get _goToTradersHub$Action() {
+                if (!(this.hasOwnProperty("__goToTradersHub$Action"))) {
+                    this.__goToTradersHub$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("GoToTradersHub", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "GoToTradersHub");
+                                span.setAttribute("outsystems.function.key", "22990f98-8462-4f55-a491-f5f10c5ae6d1");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("GoToTradersHub");
+                                callContext = controller.callContext(callContext);
+                                // Destination: /PartnersHub/
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://app.deriv.com/", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__goToTradersHub$Action;
+            }
+            set _goToTradersHub$Action(value) {
+                this.__goToTradersHub$Action = value;
+            }
+
             get _createAccount$Action() {
                 if (!(this.hasOwnProperty("__createAccount$Action"))) {
                     this.__createAccount$Action = function(callContext) {
@@ -371,6 +443,30 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
                 this.__onReady$Action = value;
             }
 
+
+            goToTradersHub$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("GoToTradersHub__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "GoToTradersHub");
+                        span.setAttribute("outsystems.function.key", "22990f98-8462-4f55-a491-f5f10c5ae6d1");
+                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._goToTradersHub$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
             createAccount$Action(callContext) {
                 var controller = this.controller;
@@ -539,6 +635,87 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
 });
 
 
-define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources", ["exports"], function(exports) {
-    return {};
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "لم نتمكن من العثور على حساب شريك بهذا البريد الإلكتروني."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.de-DE", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Wir konnten kein Partnerkonto mit dieser E-Mail-Adresse finden."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.es-ES", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "No pudimos encontrar una cuenta de socio con esta dirección de correo electrónico."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Nous n\'avons pas pu trouver de compte partenaire avec cette adresse e-mail."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.it-IT", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Non siamo riusciti a trovare un account partner con questo indirizzo email."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.pl-PL", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Nie mogliśmy znaleźć konta partnerskiego z tym adresem e-mail."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.pt-PT", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Não conseguimos encontrar uma conta de parceiro com este endereço de e-mail."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.ru-RU", [], function() {
+    return {
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "Мы не смогли найти партнерскую учетную запись с этим адресом электронной почты."
+    };
+});
+
+define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources", ["exports", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.ar-001", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.de-DE", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.es-ES", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.fr-FR", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.it-IT", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.pl-PL", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.pt-PT", "PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ar001, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_deDE, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_esES, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_frFR, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_itIT, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_plPL, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ptPT, PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ruRU) {
+    return {
+        "ar-001": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
+        "de-DE": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_deDE,
+            "isRTL": false
+        },
+        "es-ES": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_esES,
+            "isRTL": false
+        },
+        "fr-FR": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_frFR,
+            "isRTL": false
+        },
+        "it-IT": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_itIT,
+            "isRTL": false
+        },
+        "pl-PL": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_plPL,
+            "isRTL": false
+        },
+        "pt-PT": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ptPT,
+            "isRTL": false
+        },
+        "ru-RU": {
+            "translations": PartnersHub_Home_NonPartnerAccount_mvc_translationsResources_ruRU,
+            "isRTL": false
+        }
+    };
 });

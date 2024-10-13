@@ -425,7 +425,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
-                            text: ["Language Switcher"],
+                            text: [$text(getTranslation("NkzbLfXeBUerQrAW2zsQfA#Value", "Language Switcher"))],
                             _idProps: {
                                 service: idService,
                                 name: "LanguageSwitcherLabel"
@@ -485,43 +485,6 @@ define("PartnersHub.Developer.Endpoint.mvc$controller", ["@outsystems/runtime-co
             }
 
             // Client Actions - Methods
-            get _toggleLanguageSwitcherFF$Action() {
-                if (!(this.hasOwnProperty("__toggleLanguageSwitcherFF$Action"))) {
-                    this.__toggleLanguageSwitcherFF$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("ToggleLanguageSwitcherFF", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "ToggleLanguageSwitcherFF");
-                                span.setAttribute("outsystems.function.key", "037882ac-72e7-47fb-8d21-680682985b5d");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("ToggleLanguageSwitcherFF");
-                                callContext = controller.callContext(callContext);
-                                // isLanguageSwitcherEnabledFF = notisLanguageSwitcherEnabledFF
-                                PartnersHubClientVariables.setisLanguageSwitcherEnabledFF(!(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()));
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__toggleLanguageSwitcherFF$Action;
-            }
-            set _toggleLanguageSwitcherFF$Action(value) {
-                this.__toggleLanguageSwitcherFF$Action = value;
-            }
-
             get _resetEndpoint$Action() {
                 if (!(this.hasOwnProperty("__resetEndpoint$Action"))) {
                     this.__resetEndpoint$Action = function(callContext) {
@@ -741,30 +704,6 @@ define("PartnersHub.Developer.Endpoint.mvc$controller", ["@outsystems/runtime-co
             }
 
 
-            toggleLanguageSwitcherFF$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("ToggleLanguageSwitcherFF__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "ToggleLanguageSwitcherFF");
-                        span.setAttribute("outsystems.function.key", "037882ac-72e7-47fb-8d21-680682985b5d");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._toggleLanguageSwitcherFF$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
             resetEndpoint$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("ResetEndpoint__proxy", function(span) {
@@ -973,8 +912,23 @@ define("PartnersHub.Developer.Endpoint.mvc$controller.OnClick.JavaScript1JS", []
 });
 
 
+define("PartnersHub.Developer.Endpoint.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "محول اللغة",
+        "z4E221d1vEeR43uMRxpE+A#Value": "إعادة تعيين إلى الإعدادات الأصلية",
+        "KIeuFldrS0KldY+5Z10Nrw#Value": "إرسال",
+        "40bWnUM0M0qjslHd09SpUw#Value": "لاستخدام الخادم أعلاه لتسجيل الدخول.",
+        "ZIpQdKMSh029jJ2Kl8HJIg#Value": "معرف التطبيق",
+        "jso1GJeBzkmbFB0QlMBT5Q#Value": "سجل",
+        "tYSnXt74LEe+5+sVcqPLpw#Value": "معرف تطبيق OAuth",
+        "DWYZMDPB40Oa+r4IbtgTyg#Value": "خادم",
+        "xq6aFQV3i0GlkG17lS85RA#Value": "تغيير نقطة نهاية واجهة برمجة التطبيقات"
+    };
+});
+
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Sprachumschalter",
         "z4E221d1vEeR43uMRxpE+A#Value": "Auf die Werkseinstellungen zurücksetzen",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Einreichen",
         "40bWnUM0M0qjslHd09SpUw#Value": "um den oben genannten Server zum Einloggen zu verwenden.",
@@ -988,6 +942,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Selector de idioma",
         "z4E221d1vEeR43uMRxpE+A#Value": "Restablecer a la configuración original",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Enviar",
         "40bWnUM0M0qjslHd09SpUw#Value": "para usar el servidor anterior para iniciar sesión.",
@@ -1001,6 +956,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Sélecteur de langue",
         "z4E221d1vEeR43uMRxpE+A#Value": "Réinitialiser aux paramètres d\'origine",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Soumettre",
         "40bWnUM0M0qjslHd09SpUw#Value": "pour utiliser le serveur ci-dessus pour se connecter.",
@@ -1014,6 +970,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Selettore della lingua",
         "z4E221d1vEeR43uMRxpE+A#Value": "Ripristina le impostazioni originali",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Inviare",
         "40bWnUM0M0qjslHd09SpUw#Value": "per utilizzare il server sopra per accedere.",
@@ -1027,6 +984,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Przełącznik języka",
         "z4E221d1vEeR43uMRxpE+A#Value": "Przywróć ustawienia fabryczne",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Zatwierdź",
         "40bWnUM0M0qjslHd09SpUw#Value": "aby korzystać z powyższego serwera do logowania.",
@@ -1040,6 +998,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Seletor de idioma",
         "z4E221d1vEeR43uMRxpE+A#Value": "Reiniciar para as configurações originais",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Submeter",
         "40bWnUM0M0qjslHd09SpUw#Value": "para usar o servidor acima para fazer login.",
@@ -1053,6 +1012,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.ru-RU", [], function() {
     return {
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Переключатель языка",
         "z4E221d1vEeR43uMRxpE+A#Value": "Сбросить до заводских настроек",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Отправить",
         "40bWnUM0M0qjslHd09SpUw#Value": "чтобы использовать указанный выше сервер для входа.",
@@ -1064,8 +1024,12 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.ru-RU", [], fun
     };
 });
 
-define("PartnersHub.Developer.Endpoint.mvc$translationsResources", ["exports", "PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", "PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", "PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", "PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", "PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", "PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", "PartnersHub.Developer.Endpoint.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Developer_Endpoint_mvc_translationsResources_deDE, PartnersHub_Developer_Endpoint_mvc_translationsResources_esES, PartnersHub_Developer_Endpoint_mvc_translationsResources_frFR, PartnersHub_Developer_Endpoint_mvc_translationsResources_itIT, PartnersHub_Developer_Endpoint_mvc_translationsResources_plPL, PartnersHub_Developer_Endpoint_mvc_translationsResources_ptPT, PartnersHub_Developer_Endpoint_mvc_translationsResources_ruRU) {
+define("PartnersHub.Developer.Endpoint.mvc$translationsResources", ["exports", "PartnersHub.Developer.Endpoint.mvc$translationsResources.ar-001", "PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", "PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", "PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", "PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", "PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", "PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", "PartnersHub.Developer.Endpoint.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Developer_Endpoint_mvc_translationsResources_ar001, PartnersHub_Developer_Endpoint_mvc_translationsResources_deDE, PartnersHub_Developer_Endpoint_mvc_translationsResources_esES, PartnersHub_Developer_Endpoint_mvc_translationsResources_frFR, PartnersHub_Developer_Endpoint_mvc_translationsResources_itIT, PartnersHub_Developer_Endpoint_mvc_translationsResources_plPL, PartnersHub_Developer_Endpoint_mvc_translationsResources_ptPT, PartnersHub_Developer_Endpoint_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Developer_Endpoint_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Developer_Endpoint_mvc_translationsResources_deDE,
             "isRTL": false

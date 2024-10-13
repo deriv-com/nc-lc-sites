@@ -1,4 +1,4 @@
-define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.controller", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "RESTAPIWebsocket.controller$VerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubController) {
+define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, PartnersHubController) {
     var OS = OSRuntimeCore;
 
 
@@ -58,7 +58,7 @@ define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "P
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "RESTAPIWebsocket.controller$VerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -1039,7 +1039,7 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
 
     return View;
 });
-define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocket.model", "RESTAPIWebsocket.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Signup.Signup.mvc$translationsResources", "PartnersHub.Signup.controller", "PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.EmailCheckJS", "RESTAPIWebsocket.model$ST_178833eaf81da5980f461500f3f98736Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocket", "RESTAPIWebsocket.model$ST_6e1c5ab117f6599aeb50c68a9a2fa65aStructure", "RESTAPIWebsocket.controller$VerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketModel, RESTAPIWebsocketController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Signup_Signup_mvc_TranslationsResources, PartnersHub_SignupController, PartnersHub_Signup_Signup_mvc_controller_CreatePartnerAccountOnClick_EmailCheckJS) {
+define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Signup.Signup.mvc$translationsResources", "PartnersHub.Signup.controller", "PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.EmailCheckJS", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Signup_Signup_mvc_TranslationsResources, PartnersHub_SignupController, PartnersHub_Signup_Signup_mvc_controller_CreatePartnerAccountOnClick_EmailCheckJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1123,7 +1123,7 @@ define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("CreatePartnerAccountOnClick");
                                 callContext = controller.callContext(callContext);
-                                var verifyEmailVar = new OS.DataTypes.VariableHolder();
+                                var postVerifyEmailVar = new OS.DataTypes.VariableHolder();
                                 var emailCheckJSResult = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // isCreateAccountLoading = True
@@ -1158,20 +1158,45 @@ define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js
                                             }, 1);
                                             return OS.Flow.executeSequence(function() {
                                                 if ((emailCheckJSResult.value.isValidOut)) {
-                                                    // Execute Action: VerifyEmail
+                                                    // Execute Action: PostVerifyEmail
                                                     model.flush();
-                                                    return RESTAPIWebsocketController.default.verifyEmail$Action(function() {
-                                                        var rec = new RESTAPIWebsocketModel.ST_178833eaf81da5980f461500f3f98736Structure();
+                                                    return RESTAPIWebsocketOfficialController.default.postVerifyEmail$Action(function() {
+                                                        var rec = new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
                                                         rec.verify_emailAttr = PartnersHubClientVariables.getSignupEmail();
                                                         rec.typeAttr = "account_opening";
+                                                        rec.url_parametersAttr = function() {
+                                                            var rec = new RESTAPIWebsocketOfficialModel.ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure();
+                                                            rec.affiliate_tokenAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.date_first_contactAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.gclid_urlAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.pa_amountAttr = OS.BuiltinFunctions.nullIdentifier();
+                                                            rec.pa_currencyAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.pa_loginidAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.pa_remarksAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.redirect_toAttr = OS.BuiltinFunctions.nullIdentifier();
+                                                            rec.signup_deviceAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_ad_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_adgroup_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_adrollclk_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_campaignAttr = "testc";
+                                                            rec.utm_campaign_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_contentAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_fbcl_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_gl_client_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_mediumAttr = "testm";
+                                                            rec.utm_msclk_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            rec.utm_sourceAttr = "tests";
+                                                            rec.utm_termAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
+                                                            return rec;
+                                                        }();
                                                         return rec;
                                                     }(), PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                                        verifyEmailVar.value = value;
+                                                        postVerifyEmailVar.value = value;
                                                     }).then(function() {
                                                         // isCreateAccountLoading = False
                                                         model.variables.isCreateAccountLoadingVar = false;
-                                                        // Destination: /PartnersHub/EmailVerification
-                                                        return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "EmailVerification", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                        // Execute Action: ConsoleLog
+                                                        DerivLoggerController.default.consoleLog$Action(postVerifyEmailVar.value.responseOut.errorAttr.messageAttr, 0, callContext);
                                                     });
                                                 } else {
                                                     // Email2.Valid = False
@@ -1506,6 +1531,33 @@ define("PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.Ema
 });
 
 
+define("PartnersHub.Signup.Signup.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "l61PbA7DH0qIdtgYY8ibyg#Value": "تسجيل الدخول",
+        "lEqYjxLh8E22q7g4DFeAKQ#Value": "هل لديك حساب بالفعل؟",
+        "bHruHR+n6k69_enxlJJZFw#Value": "أو سجّل باستخدام",
+        "If_l85cWxEO6d6tLUbNSEw#Value": "الشروط والأحكام",
+        "j0ZohXspeE2qmvgbYqw0UA#Value": "بالضغط على \"إنشاء حساب\"، أوافق على",
+        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
+        "_0L9onq+f0G3KclYVpp7Pg#Value": "بريد إلكتروني",
+        "pq9Ju9FMp0qda1dlJdT3_g#Value": "كن شريكًا في Deriv",
+        "u1QYOVO6N0+nAeebXkQ63A#Value": "تسجيل الدخول",
+        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "لديك حساب بالفعل؟",
+        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "أو قم بالتسجيل باستخدام",
+        "+wQAlCIU8UOOzqoHho57SA#Value": "متابعة",
+        "WIEsOXfpGUi2+DMFKkNA9A#Value": "الشروط والأحكام",
+        "UzK6LDIORkGy+zMhhwAHcw#Value": "بالضغط على \"متابعة\"، أوافق على",
+        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
+        "aeBIgOJxkUqYhK4XqNTECQ#Value": "بريد إلكتروني",
+        "TX4OPpy22U2SkyVYKprXWw#Value": "كن شريكًا في Deriv",
+        "PP_s+MHOVEGduA59cQfqHw#Value": "قم بإحالة المتداولين واحصل على عمولات تصل إلى 45%.",
+        "yhaxBYZgTkOwelFDbxicGA#Value": "دعم متاح على مدار الساعة، متى ما احتجت إليه",
+        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "أكثر من 1 مليون عميل في 190 دولة",
+        "PnykNTEllk+PQ9Rsd8YOqg#Value": "تم دفع أكثر من 47 مليون دولار، يمكنك السحب في أي وقت",
+        "NUE9Av88JUW57tUvUyPWEQ#Value": "انضم إلى شبكة عالمية تضم أكثر من 60,000 شريك اليوم!"
+    };
+});
+
 define("PartnersHub.Signup.Signup.mvc$translationsResources.de-DE", [], function() {
     return {
         "l61PbA7DH0qIdtgYY8ibyg#Value": "Einloggen",
@@ -1716,8 +1768,12 @@ define("PartnersHub.Signup.Signup.mvc$translationsResources.ru-RU", [], function
     };
 });
 
-define("PartnersHub.Signup.Signup.mvc$translationsResources", ["exports", "PartnersHub.Signup.Signup.mvc$translationsResources.de-DE", "PartnersHub.Signup.Signup.mvc$translationsResources.es-ES", "PartnersHub.Signup.Signup.mvc$translationsResources.fr-FR", "PartnersHub.Signup.Signup.mvc$translationsResources.it-IT", "PartnersHub.Signup.Signup.mvc$translationsResources.pl-PL", "PartnersHub.Signup.Signup.mvc$translationsResources.pt-PT", "PartnersHub.Signup.Signup.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Signup_Signup_mvc_translationsResources_deDE, PartnersHub_Signup_Signup_mvc_translationsResources_esES, PartnersHub_Signup_Signup_mvc_translationsResources_frFR, PartnersHub_Signup_Signup_mvc_translationsResources_itIT, PartnersHub_Signup_Signup_mvc_translationsResources_plPL, PartnersHub_Signup_Signup_mvc_translationsResources_ptPT, PartnersHub_Signup_Signup_mvc_translationsResources_ruRU) {
+define("PartnersHub.Signup.Signup.mvc$translationsResources", ["exports", "PartnersHub.Signup.Signup.mvc$translationsResources.ar-001", "PartnersHub.Signup.Signup.mvc$translationsResources.de-DE", "PartnersHub.Signup.Signup.mvc$translationsResources.es-ES", "PartnersHub.Signup.Signup.mvc$translationsResources.fr-FR", "PartnersHub.Signup.Signup.mvc$translationsResources.it-IT", "PartnersHub.Signup.Signup.mvc$translationsResources.pl-PL", "PartnersHub.Signup.Signup.mvc$translationsResources.pt-PT", "PartnersHub.Signup.Signup.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Signup_Signup_mvc_translationsResources_ar001, PartnersHub_Signup_Signup_mvc_translationsResources_deDE, PartnersHub_Signup_Signup_mvc_translationsResources_esES, PartnersHub_Signup_Signup_mvc_translationsResources_frFR, PartnersHub_Signup_Signup_mvc_translationsResources_itIT, PartnersHub_Signup_Signup_mvc_translationsResources_plPL, PartnersHub_Signup_Signup_mvc_translationsResources_ptPT, PartnersHub_Signup_Signup_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Signup_Signup_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Signup_Signup_mvc_translationsResources_deDE,
             "isRTL": false

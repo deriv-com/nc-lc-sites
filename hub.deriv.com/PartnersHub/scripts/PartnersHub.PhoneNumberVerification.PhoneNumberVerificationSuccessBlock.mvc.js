@@ -339,6 +339,13 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
 });
 
 
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "nsqW7xRMnEa2udMrIDU1Bw#Value": "تم التحقق من رقم الهاتف. سيتواصل معك مدير حسابك قريبًا.",
+        "HYnU0YvK1UOpA1lyGTo7Xg#Value": "نجاح"
+    };
+});
+
 define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "nsqW7xRMnEa2udMrIDU1Bw#Value": "Telefonnummer verifiziert. Ihr Kundenbetreuer wird Sie in Kürze kontaktieren.",
@@ -388,8 +395,12 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
     };
 });
 
-define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources", ["exports", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.ar-001", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.de-DE", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.es-ES", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.fr-FR", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.it-IT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.pl-PL", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.pt-PT", "PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ar001, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_deDE, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_esES, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_frFR, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_itIT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_plPL, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ptPT, PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_PhoneNumberVerification_PhoneNumberVerificationSuccessBlock_mvc_translationsResources_deDE,
             "isRTL": false

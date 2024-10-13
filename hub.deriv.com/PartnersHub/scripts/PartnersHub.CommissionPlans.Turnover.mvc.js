@@ -584,7 +584,7 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$view", ["@outsystems/runtime-co
                                             },
                                             _widgetRecordProvider: widgetsRecordProvider,
                                             _dependencies: []
-                                        }, "Probability"), React.createElement(OSWidgets.HeaderCell, {
+                                        }, $text(getTranslation("NsZ0QQ9IvEKCCneAeCC5bQ#Value", "Probability"))), React.createElement(OSWidgets.HeaderCell, {
                                             extendedProperties: {
                                                 style: "text-align: center;"
                                             },
@@ -600,7 +600,7 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$view", ["@outsystems/runtime-co
                                             extendedProperties: {
                                                 style: "color: #222;"
                                             },
-                                            text: ["Commission"],
+                                            text: [$text(getTranslation("aS2fUHXwJUK3Z52v40WzNw#Value", "Commission"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "36"
@@ -660,7 +660,7 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$view", ["@outsystems/runtime-co
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Text, {
                                 style: "to-subtitle",
-                                text: ["Disclaimer: "],
+                                text: [$text(getTranslation("H1Oo5_queUqiCIZ0kB33Uw#Value", "Disclaimer: "))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "42"
@@ -683,7 +683,7 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$view", ["@outsystems/runtime-co
                                     uuid: "44"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, "Affiliates residing in the EU can sign up for the Turnover plan but can only refer clients residing outside the EU.")))];
+                            }, $text(getTranslation("bVJekF_M1UKmdCHZbar+Ig#Value", "Affiliates residing in the EU can sign up for the Turnover plan but can only refer clients residing outside the EU.")))))];
                         }))];
                     })
                 },
@@ -1216,8 +1216,29 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$controller.OnReady.JavaScript1J
 });
 
 
+define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "يمكن للشركاء المقيمين في الاتحاد الأوروبي التسجيل في خطة الدوران ولكن يمكنهم فقط إحالة عملاء يقيمون خارج الاتحاد الأوروبي.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "إخلاء المسؤولية:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "عمولة",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "احتمال",
+        "hzplZFUS8ke0JVnfI5ux2Q#Value": "اربح بناءً على احتمال دفع عقود عملائك.",
+        "LlaMe90rzUel37W43FUgOA#Value": "الخيارات الرقمية",
+        "PjoOFwE_rEe6ie8ttKOsjg#Value": "عمولة",
+        "8nKHLthtAUayRQNXxfL6SA#Value": "نوع الخيار",
+        "A6wn7d_MUU+llc7W9Xa93g#Value": "اربح بناءً على نوع الخيار الذي يتداوله عملاؤك.",
+        "US_t93jy0UebCcJfDNx4AA#Value": "خيارات",
+        "eGwk0H7ekEyPl6poGuYuTg#Value": "إذا لم يكن خطة دورانك مفعلة، اتصل بمدير حسابك.",
+        "A1DuyLR4y0mdPlILWVXagw#Value": "دوران"
+    };
+});
+
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.de-DE", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Affiliates, die in der EU ansässig sind, können sich für den Umsatzplan anmelden, dürfen jedoch nur Kunden außerhalb der EU werben.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Haftungsausschluss:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Provision",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Wahrscheinlichkeit",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit der Verträge Ihrer Kunden.",
         "LlaMe90rzUel37W43FUgOA#Value": "Digitale Optionen",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Provision",
@@ -1231,6 +1252,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.de-DE", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.es-ES", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Los afiliados que residen en la UE pueden registrarse en el plan de volumen, pero solo pueden referir a clientes que residan fuera de la UE.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Descargo de responsabilidad:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Comisión",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Probabilidad",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Gana en función de la probabilidad de pago de los contratos de tus clientes.",
         "LlaMe90rzUel37W43FUgOA#Value": "Opciones digitales",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Comisión",
@@ -1244,6 +1269,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.es-ES", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.fr-FR", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Les affiliés résidant dans l\'UE peuvent s\'inscrire au plan de chiffre d\'affaires, mais ne peuvent référer que des clients résidant en dehors de l\'UE.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Avertissement :",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Commission",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Probabilité",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Gagnez en fonction de la probabilité de paiement des contrats de vos clients.",
         "LlaMe90rzUel37W43FUgOA#Value": "Options numériques",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Commission",
@@ -1257,6 +1286,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.fr-FR", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.it-IT", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Gli affiliati residenti nell\'UE possono iscriversi al piano di fatturato, ma possono riferire solo clienti residenti al di fuori dell\'UE.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Dichiarazione di non responsabilità:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Commissione",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Probabilità",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Guadagna in base alla probabilità di pagamento dei contratti dei tuoi clienti.",
         "LlaMe90rzUel37W43FUgOA#Value": "Opzioni digitali",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Commissione",
@@ -1270,6 +1303,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.it-IT", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pl-PL", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Partnerzy mieszkający w UE mogą zarejestrować się w planie obrotu, ale mogą polecać tylko klientów mieszkających poza UE.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Zastrzeżenie:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Prowizja",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Prawdopodobieństwo",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty kontraktów twoich klientów.",
         "LlaMe90rzUel37W43FUgOA#Value": "Opcje cyfrowe",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Prowizja",
@@ -1283,6 +1320,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pl-PL", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pt-PT", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Os afiliados residentes na UE podem inscrever-se no plano de volume, mas só podem referir clientes que residam fora da UE.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Isenção de responsabilidade:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Comissão",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Probabilidade",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Ganhe com base na probabilidade de pagamento dos contratos dos seus clientes.",
         "LlaMe90rzUel37W43FUgOA#Value": "Opções digitais",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Comissão",
@@ -1296,6 +1337,10 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pt-PT", [
 
 define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ru-RU", [], function() {
     return {
+        "bVJekF_M1UKmdCHZbar+Ig#Value": "Партнеры, проживающие в ЕС, могут зарегистрироваться в плане оборота, но могут рекомендовать клиентов, проживающих за пределами ЕС.",
+        "H1Oo5_queUqiCIZ0kB33Uw#Value": "Отказ от ответственности:",
+        "aS2fUHXwJUK3Z52v40WzNw#Value": "Комиссия",
+        "NsZ0QQ9IvEKCCneAeCC5bQ#Value": "Вероятность",
         "hzplZFUS8ke0JVnfI5ux2Q#Value": "Зарабатывайте на основе вероятности выплаты контрактов ваших клиентов.",
         "LlaMe90rzUel37W43FUgOA#Value": "Цифровые опционы",
         "PjoOFwE_rEe6ie8ttKOsjg#Value": "Комиссия",
@@ -1307,8 +1352,12 @@ define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ru-RU", [
     };
 });
 
-define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_esES, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ruRU) {
+define("PartnersHub.CommissionPlans.Turnover.mvc$translationsResources", ["exports", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ar-001", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.de-DE", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.es-ES", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.fr-FR", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.it-IT", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pl-PL", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.pt-PT", "PartnersHub.CommissionPlans.Turnover.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ar001, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_deDE, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_esES, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_frFR, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_itIT, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_plPL, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ptPT, PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_CommissionPlans_Turnover_mvc_translationsResources_deDE,
             "isRTL": false

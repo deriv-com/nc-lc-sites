@@ -802,6 +802,12 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
 });
 
 
+define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "AiMBRsM2QEmookT5xpWXPg#Value": "أصل"
+    };
+});
+
 define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.de-DE", [], function() {
     return {
         "AiMBRsM2QEmookT5xpWXPg#Value": "Art der Option"
@@ -844,8 +850,12 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ru-RU", [], 
     };
 });
 
-define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources", ["exports", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.de-DE", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.es-ES", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.fr-FR", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.it-IT", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.pl-PL", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.pt-PT", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_deDE, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_esES, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_frFR, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_itIT, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_plPL, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ptPT, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ruRU) {
+define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources", ["exports", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ar-001", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.de-DE", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.es-ES", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.fr-FR", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.it-IT", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.pl-PL", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.pt-PT", "PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ar001, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_deDE, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_esES, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_frFR, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_itIT, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_plPL, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ptPT, PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_CFDs_PlanDetailsTable_mvc_translationsResources_deDE,
             "isRTL": false

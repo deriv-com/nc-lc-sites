@@ -133,7 +133,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "banner-description",
-                text: ["WhatsApp updates exclusively for Partners"],
+                text: [$text(getTranslation("KglJHT9r9U+AN_RNe7PMbw#Value", "WhatsApp updates exclusively for Partners"))],
                 _idProps: {
                     service: idService,
                     uuid: "1"
@@ -159,7 +159,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$view", ["@outsystems/runtime-core-js
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    title: "Join Now"
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1", "Join Now")
                 },
                 events: {
                     _handleError: function(ex) {
@@ -319,8 +319,8 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-c
                                 PartnersHubController.default.rudderstackTrackEvent$Action(function() {
                                     var rec = new PartnersHubModel.ST_23ff1d290ec4691b1c668ad437100cd0Structure();
                                     rec.actionAttr = "click_cta";
-                                    rec.cta_nameAttr = "Join Now";
-                                    rec.cta_placementAttr = "whatsapp banner join now button";
+                                    rec.cta_nameAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1", "Join Now");
+                                    rec.cta_placementAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("xmmB3QXapky_a843OQSiSw#Value.582033868.1", "whatsapp banner join now button");
                                     return rec;
                                 }(), "ce_partnershub_form", callContext);
                                 // Execute Action: RedirectToExternalNewTab
@@ -494,6 +494,110 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-c
 });
 
 
-define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", ["exports"], function(exports) {
-    return {};
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "WhatsApp-Updates exklusiv für Partner",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "WhatsApp-Banner Jetzt beitreten Button",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Jetzt beitreten"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.es-ES", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Actualizaciones de WhatsApp exclusivamente para socios",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner de WhatsApp Botón unirse ahora",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Únete ahora"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Mises à jour WhatsApp exclusivement pour les partenaires",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Bannière WhatsApp Bouton rejoindre maintenant",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Rejoignez maintenant"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Aggiornamenti WhatsApp esclusivamente per i partner",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner di WhatsApp Pulsante unisciti ora",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Iscriviti ora"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Aktualizacje WhatsApp wyłącznie dla partnerów",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Baner WhatsApp Przycisk dołącz teraz",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Dołącz teraz"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Atualizações do WhatsApp exclusivamente para parceiros",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner do WhatsApp Botão junte-se agora",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Junte-se agora"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ru-RU", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "Обновления WhatsApp исключительно для партнеров",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Баннер WhatsApp Кнопка присоединиться сейчас",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Присоединяйтесь сейчас"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "تحديثات WhatsApp حصريًا للشركاء",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "زر الانضمام الآن",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "انضم الآن"
+    };
+});
+
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", ["exports", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.es-ES", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ru-RU", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_deDE, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_esES, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_frFR, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_itIT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_plPL, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ptPT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ruRU, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001) {
+    return {
+        "de-DE": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_deDE,
+            "isRTL": false
+        },
+        "es-ES": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_esES,
+            "isRTL": false
+        },
+        "fr-FR": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_frFR,
+            "isRTL": false
+        },
+        "it-IT": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_itIT,
+            "isRTL": false
+        },
+        "pl-PL": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_plPL,
+            "isRTL": false
+        },
+        "pt-PT": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ptPT,
+            "isRTL": false
+        },
+        "ru-RU": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ruRU,
+            "isRTL": false
+        },
+        "ar-001": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001,
+            "isRTL": true
+        }
+    };
 });

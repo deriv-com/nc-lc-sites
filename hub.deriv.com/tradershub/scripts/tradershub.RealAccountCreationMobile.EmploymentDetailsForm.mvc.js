@@ -899,25 +899,6 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                 var validateJSResult = new OS.DataTypes.VariableHolder();
                                 var jSONDeserializeEmploymentDetailsValidationErrorsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_2437043bbd31c030b06d37eb045b623aStructure))());
                                 var jSONDeserializeEmploymentStatusValidFieldsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure))());
-                                OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "RudderStack");
-                                        span.setAttribute("outsystems.function.key", "3650942f-9af4-4a48-892b-bd9416a46f37");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                                 validateJSResult.value = OS.Logger.startActiveSpan("Validate", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Validate");
@@ -963,6 +944,25 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                 // TaxIDConfirmationCheckbox.ValidationMessage = NullTextIdentifier
                                 model.widgets.get(idService.getId("TaxIDConfirmationCheckbox")).validationMessageAttr = OS.BuiltinFunctions.nullTextIdentifier();
                                 if ((model.widgets.get(idService.getId("Form")).validAttr)) {
+                                    OS.Logger.startActiveSpan("RudderStack", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "RudderStack");
+                                            span.setAttribute("outsystems.function.key", "3650942f-9af4-4a48-892b-bd9416a46f37");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_RudderStackJS, "RudderStack", "SaveOnClick", null, function($parameters) {}, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
+
+                                        }
+
+                                    }, 1);
                                     // RealSignupCurrentStep = 3
                                     tradershubClientVariables.setRealSignupCurrentStep(3);
                                     // RealSignupSkippedEmploymentTaxDetails = False
@@ -1331,22 +1331,28 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
 
 define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SkipOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: 2,
-            step_codename: "employment_details",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: 2,
+                step_codename: "employment_details",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
     };
 });
 
 define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.RudderStackJS", [], function() {
     return function($actions, $roles, $public) {
-        Analytics.Analytics.trackEvent("ce_real_account_signup_form", {
-            action: "step_passed",
-            step_num: 2,
-            step_codename: "employment_details",
-            form_name: "real_account_signup_form_outsystems"
+        cacheTrackEvents.track({
+            name: "ce_real_account_signup_form",
+            properties: {
+                action: "step_passed",
+                step_num: 2,
+                step_codename: "employment_details",
+                form_name: "real_account_signup_form_outsystems"
+            }
         });
     };
 });

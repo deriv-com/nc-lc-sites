@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Oct 03 2024 10:56:06 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Oct 11 2024 02:40:36 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d8d9" data-wf-site="66585fe0e1dc7e70cc75d440" lang="zh-CN" data-wf-collection="66585fe0e1dc7e70cc75d7ae" data-wf-item-slug="malta-csr-programme">
 
 <head>
@@ -25,7 +25,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/derivlife/people/malta-csr-programme" />
     <meta content="People are at the centre of everything we do. Discover how our CSR programme in Malta is helping children with cancer." name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ca2dbee9a.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a79e5dcff.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -48,10 +48,32 @@
     <link href="https://deriv.com/zh-cn/derivlife/people/malta-csr-programme" rel="canonical" />
     <!--Analytics block starts here-->
     <script>
+        // Version 1.0.5
         const cacheTrackEvents = {
             interval: null,
             responses: [],
             isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
             trackPageUnload: () => {
                 window.addEventListener("beforeunload", (event) => {
                     if (!cacheTrackEvents.isPageViewSent()) {
@@ -106,7 +128,7 @@
                 }
 
                 const instances = Analytics.Analytics.getInstances();
-                return !!(instances?.tracking && instances?.ab);
+                return !!instances?.tracking;
             },
             parseCookies: (cookieName) => {
                 const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -134,7 +156,18 @@
         storedCookies
       )}; path=/; Domain=.deriv.com`;
             },
-            track: (event, cache) => {
+            processEvent: (event) => {
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
                 if (cacheTrackEvents.isReady() && !cache) {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
@@ -163,18 +196,28 @@
                     }
                 }, 1000);
             },
-            listen: (element, {
-                name,
-                properties
-            }, cache) => {
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
                 const addClickListener = (el) => {
                     if (!el.dataset.clickEventTracking) {
-                        el.addEventListener("click", function() {
-                            cacheTrackEvents.track({
+                        el.addEventListener("click", function(e) {
+                            let event = {
                                 name,
                                 properties,
                                 cache,
-                            });
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
                         });
                         el.dataset.clickEventTracking = "true";
                     }
@@ -190,25 +233,32 @@
                 cacheTrackEvents.interval = setInterval(() => {
                     let allListenersApplied = true;
 
-                    items.forEach(({
-                        element,
-                        event,
-                        cache = false
-                    }) => {
-                        const elem = document.querySelectorAll(element);
-                        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
 
-                        if (!elements.length) {
-                            allListenersApplied = false;
-                        }
-
-                        elements.forEach((el) => {
-                            if (!el.dataset.clickEventTracking) {
-                                cacheTrackEvents.listen(el, event, cache);
+                            if (!elements.length) {
                                 allListenersApplied = false;
                             }
-                        });
-                    });
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
 
                     if (allListenersApplied) {
                         clearInterval(cacheTrackEvents.interval);
@@ -238,11 +288,23 @@
 
                 items.forEach(({
                     pages = [],
+                    excludedPages = [],
                     event
                 }) => {
-                    if (pages.includes(pathname)) {
-                        console.log(`dispatching page load event for: ${event}`);
+                    let dispatch = false;
+                    if (pages.length) {
+                        if (pages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else if (excludedPages.length) {
+                        if (!excludedPages.includes(pathname)) {
+                            dispatch = true;
+                        }
+                    } else {
+                        dispatch = true;
+                    }
 
+                    if (dispatch) {
                         cacheTrackEvents.loadEvent([{
                             event
                         }]);
@@ -254,6 +316,31 @@
         };
 
         cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "email_confirmation_sent",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+            ])
             .addEventhandler([{
                     element: ".btn-free-demo .w-button",
                     event: {
@@ -334,6 +421,53 @@
                         },
                     },
                 },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                            },
+                        };
+                    },
+                },
             ])
             .pageView();
 
@@ -381,8 +515,8 @@
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
             const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
                 rudderstackKey: RUDDERSTACK_KEY,
                 growthbookOptions: {
                     navigate: (url) => window.location.replace(url),
@@ -423,18 +557,25 @@
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
             Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                const growthBookInstance = window.getGrowthbookInstance();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
                 function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
                     featureFlagValue = value;
                 }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
                 return featureFlagValue;
             };
         });
@@ -719,6 +860,77 @@
             loadJSCookie(setupCookies);
         })();
     </script>
+
+    <style>
+        /* Style for disabling scroll */
+        .disable-scroll {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        /* removing scroll bar(vertical) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* removing scroll bar (Firefox) */
+        * {
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .new-navbar_menu-left-desctop {
+                font-size: 14px;
+                /* Adjust the font size of menus in the custom breakpoint */
+            }
+
+            .new-navbar_dropdown-toggle,
+            .new-navbar_link {
+                padding: 0.5rem 0.75rem;
+                /* Adjust the padding of menus in the custom breakpoint */
+            }
+
+            header h1 {
+                font-size: 3rem;
+                /* Adjust the font size of header texts in the custom breakpoint */
+            }
+
+            header p {
+                font-size: 14px;
+                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
+                width: 81%;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            /* Adjusts for mobile landscape */
+            .tabs_menu-scroll-mobile {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS devices */
+                scrollbar-width: none;
+                /* For Firefox */
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        /* display only one text element for language switcher 
+.current-locale-list > .current-locale:first-of-type {
+    display: block;
+} */
+    </style>
 </head>
 
 <body>
@@ -1570,11 +1782,21 @@ a,
                     overflow-wrap: break-word;
 
                 }
+
+                a.deriv-tech-header_tablet-link.is-overlay:after {
+                    content: "";
+                    z-index: -1;
+                    opacity: .4;
+                    background-image: linear-gradient(181.93deg, #11141b00 3.15%, #11141b 50.01%);
+                    height: 71%;
+                    position: absolute;
+                    inset: auto 0% 0%;
+                }
             </style>
         </div>
         <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
             <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
-            <div data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
+            <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
                 <div class="new-navbar_component-wrapper">
                     <div class="new-navbar_container">
                         <div class="logo-wrap is-adaptive"><a href="/zh-cn" class="new-navbar_logo-link w-nav-brand">
@@ -1953,18 +2175,18 @@ a,
                                                                 </defs>
                                                             </svg></div>
                                                         <div>Trader&#x27;s Hub</div>
-                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">登录</a><a data-attributes="btn-primary-nav" href="/zh-cn/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">试用免费演示</a><a data-attributes="btn-primary-nav" href="/zh-cn/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">试用免费演示</a></div>
+                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">登录</a><a data-attributes="btn-primary-nav" href="/zh-cn/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">试用免费演示</a><a data-attributes="btn-primary-nav" href="/zh-cn/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">试用免费演示</a></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="new-navbar_container-wrapper"><a href="#" class="new-button tab new btn-free-demo w-button">注册吧</a><a href="#" class="new-button new-navbar tab w-button">登录</a></div>
+                                    <div class="new-navbar_container-wrapper"><a data-href="signup" href="#" class="new-button tab new btn-free-demo w-button">注册吧</a><a data-href="signin" href="#" class="new-button new-navbar tab w-button">登录</a></div>
                                 </div>
                             </div>
                         </nav>
                         <div class="new-show-tablet">
                             <div class="w-dyn-list">
                                 <div role="list" class="w-dyn-items">
-                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">登录</a></div>
+                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">登录</a></div>
                                 </div>
                             </div>
                             <div class="navbar_menu-button w-nav-button">
@@ -1983,7 +2205,7 @@ a,
                 <div class="new-navbar_dynamic-background"></div>
                 <div class="new-navbar_background-solid"></div>
                 <div class="new-navbar_dark-curtain"></div>
-            </div>
+            </section>
         </div>
         <div class="main-wrapper">
             <section class="section_deriv-life-post">
@@ -1992,7 +2214,7 @@ a,
                         <div class="bread-crumb_wrapper"><a href="/zh-cn" class="bread-crumb_link">主页</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /><a href="/zh-cn/derivlife" class="bread-crumb_link">Deriv Life</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /><a href="/zh-cn/derivlife/people" class="bread-crumb_link">人们</a><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" />
                             <div class="bread-crumb_link is-light">Deriv Malta’s CSR programme is changing lives</div>
                         </div>
-                        <div class="blog-filters">
+                        <section class="blog-filters">
                             <div class="padding-vertical padding-small w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" method="get" fs-cmsfilter-element="filters" class="deriv-life-filters_form" data-wf-page-id="66585fe0e1dc7e70cc75d8d9" data-wf-element-id="48a12123-95a3-40de-9b77-5fc5abb37b91">
                                     <div class="deriv-life-filters_search-wrapper">
@@ -2013,8 +2235,8 @@ a,
                                     <div>哎哟！ 提交表单时出了点问题。</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="deriv-life-post_content">
+                        </section>
+                        <section class="deriv-life-post_content">
                             <div class="deriv-life-post_header">
                                 <div class="blog-post_heading-wrapper">
                                     <h1 class="deriv-life-post-title-text">Deriv Malta’s CSR programme is changing lives</h1>
@@ -2031,7 +2253,7 @@ a,
                                         <div class="text-block-9">September 24, 2024</div>
                                     </div>
                                 </div>
-                                <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%20Malta%E2%80%99s%20CSR%20programme%20is%20changing%20lives.webp" loading="lazy" alt="Volunteers from Deriv participating in the Malta CSR programme" sizes="(max-width: 479px) 93vw, (max-width: 991px) 94vw, (max-width: 1439px) 90vw, 1232px" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%2520Malta%25E2%2580%2599s%2520CSR%2520programme%2520is%2520changing%2520lives-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%2520Malta%25E2%2580%2599s%2520CSR%2520programme%2520is%2520changing%2520lives-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%20Malta%E2%80%99s%20CSR%20programme%20is%20changing%20lives.webp 1232w" class="blog-post_image" /></div>
+                                <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%20Malta%E2%80%99s%20CSR%20programme%20is%20changing%20lives.webp" loading="lazy" alt="Volunteers from Deriv participating in the Malta CSR programme" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 95vw, 90vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%2520Malta%25E2%2580%2599s%2520CSR%2520programme%2520is%2520changing%2520lives-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%2520Malta%25E2%2580%2599s%2520CSR%2520programme%2520is%2520changing%2520lives-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f384_Deriv%20Malta%E2%80%99s%20CSR%20programme%20is%20changing%20lives.webp 1232w" class="blog-post_image" /></div>
                                 <div class="blog-post_video-wrapper">
                                     <div class="blog-post_video w-dyn-bind-empty w-video w-embed"></div>
                                 </div>
@@ -2080,7 +2302,7 @@ a,
                                     <div class="share-block_buttons"><a id="facebook-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d680_facebook-md.svg" loading="lazy" alt="" /></a><a id="twitter-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a><a id="twitter-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a><a id="linkedin-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a><a id="telegram-share" href="#" target="_blank" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a><a id="copy-url" href="#" class="share-block_button w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a5_icon%20-%20link.svg" loading="lazy" alt="" /></a></div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </section>
@@ -2512,344 +2734,11 @@ a,
                     </div>
                 </div>
             </footer>
-            <footer class="footer_component derivgo-query-element">
-                <div class="padding-global">
-                    <div class="container-xlarge">
-                        <div class="padding-vertical padding-medium">
-                            <div class="footer_social-wrapper"><a href="/zh-cn" id="w-node-_5a20ef3c-9f82-c550-2803-24621f43fb3d-1f43fb38" class="footer_logo-link w-nav-brand">
-                                    <div class="footer_logo w-embed"><svg width="100%" height="100%" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14.4238 0.808863L13.1912 7.79644H8.91248C4.92071 7.79644 1.11591 11.0293 0.410715 15.0195L0.112228 16.7179C-0.589682 20.7082 2.07366 23.9411 6.06543 23.9411H9.63407C12.5434 23.9411 15.315 21.5869 15.8267 18.6787L19.1133 0.0552979L14.4238 0.808863ZM11.3878 18.0196C11.2304 18.918 10.4213 19.6492 9.52256 19.6492H7.35448C5.56031 19.6492 4.35984 18.1934 4.67471 16.3966L4.86168 15.3376C5.17983 13.5441 6.89199 12.0851 8.68615 12.0851H12.4347L11.3878 18.0196ZM47.3757 23.9408L50.1834 8.01904H54.6245L51.8168 23.9408H47.3757ZM47.8561 8.20264C47.6335 9.46551 47.4099 10.7284 47.1873 11.9913C45.0833 11.3377 42.9125 11.5458 42.2456 11.6788C41.5254 15.7671 40.8042 19.8564 40.083 23.9447H35.6389C36.2424 20.5239 38.3042 8.84149 38.3042 8.84149C39.7496 8.24317 43.2991 7.02889 47.8561 8.20264ZM29.8494 7.79374H26.3924C23.0238 7.79374 19.8128 10.5217 19.219 13.8889L18.5204 17.8464C17.9267 21.2137 20.1736 23.9417 23.5422 23.9417H30.8959L31.6503 19.6629H24.7392C23.6175 19.6629 22.8664 18.7546 23.0665 17.63L23.0895 17.4956H34.2316L34.8679 13.8889C35.4615 10.5217 33.2148 7.79374 29.8462 7.79374H29.8494ZM30.4103 13.548L30.3841 13.7775H23.7586L23.7947 13.5742C23.9947 12.4528 25.0181 11.4659 26.143 11.4659H28.731C29.843 11.4659 30.5941 12.4365 30.4103 13.548ZM67.5083 8.01904H71.9526C70.4387 12.0426 66.9691 18.887 63.6082 23.9408H59.1639C57.6212 19.1308 56.625 12.429 56.4349 8.01904H60.8794C60.9596 9.45755 61.6038 14.7933 62.339 18.5208C64.3555 14.8945 66.5786 10.1366 67.5049 8.01904H67.5083Z" fill="currentcolor" />
-                                        </svg></div>
-                                </a>
-                                <div class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_98e621df-f73e-f7f7-0018-5ff48870c77d-1f43fb38" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_6a21558b-6158-18f5-0c50-77242b158575-1f43fb38" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-cbdfe493-178d-664e-1fe8-e8d7cbe0ce1b-1f43fb38" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_66964cb7-d9d1-0813-19eb-2ca6c481ba2d-1f43fb38" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-d88da022-1e22-a2f8-9ad4-5ca0b625993f-1f43fb38" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a></div>
-                                </div>
-                            </div>
-                            <div class="w-dyn-list">
-                                <div role="list" class="w-dyn-items">
-                                    <div role="listitem" class="w-dyn-item">
-                                        <div class="padding-bottom padding-medium">
-                                            <div class="footer_tab">
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>关于</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/who-we-are" class="footer_tabs-dropdown-link w-dropdown-link">我们是谁</a><a href="/zh-cn/why-choose-us" class="footer_tabs-dropdown-link w-dropdown-link">为何选择我们</a><a href="/zh-cn/our-principles" class="footer_tabs-dropdown-link w-dropdown-link">我们的原则</a><a href="/zh-cn/contact-us" class="footer_tabs-dropdown-link w-dropdown-link">联系我们</a><a href="/careers" class="footer_tabs-dropdown-link w-dropdown-link">工作机会</a><a href="/derivtech" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>Deriv Tech</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="/derivlife" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>Deriv Life</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>交易</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/trade/cfds" class="footer_tabs-dropdown-link w-dropdown-link">差价合约</a><a href="/zh-cn/trade/options" class="footer_tabs-dropdown-link w-dropdown-link">期权</a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>市场</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/markets/forex" class="footer_tabs-dropdown-link w-dropdown-link">外汇</a><a href="/zh-cn/markets/stocks" class="footer_tabs-dropdown-link w-dropdown-link">股票</a><a href="/zh-cn/markets/stock-indices" class="footer_tabs-dropdown-link w-dropdown-link">股票指数</a><a href="/zh-cn/markets/commodities" class="footer_tabs-dropdown-link w-dropdown-link">大宗商品</a><a href="/zh-cn/markets/cryptocurrencies" class="footer_tabs-dropdown-link w-dropdown-link">加密货币</a><a href="/zh-cn/markets/etfs" class="footer_tabs-dropdown-link w-dropdown-link">交易所买卖基金</a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>平台</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/trading-platforms/deriv-mt5" class="footer_tabs-dropdown-link w-dropdown-link">Deriv MT5</a><a href="/zh-cn/trading-platforms/deriv-ctrader" class="footer_tabs-dropdown-link w-dropdown-link">Deriv cTrader</a><a href="/zh-cn/trading-platforms/deriv-trader" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Trader</a><a href="/zh-cn/trading-platforms/deriv-go" class="footer_tabs-dropdown-link w-dropdown-link">Deriv GO</a><a href="/zh-cn/trading-platforms/deriv-bot" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Bot</a><a href="https://bot.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>Binary Bot</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="https://smarttrader.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>SmartTrader</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>支持</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/blog" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Blog</a><a href="/zh-cn/help-centre" class="footer_tabs-dropdown-link w-dropdown-link">帮助中心</a><a href="https://community.deriv.com" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>社区</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="https://deriv.statuspage.io/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>状态页面</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>合作伙伴</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/partners" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>Partnership programmes</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="https://api.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
-                                                            <div>Deriv API</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>法律</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/zh-cn/regulatory" class="footer_tabs-dropdown-link w-dropdown-link">法规信息</a><a href="/zh-cn/terms-and-conditions" class="footer_tabs-dropdown-link w-dropdown-link">条款和条件</a><a href="/zh-cn/responsible" class="footer_tabs-dropdown-link w-dropdown-link">安全和负责任交易</a><a href="/zh-cn/fraud-prevention" class="footer_tabs-dropdown-link w-dropdown-link">防欺诈</a></nav>
-                                                </div>
-                                            </div>
-                                            <div class="w-layout-grid footer_top-wrapper">
-                                                <div class="footer_link-list gap-medium">
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">关于</div><a href="/zh-cn/who-we-are" class="footer_link">我们是谁</a><a href="/zh-cn/why-choose-us" class="footer_link">为何选择我们</a><a href="/zh-cn/our-principles" class="footer_link">我们的原则</a><a href="/zh-cn/contact-us" class="footer_link">联系我们</a><a href="/careers" class="footer_link">工作机会</a><a href="/derivtech" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>Deriv Tech</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="/derivlife" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>Deriv Life</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a>
-                                                    </div><a href="/blog/posts/deriv-gold-accreditation-by-investors-in-people" target="_blank" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a>
-                                                </div>
-                                                <div class="footer_link-list gap-medium">
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">交易</div><a href="/zh-cn/trade/cfds" class="footer_link">差价合约</a><a href="/zh-cn/trade/options" class="footer_link">期权</a>
-                                                    </div>
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">支持</div><a href="/zh-cn/blog" class="footer_link">Deriv Blog</a><a href="/zh-cn/help-centre" class="footer_link">帮助中心</a><a href="https://community.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>社区</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="https://deriv.statuspage.io/" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>状态页面</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="footer_link-list">
-                                                    <div class="footer_title">市场</div><a href="/zh-cn/markets/forex" class="footer_link">外汇</a><a href="/zh-cn/markets/derived-indices/synthetic-indices" class="footer_link">Derived 指数</a><a href="/zh-cn/markets/stocks" class="footer_link">股票</a><a href="/zh-cn/markets/stock-indices" class="footer_link">股票指数</a><a href="/zh-cn/markets/commodities" class="footer_link">大宗商品</a><a href="/zh-cn/markets/cryptocurrencies" class="footer_link">加密货币</a><a href="/zh-cn/markets/etfs" class="footer_link">交易所买卖基金</a>
-                                                </div>
-                                                <div class="footer_link-list">
-                                                    <div class="footer_title">平台</div><a href="/zh-cn/trading-platforms/deriv-mt5" class="footer_link">Deriv MT5</a><a href="/zh-cn/trading-platforms/deriv-ctrader" class="footer_link">Deriv cTrader</a><a href="/zh-cn/trading-platforms/deriv-x" class="footer_link">Deriv X</a><a href="/zh-cn/trading-platforms/deriv-trader" class="footer_link">Deriv Trader</a><a href="/zh-cn/trading-platforms/deriv-go" class="footer_link">Deriv GO</a><a href="/zh-cn/trading-platforms/deriv-bot" class="footer_link">Deriv Bot</a><a href="https://bot.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
-                                                        <div>Binary Bot</div>
-                                                        <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_8673_4157)">
-                                                                    <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_8673_4157">
-                                                                        <rect width="12" height="24" fill="white" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg></div>
-                                                    </a><a href="https://smarttrader.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
-                                                        <div>SmartTrader</div>
-                                                        <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_8673_4157)">
-                                                                    <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_8673_4157">
-                                                                        <rect width="12" height="24" fill="white" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg></div>
-                                                    </a>
-                                                </div>
-                                                <div class="footer_link-list gap-medium">
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">法律</div><a href="/zh-cn/regulatory" class="footer_link">法规信息</a><a href="/zh-cn/terms-and-conditions" class="footer_link">条款和条件</a><a href="/zh-cn/responsible" class="footer_link">安全和负责任交易</a><a href="/zh-cn/fraud-prevention" class="footer_link">防欺诈</a>
-                                                    </div>
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">合作伙伴</div><a href="/zh-cn/partners" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>合伙计划</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a><a href="https://api.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
-                                                            <div>Deriv API</div>
-                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g clip-path="url(#clip0_8673_4157)">
-                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_8673_4157">
-                                                                            <rect width="12" height="24" fill="white" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg></div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div id="w-node-_5a20ef3c-9f82-c550-2803-24621f43fc15-1f43fb38" class="footer_banner">
-                                                    <div class="footer_banner-content">
-                                                        <div class="footer_banner-logo-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47a_deriv%20product-deriv%20go.svg" loading="lazy" alt="" class="footer_banner-logo-image" />
-                                                            <div class="footer_banner-logo-title">Deriv GO</div>
-                                                        </div>
-                                                        <div>使用移动应用程序交易 multipliers。</div>
-                                                        <div class="footer_banner-badge qr-code"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4d7_deriv.link_derivgo%20(4)%201.svg" loading="lazy" alt="" class="footer_banner-qrcode" />
-                                                            <div>扫描下载</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="footer_banner-content"><a href="https://play.google.com/store/apps/details?id=com.deriv.app" target="_blank" class="footer_banner-badge google w-inline-block">
-                                                            <div class="footer_banner-store-icon-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4dc_icon.svg" loading="lazy" alt="" class="footer_banner-store-icon" /></div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4dd_text.svg" loading="lazy" alt="" class="footer_banner-store-text" />
-                                                        </a><a href="https://apps.apple.com/my/app/deriv-go-online-trading-app/id1550561298" target="_blank" class="footer_banner-badge store w-inline-block">
-                                                            <div class="footer_banner-store-icon-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4ff_icon.svg" loading="lazy" alt="" class="footer_banner-store-icon" /></div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4fc_text.svg" loading="lazy" alt="" class="footer_banner-store-text" />
-                                                        </a><a href="https://appgallery.huawei.com/app/C103801913" target="_blank" class="footer_banner-badge gallery w-inline-block">
-                                                            <div class="footer_banner-store-icon-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4db_icon.svg" loading="lazy" alt="" class="footer_banner-store-icon" /></div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47d_text.svg" loading="lazy" alt="" class="footer_banner-store-text" />
-                                                        </a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="footer_bottom-wrapper">
-                                            <div class="footer_legal-list">
-                                                <div class="footer_text w-richtext">
-                                                    <p id="">Deriv Investments (Europe) Limited 由 Malta Financial Services Authority 根据《投资服务法》授予许可证并监管。<br>Deriv (FX) Ltd 由 Labuan Financial Services Authority 授予许可证。 <br>Deriv (BVI) Ltd 由 British Virgin Islands Financial Services Commission 授予许可证。 <br>Deriv (V) Ltd 由 Vanuatu Financial Services Commission 授予许可证和监管。<br>Deriv (Mauritius) Ltd 由毛里求斯的 Financial Services Commission 授予许可证。<br>Deriv (SVG) LLC 的注册地址为 First Floor, SVG Teachers Credit Union Uptown Building, Corner of James and Middle Street, Kingstown P.O., St Vincent and the Grenadines。 <br>Deriv.com Limited 是在根西岛注册的公司，是这些子公司的控股公司。<br><br>使用我们的服务前，请务必阅读<a href="/terms-and-conditions" id=""><strong id="">条款和条件</strong></a>、<a href="https://docs.deriv.com/tnc/risk-disclosure.pdf" target="_blank"><strong id="">风险披露</strong></a>以及<a href="/responsible" id=""><strong id="">安全和负责任交易</strong></a>，以充分了解所涉及的风险。 另请注意，本网站的信息不构成投资建议。</p>
-                                                </div>
-                                                <div class="footer_risk-warning w-richtext">
-                                                    <p id="">网站提供的是复杂的衍生产品，潜在的亏损风险很大。 差价合约是复杂的工具，由于杠杆作用，存在快速亏损的高风险。 您应该考虑自己是否了解这些产品的运作方式，以及是否有能力承担亏损的高风险。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="show-tablet">
-                                <div class="footer_badge-wrapper"><a href="/blog/posts/deriv-gold-accreditation-by-investors-in-people" target="_blank" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b3f9562ab.js" type="text/javascript"></script> <!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.18/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.5fffeb20e.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.27/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2967,7 +2856,8 @@ a,
                     "/eu-careers",
                     "/our-locations",
                     "/product-explorer",
-                    "/academy"
+                    "/academy",
+                    "/trading-terms-glossary"
                 ];
                 let path = window.location.pathname;
                 let targetPathUrl = false;
@@ -3618,7 +3508,8 @@ a,
                 "/eu-careers",
                 "/our-locations",
                 "/product-explorer",
-                "/academy"
+                "/academy",
+                "/trading-terms-glossary",
 
             ];
             var path = window.location.pathname;
@@ -3660,7 +3551,8 @@ a,
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
+                const growthbookInstance = window.getGrowthbookInstance()
+                const featureFlagValue = growthbookInstance.getFeatureValue(
                     "trigger_os_signup_wf"
                 );
                 const handleOutSystemsRedirection = () => {
@@ -3724,14 +3616,12 @@ a,
                     }
                 });
             };
-
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
-                });
+            const growthbookInstance = window.getGrowthbookInstance();
+            growthbookInstance?.loadFeatures().then(() => {
+                if (window.location.href.indexOf("/partners") > -1 === false) {
+                    updateLinkHrefs();
+                }
+            });
         });
     </script>
 

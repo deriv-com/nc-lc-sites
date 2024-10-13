@@ -716,6 +716,19 @@ define("PartnersHub.Signup.EmailVerificationBlock.mvc$controller.OnClickTimer.Ja
 });
 
 
+define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "EShNp62YjUep+kX04AAY+g#Value": "تأكد من أن البريد الإلكتروني غير محجوب بواسطة جدران الحماية أو الفلاتر.",
+        "kSn5sLsbmkmpruyoXIZ6LQ#Value": "تحقق من مجلد الرسائل غير المرغوب فيها.",
+        "Gti3g47eEU+oenmecSnO6Q#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
+        "etHx6o0xsEibhJs7jg1Onw#ValueExpression.-831934195.1": "إعادة إرسال الرمز في",
+        "etHx6o0xsEibhJs7jg1Onw#ValueExpression.1067057.1": "sec",
+        "gmoJ9bRlBk2hPDhbG6xeKw#Value": "إعادة إرسال البريد الإلكتروني",
+        "X44uz9A6JkW4bDTdx+u2Dw#Value": "لم تتلقَ بريدًا إلكترونيًا؟",
+        "nmZ5mUvyNEKM2qCLevum5Q#Value": "لقد أرسلنا رابط التحقق إلى"
+    };
+});
+
 define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.de-DE", [], function() {
     return {
         "EShNp62YjUep+kX04AAY+g#Value": "Stellen Sie sicher, dass die E-Mail nicht von Firewalls oder Filtern blockiert wird.",
@@ -807,8 +820,12 @@ define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ru-R
     };
 });
 
-define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_deDE, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_esES, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_frFR, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_itIT, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_plPL, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ruRU) {
+define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources", ["exports", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ar-001", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.de-DE", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.es-ES", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.fr-FR", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.it-IT", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.pl-PL", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.pt-PT", "PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ar001, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_deDE, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_esES, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_frFR, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_itIT, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_plPL, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ptPT, PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Signup_EmailVerificationBlock_mvc_translationsResources_deDE,
             "isRTL": false

@@ -1,4 +1,4 @@
-define("PartnersHub.CFDs.PlanDetails.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.TitleBlock.mvc$model", "PartnersHub.CFDs.PlanDetailsTable.mvc$model", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_TitleBlock_mvcModel, PartnersHub_CFDs_PlanDetailsTable_mvcModel) {
+define("PartnersHub.CFDs.PlanDetails.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Common.TitleBlock.mvc$model", "PartnersHub.CFDs.PlanDetailsTable.mvc$model"], function(OSRuntimeCore, PartnersHubModel, PartnersHub_Layouts_LayoutDashboard_mvcModel, PartnersHub_Common_TitleBlock_mvcModel, PartnersHub_CFDs_PlanDetailsTable_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -99,7 +99,7 @@ define("PartnersHub.CFDs.PlanDetails.mvc$model", ["@outsystems/runtime-core-js",
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.CFDs.PlanDetails.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.CFDs.PlanDetails.mvc$model", "PartnersHub.CFDs.PlanDetails.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.TitleBlock.mvc$view", "PartnersHub.CFDs.PlanDetailsTable.mvc$view", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_CFDs_PlanDetails_mvc_model, PartnersHub_CFDs_PlanDetails_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_CFDs_PlanDetailsTable_mvc_view) {
+define("PartnersHub.CFDs.PlanDetails.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.CFDs.PlanDetails.mvc$model", "PartnersHub.CFDs.PlanDetails.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$view", "@outsystems/runtime-widgets-js", "PartnersHub.Common.TitleBlock.mvc$view", "PartnersHub.CFDs.PlanDetailsTable.mvc$view"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, React, OSView, PartnersHub_CFDs_PlanDetails_mvc_model, PartnersHub_CFDs_PlanDetails_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_view, OSWidgets, PartnersHub_Common_TitleBlock_mvc_view, PartnersHub_CFDs_PlanDetailsTable_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -307,7 +307,7 @@ define("PartnersHub.CFDs.PlanDetails.mvc$view", ["@outsystems/runtime-core-js", 
 
     return View;
 });
-define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.CFDs.PlanDetails.mvc$translationsResources", "PartnersHub.CFDs.controller", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$IFrameLogout"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_CFDs_PlanDetails_mvc_TranslationsResources, PartnersHub_CFDsController) {
+define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.CFDs.PlanDetails.mvc$translationsResources", "PartnersHub.CFDs.controller"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_CFDs_PlanDetails_mvc_TranslationsResources, PartnersHub_CFDsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -355,7 +355,7 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
                                 controller.ensureControllerAlive("OnClickBackButton");
                                 callContext = controller.callContext(callContext);
                                 // Destination: (PreviousScreen)
-                                return OS.Navigation.navigateBack(null, callContext, true);
+                                return OS.Navigation.navigateBack(OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.None), callContext, true);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -371,57 +371,6 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
             }
             set _onClickBackButton$Action(value) {
                 this.__onClickBackButton$Action = value;
-            }
-
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "90087f15-aa9e-4bf7-8f9c-a1b01bb2ddbe");
-                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnReady");
-                                callContext = controller.callContext(callContext);
-                                var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: HandleRedirectOnLogin
-                                    model.flush();
-                                    return PartnersHubController.default.handleRedirectOnLogin$Action(callContext).then(function(value) {
-                                        handleRedirectOnLoginVar.value = value;
-                                    }).then(function() {
-                                        return OS.Flow.executeSequence(function() {
-                                            if ((!(handleRedirectOnLoginVar.value.isLoggedInOut))) {
-                                                // Execute Action: IFrameLogout
-                                                model.flush();
-                                                return PartnersHubController.default.iFrameLogout$Action(callContext);
-                                            }
-
-                                        });
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__onReady$Action;
-            }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
             }
 
             get _onClickCloseButton$Action() {
@@ -443,7 +392,7 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
                                 controller.ensureControllerAlive("OnClickCloseButton");
                                 callContext = controller.callContext(callContext);
                                 // Destination: /PartnersHub/PartnersHubDashboard
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "PartnersHubDashboard", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "PartnersHubDashboard", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.None), callContext, true);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -482,29 +431,6 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
 
                     }
 
-                }, 0);
-
-            }
-
-            onReady$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "90087f15-aa9e-4bf7-8f9c-a1b01bb2ddbe");
-                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
                 }, 0);
 
             }
@@ -548,14 +474,7 @@ define("PartnersHub.CFDs.PlanDetails.mvc$controller", ["@outsystems/runtime-core
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;

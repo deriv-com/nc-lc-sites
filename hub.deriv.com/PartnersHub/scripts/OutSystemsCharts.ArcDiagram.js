@@ -1,6 +1,6 @@
 !
 /**
- * Highcharts JS v11.4.6 (2024-07-08)
+ * Highcharts JS v11.4.8 (2024-08-29)
  *
  * Arc diagram module
  *
@@ -102,7 +102,7 @@ function(t) {
                     u = p / 2,
                     g = n.renderer,
                     f = a.group,
-                    m = l - Math.round(p * (o ? .4 : .3)),
+                    m = l - Math.round((t.fontMetrics?.b || p) * (o ? .4 : .3)),
                     y = {},
                     x, b = h.marker,
                     S = 0;
@@ -661,7 +661,7 @@ function(t) {
                     c, u, g, f, m = Number.MAX_VALUE;
 
                 function y(t) {
-                    return b(t, -1e5, 1e5)
+                    return b(t, -1e9, 1e9)
                 }
                 for (c = 0; c < n; c++) {
                     let t;
@@ -1414,9 +1414,9 @@ function(t) {
                 let h = a.start || 0,
                     l = s(a.r, r),
                     d = s(a.r, o || r),
-                    p = 2e-4 / Math.max(l, 1),
+                    p = 2e-4 / (a.borderRadius ? 1 : Math.max(l, 1)),
                     c = Math.abs((a.end || 0) - h - 2 * Math.PI) < p,
-                    u = (a.end || 0) - p,
+                    u = (a.end || 0) - (c ? p : 0),
                     g = a.innerR,
                     f = s(a.open, c),
                     m = Math.cos(h),
@@ -1717,7 +1717,7 @@ function(t) {
                         class: "highcharts-root"
                     }),
                     d = l.element;
-                a || l.css(this.getStyle(s || {})), t.appendChild(d), k(t, "dir", "ltr"), -1 === t.innerHTML.indexOf("xmlns") && k(d, "xmlns", this.SVG_NS), this.box = d, this.boxWrapper = l, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(g.createTextNode("Created with Highcharts 11.4.6")), this.defs = this.createElement("defs").add(), this.allowHTML = o, this.forExport = r, this.styledMode = a, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = l.getStyle("font-size"), this.setSize(e, i, !1), f && t.getBoundingClientRect && ((n = function() {
+                a || l.css(this.getStyle(s || {})), t.appendChild(d), k(t, "dir", "ltr"), -1 === t.innerHTML.indexOf("xmlns") && k(d, "xmlns", this.SVG_NS), this.box = d, this.boxWrapper = l, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(g.createTextNode("Created with Highcharts 11.4.8")), this.defs = this.createElement("defs").add(), this.allowHTML = o, this.forExport = r, this.styledMode = a, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = l.getStyle("font-size"), this.setSize(e, i, !1), f && t.getBoundingClientRect && ((n = function() {
                     w(t, {
                         left: 0,
                         top: 0
@@ -2009,7 +2009,7 @@ function(t) {
                     }), M(e) && s.attr({
                         x: e,
                         y: i
-                    }), s.isImg = !0, M(s.imgwidth) && M(s.imgheight) ? l(s) : (s.attr({
+                    }), s.isImg = !0, s.symbolUrl = t, M(s.imgwidth) && M(s.imgheight) ? l(s) : (s.attr({
                         width: 0,
                         height: 0
                     }), A("img", {

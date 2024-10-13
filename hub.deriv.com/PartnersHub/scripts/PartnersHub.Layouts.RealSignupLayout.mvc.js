@@ -1094,6 +1094,21 @@ define("PartnersHub.Layouts.RealSignupLayout.mvc$controller", ["@outsystems/runt
 });
 
 
+define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "i8+dTC528EydZcwYoOEEvQ#Value": "عمولة CFDs",
+        "X44sSTfLdkCkHEOfytCWPw#Value": "شروط الاستخدام",
+        "u7BlRWdrt0+ixMyjgh6sBw#Value": "منصات الترويج",
+        "KBGQ4pg10Ui30pijs4Xfew#Value": "تفاصيل العنوان",
+        "MWYGd4mn6UaZTwD83Dk0rQ#Value": "تفاصيل التوظيف",
+        "fBHBbf2e0UaRhgzogcE0sg#Value": "التحقق من الهوية",
+        "YgdPiBnYm0WoI7q1J0rIaQ#Value": "التفاصيل الشخصية",
+        "g1a0z3kEPUW3QH+bDFe17g#Value": "عملة الحساب",
+        "x7aU+JdcFkSp0aQplouQaA#Value": "نوع الحساب",
+        "U+RfKlcKOUu370_GGo57sg#Value": "إضافة حساب حقيقي"
+    };
+});
+
 define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.de-DE", [], function() {
     return {
         "i8+dTC528EydZcwYoOEEvQ#Value": "CFDs-Kommission",
@@ -1199,8 +1214,12 @@ define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ru-RU", [
     };
 });
 
-define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_esES, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ruRU) {
+define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources", ["exports", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ar-001", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.de-DE", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.es-ES", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.fr-FR", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.it-IT", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.pl-PL", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.pt-PT", "PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ar001, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_deDE, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_esES, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_frFR, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_itIT, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_plPL, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ptPT, PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ruRU) {
     return {
+        "ar-001": {
+            "translations": PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Layouts_RealSignupLayout_mvc_translationsResources_deDE,
             "isRTL": false

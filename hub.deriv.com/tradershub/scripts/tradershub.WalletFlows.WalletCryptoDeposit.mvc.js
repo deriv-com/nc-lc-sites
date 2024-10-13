@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "OutSystemsUI.model", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$TooltipOpen", "OutSystemsUI.controller$TooltipClose"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubController, OutSystemsUIModel, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetCurrenciesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -84,7 +84,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$model", ["@outsystems/run
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$model", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$TooltipOpen", "OutSystemsUI.controller$TooltipClose"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, OutSystemsUIModel, React, OSView, tradershub_WalletFlows_WalletCryptoDeposit_mvc_model, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$model", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_WalletFlows_WalletCryptoDeposit_mvc_model, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -363,7 +363,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
                                             },
                                             onToggle$Action: function(tooltipIdIn, isOpenedIn) {
                                                 var eventHandlerContext = callContext.clone();
-                                                controller.toggleTooltip$Action(controller.callContext(eventHandlerContext));
+                                                controller.clipboardAction$Action(controller.callContext(eventHandlerContext));
 
                                                 ;
                                             }
@@ -593,7 +593,7 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$view", ["@outsystems/runt
 
     return View;
 });
-define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.ClipboardAction.ClipboardActionJS", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.OnRender.InitQRJS", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.ToggleTooltip.JavaScript1JS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$TooltipOpen", "OutSystemsUI.controller$TooltipClose"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ClipboardAction_ClipboardActionJS, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_OnRender_InitQRJS, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ToggleTooltip_JavaScript1JS) {
+define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.ClipboardAction.ClipboardActionJS", "tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.OnRender.InitQRJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$PostCashierCrypto", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ClipboardAction_ClipboardActionJS, tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_OnRender_InitQRJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -793,7 +793,10 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystem
                                     }
 
                                     try {
-                                        return controller.safeExecuteJSNode(tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ClipboardAction_ClipboardActionJS, "ClipboardAction", "ClipboardAction", null, function($parameters) {}, {}, {});
+                                        return controller.safeExecuteJSNode(tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ClipboardAction_ClipboardActionJS, "ClipboardAction", "ClipboardAction", {
+                                            TooltipId: OS.DataConversion.JSNodeParamConverter.to(idService.getId("ClipboardTooltip"), OS.DataTypes.DataTypes.Text),
+                                            TextToCopy: OS.DataConversion.JSNodeParamConverter.to(model.variables.cryptoAddressVar, OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
                                     } finally {
                                         if (span) {
                                             span.end();
@@ -873,63 +876,6 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystem
             }
             set _onRender$Action(value) {
                 this.__onRender$Action = value;
-            }
-
-            get _toggleTooltip$Action() {
-                if (!(this.hasOwnProperty("__toggleTooltip$Action"))) {
-                    this.__toggleTooltip$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("ToggleTooltip", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "ToggleTooltip");
-                                span.setAttribute("outsystems.function.key", "96e6fc3b-0ec0-4d57-b906-1c17c80bbb31");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("ToggleTooltip");
-                                callContext = controller.callContext(callContext);
-                                OS.Logger.startActiveSpan("JavaScript1", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "JavaScript1");
-                                        span.setAttribute("outsystems.function.key", "35b8c396-5819-4ca4-841c-add7be354241");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_WalletFlows_WalletCryptoDeposit_mvc_controller_ToggleTooltip_JavaScript1JS, "JavaScript1", "ToggleTooltip", null, function($parameters) {}, {
-                                            TooltipOpen: OutSystemsUIController.default.clientActionProxies.tooltipOpen$Action,
-                                            TooltipClose: OutSystemsUIController.default.clientActionProxies.tooltipClose$Action
-                                        }, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__toggleTooltip$Action;
-            }
-            set _toggleTooltip$Action(value) {
-                this.__toggleTooltip$Action = value;
             }
 
 
@@ -1017,30 +963,6 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystem
 
                     try {
                         return controller.safeExecuteClientAction(controller._onRender$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            toggleTooltip$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("ToggleTooltip__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "ToggleTooltip");
-                        span.setAttribute("outsystems.function.key", "96e6fc3b-0ec0-4d57-b906-1c17c80bbb31");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._toggleTooltip$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -1154,18 +1076,14 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller", ["@outsystem
 });
 
 define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.ClipboardAction.ClipboardActionJS", [], function() {
-    return function($actions, $roles, $public) {
-        var copiedTextElement = document.getElementsByClassName("cypto-address-container")[0];
+    return function($parameters, $actions, $roles, $public) {
+        navigator.clipboard.writeText($parameters.TextToCopy)
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
 
-        if (copiedTextElement) {
-            var copiedText = copiedTextElement.textContent;
 
-            // Copy the text to the clipboard
-            navigator.clipboard.writeText(copiedText)
-                .catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
-        }
+
     };
 });
 
@@ -1183,15 +1101,5 @@ define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.OnRender.InitQ
             }
         }
 
-    };
-});
-
-define("tradershub.WalletFlows.WalletCryptoDeposit.mvc$controller.ToggleTooltip.JavaScript1JS", [], function() {
-    return function($actions, $roles, $public) {
-        if ($actions.TooltipOpen(ClipboardTooltip.id)) {
-            setTimeout(() => {
-                $actions.TooltipClose(ClipboardTooltip.id)
-            }, 3000);
-        }
     };
 });
