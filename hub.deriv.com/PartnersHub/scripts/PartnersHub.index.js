@@ -6,7 +6,7 @@ require(["tslib"], function(tslib) {
         }
 
         Promise.all([OS.Application.default.initialize(PartnersHubAppDefinition, OS.Interfaces.Application.InitializationType.Full, new OS.Format.DateTimeFormatInfo("yyyy-MM-dd", "HH:mm:ss"), new OS.Format.NumberFormatInfo(".", ""), function() {
-            return Promise.all(["scripts/PartnersHub.yupumd.js"].map(function(script) {
+            return Promise.all(["scripts/PartnersHub.yupumd.js", "scripts/PartnersHub.CacheScript.js"].map(function(script) {
                 return OS.SystemActions.requireScript(script);
             }));
         }).then(function(success) {

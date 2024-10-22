@@ -813,7 +813,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1373,7 +1374,7 @@
                                     <h2>Możliwości partnerstwa organizacji pozarządowych</h2>
                                     <p>Zawsze szukamy podobnie myślących lokalnych organizacji pozarządowych, które dołączą do nas w naszej misji. Jeśli podzielasz naszą wizję zrównoważonej i sprzyjającej włączeniu społecznemu przyszłości, współpracujmy.</p>
                                     <p>W Deriv wierzymy w głęboki wpływ, jaki firmy mogą mieć na tworzenie lepszego świata. Nasze działania CSR mają na celu dokonanie trwałej zmiany, pokazując, że sukces biznesowy i pozytywny wpływ na świat mogą współistnieć harmonijnie.</p>
-                                    <p>Zapraszamy do przyłączenia się do nas, gdy dążymy do przekraczania granic, wykorzystując nasze możliwości fintech, aby stworzyć przyszłość, która jest zarówno wyrafinowana technologicznie, jak i uniwersalnie sprawiedliwa i ekologiczna. Napisz do nas na adres <a href="#"><span class="__cf_email__" data-cfemail="ef8c9c9daf8b8a9d8699c18c8082">[email&#160;protected]</span></a>.</p>
+                                    <p>Zapraszamy do przyłączenia się do nas, gdy dążymy do przekraczania granic, wykorzystując nasze możliwości fintech, aby stworzyć przyszłość, która jest zarówno wyrafinowana technologicznie, jak i uniwersalnie sprawiedliwa i ekologiczna. Napisz do nas na adres <a href="#"><span class="__cf_email__" data-cfemail="492a3a3b092d2c3b203f672a2624">[email&#160;protected]</span></a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -1954,7 +1955,8 @@
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
+                    return parsedData.date_first_contact ?
+                        {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -1969,7 +1971,8 @@
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
+                    return parsedData.signup_device ?
+                        {
                             signup_device: parsedData.signup_device
                         } :
                         null;

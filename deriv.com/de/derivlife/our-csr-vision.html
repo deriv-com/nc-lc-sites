@@ -813,7 +813,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1373,7 +1374,7 @@
                                     <h2>Möglichkeiten für NRO-Partnerschaften</h2>
                                     <p>Wir sind immer auf der Suche nach gleichgesinnten lokalen NGOs, die uns bei unserer Mission unterstützen. Wenn Sie unsere Vision einer nachhaltigen und inklusiven Zukunft teilen, lassen Sie uns zusammenarbeiten.</p>
                                     <p>Wir bei Deriv glauben an den tiefgreifenden Einfluss, den Unternehmen auf die Gestaltung einer besseren Welt haben können. Unsere CSR-Aktivitäten sind darauf ausgerichtet, einen dauerhaften Unterschied zu bewirken und zu zeigen, dass geschäftlicher Erfolg und positive globale Auswirkungen harmonisch nebeneinander bestehen können.</p>
-                                    <p>Wir laden Sie ein, sich uns anzuschließen, um Grenzen zu überschreiten und unsere Fintech-Fähigkeiten zu nutzen, um eine Zukunft zu gestalten, die sowohl technologisch anspruchsvoll als auch universell gerecht und umweltfreundlich ist. Schreiben Sie uns an <a href="/cdn-cgi/l/email-protection#34574746745051465d421a575b59"><span class="__cf_email__" data-cfemail="1f7c6c6d5f7b7a6d7669317c7072">[email&#160;protected]</span>.</a></p>
+                                    <p>Wir laden Sie ein, sich uns anzuschließen, um Grenzen zu überschreiten und unsere Fintech-Fähigkeiten zu nutzen, um eine Zukunft zu gestalten, die sowohl technologisch anspruchsvoll als auch universell gerecht und umweltfreundlich ist. Schreiben Sie uns an <a href="/cdn-cgi/l/email-protection#94f7e7e6d4f0f1e6fde2baf7fbf9"><span class="__cf_email__" data-cfemail="c1a2b2b381a5a4b3a8b7efa2aeac">[email&#160;protected]</span>.</a></p>
                                 </div>
                             </div>
                         </div>
@@ -1956,7 +1957,8 @@
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
+                    return parsedData.date_first_contact ?
+                        {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -1971,7 +1973,8 @@
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
+                    return parsedData.signup_device ?
+                        {
                             signup_device: parsedData.signup_device
                         } :
                         null;

@@ -807,7 +807,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1633,7 +1634,7 @@
                                         <p>To learn more, visit <a href="https://derivlife.com/" target="_blank">Deriv Life</a> and the company website.</p>
                                         <h2><strong>About Deriv</strong></h2>
                                         <p>For over two decades, <a href="https://deriv.com" target="_blank">Deriv</a> has been committed to making online trading accessible to anyone, anywhere. The company offers an expansive range of trade types and boasts over 200 assets across markets like forex, stocks, and cryptocurrencies on its intuitive trading platforms. With a workforce of more than 1,300 people globally, Deriv has cultivated an environment that focuses on employee well-being, celebrates achievements, and encourages professional growth.</p>
-                                        <p><strong>PRESS CONTACT</strong><br />Aleksandra Zuzic<br /><a href="https://www.globenewswire.com/Tracker?data=3kcBIMc1meQofuAahAFD0_vD9G59204bDrFuRM0lSfZ5_IBOXeFqRCdhg1YR2-WuBkfwNN1YVGa8ZMScz4-j3JaOpio4i-N3TRBo-LH_gOY=" target="_blank"><span class="__cf_email__" data-cfemail="b7d6dbd2dcc4d6d9d3c5d6f7d3d2c5dec199d4d8da">[email&#160;protected]</span></a></p>
+                                        <p><strong>PRESS CONTACT</strong><br />Aleksandra Zuzic<br /><a href="https://www.globenewswire.com/Tracker?data=3kcBIMc1meQofuAahAFD0_vD9G59204bDrFuRM0lSfZ5_IBOXeFqRCdhg1YR2-WuBkfwNN1YVGa8ZMScz4-j3JaOpio4i-N3TRBo-LH_gOY=" target="_blank"><span class="__cf_email__" data-cfemail="ef8e838a849c8e818b9d8eaf8b8a9d8699c18c8082">[email&#160;protected]</span></a></p>
                                     </div>
                                     <div class="share-block">
                                         <div class="padding-bottom padding-xxsmall">
@@ -2297,7 +2298,8 @@
                 );
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
+                    return parsedData.date_first_contact ?
+                        {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null;
@@ -2312,7 +2314,8 @@
                 );
                 if (signupDeviceString) {
                     const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
+                    return parsedData.signup_device ?
+                        {
                             signup_device: parsedData.signup_device
                         } :
                         null;
