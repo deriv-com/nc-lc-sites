@@ -740,9 +740,9 @@ define("PartnersHub.RealAccountCreationFlow.Addressdetails.mvc$translationsResou
         "CF8ZgUr5U06MNfq+GKepag#Value": "التالي",
         "k8QD9Tu5pEKxQ8W5PhXhZg#Value": "الرمز البريدي (اختياري)",
         "VflU1Ll_2kKj16bUwcatLA#Value": "الدولة / المحافظة (اختياري)",
-        "oXf1D8XdYEu4kkW1oi+PEQ#Value": "الدولة / المقاطعة (اختياري)",
-        "vMrtBlSaikylH2KAcEW6IA#Value": "مدينة",
-        "zHHcoTVxk0CRNWD9hfFEWA#Value": "عنوان"
+        "oXf1D8XdYEu4kkW1oi+PEQ#Value": "الدولة / المحافظة (اختياري)",
+        "vMrtBlSaikylH2KAcEW6IA#Value": "المدينة/ البلدة",
+        "zHHcoTVxk0CRNWD9hfFEWA#Value": "العنوان"
     };
 });
 

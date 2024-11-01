@@ -175,13 +175,13 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", ["@outsystems
                             gridProperties: {
                                 classes: "OSFillParent"
                             },
-                            style: "wcag-hide-text",
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("tOGw2HON8UK7+OPGsXR_dw#ValueExpression.773994173.1", "wcag-hide-text"),
                             _idProps: {
                                 service: idService,
                                 uuid: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Search input"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("eF3Njcn7SUegNqJnlBnmag#Value", "Search input"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService
                             },
@@ -201,8 +201,8 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", ["@outsystems
 
                                 ;
                             },
-                            prompt: "Search",
-                            style: "form-control",
+                            prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("v7MCdtkPlk2rV9VAgeIqzA#ValueExpression.-1822469688.1", "Search"),
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ZcX0PFo4SkCgaSrZ5N1UEg#ValueExpression.85283156.1", "form-control"),
                             variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.searchedResidenceVar, function(value) {
                                 model.variables.searchedResidenceVar = value;
                             }),
@@ -235,7 +235,7 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", ["@outsystems
                 },
                 mode: /*Default*/ 0,
                 source: model.variables.filteredResidenceListVar,
-                style: "list list-group residence-list ",
+                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Tbn84Ktn30KRuS66j5XT8A#ValueExpression.723768045.1", "list list-group residence-list "),
                 tag: "div",
                 _idProps: {
                     service: idService,
@@ -317,12 +317,12 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", ["@outsystems
 
     return View;
 });
-define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnReady.JavaScript1JS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_CountryOfTaxResidenceSelector_mvc_controller_OnSearch_SearchCountryJS, tradershub_Common_CountryOfTaxResidenceSelector_mvc_controller_OnReady_JavaScript1JS) {
+define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$translationsResources", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnReady.JavaScript1JS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_CountryOfTaxResidenceSelector_mvc_TranslationsResources, tradershub_Common_CountryOfTaxResidenceSelector_mvc_controller_OnSearch_SearchCountryJS, tradershub_Common_CountryOfTaxResidenceSelector_mvc_controller_OnReady_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_CountryOfTaxResidenceSelector_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -762,7 +762,6 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnSearch.
     return function($parameters, $actions, $roles, $public) {
         const residenceListResponse = JSON.parse($parameters.ResidenceList ?? JSON.stringify({}));
 
-
         const filteredResidenceListResponse = JSON.stringify({
             ...residenceListResponse,
             residence_list: residenceListResponse.filter(country => country["text"].toLowerCase().includes($parameters.SearchedResidence.toLowerCase()))
@@ -781,5 +780,25 @@ define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$controller.OnReady.J
         $parameters.SortedResidenceList = JSON.stringify({
             residence_list: residenceList
         })
+    };
+});
+
+
+define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "Tbn84Ktn30KRuS66j5XT8A#ValueExpression.723768045.1": "list list-group residence-list ",
+        "ZcX0PFo4SkCgaSrZ5N1UEg#ValueExpression.85283156.1": "form-control",
+        "v7MCdtkPlk2rV9VAgeIqzA#ValueExpression.-1822469688.1": "Rechercher",
+        "eF3Njcn7SUegNqJnlBnmag#Value": "Champ de recherche",
+        "tOGw2HON8UK7+OPGsXR_dw#ValueExpression.773994173.1": "wcag-hide-text"
+    };
+});
+
+define("tradershub.Common.CountryOfTaxResidenceSelector.mvc$translationsResources", ["exports", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_CountryOfTaxResidenceSelector_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_CountryOfTaxResidenceSelector_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

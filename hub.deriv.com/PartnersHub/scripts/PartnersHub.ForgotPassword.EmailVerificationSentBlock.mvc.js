@@ -503,7 +503,7 @@ define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$controller", [
 
 define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsResources.ar-001", [], function() {
     return {
-        "8kih1_ff0UeIFc+ysew9NA#Value": "تأكد من أن البريد الإلكتروني غير محجوب بواسطة الجدران النارية أو الفلاتر.",
+        "8kih1_ff0UeIFc+ysew9NA#Value": "تأكد من أن البريد الإلكتروني ليس محجوبًا بواسطة جدران الحماية أو الفلاتر.",
         "7UEGGYTlwEKf1U81dhfqeQ#Value": "تحقق من مجلد البريد العشوائي.",
         "zom7hmSWsUy5xgWgjn0ksg#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
         "zMaPYVkUw0OD1za8TxdeeQ#Value": "إعادة إرسال البريد الإلكتروني",
@@ -527,7 +527,7 @@ define("PartnersHub.ForgotPassword.EmailVerificationSentBlock.mvc$translationsRe
     return {
         "8kih1_ff0UeIFc+ysew9NA#Value": "Asegúrate de que el correo electrónico no esté bloqueado por cortafuegos o filtros.",
         "7UEGGYTlwEKf1U81dhfqeQ#Value": "Verifica tu carpeta de spam.",
-        "zom7hmSWsUy5xgWgjn0ksg#Value": "Asegúrate de haber ingresado tu correo electrónico correctamente.",
+        "zom7hmSWsUy5xgWgjn0ksg#Value": "Enviar correo electrónico",
         "zMaPYVkUw0OD1za8TxdeeQ#Value": "Reenviar correo electrónico",
         "z3UBGtc1W0+RfXnqw3WdlA#Value": "¿No recibiste un correo electrónico?",
         "OUP4_ngJ2U+KHS54a33Tbw#Value": "Hemos enviado un enlace de verificación a"

@@ -1,8 +1,6 @@
 define("AppVersionCheck.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "36906aa4-e5d6-405a-90a9-2bfa6f35ea1b",
         applicationName: "AppVersionCheck",
         userProviderName: "Users",
@@ -18,10 +16,8 @@ define("AppVersionCheck.appDefinition", ["@outsystems/runtime-core-js"], functio
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        buildServiceVersion: "v17.1668.2.0",
+        clientRuntimeVersion: "6.16.1",
         useESM: false,
         appVersion: "1"
     };

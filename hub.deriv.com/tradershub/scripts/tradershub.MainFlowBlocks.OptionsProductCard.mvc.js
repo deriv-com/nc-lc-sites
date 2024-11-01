@@ -30,6 +30,18 @@ define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$model", ["@outsystems/r
                     }, false),
                     this.attr("_shouldShowProductInDataFetchStatus", "_shouldShowProductInDataFetchStatus", "_shouldShowProductInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("IsDisabled", "isDisabledIn", "IsDisabled", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_isDisabledInDataFetchStatus", "_isDisabledInDataFetchStatus", "_isDisabledInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("IsLoading", "isLoadingIn", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -89,6 +101,22 @@ define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$model", ["@outsystems/r
                 this.variables.shouldShowProductIn = inputs.ShouldShowProduct;
                 if ("_shouldShowProductInDataFetchStatus" in inputs) {
                     this.variables._shouldShowProductInDataFetchStatus = inputs._shouldShowProductInDataFetchStatus;
+                }
+
+            }
+
+            if ("IsDisabled" in inputs) {
+                this.variables.isDisabledIn = inputs.IsDisabled;
+                if ("_isDisabledInDataFetchStatus" in inputs) {
+                    this.variables._isDisabledInDataFetchStatus = inputs._isDisabledInDataFetchStatus;
+                }
+
+            }
+
+            if ("IsLoading" in inputs) {
+                this.variables.isLoadingIn = inputs.IsLoading;
+                if ("_isLoadingInDataFetchStatus" in inputs) {
+                    this.variables._isLoadingInDataFetchStatus = inputs._isLoadingInDataFetchStatus;
                 }
 
             }
@@ -162,120 +190,139 @@ define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$view", ["@outsystems/ru
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), $if(model.variables.shouldShowProductIn, true, this, function() {
-                return [React.createElement(OSWidgets.Link, {
-                    enabled: true,
-                    onClick: function() {
-                        var eventHandlerContext = callContext.clone();
-                        controller.redirectionLink$Action(controller.callContext(eventHandlerContext));
-
-                        ;
-                    },
+            return React.createElement("div", this.getRootNodeProperties(), $if(model.variables.isLoadingIn, false, this, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "skeleton loader",
                     visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "0"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
-                    extendedProperties: {
-                        style: "color: #222;"
-                    },
-                    gridProperties: {
-                        classes: "ThemeGrid_Width4"
-                    },
-                    style: "product-card",
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        name: "ProductContainer"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Image, {
-                    type: /*External*/ 1,
-                    url: model.variables.iconIn,
-                    _idProps: {
-                        service: idService,
-                        name: "ProductIcon"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider,
-                    url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._iconInDataFetchStatus)
-                }), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
-                    extendedProperties: {
-                        style: "margin-top: 8px;"
-                    },
-                    style: "display-flex justify-content-space-between align-items-center",
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        uuid: "3"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
-                    style: "display-flex flex-direction-column",
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        uuid: "4"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Expression, {
-                    extendedProperties: {
-                        style: "color: #101213; font-weight: bold;"
-                    },
-                    value: model.variables.titleIn,
-                    _idProps: {
-                        service: idService,
-                        name: "TitleExpression"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider,
-                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._titleInDataFetchStatus)
-                }), React.createElement(OSWidgets.Expression, {
-                    extendedProperties: {
-                        style: "color: #101213; font-size: 12px; margin-top: 4px;"
-                    },
-                    value: model.variables.descriptionIn,
-                    _idProps: {
-                        service: idService,
-                        name: "DescriptionExpression"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider,
-                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._descriptionInDataFetchStatus)
-                })), React.createElement(OSWidgets.Image, {
-                    extendedProperties: {
-                        style: "height: 32px; margin-bottom: 0px; padding: 0px;"
-                    },
-                    gridProperties: {
-                        width: "32px"
-                    },
-                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
-                    type: /*Static*/ 0,
-                    _idProps: {
-                        service: idService,
-                        uuid: "7"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }))))];
+                })];
             }, function() {
-                return [];
+                return [$if(model.variables.shouldShowProductIn, true, this, function() {
+                    return [React.createElement(OSWidgets.Link, {
+                        enabled: true,
+                        onClick: function() {
+                            var eventHandlerContext = callContext.clone();
+                            controller.redirectionLink$Action(controller.callContext(eventHandlerContext));
+
+                            ;
+                        },
+                        visible: true,
+                        _idProps: {
+                            service: idService,
+                            uuid: "1"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider
+                    }, React.createElement(OSWidgets.Container, {
+                        align: /*Default*/ 0,
+                        animate: false,
+                        extendedProperties: {
+                            style: "color: #222;"
+                        },
+                        gridProperties: {
+                            classes: "ThemeGrid_Width4"
+                        },
+                        style: model.getCachedValue(idService.getId("ProductContainer.Style"), function() {
+                            return ((model.variables.isDisabledIn) ? ("product-card product-card-disabled") : ("product-card"));
+                        }, function() {
+                            return model.variables.isDisabledIn;
+                        }),
+                        visible: true,
+                        _idProps: {
+                            service: idService,
+                            name: "ProductContainer"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider,
+                        style_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._isDisabledInDataFetchStatus)
+                    }, React.createElement(OSWidgets.Image, {
+                        type: /*External*/ 1,
+                        url: model.variables.iconIn,
+                        _idProps: {
+                            service: idService,
+                            name: "ProductIcon"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider,
+                        url_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._iconInDataFetchStatus)
+                    }), React.createElement(OSWidgets.Container, {
+                        align: /*Default*/ 0,
+                        animate: false,
+                        extendedProperties: {
+                            style: "margin-top: 8px;"
+                        },
+                        style: "display-flex justify-content-space-between align-items-center",
+                        visible: true,
+                        _idProps: {
+                            service: idService,
+                            uuid: "4"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider
+                    }, React.createElement(OSWidgets.Container, {
+                        align: /*Default*/ 0,
+                        animate: false,
+                        style: "display-flex flex-direction-column",
+                        visible: true,
+                        _idProps: {
+                            service: idService,
+                            uuid: "5"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider
+                    }, React.createElement(OSWidgets.Expression, {
+                        extendedProperties: {
+                            style: "color: #101213; font-weight: bold;"
+                        },
+                        value: model.variables.titleIn,
+                        _idProps: {
+                            service: idService,
+                            name: "TitleExpression"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider,
+                        value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._titleInDataFetchStatus)
+                    }), React.createElement(OSWidgets.Expression, {
+                        extendedProperties: {
+                            style: "color: #101213; font-size: 12px; margin-top: 4px;"
+                        },
+                        value: model.variables.descriptionIn,
+                        _idProps: {
+                            service: idService,
+                            name: "DescriptionExpression"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider,
+                        value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._descriptionInDataFetchStatus)
+                    })), React.createElement(OSWidgets.Image, {
+                        extendedProperties: {
+                            style: "height: 32px; margin-bottom: 0px; padding: 0px;"
+                        },
+                        gridProperties: {
+                            width: "32px"
+                        },
+                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
+                        type: /*Static*/ 0,
+                        _idProps: {
+                            service: idService,
+                            uuid: "8"
+                        },
+                        _widgetRecordProvider: widgetsRecordProvider
+                    }))))];
+                }, function() {
+                    return [];
+                })];
             }));
         }
     }
 
     return View;
 });
-define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlowBlocks.OptionsProductCard.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowBlocks_OptionsProductCard_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlowBlocks_OptionsProductCard_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -398,4 +445,9 @@ define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$controller", ["@outsyst
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.MainFlowBlocks.OptionsProductCard.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

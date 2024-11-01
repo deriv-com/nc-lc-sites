@@ -100,7 +100,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
         get title() {
 
 
-            return "EducationLevel";
+            return OSView.BaseView.BaseWebScreen.getTranslation("BWK_hdNs0EWOOYIfre4D3w#Title", "EducationLevel");
         }
 
         internalRender() {
@@ -179,7 +179,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
                                         extendedEvents: {
                                             onClick: function() {
                                                 var eventHandlerContext = callContext.clone();
-                                                controller.radioGroupOnClick$Action(controller.callContext(eventHandlerContext));
+                                                controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
 
                                                 ;
                                             }
@@ -210,7 +210,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
                                             name: "Primary"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Primary"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("o61V9gnuL0CsIywNqrANVQ#Value", "Primary"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -223,7 +223,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
                                             name: "Secondary"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Secondary"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("kXujI_aoaECPwgCqEYCZWA#Value", "Secondary"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -236,7 +236,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
                                             name: "Tertiary"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Tertiary")), React.createElement(OSWidgets.Container, {
+                                    }, $text(getTranslation("mPL1oJTmnU+8O6jWhh2RCA#Value", "Tertiary")))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         style: "btn-container",
@@ -262,7 +262,7 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
                                             uuid: "7"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Next"))];
+                                    }, $text(getTranslation("AVvJGo2zL0qMGO1+EYfRXQ#Value", "Next"))))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(tradershubClientVariables.getFinancialAssessmentEducationLevel())]
@@ -276,12 +276,12 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$view", ["@outsyste
 
     return View;
 });
-define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlowController) {
+define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.EducationLevel.mvc$translationsResources", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlow_EducationLevel_mvc_TranslationsResources, tradershub_FinancialAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_FinancialAssessmentFlow_EducationLevel_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -348,43 +348,6 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$controller", ["@ou
                 this.__nextOnClick$Action = value;
             }
 
-            get _radioGroupOnClick$Action() {
-                if (!(this.hasOwnProperty("__radioGroupOnClick$Action"))) {
-                    this.__radioGroupOnClick$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("RadioGroupOnClick", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "RadioGroupOnClick");
-                                span.setAttribute("outsystems.function.key", "c4085b7f-1cf2-4f23-8207-f2c336f47400");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("RadioGroupOnClick");
-                                callContext = controller.callContext(callContext);
-                                // IsRequired = False
-                                model.variables.isRequiredVar = false;
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__radioGroupOnClick$Action;
-            }
-            set _radioGroupOnClick$Action(value) {
-                this.__radioGroupOnClick$Action = value;
-            }
-
 
             nextOnClick$Action(callContext) {
                 var controller = this.controller;
@@ -399,30 +362,6 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$controller", ["@ou
 
                     try {
                         return controller.safeExecuteClientAction(controller._nextOnClick$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            radioGroupOnClick$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("RadioGroupOnClick__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "RadioGroupOnClick");
-                        span.setAttribute("outsystems.function.key", "c4085b7f-1cf2-4f23-8207-f2c336f47400");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._radioGroupOnClick$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -519,4 +458,23 @@ define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$controller", ["@ou
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "AVvJGo2zL0qMGO1+EYfRXQ#Value": "Suivant",
+        "mPL1oJTmnU+8O6jWhh2RCA#Value": "Tertiaire",
+        "kXujI_aoaECPwgCqEYCZWA#Value": "Secondaire",
+        "o61V9gnuL0CsIywNqrANVQ#Value": "Principal"
+    };
+});
+
+define("tradershub.FinancialAssessmentFlow.EducationLevel.mvc$translationsResources", ["exports", "tradershub.FinancialAssessmentFlow.EducationLevel.mvc$translationsResources.fr-FR"], function(exports, tradershub_FinancialAssessmentFlow_EducationLevel_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_FinancialAssessmentFlow_EducationLevel_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

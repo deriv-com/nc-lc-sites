@@ -76,7 +76,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/PartnersHub.Home.PartnersAcademy.css"];
         }
 
         static getJsDependencies() {
@@ -122,8 +122,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                         style: "display: flex; flex-direction: column; gap: 16px;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "100%"
+                        classes: "OSInline"
                     },
                     visible: true,
                     _idProps: {
@@ -154,7 +153,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
-                        style: "display: flex; gap: 24px; justify-content: space-between;"
+                        style: "display: flex; gap: 24px; height: 186px; justify-content: space-between; text-align: left;"
                     },
                     gridProperties: {
                         classes: "OSInline",
@@ -170,11 +169,11 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
-                        style: "align-items: center; background: #E9ECEF; border-radius: 8px; display: flex; gap: 24px; height: 203px; justify-content: space-between;"
+                        style: "align-items: center; background: #E9ECEF; border-radius: 8px; display: flex; gap: 24px; height: 186px; overflow: hidden;"
                     },
                     gridProperties: {
                         classes: "OSInline",
-                        width: "350px"
+                        width: "280px"
                     },
                     visible: true,
                     _idProps: {
@@ -208,39 +207,35 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                         uuid: "6"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                })), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
+                })), React.createElement(OSWidgets.Image, {
                     extendedProperties: {
-                        style: "height: 100%; padding-top: 16px;"
+                        style: "height: 213px; padding-top: 34px;"
                     },
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        uuid: "7"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Image, {
-                    extendedProperties: {
-                        style: "height: 100%;"
+                    gridProperties: {
+                        classes: "ThemeGrid_MarginGutter",
+                        width: "150px"
                     },
                     image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.partnershand.png"),
                     type: /*Static*/ 0,
                     _idProps: {
                         service: idService,
-                        uuid: "8"
+                        uuid: "7"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }))), React.createElement(OSWidgets.Container, {
+                })), React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
+                    extendedProperties: {
+                        style: "flex-grow: 1;"
+                    },
                     gridProperties: {
-                        classes: "OSInline"
+                        classes: "OSInline",
+                        width: "306px"
                     },
                     visible: true,
                     _idProps: {
                         service: idService,
-                        uuid: "9"
+                        uuid: "8"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Container, {
@@ -248,9 +243,6 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                     animate: false,
                     extendedProperties: {
                         style: "display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;"
-                    },
-                    gridProperties: {
-                        classes: "ThemeGrid_Width7"
                     },
                     visible: true,
                     _idProps: {
@@ -262,195 +254,208 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
-                        style: "background-color: #E7F2F4; border-radius: 50px; padding: 10px 12px;"
+                        style: "background-color: #E7F2F4;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "fit-content"
+                        classes: "OSInline"
                     },
-                    style: "partners-academy-badges__badge",
+                    style: "ph-badge-label",
                     visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "10"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Label, {
+                    extendedProperties: {
+                        style: "color: #095A66; font-size: 0px; font-weight: bold;"
+                    },
                     _idProps: {
                         service: idService,
                         uuid: "11"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Label, {
+                }, React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "color: #095A66; font-size: 16px; font-weight: bold;"
+                        style: "font-size: 12px;"
                     },
+                    text: [$text(getTranslation("uHFImDRVWE2MA_64Li66Ww#Value", "Courses"))],
                     _idProps: {
                         service: idService,
                         uuid: "12"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Text, {
+                }))), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
                     extendedProperties: {
-                        style: "font-size: 14px;"
+                        style: "background-color: #E6F2EF;"
                     },
-                    text: [$text(getTranslation("uHFImDRVWE2MA_64Li66Ww#Value", "Courses"))],
+                    gridProperties: {
+                        classes: "OSInline"
+                    },
+                    style: "ph-badge-label",
+                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "13"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }))), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
+                }, React.createElement(OSWidgets.Label, {
                     extendedProperties: {
-                        style: "background-color: #E6F2EF; border-radius: 50px; padding: 10px 12px;"
+                        style: "color: #065940; font-size: 0px; font-weight: bold;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "fit-content"
+                        classes: "OSFillParent"
                     },
-                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "14"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Label, {
+                }, React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "color: #065940; font-size: 16px; font-weight: bold;"
+                        style: "font-size: 12px;"
                     },
-                    gridProperties: {
-                        classes: "OSFillParent"
-                    },
+                    text: [$text(getTranslation("bM7PjZ4q_EuS25rccTySQg#Value", "Marketing handbooks"))],
                     _idProps: {
                         service: idService,
                         uuid: "15"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Text, {
+                }))), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
                     extendedProperties: {
-                        style: "font-size: 14px;"
+                        style: "background-color: #E5F0FE;"
                     },
-                    text: [$text(getTranslation("bM7PjZ4q_EuS25rccTySQg#Value", "Marketing handbooks"))],
+                    gridProperties: {
+                        classes: "OSInline"
+                    },
+                    style: "ph-badge-label",
+                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "16"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }))), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
+                }, React.createElement(OSWidgets.Label, {
                     extendedProperties: {
-                        style: "background-color: #E5F0FE; border-radius: 50px; padding: 10px 12px;"
+                        style: "color: #12558E; font-size: 0px; font-weight: bold;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "fit-content"
+                        classes: "OSFillParent"
                     },
-                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "17"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Label, {
+                }, React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "color: #12558E; font-size: 16px; font-weight: bold;"
+                        style: "font-size: 12px;"
                     },
-                    gridProperties: {
-                        classes: "OSFillParent"
-                    },
+                    text: [$text(getTranslation("FLk8QSyiOkuIqtmBfVo4Yw#Value", "Marketing brochures"))],
                     _idProps: {
                         service: idService,
                         uuid: "18"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Text, {
+                }))), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
                     extendedProperties: {
-                        style: "font-size: 14px;"
+                        style: "background-color: #FEF0E6;"
                     },
-                    text: [$text(getTranslation("FLk8QSyiOkuIqtmBfVo4Yw#Value", "Marketing brochures"))],
+                    gridProperties: {
+                        classes: "OSInline"
+                    },
+                    style: "ph-badge-label",
+                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "19"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }))), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
+                }, React.createElement(OSWidgets.Label, {
                     extendedProperties: {
-                        style: "background-color: #FEF0E6; border-radius: 50px; padding: 10px 12px;"
+                        style: "color: #AD4805; font-size: 0px; font-weight: bold;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "fit-content"
+                        classes: "OSFillParent"
                     },
-                    visible: true,
                     _idProps: {
                         service: idService,
                         uuid: "20"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Label, {
-                    extendedProperties: {
-                        style: "color: #AD4805; font-size: 16px; font-weight: bold;"
-                    },
-                    gridProperties: {
-                        classes: "OSFillParent"
-                    },
-                    _idProps: {
-                        service: idService,
-                        uuid: "21"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "font-size: 14px;"
+                        style: "font-size: 12px;"
                     },
                     text: [$text(getTranslation("QNt3K4z9s0mjesfDRLpl7A#Value", "E-books"))],
                     _idProps: {
                         service: idService,
-                        uuid: "22"
+                        uuid: "21"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }))), React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
-                        style: "background-color: #F1EDFD; border-radius: 50px; padding: 10px 12px;"
+                        style: "background-color: #F1EDFD;"
                     },
                     gridProperties: {
-                        classes: "OSInline",
-                        width: "fit-content"
+                        classes: "OSInline"
                     },
+                    style: "ph-badge-label",
                     visible: true,
                     _idProps: {
                         service: idService,
-                        uuid: "23"
+                        uuid: "22"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Label, {
                     extendedProperties: {
-                        style: "color: #4E32A2; font-size: 16px; font-weight: bold;"
+                        style: "color: #4E32A2; font-size: 0px; font-weight: bold;"
                     },
                     gridProperties: {
                         classes: "OSFillParent"
                     },
                     _idProps: {
                         service: idService,
-                        uuid: "24"
+                        uuid: "23"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "font-size: 14px;"
+                        style: "font-size: 12px;"
                     },
                     text: [$text(getTranslation("DZSAqbT4jkWfN4OqxOKCFA#Value", "Infographics"))],
+                    _idProps: {
+                        service: idService,
+                        uuid: "24"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })))), React.createElement(OSWidgets.Text, {
+                    extendedProperties: {
+                        style: "font-size: 14px;"
+                    },
+                    text: [$text(getTranslation("1adaFkSs6Eu8LQA1B4Z56w#Value", "Everything you need for successful partner marketing."))],
                     _idProps: {
                         service: idService,
                         uuid: "25"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                })))), $text(getTranslation("1adaFkSs6Eu8LQA1B4Z56w#Value", "Everything you need for successful partner marketing."))), React.createElement(OSWidgets.Container, {
+                })), React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
                     extendedProperties: {
-                        style: "align-items: center; border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; padding: 20px; text-align: center;"
+                        style: "align-items: center; border: 1px solid #DEE2E6; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; padding: 32px; text-align: center;"
+                    },
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "166px"
                     },
                     visible: true,
                     _idProps: {
@@ -459,6 +464,9 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Image, {
+                    extendedProperties: {
+                        style: "height: 102px;"
+                    },
                     gridProperties: {
                         width: "102px"
                     },
@@ -469,19 +477,17 @@ define("PartnersHub.Home.PartnersAcademy.mvc$view", ["@outsystems/runtime-core-j
                         uuid: "27"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }), React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
+                }), React.createElement(OSWidgets.Text, {
                     extendedProperties: {
-                        style: "text-align: center;"
+                        style: "font-size: 12px; width: 102px;"
                     },
-                    visible: true,
+                    text: [$text(getTranslation("Neo6uN8N9UasJcJdTgmUJg#Value", "Scan to download mobile app"))],
                     _idProps: {
                         service: idService,
                         uuid: "28"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, $text(getTranslation("4rZxxhDTVUWABiMTNsEpdQ#Value", "Scan to download mobile app"))))))];
+                }))))];
             }, function() {
                 return [React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
@@ -1297,13 +1303,13 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ar-001", [], 
         "83dGwifhKk+YOiXkvULi4A#Value": "دورات",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "استمع، تعلم، اقرأ.",
         "naoFGO4guEidXmQftx8rZg#Value": "أكاديمية الشركاء",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "امسح لتحميل التطبيق المحمول",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "امسح لتحميل التطبيق المحمول",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "كل ما تحتاجه لتسويق الشركاء بنجاح.",
-        "DZSAqbT4jkWfN4OqxOKCFA#Value": "الرسوم البيانية",
+        "DZSAqbT4jkWfN4OqxOKCFA#Value": "الرسومات المعلوماتية",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "الكتب الإلكترونية",
         "FLk8QSyiOkuIqtmBfVo4Yw#Value": "كتيبات التسويق",
         "bM7PjZ4q_EuS25rccTySQg#Value": "كتيبات التسويق",
-        "uHFImDRVWE2MA_64Li66Ww#Value": "دورات",
+        "uHFImDRVWE2MA_64Li66Ww#Value": "الدورات",
         "sse4z6h_sU6gso1w6w59LA#Value": "استمع، تعلم، اقرأ.",
         "O5WMN_I+K0mefv7hd8Ehnw#Value": "أكاديمية الشركاء"
     };
@@ -1321,7 +1327,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.de-DE", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Kurse",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Hören, Lernen, Lesen.",
         "naoFGO4guEidXmQftx8rZg#Value": "Partnerakademie",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Scannen, um die mobile App herunterzuladen",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Scannen, um die mobile App herunterzuladen",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Alles, was Sie für erfolgreiches Partner-Marketing benötigen.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infografiken",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "E-Books",
@@ -1345,8 +1351,8 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.es-ES", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Cursos",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Escuchar, Aprender, Leer.",
         "naoFGO4guEidXmQftx8rZg#Value": "Academia del Socio",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Escanea para descargar la aplicación móvil",
-        "1adaFkSs6Eu8LQA1B4Z56w#Value": "Todo lo que necesitas para un marketing de partners exitoso.",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Escanea para descargar la aplicación móvil",
+        "1adaFkSs6Eu8LQA1B4Z56w#Value": "Todo lo que necesitas para un marketing de socios exitoso.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infografías",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "Libros electrónicos",
         "FLk8QSyiOkuIqtmBfVo4Yw#Value": "Folletos de marketing",
@@ -1369,7 +1375,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.fr-FR", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Cours",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Écouter, Apprendre, Lire.",
         "naoFGO4guEidXmQftx8rZg#Value": "Académie des Partenaires",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Scannez pour télécharger l\'application mobile",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Scannez pour télécharger l\'application mobile",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Tout ce dont vous avez besoin pour un marketing partenaire réussi.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infographies",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "E-books",
@@ -1393,7 +1399,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.it-IT", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Corsi",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Ascoltare, Imparare, Leggere.",
         "naoFGO4guEidXmQftx8rZg#Value": "Accademia dei Partner",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Scansiona per scaricare l\'app mobile",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Scansiona per scaricare l\'app mobile",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Tutto ciò di cui hai bisogno per un marketing partner di successo.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infografiche",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "E-book",
@@ -1417,7 +1423,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pl-PL", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Kursy",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Słuchaj, Ucz się, Czytaj.",
         "naoFGO4guEidXmQftx8rZg#Value": "Akademia Partnerów",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Skanuj, aby pobrać aplikację mobilną",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Skanuj, aby pobrać aplikację mobilną",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Wszystko, czego potrzebujesz do udanego marketingu partnerskiego.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infografiki",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "E-booki",
@@ -1441,7 +1447,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.pt-PT", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Cursos",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Ouvir, Aprender, Ler.",
         "naoFGO4guEidXmQftx8rZg#Value": "Academia do Parceiro",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Digitalize para descarregar a aplicação móvel",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Digitalize para descarregar a aplicação móvel",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Tudo o que você precisa para um marketing de parceiros bem-sucedido.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Infografias",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "E-books",
@@ -1465,7 +1471,7 @@ define("PartnersHub.Home.PartnersAcademy.mvc$translationsResources.ru-RU", [], f
         "83dGwifhKk+YOiXkvULi4A#Value": "Курсы",
         "kwwc0W9pKE64IAQBhqqlsg#Value": "Слушать, Учиться, Читать.",
         "naoFGO4guEidXmQftx8rZg#Value": "Академия Партнера",
-        "4rZxxhDTVUWABiMTNsEpdQ#Value": "Сканируйте, чтобы скачать мобильное приложение",
+        "Neo6uN8N9UasJcJdTgmUJg#Value": "Сканируйте, чтобы скачать мобильное приложение",
         "1adaFkSs6Eu8LQA1B4Z56w#Value": "Всё, что вам нужно для успешного партнерского маркетинга.",
         "DZSAqbT4jkWfN4OqxOKCFA#Value": "Инфографика",
         "QNt3K4z9s0mjesfDRLpl7A#Value": "Электронные книги",

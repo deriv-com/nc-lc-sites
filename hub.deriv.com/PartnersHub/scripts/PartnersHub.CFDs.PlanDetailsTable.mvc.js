@@ -804,7 +804,7 @@ define("PartnersHub.CFDs.PlanDetailsTable.mvc$controller", ["@outsystems/runtime
 
 define("PartnersHub.CFDs.PlanDetailsTable.mvc$translationsResources.ar-001", [], function() {
     return {
-        "AiMBRsM2QEmookT5xpWXPg#Value": "أصل"
+        "AiMBRsM2QEmookT5xpWXPg#Value": "الأصل"
     };
 });
 

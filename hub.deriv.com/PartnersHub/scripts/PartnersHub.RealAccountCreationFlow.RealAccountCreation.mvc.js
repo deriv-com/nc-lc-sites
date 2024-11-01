@@ -997,7 +997,7 @@ define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$view", ["@ou
 
     return View;
 });
-define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$translationsResources", "PartnersHub.RealAccountCreationFlow.controller", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.OnReady.CheckIfIDVIsSupportedJSJS", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "PartnersHub.model$ST_0be4704c381e15995202804b221a5e3aStructure", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "PartnersHub.model$ST_c98d478d92307b8784bb1e90423f775bStructure", "PartnersHub.model$ST_31dbcfc5cd9ae02da0ba12249f6ccfcdStructure", "PartnersHub.model$RL_ad0d7e810e49e61265e2d337c04416fc", "PartnersHub.model$ST_b4cd08f1a2e52c6c30b2b1fd8abf3029Structure", "PartnersHub.model$ST_dbace2176e52429900d8209086350204Structure", "PartnersHub.model$ST_0c954cdeca234316306bb67c6b24f05bStructure", "PartnersHub.model$ST_b539dd26c0de381503da71ca2655394fStructure", "PartnersHub.model$ST_eda668e7f210db3d136460db1684b63bStructure", "PartnersHub.model$ST_6d2f2a84ec0b7321167e27d19b6d33f8Structure", "PartnersHub.model$RL_72539fe43229e47c6f0bb03bc660d8fe", "PartnersHub.model$ST_8c2ccdb8651c27e0fadf6d9395795b9fStructure", "PartnersHub.model$ST_537325baeed781544ed9f203cd7f9384Structure", "PartnersHub.model$ST_db915d6b5cc14a9247531baaa76ce4a5Structure", "PartnersHub.model$RL_27bf68eaead02a99ca09aef3148704b7", "PartnersHub.controller$RealSignupPreviousStep", "PartnersHub.controller$RealSignupPreviousStepProgressBar", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$RealSignupNextStepProgressBar", "PartnersHub.controller$MountDerivAPIClient", "RESTAPIWebsocketOfficial.controller$GetWebsiteStatus", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.controller$SendResidenceList", "PartnersHub.model$ST_e00c986a2a7690520557f1ea58ae1d82Structure", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "PartnersHub.controller$SendAuthorize", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_TranslationsResources, PartnersHub_RealAccountCreationFlowController, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_OnReady_GetAuthTokenJS, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_OnReady_CheckIfIDVIsSupportedJSJS) {
+define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$translationsResources", "PartnersHub.RealAccountCreationFlow.controller", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.GoNextStep.SetCurrentStepInQueryParamsJS", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.OnReady.GetAuthTokenJS", "PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.OnReady.CheckIfIDVIsSupportedJSJS", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "PartnersHub.model$ST_0be4704c381e15995202804b221a5e3aStructure", "PartnersHub.model$ST_61bad0fb94df4b9f1aa86c41ddff5f0aStructure", "PartnersHub.model$ST_c98d478d92307b8784bb1e90423f775bStructure", "PartnersHub.model$ST_31dbcfc5cd9ae02da0ba12249f6ccfcdStructure", "PartnersHub.model$RL_ad0d7e810e49e61265e2d337c04416fc", "PartnersHub.model$ST_b4cd08f1a2e52c6c30b2b1fd8abf3029Structure", "PartnersHub.model$ST_dbace2176e52429900d8209086350204Structure", "PartnersHub.model$ST_0c954cdeca234316306bb67c6b24f05bStructure", "PartnersHub.model$ST_b539dd26c0de381503da71ca2655394fStructure", "PartnersHub.model$ST_eda668e7f210db3d136460db1684b63bStructure", "PartnersHub.model$ST_6d2f2a84ec0b7321167e27d19b6d33f8Structure", "PartnersHub.model$RL_72539fe43229e47c6f0bb03bc660d8fe", "PartnersHub.model$ST_8c2ccdb8651c27e0fadf6d9395795b9fStructure", "PartnersHub.model$ST_537325baeed781544ed9f203cd7f9384Structure", "PartnersHub.model$ST_db915d6b5cc14a9247531baaa76ce4a5Structure", "PartnersHub.model$RL_27bf68eaead02a99ca09aef3148704b7", "PartnersHub.controller$RealSignupPreviousStep", "PartnersHub.controller$RealSignupPreviousStepProgressBar", "PartnersHub.controller$GetHeaderTitle", "PartnersHub.controller$RealSignupNextStep", "PartnersHub.controller$RealSignupNextStepProgressBar", "PartnersHub.controller$MountDerivAPIClient", "RESTAPIWebsocketOfficial.controller$GetWebsiteStatus", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.controller$SendResidenceList", "PartnersHub.model$ST_e00c986a2a7690520557f1ea58ae1d82Structure", "RESTAPIWebsocketOfficial.model$ST_f502318fbe2f943e6cfbba125766780aStructure", "PartnersHub.controller$SendAuthorize", "PartnersHub.model$ST_8401e8b399f219fdd97b12284d97703eStructure", "PartnersHub.controller$SendStatesList", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_TranslationsResources, PartnersHub_RealAccountCreationFlowController, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_GoNextStep_SetCurrentStepInQueryParamsJS, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_OnReady_GetAuthTokenJS, PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_OnReady_CheckIfIDVIsSupportedJSJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1109,6 +1109,27 @@ define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller",
                                 PartnersHubController.default.realSignupNextStepProgressBar$Action(12, callContext);
                                 // Execute Action: GetHeaderTitle
                                 PartnersHubController.default.getHeaderTitle$Action(callContext);
+                                OS.Logger.startActiveSpan("SetCurrentStepInQueryParams", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "SetCurrentStepInQueryParams");
+                                        span.setAttribute("outsystems.function.key", "74773dff-66a3-4109-bf5f-840b08a63931");
+                                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
+
+                                    try {
+                                        return controller.safeExecuteJSNode(PartnersHub_RealAccountCreationFlow_RealAccountCreation_mvc_controller_GoNextStep_SetCurrentStepInQueryParamsJS, "SetCurrentStepInQueryParams", "GoNextStep", {
+                                            CurrentStep: OS.DataConversion.JSNodeParamConverter.to((PartnersHubClientVariables.getRealSignupCurrentStep()).toString(), OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {}, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
+
+                                    }
+
+                                }, 1);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1600,6 +1621,23 @@ define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller",
     return new OS.Controller.ControllerFactory(Controller, PartnersHubLanguageResources);
 });
 
+define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.GoNextStep.SetCurrentStepInQueryParamsJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        var currentStep = $parameters.CurrentStep;
+
+        if (currentStep) {
+            // Get the current URL
+            var url = new URL(window.location.href);
+
+            // Set the query parameter 'step' with the value of CurrentStep
+            url.searchParams.set('step', currentStep);
+
+            // Update the browser's URL without reloading the page
+            window.history.pushState({}, '', url);
+        }
+    };
+});
+
 define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$controller.OnReady.GetAuthTokenJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         const token = localStorage.getItem('token');
@@ -1625,7 +1663,7 @@ define("PartnersHub.RealAccountCreationFlow.RealAccountCreation.mvc$translations
     return {
         "INDkvkIe4k2YS9jNZT4rPQ#Value": "أكمل الإعداد للوصول إلى خطط العمولة المخصصة.",
         "eA6s0SHKm0+A8rlV+JQ4gw#Value": "إعداد ملف الخروج؟",
-        "qG1AIVmW3kew2FwCyxYUew#Value": "تخطى"
+        "qG1AIVmW3kew2FwCyxYUew#Value": "تخطي"
     };
 });
 

@@ -1,1 +1,28 @@
-﻿
+﻿iframe {
+    border: none;
+    width: 100%;
+}
+
+.desktop iframe {
+        height: calc(100vh - 165px);
+}
+
+.phone iframe,
+.tablet iframe {
+        height: calc(100vh - 265px);
+}
+
+.wallets-crypto-amount-btn {
+    padding: var(--space-s);
+    border: none;
+    background-color: var(--color-neutral-1);
+    border-radius: 4px;
+    color: var(--color-neutral-10);
+}
+
+[data-button-group-item].button-group-selected-item,
+.wallets-crypto-amount-btn:active {
+    background-color: var(--color-neutral-2);
+    outline: 1px solid var(--color-neutral-10);
+    color: var(--color-neutral-10);
+}

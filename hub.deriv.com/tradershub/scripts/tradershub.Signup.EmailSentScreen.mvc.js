@@ -101,7 +101,7 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
             var _this = this;
 
 
-            return "Check your email";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("vfNGMUJd006SYoq6f5jjEg#TitleExpression.-1132290137.1", "Check your email");
         }
 
         internalRender() {
@@ -201,10 +201,25 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: 700; line-height: 24px; text-align: center;"
                             },
-                            value: ("We’ve sent a verification link to " + tradershubClientVariables.getEmail()),
+                            style: "break-word",
+                            value: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("i5X5nJsCMk+a7Z3SQ9IFSQ#ValueExpression.-1309903677.1", "We’ve sent a verification link to "),
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Expression, {
+                            extendedProperties: {
+                                style: "font-size: 16px; font-weight: 700; line-height: 24px; text-align: center;"
+                            },
+                            gridProperties: {
+                                classes: "ThemeGrid_MarginGutter"
+                            },
+                            style: "break-word",
+                            value: tradershubClientVariables.getSignupEmail(),
+                            _idProps: {
+                                service: idService,
+                                uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -221,10 +236,10 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "6"
+                                uuid: "7"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Didn\'t get an email? ", React.createElement(OSWidgets.Link, {
+                        }, $text(getTranslation("OlUhS96640KlAujAwJX3GQ#Value", "Didn\'t get an email? ")), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             gridProperties: {
                                 classes: "ThemeGrid_MarginGutter"
@@ -232,20 +247,20 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
                             onClick: function() {
                                 return Promise.resolve().then(function() {
                                     var eventHandlerContext = callContext.clone();
-                                    return controller.resendVerifyEmail$Action(tradershubClientVariables.getEmail(), controller.callContext(eventHandlerContext));
+                                    return controller.resendVerifyEmail$Action(tradershubClientVariables.getSignupEmail(), controller.callContext(eventHandlerContext));
                                 });;
                             },
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "7"
+                                uuid: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "color: #101213; font-weight: 700; line-height: 22px; text-decoration: underline;"
                             },
-                            text: ["Resend email"],
+                            text: [$text(getTranslation("sPGv4u2Vf0GhWnR2F+88Lg#Value", "Resend email"))],
                             _idProps: {
                                 service: idService,
                                 name: "Resendemaillink"
@@ -263,83 +278,83 @@ define("tradershub.Signup.EmailSentScreen.mvc$view", ["@outsystems/runtime-core-
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "9"
+                                uuid: "10"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "ul",
                             _idProps: {
                                 service: idService,
-                                uuid: "10"
+                                uuid: "11"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
-                                uuid: "11"
+                                uuid: "12"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: ["Make sure you’ve entered your email correctly."],
-                            _idProps: {
-                                service: idService,
-                                uuid: "12"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        })), React.createElement(OSWidgets.AdvancedHtml, {
-                            tag: "li",
+                            text: [$text(getTranslation("61zNHxNu502gHhifmmz4IA#Value", "Make sure you’ve entered your email correctly."))],
                             _idProps: {
                                 service: idService,
                                 uuid: "13"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.AdvancedHtml, {
+                            tag: "li",
+                            _idProps: {
+                                service: idService,
+                                uuid: "14"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: ["Check your spam folder."],
+                            text: [$text(getTranslation("oemHAbU4pUWSudfKsqyVzg#Value", "Check your spam folder."))],
                             _idProps: {
                                 service: idService,
-                                uuid: "14"
+                                uuid: "15"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
-                                uuid: "15"
+                                uuid: "16"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: ["Make sure the email isn’t blocked by firewalls or filters."],
+                            text: [$text(getTranslation("z31ULyxXE0iDZK+ggzIy7w#Value", "Make sure the email isn’t blocked by firewalls or filters."))],
                             _idProps: {
                                 service: idService,
-                                uuid: "16"
+                                uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(tradershubClientVariables.getEmail())]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getSignupEmail())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.VerifyEmailPayloadJS", "tradershub.Signup.EmailSentScreen.mvc$controller.OnReady.RudderStackJS", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController, tradershub_Signup_EmailSentScreen_mvc_controller_ResendVerifyEmail_VerifyEmailPayloadJS, tradershub_Signup_EmailSentScreen_mvc_controller_OnReady_RudderStackJS) {
+define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.EmailSentScreen.mvc$translationsResources", "tradershub.Signup.controller", "tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.VerifyEmailPayloadJS", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Signup_EmailSentScreen_mvc_TranslationsResources, tradershub_SignupController, tradershub_Signup_EmailSentScreen_mvc_controller_ResendVerifyEmail_VerifyEmailPayloadJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Signup_EmailSentScreen_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -418,9 +433,9 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
                                         derivApiSendMessageVar.value = value;
                                     }).then(function() {
                                         if ((derivApiSendMessageVar.value.isErrorOut)) {
-                                            OS.FeedbackMessageService.showFeedbackMessage("Maximum resend attempts reached. Try again in a few minutes.", /*Error*/ 3);
+                                            OS.FeedbackMessageService.showFeedbackMessage((((derivApiSendMessageVar.value.errorCodeOut === "RateLimit")) ? ("Maximum resend attempts reached. Try again in a few minutes.") : ("Something went wrong. Please try reloading the page!")), /*Error*/ 3);
                                         } else {
-                                            OS.FeedbackMessageService.showFeedbackMessage("Email sent", /*Success*/ 1);
+                                            OS.FeedbackMessageService.showFeedbackMessage(OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("uSJHx7RPj0mqvF6f8n4__w#Message.-1041026628.1", "Email sent"), /*Success*/ 1);
                                         }
 
                                     });
@@ -441,43 +456,29 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
                 this.__resendVerifyEmail$Action = value;
             }
 
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
+            get _onInitialize$Action() {
+                if (!(this.hasOwnProperty("__onInitialize$Action"))) {
+                    this.__onInitialize$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                        return OS.Logger.startActiveSpan("OnInitialize", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "7fa7ec70-6edc-4d6b-b51d-921145df4657");
+                                span.setAttribute("code.function", "OnInitialize");
+                                span.setAttribute("outsystems.function.key", "a4e22616-a39a-4e8b-8871-a7bb42b96c53");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
                             try {
-                                controller.ensureControllerAlive("OnReady");
+                                controller.ensureControllerAlive("OnInitialize");
                                 callContext = controller.callContext(callContext);
-                                OS.Logger.startActiveSpan("RudderStack", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "RudderStack");
-                                        span.setAttribute("outsystems.function.key", "b9cbde37-2f25-4f98-9edc-adb419195e88");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
+                                if (((tradershubClientVariables.getSignupEmail() === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                    // Destination: /tradershub/signup
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "signup", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                }
 
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_Signup_EmailSentScreen_mvc_controller_OnReady_RudderStackJS, "RudderStack", "OnReady", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -489,10 +490,10 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
                     };
                 }
 
-                return this.__onReady$Action;
+                return this.__onInitialize$Action;
             }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
+            set _onInitialize$Action(value) {
+                this.__onInitialize$Action = value;
             }
 
 
@@ -519,19 +520,19 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
 
             }
 
-            onReady$Action(callContext) {
+            onInitialize$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                return OS.Logger.startActiveSpan("OnInitialize__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "7fa7ec70-6edc-4d6b-b51d-921145df4657");
+                        span.setAttribute("code.function", "OnInitialize");
+                        span.setAttribute("outsystems.function.key", "a4e22616-a39a-4e8b-8871-a7bb42b96c53");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
                     try {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                        return controller.safeExecuteClientAction(controller._onInitialize$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -547,7 +548,14 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
             // Event Handler Actions
             get onInitializeEventHandler() {
                 if (!(this.hasOwnProperty("_onInitializeEventHandler"))) {
-                    this._onInitializeEventHandler = null;
+                    this._onInitializeEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onInitialize$Action(callContext);
+
+                    };
                 }
 
                 return this._onInitializeEventHandler;
@@ -558,14 +566,7 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;
@@ -657,10 +658,10 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller", ["@outsystems/runtime
 
 define("tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.VerifyEmailPayloadJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const cookies = getCookiesFields()
-        const cookies_objects = getCookiesObject(cookies)
-        const cookies_value = getDataObjFromCookies(cookies_objects, cookies)
-        const affiliate_token = getCookieValue('affiliate_tracking')
+        const cookies = window.getCookiesFields()
+        const cookies_objects = window.getCookiesObject(cookies)
+        const cookies_value = window.getDataObjFromCookies(cookies_objects, cookies)
+        const affiliate_token = window.getCookieValue('affiliate_tracking')
 
         $parameters.Payload = JSON.stringify({
             verify_email: $parameters.UserEmail,
@@ -674,14 +675,26 @@ define("tradershub.Signup.EmailSentScreen.mvc$controller.ResendVerifyEmail.Verif
     };
 });
 
-define("tradershub.Signup.EmailSentScreen.mvc$controller.OnReady.RudderStackJS", [], function() {
-    return function($actions, $roles, $public) {
-        cacheTrackEvents.track({
-            name: "ce_virtual_signup_form",
-            properties: {
-                action: "email_confirmation_sent",
-                form_name: "virtual_signup_form_outsystems"
-            }
-        });
+
+define("tradershub.Signup.EmailSentScreen.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "z31ULyxXE0iDZK+ggzIy7w#Value": "Assurez-vous que l\'email n\'est pas bloqué par des pare-feu ou des filtres.",
+        "oemHAbU4pUWSudfKsqyVzg#Value": "Vérifiez votre dossier de spam.",
+        "61zNHxNu502gHhifmmz4IA#Value": "Assurez-vous d\'avoir correctement saisi votre adresse e-mail.",
+        "sPGv4u2Vf0GhWnR2F+88Lg#Value": "Renvoi de l\'email",
+        "OlUhS96640KlAujAwJX3GQ#Value": "Vous n\'avez pas reçu d\'email ?",
+        "i5X5nJsCMk+a7Z3SQ9IFSQ#ValueExpression.-1309903677.1": "Nous avons envoyé un lien de vérification à",
+        "uSJHx7RPj0mqvF6f8n4__w#Message.-1041026628.1": "Email envoyé",
+        "vfNGMUJd006SYoq6f5jjEg#Title": "Vérifiez votre e-mail",
+        "vfNGMUJd006SYoq6f5jjEg#TitleExpression.-1132290137.1": "Vérifiez votre e-mail"
+    };
+});
+
+define("tradershub.Signup.EmailSentScreen.mvc$translationsResources", ["exports", "tradershub.Signup.EmailSentScreen.mvc$translationsResources.fr-FR"], function(exports, tradershub_Signup_EmailSentScreen_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Signup_EmailSentScreen_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

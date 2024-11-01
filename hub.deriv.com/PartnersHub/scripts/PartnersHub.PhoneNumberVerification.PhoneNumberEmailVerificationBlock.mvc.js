@@ -934,12 +934,12 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mv
 define("PartnersHub.PhoneNumberVerification.PhoneNumberEmailVerificationBlock.mvc$translationsResources.ar-001", [], function() {
     return {
         "EZAjLJFDH06o8UEIYyToBw#Value": "تأكد من أن البريد الإلكتروني ليس محجوبًا بواسطة جدران الحماية أو الفلاتر.",
-        "rKpSsbFKDkuJdwtE_LVClA#Value": "تحقق من مجلد الرسائل غير المرغوب فيها.",
+        "rKpSsbFKDkuJdwtE_LVClA#Value": "تحقق من مجلد البريد العشوائي.",
         "q9Ce0nJ7LE2y1iDV05opbw#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
         "t2V+7ijrtUC1usZPy65eUg#ValueExpression.-831934195.1": "إعادة إرسال الرمز في",
-        "t2V+7ijrtUC1usZPy65eUg#ValueExpression.1067057.1": "sec",
+        "t2V+7ijrtUC1usZPy65eUg#ValueExpression.1067057.1": "ثواني",
         "h0PBgujWUEC88S0ttmjwkA#Value": "إعادة إرسال الرمز",
-        "cSOfWaac4EuZB2yHtv8uug#Value": "لم تستلم الرمز؟",
+        "cSOfWaac4EuZB2yHtv8uug#Value": "لم تتلقَ الرمز؟",
         "Q9u_dsn2akyRVs7oPoyu_Q#ValueExpression.24546143.1": "أدخل رمز مكون من 6 أرقام",
         "zErnXc+8rkejGu1pau+Mkw#Value": "لقد أرسلنا رمز التحقق إلى"
     };

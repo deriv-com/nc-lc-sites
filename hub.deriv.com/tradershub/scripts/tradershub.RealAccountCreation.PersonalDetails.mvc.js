@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetFocus", "OutSystemsUI.controller$FocusFirstInvalidInput"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, OutSystemsUIModel) {
     var OS = OSRuntimeCore;
 
 
@@ -18,6 +18,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems
     OS.Model.BaseWidgetRecordMap {
         static getWidgetsType() {
             return {
+                salutation: OS.Model.ValidationWidgetRecord,
                 DesktopForm: OS.Model.ValidationWidgetRecord,
                 Input_FirstName: OS.Model.ValidationWidgetRecord,
                 Input_LastName: OS.Model.ValidationWidgetRecord,
@@ -48,7 +49,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$model", ["@outsystems
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.PersonalDetails.mvc$model", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetFocus", "OutSystemsUI.controller$FocusFirstInvalidInput"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, tradershub_RealAccountCreation_PersonalDetails_mvc_model, tradershub_RealAccountCreation_PersonalDetails_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -102,7 +103,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
             var _this = this;
 
 
-            return "Personal details | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("X1vGH2Op40ipeUYbGABbZw#TitleExpression.-545367396.1", "Personal details | Deriv");
         }
 
         internalRender() {
@@ -155,7 +156,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                         return [React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: true,
-                            style: "full-width personal-details-section__desktop",
+                            style: "full-width personal-details-section__desktop ",
                             visible: model.getCachedValue(idService.getId("wyspHXC0QECSxiMx+W123w.Visible"), function() {
                                 return OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut;
                             }),
@@ -201,7 +202,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: ["Enter your "],
+                            text: [$text(getTranslation("qCkbiF5mmEmfN1dAd5fEEQ#Value", "Enter your "))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -211,7 +212,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             extendedProperties: {
                                 style: "font-size: 12px; font-weight: bold;"
                             },
-                            text: ["name"],
+                            text: [$text(getTranslation("ZE4ihfYDwUGA+3lD68twQg#Value", "name"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "6"
@@ -221,7 +222,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: [" and "],
+                            text: [$text(getTranslation("9vFpd9z6yE2EOaqTW3jrhQ#Value", " and "))],
                             _idProps: {
                                 service: idService,
                                 uuid: "7"
@@ -231,7 +232,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             extendedProperties: {
                                 style: "font-size: 12px; font-weight: bold;"
                             },
-                            text: ["date of birth"],
+                            text: [$text(getTranslation("aWWMvx89EkSvdbAnWPKLxQ#Value", "date of birth"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -241,13 +242,74 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             extendedProperties: {
                                 style: "font-size: 12px;"
                             },
-                            text: [" exactly as it appears on your identity document."],
+                            text: [$text(getTranslation("Q4lyuhnNSEqoHjQAqLgX7w#Value", " exactly as it appears on your identity document."))],
                             _idProps: {
                                 service: idService,
                                 uuid: "9"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }))), React.createElement(OSWidgets.Container, {
+                        }))), $if(tradershubClientVariables.getIsEuUser(), false, this, function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "text-align: left;"
+                                },
+                                style: "",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "10"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.RadioGroup, {
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                enabled: true,
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                mandatory: false,
+                                style: "radio-group",
+                                variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getSalutation(), function(value) {
+                                    tradershubClientVariables.setSalutation(value);
+                                }),
+                                _idProps: {
+                                    service: idService,
+                                    name: "salutation"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.RadioButton, {
+                                enabled: true,
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                style: "radio-button",
+                                value: "Mr",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "Mr"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("RIXFfJtQLE2NpEEP8WlAPQ#Value", "Mr"))), React.createElement(OSWidgets.RadioButton, {
+                                enabled: true,
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                style: "radio-button",
+                                value: "Ms",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "Ms"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("qq6Km8_IEkuiasFzTgXf+g#Value", "Ms")))))];
+                        }, function() {
+                            return [];
+                        }), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -292,7 +354,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "13"
+                                uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -313,17 +375,17 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             targetWidget: "Input_FirstName",
                             _idProps: {
                                 service: idService,
-                                uuid: "15"
+                                uuid: "19"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["First (and middle) name"],
+                            text: [$text(getTranslation("clYNjfu1dkOhXZJB3r4UgA#Value", "First (and middle) name"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "16"
+                                uuid: "20"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Input, {
@@ -371,17 +433,17 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             targetWidget: "Input_LastName",
                             _idProps: {
                                 service: idService,
-                                uuid: "19"
+                                uuid: "23"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Last name"],
+                            text: [$text(getTranslation("F2iGiak390yOUQ_i6I53Wg#Value", "Last name"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "20"
+                                uuid: "24"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Input, {
@@ -430,17 +492,17 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             targetWidget: "Input_Date",
                             _idProps: {
                                 service: idService,
-                                uuid: "23"
+                                uuid: "27"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Date of birth"],
+                            text: [$text(getTranslation("OjWV19XHkke+IHNk9a6DPA#Value", "Date of birth"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "24"
+                                uuid: "28"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -450,7 +512,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "25"
+                                uuid: "29"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Input, {
@@ -489,7 +551,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "27"
+                                uuid: "31"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -501,7 +563,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "28"
+                                uuid: "32"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))), React.createElement(OSWidgets.Container, {
@@ -514,7 +576,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "29"
+                                uuid: "33"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -522,7 +584,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "30"
+                                uuid: "34"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }))), React.createElement(OSWidgets.Container, {
@@ -535,7 +597,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "31"
+                                uuid: "35"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Button, {
@@ -559,10 +621,10 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "32"
+                                uuid: "36"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Next"))))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("X78ePeC7k0+pE9zc8bR0qA#Value", "Next"))))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: true,
                             style: "full-width personal-details-section__mobile",
@@ -571,7 +633,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             }),
                             _idProps: {
                                 service: idService,
-                                uuid: "33"
+                                uuid: "37"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_view, {
@@ -592,7 +654,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "34",
+                                uuid: "38",
                                 alias: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -600,19 +662,19 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$view", ["@outsystems/
                         }))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(tradershubClientVariables.getRealSignupDateofBirth()), asPrimitiveValue(tradershubClientVariables.getRealSignupLastName()), asPrimitiveValue(tradershubClientVariables.getRealSignupFirstName())]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getRealSignupDateofBirth()), asPrimitiveValue(tradershubClientVariables.getRealSignupLastName()), asPrimitiveValue(tradershubClientVariables.getRealSignupFirstName()), asPrimitiveValue(tradershubClientVariables.getSalutation()), asPrimitiveValue(tradershubClientVariables.getIsEuUser())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.PersonalDetails.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.IconOnClick.OpenDatePickerJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClick.ValidateJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetFocus", "OutSystemsUI.controller$FocusFirstInvalidInput"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_PersonalDetails_mvc_TranslationsResources, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_IconOnClick_OpenDatePickerJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_OnReady_InitializeFlatpickrJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_PersonalDetails_mvc_controller_SaveOnClick_ValidateJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_PersonalDetails_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {
                     datePickerOnSelected$Action: function(selectedDateTimeIn) {
@@ -793,6 +855,10 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                             try {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
+                                var setFocusVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: SetFocus
+                                setFocusVar.value = OutSystemsUIController.default.setFocus$Action(idService.getId("Input_FirstName"), callContext);
+
                                 if ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut)) {
                                     OS.Logger.startActiveSpan("InitializeFlatpickr", function(span) {
                                         if (span) {
@@ -854,6 +920,7 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                             try {
                                 controller.ensureControllerAlive("SaveOnClick");
                                 callContext = controller.callContext(callContext);
+                                var focusFirstInvalidInputVar = new OS.DataTypes.VariableHolder();
                                 OS.Logger.startActiveSpan("Validate", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Validate");
@@ -900,8 +967,14 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller", ["@outsy
                                         }
 
                                     }, 1);
+                                    // RealSignupPassedStepCount = 2
+                                    tradershubClientVariables.setRealSignupPassedStepCount(2);
                                     // Destination: /tradershub/PersonalDetailsAdditional
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/additional", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                } else {
+                                    // Execute Action: FocusFirstInvalidInput
+                                    focusFirstInvalidInputVar.value = OutSystemsUIController.default.focusFirstInvalidInput$Action(idService.getId("DesktopForm"), true, "", callContext);
+
                                 }
 
                             } finally {
@@ -1295,5 +1368,33 @@ define("tradershub.RealAccountCreation.PersonalDetails.mvc$controller.SaveOnClic
         errors.FirstName && $public.Validation.setWidgetAsInvalid($parameters.InputFirstNameWidgetId, errors.FirstName)
         errors.LastName && $public.Validation.setWidgetAsInvalid($parameters.InputLastNameWidgetId, errors.LastName)
         errors.DateOfBirth && $public.Validation.setWidgetAsInvalid($parameters.InputDateOfBirthWidgetId, errors.DateOfBirth)
+    };
+});
+
+
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "X78ePeC7k0+pE9zc8bR0qA#Value": "Suivant",
+        "OjWV19XHkke+IHNk9a6DPA#Value": "Date de naissance",
+        "F2iGiak390yOUQ_i6I53Wg#Value": "Nom de famille",
+        "clYNjfu1dkOhXZJB3r4UgA#Value": "Prénom (et nom de famille)",
+        "qq6Km8_IEkuiasFzTgXf+g#Value": "Non",
+        "RIXFfJtQLE2NpEEP8WlAPQ#Value": "Oui",
+        "Q4lyuhnNSEqoHjQAqLgX7w#Value": "exactement comme il apparaît sur votre document d\'identité.",
+        "aWWMvx89EkSvdbAnWPKLxQ#Value": "date de naissance",
+        "9vFpd9z6yE2EOaqTW3jrhQ#Value": "et",
+        "ZE4ihfYDwUGA+3lD68twQg#Value": "nom",
+        "qCkbiF5mmEmfN1dAd5fEEQ#Value": "Entrez votre",
+        "X1vGH2Op40ipeUYbGABbZw#Title": "Détails personnels | Deriv",
+        "X1vGH2Op40ipeUYbGABbZw#TitleExpression.-545367396.1": "Détails personnels | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreation.PersonalDetails.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.PersonalDetails.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_PersonalDetails_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_PersonalDetails_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

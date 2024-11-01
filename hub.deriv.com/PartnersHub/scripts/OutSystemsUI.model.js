@@ -8035,7 +8035,7 @@ define("OutSystemsUI.model$RL_a30d2539b4ff7ed1b19c3e6514d069cf", ["exports", "@o
 
 });
 
-define("OutSystemsUI.model$BasicTypeList<Text>", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model"], function(exports, OSRuntimeCore, OutSystemsUIModel) {
+define("OutSystemsUI.model$RL_4d8a97df13a7539a1a0177dbcd05fbb2", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model"], function(exports, OSRuntimeCore, OutSystemsUIModel) {
     var OS = OSRuntimeCore;
     class TextList extends
     OS.DataTypes.GenericRecordList {

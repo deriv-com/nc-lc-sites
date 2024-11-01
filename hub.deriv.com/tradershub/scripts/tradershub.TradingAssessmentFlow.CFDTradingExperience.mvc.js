@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$model", ["@out
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
         get title() {
 
 
-            return "CFDTradingExperience";
+            return OSView.BaseView.BaseWebScreen.getTranslation("PqzsHJZhlkuNc9HP3Hk0nw#Title", "CFDTradingExperience");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["3/10"],
+                            text: [$text(getTranslation("8dYRjeFNaEKxurMFYk4MUA#Value", "3/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("RB+HjOmM5k2P6CW73ksE+w#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["How much experience do you have in CFD trading?"],
+                            text: [$text(getTranslation("R1ygciMWtUm0qwTQ4yvGew#Value", "How much experience do you have in CFD trading?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getCFDTradingExperience(), function(value) {
+                                tradershubClientVariables.setCFDTradingExperience(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "No experience"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("2BZKbacdAUCBqNtvbfCYIw#Value", "No experience"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -296,7 +299,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Less than a year"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("nBpM_Qf2KkisVigNjl5wKQ#Value", "Less than a year"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "1 - 2 years"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("C0+ZZcUXU0+0zFTTGR9Ktg#Value", "1 - 2 years"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -322,7 +325,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Over 3 years"))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("oK88dYIDOEGuO9F5bLQnUw#Value", "Over 3 years"))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -356,7 +359,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("48Sgrs2DQEm+RbohMo8FxQ#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -365,19 +368,19 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$view", ["@outs
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getCFDTradingExperience()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_CFDTradingExperience_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_CFDTradingExperience_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -419,7 +422,7 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$controller", [
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getCFDTradingExperience() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -554,4 +557,27 @@ define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$controller", [
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "48Sgrs2DQEm+RbohMo8FxQ#Value": "Suivant",
+        "oK88dYIDOEGuO9F5bLQnUw#Value": "Plus de 3 ans",
+        "C0+ZZcUXU0+0zFTTGR9Ktg#Value": "1 - 2 ans",
+        "nBpM_Qf2KkisVigNjl5wKQ#Value": "Moins d\'un an",
+        "2BZKbacdAUCBqNtvbfCYIw#Value": "Aucune expérience",
+        "R1ygciMWtUm0qwTQ4yvGew#Value": "Quelle expérience avez-vous en trading CFD ?",
+        "RB+HjOmM5k2P6CW73ksE+w#Value": "Ceci est requis.",
+        "8dYRjeFNaEKxurMFYk4MUA#Value": "Dim Mar 10 2024 16:00:00 GMT+0800 (heure normale de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.CFDTradingExperience.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_CFDTradingExperience_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_CFDTradingExperience_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

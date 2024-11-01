@@ -111,7 +111,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
             var _this = this;
 
 
-            return "Login";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("G54H1giNtU6Ypz8OV2tcBQ#TitleExpression.73596745.1", "Login");
         }
 
         internalRender() {
@@ -202,7 +202,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             extendedProperties: {
                                 style: "font-size: 18px; font-weight: 700; margin-bottom: 24px;"
                             },
-                            text: ["Welcome back", React.createElement("br")],
+                            text: [$text(getTranslation("Cy8Rl6UZF0yj09NopdCIpA#Value", "Welcome back\n"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -249,7 +249,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                                 uuid: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Email"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("pC81f5qO0U2B5caMMpZ00Q#Value", "Email"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService,
                                 validationParentId: idService.getId("LoginForm")
@@ -264,7 +264,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             inputType: /*Email*/ 7,
                             mandatory: true,
                             maxLength: 0,
-                            prompt: "Enter your email",
+                            prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("hgpdLHxjiUSlkc5NLW4ZKg#ValueExpression.-374653993.1", "Enter your email"),
                             style: "form-control",
                             variable: model.createVariable(OS.DataTypes.DataTypes.Email, model.variables.emailVar, function(value) {
                                 model.variables.emailVar = value;
@@ -302,7 +302,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                                 uuid: "11"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Password"), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("V7tX5SVSL0ueY8hezbDI2A#Value", "Password"))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "position-relative",
@@ -388,7 +388,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             extendedProperties: {
                                 style: "color: #222; font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["Forgot password?"],
+                            text: [$text(getTranslation("q4RWlIJ8qUyKMCK+0o+IEA#Value", "Forgot password?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -424,7 +424,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                                 uuid: "19"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Log in"))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("i4ybhJdLMUWcznpWDEmjcQ#Value", "Log in"))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -474,7 +474,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             extendedProperties: {
                                 style: "margin-left: 16px; margin-right: 16px;"
                             },
-                            text: ["Or continue with"],
+                            text: [$text(getTranslation("bUtExnuixk2gqiAekR1nog#Value", "Or continue with"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "23"
@@ -560,7 +560,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                                 uuid: "28"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Don\'t have an account yet?", React.createElement(OSWidgets.Link, {
+                        }, $text(getTranslation("dqgwmfMZeUO6XqFQXxzSaA#Value", "Don\'t have an account yet?")), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             gridProperties: {
                                 classes: "ThemeGrid_MarginGutter"
@@ -577,7 +577,7 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
                             extendedProperties: {
                                 style: "color: #222; font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["Create a new account"],
+                            text: [$text(getTranslation("hdQFn5_3IECkwU+bSdVyug#Value", "Create a new account"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "30"
@@ -593,12 +593,12 @@ define("tradershub.MainFlow.LoginScreen.mvc$view", ["@outsystems/runtime-core-js
 
     return View;
 });
-define("tradershub.MainFlow.LoginScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
+define("tradershub.MainFlow.LoginScreen.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.LoginScreen.mvc$translationsResources", "tradershub.MainFlow.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_LoginScreen_mvc_TranslationsResources, tradershub_MainFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_LoginScreen_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -642,14 +642,14 @@ define("tradershub.MainFlow.LoginScreen.mvc$controller", ["@outsystems/runtime-c
                                 callContext = controller.callContext(callContext);
                                 if (!((((model.widgets.get(idService.getId("LoginForm")).validAttr && model.widgets.get(idService.getId("Input_Email")).validAttr) && model.widgets.get(idService.getId("Input_password")).validAttr)))) {
                                     // Input_Email.ValidationMessage = "Email is required."
-                                    model.widgets.get(idService.getId("Input_Email")).validationMessageAttr = "Email is required.";
+                                    model.widgets.get(idService.getId("Input_Email")).validationMessageAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("oJYXY5TdVEecVMblmaYbAw#Value.2117503773.1", "Email is required.");
                                     // Input_password.ValidationMessage = "Password is required."
                                     model.widgets.get(idService.getId("Input_password")).validationMessageAttr = "Password is required.";
                                     if ((!(OS.BuiltinFunctions.emailAddressValidate(model.variables.emailVar)))) {
                                         // Input_Email.Valid = False
                                         model.widgets.get(idService.getId("Input_Email")).validAttr = false;
                                         // Input_Email.ValidationMessage = "Not a valid email."
-                                        model.widgets.get(idService.getId("Input_Email")).validationMessageAttr = "Not a valid email.";
+                                        model.widgets.get(idService.getId("Input_Email")).validationMessageAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("X+Y_dvKPp0OBkh_NXEhXAQ#Value.1843755810.1", "Not a valid email.");
                                     }
 
                                 }
@@ -848,4 +848,32 @@ define("tradershub.MainFlow.LoginScreen.mvc$controller", ["@outsystems/runtime-c
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.MainFlow.LoginScreen.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "hdQFn5_3IECkwU+bSdVyug#Value": "Créer un nouveau compte",
+        "dqgwmfMZeUO6XqFQXxzSaA#Value": "Vous n\'avez pas encore de compte ?",
+        "bUtExnuixk2gqiAekR1nog#Value": "Ou continuez avec",
+        "i4ybhJdLMUWcznpWDEmjcQ#Value": "Connexion",
+        "q4RWlIJ8qUyKMCK+0o+IEA#Value": "Mot de passe oublié ?",
+        "V7tX5SVSL0ueY8hezbDI2A#Value": "Mot de passe",
+        "hgpdLHxjiUSlkc5NLW4ZKg#ValueExpression.-374653993.1": "Entrez votre email",
+        "pC81f5qO0U2B5caMMpZ00Q#Value": "Email",
+        "Cy8Rl6UZF0yj09NopdCIpA#Value": "Bon retour",
+        "oJYXY5TdVEecVMblmaYbAw#Value.2117503773.1": "L\'email est requis.",
+        "X+Y_dvKPp0OBkh_NXEhXAQ#Value.1843755810.1": "Adresse e-mail invalide.",
+        "G54H1giNtU6Ypz8OV2tcBQ#Title": "Connexion",
+        "G54H1giNtU6Ypz8OV2tcBQ#TitleExpression.73596745.1": "Connexion"
+    };
+});
+
+define("tradershub.MainFlow.LoginScreen.mvc$translationsResources", ["exports", "tradershub.MainFlow.LoginScreen.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_LoginScreen_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_LoginScreen_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

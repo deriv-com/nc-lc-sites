@@ -1,0 +1,44 @@
+﻿.desktop .cfd-commission-banner{
+    background-image: url("../img/PartnersHub.cfdcommssion__mcwXS9UJVfqFBNqr1NwzQQ.png?mcwXS9UJVfqFBNqr1NwzQQ");
+    padding-inline-start: 36px;
+    padding-block: 21px;
+}
+
+.cfd-commission-banner {
+    border-radius: 8px;
+    border: 1px solid #F1F3F5;
+    padding: 16px;
+    padding-inline-end: 0;
+    background-image: url("../img/PartnersHub.cfdcommissionmobile__2Iyz7AoNW8W9TuoopEZWRg.png?2Iyz7AoNW8W9TuoopEZWRg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.desktop .cfd-commission-banner-title{
+    font-size: 20px;
+    line-height: 30px; 
+    margin-bottom: 16px;
+}
+
+.cfd-commission-banner-title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--color-neutral-8);
+}
+
+.desktop .cfd-commission-banner .secondary-button {
+    padding-inline: 16px;
+}
+.desktop .cfd-commission-banner .secondary-label {
+    font-size: 14px;
+}
+.cfd-commission-banner .secondary-button {
+    padding-inline: 14px;
+}
+.cfd-commission-banner .secondary-label {
+    font-size: 12px;
+}

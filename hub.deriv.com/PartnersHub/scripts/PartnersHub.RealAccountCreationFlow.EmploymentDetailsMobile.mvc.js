@@ -1290,7 +1290,7 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$translat
         "mA3HrdNMnEKRV9EzarHiKg#Value": "أؤكد أن معلوماتي الضريبية دقيقة وكاملة.",
         "ymFzQmrOoEemwDnHQ8ikYA#Value": "رقم التعريف الضريبي (اختياري)",
         "494abvAK6kWbEPLJhBBb+Q#Value": "بلد الإقامة الضريبية",
-        "8jg4xfrK_EuVY+QGVDSwmg#Value": "اختر حالة عملك",
+        "8jg4xfrK_EuVY+QGVDSwmg#Value": "اختر الحالة الوظيفية",
         "t0UTM6piu0C_k9PNxfLJww#Value": "لا",
         "B_WVXdWSW0CDoXZVQhgRCQ#Value": "نعم",
         "3CQLlTqfj0y2blXOAjEJGg#Value": "هل لديك رقم تعريف ضريبي؟",
@@ -1318,10 +1318,10 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsMobile.mvc$translat
         "mA3HrdNMnEKRV9EzarHiKg#Value": "Confirmo que mi información fiscal es precisa y completa.",
         "ymFzQmrOoEemwDnHQ8ikYA#Value": "Número de identificación fiscal (opcional)",
         "494abvAK6kWbEPLJhBBb+Q#Value": "País de residencia fiscal",
-        "8jg4xfrK_EuVY+QGVDSwmg#Value": "Seleccione su estado de empleo",
+        "8jg4xfrK_EuVY+QGVDSwmg#Value": "Selecciona tu estado de empleo",
         "t0UTM6piu0C_k9PNxfLJww#Value": "No",
         "B_WVXdWSW0CDoXZVQhgRCQ#Value": "Sí",
-        "3CQLlTqfj0y2blXOAjEJGg#Value": "¿Tiene un número de identificación fiscal?",
+        "3CQLlTqfj0y2blXOAjEJGg#Value": "¿Tienes un número de identificación fiscal?",
         "aqBSd0vY4UeCYB0sG+khyQ#Value": "Información fiscal"
     };
 });

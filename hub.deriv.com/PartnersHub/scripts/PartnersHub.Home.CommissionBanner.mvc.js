@@ -428,7 +428,7 @@ define("PartnersHub.Home.CommissionBanner.mvc$controller.OnClickLearnMore.JavaSc
 
 define("PartnersHub.Home.CommissionBanner.mvc$translationsResources.ar-001", [], function() {
     return {
-        "dZs_UaLNzkKgTcMnmeLywA#Value": "تعلم المزيد",
+        "dZs_UaLNzkKgTcMnmeLywA#Value": "تعرف على المزيد",
         "fbMhprVBJUKl1tI+9HqV4w#Value": "كيفية حساب العمولات"
     };
 });

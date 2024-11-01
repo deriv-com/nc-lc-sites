@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutSignup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDatadogClient", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController) {
+define("PartnersHub.Layouts.LayoutSignup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.controller", "OutSystemsUI.model", "PartnersHub.controller", "OutSystemsUI.controller$LayoutReady", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIController, OutSystemsUIModel, PartnersHubController) {
     var OS = OSRuntimeCore;
 
 
@@ -41,6 +41,12 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$model", ["@outsystems/runtime-core-
                         return true;
                     }, false),
                     this.attr("_hasHeaderInDataFetchStatus", "_hasHeaderInDataFetchStatus", "_hasHeaderInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("NoRedirect", "noRedirectIn", "NoRedirect", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return false;
+                    }, false),
+                    this.attr("_noRedirectInDataFetchStatus", "_noRedirectInDataFetchStatus", "_noRedirectInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -121,6 +127,14 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$model", ["@outsystems/runtime-core-
 
             }
 
+            if ("NoRedirect" in inputs) {
+                this.variables.noRedirectIn = inputs.NoRedirect;
+                if ("_noRedirectInDataFetchStatus" in inputs) {
+                    this.variables._noRedirectInDataFetchStatus = inputs._noRedirectInDataFetchStatus;
+                }
+
+            }
+
         }
 
     }
@@ -129,7 +143,7 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$model", ["@outsystems/runtime-core-
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutSignup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.LayoutSignup.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDatadogClient", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_LayoutSignup_mvc_model, PartnersHub_Layouts_LayoutSignup_mvc_controller, PartnersHubClientVariables, OSWidgets) {
+define("PartnersHub.Layouts.LayoutSignup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutSignup.mvc$model", "PartnersHub.Layouts.LayoutSignup.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.controller$LayoutReady", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIController, OutSystemsUIModel, React, OSView, PartnersHub_Layouts_LayoutSignup_mvc_model, PartnersHub_Layouts_LayoutSignup_mvc_controller, PartnersHubClientVariables, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -326,7 +340,7 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$translationsResources", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$MountDatadogClient", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_TranslationsResources) {
+define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$translationsResources", "PartnersHub.Layouts.LayoutSignup.mvc$controller.RedirectToDashboard.JavaScript1JS", "OutSystemsUI.controller$LayoutReady", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$SetLang", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIController, OutSystemsUIModel, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_TranslationsResources, PartnersHub_Layouts_LayoutSignup_mvc_controller_RedirectToDashboard_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -373,7 +387,6 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
-                                var addFaviconVar = new OS.DataTypes.VariableHolder();
                                 var setLangVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: LayoutReady
@@ -381,11 +394,6 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-
                                     return OutSystemsUIController.default.layoutReady$Action(callContext).then(function() {
                                         // Execute Action: SetLang
                                         setLangVar.value = OutSystemsUIController.default.setLang$Action("", callContext);
-
-                                        // Execute Action: MountDatadogClient
-                                        PartnersHubController.default.mountDatadogClient$Action(callContext);
-                                        // Execute Action: AddFavicon
-                                        addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("favicon.ico", callContext);
 
                                     });
                                 });
@@ -460,8 +468,28 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-
                             try {
                                 controller.ensureControllerAlive("RedirectToDashboard");
                                 callContext = controller.callContext(callContext);
-                                // Destination: /PartnersHub/PartnersHubDashboard
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "PartnersHubDashboard", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                if ((!(model.variables.noRedirectIn))) {
+                                    OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                                        if (span) {
+                                            span.setAttribute("code.function", "JavaScript1");
+                                            span.setAttribute("outsystems.function.key", "5afcf9f1-15bc-408f-84a1-f6139e9d4036");
+                                            span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                            span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                        }
+
+                                        try {
+                                            return controller.safeExecuteJSNode(PartnersHub_Layouts_LayoutSignup_mvc_controller_RedirectToDashboard_JavaScript1JS, "JavaScript1", "RedirectToDashboard", null, function($parameters) {}, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
+
+                                        }
+
+                                    }, 1);
+                                }
+
                             } finally {
                                 if (span) {
                                     span.end();
@@ -731,6 +759,12 @@ define("PartnersHub.Layouts.LayoutSignup.mvc$controller", ["@outsystems/runtime-
 
     }
     return new OS.Controller.ControllerFactory(Controller, PartnersHubLanguageResources);
+});
+
+define("PartnersHub.Layouts.LayoutSignup.mvc$controller.RedirectToDashboard.JavaScript1JS", [], function() {
+    return function($actions, $roles, $public) {
+        window.location.href = "/partnershub";
+    };
 });
 
 

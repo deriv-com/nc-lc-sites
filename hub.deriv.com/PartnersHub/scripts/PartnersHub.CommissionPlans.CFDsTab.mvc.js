@@ -351,7 +351,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$view", ["@outsystems/runtime-cor
                                                     _widgetRecordProvider: widgetsRecordProvider
                                                 }, React.createElement(OSWidgets.Expression, {
                                                     style: "to-description",
-                                                    value: (("Earn when your clients trade on a " + model.variables.tabDataIn.getCurrent(callContext.iterationContext).tabsAttr) + " account."),
+                                                    value: ((OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1", "Earn when your clients trade on a ") + model.variables.tabDataIn.getCurrent(callContext.iterationContext).tabsAttr) + " account."),
                                                     _idProps: {
                                                         service: idService,
                                                         uuid: "11"
@@ -573,8 +573,9 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$controller", ["@outsystems/runti
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.ar-001", [], function() {
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "هذه الخطة غير متاحة للشركاء الذين يروجون للعملاء المقيمين في الاتحاد الأوروبي.",
-        "HvaQTXeMqEy7LlNODOdKuQ#Value": "إخلاء المسؤولية:",
-        "sQvdRiufbkqbBbseWgsSDg#Value": "إذا لم يتم تفعيل عمولات عقود الفروقات الخاصة بك، فاتصل بمدير حسابك."
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "تنبيه:",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "اربح عندما يتداول عملاؤك على",
+        "sQvdRiufbkqbBbseWgsSDg#Value": "إذا كانت عمولات عقود الفروقات (CFDs) لديك غير مفعلة، تواصل مع مدير حسابك."
     };
 });
 
@@ -582,6 +583,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.de-DE", []
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "Dieser Plan ist für Partner, die Kunden mit Wohnsitz in der EU anwerben, nicht verfügbar.",
         "HvaQTXeMqEy7LlNODOdKuQ#Value": "Haftungsausschluss:",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "Verdienen Sie, wenn Ihre Kunden mit einem",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Wenn Ihr Turnover-Plan nicht aktiviert ist, kontaktieren Sie Ihren Kontomanager."
     };
 });
@@ -589,8 +591,9 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.de-DE", []
 define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.es-ES", [], function() {
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "Este plan no está disponible para socios que promocionen a clientes residentes en la UE.",
-        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Aviso legal:",
-        "sQvdRiufbkqbBbseWgsSDg#Value": "Si su plan de Turnover no está activado, contacte a su gerente de cuenta."
+        "HvaQTXeMqEy7LlNODOdKuQ#Value": "Deslinde de responsabilidad:",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "Gana cuando tus clientes operan en una",
+        "sQvdRiufbkqbBbseWgsSDg#Value": "Si tu plan de volumen de ventas no está activado, contacta a tu gerente de cuenta."
     };
 });
 
@@ -598,6 +601,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.fr-FR", []
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "Ce plan n\'est pas disponible pour les partenaires qui font la promotion auprès de clients résidant dans l\'UE.",
         "HvaQTXeMqEy7LlNODOdKuQ#Value": "Avertissement :",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "Faites des gains lorsque vos clients tradent sur un",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Si votre plan de Turnover n\'est pas activé, contactez votre gestionnaire de compte."
     };
 });
@@ -606,6 +610,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.it-IT", []
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "Questo piano non è disponibile per i partner che promuovono a clienti residenti nell\'UE.",
         "HvaQTXeMqEy7LlNODOdKuQ#Value": "Dichiarazione di non responsabilità:",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "Guadagna quando i tuoi clienti fanno trading su",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Se il tuo piano di Turnover non è attivato, contatta il tuo account manager."
     };
 });
@@ -622,6 +627,7 @@ define("PartnersHub.CommissionPlans.CFDsTab.mvc$translationsResources.pt-PT", []
     return {
         "lGVMjowhlESn00LuWQ6SJg#Value": "Este plano não está disponível para parceiros que promovem a clientes residentes na UE.",
         "HvaQTXeMqEy7LlNODOdKuQ#Value": "Isenção de responsabilidade:",
+        "+YlNXA3x3ECK3VjGGX+CEA#ValueExpression.-486072707.1": "Ganhe quando os seus clientes negociarem numa",
         "sQvdRiufbkqbBbseWgsSDg#Value": "Se o seu plano de Turnover não estiver ativado, entre em contacto com o seu gestor de conta."
     };
 });

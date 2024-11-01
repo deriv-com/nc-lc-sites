@@ -1,0 +1,29 @@
+﻿.cfd-commissions-modal {
+    z-index: 999;
+    display: flex;
+    justify-content: end;
+}
+
+.cfd-commissions-modal-dialog {
+    width: 400px;
+    height: 100%;
+    background-color: white;
+}
+
+.cfd-commissions-modal-header {
+    min-height: 56px;
+    padding-inline: 16px;
+    padding-block: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9ECEF;
+}
+
+.cfd-commissions-modal-body {
+    padding: 16px;
+}
+
+.cfd-commissions-modal-content {
+    padding: 16px;
+}

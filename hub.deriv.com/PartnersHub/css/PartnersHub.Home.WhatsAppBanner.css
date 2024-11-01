@@ -20,8 +20,22 @@
     width: auto;
     right: 6px;
 }
+
+.is-rtl .phone-image{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+    left: 6px;
+    right:auto;
+}
 .desktop .phone-image, .tablet .phone-image {
     right: 44px;
+}
+
+.desktop.is-rtl .phone-image, .tablet.is-rtl .phone-image {
+    left: 44px;
+    right: auto;
 }
 
 .banner-description {
@@ -31,6 +45,7 @@
     font-weight: 700;
     line-height: normal;
     width: 60%;
+    max-width: 550px;
 }
 .tablet .banner-description, .desktop .banner-description {
     font-size: 24px;

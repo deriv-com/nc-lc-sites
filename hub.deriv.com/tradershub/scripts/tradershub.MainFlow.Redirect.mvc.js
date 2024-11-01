@@ -101,7 +101,7 @@ define("tradershub.MainFlow.Redirect.mvc$view", ["@outsystems/runtime-core-js", 
             var _this = this;
 
 
-            return "Redirecting | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("EwaOanFJYkO6wMssllc+eA#TitleExpression.-708286336.1", "Redirecting | Deriv");
         }
 
         internalRender() {
@@ -146,12 +146,12 @@ define("tradershub.MainFlow.Redirect.mvc$view", ["@outsystems/runtime-core-js", 
 
     return View;
 });
-define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.GetURLParamsJS", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParamJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Redirect_mvc_controller_OnReady_GetURLParamsJS, tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS) {
+define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.Redirect.mvc$translationsResources", "tradershub.MainFlow.controller", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.GetURLParamsJS", "tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQueryParamJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_Redirect_mvc_TranslationsResources, tradershub_MainFlowController, tradershub_MainFlow_Redirect_mvc_controller_OnReady_GetURLParamsJS, tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_Redirect_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -272,37 +272,43 @@ define("tradershub.MainFlow.Redirect.mvc$controller", ["@outsystems/runtime-core
                                     // Destination: /tradershub/ResetPassword
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "reset-password", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 } else {
-                                    if ((((getURLParamsJSResult.value.tokenOut) !== ("")))) {
-                                        // Destination: /tradershub/Options
-                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    if (((getURLParamsJSResult.value.actionOut === "payment_withdraw"))) {
+                                        // Destination: /tradershub/WalletsWithdrawal
+                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets/withdrawal", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                     } else {
-                                        // AuthToken = NullTextIdentifier
-                                        tradershubClientVariables.setAuthToken(OS.BuiltinFunctions.nullTextIdentifier());
-                                        // SelectedResidence = NullTextIdentifier
-                                        tradershubClientVariables.setSelectedResidence(OS.BuiltinFunctions.nullTextIdentifier());
-                                        // SelectedResidenceLabel = NullTextIdentifier
-                                        tradershubClientVariables.setSelectedResidenceLabel(OS.BuiltinFunctions.nullTextIdentifier());
-                                        // SelectedCitizenship = NullTextIdentifier
-                                        tradershubClientVariables.setSelectedCitizenship(OS.BuiltinFunctions.nullTextIdentifier());
-                                        OS.Logger.startActiveSpan("RedirectURLWithQueryParam", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "RedirectURLWithQueryParam");
-                                                span.setAttribute("outsystems.function.key", "fd858047-b79b-4d15-9725-831de69ae67c");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS, "RedirectURLWithQueryParam", "OnReady", null, function($parameters) {}, {}, {});
-                                            } finally {
+                                        if ((((getURLParamsJSResult.value.tokenOut) !== ("")))) {
+                                            // Destination: /tradershub/Options
+                                            return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "options", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                        } else {
+                                            // AuthToken = NullTextIdentifier
+                                            tradershubClientVariables.setAuthToken(OS.BuiltinFunctions.nullTextIdentifier());
+                                            // SelectedResidence = NullTextIdentifier
+                                            tradershubClientVariables.setSelectedResidence(OS.BuiltinFunctions.nullTextIdentifier());
+                                            // SelectedResidenceLabel = NullTextIdentifier
+                                            tradershubClientVariables.setSelectedResidenceLabel(OS.BuiltinFunctions.nullTextIdentifier());
+                                            // SelectedCitizenship = NullTextIdentifier
+                                            tradershubClientVariables.setSelectedCitizenship(OS.BuiltinFunctions.nullTextIdentifier());
+                                            OS.Logger.startActiveSpan("RedirectURLWithQueryParam", function(span) {
                                                 if (span) {
-                                                    span.end();
+                                                    span.setAttribute("code.function", "RedirectURLWithQueryParam");
+                                                    span.setAttribute("outsystems.function.key", "fd858047-b79b-4d15-9725-831de69ae67c");
+                                                    span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                    span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                                 }
 
-                                            }
+                                                try {
+                                                    return controller.safeExecuteJSNode(tradershub_MainFlow_Redirect_mvc_controller_OnReady_RedirectURLWithQueryParamJS, "RedirectURLWithQueryParam", "OnReady", null, function($parameters) {}, {}, {});
+                                                } finally {
+                                                    if (span) {
+                                                        span.end();
+                                                    }
 
-                                        }, 1);
+                                                }
+
+                                            }, 1);
+                                        }
+
                                     }
 
                                 }
@@ -530,5 +536,22 @@ define("tradershub.MainFlow.Redirect.mvc$controller.OnReady.RedirectURLWithQuery
         const countryOfResidenceURL = "signup/country-of-residence?" + params.toString()
 
         window.location.replace(countryOfResidenceURL)
+    };
+});
+
+
+define("tradershub.MainFlow.Redirect.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "EwaOanFJYkO6wMssllc+eA#Title": "Redirection | Deriv",
+        "EwaOanFJYkO6wMssllc+eA#TitleExpression.-708286336.1": "Redirection | Deriv"
+    };
+});
+
+define("tradershub.MainFlow.Redirect.mvc$translationsResources", ["exports", "tradershub.MainFlow.Redirect.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_Redirect_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_Redirect_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

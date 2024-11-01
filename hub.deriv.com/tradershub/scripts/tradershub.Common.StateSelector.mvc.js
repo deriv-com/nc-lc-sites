@@ -172,13 +172,13 @@ define("tradershub.Common.StateSelector.mvc$view", ["@outsystems/runtime-core-js
                             gridProperties: {
                                 classes: "OSFillParent"
                             },
-                            style: "wcag-hide-text",
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Oc_7fDRY0kywpWZIwc+_oQ#ValueExpression.773994173.1", "wcag-hide-text"),
                             _idProps: {
                                 service: idService,
                                 uuid: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Search input"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("9+2y6YecvkC5Qcq0e5qwRA#Value", "Search input"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService
                             },
@@ -198,8 +198,8 @@ define("tradershub.Common.StateSelector.mvc$view", ["@outsystems/runtime-core-js
 
                                 ;
                             },
-                            prompt: "Search",
-                            style: "form-control",
+                            prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("bfADhYZmqUWYdbd5UiwmBg#ValueExpression.-1822469688.1", "Search"),
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("KFw5LV5xNEykIApw4n5Zaw#ValueExpression.85283156.1", "form-control"),
                             variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.searchKeywordVar, function(value) {
                                 model.variables.searchKeywordVar = value;
                             }),
@@ -232,7 +232,7 @@ define("tradershub.Common.StateSelector.mvc$view", ["@outsystems/runtime-core-js
                 },
                 mode: /*Default*/ 0,
                 source: model.variables.filteredStatesListVar,
-                style: "list list-group residence-list ",
+                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("X0di7+nIZUa7g7UnS4f7hg#ValueExpression.723768045.1", "list list-group residence-list "),
                 tag: "div",
                 _idProps: {
                     service: idService,
@@ -311,12 +311,12 @@ define("tradershub.Common.StateSelector.mvc$view", ["@outsystems/runtime-core-js
 
     return View;
 });
-define("tradershub.Common.StateSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.StateSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.model$ST_27f8ec64ca98713144ae178da75c54abStructure", "tradershub.model$RL_f8f18d18d5de26fb445609e3f88624db", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_StateSelector_mvc_controller_OnSearch_SearchCountryJS) {
+define("tradershub.Common.StateSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.StateSelector.mvc$translationsResources", "tradershub.Common.StateSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.model$ST_27f8ec64ca98713144ae178da75c54abStructure", "tradershub.model$RL_f8f18d18d5de26fb445609e3f88624db", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_StateSelector_mvc_TranslationsResources, tradershub_Common_StateSelector_mvc_controller_OnSearch_SearchCountryJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_StateSelector_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -664,5 +664,25 @@ define("tradershub.Common.StateSelector.mvc$controller.OnSearch.SearchCountryJS"
         const statesList = JSON.parse($parameters.StatesList ?? JSON.stringify([]));
 
         $parameters.FilteredStatesList = JSON.stringify(statesList.filter(state => state["text"].toLowerCase().includes($parameters.SearchedState.toLowerCase())))
+    };
+});
+
+
+define("tradershub.Common.StateSelector.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "X0di7+nIZUa7g7UnS4f7hg#ValueExpression.723768045.1": "list list-group residence-list ",
+        "KFw5LV5xNEykIApw4n5Zaw#ValueExpression.85283156.1": "form-control",
+        "bfADhYZmqUWYdbd5UiwmBg#ValueExpression.-1822469688.1": "Rechercher",
+        "9+2y6YecvkC5Qcq0e5qwRA#Value": "Champ de recherche",
+        "Oc_7fDRY0kywpWZIwc+_oQ#ValueExpression.773994173.1": "wcag-hide-text"
+    };
+});
+
+define("tradershub.Common.StateSelector.mvc$translationsResources", ["exports", "tradershub.Common.StateSelector.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_StateSelector_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_StateSelector_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

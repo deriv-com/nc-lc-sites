@@ -228,7 +228,7 @@ define("tradershub.Layouts.LayoutTopMenu.mvc$view", ["@outsystems/runtime-core-j
                                 uuid: "4"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Deriv")];
+                        }, $text(getTranslation("LnK5lvJrek6HKpykR6bTZw#Value", "Deriv")))];
                     }),
                     onTablet: PlaceholderContent.Empty,
                     onPhone: PlaceholderContent.Empty
@@ -329,12 +329,12 @@ define("tradershub.Layouts.LayoutTopMenu.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("tradershub.Layouts.LayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetLang", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$GetWebsiteStatus", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Layouts.LayoutTopMenu.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.LayoutTopMenu.mvc$translationsResources", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetLang", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.controller$SendResidenceList", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$AddFavicon", "tradershub.controller$GetWebsiteStatus", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_LayoutTopMenu_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Layouts_LayoutTopMenu_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -752,4 +752,20 @@ define("tradershub.Layouts.LayoutTopMenu.mvc$controller", ["@outsystems/runtime-
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Layouts.LayoutTopMenu.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "LnK5lvJrek6HKpykR6bTZw#Value": "Deriv"
+    };
+});
+
+define("tradershub.Layouts.LayoutTopMenu.mvc$translationsResources", ["exports", "tradershub.Layouts.LayoutTopMenu.mvc$translationsResources.fr-FR"], function(exports, tradershub_Layouts_LayoutTopMenu_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Layouts_LayoutTopMenu_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

@@ -1,4 +1,4 @@
-define("tradershub.Emails.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.Emails.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.Emails.controller$translationsResources"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables, tradershub_Emails_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_EmailsController = exports;
     class Controller extends
@@ -30,5 +30,10 @@ define("tradershub.Emails.controller", ["exports", "@outsystems/runtime-core-js"
 
 
 
-    tradershub_EmailsController.default = new Controller();
+    tradershub_EmailsController.default = new Controller(tradershub_Emails_Controller_translationsResources);
+});
+
+
+define("tradershub.Emails.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

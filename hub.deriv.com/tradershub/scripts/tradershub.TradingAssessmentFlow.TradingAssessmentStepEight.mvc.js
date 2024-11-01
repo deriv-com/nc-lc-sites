@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$model", 
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
         get title() {
 
 
-            return "TradingAssessmentStepEight";
+            return OSView.BaseView.BaseWebScreen.getTranslation("Nuf4C7QuK0WT7sESQerHsA#Title", "TradingAssessmentStepEight");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["8/10"],
+                            text: [$text(getTranslation("vBi8PeVv0UGD5G3T7Yef_w#Value", "8/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("LlGpN5BErU+64X8izT4Oyw#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["How does leverage affect CFD trading?"],
+                            text: [$text(getTranslation("sWhRbnuKeU6eX9h5BY00yg#Value", "How does leverage affect CFD trading?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getCFDLeverage(), function(value) {
+                                tradershubClientVariables.setCFDLeverage(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Helps to mitigate risk."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("jA9mMI6fZ0qL_P55O7VGPQ#Value", "Helps to mitigate risk."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -296,7 +299,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Prevents you from opening large positions."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("MHBVR2J56kSD7KvgwmEwPQ#Value", "Prevents you from opening large positions."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Guarantees profits."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("nbXlysz+g0+O3qNW4+sAmA#Value", "Guarantees profits."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -322,7 +325,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Lets you open large positions for a fraction of trade value, which may result in increased profit or loss."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("zA+_iA7I20StyqPr39clOQ#Value", "Lets you open large positions for a fraction of trade value, which may result in increased profit or loss."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -356,7 +359,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("bylZ1GiF2UOheK_Ui_6n1A#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -365,19 +368,19 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$view", [
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getCFDLeverage()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentStepEight_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentStepEight_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -419,7 +422,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$controll
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getCFDLeverage() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -554,4 +557,27 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$controll
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "bylZ1GiF2UOheK_Ui_6n1A#Value": "Suivant",
+        "zA+_iA7I20StyqPr39clOQ#Value": "Vous permet d\'ouvrir de grandes positions pour une fraction de la valeur de la transaction, ce qui peut entraîner un profit ou une perte accrus.",
+        "nbXlysz+g0+O3qNW4+sAmA#Value": "Garantit des profits.",
+        "MHBVR2J56kSD7KvgwmEwPQ#Value": "Vous empêche d\'ouvrir de grandes positions.",
+        "jA9mMI6fZ0qL_P55O7VGPQ#Value": "Aide à atténuer le risque.",
+        "sWhRbnuKeU6eX9h5BY00yg#Value": "Comment l\'effet de levier influence-t-il le trading CFD ?",
+        "LlGpN5BErU+64X8izT4Oyw#Value": "Ceci est requis.",
+        "vBi8PeVv0UGD5G3T7Yef_w#Value": "Sam 10 août 2024 15:00:00 GMT+0800 (Heure standard de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentStepEight.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentStepEight_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentStepEight_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

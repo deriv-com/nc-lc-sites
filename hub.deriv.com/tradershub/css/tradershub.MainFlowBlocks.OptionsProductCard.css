@@ -8,6 +8,19 @@
 }
 
 .tablet .product-card,
-.phone .product-card {
+.phone .product-card,
+.tablet .loader,
+.phone .loader {
     width: 100%;
+}
+
+.product-card-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loader {
+    height: 116px;
+    width: 368px;
+    border-radius: 8px;
 }

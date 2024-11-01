@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -97,7 +97,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$model", ["@outsystems/runtime
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutEndpointPage.mvc$model", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_LayoutEndpointPage_mvc_model, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutEndpointPage.mvc$model", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, PartnersHub_Layouts_LayoutEndpointPage_mvc_model, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -230,10 +230,10 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                 animate: false,
                 extendedEvents: {
                     onClick: function() {
-                        var eventHandlerContext = callContext.clone();
-                        controller.onClickLogout$Action(controller.callContext(eventHandlerContext));
-
-                        ;
+                        return Promise.resolve().then(function() {
+                            var eventHandlerContext = callContext.clone();
+                            return controller.onClickLogout$Action(controller.callContext(eventHandlerContext));
+                        });;
                     }
                 },
                 extendedProperties: {
@@ -264,17 +264,17 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                 inputs: {
                     Width: "100%",
                     height: "40px",
-                    title: "Yes, log out"
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("+by514qXEUmhswcRfSZcJA#Value.-1272307305.1", "Yes, log out")
                 },
                 events: {
                     _handleError: function(ex) {
                         controller.handleError(ex);
                     },
                     onClick$Action: function() {
-                        var eventHandlerContext = callContext.clone();
-                        controller.onClickLogout$Action(controller.callContext(eventHandlerContext));
-
-                        ;
+                        return Promise.resolve().then(function() {
+                            var eventHandlerContext = callContext.clone();
+                            return controller.onClickLogout$Action(controller.callContext(eventHandlerContext));
+                        });;
                     }
                 },
                 _validationProps: {
@@ -305,7 +305,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
                 },
                 inputs: {
                     BorderColor: "#FF444F",
-                    title: "Cancel",
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1", "Cancel"),
                     height: "40px",
                     Width: "100%",
                     borderRadius: "100px"
@@ -633,7 +633,7 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$view", ["@outsystems/runtime-
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnClickLogout.JavaScript1JS", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_TranslationsResources, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnClickLogout_JavaScript1JS) {
+define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources", "PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$UseDevice", "PartnersHub.controller$IsUserLoggedIn", "PartnersHub.controller$MountDerivAPIClient", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutEndpointPage_mvc_TranslationsResources, PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnRender_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -805,39 +805,22 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/ru
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
+                            return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnClickLogout");
                                 callContext = controller.callContext(callContext);
-                                // IsLogoutModalOpen = True
-                                model.variables.isLogoutModalOpenVar = true;
-                                OS.Logger.startActiveSpan("JavaScript1", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "JavaScript1");
-                                        span.setAttribute("outsystems.function.key", "48674e6e-9d3d-4779-aad6-d8be1bb8b699");
-                                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(PartnersHub_Layouts_LayoutEndpointPage_mvc_controller_OnClickLogout_JavaScript1JS, "JavaScript1", "OnClickLogout", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
-                                // Execute Action: RedirectToOauth
-                                PartnersHubController.default.redirectToOauth$Action(callContext);
-                            } finally {
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // IsLogoutModalOpen = True
+                                    model.variables.isLogoutModalOpenVar = true;
+                                    // Execute Action: IFrameLogout
+                                    model.flush();
+                                    return PartnersHubController.default.iFrameLogout$Action(callContext);
+                                });
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
@@ -1055,15 +1038,14 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller", ["@outsystems/ru
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onClickLogout$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -1272,18 +1254,6 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnRender.JavaScrip
     };
 });
 
-define("PartnersHub.Layouts.LayoutEndpointPage.mvc$controller.OnClickLogout.JavaScript1JS", [], function() {
-    return function($actions, $roles, $public) {
-        const loginid = localStorage.getItem("loginId");
-        const token = localStorage.getItem('token');
-
-        if (loginid && token) {
-            localStorage.removeItem("loginid");
-            localStorage.removeItem("token")
-        }
-    };
-});
-
 
 define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE", [], function() {
     return {
@@ -1292,6 +1262,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.de-DE",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Abmelden",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Abbrechen",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Ja, abmelden",
         "RzfRPsfq0U+UE_D6UKErng#Value": "Bist du sicher, dass du dich abmelden möchtest?"
     };
 });
@@ -1303,6 +1275,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.es-ES",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Cerrar sesión",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Cancelar",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Sí, cerrar sesión",
         "RzfRPsfq0U+UE_D6UKErng#Value": "¿Estás seguro de que quieres cerrar sesión?"
     };
 });
@@ -1314,6 +1288,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.fr-FR",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Se déconnecter",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Annuler",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Oui, déconnecter",
         "RzfRPsfq0U+UE_D6UKErng#Value": "Êtes-vous sûr de vouloir vous déconnecter ?"
     };
 });
@@ -1325,6 +1301,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.it-IT",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Disconnettersi",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Annulla",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Sì, termina sessione",
         "RzfRPsfq0U+UE_D6UKErng#Value": "Sei sicuro di voler disconnetterti?"
     };
 });
@@ -1347,6 +1325,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.pt-PT",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Sair",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Cancelar",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Sim, pretendo terminar sessão",
         "RzfRPsfq0U+UE_D6UKErng#Value": "Tem certeza de que deseja sair?"
     };
 });
@@ -1358,6 +1338,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ru-RU",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "Выйти",
         "5tk6rybKDkWIIZMcBm5xRw#ValueExpression.3343801.1": "main",
         "dbxxueEmnEKv5372e5NktQ#ValueExpression.-1770855897.1": "layout layout-blank",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "Отмена",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "Да, выйти",
         "RzfRPsfq0U+UE_D6UKErng#Value": "Вы уверены, что хотите выйти?"
     };
 });
@@ -1366,6 +1348,8 @@ define("PartnersHub.Layouts.LayoutEndpointPage.mvc$translationsResources.ar-001"
     return {
         "W7Kh4ThM_UWNlBaPdD6URg#Value": "تسجيل الدخول",
         "oiMnGVHyYUyzhvGIqB3aNQ#Value": "تسجيل الخروج",
+        "Ki5BxBoDTkOa4g55lJmHrw#Value.2011110042.1": "إلغاء",
+        "+by514qXEUmhswcRfSZcJA#Value.-1272307305.1": "نعم، تسجيل الخروج",
         "RzfRPsfq0U+UE_D6UKErng#Value": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
     };
 });

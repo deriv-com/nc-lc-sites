@@ -42,3 +42,7 @@
 .dropdown-expanded.dropdown-container:after {
     border-color: #818488 !important;
 }
+
+.dropdown-container:after {
+    top: 19px !important;
+}

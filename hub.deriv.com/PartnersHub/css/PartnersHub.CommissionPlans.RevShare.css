@@ -234,9 +234,6 @@ background: rgba(44, 154, 255, 0.08);
 }
 
 @media (min-width: 1280px) {
-    .partners-hub-dashboard {
-        width: 77%;
-    }
     .complete-profile-commission-banner{
     display: flex;
     flex-direction: row !important;

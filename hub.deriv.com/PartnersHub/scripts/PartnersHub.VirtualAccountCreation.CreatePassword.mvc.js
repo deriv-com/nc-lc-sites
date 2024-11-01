@@ -882,7 +882,7 @@ define("PartnersHub.VirtualAccountCreation.CreatePassword.mvc$translationsResour
 
 define("PartnersHub.VirtualAccountCreation.CreatePassword.mvc$translationsResources.ar-001", [], function() {
     return {
-        "yALQS6L4p0ikr4zVTXq2zw#Value": "كلمة السر"
+        "yALQS6L4p0ikr4zVTXq2zw#Value": "كلمة المرور"
     };
 });
 

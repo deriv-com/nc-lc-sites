@@ -333,7 +333,7 @@ define("PartnersHub.Home.ConnectAccountManager.mvc$controller", ["@outsystems/ru
 
 define("PartnersHub.Home.ConnectAccountManager.mvc$translationsResources.ar-001", [], function() {
     return {
-        "1WvkBGwnZEe65CmHsO972g#Value": "اتصل بمدير حسابك"
+        "1WvkBGwnZEe65CmHsO972g#Value": "تواصل مع مدير حسابك"
     };
 });
 

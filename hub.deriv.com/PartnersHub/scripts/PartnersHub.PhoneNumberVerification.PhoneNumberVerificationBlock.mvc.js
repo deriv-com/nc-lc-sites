@@ -810,11 +810,11 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$con
 
 define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationBlock.mvc$translationsResources.ar-001", [], function() {
     return {
-        "mfUB2eWQjk+LYdrAvoYlVQ#Value": "أرسل عبر SMS",
+        "mfUB2eWQjk+LYdrAvoYlVQ#Value": "أرسل عبر رسالة نصية",
         "5Vnwh9ND_EC+rP2aN+ELVg#Value": "أرسل عبر واتساب",
         "FxV7q67+PESG2K+jswQeTw#Value": "حفظ رقم الهاتف",
         "2aFi2aZkSkiNURR5ww02yg#Value": "رقم الهاتف",
-        "W+1M6YSgM0SMwhiJ0B0niQ#Value": "أدخل رقم هاتفك لتلقي رمز التحقق عبر WhatsApp أو SMS."
+        "W+1M6YSgM0SMwhiJ0B0niQ#Value": "أدخل رقم هاتفك لتلقي رمز التحقق عبر الواتساب أو رسالة نصية."
     };
 });
 

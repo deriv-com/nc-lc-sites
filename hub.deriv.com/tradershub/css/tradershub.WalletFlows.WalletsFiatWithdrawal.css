@@ -1,0 +1,13 @@
+﻿iframe {
+    border: none;
+    width: 100%;
+}
+
+.desktop iframe {
+        height: calc(100vh - 165px);
+}
+
+.phone iframe,
+.tablet iframe {
+        height: calc(100vh - 265px);
+}

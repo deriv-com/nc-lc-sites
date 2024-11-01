@@ -185,20 +185,14 @@ define("System_.model$ENRoleEntityRecord", ["exports", "@outsystems/runtime-core
                 return [
                     this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
-                    }, true),
-                    this.attr("Key", "keyAttr", "Key", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Name", "nameAttr", "Name", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("Description", "descriptionAttr", "Description", false, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
-                    }, true),
-                    this.attr("ApplicationId", "applicationIdAttr", "ApplicationId", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, true)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new ENRoleEntityRecord(new ENRoleEntityRecord.RecordClass({
+                    idAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -749,6 +743,73 @@ define("System_.model$RL_201410915258bdd92387bbd4bec2a7bb", ["exports", "@outsys
 
 });
 
+define("System_.model$ENHumanActivityRoleEntityRecord", ["exports", "@outsystems/runtime-core-js", "System_.model"], function(exports, OSRuntimeCore, System_Model) {
+    var OS = OSRuntimeCore; {
+        class ENHumanActivityRoleEntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("ActivityInstanceId", "activityInstanceIdAttr", "ActivityInstanceId", false, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("RoleId", "roleIdAttr", "RoleId", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        System_Model.ENHumanActivityRoleEntityRecord = ENHumanActivityRoleEntityRecordInner;
+
+        var ENHumanActivityRoleEntityRecord = ENHumanActivityRoleEntityRecordInner;
+        ENHumanActivityRoleEntityRecord.init();
+    }
+});
+
+define("System_.model$RC_87c777c37ddf7c1355edbd72c4b71391", ["exports", "@outsystems/runtime-core-js", "System_.model", "System_.model$ENHumanActivityRoleEntityRecord"], function(exports, OSRuntimeCore, System_Model) {
+    var OS = OSRuntimeCore; {
+        class RC_87c777c37ddf7c1355edbd72c4b71391Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("HumanActivityRole", "humanActivityRoleAttr", "HumanActivityRole", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new System_Model.ENHumanActivityRoleEntityRecord());
+                    }, true, System_Model.ENHumanActivityRoleEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_87c777c37ddf7c1355edbd72c4b71391(new RC_87c777c37ddf7c1355edbd72c4b71391.RecordClass({
+                    humanActivityRoleAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        System_Model.RC_87c777c37ddf7c1355edbd72c4b71391 = RC_87c777c37ddf7c1355edbd72c4b71391Inner;
+
+        RC_87c777c37ddf7c1355edbd72c4b71391Inner._isAnonymousRecord = true;
+        RC_87c777c37ddf7c1355edbd72c4b71391Inner.UniqueId = "87c777c3-7ddf-7c13-55ed-bd72c4b71391";
+        var RC_87c777c37ddf7c1355edbd72c4b71391 = RC_87c777c37ddf7c1355edbd72c4b71391Inner;
+        RC_87c777c37ddf7c1355edbd72c4b71391.init();
+    }
+});
+
+define("System_.model$RL_205f290c854bc0e1aa93388e5772d11f", ["exports", "@outsystems/runtime-core-js", "System_.model", "System_.model$RC_87c777c37ddf7c1355edbd72c4b71391"], function(exports, OSRuntimeCore, System_Model) {
+    var OS = OSRuntimeCore;
+    class RL_205f290c854bc0e1aa93388e5772d11f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return System_Model.RC_87c777c37ddf7c1355edbd72c4b71391;
+        }
+
+    }
+
+    System_Model.RL_205f290c854bc0e1aa93388e5772d11f = RL_205f290c854bc0e1aa93388e5772d11f;
+
+});
+
 define("System_.model$ENActivityStatusEntityRecord", ["exports", "@outsystems/runtime-core-js", "System_.model"], function(exports, OSRuntimeCore, System_Model) {
     var OS = OSRuntimeCore; {
         class ENActivityStatusEntityRecordInner extends
@@ -813,6 +874,20 @@ define("System_.model$RL_20bf822013f9723d57d50b23f1a33f26", ["exports", "@outsys
     }
 
     System_Model.RL_20bf822013f9723d57d50b23f1a33f26 = RL_20bf822013f9723d57d50b23f1a33f26;
+
+});
+
+define("System_.model$RLHumanActivityRoleList", ["exports", "@outsystems/runtime-core-js", "System_.model", "System_.model$ENHumanActivityRoleEntityRecord"], function(exports, OSRuntimeCore, System_Model) {
+    var OS = OSRuntimeCore;
+    class RLHumanActivityRoleList extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return System_Model.ENHumanActivityRoleEntityRecord;
+        }
+
+    }
+
+    System_Model.RLHumanActivityRoleList = RLHumanActivityRoleList;
 
 });
 

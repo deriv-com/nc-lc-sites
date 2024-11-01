@@ -391,9 +391,17 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$controller.OpenDashboardOnClic
 });
 
 
+define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "افتح لوحة التحكم",
+        "J5lNcrQnik2aXzdyKncEuA#Value": "الوصول إلى روابط الإحالة والتقارير",
+        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "افتح لوحة التحكم"
+    };
+});
+
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Dashboard öffnen",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Meine Empfehlungslinks und Berichte",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Dashboard öffnen"
     };
@@ -401,7 +409,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Abrir el panel",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Mis enlaces de referencia y reportes",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Abrir el panel"
     };
@@ -409,7 +417,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Ouvrir le tableau de bord",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Mes liens de parrainage et rapports",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Ouvrir le tableau de bord"
     };
@@ -417,7 +425,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Apri il cruscotto",
         "J5lNcrQnik2aXzdyKncEuA#Value": "I miei link di referral e report",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Apri il cruscotto"
     };
@@ -425,7 +433,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Otwórz pulpit",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Moje linki polecające i raporty",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Otwórz pulpit"
     };
@@ -433,7 +441,7 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Abrir o painel",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Meus links de referência e relatórios",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Abrir o painel"
     };
@@ -441,21 +449,18 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", 
 
 define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Open dashboard",
+        "sVTo9kryAEepay7RxEd2MA#Value.1524116574.1": "Открыть панель управления",
         "J5lNcrQnik2aXzdyKncEuA#Value": "Мои реферальные ссылки и отчеты",
         "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "Открыть панель управления"
     };
 });
 
-define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001", [], function() {
+define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["exports", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_esES, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_frFR, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_itIT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_plPL, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ptPT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU) {
     return {
-        "J5lNcrQnik2aXzdyKncEuA#Value": "الوصول إلى روابط الإحالة والتقارير",
-        "lpEobJwz70WribG+jUqf7g#Value.1524116574.1": "افتح لوحة التحكم"
-    };
-});
-
-define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["exports", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.de-DE", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.es-ES", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.fr-FR", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.it-IT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pl-PL", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.pt-PT", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ru-RU", "PartnersHub.Home.ReferralLinksReports.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_esES, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_frFR, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_itIT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_plPL, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ptPT, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU, PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001) {
-    return {
+        "ar-001": {
+            "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_deDE,
             "isRTL": false
@@ -483,10 +488,6 @@ define("PartnersHub.Home.ReferralLinksReports.mvc$translationsResources", ["expo
         "ru-RU": {
             "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ruRU,
             "isRTL": false
-        },
-        "ar-001": {
-            "translations": PartnersHub_Home_ReferralLinksReports_mvc_translationsResources_ar001,
-            "isRTL": true
         }
     };
 });

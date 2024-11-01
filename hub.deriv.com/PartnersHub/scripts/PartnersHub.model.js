@@ -1,4 +1,4 @@
-define("PartnersHub.model$BasicTypeList<Text>", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+define("PartnersHub.model$RL_4d8a97df13a7539a1a0177dbcd05fbb2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class TextList extends
     OS.DataTypes.GenericRecordList {
@@ -117,7 +117,7 @@ define("PartnersHub.model$RL_008b350b8469d88f8d9de8d4f0175b3c", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$BasicTypeList<LongInteger>", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+define("PartnersHub.model$RL_1b0b4fa4c9afb488d0f95d94edb8b15d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class LongIntegerList extends
     OS.DataTypes.GenericRecordList {
@@ -309,6 +309,34 @@ define("PartnersHub.model$RC_00f5a4717da5984b840092143f716896", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_86f7d82f5d3c332697414c565e947945", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f1644d81fb90e6f4882b198c996831d1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_86f7d82f5d3c332697414c565e947945 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_f1644d81fb90e6f4882b198c996831d1Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_86f7d82f5d3c332697414c565e947945 = RL_86f7d82f5d3c332697414c565e947945;
+
+});
+
+define("PartnersHub.model$RL_00f6e92c07403e159ff2340d01820a0d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c0ab917f51608bd071ade39beb7d22faStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_00f6e92c07403e159ff2340d01820a0d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_c0ab917f51608bd071ade39beb7d22faStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_00f6e92c07403e159ff2340d01820a0d = RL_00f6e92c07403e159ff2340d01820a0d;
+
+});
+
 define("PartnersHub.model$RC_012b2720fb0dcd442416908af4498cef", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_333caa433a680d581b2dfdf80dcbab60Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_012b2720fb0dcd442416908af4498cefInner extends
@@ -336,6 +364,63 @@ define("PartnersHub.model$RC_012b2720fb0dcd442416908af4498cef", ["exports", "@ou
         var RC_012b2720fb0dcd442416908af4498cef = RC_012b2720fb0dcd442416908af4498cefInner;
         RC_012b2720fb0dcd442416908af4498cef.init();
     }
+});
+
+define("PartnersHub.model$RL_1fe22685e54a8e74085b50df987ed7fb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_bf8a7e4d5139901f795596a5fbda1b90Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1fe22685e54a8e74085b50df987ed7fb extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_bf8a7e4d5139901f795596a5fbda1b90Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_1fe22685e54a8e74085b50df987ed7fb = RL_1fe22685e54a8e74085b50df987ed7fb;
+
+});
+
+define("PartnersHub.model$RC_37b9abdfc5681e060cfccd92139f3527", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ae14fa1d3d419850de9a85b162df7c73Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_37b9abdfc5681e060cfccd92139f3527Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Statement", "statementAttr", "Statement", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ae14fa1d3d419850de9a85b162df7c73Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ae14fa1d3d419850de9a85b162df7c73Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_37b9abdfc5681e060cfccd92139f3527(new RC_37b9abdfc5681e060cfccd92139f3527.RecordClass({
+                    statementAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_37b9abdfc5681e060cfccd92139f3527 = RC_37b9abdfc5681e060cfccd92139f3527Inner;
+
+        RC_37b9abdfc5681e060cfccd92139f3527Inner._isAnonymousRecord = true;
+        RC_37b9abdfc5681e060cfccd92139f3527Inner.UniqueId = "37b9abdf-c568-1e06-0cfc-cd92139f3527";
+        var RC_37b9abdfc5681e060cfccd92139f3527 = RC_37b9abdfc5681e060cfccd92139f3527Inner;
+        RC_37b9abdfc5681e060cfccd92139f3527.init();
+    }
+});
+
+define("PartnersHub.model$RL_016b438202bb8683ed0088796cbdae5f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_37b9abdfc5681e060cfccd92139f3527"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_016b438202bb8683ed0088796cbdae5f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_37b9abdfc5681e060cfccd92139f3527;
+        }
+
+    }
+
+    PartnersHubModel.RL_016b438202bb8683ed0088796cbdae5f = RL_016b438202bb8683ed0088796cbdae5f;
+
 });
 
 define("PartnersHub.model$RL_016ebe8f15c3060e53dd56f2fea28791", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_9b3eaf42648c2b28591e8ee92b7ce159Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -578,6 +663,49 @@ define("PartnersHub.model$RL_02cff45c25b99caaf51dba44a0e0b754", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_52cd3192fe25a80900d13891f43fdafe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_14af92e1255335a1e3d4bd8d827598f2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_52cd3192fe25a80900d13891f43fdafeInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderDisputeResponse", "p2POrderDisputeResponseAttr", "P2POrderDisputeResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_14af92e1255335a1e3d4bd8d827598f2Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_14af92e1255335a1e3d4bd8d827598f2Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_52cd3192fe25a80900d13891f43fdafe(new RC_52cd3192fe25a80900d13891f43fdafe.RecordClass({
+                    p2POrderDisputeResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_52cd3192fe25a80900d13891f43fdafe = RC_52cd3192fe25a80900d13891f43fdafeInner;
+
+        RC_52cd3192fe25a80900d13891f43fdafeInner._isAnonymousRecord = true;
+        RC_52cd3192fe25a80900d13891f43fdafeInner.UniqueId = "52cd3192-fe25-a809-00d1-3891f43fdafe";
+        var RC_52cd3192fe25a80900d13891f43fdafe = RC_52cd3192fe25a80900d13891f43fdafeInner;
+        RC_52cd3192fe25a80900d13891f43fdafe.init();
+    }
+});
+
+define("PartnersHub.model$RL_02db0f35ddb2c08edb356b6a4e1e4b4a", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_52cd3192fe25a80900d13891f43fdafe"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_02db0f35ddb2c08edb356b6a4e1e4b4a extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_52cd3192fe25a80900d13891f43fdafe;
+        }
+
+    }
+
+    PartnersHubModel.RL_02db0f35ddb2c08edb356b6a4e1e4b4a = RL_02db0f35ddb2c08edb356b6a4e1e4b4a;
+
+});
+
 define("PartnersHub.model$RC_f5490f87f20f20000a36a875dced4a8f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_f5490f87f20f20000a36a875dced4a8fInner extends
@@ -619,6 +747,36 @@ define("PartnersHub.model$RL_02fe2e113b5eb9c675da8b940dcff7a8", ["exports", "@ou
 
     PartnersHubModel.RL_02fe2e113b5eb9c675da8b940dcff7a8 = RL_02fe2e113b5eb9c675da8b940dcff7a8;
 
+});
+
+define("PartnersHub.model$ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class ST_0314d78ca6806dcc3e7ca8803a68ff6aStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Length", "lengthAttr", "Length", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
+                    }, true),
+                    this.attr("HasAtLeastOneUppercaseAndOneLowercase", "hasAtLeastOneUppercaseAndOneLowercaseAttr", "HasAtLeastOneUppercaseAndOneLowercase", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
+                    }, true),
+                    this.attr("HasAtLeastOneNumber", "hasAtLeastOneNumberAttr", "HasAtLeastOneNumber", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
+                    }, true),
+                    this.attr("HasAtLeastOneSpecialCharacter", "hasAtLeastOneSpecialCharacterAttr", "HasAtLeastOneSpecialCharacter", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure = ST_0314d78ca6806dcc3e7ca8803a68ff6aStructureInner;
+
+        var ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure = ST_0314d78ca6806dcc3e7ca8803a68ff6aStructureInner;
+        ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure.init();
+    }
 });
 
 define("PartnersHub.model$ST_cef11b56e6da93b85f992e1455ba4717Structure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -1493,12 +1651,26 @@ define("PartnersHub.model$RL_03fbfb1822cd8450600257cdfa89156a", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_04d46e2886f2b55aae00a9596448295c", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_ff6fa4367123aaf1ab10608dcb16ba43Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_04d18d7e4131a1487094ff1d381d4a05", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_43e34b530185a530d10be78dff4ece45Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_04d18d7e4131a1487094ff1d381d4a05 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_43e34b530185a530d10be78dff4ece45Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_04d18d7e4131a1487094ff1d381d4a05 = RL_04d18d7e4131a1487094ff1d381d4a05;
+
+});
+
+define("PartnersHub.model$RL_04d46e2886f2b55aae00a9596448295c", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_ff6fa4367123aaf1ab10608dcb16ba43Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_04d46e2886f2b55aae00a9596448295c extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure;
+            return ReleaseSlackIntegrationOfficialModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure;
         }
 
     }
@@ -1513,7 +1685,7 @@ define("PartnersHub.model$RC_e70e907746052ce92e691c25e5a4ffd3", ["exports", "@ou
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("GetAccountStatusResponse", "getAccountStatusResponseAttr", "GetAccountStatusResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                    this.attr("GetAccountStatusRes", "getAccountStatusResAttr", "GetAccountStatusRes", false, false, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure());
                     }, true, RESTAPIWebsocketOfficialModel.ST_746d074ddcc08e0df3b269ffb1933d5aStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -1521,7 +1693,7 @@ define("PartnersHub.model$RC_e70e907746052ce92e691c25e5a4ffd3", ["exports", "@ou
 
             static fromStructure(str) {
                 return new RC_e70e907746052ce92e691c25e5a4ffd3(new RC_e70e907746052ce92e691c25e5a4ffd3.RecordClass({
-                    getAccountStatusResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                    getAccountStatusResAttr: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -1577,6 +1749,49 @@ define("PartnersHub.model$RC_05cf75e61d985a2144c0c1483a839445", ["exports", "@ou
         var RC_05cf75e61d985a2144c0c1483a839445 = RC_05cf75e61d985a2144c0c1483a839445Inner;
         RC_05cf75e61d985a2144c0c1483a839445.init();
     }
+});
+
+define("PartnersHub.model$RC_aaae25c65f55ba27fa3bd1194aa7adb1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d4e039bbd70c593954382df471fdac2aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_aaae25c65f55ba27fa3bd1194aa7adb1Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertListResponse", "p2PAdvertListResponseAttr", "P2PAdvertListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d4e039bbd70c593954382df471fdac2aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d4e039bbd70c593954382df471fdac2aStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_aaae25c65f55ba27fa3bd1194aa7adb1(new RC_aaae25c65f55ba27fa3bd1194aa7adb1.RecordClass({
+                    p2PAdvertListResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_aaae25c65f55ba27fa3bd1194aa7adb1 = RC_aaae25c65f55ba27fa3bd1194aa7adb1Inner;
+
+        RC_aaae25c65f55ba27fa3bd1194aa7adb1Inner._isAnonymousRecord = true;
+        RC_aaae25c65f55ba27fa3bd1194aa7adb1Inner.UniqueId = "aaae25c6-5f55-ba27-fa3b-d1194aa7adb1";
+        var RC_aaae25c65f55ba27fa3bd1194aa7adb1 = RC_aaae25c65f55ba27fa3bd1194aa7adb1Inner;
+        RC_aaae25c65f55ba27fa3bd1194aa7adb1.init();
+    }
+});
+
+define("PartnersHub.model$RL_0603e4560918555f40e94b916d53c558", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_aaae25c65f55ba27fa3bd1194aa7adb1"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0603e4560918555f40e94b916d53c558 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_aaae25c65f55ba27fa3bd1194aa7adb1;
+        }
+
+    }
+
+    PartnersHubModel.RL_0603e4560918555f40e94b916d53c558 = RL_0603e4560918555f40e94b916d53c558;
+
 });
 
 define("PartnersHub.model$RL_071a5687136a6dbeecb0a0d193c188a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -1819,6 +2034,49 @@ define("PartnersHub.model$RL_06ad8081ecdd4854820e95cbc9df15a8", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_78c58bb800bed93fede1f23d20908730", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_506e59df587c990463d9332a4a38f192Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_78c58bb800bed93fede1f23d20908730Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertCreateRequest", "p2PAdvertCreateRequestAttr", "P2PAdvertCreateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_506e59df587c990463d9332a4a38f192Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_506e59df587c990463d9332a4a38f192Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_78c58bb800bed93fede1f23d20908730(new RC_78c58bb800bed93fede1f23d20908730.RecordClass({
+                    p2PAdvertCreateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_78c58bb800bed93fede1f23d20908730 = RC_78c58bb800bed93fede1f23d20908730Inner;
+
+        RC_78c58bb800bed93fede1f23d20908730Inner._isAnonymousRecord = true;
+        RC_78c58bb800bed93fede1f23d20908730Inner.UniqueId = "78c58bb8-00be-d93f-ede1-f23d20908730";
+        var RC_78c58bb800bed93fede1f23d20908730 = RC_78c58bb800bed93fede1f23d20908730Inner;
+        RC_78c58bb800bed93fede1f23d20908730.init();
+    }
+});
+
+define("PartnersHub.model$RL_06babe1eae4ab7ef44e040e05b96ad18", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_78c58bb800bed93fede1f23d20908730"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_06babe1eae4ab7ef44e040e05b96ad18 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_78c58bb800bed93fede1f23d20908730;
+        }
+
+    }
+
+    PartnersHubModel.RL_06babe1eae4ab7ef44e040e05b96ad18 = RL_06babe1eae4ab7ef44e040e05b96ad18;
+
+});
+
 define("PartnersHub.model$RC_08d13aa30e14041e8a414b5d62b51845", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_4e063a3cef8e9e085284fb57c1326006Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_08d13aa30e14041e8a414b5d62b51845Inner extends
@@ -1889,6 +2147,20 @@ define("PartnersHub.model$RC_070998dc6b3dc951b52d8108550fe380", ["exports", "@ou
         var RC_070998dc6b3dc951b52d8108550fe380 = RC_070998dc6b3dc951b52d8108550fe380Inner;
         RC_070998dc6b3dc951b52d8108550fe380.init();
     }
+});
+
+define("PartnersHub.model$RL_0715dddce4dc71206268eca3f2bfe194", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_ea8a5b552e6867ec254c90e9d858cc93Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0715dddce4dc71206268eca3f2bfe194 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return TestIMAPIOfficialModel.ST_ea8a5b552e6867ec254c90e9d858cc93Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_0715dddce4dc71206268eca3f2bfe194 = RL_0715dddce4dc71206268eca3f2bfe194;
+
 });
 
 define("PartnersHub.model$RC_210f541f43ec6384ba59bfd8fe4b8837", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_1b42e9a925bffd384f525d6adac8fe8eEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
@@ -2064,6 +2336,49 @@ define("PartnersHub.model$RL_07d4f66324fea8299f2f66d1b9c5293b", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_9fa0982e2ffd431529270d85cdcda612", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_019dc1f94c4673ed88c9dc3f4cd5419bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_9fa0982e2ffd431529270d85cdcda612Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderInfoResponse", "p2POrderInfoResponseAttr", "P2POrderInfoResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_019dc1f94c4673ed88c9dc3f4cd5419bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_019dc1f94c4673ed88c9dc3f4cd5419bStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_9fa0982e2ffd431529270d85cdcda612(new RC_9fa0982e2ffd431529270d85cdcda612.RecordClass({
+                    p2POrderInfoResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_9fa0982e2ffd431529270d85cdcda612 = RC_9fa0982e2ffd431529270d85cdcda612Inner;
+
+        RC_9fa0982e2ffd431529270d85cdcda612Inner._isAnonymousRecord = true;
+        RC_9fa0982e2ffd431529270d85cdcda612Inner.UniqueId = "9fa0982e-2ffd-4315-2927-0d85cdcda612";
+        var RC_9fa0982e2ffd431529270d85cdcda612 = RC_9fa0982e2ffd431529270d85cdcda612Inner;
+        RC_9fa0982e2ffd431529270d85cdcda612.init();
+    }
+});
+
+define("PartnersHub.model$RL_0801fe4c458fcd2bde490e69fb5c203d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_9fa0982e2ffd431529270d85cdcda612"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0801fe4c458fcd2bde490e69fb5c203d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_9fa0982e2ffd431529270d85cdcda612;
+        }
+
+    }
+
+    PartnersHubModel.RL_0801fe4c458fcd2bde490e69fb5c203d = RL_0801fe4c458fcd2bde490e69fb5c203d;
+
+});
+
 define("PartnersHub.model$RL_08493c76d04a33db201691368d61ec98", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e9350867621f419f78bd47d2bb88d9ceStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_08493c76d04a33db201691368d61ec98 extends
@@ -2089,6 +2404,20 @@ define("PartnersHub.model$RL_085f95fe6d8c0993316da931c0bd457a", ["exports", "@ou
     }
 
     PartnersHubModel.RL_085f95fe6d8c0993316da931c0bd457a = RL_085f95fe6d8c0993316da931c0bd457a;
+
+});
+
+define("PartnersHub.model$RL_08bffec12838f816de8f6be57340d56f", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_08bffec12838f816de8f6be57340d56f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_08bffec12838f816de8f6be57340d56f = RL_08bffec12838f816de8f6be57340d56f;
 
 });
 
@@ -2340,12 +2669,12 @@ define("PartnersHub.model$RC_0a3e2fd7625cea892a02f1f3f2b6a105", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RL_7674e0699bf7786228f1b11887afe770", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_3782d35f5f28ff9dd18fb6881ab471a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_7674e0699bf7786228f1b11887afe770", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_3782d35f5f28ff9dd18fb6881ab471a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_7674e0699bf7786228f1b11887afe770 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure;
+            return ReleaseSlackIntegrationOfficialModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure;
         }
 
     }
@@ -2383,12 +2712,41 @@ define("PartnersHub.model$RC_0a89eeb60fa1f44b6316ca69b462007b", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RL_0aa9e930032976c41db5078db1705487", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_a7c2d4fb0a81e8416c70379886c39274Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_0a9739b2dd1c62d5697ead34293597d7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_aaf5fb010d4587166eb3dd80473d736dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_0a9739b2dd1c62d5697ead34293597d7Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertInfoRequest", "p2PAdvertInfoRequestAttr", "P2PAdvertInfoRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_aaf5fb010d4587166eb3dd80473d736dStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_aaf5fb010d4587166eb3dd80473d736dStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_0a9739b2dd1c62d5697ead34293597d7(new RC_0a9739b2dd1c62d5697ead34293597d7.RecordClass({
+                    p2PAdvertInfoRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_0a9739b2dd1c62d5697ead34293597d7 = RC_0a9739b2dd1c62d5697ead34293597d7Inner;
+
+        RC_0a9739b2dd1c62d5697ead34293597d7Inner._isAnonymousRecord = true;
+        RC_0a9739b2dd1c62d5697ead34293597d7Inner.UniqueId = "0a9739b2-dd1c-62d5-697e-ad34293597d7";
+        var RC_0a9739b2dd1c62d5697ead34293597d7 = RC_0a9739b2dd1c62d5697ead34293597d7Inner;
+        RC_0a9739b2dd1c62d5697ead34293597d7.init();
+    }
+});
+
+define("PartnersHub.model$RL_0aa9e930032976c41db5078db1705487", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_a7c2d4fb0a81e8416c70379886c39274Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_0aa9e930032976c41db5078db1705487 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure;
+            return ReleaseSlackIntegrationOfficialModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure;
         }
 
     }
@@ -2423,6 +2781,35 @@ define("PartnersHub.model$RC_0af1f162a4f117f1f3e8ae4dce5af0db", ["exports", "@ou
         RC_0af1f162a4f117f1f3e8ae4dce5af0dbInner.UniqueId = "0af1f162-a4f1-17f1-f3e8-ae4dce5af0db";
         var RC_0af1f162a4f117f1f3e8ae4dce5af0db = RC_0af1f162a4f117f1f3e8ae4dce5af0dbInner;
         RC_0af1f162a4f117f1f3e8ae4dce5af0db.init();
+    }
+});
+
+define("PartnersHub.model$RC_0b0605442077afaff40534ee187e6408", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_35b06be36f4ceab0d926d48d7ff02f22Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_0b0605442077afaff40534ee187e6408Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("ServiceToken", "serviceTokenAttr", "ServiceToken", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_35b06be36f4ceab0d926d48d7ff02f22Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_35b06be36f4ceab0d926d48d7ff02f22Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_0b0605442077afaff40534ee187e6408(new RC_0b0605442077afaff40534ee187e6408.RecordClass({
+                    serviceTokenAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_0b0605442077afaff40534ee187e6408 = RC_0b0605442077afaff40534ee187e6408Inner;
+
+        RC_0b0605442077afaff40534ee187e6408Inner._isAnonymousRecord = true;
+        RC_0b0605442077afaff40534ee187e6408Inner.UniqueId = "0b060544-2077-afaf-f405-34ee187e6408";
+        var RC_0b0605442077afaff40534ee187e6408 = RC_0b0605442077afaff40534ee187e6408Inner;
+        RC_0b0605442077afaff40534ee187e6408.init();
     }
 });
 
@@ -2466,6 +2853,78 @@ define("PartnersHub.model$RL_0b481988946c6f5bbb65b67a84007644", ["exports", "@ou
     }
 
     PartnersHubModel.RL_0b481988946c6f5bbb65b67a84007644 = RL_0b481988946c6f5bbb65b67a84007644;
+
+});
+
+define("PartnersHub.model$RC_0ba7e979e12fa40c2f5555de45482f78", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_7710952ed757fea535b17cc3f62e943cEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement", "PartnerEventManagement.model$EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord", "PartnerEventManagement.model$EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_0ba7e979e12fa40c2f5555de45482f78Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventSpeakers", "eventSpeakersAttr", "EventSpeakers", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_7710952ed757fea535b17cc3f62e943cEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_7710952ed757fea535b17cc3f62e943cEntityRecord),
+                    this.attr("SpeakerRole", "speakerRoleAttr", "SpeakerRole", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord),
+                    this.attr("EventSpeakerMapping", "eventSpeakerMappingAttr", "EventSpeakerMapping", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.RC_0ba7e979e12fa40c2f5555de45482f78 = RC_0ba7e979e12fa40c2f5555de45482f78Inner;
+
+        RC_0ba7e979e12fa40c2f5555de45482f78Inner._isAnonymousRecord = true;
+        RC_0ba7e979e12fa40c2f5555de45482f78Inner.UniqueId = "0ba7e979-e12f-a40c-2f55-55de45482f78";
+        var RC_0ba7e979e12fa40c2f5555de45482f78 = RC_0ba7e979e12fa40c2f5555de45482f78Inner;
+        RC_0ba7e979e12fa40c2f5555de45482f78.init();
+    }
+});
+
+define("PartnersHub.model$RC_d44f16e30a0609864b9b1cd234f36b0d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ee0fad031c8fb70025ad4f6b3dc33f10Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_d44f16e30a0609864b9b1cd234f36b0dInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("SendbirdService", "sendbirdServiceAttr", "SendbirdService", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ee0fad031c8fb70025ad4f6b3dc33f10Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ee0fad031c8fb70025ad4f6b3dc33f10Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_d44f16e30a0609864b9b1cd234f36b0d(new RC_d44f16e30a0609864b9b1cd234f36b0d.RecordClass({
+                    sendbirdServiceAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_d44f16e30a0609864b9b1cd234f36b0d = RC_d44f16e30a0609864b9b1cd234f36b0dInner;
+
+        RC_d44f16e30a0609864b9b1cd234f36b0dInner._isAnonymousRecord = true;
+        RC_d44f16e30a0609864b9b1cd234f36b0dInner.UniqueId = "d44f16e3-0a06-0986-4b9b-1cd234f36b0d";
+        var RC_d44f16e30a0609864b9b1cd234f36b0d = RC_d44f16e30a0609864b9b1cd234f36b0dInner;
+        RC_d44f16e30a0609864b9b1cd234f36b0d.init();
+    }
+});
+
+define("PartnersHub.model$RL_0bdff19b177f7c68e65187599418c3f6", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d44f16e30a0609864b9b1cd234f36b0d"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0bdff19b177f7c68e65187599418c3f6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_d44f16e30a0609864b9b1cd234f36b0d;
+        }
+
+    }
+
+    PartnersHubModel.RL_0bdff19b177f7c68e65187599418c3f6 = RL_0bdff19b177f7c68e65187599418c3f6;
 
 });
 
@@ -2800,6 +3259,20 @@ define("PartnersHub.model$RC_0c21bac0f0d595b425f072410353d305", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_0c323972ef75bc243979fff356a6bb1c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0f5a50b395c52c47c6da386a52aa5b06Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0c323972ef75bc243979fff356a6bb1c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_0f5a50b395c52c47c6da386a52aa5b06Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_0c323972ef75bc243979fff356a6bb1c = RL_0c323972ef75bc243979fff356a6bb1c;
+
+});
+
 define("PartnersHub.model$RC_0c55dfa053757f7dd55cc397f37755a2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_e9aa881415a78b4026eaae8ff05abb61Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_0c55dfa053757f7dd55cc397f37755a2Inner extends
@@ -3132,6 +3605,35 @@ define("PartnersHub.model$RL_0e22e79825d574ddeb21017d3fee72f5", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_0e4c0f67b04852396e81eab6b78286b5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1402e2338dff154debadf7b72803a581Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_0e4c0f67b04852396e81eab6b78286b5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserUpdateRequest", "p2PAdvertiserUpdateRequestAttr", "P2PAdvertiserUpdateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1402e2338dff154debadf7b72803a581Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1402e2338dff154debadf7b72803a581Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_0e4c0f67b04852396e81eab6b78286b5(new RC_0e4c0f67b04852396e81eab6b78286b5.RecordClass({
+                    p2PAdvertiserUpdateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_0e4c0f67b04852396e81eab6b78286b5 = RC_0e4c0f67b04852396e81eab6b78286b5Inner;
+
+        RC_0e4c0f67b04852396e81eab6b78286b5Inner._isAnonymousRecord = true;
+        RC_0e4c0f67b04852396e81eab6b78286b5Inner.UniqueId = "0e4c0f67-b048-5239-6e81-eab6b78286b5";
+        var RC_0e4c0f67b04852396e81eab6b78286b5 = RC_0e4c0f67b04852396e81eab6b78286b5Inner;
+        RC_0e4c0f67b04852396e81eab6b78286b5.init();
+    }
+});
+
 define("PartnersHub.model$RC_5a174d6874253917600b578d844943be", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_709b151c5172b8ff1042e5fecf4be0ecStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_5a174d6874253917600b578d844943beInner extends
@@ -3218,6 +3720,35 @@ define("PartnersHub.model$RL_0ed99306a92665c51c1f5a5e119abde1", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_0eea76ca7a3dc279121f6b469bc38e1e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1eaff43aca523f2e537db1085abb9969Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_0eea76ca7a3dc279121f6b469bc38e1eInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserListResponse", "p2PAdvertiserListResponseAttr", "P2PAdvertiserListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1eaff43aca523f2e537db1085abb9969Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1eaff43aca523f2e537db1085abb9969Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_0eea76ca7a3dc279121f6b469bc38e1e(new RC_0eea76ca7a3dc279121f6b469bc38e1e.RecordClass({
+                    p2PAdvertiserListResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_0eea76ca7a3dc279121f6b469bc38e1e = RC_0eea76ca7a3dc279121f6b469bc38e1eInner;
+
+        RC_0eea76ca7a3dc279121f6b469bc38e1eInner._isAnonymousRecord = true;
+        RC_0eea76ca7a3dc279121f6b469bc38e1eInner.UniqueId = "0eea76ca-7a3d-c279-121f-6b469bc38e1e";
+        var RC_0eea76ca7a3dc279121f6b469bc38e1e = RC_0eea76ca7a3dc279121f6b469bc38e1eInner;
+        RC_0eea76ca7a3dc279121f6b469bc38e1e.init();
+    }
+});
+
 define("PartnersHub.model$EN_0f6fdd9309a44b721498902bfa87efe5EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class EN_0f6fdd9309a44b721498902bfa87efe5EntityRecordInner extends
@@ -3249,6 +3780,34 @@ define("PartnersHub.model$EN_0f6fdd9309a44b721498902bfa87efe5EntityRecord", ["ex
         var EN_0f6fdd9309a44b721498902bfa87efe5EntityRecord = EN_0f6fdd9309a44b721498902bfa87efe5EntityRecordInner;
         EN_0f6fdd9309a44b721498902bfa87efe5EntityRecord.init();
     }
+});
+
+define("PartnersHub.model$RL_0f70af24101cfcf6a86201a88d67a596", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0879f01858a2bc3ad7b4670abe9d0a7cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0f70af24101cfcf6a86201a88d67a596 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_0879f01858a2bc3ad7b4670abe9d0a7cStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_0f70af24101cfcf6a86201a88d67a596 = RL_0f70af24101cfcf6a86201a88d67a596;
+
+});
+
+define("PartnersHub.model$RL_0fd675088573602f70fccecb4a8edbc5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7db1e9bcd0fe59811889d8b408745096Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_0fd675088573602f70fccecb4a8edbc5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_7db1e9bcd0fe59811889d8b408745096Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_0fd675088573602f70fccecb4a8edbc5 = RL_0fd675088573602f70fccecb4a8edbc5;
+
 });
 
 define("PartnersHub.model$RC_1024838f82ddb82da0b68c4f564c9503", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_eda668e7f210db3d136460db1684b63bStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -3417,15 +3976,15 @@ define("PartnersHub.model$RL_117c7b7da327962152f7a4113c25ca3f", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_e3b64ee76991773d7381701280e3c6d4", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_a01186a03a6c4b831d48748ff6ff136bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_e3b64ee76991773d7381701280e3c6d4", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_a01186a03a6c4b831d48748ff6ff136bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_e3b64ee76991773d7381701280e3c6d4Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetChannelInfoResponse", "getChannelInfoResponseAttr", "GetChannelInfoResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -3457,6 +4016,20 @@ define("PartnersHub.model$RL_11d5fc250d09046167baedb6f3c2fb4b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_11d5fc250d09046167baedb6f3c2fb4b = RL_11d5fc250d09046167baedb6f3c2fb4b;
+
+});
+
+define("PartnersHub.model$RL_11d6eb7e137d31b8bce20a34fef0d788", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_741b22262e1abaa71c2c6102c32e5868Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_11d6eb7e137d31b8bce20a34fef0d788 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_741b22262e1abaa71c2c6102c32e5868Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_11d6eb7e137d31b8bce20a34fef0d788 = RL_11d6eb7e137d31b8bce20a34fef0d788;
 
 });
 
@@ -3587,6 +4160,20 @@ define("PartnersHub.model$RC_131ec4afe292e50694c2940b1e3c9a73", ["exports", "@ou
         var RC_131ec4afe292e50694c2940b1e3c9a73 = RC_131ec4afe292e50694c2940b1e3c9a73Inner;
         RC_131ec4afe292e50694c2940b1e3c9a73.init();
     }
+});
+
+define("PartnersHub.model$RL_1333403c8473cebcdce283d3f038a58c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_776bbd191df189ae2b5f20c613dc695aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1333403c8473cebcdce283d3f038a58c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_776bbd191df189ae2b5f20c613dc695aStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_1333403c8473cebcdce283d3f038a58c = RL_1333403c8473cebcdce283d3f038a58c;
+
 });
 
 define("PartnersHub.model$RC_d54336ec6049dff9c99f14fd62e782c4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_94d54d268b2cff4f4ed014a5df48da20Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -3724,7 +4311,7 @@ define("PartnersHub.model$RC_13f257eb273389bc73abe0351586bf1c", ["exports", "@ou
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("Partner_setting", "partner_settingAttr", "Partner_setting", false, false, OS.DataTypes.DataTypes.Record, function() {
+                    this.attr("Partner_settings", "partner_settingsAttr", "Partner_settings", false, false, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure());
                     }, true, RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -3732,7 +4319,7 @@ define("PartnersHub.model$RC_13f257eb273389bc73abe0351586bf1c", ["exports", "@ou
 
             static fromStructure(str) {
                 return new RC_13f257eb273389bc73abe0351586bf1c(new RC_13f257eb273389bc73abe0351586bf1c.RecordClass({
-                    partner_settingAttr: OS.DataTypes.ImmutableBase.getData(str)
+                    partner_settingsAttr: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -3773,6 +4360,35 @@ define("PartnersHub.model$RL_143abbfebca3c373ef0923e4c8b26336", ["exports", "@ou
 
     PartnersHubModel.RL_143abbfebca3c373ef0923e4c8b26336 = RL_143abbfebca3c373ef0923e4c8b26336;
 
+});
+
+define("PartnersHub.model$RC_14a68168b2c48c181cb84b21b0fa2a9e", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_14a68168b2c48c181cb84b21b0fa2a9eInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("SpeakerRole", "speakerRoleAttr", "SpeakerRole", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_14a68168b2c48c181cb84b21b0fa2a9e(new RC_14a68168b2c48c181cb84b21b0fa2a9e.RecordClass({
+                    speakerRoleAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_14a68168b2c48c181cb84b21b0fa2a9e = RC_14a68168b2c48c181cb84b21b0fa2a9eInner;
+
+        RC_14a68168b2c48c181cb84b21b0fa2a9eInner._isAnonymousRecord = true;
+        RC_14a68168b2c48c181cb84b21b0fa2a9eInner.UniqueId = "14a68168-b2c4-8c18-1cb8-4b21b0fa2a9e";
+        var RC_14a68168b2c48c181cb84b21b0fa2a9e = RC_14a68168b2c48c181cb84b21b0fa2a9eInner;
+        RC_14a68168b2c48c181cb84b21b0fa2a9e.init();
+    }
 });
 
 define("PartnersHub.model$RL_14c5bb80b83da1321f2059f42deabf95", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_10e78341d21be3a7dc573dcf4252c9dbStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -3960,6 +4576,35 @@ define("PartnersHub.model$RL_1659ef22005bb5893eb1c95011619009", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_169ba1f57e053870b84cde6379a8d367", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ae6a01bb8adb6c18fb3b2d01ca300b15Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_169ba1f57e053870b84cde6379a8d367Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserCreateResponse", "p2PAdvertiserCreateResponseAttr", "P2PAdvertiserCreateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_ae6a01bb8adb6c18fb3b2d01ca300b15Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_ae6a01bb8adb6c18fb3b2d01ca300b15Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_169ba1f57e053870b84cde6379a8d367(new RC_169ba1f57e053870b84cde6379a8d367.RecordClass({
+                    p2PAdvertiserCreateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_169ba1f57e053870b84cde6379a8d367 = RC_169ba1f57e053870b84cde6379a8d367Inner;
+
+        RC_169ba1f57e053870b84cde6379a8d367Inner._isAnonymousRecord = true;
+        RC_169ba1f57e053870b84cde6379a8d367Inner.UniqueId = "169ba1f5-7e05-3870-b84c-de6379a8d367";
+        var RC_169ba1f57e053870b84cde6379a8d367 = RC_169ba1f57e053870b84cde6379a8d367Inner;
+        RC_169ba1f57e053870b84cde6379a8d367.init();
+    }
+});
+
 define("PartnersHub.model$EN_88a0b98029aeb361728476a53c43c460EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class EN_88a0b98029aeb361728476a53c43c460EntityRecordInner extends
@@ -4027,6 +4672,78 @@ define("PartnersHub.model$RL_16ee1202e8f0deac948d800309773e12", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_31f620589c23b6cb76eecd5ffbdcff89", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_32482be3161a6f43acc69f26815515ceStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_31f620589c23b6cb76eecd5ffbdcff89Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Platform_url", "platform_urlAttr", "Platform_url", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_32482be3161a6f43acc69f26815515ceStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_32482be3161a6f43acc69f26815515ceStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_31f620589c23b6cb76eecd5ffbdcff89(new RC_31f620589c23b6cb76eecd5ffbdcff89.RecordClass({
+                    platform_urlAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_31f620589c23b6cb76eecd5ffbdcff89 = RC_31f620589c23b6cb76eecd5ffbdcff89Inner;
+
+        RC_31f620589c23b6cb76eecd5ffbdcff89Inner._isAnonymousRecord = true;
+        RC_31f620589c23b6cb76eecd5ffbdcff89Inner.UniqueId = "31f62058-9c23-b6cb-76ee-cd5ffbdcff89";
+        var RC_31f620589c23b6cb76eecd5ffbdcff89 = RC_31f620589c23b6cb76eecd5ffbdcff89Inner;
+        RC_31f620589c23b6cb76eecd5ffbdcff89.init();
+    }
+});
+
+define("PartnersHub.model$RL_170db2205fb819d098837fbce8de05cd", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_31f620589c23b6cb76eecd5ffbdcff89"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_170db2205fb819d098837fbce8de05cd extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_31f620589c23b6cb76eecd5ffbdcff89;
+        }
+
+    }
+
+    PartnersHubModel.RL_170db2205fb819d098837fbce8de05cd = RL_170db2205fb819d098837fbce8de05cd;
+
+});
+
+define("PartnersHub.model$RC_172b8dd4a9beebc4b3ea80a0def2b2fe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a138c9d86955bf2ced1c92c23da39091Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_172b8dd4a9beebc4b3ea80a0def2b2feInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderInfoRequest", "p2POrderInfoRequestAttr", "P2POrderInfoRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a138c9d86955bf2ced1c92c23da39091Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a138c9d86955bf2ced1c92c23da39091Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_172b8dd4a9beebc4b3ea80a0def2b2fe(new RC_172b8dd4a9beebc4b3ea80a0def2b2fe.RecordClass({
+                    p2POrderInfoRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_172b8dd4a9beebc4b3ea80a0def2b2fe = RC_172b8dd4a9beebc4b3ea80a0def2b2feInner;
+
+        RC_172b8dd4a9beebc4b3ea80a0def2b2feInner._isAnonymousRecord = true;
+        RC_172b8dd4a9beebc4b3ea80a0def2b2feInner.UniqueId = "172b8dd4-a9be-ebc4-b3ea-80a0def2b2fe";
+        var RC_172b8dd4a9beebc4b3ea80a0def2b2fe = RC_172b8dd4a9beebc4b3ea80a0def2b2feInner;
+        RC_172b8dd4a9beebc4b3ea80a0def2b2fe.init();
+    }
+});
+
 define("PartnersHub.model$EN_1876f437d76222f2a9bb4f9f307d57c6EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class EN_1876f437d76222f2a9bb4f9f307d57c6EntityRecordInner extends
@@ -4065,6 +4782,49 @@ define("PartnersHub.model$RL_18994bd1cd31a465f2635a0d68fa478a", ["exports", "@ou
     }
 
     PartnersHubModel.RL_18994bd1cd31a465f2635a0d68fa478a = RL_18994bd1cd31a465f2635a0d68fa478a;
+
+});
+
+define("PartnersHub.model$RC_dfbe773763c531fd072012a9fe708316", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_254a95af2bb66abb401551d01686c0a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_dfbe773763c531fd072012a9fe708316Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserInfoResponse", "p2PAdvertiserInfoResponseAttr", "P2PAdvertiserInfoResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_254a95af2bb66abb401551d01686c0a6Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_254a95af2bb66abb401551d01686c0a6Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_dfbe773763c531fd072012a9fe708316(new RC_dfbe773763c531fd072012a9fe708316.RecordClass({
+                    p2PAdvertiserInfoResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_dfbe773763c531fd072012a9fe708316 = RC_dfbe773763c531fd072012a9fe708316Inner;
+
+        RC_dfbe773763c531fd072012a9fe708316Inner._isAnonymousRecord = true;
+        RC_dfbe773763c531fd072012a9fe708316Inner.UniqueId = "dfbe7737-63c5-31fd-0720-12a9fe708316";
+        var RC_dfbe773763c531fd072012a9fe708316 = RC_dfbe773763c531fd072012a9fe708316Inner;
+        RC_dfbe773763c531fd072012a9fe708316.init();
+    }
+});
+
+define("PartnersHub.model$RL_18a059102e367451eb780e1388f118f5", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_dfbe773763c531fd072012a9fe708316"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_18a059102e367451eb780e1388f118f5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_dfbe773763c531fd072012a9fe708316;
+        }
+
+    }
+
+    PartnersHubModel.RL_18a059102e367451eb780e1388f118f5 = RL_18a059102e367451eb780e1388f118f5;
 
 });
 
@@ -4212,6 +4972,35 @@ define("PartnersHub.model$RC_19aa89641c7398ceacf4370c69126f64", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RC_19cbcedad67b422ec73a8118b5b40a41", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1d9346af7c96c8938257535a9fc60a9cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_19cbcedad67b422ec73a8118b5b40a41Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("IDR2", "iDR2Attr", "IDR2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1d9346af7c96c8938257535a9fc60a9cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1d9346af7c96c8938257535a9fc60a9cStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_19cbcedad67b422ec73a8118b5b40a41(new RC_19cbcedad67b422ec73a8118b5b40a41.RecordClass({
+                    iDR2Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_19cbcedad67b422ec73a8118b5b40a41 = RC_19cbcedad67b422ec73a8118b5b40a41Inner;
+
+        RC_19cbcedad67b422ec73a8118b5b40a41Inner._isAnonymousRecord = true;
+        RC_19cbcedad67b422ec73a8118b5b40a41Inner.UniqueId = "19cbceda-d67b-422e-c73a-8118b5b40a41";
+        var RC_19cbcedad67b422ec73a8118b5b40a41 = RC_19cbcedad67b422ec73a8118b5b40a41Inner;
+        RC_19cbcedad67b422ec73a8118b5b40a41.init();
+    }
+});
+
 define("PartnersHub.model$EN_19dadc7afbb2c1873c7b698fbb261a65EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class EN_19dadc7afbb2c1873c7b698fbb261a65EntityRecordInner extends
@@ -4273,6 +5062,9 @@ define("PartnersHub.model$EN_6adfebcd5bbca71129a168d2e2d91049EntityRecord", ["ex
                     }, true),
                     this.attr("Code", "codeAttr", "Code", false, false, OS.DataTypes.DataTypes.Text, function() {
                         return "";
+                    }, true),
+                    this.attr("EnvironmentId", "environmentIdAttr", "EnvironmentId", false, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return 0;
                     }, true)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -4458,6 +5250,20 @@ define("PartnersHub.model$RL_1ac3d3ab269762306321bb7760937f2c", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_1ad625019f4848d09f7266282d4e315e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ae6a01bb8adb6c18fb3b2d01ca300b15Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1ad625019f4848d09f7266282d4e315e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_ae6a01bb8adb6c18fb3b2d01ca300b15Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_1ad625019f4848d09f7266282d4e315e = RL_1ad625019f4848d09f7266282d4e315e;
+
+});
+
 define("PartnersHub.model$RC_1b2532ef629f2b3259beb09a3dc495b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0543ba6e58ccc819d0ba65db33df025eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_1b2532ef629f2b3259beb09a3dc495b4Inner extends
@@ -4626,6 +5432,34 @@ define("PartnersHub.model$RL_1bb3aa44d64789d21e2e5b1cfe76b045", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_1c3088abbab1e36a4992a44ac6444a28", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d7788a11837ccb63472925e3f2cd934fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1c3088abbab1e36a4992a44ac6444a28 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_d7788a11837ccb63472925e3f2cd934fStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_1c3088abbab1e36a4992a44ac6444a28 = RL_1c3088abbab1e36a4992a44ac6444a28;
+
+});
+
+define("PartnersHub.model$RL_1c9df6292bc01420d5e585cf483a3f07", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_0cbd27f3f37d67634546c1cc70cd2310Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_1c9df6292bc01420d5e585cf483a3f07 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return TestIMAPIOfficialModel.ST_0cbd27f3f37d67634546c1cc70cd2310Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_1c9df6292bc01420d5e585cf483a3f07 = RL_1c9df6292bc01420d5e585cf483a3f07;
+
+});
+
 define("PartnersHub.model$RL_1d3883baf2a25f26e9aa7de12c9a4468", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8e8af6ab08708eb9bf2a2c09b57c23f5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_1d3883baf2a25f26e9aa7de12c9a4468 extends
@@ -4766,6 +5600,35 @@ define("PartnersHub.model$RL_1e027ac5f8769ea4d4adbbcc7903f418", ["exports", "@ou
 
     PartnersHubModel.RL_1e027ac5f8769ea4d4adbbcc7903f418 = RL_1e027ac5f8769ea4d4adbbcc7903f418;
 
+});
+
+define("PartnersHub.model$RC_1e93678eeb2cf74dc2feef60cb655062", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_3612fcc680d052de2c30dcfaf1d328c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_1e93678eeb2cf74dc2feef60cb655062Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertInfo", "p2PAdvertInfoAttr", "P2PAdvertInfo", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_3612fcc680d052de2c30dcfaf1d328c5Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_3612fcc680d052de2c30dcfaf1d328c5Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_1e93678eeb2cf74dc2feef60cb655062(new RC_1e93678eeb2cf74dc2feef60cb655062.RecordClass({
+                    p2PAdvertInfoAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_1e93678eeb2cf74dc2feef60cb655062 = RC_1e93678eeb2cf74dc2feef60cb655062Inner;
+
+        RC_1e93678eeb2cf74dc2feef60cb655062Inner._isAnonymousRecord = true;
+        RC_1e93678eeb2cf74dc2feef60cb655062Inner.UniqueId = "1e93678e-eb2c-f74d-c2fe-ef60cb655062";
+        var RC_1e93678eeb2cf74dc2feef60cb655062 = RC_1e93678eeb2cf74dc2feef60cb655062Inner;
+        RC_1e93678eeb2cf74dc2feef60cb655062.init();
+    }
 });
 
 define("PartnersHub.model$RC_95c473136722ba7379611f73a3471de3", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_4f86046673de081f9834eb306850ab22EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
@@ -5014,6 +5877,107 @@ define("PartnersHub.model$RL_20322c58eb45fb0d1b1de5d7c79573e2", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_c42160ad515880f47b5a0f78fe1a495c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_18ad6961998d53ee63bc4d04b91a9152Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c42160ad515880f47b5a0f78fe1a495cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserCreateRequest", "p2PAdvertiserCreateRequestAttr", "P2PAdvertiserCreateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_18ad6961998d53ee63bc4d04b91a9152Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_18ad6961998d53ee63bc4d04b91a9152Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c42160ad515880f47b5a0f78fe1a495c(new RC_c42160ad515880f47b5a0f78fe1a495c.RecordClass({
+                    p2PAdvertiserCreateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_c42160ad515880f47b5a0f78fe1a495c = RC_c42160ad515880f47b5a0f78fe1a495cInner;
+
+        RC_c42160ad515880f47b5a0f78fe1a495cInner._isAnonymousRecord = true;
+        RC_c42160ad515880f47b5a0f78fe1a495cInner.UniqueId = "c42160ad-5158-80f4-7b5a-0f78fe1a495c";
+        var RC_c42160ad515880f47b5a0f78fe1a495c = RC_c42160ad515880f47b5a0f78fe1a495cInner;
+        RC_c42160ad515880f47b5a0f78fe1a495c.init();
+    }
+});
+
+define("PartnersHub.model$RL_2053af017804ccdd2b9c3428357fafcc", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_c42160ad515880f47b5a0f78fe1a495c"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2053af017804ccdd2b9c3428357fafcc extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_c42160ad515880f47b5a0f78fe1a495c;
+        }
+
+    }
+
+    PartnersHubModel.RL_2053af017804ccdd2b9c3428357fafcc = RL_2053af017804ccdd2b9c3428357fafcc;
+
+});
+
+define("PartnersHub.model$RC_2058a904a5af740307bc28a7bafc955c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_3d1a46622c09608d98a230622b852106Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_2058a904a5af740307bc28a7bafc955cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserInfoRequest", "p2PAdvertiserInfoRequestAttr", "P2PAdvertiserInfoRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_3d1a46622c09608d98a230622b852106Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_3d1a46622c09608d98a230622b852106Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_2058a904a5af740307bc28a7bafc955c(new RC_2058a904a5af740307bc28a7bafc955c.RecordClass({
+                    p2PAdvertiserInfoRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_2058a904a5af740307bc28a7bafc955c = RC_2058a904a5af740307bc28a7bafc955cInner;
+
+        RC_2058a904a5af740307bc28a7bafc955cInner._isAnonymousRecord = true;
+        RC_2058a904a5af740307bc28a7bafc955cInner.UniqueId = "2058a904-a5af-7403-07bc-28a7bafc955c";
+        var RC_2058a904a5af740307bc28a7bafc955c = RC_2058a904a5af740307bc28a7bafc955cInner;
+        RC_2058a904a5af740307bc28a7bafc955c.init();
+    }
+});
+
+define("PartnersHub.model$RC_2081831fb79d9a8056f04161074e9cd5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_4cf21e951c9e4f29302e0e457ab5a673Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_2081831fb79d9a8056f04161074e9cd5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Local_currency2", "local_currency2Attr", "Local_currency2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_4cf21e951c9e4f29302e0e457ab5a673Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_4cf21e951c9e4f29302e0e457ab5a673Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_2081831fb79d9a8056f04161074e9cd5(new RC_2081831fb79d9a8056f04161074e9cd5.RecordClass({
+                    local_currency2Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_2081831fb79d9a8056f04161074e9cd5 = RC_2081831fb79d9a8056f04161074e9cd5Inner;
+
+        RC_2081831fb79d9a8056f04161074e9cd5Inner._isAnonymousRecord = true;
+        RC_2081831fb79d9a8056f04161074e9cd5Inner.UniqueId = "2081831f-b79d-9a80-56f0-4161074e9cd5";
+        var RC_2081831fb79d9a8056f04161074e9cd5 = RC_2081831fb79d9a8056f04161074e9cd5Inner;
+        RC_2081831fb79d9a8056f04161074e9cd5.init();
+    }
+});
+
 define("PartnersHub.model$RC_a336dc96fafc2e7ffdb88fdcc24fe482", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_77d1f9105abe302fa373f146c295ea17Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_a336dc96fafc2e7ffdb88fdcc24fe482Inner extends
@@ -5054,6 +6018,47 @@ define("PartnersHub.model$RL_2083bc83b9d077075ef50c2bd63b6965", ["exports", "@ou
     }
 
     PartnersHubModel.RL_2083bc83b9d077075ef50c2bd63b6965 = RL_2083bc83b9d077075ef50c2bd63b6965;
+
+});
+
+define("PartnersHub.model$ST_9f1e67525baf02c5f10f80cc2f462aacStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class ST_9f1e67525baf02c5f10f80cc2f462aacStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Location", "locationAttr", "Location", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("DateTime", "dateTimeAttr", "DateTime", true, false, OS.DataTypes.DataTypes.DateTime, function() {
+                        return OS.DataTypes.DateTime.defaultValue;
+                    }, true),
+                    this.attr("TimeZone", "timeZoneAttr", "TimeZone", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.ST_9f1e67525baf02c5f10f80cc2f462aacStructure = ST_9f1e67525baf02c5f10f80cc2f462aacStructureInner;
+
+        var ST_9f1e67525baf02c5f10f80cc2f462aacStructure = ST_9f1e67525baf02c5f10f80cc2f462aacStructureInner;
+        ST_9f1e67525baf02c5f10f80cc2f462aacStructure.init();
+    }
+});
+
+define("PartnersHub.model$RL_210e858519cee8fb492f2c3ecddefa1d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f1e67525baf02c5f10f80cc2f462aacStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_210e858519cee8fb492f2c3ecddefa1d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.ST_9f1e67525baf02c5f10f80cc2f462aacStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_210e858519cee8fb492f2c3ecddefa1d = RL_210e858519cee8fb492f2c3ecddefa1d;
 
 });
 
@@ -5710,6 +6715,42 @@ define("PartnersHub.model$RC_264d82ff29428f3cd43ebe0810111d5a", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$EN_26b877e1d832e90c0fea3059eec067b6EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class EN_26b877e1d832e90c0fea3059eec067b6EntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.LongInteger, function() {
+                        return OS.DataTypes.LongInteger.defaultValue;
+                    }, true),
+                    this.attr("AccountType", "accountTypeAttr", "AccountType", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("Currency", "currencyAttr", "Currency", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("FirstMiddleName", "firstMiddleNameAttr", "FirstMiddleName", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("LastName", "lastNameAttr", "LastName", false, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true),
+                    this.attr("DateOfBirth", "dateOfBirthAttr", "DateOfBirth", false, false, OS.DataTypes.DataTypes.Date, function() {
+                        return OS.DataTypes.DateTime.defaultValue;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.EN_26b877e1d832e90c0fea3059eec067b6EntityRecord = EN_26b877e1d832e90c0fea3059eec067b6EntityRecordInner;
+
+        var EN_26b877e1d832e90c0fea3059eec067b6EntityRecord = EN_26b877e1d832e90c0fea3059eec067b6EntityRecordInner;
+        EN_26b877e1d832e90c0fea3059eec067b6EntityRecord.init();
+    }
+});
+
 define("PartnersHub.model$RC_404c459943827781a6e430bd69037b23", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_1876f437d76222f2a9bb4f9f307d57c6EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_404c459943827781a6e430bd69037b23Inner extends
@@ -5938,6 +6979,49 @@ define("PartnersHub.model$AttachmentRec", ["exports", "@outsystems/runtime-core-
     }
 });
 
+define("PartnersHub.model$RC_31374cc319a33edc2c3277744eb207a6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_9737eba44981be7e1e2e600a29fca443Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_31374cc319a33edc2c3277744eb207a6Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderCancelRequest", "p2POrderCancelRequestAttr", "P2POrderCancelRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_9737eba44981be7e1e2e600a29fca443Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_9737eba44981be7e1e2e600a29fca443Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_31374cc319a33edc2c3277744eb207a6(new RC_31374cc319a33edc2c3277744eb207a6.RecordClass({
+                    p2POrderCancelRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_31374cc319a33edc2c3277744eb207a6 = RC_31374cc319a33edc2c3277744eb207a6Inner;
+
+        RC_31374cc319a33edc2c3277744eb207a6Inner._isAnonymousRecord = true;
+        RC_31374cc319a33edc2c3277744eb207a6Inner.UniqueId = "31374cc3-19a3-3edc-2c32-77744eb207a6";
+        var RC_31374cc319a33edc2c3277744eb207a6 = RC_31374cc319a33edc2c3277744eb207a6Inner;
+        RC_31374cc319a33edc2c3277744eb207a6.init();
+    }
+});
+
+define("PartnersHub.model$RL_28998766f8c046c9335904011fbbefd7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_31374cc319a33edc2c3277744eb207a6"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_28998766f8c046c9335904011fbbefd7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_31374cc319a33edc2c3277744eb207a6;
+        }
+
+    }
+
+    PartnersHubModel.RL_28998766f8c046c9335904011fbbefd7 = RL_28998766f8c046c9335904011fbbefd7;
+
+});
+
 define("PartnersHub.model$RL_28c65a6ca00ce3f3c6a90d7190b6966d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_ce3665169ee165087a4fa593347f539dStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_28c65a6ca00ce3f3c6a90d7190b6966d extends
@@ -6038,6 +7122,49 @@ define("PartnersHub.model$RL_296c80117ea3feed92d93a9342c06001", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_40447fd0f693adcd3ef5284b976485b5", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9f1e67525baf02c5f10f80cc2f462aacStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_40447fd0f693adcd3ef5284b976485b5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventLocationDateTime", "eventLocationDateTimeAttr", "EventLocationDateTime", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_9f1e67525baf02c5f10f80cc2f462aacStructure());
+                    }, true, PartnersHubModel.ST_9f1e67525baf02c5f10f80cc2f462aacStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_40447fd0f693adcd3ef5284b976485b5(new RC_40447fd0f693adcd3ef5284b976485b5.RecordClass({
+                    eventLocationDateTimeAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_40447fd0f693adcd3ef5284b976485b5 = RC_40447fd0f693adcd3ef5284b976485b5Inner;
+
+        RC_40447fd0f693adcd3ef5284b976485b5Inner._isAnonymousRecord = true;
+        RC_40447fd0f693adcd3ef5284b976485b5Inner.UniqueId = "40447fd0-f693-adcd-3ef5-284b976485b5";
+        var RC_40447fd0f693adcd3ef5284b976485b5 = RC_40447fd0f693adcd3ef5284b976485b5Inner;
+        RC_40447fd0f693adcd3ef5284b976485b5.init();
+    }
+});
+
+define("PartnersHub.model$RL_29eb97d3b528de402f967238a1044a23", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_40447fd0f693adcd3ef5284b976485b5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_29eb97d3b528de402f967238a1044a23 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_40447fd0f693adcd3ef5284b976485b5;
+        }
+
+    }
+
+    PartnersHubModel.RL_29eb97d3b528de402f967238a1044a23 = RL_29eb97d3b528de402f967238a1044a23;
+
+});
+
 define("PartnersHub.model$RC_2ac88c51f2d9ed908454e6a06ffe188e", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_2ac88c51f2d9ed908454e6a06ffe188eInner extends
@@ -6108,6 +7235,64 @@ define("PartnersHub.model$RL_2b1a3419eafdbc343d89f210b76f82c7", ["exports", "@ou
 
     PartnersHubModel.RL_2b1a3419eafdbc343d89f210b76f82c7 = RL_2b1a3419eafdbc343d89f210b76f82c7;
 
+});
+
+define("PartnersHub.model$RC_2b27eac243a70dcdc8d6ad57a1a8b8af", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2ffa7d64546da67e71986ee16644bc99Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_2b27eac243a70dcdc8d6ad57a1a8b8afInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("ServiceTokenResponse", "serviceTokenResponseAttr", "ServiceTokenResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2ffa7d64546da67e71986ee16644bc99Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2ffa7d64546da67e71986ee16644bc99Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_2b27eac243a70dcdc8d6ad57a1a8b8af(new RC_2b27eac243a70dcdc8d6ad57a1a8b8af.RecordClass({
+                    serviceTokenResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_2b27eac243a70dcdc8d6ad57a1a8b8af = RC_2b27eac243a70dcdc8d6ad57a1a8b8afInner;
+
+        RC_2b27eac243a70dcdc8d6ad57a1a8b8afInner._isAnonymousRecord = true;
+        RC_2b27eac243a70dcdc8d6ad57a1a8b8afInner.UniqueId = "2b27eac2-43a7-0dcd-c8d6-ad57a1a8b8af";
+        var RC_2b27eac243a70dcdc8d6ad57a1a8b8af = RC_2b27eac243a70dcdc8d6ad57a1a8b8afInner;
+        RC_2b27eac243a70dcdc8d6ad57a1a8b8af.init();
+    }
+});
+
+define("PartnersHub.model$RC_2b30f89d36a0d111239686e3e4da5c64", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_2b30f89d36a0d111239686e3e4da5c64Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Country", "countryAttr", "Country", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_2b30f89d36a0d111239686e3e4da5c64(new RC_2b30f89d36a0d111239686e3e4da5c64.RecordClass({
+                    countryAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_2b30f89d36a0d111239686e3e4da5c64 = RC_2b30f89d36a0d111239686e3e4da5c64Inner;
+
+        RC_2b30f89d36a0d111239686e3e4da5c64Inner._isAnonymousRecord = true;
+        RC_2b30f89d36a0d111239686e3e4da5c64Inner.UniqueId = "2b30f89d-36a0-d111-2396-86e3e4da5c64";
+        var RC_2b30f89d36a0d111239686e3e4da5c64 = RC_2b30f89d36a0d111239686e3e4da5c64Inner;
+        RC_2b30f89d36a0d111239686e3e4da5c64.init();
+    }
 });
 
 define("PartnersHub.model$RC_2b9e41428d5c5ca3b04a80be4ce98f53", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$ST_639b8c480159ce740702f0a0cf3b55a5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -6225,6 +7410,34 @@ define("PartnersHub.model$RC_2bf25d62d530e43a49ce5fb7ed436ea0", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_2bf38081f793cc6bdbb750e00466b9fc", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_19cbcedad67b422ec73a8118b5b40a41"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2bf38081f793cc6bdbb750e00466b9fc extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_19cbcedad67b422ec73a8118b5b40a41;
+        }
+
+    }
+
+    PartnersHubModel.RL_2bf38081f793cc6bdbb750e00466b9fc = RL_2bf38081f793cc6bdbb750e00466b9fc;
+
+});
+
+define("PartnersHub.model$RL_2c050584f5f999c4a429248dacf4dd97", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_2081831fb79d9a8056f04161074e9cd5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2c050584f5f999c4a429248dacf4dd97 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_2081831fb79d9a8056f04161074e9cd5;
+        }
+
+    }
+
+    PartnersHubModel.RL_2c050584f5f999c4a429248dacf4dd97 = RL_2c050584f5f999c4a429248dacf4dd97;
+
+});
+
 define("PartnersHub.model$RC_63c659b6dc554b0b4f81d60382bf5fd6", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_189b647ddc5c60c1aa5290bb6481a72dEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_63c659b6dc554b0b4f81d60382bf5fd6Inner extends
@@ -6309,6 +7522,35 @@ define("PartnersHub.model$RL_2cadeb0c6f7df3cfbe06d89edb556615", ["exports", "@ou
 
     PartnersHubModel.RL_2cadeb0c6f7df3cfbe06d89edb556615 = RL_2cadeb0c6f7df3cfbe06d89edb556615;
 
+});
+
+define("PartnersHub.model$RC_2ccf07e5bcc4c93949f84625930efb62", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7bb5c8caef220d73a9d6936569f73c53Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_2ccf07e5bcc4c93949f84625930efb62Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderConfirmResponse", "p2POrderConfirmResponseAttr", "P2POrderConfirmResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_7bb5c8caef220d73a9d6936569f73c53Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_7bb5c8caef220d73a9d6936569f73c53Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_2ccf07e5bcc4c93949f84625930efb62(new RC_2ccf07e5bcc4c93949f84625930efb62.RecordClass({
+                    p2POrderConfirmResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_2ccf07e5bcc4c93949f84625930efb62 = RC_2ccf07e5bcc4c93949f84625930efb62Inner;
+
+        RC_2ccf07e5bcc4c93949f84625930efb62Inner._isAnonymousRecord = true;
+        RC_2ccf07e5bcc4c93949f84625930efb62Inner.UniqueId = "2ccf07e5-bcc4-c939-49f8-4625930efb62";
+        var RC_2ccf07e5bcc4c93949f84625930efb62 = RC_2ccf07e5bcc4c93949f84625930efb62Inner;
+        RC_2ccf07e5bcc4c93949f84625930efb62.init();
+    }
 });
 
 define("PartnersHub.model$RC_f4690c821393576cd1cde60070daa64f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a6a60f46ebdfbc286beab7fb13984df8Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -6495,6 +7737,20 @@ define("PartnersHub.model$RC_2e6da4a898d55ae96aab51b6e09d6a22", ["exports", "@ou
         var RC_2e6da4a898d55ae96aab51b6e09d6a22 = RC_2e6da4a898d55ae96aab51b6e09d6a22Inner;
         RC_2e6da4a898d55ae96aab51b6e09d6a22.init();
     }
+});
+
+define("PartnersHub.model$RL_2e8ff77664b8f7bc11c223ef3badd7c7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_2b27eac243a70dcdc8d6ad57a1a8b8af"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_2e8ff77664b8f7bc11c223ef3badd7c7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_2b27eac243a70dcdc8d6ad57a1a8b8af;
+        }
+
+    }
+
+    PartnersHubModel.RL_2e8ff77664b8f7bc11c223ef3badd7c7 = RL_2e8ff77664b8f7bc11c223ef3badd7c7;
+
 });
 
 define("PartnersHub.model$RC_700a042c18a52538bbda09226917700a", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$EN_c206e072354abd28c734a686a107801eEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -6886,6 +8142,20 @@ define("PartnersHub.model$RC_327e36bc408edd046ca40df8a4e734bb", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_cdb3f12da2c928d2f50e403534a82d1e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5d64f7af81bd13f79312da5e4a53a59eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cdb3f12da2c928d2f50e403534a82d1e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_5d64f7af81bd13f79312da5e4a53a59eStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_cdb3f12da2c928d2f50e403534a82d1e = RL_cdb3f12da2c928d2f50e403534a82d1e;
+
+});
+
 define("PartnersHub.model$RL_3325417b3e1ae27173e1161b12a2b345", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_92679525739afa328c09890d25f5ac45EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_3325417b3e1ae27173e1161b12a2b345 extends
@@ -6900,15 +8170,15 @@ define("PartnersHub.model$RL_3325417b3e1ae27173e1161b12a2b345", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_3375dbdf42120d4cd74942f1cc4f9d88", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_0a66c582c77592abee52988e6d0524e2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_3375dbdf42120d4cd74942f1cc4f9d88", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_0a66c582c77592abee52988e6d0524e2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_3375dbdf42120d4cd74942f1cc4f9d88Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("GetChannelsHistoryResponse", "getChannelsHistoryResponseAttr", "GetChannelsHistoryResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_0a66c582c77592abee52988e6d0524e2Structure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_0a66c582c77592abee52988e6d0524e2Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_0a66c582c77592abee52988e6d0524e2Structure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_0a66c582c77592abee52988e6d0524e2Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6929,15 +8199,15 @@ define("PartnersHub.model$RC_3375dbdf42120d4cd74942f1cc4f9d88", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RC_3391a407605c2903e72042e67177aeae", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_ff6fa4367123aaf1ab10608dcb16ba43Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_3391a407605c2903e72042e67177aeae", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_ff6fa4367123aaf1ab10608dcb16ba43Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_3391a407605c2903e72042e67177aeaeInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Topic", "topicAttr", "Topic", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_ff6fa4367123aaf1ab10608dcb16ba43Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -6956,6 +8226,92 @@ define("PartnersHub.model$RC_3391a407605c2903e72042e67177aeae", ["exports", "@ou
         var RC_3391a407605c2903e72042e67177aeae = RC_3391a407605c2903e72042e67177aeaeInner;
         RC_3391a407605c2903e72042e67177aeae.init();
     }
+});
+
+define("PartnersHub.model$RC_f5d4a2f5a332d76f5ccc15cdf118da23", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e6b7ce3d1a8480717883f29f3bf1ccf8Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f5d4a2f5a332d76f5ccc15cdf118da23Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PChatCreateResponse", "p2PChatCreateResponseAttr", "P2PChatCreateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e6b7ce3d1a8480717883f29f3bf1ccf8Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e6b7ce3d1a8480717883f29f3bf1ccf8Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f5d4a2f5a332d76f5ccc15cdf118da23(new RC_f5d4a2f5a332d76f5ccc15cdf118da23.RecordClass({
+                    p2PChatCreateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_f5d4a2f5a332d76f5ccc15cdf118da23 = RC_f5d4a2f5a332d76f5ccc15cdf118da23Inner;
+
+        RC_f5d4a2f5a332d76f5ccc15cdf118da23Inner._isAnonymousRecord = true;
+        RC_f5d4a2f5a332d76f5ccc15cdf118da23Inner.UniqueId = "f5d4a2f5-a332-d76f-5ccc-15cdf118da23";
+        var RC_f5d4a2f5a332d76f5ccc15cdf118da23 = RC_f5d4a2f5a332d76f5ccc15cdf118da23Inner;
+        RC_f5d4a2f5a332d76f5ccc15cdf118da23.init();
+    }
+});
+
+define("PartnersHub.model$RL_33edd9b86cc900a5c27fee339170b32d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_f5d4a2f5a332d76f5ccc15cdf118da23"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_33edd9b86cc900a5c27fee339170b32d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_f5d4a2f5a332d76f5ccc15cdf118da23;
+        }
+
+    }
+
+    PartnersHubModel.RL_33edd9b86cc900a5c27fee339170b32d = RL_33edd9b86cc900a5c27fee339170b32d;
+
+});
+
+define("PartnersHub.model$RC_905c1d78533500136fbae2d1469b85c5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1480f374773845f8188d81a5e43451f4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_905c1d78533500136fbae2d1469b85c5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderCreateRequest", "p2POrderCreateRequestAttr", "P2POrderCreateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1480f374773845f8188d81a5e43451f4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1480f374773845f8188d81a5e43451f4Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_905c1d78533500136fbae2d1469b85c5(new RC_905c1d78533500136fbae2d1469b85c5.RecordClass({
+                    p2POrderCreateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_905c1d78533500136fbae2d1469b85c5 = RC_905c1d78533500136fbae2d1469b85c5Inner;
+
+        RC_905c1d78533500136fbae2d1469b85c5Inner._isAnonymousRecord = true;
+        RC_905c1d78533500136fbae2d1469b85c5Inner.UniqueId = "905c1d78-5335-0013-6fba-e2d1469b85c5";
+        var RC_905c1d78533500136fbae2d1469b85c5 = RC_905c1d78533500136fbae2d1469b85c5Inner;
+        RC_905c1d78533500136fbae2d1469b85c5.init();
+    }
+});
+
+define("PartnersHub.model$RL_34e8557baae595dff1b0bd54b344a395", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_905c1d78533500136fbae2d1469b85c5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_34e8557baae595dff1b0bd54b344a395 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_905c1d78533500136fbae2d1469b85c5;
+        }
+
+    }
+
+    PartnersHubModel.RL_34e8557baae595dff1b0bd54b344a395 = RL_34e8557baae595dff1b0bd54b344a395;
+
 });
 
 define("PartnersHub.model$RC_e693c35b48131a7d9d296aba5185b8c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_98319758945048a72386b9e9466c220aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -7044,6 +8400,20 @@ define("PartnersHub.model$RL_357030bc20ba450abe6756927d50ad98", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_35a3e1f455c3dbbaa14c7a628aaa1ba3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_254a95af2bb66abb401551d01686c0a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_35a3e1f455c3dbbaa14c7a628aaa1ba3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_254a95af2bb66abb401551d01686c0a6Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_35a3e1f455c3dbbaa14c7a628aaa1ba3 = RL_35a3e1f455c3dbbaa14c7a628aaa1ba3;
+
+});
+
 define("PartnersHub.model$RC_35e37489cb29f7a304d512a403000665", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$EN_0c0b103cba961483054afffbc30b3066EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_35e37489cb29f7a304d512a403000665Inner extends
@@ -7071,6 +8441,49 @@ define("PartnersHub.model$RC_35e37489cb29f7a304d512a403000665", ["exports", "@ou
         var RC_35e37489cb29f7a304d512a403000665 = RC_35e37489cb29f7a304d512a403000665Inner;
         RC_35e37489cb29f7a304d512a403000665.init();
     }
+});
+
+define("PartnersHub.model$RC_cee03dabe8a3c7c62ed3d8558ec3c251", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_26b877e1d832e90c0fea3059eec067b6EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_cee03dabe8a3c7c62ed3d8558ec3c251Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("RealAccountCreation", "realAccountCreationAttr", "RealAccountCreation", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_26b877e1d832e90c0fea3059eec067b6EntityRecord());
+                    }, true, PartnersHubModel.EN_26b877e1d832e90c0fea3059eec067b6EntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_cee03dabe8a3c7c62ed3d8558ec3c251(new RC_cee03dabe8a3c7c62ed3d8558ec3c251.RecordClass({
+                    realAccountCreationAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_cee03dabe8a3c7c62ed3d8558ec3c251 = RC_cee03dabe8a3c7c62ed3d8558ec3c251Inner;
+
+        RC_cee03dabe8a3c7c62ed3d8558ec3c251Inner._isAnonymousRecord = true;
+        RC_cee03dabe8a3c7c62ed3d8558ec3c251Inner.UniqueId = "cee03dab-e8a3-c7c6-2ed3-d8558ec3c251";
+        var RC_cee03dabe8a3c7c62ed3d8558ec3c251 = RC_cee03dabe8a3c7c62ed3d8558ec3c251Inner;
+        RC_cee03dabe8a3c7c62ed3d8558ec3c251.init();
+    }
+});
+
+define("PartnersHub.model$RL_35fd36b62523241f1c11dcc6ebf80e7a", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_cee03dabe8a3c7c62ed3d8558ec3c251"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_35fd36b62523241f1c11dcc6ebf80e7a extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_cee03dabe8a3c7c62ed3d8558ec3c251;
+        }
+
+    }
+
+    PartnersHubModel.RL_35fd36b62523241f1c11dcc6ebf80e7a = RL_35fd36b62523241f1c11dcc6ebf80e7a;
+
 });
 
 define("PartnersHub.model$RL_360fcdf4e596d82c75762f808854a5a1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_95720c0132c7c8b07166d48790a0a129Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -7156,6 +8569,49 @@ define("PartnersHub.model$RC_373fec8a2329a8b1ecd55cf717893131", ["exports", "@ou
         var RC_373fec8a2329a8b1ecd55cf717893131 = RC_373fec8a2329a8b1ecd55cf717893131Inner;
         RC_373fec8a2329a8b1ecd55cf717893131.init();
     }
+});
+
+define("PartnersHub.model$RC_5709f0ba27cfbe0ee5eebb438acbd667", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8adbe420d80a0b7b8c828a81a654f9e3Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5709f0ba27cfbe0ee5eebb438acbd667Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserAdvertsResponse", "p2PAdvertiserAdvertsResponseAttr", "P2PAdvertiserAdvertsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8adbe420d80a0b7b8c828a81a654f9e3Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8adbe420d80a0b7b8c828a81a654f9e3Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5709f0ba27cfbe0ee5eebb438acbd667(new RC_5709f0ba27cfbe0ee5eebb438acbd667.RecordClass({
+                    p2PAdvertiserAdvertsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5709f0ba27cfbe0ee5eebb438acbd667 = RC_5709f0ba27cfbe0ee5eebb438acbd667Inner;
+
+        RC_5709f0ba27cfbe0ee5eebb438acbd667Inner._isAnonymousRecord = true;
+        RC_5709f0ba27cfbe0ee5eebb438acbd667Inner.UniqueId = "5709f0ba-27cf-be0e-e5ee-bb438acbd667";
+        var RC_5709f0ba27cfbe0ee5eebb438acbd667 = RC_5709f0ba27cfbe0ee5eebb438acbd667Inner;
+        RC_5709f0ba27cfbe0ee5eebb438acbd667.init();
+    }
+});
+
+define("PartnersHub.model$RL_37f2873798bf421962ea50333055fbe6", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5709f0ba27cfbe0ee5eebb438acbd667"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_37f2873798bf421962ea50333055fbe6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5709f0ba27cfbe0ee5eebb438acbd667;
+        }
+
+    }
+
+    PartnersHubModel.RL_37f2873798bf421962ea50333055fbe6 = RL_37f2873798bf421962ea50333055fbe6;
+
 });
 
 define("PartnersHub.model$RC_60071085ccdc1a939c98b76e05aec53e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_433eb5ffcea5c3c69d4be061c9113711Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -7286,6 +8742,20 @@ define("PartnersHub.model$RL_39e4b9d56d5f803650985cef34aa5a13", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_39fb6dc5ee04c0d26b88d36ed39f3ebe", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0ba7e979e12fa40c2f5555de45482f78"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_39fb6dc5ee04c0d26b88d36ed39f3ebe extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_0ba7e979e12fa40c2f5555de45482f78;
+        }
+
+    }
+
+    PartnersHubModel.RL_39fb6dc5ee04c0d26b88d36ed39f3ebe = RL_39fb6dc5ee04c0d26b88d36ed39f3ebe;
+
+});
+
 define("PartnersHub.model$RC_3a2d986a770a9c3e6f1096b16961e5a9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_af8134183a4bd7e3eec97ada0cf46b5eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_3a2d986a770a9c3e6f1096b16961e5a9Inner extends
@@ -7327,6 +8797,92 @@ define("PartnersHub.model$RL_3a7769295a90f3ebda84fe6e535bb92a", ["exports", "@ou
 
     PartnersHubModel.RL_3a7769295a90f3ebda84fe6e535bb92a = RL_3a7769295a90f3ebda84fe6e535bb92a;
 
+});
+
+define("PartnersHub.model$RL_3a9fb32bad24cac6334039ea3a90ab41", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2ffa7d64546da67e71986ee16644bc99Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_3a9fb32bad24cac6334039ea3a90ab41 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_2ffa7d64546da67e71986ee16644bc99Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_3a9fb32bad24cac6334039ea3a90ab41 = RL_3a9fb32bad24cac6334039ea3a90ab41;
+
+});
+
+define("PartnersHub.model$RC_ee45c2d955f38571a2631cf48c22c217", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a6721f8f6846d021b1c635da9bdd2e8cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_ee45c2d955f38571a2631cf48c22c217Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("IDVDocumentAddRequest", "iDVDocumentAddRequestAttr", "IDVDocumentAddRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a6721f8f6846d021b1c635da9bdd2e8cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a6721f8f6846d021b1c635da9bdd2e8cStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_ee45c2d955f38571a2631cf48c22c217(new RC_ee45c2d955f38571a2631cf48c22c217.RecordClass({
+                    iDVDocumentAddRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_ee45c2d955f38571a2631cf48c22c217 = RC_ee45c2d955f38571a2631cf48c22c217Inner;
+
+        RC_ee45c2d955f38571a2631cf48c22c217Inner._isAnonymousRecord = true;
+        RC_ee45c2d955f38571a2631cf48c22c217Inner.UniqueId = "ee45c2d9-55f3-8571-a263-1cf48c22c217";
+        var RC_ee45c2d955f38571a2631cf48c22c217 = RC_ee45c2d955f38571a2631cf48c22c217Inner;
+        RC_ee45c2d955f38571a2631cf48c22c217.init();
+    }
+});
+
+define("PartnersHub.model$RL_3aafd554dca4ac72ea77647f2a1258e3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_ee45c2d955f38571a2631cf48c22c217"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_3aafd554dca4ac72ea77647f2a1258e3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_ee45c2d955f38571a2631cf48c22c217;
+        }
+
+    }
+
+    PartnersHubModel.RL_3aafd554dca4ac72ea77647f2a1258e3 = RL_3aafd554dca4ac72ea77647f2a1258e3;
+
+});
+
+define("PartnersHub.model$RC_3ac77d195404c60db3e99e071fb2d3f7", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_905231b0a989fd7194489d4fd56d2382Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_3ac77d195404c60db3e99e071fb2d3f7Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("MetaDatum", "metaDatumAttr", "MetaDatum", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new TestIMAPIOfficialModel.ST_905231b0a989fd7194489d4fd56d2382Structure());
+                    }, true, TestIMAPIOfficialModel.ST_905231b0a989fd7194489d4fd56d2382Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_3ac77d195404c60db3e99e071fb2d3f7(new RC_3ac77d195404c60db3e99e071fb2d3f7.RecordClass({
+                    metaDatumAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_3ac77d195404c60db3e99e071fb2d3f7 = RC_3ac77d195404c60db3e99e071fb2d3f7Inner;
+
+        RC_3ac77d195404c60db3e99e071fb2d3f7Inner._isAnonymousRecord = true;
+        RC_3ac77d195404c60db3e99e071fb2d3f7Inner.UniqueId = "3ac77d19-5404-c60d-b3e9-9e071fb2d3f7";
+        var RC_3ac77d195404c60db3e99e071fb2d3f7 = RC_3ac77d195404c60db3e99e071fb2d3f7Inner;
+        RC_3ac77d195404c60db3e99e071fb2d3f7.init();
+    }
 });
 
 define("PartnersHub.model$ST_3b8f7a9e49bbec7ed0ab55bd440bab7dStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -7426,6 +8982,49 @@ define("PartnersHub.model$RC_3c60a1846470070c1bbae2a1d22163d2", ["exports", "@ou
         var RC_3c60a1846470070c1bbae2a1d22163d2 = RC_3c60a1846470070c1bbae2a1d22163d2Inner;
         RC_3c60a1846470070c1bbae2a1d22163d2.init();
     }
+});
+
+define("PartnersHub.model$RC_7320516118aa6508370eb4c09e583c84", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0f5a50b395c52c47c6da386a52aa5b06Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7320516118aa6508370eb4c09e583c84Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("SetSettingsRequest", "setSettingsRequestAttr", "SetSettingsRequest2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_0f5a50b395c52c47c6da386a52aa5b06Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_0f5a50b395c52c47c6da386a52aa5b06Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7320516118aa6508370eb4c09e583c84(new RC_7320516118aa6508370eb4c09e583c84.RecordClass({
+                    setSettingsRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7320516118aa6508370eb4c09e583c84 = RC_7320516118aa6508370eb4c09e583c84Inner;
+
+        RC_7320516118aa6508370eb4c09e583c84Inner._isAnonymousRecord = true;
+        RC_7320516118aa6508370eb4c09e583c84Inner.UniqueId = "73205161-18aa-6508-370e-b4c09e583c84";
+        var RC_7320516118aa6508370eb4c09e583c84 = RC_7320516118aa6508370eb4c09e583c84Inner;
+        RC_7320516118aa6508370eb4c09e583c84.init();
+    }
+});
+
+define("PartnersHub.model$RL_3c898c4aa1038e5ba7cd2e3e10d93b3d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7320516118aa6508370eb4c09e583c84"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_3c898c4aa1038e5ba7cd2e3e10d93b3d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7320516118aa6508370eb4c09e583c84;
+        }
+
+    }
+
+    PartnersHubModel.RL_3c898c4aa1038e5ba7cd2e3e10d93b3d = RL_3c898c4aa1038e5ba7cd2e3e10d93b3d;
+
 });
 
 define("PartnersHub.model$RC_3c932c88487f91213472b65d598457af", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_19dadc7afbb2c1873c7b698fbb261a65EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -7657,6 +9256,49 @@ define("PartnersHub.model$RL_3ddab8163c31ef065226c1ec689ad1e9", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_3e628d7d792d29fe0a1a8c7463cb9df4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5d64f7af81bd13f79312da5e4a53a59eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_3e628d7d792d29fe0a1a8c7463cb9df4Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Account_listItem2", "account_listItem2Attr", "Account_listItem2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5d64f7af81bd13f79312da5e4a53a59eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5d64f7af81bd13f79312da5e4a53a59eStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_3e628d7d792d29fe0a1a8c7463cb9df4(new RC_3e628d7d792d29fe0a1a8c7463cb9df4.RecordClass({
+                    account_listItem2Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_3e628d7d792d29fe0a1a8c7463cb9df4 = RC_3e628d7d792d29fe0a1a8c7463cb9df4Inner;
+
+        RC_3e628d7d792d29fe0a1a8c7463cb9df4Inner._isAnonymousRecord = true;
+        RC_3e628d7d792d29fe0a1a8c7463cb9df4Inner.UniqueId = "3e628d7d-792d-29fe-0a1a-8c7463cb9df4";
+        var RC_3e628d7d792d29fe0a1a8c7463cb9df4 = RC_3e628d7d792d29fe0a1a8c7463cb9df4Inner;
+        RC_3e628d7d792d29fe0a1a8c7463cb9df4.init();
+    }
+});
+
+define("PartnersHub.model$RL_3f2ac242127a6c8f8eecade02bd1a934", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1eaff43aca523f2e537db1085abb9969Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_3f2ac242127a6c8f8eecade02bd1a934 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1eaff43aca523f2e537db1085abb9969Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_3f2ac242127a6c8f8eecade02bd1a934 = RL_3f2ac242127a6c8f8eecade02bd1a934;
+
+});
+
 define("PartnersHub.model$RC_3f4d741c30bd5473dc9c679433c442c3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2aef4efdcc8a8ad935c2f051f3051327Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_3f4d741c30bd5473dc9c679433c442c3Inner extends
@@ -7820,6 +9462,87 @@ define("PartnersHub.model$RC_4028c83435ff8f3fa19c27e5a3252dd5", ["exports", "@ou
         var RC_4028c83435ff8f3fa19c27e5a3252dd5 = RC_4028c83435ff8f3fa19c27e5a3252dd5Inner;
         RC_4028c83435ff8f3fa19c27e5a3252dd5.init();
     }
+});
+
+define("PartnersHub.model$EN_82898159ccdab210fb8345db5c607db1EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class EN_82898159ccdab210fb8345db5c607db1EntityRecordInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Id", "idAttr", "Id", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return 0;
+                    }, true),
+                    this.attr("Label", "labelAttr", "Label", true, false, OS.DataTypes.DataTypes.Text, function() {
+                        return "";
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord = EN_82898159ccdab210fb8345db5c607db1EntityRecordInner;
+
+        var EN_82898159ccdab210fb8345db5c607db1EntityRecord = EN_82898159ccdab210fb8345db5c607db1EntityRecordInner;
+        EN_82898159ccdab210fb8345db5c607db1EntityRecord.init();
+    }
+});
+
+define("PartnersHub.model$RL_40324a3c2e2105f04258d795b46f8ef0", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_82898159ccdab210fb8345db5c607db1EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_40324a3c2e2105f04258d795b46f8ef0 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_40324a3c2e2105f04258d795b46f8ef0 = RL_40324a3c2e2105f04258d795b46f8ef0;
+
+});
+
+define("PartnersHub.model$RC_403419e72476e3a47280a2d420ccc9e0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2f83f0a44c31e76c12440b162d598457Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_403419e72476e3a47280a2d420ccc9e0Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertList", "p2PAdvertListAttr", "P2PAdvertList", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_2f83f0a44c31e76c12440b162d598457Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_2f83f0a44c31e76c12440b162d598457Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_403419e72476e3a47280a2d420ccc9e0(new RC_403419e72476e3a47280a2d420ccc9e0.RecordClass({
+                    p2PAdvertListAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_403419e72476e3a47280a2d420ccc9e0 = RC_403419e72476e3a47280a2d420ccc9e0Inner;
+
+        RC_403419e72476e3a47280a2d420ccc9e0Inner._isAnonymousRecord = true;
+        RC_403419e72476e3a47280a2d420ccc9e0Inner.UniqueId = "403419e7-2476-e3a4-7280-a2d420ccc9e0";
+        var RC_403419e72476e3a47280a2d420ccc9e0 = RC_403419e72476e3a47280a2d420ccc9e0Inner;
+        RC_403419e72476e3a47280a2d420ccc9e0.init();
+    }
+});
+
+define("PartnersHub.model$RL_a08f65ffe8aa106df28c69272e328037", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_412ed7113d9105960615d1c5b5f37301Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a08f65ffe8aa106df28c69272e328037 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_a08f65ffe8aa106df28c69272e328037 = RL_a08f65ffe8aa106df28c69272e328037;
+
 });
 
 define("PartnersHub.model$RL_409d5d24f3ff15709c6eb8292127d3ba", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a61a52fb9a0db4861b8e2b8110ef16c4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -8293,6 +10016,35 @@ define("PartnersHub.model$RL_452bae0381b3504e486b471d2123e658", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_45556c10a1502a717de41a97a7e0de1e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8e422363b5a82bdaf5e61cc1198b7e5dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_45556c10a1502a717de41a97a7e0de1eInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertUpdateRequest", "p2PAdvertUpdateRequestAttr", "P2PAdvertUpdateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8e422363b5a82bdaf5e61cc1198b7e5dStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8e422363b5a82bdaf5e61cc1198b7e5dStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_45556c10a1502a717de41a97a7e0de1e(new RC_45556c10a1502a717de41a97a7e0de1e.RecordClass({
+                    p2PAdvertUpdateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_45556c10a1502a717de41a97a7e0de1e = RC_45556c10a1502a717de41a97a7e0de1eInner;
+
+        RC_45556c10a1502a717de41a97a7e0de1eInner._isAnonymousRecord = true;
+        RC_45556c10a1502a717de41a97a7e0de1eInner.UniqueId = "45556c10-a150-2a71-7de4-1a97a7e0de1e";
+        var RC_45556c10a1502a717de41a97a7e0de1e = RC_45556c10a1502a717de41a97a7e0de1eInner;
+        RC_45556c10a1502a717de41a97a7e0de1e.init();
+    }
+});
+
 define("PartnersHub.model$RL_4560e1bdd8720efa62ee48a72be4b7d0", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_493b76e80f7e7874bfdae0a32005bfd8EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_4560e1bdd8720efa62ee48a72be4b7d0 extends
@@ -8492,15 +10244,58 @@ define("PartnersHub.model$RL_478659cf4d50eb426ae425e9399ed35f", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_9bd05b4ddb4909b9d4caa679f6e81971", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_a7c2d4fb0a81e8416c70379886c39274Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_99e19ace3996a5f3b75ca1e86886d33d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1427747d29628e6a194ee75a554479e4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_99e19ace3996a5f3b75ca1e86886d33dInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("From", "fromAttr", "From", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_1427747d29628e6a194ee75a554479e4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_1427747d29628e6a194ee75a554479e4Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_99e19ace3996a5f3b75ca1e86886d33d(new RC_99e19ace3996a5f3b75ca1e86886d33d.RecordClass({
+                    fromAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_99e19ace3996a5f3b75ca1e86886d33d = RC_99e19ace3996a5f3b75ca1e86886d33dInner;
+
+        RC_99e19ace3996a5f3b75ca1e86886d33dInner._isAnonymousRecord = true;
+        RC_99e19ace3996a5f3b75ca1e86886d33dInner.UniqueId = "99e19ace-3996-a5f3-b75c-a1e86886d33d";
+        var RC_99e19ace3996a5f3b75ca1e86886d33d = RC_99e19ace3996a5f3b75ca1e86886d33dInner;
+        RC_99e19ace3996a5f3b75ca1e86886d33d.init();
+    }
+});
+
+define("PartnersHub.model$RL_47976f4a0ffd4defdfe43b4b464cb87c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_99e19ace3996a5f3b75ca1e86886d33d"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_47976f4a0ffd4defdfe43b4b464cb87c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_99e19ace3996a5f3b75ca1e86886d33d;
+        }
+
+    }
+
+    PartnersHubModel.RL_47976f4a0ffd4defdfe43b4b464cb87c = RL_47976f4a0ffd4defdfe43b4b464cb87c;
+
+});
+
+define("PartnersHub.model$RC_9bd05b4ddb4909b9d4caa679f6e81971", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_a7c2d4fb0a81e8416c70379886c39274Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_9bd05b4ddb4909b9d4caa679f6e81971Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Channel", "channelAttr", "Channel", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_a7c2d4fb0a81e8416c70379886c39274Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -8532,6 +10327,49 @@ define("PartnersHub.model$RL_47e7c934a3575d224a082efe32355ab7", ["exports", "@ou
     }
 
     PartnersHubModel.RL_47e7c934a3575d224a082efe32355ab7 = RL_47e7c934a3575d224a082efe32355ab7;
+
+});
+
+define("PartnersHub.model$RC_5df5d94c6805d6c959ffb69a06f0b3f5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e9841f58336063558acf37c980346e02Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5df5d94c6805d6c959ffb69a06f0b3f5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderReviewRequest", "p2POrderReviewRequestAttr", "P2POrderReviewRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_e9841f58336063558acf37c980346e02Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_e9841f58336063558acf37c980346e02Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5df5d94c6805d6c959ffb69a06f0b3f5(new RC_5df5d94c6805d6c959ffb69a06f0b3f5.RecordClass({
+                    p2POrderReviewRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5df5d94c6805d6c959ffb69a06f0b3f5 = RC_5df5d94c6805d6c959ffb69a06f0b3f5Inner;
+
+        RC_5df5d94c6805d6c959ffb69a06f0b3f5Inner._isAnonymousRecord = true;
+        RC_5df5d94c6805d6c959ffb69a06f0b3f5Inner.UniqueId = "5df5d94c-6805-d6c9-59ff-b69a06f0b3f5";
+        var RC_5df5d94c6805d6c959ffb69a06f0b3f5 = RC_5df5d94c6805d6c959ffb69a06f0b3f5Inner;
+        RC_5df5d94c6805d6c959ffb69a06f0b3f5.init();
+    }
+});
+
+define("PartnersHub.model$RL_48101f5eb21d918bcd9ac61785b18853", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5df5d94c6805d6c959ffb69a06f0b3f5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_48101f5eb21d918bcd9ac61785b18853 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5df5d94c6805d6c959ffb69a06f0b3f5;
+        }
+
+    }
+
+    PartnersHubModel.RL_48101f5eb21d918bcd9ac61785b18853 = RL_48101f5eb21d918bcd9ac61785b18853;
 
 });
 
@@ -8677,6 +10515,35 @@ define("PartnersHub.model$RL_4887faff529164a4e041bdf0dc5e469f", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_4930d0ff5274fa4a3e2b1c3a57449104", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_370fde1db6758aa39a364a98c4d26988Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_4930d0ff5274fa4a3e2b1c3a57449104Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PSettingsResponse", "p2PSettingsResponseAttr", "P2PSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_370fde1db6758aa39a364a98c4d26988Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_370fde1db6758aa39a364a98c4d26988Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_4930d0ff5274fa4a3e2b1c3a57449104(new RC_4930d0ff5274fa4a3e2b1c3a57449104.RecordClass({
+                    p2PSettingsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_4930d0ff5274fa4a3e2b1c3a57449104 = RC_4930d0ff5274fa4a3e2b1c3a57449104Inner;
+
+        RC_4930d0ff5274fa4a3e2b1c3a57449104Inner._isAnonymousRecord = true;
+        RC_4930d0ff5274fa4a3e2b1c3a57449104Inner.UniqueId = "4930d0ff-5274-fa4a-3e2b-1c3a57449104";
+        var RC_4930d0ff5274fa4a3e2b1c3a57449104 = RC_4930d0ff5274fa4a3e2b1c3a57449104Inner;
+        RC_4930d0ff5274fa4a3e2b1c3a57449104.init();
+    }
+});
+
 define("PartnersHub.model$RC_8349a704d7e4597909befcd4d12d85b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_091b86786925fd05b892541280481403Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_8349a704d7e4597909befcd4d12d85b4Inner extends
@@ -8807,6 +10674,20 @@ define("PartnersHub.model$RL_49ba78cb9111e83f5bd1ecd3c61747f9", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_49ccc40ded7b810643f52a486f4c18ba", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0a9739b2dd1c62d5697ead34293597d7"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_49ccc40ded7b810643f52a486f4c18ba extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_0a9739b2dd1c62d5697ead34293597d7;
+        }
+
+    }
+
+    PartnersHubModel.RL_49ccc40ded7b810643f52a486f4c18ba = RL_49ccc40ded7b810643f52a486f4c18ba;
+
+});
+
 define("PartnersHub.model$RC_4a76c214f34feb841d0c1a2d8cdbec01", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_35e76a2e1583feb611523ac6c760c8a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_4a76c214f34feb841d0c1a2d8cdbec01Inner extends
@@ -8934,6 +10815,77 @@ define("PartnersHub.model$RL_4bd1ca73c8c35254341b3530fb617e19", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_7d0a8f3e72f741cb81d594cb23f74bb3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_82898159ccdab210fb8345db5c607db1EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7d0a8f3e72f741cb81d594cb23f74bb3Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Environment", "environmentAttr", "Environment", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord());
+                    }, true, PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7d0a8f3e72f741cb81d594cb23f74bb3(new RC_7d0a8f3e72f741cb81d594cb23f74bb3.RecordClass({
+                    environmentAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7d0a8f3e72f741cb81d594cb23f74bb3 = RC_7d0a8f3e72f741cb81d594cb23f74bb3Inner;
+
+        RC_7d0a8f3e72f741cb81d594cb23f74bb3Inner._isAnonymousRecord = true;
+        RC_7d0a8f3e72f741cb81d594cb23f74bb3Inner.UniqueId = "7d0a8f3e-72f7-41cb-81d5-94cb23f74bb3";
+        var RC_7d0a8f3e72f741cb81d594cb23f74bb3 = RC_7d0a8f3e72f741cb81d594cb23f74bb3Inner;
+        RC_7d0a8f3e72f741cb81d594cb23f74bb3.init();
+    }
+});
+
+define("PartnersHub.model$RL_4c4f9dfe31d26c984c0680105f712e1e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7d0a8f3e72f741cb81d594cb23f74bb3"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4c4f9dfe31d26c984c0680105f712e1e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7d0a8f3e72f741cb81d594cb23f74bb3;
+        }
+
+    }
+
+    PartnersHubModel.RL_4c4f9dfe31d26c984c0680105f712e1e = RL_4c4f9dfe31d26c984c0680105f712e1e;
+
+});
+
+define("PartnersHub.model$RL_4c5b6856a65560f6ccabf921a762250b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4c5b6856a65560f6ccabf921a762250b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_4c5b6856a65560f6ccabf921a762250b = RL_4c5b6856a65560f6ccabf921a762250b;
+
+});
+
+define("PartnersHub.model$RL_4cb4fe0818ecc772f4186b3d75c995e2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_aaf5fb010d4587166eb3dd80473d736dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4cb4fe0818ecc772f4186b3d75c995e2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_aaf5fb010d4587166eb3dd80473d736dStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_4cb4fe0818ecc772f4186b3d75c995e2 = RL_4cb4fe0818ecc772f4186b3d75c995e2;
+
+});
+
 define("PartnersHub.model$RL_4d556c695c13b2c308f888cfb68cea19", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_ba5b17ae5b3fdd9318ea2b4cf18c7d4dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_4d556c695c13b2c308f888cfb68cea19 extends
@@ -8991,15 +10943,44 @@ define("PartnersHub.model$RL_4d7b8cbd6dab38c9cb08786f22d0d9cb", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_4e0347af69e49e93f28b4b0de4bcad85", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_074de63327cc6281abd591a06ac7a3ebStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_4d9da0dd82676f0a214b72ed70ed22f4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5c66d0ce00d79562a27920db6fb2bbf3Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_4d9da0dd82676f0a214b72ed70ed22f4Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertUpdateResponse", "p2PAdvertUpdateResponseAttr", "P2PAdvertUpdateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5c66d0ce00d79562a27920db6fb2bbf3Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5c66d0ce00d79562a27920db6fb2bbf3Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_4d9da0dd82676f0a214b72ed70ed22f4(new RC_4d9da0dd82676f0a214b72ed70ed22f4.RecordClass({
+                    p2PAdvertUpdateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_4d9da0dd82676f0a214b72ed70ed22f4 = RC_4d9da0dd82676f0a214b72ed70ed22f4Inner;
+
+        RC_4d9da0dd82676f0a214b72ed70ed22f4Inner._isAnonymousRecord = true;
+        RC_4d9da0dd82676f0a214b72ed70ed22f4Inner.UniqueId = "4d9da0dd-8267-6f0a-214b-72ed70ed22f4";
+        var RC_4d9da0dd82676f0a214b72ed70ed22f4 = RC_4d9da0dd82676f0a214b72ed70ed22f4Inner;
+        RC_4d9da0dd82676f0a214b72ed70ed22f4.init();
+    }
+});
+
+define("PartnersHub.model$RC_4e0347af69e49e93f28b4b0de4bcad85", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_074de63327cc6281abd591a06ac7a3ebStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_4e0347af69e49e93f28b4b0de4bcad85Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("ReleaseFrontendRequest", "releaseFrontendRequestAttr", "ReleaseFrontendRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_074de63327cc6281abd591a06ac7a3ebStructure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_074de63327cc6281abd591a06ac7a3ebStructure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_074de63327cc6281abd591a06ac7a3ebStructure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_074de63327cc6281abd591a06ac7a3ebStructure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -9018,6 +10999,49 @@ define("PartnersHub.model$RC_4e0347af69e49e93f28b4b0de4bcad85", ["exports", "@ou
         var RC_4e0347af69e49e93f28b4b0de4bcad85 = RC_4e0347af69e49e93f28b4b0de4bcad85Inner;
         RC_4e0347af69e49e93f28b4b0de4bcad85.init();
     }
+});
+
+define("PartnersHub.model$RC_e68e51e706a401748c061e6ee756eb05", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c4bad47c2be3dee614048e4005e9f85dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_e68e51e706a401748c061e6ee756eb05Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderCancelResponse", "p2POrderCancelResponseAttr", "P2POrderCancelResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c4bad47c2be3dee614048e4005e9f85dStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c4bad47c2be3dee614048e4005e9f85dStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_e68e51e706a401748c061e6ee756eb05(new RC_e68e51e706a401748c061e6ee756eb05.RecordClass({
+                    p2POrderCancelResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_e68e51e706a401748c061e6ee756eb05 = RC_e68e51e706a401748c061e6ee756eb05Inner;
+
+        RC_e68e51e706a401748c061e6ee756eb05Inner._isAnonymousRecord = true;
+        RC_e68e51e706a401748c061e6ee756eb05Inner.UniqueId = "e68e51e7-06a4-0174-8c06-1e6ee756eb05";
+        var RC_e68e51e706a401748c061e6ee756eb05 = RC_e68e51e706a401748c061e6ee756eb05Inner;
+        RC_e68e51e706a401748c061e6ee756eb05.init();
+    }
+});
+
+define("PartnersHub.model$RL_4e3b331f6df36e10312e1d92651799b7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_e68e51e706a401748c061e6ee756eb05"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4e3b331f6df36e10312e1d92651799b7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_e68e51e706a401748c061e6ee756eb05;
+        }
+
+    }
+
+    PartnersHubModel.RL_4e3b331f6df36e10312e1d92651799b7 = RL_4e3b331f6df36e10312e1d92651799b7;
+
 });
 
 define("PartnersHub.model$RL_4e4931d865c8789e9e6ef1d8540ae228", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$StartResetPasswordResultRec", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
@@ -9077,6 +11101,20 @@ define("PartnersHub.model$RL_4e7296c1aceb3bd3dd9793888e254d07", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_4e8f077e202afd0a501d7855e9111a4f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_2058a904a5af740307bc28a7bafc955c"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4e8f077e202afd0a501d7855e9111a4f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_2058a904a5af740307bc28a7bafc955c;
+        }
+
+    }
+
+    PartnersHubModel.RL_4e8f077e202afd0a501d7855e9111a4f = RL_4e8f077e202afd0a501d7855e9111a4f;
+
+});
+
 define("PartnersHub.model$RL_4e941b17c99d61ac0f67eb4722e53670", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_127d33c3734e3f0cecd53087584e156c"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_4e941b17c99d61ac0f67eb4722e53670 extends
@@ -9088,6 +11126,76 @@ define("PartnersHub.model$RL_4e941b17c99d61ac0f67eb4722e53670", ["exports", "@ou
     }
 
     PartnersHubModel.RL_4e941b17c99d61ac0f67eb4722e53670 = RL_4e941b17c99d61ac0f67eb4722e53670;
+
+});
+
+define("PartnersHub.model$ST_b779d4afe9996707919e755f24a47b3cStructure", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class ST_b779d4afe9996707919e755f24a47b3cStructureInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("CountNumber", "countNumberAttr", "CountNumber", false, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return 0;
+                    }, true)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new ST_b779d4afe9996707919e755f24a47b3cStructure(new ST_b779d4afe9996707919e755f24a47b3cStructure.RecordClass({
+                    countNumberAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.ST_b779d4afe9996707919e755f24a47b3cStructure = ST_b779d4afe9996707919e755f24a47b3cStructureInner;
+
+        var ST_b779d4afe9996707919e755f24a47b3cStructure = ST_b779d4afe9996707919e755f24a47b3cStructureInner;
+        ST_b779d4afe9996707919e755f24a47b3cStructure.init();
+    }
+});
+
+define("PartnersHub.model$RC_4ea59a8d94c1abfcd6a0c16b78f8dd53", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_b779d4afe9996707919e755f24a47b3cStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_4ea59a8d94c1abfcd6a0c16b78f8dd53Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Count", "countAttr", "Count", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_b779d4afe9996707919e755f24a47b3cStructure());
+                    }, true, PartnersHubModel.ST_b779d4afe9996707919e755f24a47b3cStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_4ea59a8d94c1abfcd6a0c16b78f8dd53(new RC_4ea59a8d94c1abfcd6a0c16b78f8dd53.RecordClass({
+                    countAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_4ea59a8d94c1abfcd6a0c16b78f8dd53 = RC_4ea59a8d94c1abfcd6a0c16b78f8dd53Inner;
+
+        RC_4ea59a8d94c1abfcd6a0c16b78f8dd53Inner._isAnonymousRecord = true;
+        RC_4ea59a8d94c1abfcd6a0c16b78f8dd53Inner.UniqueId = "4ea59a8d-94c1-abfc-d6a0-c16b78f8dd53";
+        var RC_4ea59a8d94c1abfcd6a0c16b78f8dd53 = RC_4ea59a8d94c1abfcd6a0c16b78f8dd53Inner;
+        RC_4ea59a8d94c1abfcd6a0c16b78f8dd53.init();
+    }
+});
+
+define("PartnersHub.model$RL_4eaa50c04057336ddc344ca84d0b7464", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_905231b0a989fd7194489d4fd56d2382Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_4eaa50c04057336ddc344ca84d0b7464 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return TestIMAPIOfficialModel.ST_905231b0a989fd7194489d4fd56d2382Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_4eaa50c04057336ddc344ca84d0b7464 = RL_4eaa50c04057336ddc344ca84d0b7464;
 
 });
 
@@ -9103,6 +11211,35 @@ define("PartnersHub.model$RL_4f6dde27a1d6ecd82e9d6a4d041d32f3", ["exports", "@ou
 
     PartnersHubModel.RL_4f6dde27a1d6ecd82e9d6a4d041d32f3 = RL_4f6dde27a1d6ecd82e9d6a4d041d32f3;
 
+});
+
+define("PartnersHub.model$RC_4f8f859a92cdf3a7b0ae8abf2e183a70", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_776bbd191df189ae2b5f20c613dc695aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_4f8f859a92cdf3a7b0ae8abf2e183a70Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("NotificationEventRequest", "notificationEventRequestAttr", "NotificationEventRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_776bbd191df189ae2b5f20c613dc695aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_776bbd191df189ae2b5f20c613dc695aStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_4f8f859a92cdf3a7b0ae8abf2e183a70(new RC_4f8f859a92cdf3a7b0ae8abf2e183a70.RecordClass({
+                    notificationEventRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_4f8f859a92cdf3a7b0ae8abf2e183a70 = RC_4f8f859a92cdf3a7b0ae8abf2e183a70Inner;
+
+        RC_4f8f859a92cdf3a7b0ae8abf2e183a70Inner._isAnonymousRecord = true;
+        RC_4f8f859a92cdf3a7b0ae8abf2e183a70Inner.UniqueId = "4f8f859a-92cd-f3a7-b0ae-8abf2e183a70";
+        var RC_4f8f859a92cdf3a7b0ae8abf2e183a70 = RC_4f8f859a92cdf3a7b0ae8abf2e183a70Inner;
+        RC_4f8f859a92cdf3a7b0ae8abf2e183a70.init();
+    }
 });
 
 define("PartnersHub.model$RL_4f9f1230897f0a3e8b129024e1de623d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_6669f981cb8653c55787de44bdd42a18Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -9205,18 +11342,47 @@ define("PartnersHub.model$RL_4feb2fb00f9cd7e5ee8abc58513e6f4d", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_4ffd9ff6b5fa667b88d79ba8f3c6640e", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_92400cc7724ed583cb86d67e1fc7e7c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_4ffd9ff6b5fa667b88d79ba8f3c6640e", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_92400cc7724ed583cb86d67e1fc7e7c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_4ffd9ff6b5fa667b88d79ba8f3c6640e extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure;
+            return ReleaseSlackIntegrationOfficialModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure;
         }
 
     }
 
     PartnersHubModel.RL_4ffd9ff6b5fa667b88d79ba8f3c6640e = RL_4ffd9ff6b5fa667b88d79ba8f3c6640e;
 
+});
+
+define("PartnersHub.model$RC_5008dcf56519ca45fe79000670b8bfe1", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5008dcf56519ca45fe79000670b8bfe1Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("CFDCommissionsPasswordErrors", "cFDCommissionsPasswordErrorsAttr", "CFDCommissionsPasswordErrors", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure());
+                    }, true, PartnersHubModel.ST_0314d78ca6806dcc3e7ca8803a68ff6aStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5008dcf56519ca45fe79000670b8bfe1(new RC_5008dcf56519ca45fe79000670b8bfe1.RecordClass({
+                    cFDCommissionsPasswordErrorsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5008dcf56519ca45fe79000670b8bfe1 = RC_5008dcf56519ca45fe79000670b8bfe1Inner;
+
+        RC_5008dcf56519ca45fe79000670b8bfe1Inner._isAnonymousRecord = true;
+        RC_5008dcf56519ca45fe79000670b8bfe1Inner.UniqueId = "5008dcf5-6519-ca45-fe79-000670b8bfe1";
+        var RC_5008dcf56519ca45fe79000670b8bfe1 = RC_5008dcf56519ca45fe79000670b8bfe1Inner;
+        RC_5008dcf56519ca45fe79000670b8bfe1.init();
+    }
 });
 
 define("PartnersHub.model$RL_508855d25108765122be317d42e36c82", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_349094d98d9594831ba9e5194411246fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -9360,6 +11526,35 @@ define("PartnersHub.model$RL_51cb6ee93d723ed4d67f527a1090ade3", ["exports", "@ou
 
     PartnersHubModel.RL_51cb6ee93d723ed4d67f527a1090ade3 = RL_51cb6ee93d723ed4d67f527a1090ade3;
 
+});
+
+define("PartnersHub.model$RC_5241236a152a2af51c043097ec227ddd", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_0cbd27f3f37d67634546c1cc70cd2310Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5241236a152a2af51c043097ec227dddInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("PostPlanRunResponse", "postPlanRunResponseAttr", "PostPlanRunResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new TestIMAPIOfficialModel.ST_0cbd27f3f37d67634546c1cc70cd2310Structure());
+                    }, true, TestIMAPIOfficialModel.ST_0cbd27f3f37d67634546c1cc70cd2310Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5241236a152a2af51c043097ec227ddd(new RC_5241236a152a2af51c043097ec227ddd.RecordClass({
+                    postPlanRunResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5241236a152a2af51c043097ec227ddd = RC_5241236a152a2af51c043097ec227dddInner;
+
+        RC_5241236a152a2af51c043097ec227dddInner._isAnonymousRecord = true;
+        RC_5241236a152a2af51c043097ec227dddInner.UniqueId = "5241236a-152a-2af5-1c04-3097ec227ddd";
+        var RC_5241236a152a2af51c043097ec227ddd = RC_5241236a152a2af51c043097ec227dddInner;
+        RC_5241236a152a2af51c043097ec227ddd.init();
+    }
 });
 
 define("PartnersHub.model$RL_52a96e0500b1d6d23d93e10409e37890", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$ST_9498db02a236485a96a27db0bd61b81eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -9631,6 +11826,20 @@ define("PartnersHub.model$RL_545c5578385333732449204f3e942ed0", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_546e1909ff09813803e242c5d08fbfa6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_eaa015e1f32bcbf45e00f7d814d7249aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_546e1909ff09813803e242c5d08fbfa6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_eaa015e1f32bcbf45e00f7d814d7249aStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_546e1909ff09813803e242c5d08fbfa6 = RL_546e1909ff09813803e242c5d08fbfa6;
+
+});
+
 define("PartnersHub.model$RL_549974f3b4457a3de60891ae7d23d2bc", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_d11562be18a7e40ca777aa336c946163EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_549974f3b4457a3de60891ae7d23d2bc extends
@@ -9657,6 +11866,35 @@ define("PartnersHub.model$RL_54fab648630d41e343fad35c1143481d", ["exports", "@ou
 
     PartnersHubModel.RL_54fab648630d41e343fad35c1143481d = RL_54fab648630d41e343fad35c1143481d;
 
+});
+
+define("PartnersHub.model$RC_5556936b52292543d97d2fca85735389", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7db1e9bcd0fe59811889d8b408745096Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5556936b52292543d97d2fca85735389Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderCreateResponse", "p2POrderCreateResponseAttr", "P2POrderCreateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_7db1e9bcd0fe59811889d8b408745096Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_7db1e9bcd0fe59811889d8b408745096Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5556936b52292543d97d2fca85735389(new RC_5556936b52292543d97d2fca85735389.RecordClass({
+                    p2POrderCreateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5556936b52292543d97d2fca85735389 = RC_5556936b52292543d97d2fca85735389Inner;
+
+        RC_5556936b52292543d97d2fca85735389Inner._isAnonymousRecord = true;
+        RC_5556936b52292543d97d2fca85735389Inner.UniqueId = "5556936b-5229-2543-d97d-2fca85735389";
+        var RC_5556936b52292543d97d2fca85735389 = RC_5556936b52292543d97d2fca85735389Inner;
+        RC_5556936b52292543d97d2fca85735389.init();
+    }
 });
 
 define("PartnersHub.model$EN_8d1d70f3958628cc0e50b9bd4f5961e8EntityRecord", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -9716,6 +11954,20 @@ define("PartnersHub.model$RC_555c492e2e3caa25ad7cb968c9ec957a", ["exports", "@ou
         var RC_555c492e2e3caa25ad7cb968c9ec957a = RC_555c492e2e3caa25ad7cb968c9ec957aInner;
         RC_555c492e2e3caa25ad7cb968c9ec957a.init();
     }
+});
+
+define("PartnersHub.model$RL_556e855874a9b6c53a4ae07106497cfa", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_18ad6961998d53ee63bc4d04b91a9152Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_556e855874a9b6c53a4ae07106497cfa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_18ad6961998d53ee63bc4d04b91a9152Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_556e855874a9b6c53a4ae07106497cfa = RL_556e855874a9b6c53a4ae07106497cfa;
+
 });
 
 define("PartnersHub.model$RL_55e12cf788c1bd3aa183436567f86c54", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$EN_0c0b103cba961483054afffbc30b3066EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
@@ -9787,6 +12039,49 @@ define("PartnersHub.model$RC_56805fdef6332e01f13c0f9217357dbc", ["exports", "@ou
         var RC_56805fdef6332e01f13c0f9217357dbc = RC_56805fdef6332e01f13c0f9217357dbcInner;
         RC_56805fdef6332e01f13c0f9217357dbc.init();
     }
+});
+
+define("PartnersHub.model$RC_7a7f4e3a127348469560ba4d7074c0f9", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_ea8a5b552e6867ec254c90e9d858cc93Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7a7f4e3a127348469560ba4d7074c0f9Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TestPlanItem", "testPlanItemAttr", "TestPlanItem", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new TestIMAPIOfficialModel.ST_ea8a5b552e6867ec254c90e9d858cc93Structure());
+                    }, true, TestIMAPIOfficialModel.ST_ea8a5b552e6867ec254c90e9d858cc93Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7a7f4e3a127348469560ba4d7074c0f9(new RC_7a7f4e3a127348469560ba4d7074c0f9.RecordClass({
+                    testPlanItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7a7f4e3a127348469560ba4d7074c0f9 = RC_7a7f4e3a127348469560ba4d7074c0f9Inner;
+
+        RC_7a7f4e3a127348469560ba4d7074c0f9Inner._isAnonymousRecord = true;
+        RC_7a7f4e3a127348469560ba4d7074c0f9Inner.UniqueId = "7a7f4e3a-1273-4846-9560-ba4d7074c0f9";
+        var RC_7a7f4e3a127348469560ba4d7074c0f9 = RC_7a7f4e3a127348469560ba4d7074c0f9Inner;
+        RC_7a7f4e3a127348469560ba4d7074c0f9.init();
+    }
+});
+
+define("PartnersHub.model$RL_56c1f4a22ef29f366042d0c186fb36fa", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7a7f4e3a127348469560ba4d7074c0f9"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_56c1f4a22ef29f366042d0c186fb36fa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7a7f4e3a127348469560ba4d7074c0f9;
+        }
+
+    }
+
+    PartnersHubModel.RL_56c1f4a22ef29f366042d0c186fb36fa = RL_56c1f4a22ef29f366042d0c186fb36fa;
+
 });
 
 define("PartnersHub.model$RC_56c6ce1b0108db2c43eb2e512b9aa7da", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d331548db274235fee458e1a8f950858Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -10054,6 +12349,20 @@ define("PartnersHub.model$EN_5a50b1207c66825bfc9e9688dde972baEntityRecord", ["ex
         var EN_5a50b1207c66825bfc9e9688dde972baEntityRecord = EN_5a50b1207c66825bfc9e9688dde972baEntityRecordInner;
         EN_5a50b1207c66825bfc9e9688dde972baEntityRecord.init();
     }
+});
+
+define("PartnersHub.model$RL_5ad725bb1f834f208aba441411dfb7ce", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1402e2338dff154debadf7b72803a581Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_5ad725bb1f834f208aba441411dfb7ce extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1402e2338dff154debadf7b72803a581Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_5ad725bb1f834f208aba441411dfb7ce = RL_5ad725bb1f834f208aba441411dfb7ce;
+
 });
 
 define("PartnersHub.model$RL_5b03fcb846a256a3a783d07598b5a229", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_399208286269e79288e632f4faf899e3"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -10354,6 +12663,78 @@ define("PartnersHub.model$RL_5ba41fd2555db2daaba8da89df34a9b8", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_905d697600d1c54d4a695286706965fc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_857e70f98678e5b68f53de5829bd685aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_905d697600d1c54d4a695286706965fcInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("StatementResponse", "statementResponseAttr", "StatementResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_857e70f98678e5b68f53de5829bd685aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_857e70f98678e5b68f53de5829bd685aStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_905d697600d1c54d4a695286706965fc(new RC_905d697600d1c54d4a695286706965fc.RecordClass({
+                    statementResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_905d697600d1c54d4a695286706965fc = RC_905d697600d1c54d4a695286706965fcInner;
+
+        RC_905d697600d1c54d4a695286706965fcInner._isAnonymousRecord = true;
+        RC_905d697600d1c54d4a695286706965fcInner.UniqueId = "905d6976-00d1-c54d-4a69-5286706965fc";
+        var RC_905d697600d1c54d4a695286706965fc = RC_905d697600d1c54d4a695286706965fcInner;
+        RC_905d697600d1c54d4a695286706965fc.init();
+    }
+});
+
+define("PartnersHub.model$RL_5c7e4c6a39ce75c4706471fcf0bc97b4", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_905d697600d1c54d4a695286706965fc"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_5c7e4c6a39ce75c4706471fcf0bc97b4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_905d697600d1c54d4a695286706965fc;
+        }
+
+    }
+
+    PartnersHubModel.RL_5c7e4c6a39ce75c4706471fcf0bc97b4 = RL_5c7e4c6a39ce75c4706471fcf0bc97b4;
+
+});
+
+define("PartnersHub.model$RC_5cf1b34ed2ad7e7e10f9b1f73ac14122", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c0ab917f51608bd071ade39beb7d22faStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_5cf1b34ed2ad7e7e10f9b1f73ac14122Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertCreate", "p2PAdvertCreateAttr", "P2PAdvertCreate", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c0ab917f51608bd071ade39beb7d22faStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c0ab917f51608bd071ade39beb7d22faStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_5cf1b34ed2ad7e7e10f9b1f73ac14122(new RC_5cf1b34ed2ad7e7e10f9b1f73ac14122.RecordClass({
+                    p2PAdvertCreateAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_5cf1b34ed2ad7e7e10f9b1f73ac14122 = RC_5cf1b34ed2ad7e7e10f9b1f73ac14122Inner;
+
+        RC_5cf1b34ed2ad7e7e10f9b1f73ac14122Inner._isAnonymousRecord = true;
+        RC_5cf1b34ed2ad7e7e10f9b1f73ac14122Inner.UniqueId = "5cf1b34e-d2ad-7e7e-10f9-b1f73ac14122";
+        var RC_5cf1b34ed2ad7e7e10f9b1f73ac14122 = RC_5cf1b34ed2ad7e7e10f9b1f73ac14122Inner;
+        RC_5cf1b34ed2ad7e7e10f9b1f73ac14122.init();
+    }
+});
+
 define("PartnersHub.model$RC_5d4c0a98b9773e489e7e27bfe5360793", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$UpdateUserFailureReasonRec", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_5d4c0a98b9773e489e7e27bfe5360793Inner extends
@@ -10408,6 +12789,20 @@ define("PartnersHub.model$RL_5db208bc12424f6e7604bf538be9d9a9", ["exports", "@ou
     }
 
     PartnersHubModel.RL_5db208bc12424f6e7604bf538be9d9a9 = RL_5db208bc12424f6e7604bf538be9d9a9;
+
+});
+
+define("PartnersHub.model$RL_5e5ec69271e920fb7cafebfca681f7d6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5704bf4b81a79ea92b14c563cc98154bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_5e5ec69271e920fb7cafebfca681f7d6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_5704bf4b81a79ea92b14c563cc98154bStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_5e5ec69271e920fb7cafebfca681f7d6 = RL_5e5ec69271e920fb7cafebfca681f7d6;
 
 });
 
@@ -10479,6 +12874,77 @@ define("PartnersHub.model$RL_5fc243903ae10beb07a4a2c827ee50d1", ["exports", "@ou
     }
 
     PartnersHubModel.RL_5fc243903ae10beb07a4a2c827ee50d1 = RL_5fc243903ae10beb07a4a2c827ee50d1;
+
+});
+
+define("PartnersHub.model$RL_602374ca64bbf9e26533dca6775aa750", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_dd93278b2756b05a5d284868241cc3d7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_602374ca64bbf9e26533dca6775aa750 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_dd93278b2756b05a5d284868241cc3d7Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_602374ca64bbf9e26533dca6775aa750 = RL_602374ca64bbf9e26533dca6775aa750;
+
+});
+
+define("PartnersHub.model$RL_60aa1ccd6c64fd81d5fcb96f2a83dfd1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_417bf9c3f6ce648dc8e6f005a5b6ba26Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_60aa1ccd6c64fd81d5fcb96f2a83dfd1 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_417bf9c3f6ce648dc8e6f005a5b6ba26Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_60aa1ccd6c64fd81d5fcb96f2a83dfd1 = RL_60aa1ccd6c64fd81d5fcb96f2a83dfd1;
+
+});
+
+define("PartnersHub.model$RC_c3c26ecaf28f4142ec61613a2af66795", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_417bf9c3f6ce648dc8e6f005a5b6ba26Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c3c26ecaf28f4142ec61613a2af66795Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserRelationsResponse", "p2PAdvertiserRelationsResponseAttr", "P2PAdvertiserRelationsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_417bf9c3f6ce648dc8e6f005a5b6ba26Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_417bf9c3f6ce648dc8e6f005a5b6ba26Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c3c26ecaf28f4142ec61613a2af66795(new RC_c3c26ecaf28f4142ec61613a2af66795.RecordClass({
+                    p2PAdvertiserRelationsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_c3c26ecaf28f4142ec61613a2af66795 = RC_c3c26ecaf28f4142ec61613a2af66795Inner;
+
+        RC_c3c26ecaf28f4142ec61613a2af66795Inner._isAnonymousRecord = true;
+        RC_c3c26ecaf28f4142ec61613a2af66795Inner.UniqueId = "c3c26eca-f28f-4142-ec61-613a2af66795";
+        var RC_c3c26ecaf28f4142ec61613a2af66795 = RC_c3c26ecaf28f4142ec61613a2af66795Inner;
+        RC_c3c26ecaf28f4142ec61613a2af66795.init();
+    }
+});
+
+define("PartnersHub.model$RL_60cd4e292ea47ae7340affa43c25fbca", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_c3c26ecaf28f4142ec61613a2af66795"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_60cd4e292ea47ae7340affa43c25fbca extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_c3c26ecaf28f4142ec61613a2af66795;
+        }
+
+    }
+
+    PartnersHubModel.RL_60cd4e292ea47ae7340affa43c25fbca = RL_60cd4e292ea47ae7340affa43c25fbca;
 
 });
 
@@ -10639,6 +13105,20 @@ define("PartnersHub.model$RC_623a04a7e1c688b7ec133f2b7ca28f8e", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_62713af495cafb0f42fc60b0b962185a", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_7710952ed757fea535b17cc3f62e943cEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_62713af495cafb0f42fc60b0b962185a extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_7710952ed757fea535b17cc3f62e943cEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_62713af495cafb0f42fc60b0b962185a = RL_62713af495cafb0f42fc60b0b962185a;
+
+});
+
 define("PartnersHub.model$RL_62db41b41dbf507c50e0bafe4d455ef4", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_03619642a06de09478f0b8f506c364eb"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_62db41b41dbf507c50e0bafe4d455ef4 extends
@@ -10681,15 +13161,87 @@ define("PartnersHub.model$RL_63c0d280fae1c76c130bb4eaa6325fae", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_645e6d99c62950d533c673c938aae9c2", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_92400cc7724ed583cb86d67e1fc7e7c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_642aabe85fdb3eb2ce28228a997dfa13", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_870a57499f5823024d83cfe455822b86Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_642aabe85fdb3eb2ce28228a997dfa13Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Authorize3", "authorize3Attr", "Authorize3", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_870a57499f5823024d83cfe455822b86Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_870a57499f5823024d83cfe455822b86Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_642aabe85fdb3eb2ce28228a997dfa13(new RC_642aabe85fdb3eb2ce28228a997dfa13.RecordClass({
+                    authorize3Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_642aabe85fdb3eb2ce28228a997dfa13 = RC_642aabe85fdb3eb2ce28228a997dfa13Inner;
+
+        RC_642aabe85fdb3eb2ce28228a997dfa13Inner._isAnonymousRecord = true;
+        RC_642aabe85fdb3eb2ce28228a997dfa13Inner.UniqueId = "642aabe8-5fdb-3eb2-ce28-228a997dfa13";
+        var RC_642aabe85fdb3eb2ce28228a997dfa13 = RC_642aabe85fdb3eb2ce28228a997dfa13Inner;
+        RC_642aabe85fdb3eb2ce28228a997dfa13.init();
+    }
+});
+
+define("PartnersHub.model$RC_c31db94f669afbd2940e333d10b15caf", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c31db94f669afbd2940e333d10b15cafInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventSpeakerMapping", "eventSpeakerMappingAttr", "EventSpeakerMapping", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c31db94f669afbd2940e333d10b15caf(new RC_c31db94f669afbd2940e333d10b15caf.RecordClass({
+                    eventSpeakerMappingAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_c31db94f669afbd2940e333d10b15caf = RC_c31db94f669afbd2940e333d10b15cafInner;
+
+        RC_c31db94f669afbd2940e333d10b15cafInner._isAnonymousRecord = true;
+        RC_c31db94f669afbd2940e333d10b15cafInner.UniqueId = "c31db94f-669a-fbd2-940e-333d10b15caf";
+        var RC_c31db94f669afbd2940e333d10b15caf = RC_c31db94f669afbd2940e333d10b15cafInner;
+        RC_c31db94f669afbd2940e333d10b15caf.init();
+    }
+});
+
+define("PartnersHub.model$RL_645bd694744635e63a6e9c2ba8a12113", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_c31db94f669afbd2940e333d10b15caf"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_645bd694744635e63a6e9c2ba8a12113 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_c31db94f669afbd2940e333d10b15caf;
+        }
+
+    }
+
+    PartnersHubModel.RL_645bd694744635e63a6e9c2ba8a12113 = RL_645bd694744635e63a6e9c2ba8a12113;
+
+});
+
+define("PartnersHub.model$RC_645e6d99c62950d533c673c938aae9c2", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_92400cc7724ed583cb86d67e1fc7e7c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_645e6d99c62950d533c673c938aae9c2Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("PostMessageRequest", "postMessageRequestAttr", "PostMessageRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_92400cc7724ed583cb86d67e1fc7e7c5Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -10794,6 +13346,35 @@ define("PartnersHub.model$RL_6534465d8eaff1ed770420b9742876dc", ["exports", "@ou
 
     PartnersHubModel.RL_6534465d8eaff1ed770420b9742876dc = RL_6534465d8eaff1ed770420b9742876dc;
 
+});
+
+define("PartnersHub.model$RC_6554cbff778bb836f70819c17df738b2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8f98c50b947141d1bd6783e2abc5e9e4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_6554cbff778bb836f70819c17df738b2Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PChatCreateRequest", "p2PChatCreateRequestAttr", "P2PChatCreateRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_8f98c50b947141d1bd6783e2abc5e9e4Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_8f98c50b947141d1bd6783e2abc5e9e4Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_6554cbff778bb836f70819c17df738b2(new RC_6554cbff778bb836f70819c17df738b2.RecordClass({
+                    p2PChatCreateRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_6554cbff778bb836f70819c17df738b2 = RC_6554cbff778bb836f70819c17df738b2Inner;
+
+        RC_6554cbff778bb836f70819c17df738b2Inner._isAnonymousRecord = true;
+        RC_6554cbff778bb836f70819c17df738b2Inner.UniqueId = "6554cbff-778b-b836-f708-19c17df738b2";
+        var RC_6554cbff778bb836f70819c17df738b2 = RC_6554cbff778bb836f70819c17df738b2Inner;
+        RC_6554cbff778bb836f70819c17df738b2.init();
+    }
 });
 
 define("PartnersHub.model$RL_6574d6863458b7ea468f69130f5ace60", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_537325baeed781544ed9f203cd7f9384Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -10978,6 +13559,20 @@ define("PartnersHub.model$RL_662f9a01faab4debe4196401f9ed4c71", ["exports", "@ou
     }
 
     PartnersHubModel.RL_662f9a01faab4debe4196401f9ed4c71 = RL_662f9a01faab4debe4196401f9ed4c71;
+
+});
+
+define("PartnersHub.model$RL_66ee4b8f2292d321c418f3c77347b57d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f98977622822548114c6901450f9dfcdStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_66ee4b8f2292d321c418f3c77347b57d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_f98977622822548114c6901450f9dfcdStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_66ee4b8f2292d321c418f3c77347b57d = RL_66ee4b8f2292d321c418f3c77347b57d;
 
 });
 
@@ -11221,6 +13816,20 @@ define("PartnersHub.model$RL_68be9dd68c0e161ac2c65c1092c999e6", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_68c70e90a56f763a58cac53aabe21635", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5008dcf56519ca45fe79000670b8bfe1"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_68c70e90a56f763a58cac53aabe21635 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5008dcf56519ca45fe79000670b8bfe1;
+        }
+
+    }
+
+    PartnersHubModel.RL_68c70e90a56f763a58cac53aabe21635 = RL_68c70e90a56f763a58cac53aabe21635;
+
+});
+
 define("PartnersHub.model$RL_68d94344bca87ca3c6e8048bda3cfcff", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_68d94344bca87ca3c6e8048bda3cfcff extends
@@ -11232,6 +13841,49 @@ define("PartnersHub.model$RL_68d94344bca87ca3c6e8048bda3cfcff", ["exports", "@ou
     }
 
     PartnersHubModel.RL_68d94344bca87ca3c6e8048bda3cfcff = RL_68d94344bca87ca3c6e8048bda3cfcff;
+
+});
+
+define("PartnersHub.model$RC_b0469763808dc0738ee533d3241a3fc4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0879f01858a2bc3ad7b4670abe9d0a7cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b0469763808dc0738ee533d3241a3fc4Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertCreateResponse", "p2PAdvertCreateResponseAttr", "P2PAdvertCreateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_0879f01858a2bc3ad7b4670abe9d0a7cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_0879f01858a2bc3ad7b4670abe9d0a7cStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_b0469763808dc0738ee533d3241a3fc4(new RC_b0469763808dc0738ee533d3241a3fc4.RecordClass({
+                    p2PAdvertCreateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_b0469763808dc0738ee533d3241a3fc4 = RC_b0469763808dc0738ee533d3241a3fc4Inner;
+
+        RC_b0469763808dc0738ee533d3241a3fc4Inner._isAnonymousRecord = true;
+        RC_b0469763808dc0738ee533d3241a3fc4Inner.UniqueId = "b0469763-808d-c073-8ee5-33d3241a3fc4";
+        var RC_b0469763808dc0738ee533d3241a3fc4 = RC_b0469763808dc0738ee533d3241a3fc4Inner;
+        RC_b0469763808dc0738ee533d3241a3fc4.init();
+    }
+});
+
+define("PartnersHub.model$RL_69045c5eb3eae12903ebdf79ae78ffdb", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_b0469763808dc0738ee533d3241a3fc4"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_69045c5eb3eae12903ebdf79ae78ffdb extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_b0469763808dc0738ee533d3241a3fc4;
+        }
+
+    }
+
+    PartnersHubModel.RL_69045c5eb3eae12903ebdf79ae78ffdb = RL_69045c5eb3eae12903ebdf79ae78ffdb;
 
 });
 
@@ -11349,6 +14001,49 @@ define("PartnersHub.model$RL_6ab251fa7982343300d60d8656ef0279", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_6ad9207e51a4b642b6e1db89f79e31b5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d48bf8d95ece559f969e94f01654ff6bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_6ad9207e51a4b642b6e1db89f79e31b5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderListResponse", "p2POrderListResponseAttr", "P2POrderListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d48bf8d95ece559f969e94f01654ff6bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d48bf8d95ece559f969e94f01654ff6bStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_6ad9207e51a4b642b6e1db89f79e31b5(new RC_6ad9207e51a4b642b6e1db89f79e31b5.RecordClass({
+                    p2POrderListResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_6ad9207e51a4b642b6e1db89f79e31b5 = RC_6ad9207e51a4b642b6e1db89f79e31b5Inner;
+
+        RC_6ad9207e51a4b642b6e1db89f79e31b5Inner._isAnonymousRecord = true;
+        RC_6ad9207e51a4b642b6e1db89f79e31b5Inner.UniqueId = "6ad9207e-51a4-b642-b6e1-db89f79e31b5";
+        var RC_6ad9207e51a4b642b6e1db89f79e31b5 = RC_6ad9207e51a4b642b6e1db89f79e31b5Inner;
+        RC_6ad9207e51a4b642b6e1db89f79e31b5.init();
+    }
+});
+
+define("PartnersHub.model$RL_6adb6e7c3b995869d80f7cca91748aa8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c9c05587514bf40891ef7d6e333dc809Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_6adb6e7c3b995869d80f7cca91748aa8 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_c9c05587514bf40891ef7d6e333dc809Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_6adb6e7c3b995869d80f7cca91748aa8 = RL_6adb6e7c3b995869d80f7cca91748aa8;
+
+});
+
 define("PartnersHub.model$RL_6aefb6b34ff9f8b6e1084c5b438522bb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_4820561c523dc84c471446a46147a065Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_6aefb6b34ff9f8b6e1084c5b438522bb extends
@@ -11449,6 +14144,20 @@ define("PartnersHub.model$RL_6c0d37b49870d4d159723ff35b01e012", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_6c516272c5b3311f4dfc181117b96b16", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_019dc1f94c4673ed88c9dc3f4cd5419bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_6c516272c5b3311f4dfc181117b96b16 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_019dc1f94c4673ed88c9dc3f4cd5419bStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_6c516272c5b3311f4dfc181117b96b16 = RL_6c516272c5b3311f4dfc181117b96b16;
+
+});
+
 define("PartnersHub.model$RC_6c51c66649f8fcb29b35426854249357", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_f85e728670d653d5fa01ee2557e6e730Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_6c51c66649f8fcb29b35426854249357Inner extends
@@ -11489,6 +14198,20 @@ define("PartnersHub.model$RL_6cc055cc55710603767f0fd9910db36c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_6cc055cc55710603767f0fd9910db36c = RL_6cc055cc55710603767f0fd9910db36c;
+
+});
+
+define("PartnersHub.model$RL_6cc6cf468d4e55dff2682f40779f25aa", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4930d0ff5274fa4a3e2b1c3a57449104"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_6cc6cf468d4e55dff2682f40779f25aa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_4930d0ff5274fa4a3e2b1c3a57449104;
+        }
+
+    }
+
+    PartnersHubModel.RL_6cc6cf468d4e55dff2682f40779f25aa = RL_6cc6cf468d4e55dff2682f40779f25aa;
 
 });
 
@@ -11792,6 +14515,20 @@ define("PartnersHub.model$RC_6f4c6d643c38fc7393e869b67917268e", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_6fd5ceba4a344fe3bd560a02ec48fa9b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_169ba1f57e053870b84cde6379a8d367"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_6fd5ceba4a344fe3bd560a02ec48fa9b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_169ba1f57e053870b84cde6379a8d367;
+        }
+
+    }
+
+    PartnersHubModel.RL_6fd5ceba4a344fe3bd560a02ec48fa9b = RL_6fd5ceba4a344fe3bd560a02ec48fa9b;
+
+});
+
 define("PartnersHub.model$RC_abb6a3eba8583e4ab0625de8f38fb719", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_0262e6910ebecc922f633b08db78d688Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_abb6a3eba8583e4ab0625de8f38fb719Inner extends
@@ -11907,6 +14644,20 @@ define("PartnersHub.model$RL_70a8331f6beea7f27870b3bf7babd9e9", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_70cbcd4f3fa22ae115b8f290ce9c0859", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_642aabe85fdb3eb2ce28228a997dfa13"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_70cbcd4f3fa22ae115b8f290ce9c0859 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_642aabe85fdb3eb2ce28228a997dfa13;
+        }
+
+    }
+
+    PartnersHubModel.RL_70cbcd4f3fa22ae115b8f290ce9c0859 = RL_70cbcd4f3fa22ae115b8f290ce9c0859;
+
+});
+
 define("PartnersHub.model$RC_70fc701ec1089fcf99155a06492a06f2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_589441840ccb78b5cd4edd1d387aefc9Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_70fc701ec1089fcf99155a06492a06f2Inner extends
@@ -11947,6 +14698,20 @@ define("PartnersHub.model$RL_718bfa5485b42466fae8f4ad1fc16180", ["exports", "@ou
     }
 
     PartnersHubModel.RL_718bfa5485b42466fae8f4ad1fc16180 = RL_718bfa5485b42466fae8f4ad1fc16180;
+
+});
+
+define("PartnersHub.model$RL_720c5f8bdedf3ce92188a2fbe493fa9c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1427747d29628e6a194ee75a554479e4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_720c5f8bdedf3ce92188a2fbe493fa9c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1427747d29628e6a194ee75a554479e4Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_720c5f8bdedf3ce92188a2fbe493fa9c = RL_720c5f8bdedf3ce92188a2fbe493fa9c;
 
 });
 
@@ -12063,6 +14828,35 @@ define("PartnersHub.model$RL_73c285d01c2c56407f6a3b6c7863f99b", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_73c61ca7f65d872a1eebbd91126c43f2", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_87d48b4b7c0b379943dcee59095bbdd5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_73c61ca7f65d872a1eebbd91126c43f2Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("GetPlanSearchResponse", "getPlanSearchResponseAttr", "GetPlanSearchResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new TestIMAPIOfficialModel.ST_87d48b4b7c0b379943dcee59095bbdd5Structure());
+                    }, true, TestIMAPIOfficialModel.ST_87d48b4b7c0b379943dcee59095bbdd5Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_73c61ca7f65d872a1eebbd91126c43f2(new RC_73c61ca7f65d872a1eebbd91126c43f2.RecordClass({
+                    getPlanSearchResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_73c61ca7f65d872a1eebbd91126c43f2 = RC_73c61ca7f65d872a1eebbd91126c43f2Inner;
+
+        RC_73c61ca7f65d872a1eebbd91126c43f2Inner._isAnonymousRecord = true;
+        RC_73c61ca7f65d872a1eebbd91126c43f2Inner.UniqueId = "73c61ca7-f65d-872a-1eeb-bd91126c43f2";
+        var RC_73c61ca7f65d872a1eebbd91126c43f2 = RC_73c61ca7f65d872a1eebbd91126c43f2Inner;
+        RC_73c61ca7f65d872a1eebbd91126c43f2.init();
+    }
+});
+
 define("PartnersHub.model$RL_7466d1f73cbd2c703ddb7258bc2f245b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_6ceb0a54ddbc92446ab66e8c847870c1"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_7466d1f73cbd2c703ddb7258bc2f245b extends
@@ -12075,6 +14869,32 @@ define("PartnersHub.model$RL_7466d1f73cbd2c703ddb7258bc2f245b", ["exports", "@ou
 
     PartnersHubModel.RL_7466d1f73cbd2c703ddb7258bc2f245b = RL_7466d1f73cbd2c703ddb7258bc2f245b;
 
+});
+
+define("PartnersHub.model$RC_74fba7fb18697339da88244fa3fc5435", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_f95392f2815efea8bab83c5950c7808fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement", "PartnerEventManagement.model$EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_74fba7fb18697339da88244fa3fc5435Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Event", "eventAttr", "Event", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord),
+                    this.attr("Country", "countryAttr", "Country", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.RC_74fba7fb18697339da88244fa3fc5435 = RC_74fba7fb18697339da88244fa3fc5435Inner;
+
+        RC_74fba7fb18697339da88244fa3fc5435Inner._isAnonymousRecord = true;
+        RC_74fba7fb18697339da88244fa3fc5435Inner.UniqueId = "74fba7fb-1869-7339-da88-244fa3fc5435";
+        var RC_74fba7fb18697339da88244fa3fc5435 = RC_74fba7fb18697339da88244fa3fc5435Inner;
+        RC_74fba7fb18697339da88244fa3fc5435.init();
+    }
 });
 
 define("PartnersHub.model$RL_756fb6e2b9d549868e73e6b90310c36f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_7e7c6006f18d7aeaad0edc93ed0f62fcEntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -12248,6 +15068,78 @@ define("PartnersHub.model$RL_76a60ca6adfb580ac2b00e4e4f586899", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_76c3b37a218d89cb61baaeeb835fdcd7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a0e3ec28876716cff2e8393c0a8d7e49Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_76c3b37a218d89cb61baaeeb835fdcd7Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserUpdateResponse", "p2PAdvertiserUpdateResponseAttr", "P2PAdvertiserUpdateResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a0e3ec28876716cff2e8393c0a8d7e49Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a0e3ec28876716cff2e8393c0a8d7e49Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_76c3b37a218d89cb61baaeeb835fdcd7(new RC_76c3b37a218d89cb61baaeeb835fdcd7.RecordClass({
+                    p2PAdvertiserUpdateResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_76c3b37a218d89cb61baaeeb835fdcd7 = RC_76c3b37a218d89cb61baaeeb835fdcd7Inner;
+
+        RC_76c3b37a218d89cb61baaeeb835fdcd7Inner._isAnonymousRecord = true;
+        RC_76c3b37a218d89cb61baaeeb835fdcd7Inner.UniqueId = "76c3b37a-218d-89cb-61ba-aeeb835fdcd7";
+        var RC_76c3b37a218d89cb61baaeeb835fdcd7 = RC_76c3b37a218d89cb61baaeeb835fdcd7Inner;
+        RC_76c3b37a218d89cb61baaeeb835fdcd7.init();
+    }
+});
+
+define("PartnersHub.model$RC_f2634b8efaff648b14622bd5b25d8167", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7e69cc84f253f5c0a2cdd55aa624238cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f2634b8efaff648b14622bd5b25d8167Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("IDVDocumentAddResponse", "iDVDocumentAddResponseAttr", "IDVDocumentAddResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_7e69cc84f253f5c0a2cdd55aa624238cStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_7e69cc84f253f5c0a2cdd55aa624238cStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f2634b8efaff648b14622bd5b25d8167(new RC_f2634b8efaff648b14622bd5b25d8167.RecordClass({
+                    iDVDocumentAddResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_f2634b8efaff648b14622bd5b25d8167 = RC_f2634b8efaff648b14622bd5b25d8167Inner;
+
+        RC_f2634b8efaff648b14622bd5b25d8167Inner._isAnonymousRecord = true;
+        RC_f2634b8efaff648b14622bd5b25d8167Inner.UniqueId = "f2634b8e-faff-648b-1462-2bd5b25d8167";
+        var RC_f2634b8efaff648b14622bd5b25d8167 = RC_f2634b8efaff648b14622bd5b25d8167Inner;
+        RC_f2634b8efaff648b14622bd5b25d8167.init();
+    }
+});
+
+define("PartnersHub.model$RL_7780b2a9492505990d4a901334a00d28", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_f2634b8efaff648b14622bd5b25d8167"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_7780b2a9492505990d4a901334a00d28 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_f2634b8efaff648b14622bd5b25d8167;
+        }
+
+    }
+
+    PartnersHubModel.RL_7780b2a9492505990d4a901334a00d28 = RL_7780b2a9492505990d4a901334a00d28;
+
+});
+
 define("PartnersHub.model$RC_854dbd2804fbb731b1468b879331bbde", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8517d9c8b73e866553a1a7b806af5079Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_854dbd2804fbb731b1468b879331bbdeInner extends
@@ -12316,6 +15208,20 @@ define("PartnersHub.model$RL_787a6fcd35e19f81587bf6f3a2fa11fc", ["exports", "@ou
     }
 
     PartnersHubModel.RL_787a6fcd35e19f81587bf6f3a2fa11fc = RL_787a6fcd35e19f81587bf6f3a2fa11fc;
+
+});
+
+define("PartnersHub.model$RL_7887e44cb06676c07450b33a89d88acf", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_172b8dd4a9beebc4b3ea80a0def2b2fe"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_7887e44cb06676c07450b33a89d88acf extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_172b8dd4a9beebc4b3ea80a0def2b2fe;
+        }
+
+    }
+
+    PartnersHubModel.RL_7887e44cb06676c07450b33a89d88acf = RL_7887e44cb06676c07450b33a89d88acf;
 
 });
 
@@ -12418,6 +15324,35 @@ define("PartnersHub.model$RL_7a204c55a54d7fc5a49ee67743d390cb", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_7a45e74e27c6f71f63173a4101e26602", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7b4d691c1393b5e9e9f74d1c61904866Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7a45e74e27c6f71f63173a4101e26602Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderDisputeRequest", "p2POrderDisputeRequestAttr", "P2POrderDisputeRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_7b4d691c1393b5e9e9f74d1c61904866Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_7b4d691c1393b5e9e9f74d1c61904866Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7a45e74e27c6f71f63173a4101e26602(new RC_7a45e74e27c6f71f63173a4101e26602.RecordClass({
+                    p2POrderDisputeRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7a45e74e27c6f71f63173a4101e26602 = RC_7a45e74e27c6f71f63173a4101e26602Inner;
+
+        RC_7a45e74e27c6f71f63173a4101e26602Inner._isAnonymousRecord = true;
+        RC_7a45e74e27c6f71f63173a4101e26602Inner.UniqueId = "7a45e74e-27c6-f71f-6317-3a4101e26602";
+        var RC_7a45e74e27c6f71f63173a4101e26602 = RC_7a45e74e27c6f71f63173a4101e26602Inner;
+        RC_7a45e74e27c6f71f63173a4101e26602.init();
+    }
+});
+
 define("PartnersHub.model$RL_7a61959884cd1d97a8df26308775a5c7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d845e9af38689337f2bff5d766253a88Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_7a61959884cd1d97a8df26308775a5c7 extends
@@ -12503,6 +15438,35 @@ define("PartnersHub.model$RC_7b274cb5f96a8ac297db685000547ab1", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RC_7bd0e252fd030a546f5f38214e1904a5", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_f95392f2815efea8bab83c5950c7808fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7bd0e252fd030a546f5f38214e1904a5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Event", "eventAttr", "Event", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7bd0e252fd030a546f5f38214e1904a5(new RC_7bd0e252fd030a546f5f38214e1904a5.RecordClass({
+                    eventAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7bd0e252fd030a546f5f38214e1904a5 = RC_7bd0e252fd030a546f5f38214e1904a5Inner;
+
+        RC_7bd0e252fd030a546f5f38214e1904a5Inner._isAnonymousRecord = true;
+        RC_7bd0e252fd030a546f5f38214e1904a5Inner.UniqueId = "7bd0e252-fd03-0a54-6f5f-38214e1904a5";
+        var RC_7bd0e252fd030a546f5f38214e1904a5 = RC_7bd0e252fd030a546f5f38214e1904a5Inner;
+        RC_7bd0e252fd030a546f5f38214e1904a5.init();
+    }
+});
+
 define("PartnersHub.model$RL_7c036597cf3d8c9e8050976e7b9cd21a", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$EN_c206e072354abd28c734a686a107801eEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_7c036597cf3d8c9e8050976e7b9cd21a extends
@@ -12572,6 +15536,35 @@ define("PartnersHub.model$RL_7c9f790fa5c2ed1fbdf0de41347402fa", ["exports", "@ou
 
     PartnersHubModel.RL_7c9f790fa5c2ed1fbdf0de41347402fa = RL_7c9f790fa5c2ed1fbdf0de41347402fa;
 
+});
+
+define("PartnersHub.model$RC_7cae5c3bb6e908ce3c67e583b84b10d0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_40996cdadeb61b442d53936d0e23d7bcStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_7cae5c3bb6e908ce3c67e583b84b10d0Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Partner_accounts", "partner_accountsAttr", "Partner_accounts", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_40996cdadeb61b442d53936d0e23d7bcStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_40996cdadeb61b442d53936d0e23d7bcStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_7cae5c3bb6e908ce3c67e583b84b10d0(new RC_7cae5c3bb6e908ce3c67e583b84b10d0.RecordClass({
+                    partner_accountsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_7cae5c3bb6e908ce3c67e583b84b10d0 = RC_7cae5c3bb6e908ce3c67e583b84b10d0Inner;
+
+        RC_7cae5c3bb6e908ce3c67e583b84b10d0Inner._isAnonymousRecord = true;
+        RC_7cae5c3bb6e908ce3c67e583b84b10d0Inner.UniqueId = "7cae5c3b-b6e9-08ce-3c67-e583b84b10d0";
+        var RC_7cae5c3bb6e908ce3c67e583b84b10d0 = RC_7cae5c3bb6e908ce3c67e583b84b10d0Inner;
+        RC_7cae5c3bb6e908ce3c67e583b84b10d0.init();
+    }
 });
 
 define("PartnersHub.model$RC_e5ad8f04c38047441643c6868992c277", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_09173c1b0f41f719b9efd6430c2e737dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
@@ -12657,6 +15650,49 @@ define("PartnersHub.model$RL_7d0f37ab255ddbd5de53ae22a5f93739", ["exports", "@ou
     }
 
     PartnersHubModel.RL_7d0f37ab255ddbd5de53ae22a5f93739 = RL_7d0f37ab255ddbd5de53ae22a5f93739;
+
+});
+
+define("PartnersHub.model$RC_d4e53cdc7541b46b3d5dc63fe53b6ea7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a3bb07924a89f370c871b3cb12d77f65Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_d4e53cdc7541b46b3d5dc63fe53b6ea7Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("NotificationEventArgs", "notificationEventArgsAttr", "NotificationEventArgs", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_a3bb07924a89f370c871b3cb12d77f65Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_a3bb07924a89f370c871b3cb12d77f65Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_d4e53cdc7541b46b3d5dc63fe53b6ea7(new RC_d4e53cdc7541b46b3d5dc63fe53b6ea7.RecordClass({
+                    notificationEventArgsAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_d4e53cdc7541b46b3d5dc63fe53b6ea7 = RC_d4e53cdc7541b46b3d5dc63fe53b6ea7Inner;
+
+        RC_d4e53cdc7541b46b3d5dc63fe53b6ea7Inner._isAnonymousRecord = true;
+        RC_d4e53cdc7541b46b3d5dc63fe53b6ea7Inner.UniqueId = "d4e53cdc-7541-b46b-3d5d-c63fe53b6ea7";
+        var RC_d4e53cdc7541b46b3d5dc63fe53b6ea7 = RC_d4e53cdc7541b46b3d5dc63fe53b6ea7Inner;
+        RC_d4e53cdc7541b46b3d5dc63fe53b6ea7.init();
+    }
+});
+
+define("PartnersHub.model$RL_7dbc7753dcc77f4ba03f73d24b5f31fa", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d4e53cdc7541b46b3d5dc63fe53b6ea7"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_7dbc7753dcc77f4ba03f73d24b5f31fa extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_d4e53cdc7541b46b3d5dc63fe53b6ea7;
+        }
+
+    }
+
+    PartnersHubModel.RL_7dbc7753dcc77f4ba03f73d24b5f31fa = RL_7dbc7753dcc77f4ba03f73d24b5f31fa;
 
 });
 
@@ -12916,6 +15952,78 @@ define("PartnersHub.model$RL_81d2bc71eb1c605f53ae134ad3caa1c0", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_81d96dbb343b41f55c202064ee7f136d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_32ba270e49d07771f91f1f34d388e228Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_81d96dbb343b41f55c202064ee7f136dInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("OnfidoService", "onfidoServiceAttr", "OnfidoService", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_32ba270e49d07771f91f1f34d388e228Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_32ba270e49d07771f91f1f34d388e228Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_81d96dbb343b41f55c202064ee7f136d(new RC_81d96dbb343b41f55c202064ee7f136d.RecordClass({
+                    onfidoServiceAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_81d96dbb343b41f55c202064ee7f136d = RC_81d96dbb343b41f55c202064ee7f136dInner;
+
+        RC_81d96dbb343b41f55c202064ee7f136dInner._isAnonymousRecord = true;
+        RC_81d96dbb343b41f55c202064ee7f136dInner.UniqueId = "81d96dbb-343b-41f5-5c20-2064ee7f136d";
+        var RC_81d96dbb343b41f55c202064ee7f136d = RC_81d96dbb343b41f55c202064ee7f136dInner;
+        RC_81d96dbb343b41f55c202064ee7f136d.init();
+    }
+});
+
+define("PartnersHub.model$RL_82612f53b8d711fd3715db0c86244345", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5556936b52292543d97d2fca85735389"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_82612f53b8d711fd3715db0c86244345 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5556936b52292543d97d2fca85735389;
+        }
+
+    }
+
+    PartnersHubModel.RL_82612f53b8d711fd3715db0c86244345 = RL_82612f53b8d711fd3715db0c86244345;
+
+});
+
+define("PartnersHub.model$RC_8274740c430ed1e39b7a1549b09d4ca3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f0117a9263a599e510e75f4e61b79c85Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_8274740c430ed1e39b7a1549b09d4ca3Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderReviewResponse", "p2POrderReviewResponseAttr", "P2POrderReviewResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_f0117a9263a599e510e75f4e61b79c85Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_f0117a9263a599e510e75f4e61b79c85Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_8274740c430ed1e39b7a1549b09d4ca3(new RC_8274740c430ed1e39b7a1549b09d4ca3.RecordClass({
+                    p2POrderReviewResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_8274740c430ed1e39b7a1549b09d4ca3 = RC_8274740c430ed1e39b7a1549b09d4ca3Inner;
+
+        RC_8274740c430ed1e39b7a1549b09d4ca3Inner._isAnonymousRecord = true;
+        RC_8274740c430ed1e39b7a1549b09d4ca3Inner.UniqueId = "8274740c-430e-d1e3-9b7a-1549b09d4ca3";
+        var RC_8274740c430ed1e39b7a1549b09d4ca3 = RC_8274740c430ed1e39b7a1549b09d4ca3Inner;
+        RC_8274740c430ed1e39b7a1549b09d4ca3.init();
+    }
+});
+
 define("PartnersHub.model$RC_ced013358a82a813f1d9a5108f17ce79", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$ENUserEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_ced013358a82a813f1d9a5108f17ce79Inner extends
@@ -13063,6 +16171,20 @@ define("PartnersHub.model$RL_855c9279ae87db4555d2fbb8ba90afc5", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_860038d42bee7c93bf861582a762bd77", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_860038d42bee7c93bf861582a762bd77 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_860038d42bee7c93bf861582a762bd77 = RL_860038d42bee7c93bf861582a762bd77;
+
+});
+
 define("PartnersHub.model$RC_860a186f93e9fe7fe0d42f4282c2ec00", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$ST_e76d7672809d02d24c5a5adfeacd07eeStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_860a186f93e9fe7fe0d42f4282c2ec00Inner extends
@@ -13135,6 +16257,20 @@ define("PartnersHub.model$RC_8688a658a83b6884b85d11d8db4546d3", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RL_869c4e99bfb95c6cde1465857798ee8b", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_869c4e99bfb95c6cde1465857798ee8b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_1ed9d30a04c6983dfd25cb2bf738a03bEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_869c4e99bfb95c6cde1465857798ee8b = RL_869c4e99bfb95c6cde1465857798ee8b;
+
+});
+
 define("PartnersHub.model$RC_87351e3b0fa2ca59cf6c6749c6405006", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_849d11ab47adc426b5ce8d8c815c4fbfEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_87351e3b0fa2ca59cf6c6749c6405006Inner extends
@@ -13164,12 +16300,12 @@ define("PartnersHub.model$RC_87351e3b0fa2ca59cf6c6749c6405006", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RL_875b321486a40627f7580de2ed881b7d", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_074de63327cc6281abd591a06ac7a3ebStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_875b321486a40627f7580de2ed881b7d", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_074de63327cc6281abd591a06ac7a3ebStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_875b321486a40627f7580de2ed881b7d extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_074de63327cc6281abd591a06ac7a3ebStructure;
+            return ReleaseSlackIntegrationOfficialModel.ST_074de63327cc6281abd591a06ac7a3ebStructure;
         }
 
     }
@@ -13303,6 +16439,78 @@ define("PartnersHub.model$RL_88893b2b6478ca91e7c481f161053cfa", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_8893a2b0092110e7fe88380d93aa9f1b", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_7710952ed757fea535b17cc3f62e943cEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_8893a2b0092110e7fe88380d93aa9f1bInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventSpeakers", "eventSpeakersAttr", "EventSpeakers", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_7710952ed757fea535b17cc3f62e943cEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_7710952ed757fea535b17cc3f62e943cEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_8893a2b0092110e7fe88380d93aa9f1b(new RC_8893a2b0092110e7fe88380d93aa9f1b.RecordClass({
+                    eventSpeakersAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_8893a2b0092110e7fe88380d93aa9f1b = RC_8893a2b0092110e7fe88380d93aa9f1bInner;
+
+        RC_8893a2b0092110e7fe88380d93aa9f1bInner._isAnonymousRecord = true;
+        RC_8893a2b0092110e7fe88380d93aa9f1bInner.UniqueId = "8893a2b0-0921-10e7-fe88-380d93aa9f1b";
+        var RC_8893a2b0092110e7fe88380d93aa9f1b = RC_8893a2b0092110e7fe88380d93aa9f1bInner;
+        RC_8893a2b0092110e7fe88380d93aa9f1b.init();
+    }
+});
+
+define("PartnersHub.model$RC_c6db6e2583d58b1f7d91b76a532e7eb0", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_eaa015e1f32bcbf45e00f7d814d7249aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c6db6e2583d58b1f7d91b76a532e7eb0Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("ServiceTokenRequest", "serviceTokenRequestAttr", "ServiceTokenRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_eaa015e1f32bcbf45e00f7d814d7249aStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_eaa015e1f32bcbf45e00f7d814d7249aStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c6db6e2583d58b1f7d91b76a532e7eb0(new RC_c6db6e2583d58b1f7d91b76a532e7eb0.RecordClass({
+                    serviceTokenRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_c6db6e2583d58b1f7d91b76a532e7eb0 = RC_c6db6e2583d58b1f7d91b76a532e7eb0Inner;
+
+        RC_c6db6e2583d58b1f7d91b76a532e7eb0Inner._isAnonymousRecord = true;
+        RC_c6db6e2583d58b1f7d91b76a532e7eb0Inner.UniqueId = "c6db6e25-83d5-8b1f-7d91-b76a532e7eb0";
+        var RC_c6db6e2583d58b1f7d91b76a532e7eb0 = RC_c6db6e2583d58b1f7d91b76a532e7eb0Inner;
+        RC_c6db6e2583d58b1f7d91b76a532e7eb0.init();
+    }
+});
+
+define("PartnersHub.model$RL_88d704bede9d351ca8b921e5d8b5e60c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_c6db6e2583d58b1f7d91b76a532e7eb0"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_88d704bede9d351ca8b921e5d8b5e60c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_c6db6e2583d58b1f7d91b76a532e7eb0;
+        }
+
+    }
+
+    PartnersHubModel.RL_88d704bede9d351ca8b921e5d8b5e60c = RL_88d704bede9d351ca8b921e5d8b5e60c;
+
+});
+
 define("PartnersHub.model$RL_8972d3be5f5c984833af7ea32d6710e8", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0d71b623ce5a409adf80e6d9d4a7031e"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_8972d3be5f5c984833af7ea32d6710e8 extends
@@ -13342,6 +16550,49 @@ define("PartnersHub.model$RL_8add23b891a53c086b7017fd4cdd211b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_8add23b891a53c086b7017fd4cdd211b = RL_8add23b891a53c086b7017fd4cdd211b;
+
+});
+
+define("PartnersHub.model$RC_a5a2375a3e91041cbcceac771e133575", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0a41599a3a2ec3b22722247f2d2affffStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_a5a2375a3e91041cbcceac771e133575Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("SetSettingsResponse", "setSettingsResponseAttr", "SetSettingsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_0a41599a3a2ec3b22722247f2d2affffStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_0a41599a3a2ec3b22722247f2d2affffStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_a5a2375a3e91041cbcceac771e133575(new RC_a5a2375a3e91041cbcceac771e133575.RecordClass({
+                    setSettingsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_a5a2375a3e91041cbcceac771e133575 = RC_a5a2375a3e91041cbcceac771e133575Inner;
+
+        RC_a5a2375a3e91041cbcceac771e133575Inner._isAnonymousRecord = true;
+        RC_a5a2375a3e91041cbcceac771e133575Inner.UniqueId = "a5a2375a-3e91-041c-bcce-ac771e133575";
+        var RC_a5a2375a3e91041cbcceac771e133575 = RC_a5a2375a3e91041cbcceac771e133575Inner;
+        RC_a5a2375a3e91041cbcceac771e133575.init();
+    }
+});
+
+define("PartnersHub.model$RL_8b2f8ecc4ceeaac972acb8a50205485d", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_a5a2375a3e91041cbcceac771e133575"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8b2f8ecc4ceeaac972acb8a50205485d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_a5a2375a3e91041cbcceac771e133575;
+        }
+
+    }
+
+    PartnersHubModel.RL_8b2f8ecc4ceeaac972acb8a50205485d = RL_8b2f8ecc4ceeaac972acb8a50205485d;
 
 });
 
@@ -13459,6 +16710,46 @@ define("PartnersHub.model$RL_8c4fcbceb61f253df73da643e4b9ae13", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_a19cc9055121ac1f2503af4a7a4ef0bf", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_82898159ccdab210fb8345db5c607db1EntityRecord", "PartnersHub.model$EN_6adfebcd5bbca71129a168d2e2d91049EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_a19cc9055121ac1f2503af4a7a4ef0bfInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Environment", "environmentAttr", "Environment", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord());
+                    }, true, PartnersHubModel.EN_82898159ccdab210fb8345db5c607db1EntityRecord),
+                    this.attr("Languages", "languagesAttr", "Languages", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnersHubModel.EN_6adfebcd5bbca71129a168d2e2d91049EntityRecord());
+                    }, true, PartnersHubModel.EN_6adfebcd5bbca71129a168d2e2d91049EntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.RC_a19cc9055121ac1f2503af4a7a4ef0bf = RC_a19cc9055121ac1f2503af4a7a4ef0bfInner;
+
+        RC_a19cc9055121ac1f2503af4a7a4ef0bfInner._isAnonymousRecord = true;
+        RC_a19cc9055121ac1f2503af4a7a4ef0bfInner.UniqueId = "a19cc905-5121-ac1f-2503-af4a7a4ef0bf";
+        var RC_a19cc9055121ac1f2503af4a7a4ef0bf = RC_a19cc9055121ac1f2503af4a7a4ef0bfInner;
+        RC_a19cc9055121ac1f2503af4a7a4ef0bf.init();
+    }
+});
+
+define("PartnersHub.model$RL_8c597fb6cd4a582ba849bd4dfae97586", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_a19cc9055121ac1f2503af4a7a4ef0bf"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8c597fb6cd4a582ba849bd4dfae97586 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_a19cc9055121ac1f2503af4a7a4ef0bf;
+        }
+
+    }
+
+    PartnersHubModel.RL_8c597fb6cd4a582ba849bd4dfae97586 = RL_8c597fb6cd4a582ba849bd4dfae97586;
+
+});
+
 define("PartnersHub.model$RC_8f8c9b77bcc0996564febb7d38ea930a", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$StartResetPasswordResultRec", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_8f8c9b77bcc0996564febb7d38ea930aInner extends
@@ -13499,6 +16790,20 @@ define("PartnersHub.model$RL_8c6f3d2b086b4a75242a7e7c084f1692", ["exports", "@ou
     }
 
     PartnersHubModel.RL_8c6f3d2b086b4a75242a7e7c084f1692 = RL_8c6f3d2b086b4a75242a7e7c084f1692;
+
+});
+
+define("PartnersHub.model$RL_8c761c273f71d4bef4e43f7373a08758", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_6554cbff778bb836f70819c17df738b2"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8c761c273f71d4bef4e43f7373a08758 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_6554cbff778bb836f70819c17df738b2;
+        }
+
+    }
+
+    PartnersHubModel.RL_8c761c273f71d4bef4e43f7373a08758 = RL_8c761c273f71d4bef4e43f7373a08758;
 
 });
 
@@ -13574,6 +16879,49 @@ define("PartnersHub.model$RC_8ccc091579545400bb5558b597337647", ["exports", "@ou
     }
 });
 
+define("PartnersHub.model$RC_aa38f0f86a368b5aa97d09652c85df95", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_43e34b530185a530d10be78dff4ece45Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_aa38f0f86a368b5aa97d09652c85df95Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserRelationsRequest", "p2PAdvertiserRelationsRequestAttr", "P2PAdvertiserRelationsRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_43e34b530185a530d10be78dff4ece45Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_43e34b530185a530d10be78dff4ece45Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_aa38f0f86a368b5aa97d09652c85df95(new RC_aa38f0f86a368b5aa97d09652c85df95.RecordClass({
+                    p2PAdvertiserRelationsRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_aa38f0f86a368b5aa97d09652c85df95 = RC_aa38f0f86a368b5aa97d09652c85df95Inner;
+
+        RC_aa38f0f86a368b5aa97d09652c85df95Inner._isAnonymousRecord = true;
+        RC_aa38f0f86a368b5aa97d09652c85df95Inner.UniqueId = "aa38f0f8-6a36-8b5a-a97d-09652c85df95";
+        var RC_aa38f0f86a368b5aa97d09652c85df95 = RC_aa38f0f86a368b5aa97d09652c85df95Inner;
+        RC_aa38f0f86a368b5aa97d09652c85df95.init();
+    }
+});
+
+define("PartnersHub.model$RL_8d1eec609ccea2aa18ac0df726cafa33", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_aa38f0f86a368b5aa97d09652c85df95"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8d1eec609ccea2aa18ac0df726cafa33 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_aa38f0f86a368b5aa97d09652c85df95;
+        }
+
+    }
+
+    PartnersHubModel.RL_8d1eec609ccea2aa18ac0df726cafa33 = RL_8d1eec609ccea2aa18ac0df726cafa33;
+
+});
+
 define("PartnersHub.model$RC_8d2191077b2724e26d03dfd89ce20eb3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_0c954cdeca234316306bb67c6b24f05bStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_8d2191077b2724e26d03dfd89ce20eb3Inner extends
@@ -13601,6 +16949,77 @@ define("PartnersHub.model$RC_8d2191077b2724e26d03dfd89ce20eb3", ["exports", "@ou
         var RC_8d2191077b2724e26d03dfd89ce20eb3 = RC_8d2191077b2724e26d03dfd89ce20eb3Inner;
         RC_8d2191077b2724e26d03dfd89ce20eb3.init();
     }
+});
+
+define("PartnersHub.model$RL_8d376ab44b9f0e7b6d06a6332f1483f2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7bb5c8caef220d73a9d6936569f73c53Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8d376ab44b9f0e7b6d06a6332f1483f2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_7bb5c8caef220d73a9d6936569f73c53Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_8d376ab44b9f0e7b6d06a6332f1483f2 = RL_8d376ab44b9f0e7b6d06a6332f1483f2;
+
+});
+
+define("PartnersHub.model$RL_8d67858abdde3dd334c892c5fd9176b4", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_0a41599a3a2ec3b22722247f2d2affffStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8d67858abdde3dd334c892c5fd9176b4 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_0a41599a3a2ec3b22722247f2d2affffStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_8d67858abdde3dd334c892c5fd9176b4 = RL_8d67858abdde3dd334c892c5fd9176b4;
+
+});
+
+define("PartnersHub.model$RC_955ccd26a5d98bb43926051cccd6f301", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_af7c8c24e0881fcad517d74c916f7352Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_955ccd26a5d98bb43926051cccd6f301Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("StatementFee", "statementFeeAttr", "StatementFee", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_af7c8c24e0881fcad517d74c916f7352Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_af7c8c24e0881fcad517d74c916f7352Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_955ccd26a5d98bb43926051cccd6f301(new RC_955ccd26a5d98bb43926051cccd6f301.RecordClass({
+                    statementFeeAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_955ccd26a5d98bb43926051cccd6f301 = RC_955ccd26a5d98bb43926051cccd6f301Inner;
+
+        RC_955ccd26a5d98bb43926051cccd6f301Inner._isAnonymousRecord = true;
+        RC_955ccd26a5d98bb43926051cccd6f301Inner.UniqueId = "955ccd26-a5d9-8bb4-3926-051cccd6f301";
+        var RC_955ccd26a5d98bb43926051cccd6f301 = RC_955ccd26a5d98bb43926051cccd6f301Inner;
+        RC_955ccd26a5d98bb43926051cccd6f301.init();
+    }
+});
+
+define("PartnersHub.model$RL_8d98f970a808a859e46d763c2a9f5e6c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_955ccd26a5d98bb43926051cccd6f301"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8d98f970a808a859e46d763c2a9f5e6c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_955ccd26a5d98bb43926051cccd6f301;
+        }
+
+    }
+
+    PartnersHubModel.RL_8d98f970a808a859e46d763c2a9f5e6c = RL_8d98f970a808a859e46d763c2a9f5e6c;
+
 });
 
 define("PartnersHub.model$RC_b5bc59fd6b9d0d1de1994f4ad185a4d9", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_4fc107f3f00705667fa092c970065f35Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -13643,6 +17062,20 @@ define("PartnersHub.model$RL_8e08be092703b41c20785e76f67d241a", ["exports", "@ou
     }
 
     PartnersHubModel.RL_8e08be092703b41c20785e76f67d241a = RL_8e08be092703b41c20785e76f67d241a;
+
+});
+
+define("PartnersHub.model$RL_8e09be908eb2289212bd0eb58ad9bdb1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_32482be3161a6f43acc69f26815515ceStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_8e09be908eb2289212bd0eb58ad9bdb1 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_32482be3161a6f43acc69f26815515ceStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_8e09be908eb2289212bd0eb58ad9bdb1 = RL_8e09be908eb2289212bd0eb58ad9bdb1;
 
 });
 
@@ -13976,6 +17409,20 @@ define("PartnersHub.model$RL_9238bba5cbd10e6024ffc4f7cd576720", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_925417f32894fd9622f9ac4a0f6d3848", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0eea76ca7a3dc279121f6b469bc38e1e"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_925417f32894fd9622f9ac4a0f6d3848 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_0eea76ca7a3dc279121f6b469bc38e1e;
+        }
+
+    }
+
+    PartnersHubModel.RL_925417f32894fd9622f9ac4a0f6d3848 = RL_925417f32894fd9622f9ac4a0f6d3848;
+
+});
+
 define("PartnersHub.model$RC_a0738320bb0b0b3365d0bbf873ec9067", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_e359c0b5b9349701a8aae8cc7d75c0ffStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_a0738320bb0b0b3365d0bbf873ec9067Inner extends
@@ -14047,6 +17494,49 @@ define("PartnersHub.model$RL_93708d7bb7d0fbdca673f09a924bcdb7", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_93a1caf6b09cfa25aafd4d96e7527613", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_4cf21e951c9e4f29302e0e457ab5a673Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_93a1caf6b09cfa25aafd4d96e7527613 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_4cf21e951c9e4f29302e0e457ab5a673Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_93a1caf6b09cfa25aafd4d96e7527613 = RL_93a1caf6b09cfa25aafd4d96e7527613;
+
+});
+
+define("PartnersHub.model$RC_9469645a6983eeba9173683938b54abe", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f1644d81fb90e6f4882b198c996831d1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_9469645a6983eeba9173683938b54abeInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Detail", "detailAttr", "Detail", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_f1644d81fb90e6f4882b198c996831d1Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_f1644d81fb90e6f4882b198c996831d1Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_9469645a6983eeba9173683938b54abe(new RC_9469645a6983eeba9173683938b54abe.RecordClass({
+                    detailAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_9469645a6983eeba9173683938b54abe = RC_9469645a6983eeba9173683938b54abeInner;
+
+        RC_9469645a6983eeba9173683938b54abeInner._isAnonymousRecord = true;
+        RC_9469645a6983eeba9173683938b54abeInner.UniqueId = "9469645a-6983-eeba-9173-683938b54abe";
+        var RC_9469645a6983eeba9173683938b54abe = RC_9469645a6983eeba9173683938b54abeInner;
+        RC_9469645a6983eeba9173683938b54abe.init();
+    }
+});
+
 define("PartnersHub.model$RL_94cd9fdaaf1a67a3bfa0e32663c1fe70", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_9b4c1d7f5790df008534dfd8d1c97a7cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_94cd9fdaaf1a67a3bfa0e32663c1fe70 extends
@@ -14058,6 +17548,34 @@ define("PartnersHub.model$RL_94cd9fdaaf1a67a3bfa0e32663c1fe70", ["exports", "@ou
     }
 
     PartnersHubModel.RL_94cd9fdaaf1a67a3bfa0e32663c1fe70 = RL_94cd9fdaaf1a67a3bfa0e32663c1fe70;
+
+});
+
+define("PartnersHub.model$RL_953e04cab396096bc5ddcbafa1a5cb78", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5241236a152a2af51c043097ec227ddd"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_953e04cab396096bc5ddcbafa1a5cb78 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5241236a152a2af51c043097ec227ddd;
+        }
+
+    }
+
+    PartnersHubModel.RL_953e04cab396096bc5ddcbafa1a5cb78 = RL_953e04cab396096bc5ddcbafa1a5cb78;
+
+});
+
+define("PartnersHub.model$RL_954847ed7a29426b04fcc994e669e176", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_b12d67ef17b1896a838b57ca02b5f67dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_954847ed7a29426b04fcc994e669e176 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_b12d67ef17b1896a838b57ca02b5f67dStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_954847ed7a29426b04fcc994e669e176 = RL_954847ed7a29426b04fcc994e669e176;
 
 });
 
@@ -14086,6 +17604,20 @@ define("PartnersHub.model$RL_95d0d522cef60364076f377317e08b52", ["exports", "@ou
     }
 
     PartnersHubModel.RL_95d0d522cef60364076f377317e08b52 = RL_95d0d522cef60364076f377317e08b52;
+
+});
+
+define("PartnersHub.model$RL_961d30fd81df57de3ea9a6712d9fd6ce", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4ea59a8d94c1abfcd6a0c16b78f8dd53"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_961d30fd81df57de3ea9a6712d9fd6ce extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_4ea59a8d94c1abfcd6a0c16b78f8dd53;
+        }
+
+    }
+
+    PartnersHubModel.RL_961d30fd81df57de3ea9a6712d9fd6ce = RL_961d30fd81df57de3ea9a6712d9fd6ce;
 
 });
 
@@ -14285,6 +17817,34 @@ define("PartnersHub.model$RL_9ab59cf1963fbe94eddb7ebb18232c35", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_9b308ec16292e64220de49e79891128d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8f98c50b947141d1bd6783e2abc5e9e4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9b308ec16292e64220de49e79891128d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_8f98c50b947141d1bd6783e2abc5e9e4Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_9b308ec16292e64220de49e79891128d = RL_9b308ec16292e64220de49e79891128d;
+
+});
+
+define("PartnersHub.model$RL_9b333bac761e70e0fa5925ace6c6b732", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7e69cc84f253f5c0a2cdd55aa624238cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9b333bac761e70e0fa5925ace6c6b732 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_7e69cc84f253f5c0a2cdd55aa624238cStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_9b333bac761e70e0fa5925ace6c6b732 = RL_9b333bac761e70e0fa5925ace6c6b732;
+
+});
+
 define("PartnersHub.model$RL_9b5ff325fa2b1963afc7ac5fe1fefcac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_42e091eee706086ba45ab77d0ef6821fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_9b5ff325fa2b1963afc7ac5fe1fefcac extends
@@ -14297,6 +17857,35 @@ define("PartnersHub.model$RL_9b5ff325fa2b1963afc7ac5fe1fefcac", ["exports", "@ou
 
     PartnersHubModel.RL_9b5ff325fa2b1963afc7ac5fe1fefcac = RL_9b5ff325fa2b1963afc7ac5fe1fefcac;
 
+});
+
+define("PartnersHub.model$RC_9b6a5f6a0f99ac9086bb3ba26d838bf1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c9c05587514bf40891ef7d6e333dc809Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_9b6a5f6a0f99ac9086bb3ba26d838bf1Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2POrderConfirmRequest", "p2POrderConfirmRequestAttr", "P2POrderConfirmRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_c9c05587514bf40891ef7d6e333dc809Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_c9c05587514bf40891ef7d6e333dc809Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_9b6a5f6a0f99ac9086bb3ba26d838bf1(new RC_9b6a5f6a0f99ac9086bb3ba26d838bf1.RecordClass({
+                    p2POrderConfirmRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_9b6a5f6a0f99ac9086bb3ba26d838bf1 = RC_9b6a5f6a0f99ac9086bb3ba26d838bf1Inner;
+
+        RC_9b6a5f6a0f99ac9086bb3ba26d838bf1Inner._isAnonymousRecord = true;
+        RC_9b6a5f6a0f99ac9086bb3ba26d838bf1Inner.UniqueId = "9b6a5f6a-0f99-ac90-86bb-3ba26d838bf1";
+        var RC_9b6a5f6a0f99ac9086bb3ba26d838bf1 = RC_9b6a5f6a0f99ac9086bb3ba26d838bf1Inner;
+        RC_9b6a5f6a0f99ac9086bb3ba26d838bf1.init();
+    }
 });
 
 define("PartnersHub.model$RC_fed8226e055119cda9775f74ac223ef2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_72e91b438c2e206bca7398a7a69902dfStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -14353,6 +17942,20 @@ define("PartnersHub.model$RL_9ba938eac8f7611815bf878625e7d65e", ["exports", "@ou
     }
 
     PartnersHubModel.RL_9ba938eac8f7611815bf878625e7d65e = RL_9ba938eac8f7611815bf878625e7d65e;
+
+});
+
+define("PartnersHub.model$RL_9baf947baad965c500c2d89efd8d1d67", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_5cf1b34ed2ad7e7e10f9b1f73ac14122"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9baf947baad965c500c2d89efd8d1d67 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_5cf1b34ed2ad7e7e10f9b1f73ac14122;
+        }
+
+    }
+
+    PartnersHubModel.RL_9baf947baad965c500c2d89efd8d1d67 = RL_9baf947baad965c500c2d89efd8d1d67;
 
 });
 
@@ -14568,6 +18171,34 @@ define("PartnersHub.model$RL_9cb7cd98b724492c8a879b00f91bcf20", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_9ce166949a8d8897eb3ee51f660d5692", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7cae5c3bb6e908ce3c67e583b84b10d0"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9ce166949a8d8897eb3ee51f660d5692 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7cae5c3bb6e908ce3c67e583b84b10d0;
+        }
+
+    }
+
+    PartnersHubModel.RL_9ce166949a8d8897eb3ee51f660d5692 = RL_9ce166949a8d8897eb3ee51f660d5692;
+
+});
+
+define("PartnersHub.model$RL_9d3186e90bc9d9c992bd1289281160e2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_6ad9207e51a4b642b6e1db89f79e31b5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9d3186e90bc9d9c992bd1289281160e2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_6ad9207e51a4b642b6e1db89f79e31b5;
+        }
+
+    }
+
+    PartnersHubModel.RL_9d3186e90bc9d9c992bd1289281160e2 = RL_9d3186e90bc9d9c992bd1289281160e2;
+
+});
+
 define("PartnersHub.model$RL_9d3f56dc0f77227ac337a1c3c235d2c4", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0c21bac0f0d595b425f072410353d305"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_9d3f56dc0f77227ac337a1c3c235d2c4 extends
@@ -14607,6 +18238,34 @@ define("PartnersHub.model$RL_9d69b2d3ce2ad95c00706adc74706b15", ["exports", "@ou
     }
 
     PartnersHubModel.RL_9d69b2d3ce2ad95c00706adc74706b15 = RL_9d69b2d3ce2ad95c00706adc74706b15;
+
+});
+
+define("PartnersHub.model$RL_9da5c6764fa38cdbc45ffab2fe9a4d33", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5685a40fa48e8876538e1df2a0c39d3eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9da5c6764fa38cdbc45ffab2fe9a4d33 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_5685a40fa48e8876538e1df2a0c39d3eStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_9da5c6764fa38cdbc45ffab2fe9a4d33 = RL_9da5c6764fa38cdbc45ffab2fe9a4d33;
+
+});
+
+define("PartnersHub.model$RL_9e08984c04aa3363c26f26b284faa96b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_b08a5be4fd4ca77058e6256ff8f39643Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9e08984c04aa3363c26f26b284faa96b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_b08a5be4fd4ca77058e6256ff8f39643Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_9e08984c04aa3363c26f26b284faa96b = RL_9e08984c04aa3363c26f26b284faa96b;
 
 });
 
@@ -14696,6 +18355,20 @@ define("PartnersHub.model$RL_9e1ff0949548eb09d4dbb455a422d959", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_9e58d9497ee0afabaafd8b106b944074", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a0e3ec28876716cff2e8393c0a8d7e49Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9e58d9497ee0afabaafd8b106b944074 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a0e3ec28876716cff2e8393c0a8d7e49Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_9e58d9497ee0afabaafd8b106b944074 = RL_9e58d9497ee0afabaafd8b106b944074;
+
+});
+
 define("PartnersHub.model$RL_9e8eb507fc82c7005600a2499b6a668c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_87351e3b0fa2ca59cf6c6749c6405006"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_9e8eb507fc82c7005600a2499b6a668c extends
@@ -14721,6 +18394,49 @@ define("PartnersHub.model$RL_9ec7f7a8dba6a7008e752800c6efcda2", ["exports", "@ou
     }
 
     PartnersHubModel.RL_9ec7f7a8dba6a7008e752800c6efcda2 = RL_9ec7f7a8dba6a7008e752800c6efcda2;
+
+});
+
+define("PartnersHub.model$RC_9edae87bd34d57fa71f2a72c0cc57e1a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5704bf4b81a79ea92b14c563cc98154bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_9edae87bd34d57fa71f2a72c0cc57e1aInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("NilooAuthorize2Response", "nilooAuthorize2ResponseAttr", "NilooAuthorize2Response", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5704bf4b81a79ea92b14c563cc98154bStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5704bf4b81a79ea92b14c563cc98154bStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_9edae87bd34d57fa71f2a72c0cc57e1a(new RC_9edae87bd34d57fa71f2a72c0cc57e1a.RecordClass({
+                    nilooAuthorize2ResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_9edae87bd34d57fa71f2a72c0cc57e1a = RC_9edae87bd34d57fa71f2a72c0cc57e1aInner;
+
+        RC_9edae87bd34d57fa71f2a72c0cc57e1aInner._isAnonymousRecord = true;
+        RC_9edae87bd34d57fa71f2a72c0cc57e1aInner.UniqueId = "9edae87b-d34d-57fa-71f2-a72c0cc57e1a";
+        var RC_9edae87bd34d57fa71f2a72c0cc57e1a = RC_9edae87bd34d57fa71f2a72c0cc57e1aInner;
+        RC_9edae87bd34d57fa71f2a72c0cc57e1a.init();
+    }
+});
+
+define("PartnersHub.model$RL_9f08b56176d33deee65495f413d78949", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_81d96dbb343b41f55c202064ee7f136d"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_9f08b56176d33deee65495f413d78949 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_81d96dbb343b41f55c202064ee7f136d;
+        }
+
+    }
+
+    PartnersHubModel.RL_9f08b56176d33deee65495f413d78949 = RL_9f08b56176d33deee65495f413d78949;
 
 });
 
@@ -14767,18 +18483,61 @@ define("PartnersHub.model$RC_9fdefb1423ae0af9c1d321109b8695e4", ["exports", "@ou
     }
 });
 
-define("PartnersHub.model$RL_a08f65ffe8aa106df28c69272e328037", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_412ed7113d9105960615d1c5b5f37301Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+define("PartnersHub.model$RL_a1f5641cdfddcfd4462231ca8dc88cc7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_8893a2b0092110e7fe88380d93aa9f1b"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
-    class RL_a08f65ffe8aa106df28c69272e328037 extends
+    class RL_a1f5641cdfddcfd4462231ca8dc88cc7 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return RESTAPIWebsocketOfficialModel.ST_412ed7113d9105960615d1c5b5f37301Structure;
+            return PartnersHubModel.RC_8893a2b0092110e7fe88380d93aa9f1b;
         }
 
     }
 
-    PartnersHubModel.RL_a08f65ffe8aa106df28c69272e328037 = RL_a08f65ffe8aa106df28c69272e328037;
+    PartnersHubModel.RL_a1f5641cdfddcfd4462231ca8dc88cc7 = RL_a1f5641cdfddcfd4462231ca8dc88cc7;
 
+});
+
+define("PartnersHub.model$RL_a20cf7a86706288fea479fd0bec09085", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1d9346af7c96c8938257535a9fc60a9cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a20cf7a86706288fea479fd0bec09085 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1d9346af7c96c8938257535a9fc60a9cStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_a20cf7a86706288fea479fd0bec09085 = RL_a20cf7a86706288fea479fd0bec09085;
+
+});
+
+define("PartnersHub.model$RC_a246c61e9faba433ef6d84fa27cfa397", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_741b22262e1abaa71c2c6102c32e5868Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_a246c61e9faba433ef6d84fa27cfa397Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertiserPaymentMethodsResponse", "p2PAdvertiserPaymentMethodsResponseAttr", "P2PAdvertiserPaymentMethodsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_741b22262e1abaa71c2c6102c32e5868Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_741b22262e1abaa71c2c6102c32e5868Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_a246c61e9faba433ef6d84fa27cfa397(new RC_a246c61e9faba433ef6d84fa27cfa397.RecordClass({
+                    p2PAdvertiserPaymentMethodsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_a246c61e9faba433ef6d84fa27cfa397 = RC_a246c61e9faba433ef6d84fa27cfa397Inner;
+
+        RC_a246c61e9faba433ef6d84fa27cfa397Inner._isAnonymousRecord = true;
+        RC_a246c61e9faba433ef6d84fa27cfa397Inner.UniqueId = "a246c61e-9fab-a433-ef6d-84fa27cfa397";
+        var RC_a246c61e9faba433ef6d84fa27cfa397 = RC_a246c61e9faba433ef6d84fa27cfa397Inner;
+        RC_a246c61e9faba433ef6d84fa27cfa397.init();
+    }
 });
 
 define("PartnersHub.model$RL_a269dfd9a948aad7cbddba837f8c095f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_31254dd0eceb66de83ea4d3f76038ef7"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -15007,6 +18766,20 @@ define("PartnersHub.model$RL_a5b6b975942e234f0350205b728240be", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_a5d549866b2ac93eae1f3fb2e43c0bf7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a3bb07924a89f370c871b3cb12d77f65Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a5d549866b2ac93eae1f3fb2e43c0bf7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a3bb07924a89f370c871b3cb12d77f65Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_a5d549866b2ac93eae1f3fb2e43c0bf7 = RL_a5d549866b2ac93eae1f3fb2e43c0bf7;
+
+});
+
 define("PartnersHub.model$RC_a5fc3d62312a89b32ae393e0571bcad7", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d4ed48681c55954edc02f19b0ed492e7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_a5fc3d62312a89b32ae393e0571bcad7Inner extends
@@ -15121,6 +18894,35 @@ define("PartnersHub.model$RL_a7094b4040c9bc1f29f799c201256c99", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_a83c53501675e1b1a92dce121c194a38", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_bf8a7e4d5139901f795596a5fbda1b90Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_a83c53501675e1b1a92dce121c194a38Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("TransactionItem", "transactionItemAttr", "TransactionItem", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_bf8a7e4d5139901f795596a5fbda1b90Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_bf8a7e4d5139901f795596a5fbda1b90Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_a83c53501675e1b1a92dce121c194a38(new RC_a83c53501675e1b1a92dce121c194a38.RecordClass({
+                    transactionItemAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_a83c53501675e1b1a92dce121c194a38 = RC_a83c53501675e1b1a92dce121c194a38Inner;
+
+        RC_a83c53501675e1b1a92dce121c194a38Inner._isAnonymousRecord = true;
+        RC_a83c53501675e1b1a92dce121c194a38Inner.UniqueId = "a83c5350-1675-e1b1-a92d-ce121c194a38";
+        var RC_a83c53501675e1b1a92dce121c194a38 = RC_a83c53501675e1b1a92dce121c194a38Inner;
+        RC_a83c53501675e1b1a92dce121c194a38.init();
+    }
+});
+
 define("PartnersHub.model$RL_a85951adc11db15827205a4c30d6e88f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_50afbe86b1f98695d7a2eacc451587a7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_a85951adc11db15827205a4c30d6e88f extends
@@ -15178,6 +18980,20 @@ define("PartnersHub.model$RL_a8b7c276560c35af141714ac8a51d257", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_a8d533a0f4e6b4998d1e5475942bbcf3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_32ba270e49d07771f91f1f34d388e228Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a8d533a0f4e6b4998d1e5475942bbcf3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_32ba270e49d07771f91f1f34d388e228Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_a8d533a0f4e6b4998d1e5475942bbcf3 = RL_a8d533a0f4e6b4998d1e5475942bbcf3;
+
+});
+
 define("PartnersHub.model$RC_a9755f38b0542dfb6acdd8617637c169", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_24b97ac8060a9349e09da2d88e1dea00Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_a9755f38b0542dfb6acdd8617637c169Inner extends
@@ -15218,6 +19034,20 @@ define("PartnersHub.model$RL_a9a9108148017b3108e7788d5e0b597c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_a9a9108148017b3108e7788d5e0b597c = RL_a9a9108148017b3108e7788d5e0b597c;
+
+});
+
+define("PartnersHub.model$RL_a9afb210b5496f25c21da21e788199b5", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0e4c0f67b04852396e81eab6b78286b5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_a9afb210b5496f25c21da21e788199b5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_0e4c0f67b04852396e81eab6b78286b5;
+        }
+
+    }
+
+    PartnersHubModel.RL_a9afb210b5496f25c21da21e788199b5 = RL_a9afb210b5496f25c21da21e788199b5;
 
 });
 
@@ -15306,6 +19136,48 @@ define("PartnersHub.model$RL_aae9a3766bc818ac211c0ea434d05161", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_aaf5b1e2b773710766863b43f6cf9229", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7bd0e252fd030a546f5f38214e1904a5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_aaf5b1e2b773710766863b43f6cf9229 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7bd0e252fd030a546f5f38214e1904a5;
+        }
+
+    }
+
+    PartnersHubModel.RL_aaf5b1e2b773710766863b43f6cf9229 = RL_aaf5b1e2b773710766863b43f6cf9229;
+
+});
+
+define("PartnersHub.model$RL_ab5f17238b4d916b868f1aadc23a7d36", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f0117a9263a599e510e75f4e61b79c85Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ab5f17238b4d916b868f1aadc23a7d36 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_f0117a9263a599e510e75f4e61b79c85Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ab5f17238b4d916b868f1aadc23a7d36 = RL_ab5f17238b4d916b868f1aadc23a7d36;
+
+});
+
+define("PartnersHub.model$RL_ab79e9426faff446a04dca332793c58f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_9737eba44981be7e1e2e600a29fca443Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ab79e9426faff446a04dca332793c58f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_9737eba44981be7e1e2e600a29fca443Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ab79e9426faff446a04dca332793c58f = RL_ab79e9426faff446a04dca332793c58f;
+
+});
+
 define("PartnersHub.model$RL_abbb06caa2dc3007694c8b499e93ac42", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_abbb06caa2dc3007694c8b499e93ac42 extends
@@ -15360,6 +19232,20 @@ define("PartnersHub.model$RL_ac6093dc6d88ec6d2280dfd00ae486ca", ["exports", "@ou
     }
 
     PartnersHubModel.RL_ac6093dc6d88ec6d2280dfd00ae486ca = RL_ac6093dc6d88ec6d2280dfd00ae486ca;
+
+});
+
+define("PartnersHub.model$RL_ac654ecd19209e7187154374b6dafe24", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_14af92e1255335a1e3d4bd8d827598f2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ac654ecd19209e7187154374b6dafe24 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_14af92e1255335a1e3d4bd8d827598f2Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ac654ecd19209e7187154374b6dafe24 = RL_ac654ecd19209e7187154374b6dafe24;
 
 });
 
@@ -15462,6 +19348,49 @@ define("PartnersHub.model$RC_ad160031f42d1788007448cccfc906ac", ["exports", "@ou
         var RC_ad160031f42d1788007448cccfc906ac = RC_ad160031f42d1788007448cccfc906acInner;
         RC_ad160031f42d1788007448cccfc906ac.init();
     }
+});
+
+define("PartnersHub.model$RC_e225715fd2bd219423cc15189415e330", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_e225715fd2bd219423cc15189415e330Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("EventType", "eventTypeAttr", "EventType", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_e225715fd2bd219423cc15189415e330(new RC_e225715fd2bd219423cc15189415e330.RecordClass({
+                    eventTypeAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_e225715fd2bd219423cc15189415e330 = RC_e225715fd2bd219423cc15189415e330Inner;
+
+        RC_e225715fd2bd219423cc15189415e330Inner._isAnonymousRecord = true;
+        RC_e225715fd2bd219423cc15189415e330Inner.UniqueId = "e225715f-d2bd-2194-23cc-15189415e330";
+        var RC_e225715fd2bd219423cc15189415e330 = RC_e225715fd2bd219423cc15189415e330Inner;
+        RC_e225715fd2bd219423cc15189415e330.init();
+    }
+});
+
+define("PartnersHub.model$RL_ad41872f2de8dd96a0a3342b36c4be55", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_e225715fd2bd219423cc15189415e330"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ad41872f2de8dd96a0a3342b36c4be55 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_e225715fd2bd219423cc15189415e330;
+        }
+
+    }
+
+    PartnersHubModel.RL_ad41872f2de8dd96a0a3342b36c4be55 = RL_ad41872f2de8dd96a0a3342b36c4be55;
+
 });
 
 define("PartnersHub.model$RC_ada7ae2f7fcadfe9ad4cb9dbd1c4caf8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_159cd2ead3b4ce7cf017e33699885453Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -15906,6 +19835,20 @@ define("PartnersHub.model$RL_b2117356ef65d3231f992a69f03538c4", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_b25c3a0fcffbc750be1c6409a1753ee3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_9469645a6983eeba9173683938b54abe"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b25c3a0fcffbc750be1c6409a1753ee3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_9469645a6983eeba9173683938b54abe;
+        }
+
+    }
+
+    PartnersHubModel.RL_b25c3a0fcffbc750be1c6409a1753ee3 = RL_b25c3a0fcffbc750be1c6409a1753ee3;
+
+});
+
 define("PartnersHub.model$RC_b27f0b968b0f7cea61506ac9d6ee7c27", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$PasswordValidationResultRec", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_b27f0b968b0f7cea61506ac9d6ee7c27Inner extends
@@ -15963,6 +19906,20 @@ define("PartnersHub.model$RL_b399fd74f6375cee8461023a74406333", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_b3a4372973bd6a9f1d0acc33502a4d8c", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b3a4372973bd6a9f1d0acc33502a4d8c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_5fe01be53a95c3d6f80a6694bc22455aEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_b3a4372973bd6a9f1d0acc33502a4d8c = RL_b3a4372973bd6a9f1d0acc33502a4d8c;
+
+});
+
 define("PartnersHub.model$RL_b3e25f2f8271a63fcdf2ac5b5ce11cdc", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_e3f9af4171d5e4a41700770295d05c77Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_b3e25f2f8271a63fcdf2ac5b5ce11cdc extends
@@ -16002,6 +19959,20 @@ define("PartnersHub.model$RL_b412922a0a29f17092810fe62dd48743", ["exports", "@ou
     }
 
     PartnersHubModel.RL_b412922a0a29f17092810fe62dd48743 = RL_b412922a0a29f17092810fe62dd48743;
+
+});
+
+define("PartnersHub.model$RL_b4a5c9d3dcebe6413a999de1e05b8c08", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_a246c61e9faba433ef6d84fa27cfa397"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b4a5c9d3dcebe6413a999de1e05b8c08 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_a246c61e9faba433ef6d84fa27cfa397;
+        }
+
+    }
+
+    PartnersHubModel.RL_b4a5c9d3dcebe6413a999de1e05b8c08 = RL_b4a5c9d3dcebe6413a999de1e05b8c08;
 
 });
 
@@ -16248,6 +20219,20 @@ define("PartnersHub.model$RL_b7369d5f4cafbbcd5483c083235b9d49", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_b78395d0ac2f16e352960c06dc226372", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d4e039bbd70c593954382df471fdac2aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b78395d0ac2f16e352960c06dc226372 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_d4e039bbd70c593954382df471fdac2aStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_b78395d0ac2f16e352960c06dc226372 = RL_b78395d0ac2f16e352960c06dc226372;
+
+});
+
 define("PartnersHub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_9eb2d1268b055c9ba20852d2758a5050Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_b7a05579761da982186db0cb56ca5900 extends
@@ -16262,15 +20247,15 @@ define("PartnersHub.model$RL_b7a05579761da982186db0cb56ca5900", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RC_d4817385d3db168633301f8c73e2d828", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_3782d35f5f28ff9dd18fb6881ab471a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RC_d4817385d3db168633301f8c73e2d828", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_3782d35f5f28ff9dd18fb6881ab471a9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_d4817385d3db168633301f8c73e2d828Inner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
                     this.attr("Message", "messageAttr", "Message", false, false, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new FEReleaseSlackIntegrationModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure());
-                    }, true, FEReleaseSlackIntegrationModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure)
+                        return OS.DataTypes.ImmutableBase.getData(new ReleaseSlackIntegrationOfficialModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure());
+                    }, true, ReleaseSlackIntegrationOfficialModel.ST_3782d35f5f28ff9dd18fb6881ab471a9Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -16348,6 +20333,20 @@ define("PartnersHub.model$RL_b88c0ed17712805463deb6be1a1ca760", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_b89c914195d1eb859bace1db1e3d63f3", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_3612fcc680d052de2c30dcfaf1d328c5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_b89c914195d1eb859bace1db1e3d63f3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_3612fcc680d052de2c30dcfaf1d328c5Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_b89c914195d1eb859bace1db1e3d63f3 = RL_b89c914195d1eb859bace1db1e3d63f3;
+
+});
+
 define("PartnersHub.model$RL_b903ad96980478d7874f689155c88d6c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_b903ad96980478d7874f689155c88d6c extends
@@ -16359,6 +20358,49 @@ define("PartnersHub.model$RL_b903ad96980478d7874f689155c88d6c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_b903ad96980478d7874f689155c88d6c = RL_b903ad96980478d7874f689155c88d6c;
+
+});
+
+define("PartnersHub.model$RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_f95392f2815efea8bab83c5950c7808fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement", "PartnerEventManagement.model$EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord", "PartnerEventManagement.model$EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Event", "eventAttr", "Event", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord),
+                    this.attr("Country", "countryAttr", "Country", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_09463e6707d58df93aeeef6ddf271e0dEntityRecord),
+                    this.attr("EventType", "eventTypeAttr", "EventType", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new PartnerEventManagementModel.EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord());
+                    }, true, PartnerEventManagementModel.EN_8ce803cf87988828ab54aa3ac3da6f8fEntityRecord)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+        }
+
+        PartnersHubModel.RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52 = RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52Inner;
+
+        RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52Inner._isAnonymousRecord = true;
+        RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52Inner.UniqueId = "b93f5c57-f06e-1ce1-f61c-c2fdbe0d7c52";
+        var RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52 = RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52Inner;
+        RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52.init();
+    }
+});
+
+define("PartnersHub.model$RL_ba16f8261986c6b18df245be53196ced", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_870a57499f5823024d83cfe455822b86Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ba16f8261986c6b18df245be53196ced extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_870a57499f5823024d83cfe455822b86Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ba16f8261986c6b18df245be53196ced = RL_ba16f8261986c6b18df245be53196ced;
 
 });
 
@@ -16387,6 +20429,20 @@ define("PartnersHub.model$RL_bb38c3ab91cd808b60d5ca14bf9b4dbc", ["exports", "@ou
     }
 
     PartnersHubModel.RL_bb38c3ab91cd808b60d5ca14bf9b4dbc = RL_bb38c3ab91cd808b60d5ca14bf9b4dbc;
+
+});
+
+define("PartnersHub.model$RL_bb3acec9ee51c7f4799aac90c90128ef", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_8274740c430ed1e39b7a1549b09d4ca3"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_bb3acec9ee51c7f4799aac90c90128ef extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_8274740c430ed1e39b7a1549b09d4ca3;
+        }
+
+    }
+
+    PartnersHubModel.RL_bb3acec9ee51c7f4799aac90c90128ef = RL_bb3acec9ee51c7f4799aac90c90128ef;
 
 });
 
@@ -16634,6 +20690,20 @@ define("PartnersHub.model$RL_bfe5e088b2f6df6ae697d4a263069bca", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_bff307d70f446f7253411514e4792551", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_3ac77d195404c60db3e99e071fb2d3f7"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_bff307d70f446f7253411514e4792551 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_3ac77d195404c60db3e99e071fb2d3f7;
+        }
+
+    }
+
+    PartnersHubModel.RL_bff307d70f446f7253411514e4792551 = RL_bff307d70f446f7253411514e4792551;
+
+});
+
 define("PartnersHub.model$RL_c0f17d75c546075264f5d075e00ba65b", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_c0f17d75c546075264f5d075e00ba65b extends
@@ -16659,6 +20729,49 @@ define("PartnersHub.model$RL_c1b551b639cf44782c03b977f31ed021", ["exports", "@ou
     }
 
     PartnersHubModel.RL_c1b551b639cf44782c03b977f31ed021 = RL_c1b551b639cf44782c03b977f31ed021;
+
+});
+
+define("PartnersHub.model$RC_cdd093181252d8c39658eb7271017441", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_dd93278b2756b05a5d284868241cc3d7Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_cdd093181252d8c39658eb7271017441Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("NotificationEventResponse", "notificationEventResponseAttr", "NotificationEventResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_dd93278b2756b05a5d284868241cc3d7Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_dd93278b2756b05a5d284868241cc3d7Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_cdd093181252d8c39658eb7271017441(new RC_cdd093181252d8c39658eb7271017441.RecordClass({
+                    notificationEventResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_cdd093181252d8c39658eb7271017441 = RC_cdd093181252d8c39658eb7271017441Inner;
+
+        RC_cdd093181252d8c39658eb7271017441Inner._isAnonymousRecord = true;
+        RC_cdd093181252d8c39658eb7271017441Inner.UniqueId = "cdd09318-1252-d8c3-9658-eb7271017441";
+        var RC_cdd093181252d8c39658eb7271017441 = RC_cdd093181252d8c39658eb7271017441Inner;
+        RC_cdd093181252d8c39658eb7271017441.init();
+    }
+});
+
+define("PartnersHub.model$RL_c1fc2d91a927b6c04c65f17fe69d7364", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_cdd093181252d8c39658eb7271017441"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c1fc2d91a927b6c04c65f17fe69d7364 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_cdd093181252d8c39658eb7271017441;
+        }
+
+    }
+
+    PartnersHubModel.RL_c1fc2d91a927b6c04c65f17fe69d7364 = RL_c1fc2d91a927b6c04c65f17fe69d7364;
 
 });
 
@@ -16845,6 +20958,49 @@ define("PartnersHub.model$RL_c3b8cba0fbc47ed9657b955a859cf977", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_c442eae242b2b02d93575027f6e75422", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_74fba7fb18697339da88244fa3fc5435"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c442eae242b2b02d93575027f6e75422 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_74fba7fb18697339da88244fa3fc5435;
+        }
+
+    }
+
+    PartnersHubModel.RL_c442eae242b2b02d93575027f6e75422 = RL_c442eae242b2b02d93575027f6e75422;
+
+});
+
+define("PartnersHub.model$RC_c4f5c69b052ef8df5dfc0fa30551e30c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_f98977622822548114c6901450f9dfcdStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_c4f5c69b052ef8df5dfc0fa30551e30cInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("GetPartnerAccountResponse", "getPartnerAccountResponseAttr", "GetPartnerAccountResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_f98977622822548114c6901450f9dfcdStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_f98977622822548114c6901450f9dfcdStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_c4f5c69b052ef8df5dfc0fa30551e30c(new RC_c4f5c69b052ef8df5dfc0fa30551e30c.RecordClass({
+                    getPartnerAccountResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_c4f5c69b052ef8df5dfc0fa30551e30c = RC_c4f5c69b052ef8df5dfc0fa30551e30cInner;
+
+        RC_c4f5c69b052ef8df5dfc0fa30551e30cInner._isAnonymousRecord = true;
+        RC_c4f5c69b052ef8df5dfc0fa30551e30cInner.UniqueId = "c4f5c69b-052e-f8df-5dfc-0fa30551e30c";
+        var RC_c4f5c69b052ef8df5dfc0fa30551e30c = RC_c4f5c69b052ef8df5dfc0fa30551e30cInner;
+        RC_c4f5c69b052ef8df5dfc0fa30551e30c.init();
+    }
+});
+
 define("PartnersHub.model$RL_c542301ba033767f97d37c7ac8f0f71c", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$ST_71bc196daedd9ac0648bfd56a713859dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_c542301ba033767f97d37c7ac8f0f71c extends
@@ -16958,6 +21114,20 @@ define("PartnersHub.model$RL_c5992e3683e9f3f60844c31fd0aa7945", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_c5a2c6cca3ac9abd623572381d94e72b", ["exports", "@outsystems/runtime-core-js", "PartnerEventManagement.model", "PartnersHub.model", "PartnerEventManagement.model$EN_f95392f2815efea8bab83c5950c7808fEntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$PartnerEventManagement"], function(exports, OSRuntimeCore, PartnerEventManagementModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c5a2c6cca3ac9abd623572381d94e72b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnerEventManagementModel.EN_f95392f2815efea8bab83c5950c7808fEntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_c5a2c6cca3ac9abd623572381d94e72b = RL_c5a2c6cca3ac9abd623572381d94e72b;
+
+});
+
 define("PartnersHub.model$RL_c5c6c21effa285fee00f8dc17d9ba72f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2f46c6fecf81fe9d91763f789141eec9Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_c5c6c21effa285fee00f8dc17d9ba72f extends
@@ -16983,6 +21153,34 @@ define("PartnersHub.model$RL_c6491fa29594270d54ced72bf0d6733c", ["exports", "@ou
     }
 
     PartnersHubModel.RL_c6491fa29594270d54ced72bf0d6733c = RL_c6491fa29594270d54ced72bf0d6733c;
+
+});
+
+define("PartnersHub.model$RL_c6a47a1068f494ccd422ebb6efa80b1c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d48bf8d95ece559f969e94f01654ff6bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c6a47a1068f494ccd422ebb6efa80b1c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_d48bf8d95ece559f969e94f01654ff6bStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_c6a47a1068f494ccd422ebb6efa80b1c = RL_c6a47a1068f494ccd422ebb6efa80b1c;
+
+});
+
+define("PartnersHub.model$RL_c6c5bbed4698a9104285c2ffcc29f228", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ee0fad031c8fb70025ad4f6b3dc33f10Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c6c5bbed4698a9104285c2ffcc29f228 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_ee0fad031c8fb70025ad4f6b3dc33f10Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_c6c5bbed4698a9104285c2ffcc29f228 = RL_c6c5bbed4698a9104285c2ffcc29f228;
 
 });
 
@@ -17057,6 +21255,20 @@ define("PartnersHub.model$RL_c735140696f242417f2b717aa3cc5ab8", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_c75e7bfd399429df0d1491c78629cc1e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_26b877e1d832e90c0fea3059eec067b6EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c75e7bfd399429df0d1491c78629cc1e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.EN_26b877e1d832e90c0fea3059eec067b6EntityRecord;
+        }
+
+    }
+
+    PartnersHubModel.RL_c75e7bfd399429df0d1491c78629cc1e = RL_c75e7bfd399429df0d1491c78629cc1e;
+
+});
+
 define("PartnersHub.model$RL_c79778980015bfefb44dd278a594556b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_05cf75e61d985a2144c0c1483a839445"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_c79778980015bfefb44dd278a594556b extends
@@ -17082,6 +21294,20 @@ define("PartnersHub.model$RL_c7d3dc9c14ef57dbf8aab2a2748a6117", ["exports", "@ou
     }
 
     PartnersHubModel.RL_c7d3dc9c14ef57dbf8aab2a2748a6117 = RL_c7d3dc9c14ef57dbf8aab2a2748a6117;
+
+});
+
+define("PartnersHub.model$RL_c7f26a72e57a4dddb6b0448d22dc5863", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_857e70f98678e5b68f53de5829bd685aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_c7f26a72e57a4dddb6b0448d22dc5863 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_857e70f98678e5b68f53de5829bd685aStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_c7f26a72e57a4dddb6b0448d22dc5863 = RL_c7f26a72e57a4dddb6b0448d22dc5863;
 
 });
 
@@ -17181,6 +21407,35 @@ define("PartnersHub.model$RL_ca06e5bf8b5ed2faf11935e078ed0bf5", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RC_ca29307c32c3b6ee4bca4fca61db0923", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_328c83c38f97bef0d26efcff47040359Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_ca29307c32c3b6ee4bca4fca61db0923Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("Authorize2", "authorize2Attr", "Authorize2", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_328c83c38f97bef0d26efcff47040359Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_328c83c38f97bef0d26efcff47040359Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_ca29307c32c3b6ee4bca4fca61db0923(new RC_ca29307c32c3b6ee4bca4fca61db0923.RecordClass({
+                    authorize2Attr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_ca29307c32c3b6ee4bca4fca61db0923 = RC_ca29307c32c3b6ee4bca4fca61db0923Inner;
+
+        RC_ca29307c32c3b6ee4bca4fca61db0923Inner._isAnonymousRecord = true;
+        RC_ca29307c32c3b6ee4bca4fca61db0923Inner.UniqueId = "ca29307c-32c3-b6ee-4bca-4fca61db0923";
+        var RC_ca29307c32c3b6ee4bca4fca61db0923 = RC_ca29307c32c3b6ee4bca4fca61db0923Inner;
+        RC_ca29307c32c3b6ee4bca4fca61db0923.init();
+    }
+});
+
 define("PartnersHub.model$RL_ca4befaa7d5de5d9bbcd4bf59c44b15c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_b27f0b968b0f7cea61506ac9d6ee7c27"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_ca4befaa7d5de5d9bbcd4bf59c44b15c extends
@@ -17195,6 +21450,20 @@ define("PartnersHub.model$RL_ca4befaa7d5de5d9bbcd4bf59c44b15c", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_cad88a69fdf904df26f5066dd5cffb79", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_ae14fa1d3d419850de9a85b162df7c73Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cad88a69fdf904df26f5066dd5cffb79 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_ae14fa1d3d419850de9a85b162df7c73Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_cad88a69fdf904df26f5066dd5cffb79 = RL_cad88a69fdf904df26f5066dd5cffb79;
+
+});
+
 define("PartnersHub.model$RL_cb751ddebeb9909df76ed8b8d1c8c369", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_c98d478d92307b8784bb1e90423f775bStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_cb751ddebeb9909df76ed8b8d1c8c369 extends
@@ -17206,6 +21475,20 @@ define("PartnersHub.model$RL_cb751ddebeb9909df76ed8b8d1c8c369", ["exports", "@ou
     }
 
     PartnersHubModel.RL_cb751ddebeb9909df76ed8b8d1c8c369 = RL_cb751ddebeb9909df76ed8b8d1c8c369;
+
+});
+
+define("PartnersHub.model$RL_cb7a85895e8c7191ce89431d283aecb7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_7a45e74e27c6f71f63173a4101e26602"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cb7a85895e8c7191ce89431d283aecb7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_7a45e74e27c6f71f63173a4101e26602;
+        }
+
+    }
+
+    PartnersHubModel.RL_cb7a85895e8c7191ce89431d283aecb7 = RL_cb7a85895e8c7191ce89431d283aecb7;
 
 });
 
@@ -17266,6 +21549,20 @@ define("PartnersHub.model$RL_cb813e01813ea34c8f66a8be7f90e6b0", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_cbaa449aac56180c04dc0dfa93e6b55e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8e422363b5a82bdaf5e61cc1198b7e5dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cbaa449aac56180c04dc0dfa93e6b55e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_8e422363b5a82bdaf5e61cc1198b7e5dStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_cbaa449aac56180c04dc0dfa93e6b55e = RL_cbaa449aac56180c04dc0dfa93e6b55e;
+
+});
+
 define("PartnersHub.model$RL_cbac71e3b2383e8c0c384139f6b34f78", ["exports", "@outsystems/runtime-core-js", "OutSystemsUI.model", "PartnersHub.model", "OutSystemsUI.model$EN_7441573ccf264d27ef548a39a846bd68EntityRecord", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI"], function(exports, OSRuntimeCore, OutSystemsUIModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_cbac71e3b2383e8c0c384139f6b34f78 extends
@@ -17308,6 +21605,20 @@ define("PartnersHub.model$RL_cbd5c5f6e399c35495bbdeff492e56a3", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_cd7aae7110549eb2398675e1d9a7e14e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_ca29307c32c3b6ee4bca4fca61db0923"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cd7aae7110549eb2398675e1d9a7e14e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_ca29307c32c3b6ee4bca4fca61db0923;
+        }
+
+    }
+
+    PartnersHubModel.RL_cd7aae7110549eb2398675e1d9a7e14e = RL_cd7aae7110549eb2398675e1d9a7e14e;
+
+});
+
 define("PartnersHub.model$RL_cead5d196d772d870bc3f7d4fa164d8c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_6eafdf6bd9852632690d0672a511a98fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_cead5d196d772d870bc3f7d4fa164d8c extends
@@ -17333,6 +21644,48 @@ define("PartnersHub.model$RL_ceea93824bcd8ed549fcfcd4e2f5b807", ["exports", "@ou
     }
 
     PartnersHubModel.RL_ceea93824bcd8ed549fcfcd4e2f5b807 = RL_ceea93824bcd8ed549fcfcd4e2f5b807;
+
+});
+
+define("PartnersHub.model$RL_ceeb5cf67227d230352f98416e3a5708", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_af7c8c24e0881fcad517d74c916f7352Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ceeb5cf67227d230352f98416e3a5708 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_af7c8c24e0881fcad517d74c916f7352Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ceeb5cf67227d230352f98416e3a5708 = RL_ceeb5cf67227d230352f98416e3a5708;
+
+});
+
+define("PartnersHub.model$RL_cf17f57129ad6a4c2ec02e2afc77ae2b", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_2f83f0a44c31e76c12440b162d598457Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cf17f57129ad6a4c2ec02e2afc77ae2b extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_2f83f0a44c31e76c12440b162d598457Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_cf17f57129ad6a4c2ec02e2afc77ae2b = RL_cf17f57129ad6a4c2ec02e2afc77ae2b;
+
+});
+
+define("PartnersHub.model$RL_cf3e55591f725fd3bc6b2d0d3ee5730f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_370fde1db6758aa39a364a98c4d26988Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_cf3e55591f725fd3bc6b2d0d3ee5730f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_370fde1db6758aa39a364a98c4d26988Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_cf3e55591f725fd3bc6b2d0d3ee5730f = RL_cf3e55591f725fd3bc6b2d0d3ee5730f;
 
 });
 
@@ -17448,6 +21801,49 @@ define("PartnersHub.model$RC_d15ba8cc56cc5ee58bd8acaffd974239", ["exports", "@ou
         var RC_d15ba8cc56cc5ee58bd8acaffd974239 = RC_d15ba8cc56cc5ee58bd8acaffd974239Inner;
         RC_d15ba8cc56cc5ee58bd8acaffd974239.init();
     }
+});
+
+define("PartnersHub.model$RC_fbe26d11e9d7e815ab8f8d312685ebe8", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_b08a5be4fd4ca77058e6256ff8f39643Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_fbe26d11e9d7e815ab8f8d312685ebe8Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PPaymentMethodsResponse", "p2PPaymentMethodsResponseAttr", "P2PPaymentMethodsResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b08a5be4fd4ca77058e6256ff8f39643Structure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b08a5be4fd4ca77058e6256ff8f39643Structure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_fbe26d11e9d7e815ab8f8d312685ebe8(new RC_fbe26d11e9d7e815ab8f8d312685ebe8.RecordClass({
+                    p2PPaymentMethodsResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_fbe26d11e9d7e815ab8f8d312685ebe8 = RC_fbe26d11e9d7e815ab8f8d312685ebe8Inner;
+
+        RC_fbe26d11e9d7e815ab8f8d312685ebe8Inner._isAnonymousRecord = true;
+        RC_fbe26d11e9d7e815ab8f8d312685ebe8Inner.UniqueId = "fbe26d11-e9d7-e815-ab8f-8d312685ebe8";
+        var RC_fbe26d11e9d7e815ab8f8d312685ebe8 = RC_fbe26d11e9d7e815ab8f8d312685ebe8Inner;
+        RC_fbe26d11e9d7e815ab8f8d312685ebe8.init();
+    }
+});
+
+define("PartnersHub.model$RL_d169ac2c2610bcd30201dd6066aabbc8", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_fbe26d11e9d7e815ab8f8d312685ebe8"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_d169ac2c2610bcd30201dd6066aabbc8 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_fbe26d11e9d7e815ab8f8d312685ebe8;
+        }
+
+    }
+
+    PartnersHubModel.RL_d169ac2c2610bcd30201dd6066aabbc8 = RL_d169ac2c2610bcd30201dd6066aabbc8;
+
 });
 
 define("PartnersHub.model$RL_d16bda7af8a28dea619439b98c92af4f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$EN_4c707c7ccff133f1198a8b9c73decb83EntityRecord"], function(exports, OSRuntimeCore, PartnersHubModel) {
@@ -17685,6 +22081,35 @@ define("PartnersHub.model$RL_d33f26f168193562dc76ee2abb116b7d", ["exports", "@ou
 
     PartnersHubModel.RL_d33f26f168193562dc76ee2abb116b7d = RL_d33f26f168193562dc76ee2abb116b7d;
 
+});
+
+define("PartnersHub.model$RC_d33f8c009e3e781cecefae4af6e8d57d", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d7788a11837ccb63472925e3f2cd934fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_d33f8c009e3e781cecefae4af6e8d57dInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PAdvertInfoResponse", "p2PAdvertInfoResponseAttr", "P2PAdvertInfoResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_d7788a11837ccb63472925e3f2cd934fStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_d7788a11837ccb63472925e3f2cd934fStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_d33f8c009e3e781cecefae4af6e8d57d(new RC_d33f8c009e3e781cecefae4af6e8d57d.RecordClass({
+                    p2PAdvertInfoResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_d33f8c009e3e781cecefae4af6e8d57d = RC_d33f8c009e3e781cecefae4af6e8d57dInner;
+
+        RC_d33f8c009e3e781cecefae4af6e8d57dInner._isAnonymousRecord = true;
+        RC_d33f8c009e3e781cecefae4af6e8d57dInner.UniqueId = "d33f8c00-9e3e-781c-ecef-ae4af6e8d57d";
+        var RC_d33f8c009e3e781cecefae4af6e8d57d = RC_d33f8c009e3e781cecefae4af6e8d57dInner;
+        RC_d33f8c009e3e781cecefae4af6e8d57d.init();
+    }
 });
 
 define("PartnersHub.model$RL_d3a7744852f4b782bcbb3dc9b2b5a3a2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_123df4fc5615aac2800d1fa4847bc440Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
@@ -17970,6 +22395,63 @@ define("PartnersHub.model$RL_d8f009bde8fe909fe2505fd89431fe09", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_d9225646df1b3ea490560d0f68cd306f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a138c9d86955bf2ced1c92c23da39091Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_d9225646df1b3ea490560d0f68cd306f extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a138c9d86955bf2ced1c92c23da39091Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_d9225646df1b3ea490560d0f68cd306f = RL_d9225646df1b3ea490560d0f68cd306f;
+
+});
+
+define("PartnersHub.model$RC_eb80e7f863334c548fcba763018eae6f", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_b12d67ef17b1896a838b57ca02b5f67dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_eb80e7f863334c548fcba763018eae6fInner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("P2PCountryListResponse", "p2PCountryListResponseAttr", "P2PCountryListResponse", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_b12d67ef17b1896a838b57ca02b5f67dStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_b12d67ef17b1896a838b57ca02b5f67dStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_eb80e7f863334c548fcba763018eae6f(new RC_eb80e7f863334c548fcba763018eae6f.RecordClass({
+                    p2PCountryListResponseAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_eb80e7f863334c548fcba763018eae6f = RC_eb80e7f863334c548fcba763018eae6fInner;
+
+        RC_eb80e7f863334c548fcba763018eae6fInner._isAnonymousRecord = true;
+        RC_eb80e7f863334c548fcba763018eae6fInner.UniqueId = "eb80e7f8-6333-4c54-8fcb-a763018eae6f";
+        var RC_eb80e7f863334c548fcba763018eae6f = RC_eb80e7f863334c548fcba763018eae6fInner;
+        RC_eb80e7f863334c548fcba763018eae6f.init();
+    }
+});
+
+define("PartnersHub.model$RL_d999f9e69b527a00490f20d6bcd32988", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_eb80e7f863334c548fcba763018eae6f"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_d999f9e69b527a00490f20d6bcd32988 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_eb80e7f863334c548fcba763018eae6f;
+        }
+
+    }
+
+    PartnersHubModel.RL_d999f9e69b527a00490f20d6bcd32988 = RL_d999f9e69b527a00490f20d6bcd32988;
+
+});
+
 define("PartnersHub.model$RL_d9adde0b03f648d52095292753e14389", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_9a29ef26037f71a833a7717922f3c172Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_d9adde0b03f648d52095292753e14389 extends
@@ -18083,6 +22565,20 @@ define("PartnersHub.model$RL_dce031541ffd7ddb60ff42662d8a6be6", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_dd08ea713bebe4875033a5f91c469c77", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_a83c53501675e1b1a92dce121c194a38"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_dd08ea713bebe4875033a5f91c469c77 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_a83c53501675e1b1a92dce121c194a38;
+        }
+
+    }
+
+    PartnersHubModel.RL_dd08ea713bebe4875033a5f91c469c77 = RL_dd08ea713bebe4875033a5f91c469c77;
+
+});
+
 define("PartnersHub.model$RC_dd79bf27114cbc810592c451d8bd2280", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_b96e8d04448b693f79e4aebf0b6ee4fbStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_dd79bf27114cbc810592c451d8bd2280Inner extends
@@ -18123,6 +22619,20 @@ define("PartnersHub.model$RL_dd9462378f9bdfd544e8c5704f9c3cdc", ["exports", "@ou
     }
 
     PartnersHubModel.RL_dd9462378f9bdfd544e8c5704f9c3cdc = RL_dd9462378f9bdfd544e8c5704f9c3cdc;
+
+});
+
+define("PartnersHub.model$RL_de09afc3e002b5b30d13a4761423fa1e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_403419e72476e3a47280a2d420ccc9e0"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_de09afc3e002b5b30d13a4761423fa1e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_403419e72476e3a47280a2d420ccc9e0;
+        }
+
+    }
+
+    PartnersHubModel.RL_de09afc3e002b5b30d13a4761423fa1e = RL_de09afc3e002b5b30d13a4761423fa1e;
 
 });
 
@@ -18169,6 +22679,48 @@ define("PartnersHub.model$RL_deb2cdc1dcbdc9c277346305677d36aa", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_df2c3a1ff9c9b2892bfd0324597f5d4e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_328c83c38f97bef0d26efcff47040359Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_df2c3a1ff9c9b2892bfd0324597f5d4e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_328c83c38f97bef0d26efcff47040359Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_df2c3a1ff9c9b2892bfd0324597f5d4e = RL_df2c3a1ff9c9b2892bfd0324597f5d4e;
+
+});
+
+define("PartnersHub.model$RL_df3a12aa8bf53bae5ba1e12561771888", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_73c61ca7f65d872a1eebbd91126c43f2"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_df3a12aa8bf53bae5ba1e12561771888 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_73c61ca7f65d872a1eebbd91126c43f2;
+        }
+
+    }
+
+    PartnersHubModel.RL_df3a12aa8bf53bae5ba1e12561771888 = RL_df3a12aa8bf53bae5ba1e12561771888;
+
+});
+
+define("PartnersHub.model$RL_df544357baa556920af5c4547dac3251", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_14a68168b2c48c181cb84b21b0fa2a9e"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_df544357baa556920af5c4547dac3251 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_14a68168b2c48c181cb84b21b0fa2a9e;
+        }
+
+    }
+
+    PartnersHubModel.RL_df544357baa556920af5c4547dac3251 = RL_df544357baa556920af5c4547dac3251;
+
+});
+
 define("PartnersHub.model$RL_dfba22f71b53ae700474aaf2483be84a", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_2b2fc63a2c5dd19a88c97ed75635ef82Structure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_dfba22f71b53ae700474aaf2483be84a extends
@@ -18180,6 +22732,20 @@ define("PartnersHub.model$RL_dfba22f71b53ae700474aaf2483be84a", ["exports", "@ou
     }
 
     PartnersHubModel.RL_dfba22f71b53ae700474aaf2483be84a = RL_dfba22f71b53ae700474aaf2483be84a;
+
+});
+
+define("PartnersHub.model$RL_dfd9f5e674664aea49c31b134a661eb5", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_b779d4afe9996707919e755f24a47b3cStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_dfd9f5e674664aea49c31b134a661eb5 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.ST_b779d4afe9996707919e755f24a47b3cStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_dfd9f5e674664aea49c31b134a661eb5 = RL_dfd9f5e674664aea49c31b134a661eb5;
 
 });
 
@@ -18308,6 +22874,20 @@ define("PartnersHub.model$RL_e17c98c9ebad9849b38663a52005be50", ["exports", "@ou
     }
 
     PartnersHubModel.RL_e17c98c9ebad9849b38663a52005be50 = RL_e17c98c9ebad9849b38663a52005be50;
+
+});
+
+define("PartnersHub.model$RL_e262f34e8ebc580be4a46070104de21e", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_8adbe420d80a0b7b8c828a81a654f9e3Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e262f34e8ebc580be4a46070104de21e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_8adbe420d80a0b7b8c828a81a654f9e3Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_e262f34e8ebc580be4a46070104de21e = RL_e262f34e8ebc580be4a46070104de21e;
 
 });
 
@@ -18467,6 +23047,20 @@ define("PartnersHub.model$RL_e42632965fbacac756c3d935f97df7a8", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_e42c760f113562d06aa40fd3c0801719", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_2ccf07e5bcc4c93949f84625930efb62"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e42c760f113562d06aa40fd3c0801719 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_2ccf07e5bcc4c93949f84625930efb62;
+        }
+
+    }
+
+    PartnersHubModel.RL_e42c760f113562d06aa40fd3c0801719 = RL_e42c760f113562d06aa40fd3c0801719;
+
+});
+
 define("PartnersHub.model$RL_e4cc4242bd1a5b513b2d0e5945f5ee99", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_d15d22dc3a60a2e6365116c61a16aaa0Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_e4cc4242bd1a5b513b2d0e5945f5ee99 extends
@@ -18537,6 +23131,34 @@ define("PartnersHub.model$RL_e5d4eff1d9ba5ba2377f189321ef5ca3", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_e5efbdd290e9fdbf3d8539460e17b7fc", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_40996cdadeb61b442d53936d0e23d7bcStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e5efbdd290e9fdbf3d8539460e17b7fc extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_40996cdadeb61b442d53936d0e23d7bcStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_e5efbdd290e9fdbf3d8539460e17b7fc = RL_e5efbdd290e9fdbf3d8539460e17b7fc;
+
+});
+
+define("PartnersHub.model$RL_e689b1d5e863d2210639c8b8940a0d2e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_9edae87bd34d57fa71f2a72c0cc57e1a"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e689b1d5e863d2210639c8b8940a0d2e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_9edae87bd34d57fa71f2a72c0cc57e1a;
+        }
+
+    }
+
+    PartnersHubModel.RL_e689b1d5e863d2210639c8b8940a0d2e = RL_e689b1d5e863d2210639c8b8940a0d2e;
+
+});
+
 define("PartnersHub.model$RL_e6be3728922963524c3d5e5b7daf8e9b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4825b8394d83318da50bdb57a69e9ba8"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_e6be3728922963524c3d5e5b7daf8e9b extends
@@ -18562,6 +23184,20 @@ define("PartnersHub.model$RL_e6ca5ece28432165687b89d202323524", ["exports", "@ou
     }
 
     PartnersHubModel.RL_e6ca5ece28432165687b89d202323524 = RL_e6ca5ece28432165687b89d202323524;
+
+});
+
+define("PartnersHub.model$RL_e6e5069f4a35d175fdfe79a6d3342703", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_45556c10a1502a717de41a97a7e0de1e"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e6e5069f4a35d175fdfe79a6d3342703 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_45556c10a1502a717de41a97a7e0de1e;
+        }
+
+    }
+
+    PartnersHubModel.RL_e6e5069f4a35d175fdfe79a6d3342703 = RL_e6e5069f4a35d175fdfe79a6d3342703;
 
 });
 
@@ -18649,6 +23285,20 @@ define("PartnersHub.model$RL_e8445d61f812c92de860d050e73a5e29", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_e84e513163ad816621561ddde34cafa3", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_1e93678eeb2cf74dc2feef60cb655062"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e84e513163ad816621561ddde34cafa3 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_1e93678eeb2cf74dc2feef60cb655062;
+        }
+
+    }
+
+    PartnersHubModel.RL_e84e513163ad816621561ddde34cafa3 = RL_e84e513163ad816621561ddde34cafa3;
+
+});
+
 define("PartnersHub.model$RC_ee239f88c5d7794fe9f69be69a94411a", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e3b9823599cdef8012785f8875d8da38Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore; {
         class RC_ee239f88c5d7794fe9f69be69a94411aInner extends
@@ -18720,6 +23370,20 @@ define("PartnersHub.model$RL_e91f1f1926ce73207f685175530d77f4", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_e9493e2064d4adee404db0ec2ed9ea58", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_1480f374773845f8188d81a5e43451f4Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e9493e2064d4adee404db0ec2ed9ea58 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_1480f374773845f8188d81a5e43451f4Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_e9493e2064d4adee404db0ec2ed9ea58 = RL_e9493e2064d4adee404db0ec2ed9ea58;
+
+});
+
 define("PartnersHub.model$RL_e94fe10aad1bb3316bae03b78b2b2cba", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d156596bf0acca794568b1ed43180f6e"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_e94fe10aad1bb3316bae03b78b2b2cba extends
@@ -18748,6 +23412,20 @@ define("PartnersHub.model$RL_e9715121ffbe4e5204c4a1c3804c7361", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_e97ff3c0bfb989f1940aae6c80a5b4e2", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_506e59df587c990463d9332a4a38f192Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_e97ff3c0bfb989f1940aae6c80a5b4e2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_506e59df587c990463d9332a4a38f192Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_e97ff3c0bfb989f1940aae6c80a5b4e2 = RL_e97ff3c0bfb989f1940aae6c80a5b4e2;
+
+});
+
 define("PartnersHub.model$RL_e9b4b68e021e5613bf728dccd1cf9139", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_41688d261db663d4544900081e65767bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_e9b4b68e021e5613bf728dccd1cf9139 extends
@@ -18762,6 +23440,20 @@ define("PartnersHub.model$RL_e9b4b68e021e5613bf728dccd1cf9139", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_ea01f38fd4ed134d9fe25df7dd6868c6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_3d1a46622c09608d98a230622b852106Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ea01f38fd4ed134d9fe25df7dd6868c6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_3d1a46622c09608d98a230622b852106Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ea01f38fd4ed134d9fe25df7dd6868c6 = RL_ea01f38fd4ed134d9fe25df7dd6868c6;
+
+});
+
 define("PartnersHub.model$RL_ea69c6358f758ea1e34787db7dc19db9", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_605da9a1009ce00d8c64718f9c13e284Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_ea69c6358f758ea1e34787db7dc19db9 extends
@@ -18773,6 +23465,63 @@ define("PartnersHub.model$RL_ea69c6358f758ea1e34787db7dc19db9", ["exports", "@ou
     }
 
     PartnersHubModel.RL_ea69c6358f758ea1e34787db7dc19db9 = RL_ea69c6358f758ea1e34787db7dc19db9;
+
+});
+
+define("PartnersHub.model$RL_ea6b4a7a90122a1598d490842491288c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_3e628d7d792d29fe0a1a8c7463cb9df4"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ea6b4a7a90122a1598d490842491288c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_3e628d7d792d29fe0a1a8c7463cb9df4;
+        }
+
+    }
+
+    PartnersHubModel.RL_ea6b4a7a90122a1598d490842491288c = RL_ea6b4a7a90122a1598d490842491288c;
+
+});
+
+define("PartnersHub.model$RC_f9632cc24336eb4bb7e5e5f64f7de5b5", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5685a40fa48e8876538e1df2a0c39d3eStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore; {
+        class RC_f9632cc24336eb4bb7e5e5f64f7de5b5Inner extends
+        OS.DataTypes.GenericRecord {
+            static attributesToDeclare() {
+                return [
+                    this.attr("StatementRequest", "statementRequestAttr", "StatementRequest", false, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new RESTAPIWebsocketOfficialModel.ST_5685a40fa48e8876538e1df2a0c39d3eStructure());
+                    }, true, RESTAPIWebsocketOfficialModel.ST_5685a40fa48e8876538e1df2a0c39d3eStructure)
+                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new RC_f9632cc24336eb4bb7e5e5f64f7de5b5(new RC_f9632cc24336eb4bb7e5e5f64f7de5b5.RecordClass({
+                    statementRequestAttr: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        PartnersHubModel.RC_f9632cc24336eb4bb7e5e5f64f7de5b5 = RC_f9632cc24336eb4bb7e5e5f64f7de5b5Inner;
+
+        RC_f9632cc24336eb4bb7e5e5f64f7de5b5Inner._isAnonymousRecord = true;
+        RC_f9632cc24336eb4bb7e5e5f64f7de5b5Inner.UniqueId = "f9632cc2-4336-eb4b-b7e5-e5f64f7de5b5";
+        var RC_f9632cc24336eb4bb7e5e5f64f7de5b5 = RC_f9632cc24336eb4bb7e5e5f64f7de5b5Inner;
+        RC_f9632cc24336eb4bb7e5e5f64f7de5b5.init();
+    }
+});
+
+define("PartnersHub.model$RL_ea81ff3a6f3a76c2ed12260f624c4969", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_f9632cc24336eb4bb7e5e5f64f7de5b5"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ea81ff3a6f3a76c2ed12260f624c4969 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_f9632cc24336eb4bb7e5e5f64f7de5b5;
+        }
+
+    }
+
+    PartnersHubModel.RL_ea81ff3a6f3a76c2ed12260f624c4969 = RL_ea81ff3a6f3a76c2ed12260f624c4969;
 
 });
 
@@ -18801,6 +23550,48 @@ define("PartnersHub.model$RL_eafe76043375465a898a3d00608f23b6", ["exports", "@ou
     }
 
     PartnersHubModel.RL_eafe76043375465a898a3d00608f23b6 = RL_eafe76043375465a898a3d00608f23b6;
+
+});
+
+define("PartnersHub.model$RL_eba0c4cf72b2b3e62c746cfba3f154a7", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_d33f8c009e3e781cecefae4af6e8d57d"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_eba0c4cf72b2b3e62c746cfba3f154a7 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_d33f8c009e3e781cecefae4af6e8d57d;
+        }
+
+    }
+
+    PartnersHubModel.RL_eba0c4cf72b2b3e62c746cfba3f154a7 = RL_eba0c4cf72b2b3e62c746cfba3f154a7;
+
+});
+
+define("PartnersHub.model$RL_ebe915073624a927cad5ecba5b3b8f0d", ["exports", "@outsystems/runtime-core-js", "TestIMAPIOfficial.model", "PartnersHub.model", "TestIMAPIOfficial.model$ST_87d48b4b7c0b379943dcee59095bbdd5Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$TestIMAPIOfficial"], function(exports, OSRuntimeCore, TestIMAPIOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ebe915073624a927cad5ecba5b3b8f0d extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return TestIMAPIOfficialModel.ST_87d48b4b7c0b379943dcee59095bbdd5Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ebe915073624a927cad5ecba5b3b8f0d = RL_ebe915073624a927cad5ecba5b3b8f0d;
+
+});
+
+define("PartnersHub.model$RL_ebfadc626673a2cb97eaa02a96c0f7b1", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_5c66d0ce00d79562a27920db6fb2bbf3Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ebfadc626673a2cb97eaa02a96c0f7b1 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_5c66d0ce00d79562a27920db6fb2bbf3Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_ebfadc626673a2cb97eaa02a96c0f7b1 = RL_ebfadc626673a2cb97eaa02a96c0f7b1;
 
 });
 
@@ -18847,6 +23638,34 @@ define("PartnersHub.model$RL_ece3ed6e115187092667bb2ed6368718", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_ece689df05adbd14fd8c52f51e2c24dc", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ece689df05adbd14fd8c52f51e2c24dc extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_b93f5c57f06e1ce1f61cc2fdbe0d7c52;
+        }
+
+    }
+
+    PartnersHubModel.RL_ece689df05adbd14fd8c52f51e2c24dc = RL_ece689df05adbd14fd8c52f51e2c24dc;
+
+});
+
+define("PartnersHub.model$RL_ed046b9a00e90447bae294a818054036", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_0b0605442077afaff40534ee187e6408"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_ed046b9a00e90447bae294a818054036 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_0b0605442077afaff40534ee187e6408;
+        }
+
+    }
+
+    PartnersHubModel.RL_ed046b9a00e90447bae294a818054036 = RL_ed046b9a00e90447bae294a818054036;
+
+});
+
 define("PartnersHub.model$RL_ee2f8fa85755ad93e3bfb7018e04dc2e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$ST_24f25c56883af3fb98f750bd4c11bbdcStructure"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_ee2f8fa85755ad93e3bfb7018e04dc2e extends
@@ -18889,12 +23708,12 @@ define("PartnersHub.model$RL_eee8d6419da204b0d2b927678083cdc9", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_ef15c0d597df53b7b8648a57b9e97d87", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_0a66c582c77592abee52988e6d0524e2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_ef15c0d597df53b7b8648a57b9e97d87", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_0a66c582c77592abee52988e6d0524e2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_ef15c0d597df53b7b8648a57b9e97d87 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_0a66c582c77592abee52988e6d0524e2Structure;
+            return ReleaseSlackIntegrationOfficialModel.ST_0a66c582c77592abee52988e6d0524e2Structure;
         }
 
     }
@@ -19186,6 +24005,20 @@ define("PartnersHub.model$RL_f330ac8506077f4753a32e22b183d727", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_f3d5e0456ba6498c43c176da8eb24aac", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e6b7ce3d1a8480717883f29f3bf1ccf8Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f3d5e0456ba6498c43c176da8eb24aac extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_e6b7ce3d1a8480717883f29f3bf1ccf8Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_f3d5e0456ba6498c43c176da8eb24aac = RL_f3d5e0456ba6498c43c176da8eb24aac;
+
+});
+
 define("PartnersHub.model$RL_f4468f4018bb6751324bb4305b7f473b", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_bc1d8808c6b691d63b7ce4b84f5f5668"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_f4468f4018bb6751324bb4305b7f473b extends
@@ -19197,6 +24030,20 @@ define("PartnersHub.model$RL_f4468f4018bb6751324bb4305b7f473b", ["exports", "@ou
     }
 
     PartnersHubModel.RL_f4468f4018bb6751324bb4305b7f473b = RL_f4468f4018bb6751324bb4305b7f473b;
+
+});
+
+define("PartnersHub.model$RL_f4798657318ea5aa25857d23b6f4d362", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_7b4d691c1393b5e9e9f74d1c61904866Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f4798657318ea5aa25857d23b6f4d362 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_7b4d691c1393b5e9e9f74d1c61904866Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_f4798657318ea5aa25857d23b6f4d362 = RL_f4798657318ea5aa25857d23b6f4d362;
 
 });
 
@@ -19253,6 +24100,20 @@ define("PartnersHub.model$RL_f565e985301ac9dd26dbfb84b70bf745", ["exports", "@ou
     }
 
     PartnersHubModel.RL_f565e985301ac9dd26dbfb84b70bf745 = RL_f565e985301ac9dd26dbfb84b70bf745;
+
+});
+
+define("PartnersHub.model$RL_f5b4b682096f57882d55e6ed36826cc2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_c4f5c69b052ef8df5dfc0fa30551e30c"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f5b4b682096f57882d55e6ed36826cc2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_c4f5c69b052ef8df5dfc0fa30551e30c;
+        }
+
+    }
+
+    PartnersHubModel.RL_f5b4b682096f57882d55e6ed36826cc2 = RL_f5b4b682096f57882d55e6ed36826cc2;
 
 });
 
@@ -19355,6 +24216,20 @@ define("PartnersHub.model$RL_f6efe1d0cb8a4c0cbddb4a5846a82246", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_f7fbc672dcb160d0968ff55ca529958c", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_76c3b37a218d89cb61baaeeb835fdcd7"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f7fbc672dcb160d0968ff55ca529958c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_76c3b37a218d89cb61baaeeb835fdcd7;
+        }
+
+    }
+
+    PartnersHubModel.RL_f7fbc672dcb160d0968ff55ca529958c = RL_f7fbc672dcb160d0968ff55ca529958c;
+
+});
+
 define("PartnersHub.model$RL_f895ce68953fdb97b2f37d55699f4e66", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4835a3b0a2d4ab28e154f8a8831a00ef"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_f895ce68953fdb97b2f37d55699f4e66 extends
@@ -19408,6 +24283,20 @@ define("PartnersHub.model$RL_f8eb431cfa3719b526bb3d4eaa81a60a", ["exports", "@ou
     }
 
     PartnersHubModel.RL_f8eb431cfa3719b526bb3d4eaa81a60a = RL_f8eb431cfa3719b526bb3d4eaa81a60a;
+
+});
+
+define("PartnersHub.model$RL_f905ae60fd778c280a86f4a55692cd45", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_a6721f8f6846d021b1c635da9bdd2e8cStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f905ae60fd778c280a86f4a55692cd45 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_a6721f8f6846d021b1c635da9bdd2e8cStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_f905ae60fd778c280a86f4a55692cd45 = RL_f905ae60fd778c280a86f4a55692cd45;
 
 });
 
@@ -19468,6 +24357,20 @@ define("PartnersHub.model$RL_f9624ab6e814fdb86dd00a59d573aa8e", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_f97a03a16fd2375285dc3e9458533295", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_9b6a5f6a0f99ac9086bb3ba26d838bf1"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f97a03a16fd2375285dc3e9458533295 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_9b6a5f6a0f99ac9086bb3ba26d838bf1;
+        }
+
+    }
+
+    PartnersHubModel.RL_f97a03a16fd2375285dc3e9458533295 = RL_f97a03a16fd2375285dc3e9458533295;
+
+});
+
 define("PartnersHub.model$RL_f9cd69a99a23afb6393c39463c23b25f", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_e0e41cb94b033378d9153e95b9660ef9"], function(exports, OSRuntimeCore, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_f9cd69a99a23afb6393c39463c23b25f extends
@@ -19479,6 +24382,20 @@ define("PartnersHub.model$RL_f9cd69a99a23afb6393c39463c23b25f", ["exports", "@ou
     }
 
     PartnersHubModel.RL_f9cd69a99a23afb6393c39463c23b25f = RL_f9cd69a99a23afb6393c39463c23b25f;
+
+});
+
+define("PartnersHub.model$RL_f9cefb8116fef94f410821fd0b26bf72", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4f8f859a92cdf3a7b0ae8abf2e183a70"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_f9cefb8116fef94f410821fd0b26bf72 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_4f8f859a92cdf3a7b0ae8abf2e183a70;
+        }
+
+    }
+
+    PartnersHubModel.RL_f9cefb8116fef94f410821fd0b26bf72 = RL_f9cefb8116fef94f410821fd0b26bf72;
 
 });
 
@@ -19496,6 +24413,20 @@ define("PartnersHub.model$RL_fa00e44a222cdab3fe910e0337033680", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_fa0811c05f47ad6ac421ba30d6fabadb", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_35b06be36f4ceab0d926d48d7ff02f22Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fa0811c05f47ad6ac421ba30d6fabadb extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_35b06be36f4ceab0d926d48d7ff02f22Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_fa0811c05f47ad6ac421ba30d6fabadb = RL_fa0811c05f47ad6ac421ba30d6fabadb;
+
+});
+
 define("PartnersHub.model$RL_fa146924f6833ee5375b7cfb2ad97f66", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model", "PartnersHub.model", "OutSystemsCharts.model$ST_80a54fdc5a44237df505b3e5b63ad0feStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsCharts"], function(exports, OSRuntimeCore, OutSystemsChartsModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_fa146924f6833ee5375b7cfb2ad97f66 extends
@@ -19510,12 +24441,12 @@ define("PartnersHub.model$RL_fa146924f6833ee5375b7cfb2ad97f66", ["exports", "@ou
 
 });
 
-define("PartnersHub.model$RL_fa1cf4d41a97ccd464505d7fd43080f2", ["exports", "@outsystems/runtime-core-js", "FEReleaseSlackIntegration.model", "PartnersHub.model", "FEReleaseSlackIntegration.model$ST_a01186a03a6c4b831d48748ff6ff136bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$FEReleaseSlackIntegration"], function(exports, OSRuntimeCore, FEReleaseSlackIntegrationModel, PartnersHubModel) {
+define("PartnersHub.model$RL_fa1cf4d41a97ccd464505d7fd43080f2", ["exports", "@outsystems/runtime-core-js", "ReleaseSlackIntegrationOfficial.model", "PartnersHub.model", "ReleaseSlackIntegrationOfficial.model$ST_a01186a03a6c4b831d48748ff6ff136bStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial"], function(exports, OSRuntimeCore, ReleaseSlackIntegrationOfficialModel, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_fa1cf4d41a97ccd464505d7fd43080f2 extends
     OS.DataTypes.GenericRecordList {
         static getItemType() {
-            return FEReleaseSlackIntegrationModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure;
+            return ReleaseSlackIntegrationOfficialModel.ST_a01186a03a6c4b831d48748ff6ff136bStructure;
         }
 
     }
@@ -19535,6 +24466,20 @@ define("PartnersHub.model$RL_fa51920e14b90042334b4ea4ba154ef7", ["exports", "@ou
     }
 
     PartnersHubModel.RL_fa51920e14b90042334b4ea4ba154ef7 = RL_fa51920e14b90042334b4ea4ba154ef7;
+
+});
+
+define("PartnersHub.model$RL_fa7c4d35c7f50b6b2c7f74dc4f25509e", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_2b30f89d36a0d111239686e3e4da5c64"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fa7c4d35c7f50b6b2c7f74dc4f25509e extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_2b30f89d36a0d111239686e3e4da5c64;
+        }
+
+    }
+
+    PartnersHubModel.RL_fa7c4d35c7f50b6b2c7f74dc4f25509e = RL_fa7c4d35c7f50b6b2c7f74dc4f25509e;
 
 });
 
@@ -19608,6 +24553,34 @@ define("PartnersHub.model$RL_fbc9fc52e3cef45822e06efc69df5a4a", ["exports", "@ou
 
 });
 
+define("PartnersHub.model$RL_fbf59dcc654f2f0b7a14e0b382f6c6e6", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_c4bad47c2be3dee614048e4005e9f85dStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fbf59dcc654f2f0b7a14e0b382f6c6e6 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_c4bad47c2be3dee614048e4005e9f85dStructure;
+        }
+
+    }
+
+    PartnersHubModel.RL_fbf59dcc654f2f0b7a14e0b382f6c6e6 = RL_fbf59dcc654f2f0b7a14e0b382f6c6e6;
+
+});
+
+define("PartnersHub.model$RL_fc49c3d0746a5ddcc900872f9c42917c", ["exports", "@outsystems/runtime-core-js", "RESTAPIWebsocketOfficial.model", "PartnersHub.model", "RESTAPIWebsocketOfficial.model$ST_e9841f58336063558acf37c980346e02Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial"], function(exports, OSRuntimeCore, RESTAPIWebsocketOfficialModel, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fc49c3d0746a5ddcc900872f9c42917c extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return RESTAPIWebsocketOfficialModel.ST_e9841f58336063558acf37c980346e02Structure;
+        }
+
+    }
+
+    PartnersHubModel.RL_fc49c3d0746a5ddcc900872f9c42917c = RL_fc49c3d0746a5ddcc900872f9c42917c;
+
+});
+
 define("PartnersHub.model$RL_fc9a0541e530960ed38d7662d5b2141b", ["exports", "@outsystems/runtime-core-js", "System_.model", "PartnersHub.model", "System_.model$ChangePasswordResultRec", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$System_"], function(exports, OSRuntimeCore, System_Model, PartnersHubModel) {
     var OS = OSRuntimeCore;
     class RL_fc9a0541e530960ed38d7662d5b2141b extends
@@ -19661,6 +24634,20 @@ define("PartnersHub.model$RL_fd85f9fc632673fe3bd8b8365a60f022", ["exports", "@ou
     }
 
     PartnersHubModel.RL_fd85f9fc632673fe3bd8b8365a60f022 = RL_fd85f9fc632673fe3bd8b8365a60f022;
+
+});
+
+define("PartnersHub.model$RL_fdb8336efd8c04b2985357fda051ffd2", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.model$RC_4d9da0dd82676f0a214b72ed70ed22f4"], function(exports, OSRuntimeCore, PartnersHubModel) {
+    var OS = OSRuntimeCore;
+    class RL_fdb8336efd8c04b2985357fda051ffd2 extends
+    OS.DataTypes.GenericRecordList {
+        static getItemType() {
+            return PartnersHubModel.RC_4d9da0dd82676f0a214b72ed70ed22f4;
+        }
+
+    }
+
+    PartnersHubModel.RL_fdb8336efd8c04b2985357fda051ffd2 = RL_fdb8336efd8c04b2985357fda051ffd2;
 
 });
 
@@ -19758,6 +24745,28 @@ define("PartnersHub.model", ["exports", "@outsystems/runtime-core-js"], function
     });
 
     PartnersHubModel.staticEntities = {};
+    PartnersHubModel.staticEntities.environment = {};
+    var getEnvironmentRecord = function(record) {
+        return PartnersHubModel.module.staticEntities["177132b5-099e-4fbd-a75d-f006d46f123d"][record];
+    };
+    Object.defineProperty(PartnersHubModel.staticEntities.environment, "production", {
+        get: function() {
+            return 3;
+        }
+    });
+
+    Object.defineProperty(PartnersHubModel.staticEntities.environment, "dev", {
+        get: function() {
+            return 2;
+        }
+    });
+
+    Object.defineProperty(PartnersHubModel.staticEntities.environment, "staging", {
+        get: function() {
+            return 1;
+        }
+    });
+
     PartnersHubModel.staticEntities.optionsTable = {};
     var getOptionsTableRecord = function(record) {
         return PartnersHubModel.module.staticEntities["3e23b727-bd8b-4f29-9e79-1a0d5f53d673"][record];

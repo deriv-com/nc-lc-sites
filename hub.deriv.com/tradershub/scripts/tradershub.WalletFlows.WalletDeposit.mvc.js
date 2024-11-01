@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, RESTAPIWebsocketOfficialModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel) {
+define("tradershub.WalletFlows.WalletDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, RESTAPIWebsocketOfficialModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel) {
     var OS = OSRuntimeCore; {
         class GetCurrenciesAggrRecInner extends
         OS.Model.AggregateRecord {
@@ -72,7 +72,7 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$model", ["@outsystems/runtime-c
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletDeposit.mvc$model", "tradershub.WalletFlows.WalletDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_WalletFlows_WalletDeposit_mvc_model, tradershub_WalletFlows_WalletDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets) {
+define("tradershub.WalletFlows.WalletDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletDeposit.mvc$model", "tradershub.WalletFlows.WalletDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_WalletFlows_WalletDeposit_mvc_model, tradershub_WalletFlows_WalletDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -117,7 +117,7 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$view", ["@outsystems/runtime-co
         get title() {
 
 
-            return "WalletDeposit";
+            return OSView.BaseView.BaseWebScreen.getTranslation("szds6axGTUepmLSH43B8Lg#Title", "WalletDeposit");
         }
 
         internalRender() {
@@ -167,12 +167,12 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$view", ["@outsystems/runtime-co
 
     return View;
 });
-define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
+define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.WalletDeposit.mvc$translationsResources", "tradershub.WalletFlows.controller", "RESTAPIWebsocketOfficial.model$ST_746d074ddcc08e0df3b269ffb1933d5aStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$GetAccountStatus2", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b"], function(OSRuntimeCore, tradershubModel, tradershubController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlows_WalletDeposit_mvc_TranslationsResources, tradershub_WalletFlowsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_WalletFlows_WalletDeposit_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
@@ -181,7 +181,7 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
                 this.dataFetchDependentsGraph = {
                     getCurrencies$AggrRefresh: []
                 };
-                this.shouldSendClientVarsToDataSources = false;
+                this.shouldSendClientVarsToDataSources = true;
             }
 
             // Server Actions - Methods
@@ -198,7 +198,7 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
                                 model.variables.getCurrenciesAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getCurrenciesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCurrenciesAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false).then(function() {
+                            }, undefined, undefined, undefined, callContext, tradershubClientVariables, true).then(function() {
                                 return controller._getCurrenciesOnAfterFetch$Action(controller.callContext(callContext));
                             });
                         }.bind(this);
@@ -262,24 +262,27 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
                                 controller.ensureControllerAlive("GetCurrenciesOnAfterFetch");
                                 callContext = controller.callContext(callContext);
                                 var getAccountStatus2Var = new OS.DataTypes.VariableHolder();
-                                var getAccountByLoginIdVar = new OS.DataTypes.VariableHolder();
+                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
                                 var currencyListVar = new OS.DataTypes.VariableHolder();
                                 var accountStatusVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // IsLoading = True
                                     model.variables.isLoadingVar = true;
-                                    // Execute Action: GetAccountByLoginId
-                                    getAccountByLoginIdVar.value = tradershubController.default.getAccountByLoginId$Action(tradershubClientVariables.getActiveLoginId(), callContext);
-
-                                    // Execute Action: CurrencyList
-                                    currencyListVar.value = OS.SystemActions.listFilter(model.variables.getCurrenciesAggr.listOut, function(p) {
-                                        return (getAccountByLoginIdVar.value.accountOut.currencyAttr === p.currenciesAttr.codeAttr);
-                                    }, callContext);
-
-                                    // Execute Action: GetAccountStatus2
+                                    // Execute Action: SendAuthorize
                                     model.flush();
-                                    return tradershubController.default.getAccountStatus2$Action(callContext).then(function(value) {
-                                        getAccountStatus2Var.value = value;
+                                    return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
+                                        sendAuthorizeVar.value = value;
+                                    }).then(function() {
+                                        // Execute Action: CurrencyList
+                                        currencyListVar.value = OS.SystemActions.listFilter(model.variables.getCurrenciesAggr.listOut, function(p) {
+                                            return (sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr === p.currenciesAttr.codeAttr);
+                                        }, callContext);
+
+                                        // Execute Action: GetAccountStatus2
+                                        model.flush();
+                                        return tradershubController.default.getAccountStatus2$Action(callContext).then(function(value) {
+                                            getAccountStatus2Var.value = value;
+                                        });
                                     }).then(function() {
                                         // Execute Action: AccountStatus
                                         accountStatusVar.value = OS.SystemActions.listFilter(getAccountStatus2Var.value.responseOut.getAccountStatusAttr.statusAttr, function(p) {
@@ -291,20 +294,20 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
                                             // IsLoading = False
                                             model.variables.isLoadingVar = false;
                                             // Destination: /tradershub/WalletDisableDeposit
-                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets/deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         } else {
                                             if ((currencyListVar.value.filteredListOut.getCurrent(callContext.iterationContext).currenciesAttr.isFiatAttr)) {
                                                 // Set IsLoading
                                                 // IsLoading = False
                                                 model.variables.isLoadingVar = false;
-                                                // Destination: /tradershub/WalletFiatDeposit
-                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                // Destination: /tradershub/WalletsFiatDeposit
+                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets/deposit/fiat", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                             } else {
                                                 // Set IsLoading
                                                 // IsLoading = False
                                                 model.variables.isLoadingVar = false;
-                                                // Destination: /tradershub/WalletCryptoOptionDeposit
-                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                // Destination: /tradershub/WalletsCryptoOptionDeposit
+                                                return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets/deposit/crypto", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                             }
 
                                         }
@@ -436,4 +439,9 @@ define("tradershub.WalletFlows.WalletDeposit.mvc$controller", ["@outsystems/runt
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.WalletFlows.WalletDeposit.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

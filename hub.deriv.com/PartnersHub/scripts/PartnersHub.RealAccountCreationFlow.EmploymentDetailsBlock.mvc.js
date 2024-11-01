@@ -1030,7 +1030,8 @@ define("PartnersHub.RealAccountCreationFlow.EmploymentDetailsBlock.mvc$translati
         "jLW6Mhv1M0GrE6j8JcbJrg#Value": "رقم التعريف الضريبي (اختياري)",
         "RwmV_j30t0GAfjHeCrcPdQ#Value": "محل الإقامة الضريبي",
         "suBO6yoD+US09XOP81aFiA#Value": "ليس لدي رقم التعريف الضريبي الخاص بي",
-        "jat0lmSOJ0CcdjmPO_XKiQ#Value": "حالة العمل"
+        "8RdVEjSUWEudXmpxvtf81A#Value": "*",
+        "jat0lmSOJ0CcdjmPO_XKiQ#Value": "الحالة الوظيفية"
     };
 });
 

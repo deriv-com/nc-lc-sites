@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$model", ["@o
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
         get title() {
 
 
-            return "KnowledgeAndExperience";
+            return OSView.BaseView.BaseWebScreen.getTranslation("uSH7q_X44ESFQlmcTLku6Q#Title", "KnowledgeAndExperience");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["2/10"],
+                            text: [$text(getTranslation("8VJ81VpJ_Eq+tv2UEhZ3+g#Value", "2/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -212,7 +215,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("cizIPtCQWkm763_wpzyEbA#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "6"
@@ -225,7 +228,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["How much knowledge and experience do you have in relation to online trading?"],
+                            text: [$text(getTranslation("5pVkQZgBDE6kx+kb9XGmdQ#Value", "How much knowledge and experience do you have in relation to online trading?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "7"
@@ -250,8 +253,8 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getKnowledgeAnExperience(), function(value) {
+                                tradershubClientVariables.setKnowledgeAnExperience(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -271,7 +274,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I have an academic degree, professional certification, and/or work experience related to financial services."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("9FpGVDsgmUORhWcCtnlktw#Value", "I have an academic degree, professional certification, and/or work experience related to financial services."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -284,7 +287,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I trade forex CFDs and other complex financial instruments regularly on other platforms."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("szxSrhoPBkiV5cirwIf+RQ#Value", "I trade forex CFDs and other complex financial instruments regularly on other platforms."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -297,7 +300,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I have attended seminars, training, and/or workshops related to trading."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("e87vR5cZ4kKs1LnOgCl6KQ#Value", "I have attended seminars, training, and/or workshops related to trading."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -310,7 +313,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I am interested in trading but have very little experience."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("2JI3JF+6dEWqVn4Ajxiy_A#Value", "I am interested in trading but have very little experience."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -323,7 +326,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 name: "E"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I have no knowledge and experience in trading at all."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("tOVawln2DkmldN9+eMjcXg#Value", "I have no knowledge and experience in trading at all."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -357,7 +360,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("OSYAkKbxmkSP61DAdyA6mQ#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -366,19 +369,19 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$view", ["@ou
                         }))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getKnowledgeAnExperience()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_KnowledgeAndExperience_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_KnowledgeAndExperience_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -420,7 +423,7 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$controller",
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getKnowledgeAnExperience() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -555,4 +558,28 @@ define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$controller",
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "OSYAkKbxmkSP61DAdyA6mQ#Value": "Suivant",
+        "tOVawln2DkmldN9+eMjcXg#Value": "Je n\'ai aucune connaissance ni expérience dans le trading.",
+        "2JI3JF+6dEWqVn4Ajxiy_A#Value": "Je m\'intéresse au trading mais j\'ai très peu d\'expérience.",
+        "e87vR5cZ4kKs1LnOgCl6KQ#Value": "J\'ai assisté à des séminaires, des formations et/ou des ateliers liés au trading.",
+        "szxSrhoPBkiV5cirwIf+RQ#Value": "Je trade régulièrement des CFDs forex et d\'autres instruments financiers complexes sur d\'autres plateformes.",
+        "9FpGVDsgmUORhWcCtnlktw#Value": "J\'ai un diplôme universitaire, une certification professionnelle et/ou une expérience professionnelle liée aux services financiers.",
+        "5pVkQZgBDE6kx+kb9XGmdQ#Value": "Quelle est votre connaissance et votre expérience en matière de trading en ligne ?",
+        "cizIPtCQWkm763_wpzyEbA#Value": "Cela est requis.",
+        "8VJ81VpJ_Eq+tv2UEhZ3+g#Value": "Sam 10 févr. 2024 16:00:00 GMT+0800 (heure normale de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.KnowledgeAndExperience.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_KnowledgeAndExperience_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_KnowledgeAndExperience_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

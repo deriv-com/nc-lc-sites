@@ -990,7 +990,7 @@ define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources
 define("PartnersHub.VirtualAccountCreation.Citizenship.mvc$translationsResources.es-ES", [], function() {
     return {
         "Qk41zaQoA0Ct2VwQgZt1FA#Value.-592606844.1": "Citizenship",
-        "ErifJ+AR6Eax2K9Df+hCjQ#Value": "Elija la ciudadanía/nacionalidad que aparece en su documento de identidad oficial.",
+        "ErifJ+AR6Eax2K9Df+hCjQ#Value": "Elige la ciudadanía/nacionalidad que aparece en tu documento de identidad oficial.",
         "VOklgSMAAUC0R0Un9xFeBw#Value.-1726996070.1": "Servicios no disponibles",
         "mZWPxcZ8pUaBV52DCuAaPg#Value.-1726996070.1": "Servicios no disponibles",
         "e0ZkSI_tx0C4JE2x_02BfA#Value.-122289221.1": "Select your citizenship",

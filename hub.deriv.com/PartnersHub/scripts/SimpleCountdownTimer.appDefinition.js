@@ -1,8 +1,6 @@
 define("SimpleCountdownTimer.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "7c686586-be98-4be4-b619-24e0e0505e97",
         applicationName: "Simple Countdown Timer",
         userProviderName: "Users",
@@ -18,10 +16,8 @@ define("SimpleCountdownTimer.appDefinition", ["@outsystems/runtime-core-js"], fu
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        buildServiceVersion: "v17.1668.2.0",
+        clientRuntimeVersion: "6.16.1",
         useESM: false,
         appVersion: "1"
     };

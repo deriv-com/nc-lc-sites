@@ -100,7 +100,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
         get title() {
 
 
-            return "SourceOfWealth";
+            return OSView.BaseView.BaseWebScreen.getTranslation("5KWrKEoSFkivwblUZjLvbQ#Title", "SourceOfWealth");
         }
 
         internalRender() {
@@ -179,7 +179,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                         extendedEvents: {
                                             onClick: function() {
                                                 var eventHandlerContext = callContext.clone();
-                                                controller.radioGroupOnClick$Action(controller.callContext(eventHandlerContext));
+                                                controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
 
                                                 ;
                                             }
@@ -210,7 +210,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "AccumulationofIncome_Savings"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Accumulation of income/savings"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("DJk4hMNbpUSkJhingQXV+w#Value", "Accumulation of income/savings"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -223,7 +223,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "CashBusiness"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Cash business"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("1uNRefncPkSdOVpyVTc0Jg#Value", "Cash business"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -236,7 +236,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "CompanyOwnership"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Company ownership"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("apxtEGv8jUyowjZ2x8JgEw#Value", "Company ownership"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -249,7 +249,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "DivorceSettlement"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Divorce settlement"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("Y3tfOv74mE2f4NA5wQF3Jw#Value", "Divorce settlement"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -262,7 +262,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "Inheritance"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Inheritance"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("LChIN6Uh6UakbGiZMI_ENA#Value", "Inheritance"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -275,7 +275,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "InvestmentIncome"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Investment income"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("kF_hzh1JJkquIxiRKa1cSg#Value", "Investment income"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -288,7 +288,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             name: "SaleofProperty"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Property sale")), React.createElement(OSWidgets.Container, {
+                                    }, $text(getTranslation("phGPrWaCT0S+0CzYUa3mGA#Value", "Property sale")))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         style: "btn-container",
@@ -314,7 +314,7 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
                                             uuid: "11"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Next"))];
+                                    }, $text(getTranslation("qVhWw8a3kEOQ8fj2fMzAsQ#Value", "Next"))))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(tradershubClientVariables.getFinancialAssessmentSourceOfWealth())]
@@ -328,12 +328,12 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$view", ["@outsyste
 
     return View;
 });
-define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlowController) {
+define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$translationsResources", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlow_SourceOfWealth_mvc_TranslationsResources, tradershub_FinancialAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_FinancialAssessmentFlow_SourceOfWealth_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -400,43 +400,6 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$controller", ["@ou
                 this.__nextOnClick$Action = value;
             }
 
-            get _radioGroupOnClick$Action() {
-                if (!(this.hasOwnProperty("__radioGroupOnClick$Action"))) {
-                    this.__radioGroupOnClick$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("RadioGroupOnClick", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "RadioGroupOnClick");
-                                span.setAttribute("outsystems.function.key", "c5a1c523-49d4-4c73-b294-5338b563a2cc");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("RadioGroupOnClick");
-                                callContext = controller.callContext(callContext);
-                                // IsRequired = False
-                                model.variables.isRequiredVar = false;
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__radioGroupOnClick$Action;
-            }
-            set _radioGroupOnClick$Action(value) {
-                this.__radioGroupOnClick$Action = value;
-            }
-
 
             nextOnClick$Action(callContext) {
                 var controller = this.controller;
@@ -451,30 +414,6 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$controller", ["@ou
 
                     try {
                         return controller.safeExecuteClientAction(controller._nextOnClick$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            radioGroupOnClick$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("RadioGroupOnClick__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "RadioGroupOnClick");
-                        span.setAttribute("outsystems.function.key", "c5a1c523-49d4-4c73-b294-5338b563a2cc");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._radioGroupOnClick$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -571,4 +510,27 @@ define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$controller", ["@ou
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "qVhWw8a3kEOQ8fj2fMzAsQ#Value": "Suivant",
+        "phGPrWaCT0S+0CzYUa3mGA#Value": "Vente de propriété",
+        "kF_hzh1JJkquIxiRKa1cSg#Value": "Revenus d\'investissement",
+        "LChIN6Uh6UakbGiZMI_ENA#Value": "Héritage",
+        "Y3tfOv74mE2f4NA5wQF3Jw#Value": "règlement de divorce",
+        "apxtEGv8jUyowjZ2x8JgEw#Value": "Propriété de l\'entreprise",
+        "1uNRefncPkSdOVpyVTc0Jg#Value": "Activité de trésorerie",
+        "DJk4hMNbpUSkJhingQXV+w#Value": "Accumulation de revenus/économies"
+    };
+});
+
+define("tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$translationsResources", ["exports", "tradershub.FinancialAssessmentFlow.SourceOfWealth.mvc$translationsResources.fr-FR"], function(exports, tradershub_FinancialAssessmentFlow_SourceOfWealth_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_FinancialAssessmentFlow_SourceOfWealth_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

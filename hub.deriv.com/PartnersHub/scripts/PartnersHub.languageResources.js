@@ -30,22 +30,22 @@ define("PartnersHub.languageResources", ["@outsystems/runtime-core-js", "Partner
 
 define("PartnersHub.languageResources.translationsResources.ar-001", [], function() {
     return {
-        "Validation.Currency": "أدخل عملة صالحة.",
-        "Validation.DateTime": "أدخل تاريخًا ووقتًا صالحين.",
-        "Validation.Date": "أدخل تاريخًا صالحًا.",
-        "Validation.Decimal": "أدخل عدد عشري صحيح.",
-        "Validation.Integer": "أدخل عددًا صحيحًا صالحًا.",
-        "Validation.LongInteger": "أدخل عددًا صحيحًا صالحًا.",
+        "Validation.Currency": "يرجى إدخال عملة صحيحة.",
+        "Validation.DateTime": "يرجى إدخال تاريخ ووقت صالحين.",
+        "Validation.Date": "يرجى إدخال تاريخ صحيح.",
+        "Validation.Decimal": "يرجى إدخال رقم عشري صحيح.",
+        "Validation.Integer": "يرجى إدخال عدد صحيح صالح.",
+        "Validation.LongInteger": "يرجى إدخال عدد صحيح صالح.",
         "Validation.Mandatory": "هذا الحقل مطلوب.",
-        "SfiHlQXuikKB0jvgobHczA#NumericPasswordValidatorMsg": "أدخل كلمة مرور رقمية صحيحة.",
-        "Validation.PhoneNumber": "أدخل رقم هاتف صالح.",
-        "Validation.Text": "أدخل نصًا صالحًا.",
-        "Validation.Time": "أدخل وقتًا صالحًا.",
-        "AppInitError.Generic": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، قم بإعادة تشغيل التطبيق.",
-        "AppInitError.DataModel": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، قم بإعادة تشغيل التطبيق. إذا استمرت المشكلة، يمكنك إعادة التثبيت، ولكن ستفقد جميع البيانات المحلية.",
-        "AppInitError.Resources": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة محاولة التحديث، أعد تشغيل التطبيق.",
+        "SfiHlQXuikKB0jvgobHczA#NumericPasswordValidatorMsg": "يرجى إدخال كلمة مرور صحيحة تحتوي على أرقام.",
+        "Validation.PhoneNumber": "يرجى إدخال رقم هاتف صحيح.",
+        "Validation.Text": "يرجى إدخال نص صحيح.",
+        "Validation.Time": "يرجى إدخال وقت صحيح.",
+        "AppInitError.Generic": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة المحاولة، يرجى إعادة تشغيل التطبيق.",
+        "AppInitError.DataModel": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة المحاولة، يرجى إعادة تشغيل التطبيق. إذا استمرت المشكلة، يمكنك إعادة تثبيت التطبيق، لكنك ستفقد جميع البيانات المحلية.\n\n",
+        "AppInitError.Resources": "حدث خطأ أثناء محاولة تحديث التطبيق. إذا كنت ترغب في إعادة المحاولة، يرجى إعادة تشغيل التطبيق.",
         "UpgradeRequiredDataLoss": "يحتاج تطبيقك إلى التحديث. ستفقد البيانات غير المحفوظة. انقر هنا للتحديث.",
-        "UpgradeRequired": "يجب تحديث تطبيقك. انقر هنا للتحديث."
+        "UpgradeRequired": "يحتاج تطبيقك إلى تحديث. انقر هنا للتحديث."
     };
 });
 
@@ -72,22 +72,22 @@ define("PartnersHub.languageResources.translationsResources.de-DE", [], function
 
 define("PartnersHub.languageResources.translationsResources.es-ES", [], function() {
     return {
-        "Validation.Currency": "Introduzca una moneda válida.",
-        "Validation.DateTime": "Introduzca una fecha y hora válidas.",
-        "Validation.Date": "Introduzca una fecha válida.",
-        "Validation.Decimal": "Introduzca un decimal válido.",
-        "Validation.Integer": "Introduzca un número entero válido.",
-        "Validation.LongInteger": "Introduzca un número entero válido.",
+        "Validation.Currency": "Introduce una moneda válida.",
+        "Validation.DateTime": "Introduce una fecha y hora válidas.",
+        "Validation.Date": "Introduce una fecha válida.",
+        "Validation.Decimal": "Introduce un decimal válido.",
+        "Validation.Integer": "Introduce un número entero válido.",
+        "Validation.LongInteger": "Introduce un número entero válido.",
         "Validation.Mandatory": "Este campo es obligatorio.",
-        "SfiHlQXuikKB0jvgobHczA#NumericPasswordValidatorMsg": "Introduzca una contraseña numérica válida.",
-        "Validation.PhoneNumber": "Introduzca un número de teléfono válido.",
-        "Validation.Text": "Ingrese un texto válido.",
-        "Validation.Time": "Introduzca una hora válida.",
-        "AppInitError.Generic": "Ocurrió un error al intentar actualizar la aplicación. Si desea intentar actualizar de nuevo, reinicie la aplicación.",
-        "AppInitError.DataModel": "Ocurrió un error al intentar actualizar la aplicación. Si desea intentar la actualización nuevamente, reinicie la aplicación. Si el problema persiste, puede reinstalarla, pero se perderán todos los datos locales.",
-        "AppInitError.Resources": "Ocurrió un error al intentar actualizar la aplicación. Si desea intentar la actualización nuevamente, reinicie la aplicación.",
-        "UpgradeRequiredDataLoss": "Su aplicación necesita ser actualizada. Los datos no guardados se perderán. Haga clic aquí para actualizar.",
-        "UpgradeRequired": "Su aplicación necesita ser actualizada. Haga clic aquí para actualizar."
+        "SfiHlQXuikKB0jvgobHczA#NumericPasswordValidatorMsg": "Introduce una contraseña numérica válida.",
+        "Validation.PhoneNumber": "Introduce un número de teléfono válido.",
+        "Validation.Text": "Ingresa un texto válido.",
+        "Validation.Time": "Introduce una hora válida.",
+        "AppInitError.Generic": "Ocurrió un error al intentar actualizar la aplicación. Si deseas intentar actualizar de nuevo, reinicia la aplicación.",
+        "AppInitError.DataModel": "Ocurrió un error al intentar actualizar la aplicación. Si deseas intentar la actualización nuevamente, reinicia la aplicación. Si el problema persiste, puedes reinstalarla, pero se perderán todos los datos locales.",
+        "AppInitError.Resources": "Ocurrió un error al intentar actualizar la aplicación. Si deseas intentar la actualización nuevamente, reinicia la aplicación.",
+        "UpgradeRequiredDataLoss": "Tu aplicación necesita ser actualizada. Los datos no guardados se perderán. Haz clic aquí para actualizar.",
+        "UpgradeRequired": "Tu aplicación necesita ser actualizada. Haz clic aquí para actualizar."
     };
 });
 

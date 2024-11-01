@@ -183,3 +183,36 @@ body {
     display: none;
 }
 
+.width-auto {
+    width: auto;
+}
+
+label {
+    width: auto !important;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  background: linear-gradient(to right, #fafafa 0%, #f0f0f0 50%, #fafafa 100%);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

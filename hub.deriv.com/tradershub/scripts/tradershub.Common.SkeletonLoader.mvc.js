@@ -120,17 +120,17 @@ define("tradershub.Common.SkeletonLoader.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("tradershub.Common.SkeletonLoader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Common.SkeletonLoader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.SkeletonLoader.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_SkeletonLoader_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_SkeletonLoader_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
                 this.dataFetchDependentsGraph = {};
-                this.shouldSendClientVarsToDataSources = false;
+                this.shouldSendClientVarsToDataSources = true;
             }
 
             // Server Actions - Methods
@@ -235,4 +235,9 @@ define("tradershub.Common.SkeletonLoader.mvc$controller", ["@outsystems/runtime-
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.SkeletonLoader.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

@@ -101,7 +101,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$view
             var _this = this;
 
 
-            return "Personal details | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("p75OmenE7EeaAGyCxVEKHw#TitleExpression.-545367396.1", "Personal details | Deriv");
         }
 
         internalRender() {
@@ -184,12 +184,12 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$view
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$translationsResources", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobile_PersonalDetailsDateOfBirth_mvc_TranslationsResources, tradershub_RealAccountCreationMobileController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationMobile_PersonalDetailsDateOfBirth_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -299,4 +299,21 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$cont
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "p75OmenE7EeaAGyCxVEKHw#Title": "Détails personnels | Deriv",
+        "p75OmenE7EeaAGyCxVEKHw#TitleExpression.-545367396.1": "Détails personnels | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationMobile.PersonalDetailsDateOfBirth.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationMobile_PersonalDetailsDateOfBirth_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationMobile_PersonalDetailsDateOfBirth_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

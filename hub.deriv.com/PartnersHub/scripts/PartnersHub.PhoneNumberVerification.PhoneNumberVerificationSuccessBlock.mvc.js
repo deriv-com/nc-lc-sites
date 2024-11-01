@@ -355,7 +355,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.
 
 define("PartnersHub.PhoneNumberVerification.PhoneNumberVerificationSuccessBlock.mvc$translationsResources.es-ES", [], function() {
     return {
-        "nsqW7xRMnEa2udMrIDU1Bw#Value": "Número de teléfono verificado. Su gestor de cuentas se pondrá en contacto con usted en breve.",
+        "nsqW7xRMnEa2udMrIDU1Bw#Value": "Número de teléfono verificado. Tu gestor de cuentas se pondrá en contacto lo antes posible.",
         "HYnU0YvK1UOpA1lyGTo7Xg#Value": "Éxito"
     };
 });

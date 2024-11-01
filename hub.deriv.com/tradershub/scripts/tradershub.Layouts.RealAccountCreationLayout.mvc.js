@@ -1,4 +1,4 @@
-define("tradershub.Layouts.RealAccountCreationLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.Navigation.Wizard.mvc$model", "OutSystemsUI.Navigation.WizardItem.mvc$model", "OutSystemsUI.Numbers.ProgressBar.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, tradershubModel, OutSystemsUIModel, OutSystemsUIController, tradershubController, OutSystemsUI_Navigation_Wizard_mvcModel, OutSystemsUI_Navigation_WizardItem_mvcModel, OutSystemsUI_Numbers_ProgressBar_mvcModel, tradershub_Common_LoaderBlock_mvcModel) {
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.Navigation.Wizard.mvc$model", "OutSystemsUI.Navigation.WizardItem.mvc$model", "OutSystemsUI.Numbers.ProgressBar.mvc$model", "tradershub.Common.LoaderBlock.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo"], function(OSRuntimeCore, tradershubModel, OutSystemsUIModel, OutSystemsUIController, tradershubController, OutSystemsUI_Navigation_Wizard_mvcModel, OutSystemsUI_Navigation_WizardItem_mvcModel, OutSystemsUI_Numbers_ProgressBar_mvcModel, tradershub_Common_LoaderBlock_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -97,7 +97,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$model", ["@outsystems/r
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Navigation.Wizard.mvc$view", "OutSystemsUI.Navigation.WizardItem.mvc$view", "OutSystemsUI.Numbers.ProgressBar.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, tradershub_Layouts_RealAccountCreationLayout_mvc_model, tradershub_Layouts_RealAccountCreationLayout_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Navigation_Wizard_mvc_view, OutSystemsUI_Navigation_WizardItem_mvc_view, OutSystemsUI_Numbers_ProgressBar_mvc_view, tradershub_Common_LoaderBlock_mvc_view) {
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Navigation.Wizard.mvc$view", "OutSystemsUI.Navigation.WizardItem.mvc$view", "OutSystemsUI.Numbers.ProgressBar.mvc$view", "tradershub.Common.LoaderBlock.mvc$view", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, tradershub_Layouts_RealAccountCreationLayout_mvc_model, tradershub_Layouts_RealAccountCreationLayout_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Navigation_Wizard_mvc_view, OutSystemsUI_Navigation_WizardItem_mvc_view, OutSystemsUI_Numbers_ProgressBar_mvc_view, tradershub_Common_LoaderBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -198,7 +198,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                 extendedProperties: {
                     style: "color: #333333; font-size: 20px; font-weight: bold;"
                 },
-                text: ["Add a real account"],
+                text: [$text(getTranslation("00Hg9JXhFU+VYKs5xFdaZg#Value", "Add a real account"))],
                 _idProps: {
                     service: idService,
                     uuid: "3"
@@ -277,7 +277,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("SOfKJ5_BB0OpkR2bFQGiPQ#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -306,7 +306,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Account currency"],
+                                            text: [$text(getTranslation("NFfRCmwYtkyXwItR0dgtAw#Value", "Account currency"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "9"
@@ -353,7 +353,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("w2KrMBCITEuwkvTmK27h9Q#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -382,7 +382,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Personal details"],
+                                            text: [$text(getTranslation("HSuugJpXv0yhQKBD_yZzRA#Value", "Personal details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "13"
@@ -429,7 +429,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("2EEIVitDwkelS+H9TRyCmQ#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -458,7 +458,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Identity verification"],
+                                            text: [$text(getTranslation("WnNWxB+9Qk6Fll_MJQySwg#Value", "Identity verification"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "17"
@@ -505,7 +505,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("LHEnYOw__ECNBkNAfVUV1g#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -534,7 +534,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Employment details"],
+                                            text: [$text(getTranslation("vw6lScPcw0+Fmxkmet36Cg#Value", "Employment details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "21"
@@ -581,7 +581,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("L59znZgIrUGZoNRU38+OJg#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -610,7 +610,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Address details"],
+                                            text: [$text(getTranslation("gi313ljLuU6jS8TOtY5r2w#Value", "Address details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "25"
@@ -657,7 +657,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("toj9jrU0oUKtEIi32OKkUA#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -686,7 +686,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Terms of use"],
+                                            text: [$text(getTranslation("GUwJJeampkGR2XUJyILgfw#Value", "Terms of use"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "29"
@@ -744,7 +744,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ccC24elit0qGUu+syfqRew#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -773,7 +773,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Account currency"],
+                                            text: [$text(getTranslation("6yiEe7NMmkakyBhPZlCDsw#Value", "Account currency"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "34"
@@ -820,7 +820,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("wozlCeYWpkiG21u4kFpNeg#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -849,7 +849,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Personal details"],
+                                            text: [$text(getTranslation("HprxTZESnEm1dWrnbactIg#Value", "Personal details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "38"
@@ -896,7 +896,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("60LJWhUtjU6YkEOpQXty5w#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -925,7 +925,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Employment details"],
+                                            text: [$text(getTranslation("uUJ9gobL1E6Hjki9Ek_z2g#Value", "Employment details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "42"
@@ -972,7 +972,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("A82oAB7jTk+u34awc1ClTQ#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -1001,7 +1001,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Address details"],
+                                            text: [$text(getTranslation("XaX07m9utEqz4IFCKHk1IQ#Value", "Address details"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "46"
@@ -1048,7 +1048,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                                 },
                                                 icon: "check",
                                                 iconSize: /*Twotimes*/ 1,
-                                                style: "icon",
+                                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("4eWbPfLxhkyA4QexdkCLug#ValueExpression.3226745.1", "icon"),
                                                 visible: true,
                                                 _idProps: {
                                                     service: idService,
@@ -1077,7 +1077,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                                             extendedProperties: {
                                                 style: "color: #101213;"
                                             },
-                                            text: ["Terms of use"],
+                                            text: [$text(getTranslation("97AJAO2p1UKJAmK3_cOxHA#Value", "Terms of use"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "50"
@@ -1417,7 +1417,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                 extendedProperties: {
                     style: "color: #101213; font-size: 16px; font-weight: bold;"
                 },
-                text: ["Exit profile setup"],
+                text: [$text(getTranslation("wFdeBW5220eorYzALA2eOA#Value", "Exit profile setup"))],
                 _idProps: {
                     service: idService,
                     uuid: "74"
@@ -1460,7 +1460,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                 extendedProperties: {
                     style: "color: #101213;"
                 },
-                text: ["You will lose your progress."],
+                text: [$text(getTranslation("NPlnceVpDk+tMW25I6omMA#Value", "You will lose your progress."))],
                 _idProps: {
                     service: idService,
                     uuid: "77"
@@ -1493,7 +1493,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                 extendedProperties: {
                     style: "font-size: 12px;"
                 },
-                text: ["Continue setup"],
+                text: [$text(getTranslation("dfo3eZPJdEadIldymCRAug#Value", "Continue setup"))],
                 _idProps: {
                     service: idService,
                     uuid: "79"
@@ -1526,7 +1526,7 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
                 extendedProperties: {
                     style: "font-size: 12px;"
                 },
-                text: ["Go to demo"],
+                text: [$text(getTranslation("TGotkGwAd0mP+Rfg+z+ejQ#Value", "Go to demo"))],
                 _idProps: {
                     service: idService,
                     uuid: "81"
@@ -1538,12 +1538,12 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$view", ["@outsystems/ru
 
     return View;
 });
-define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.FlatpickrJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.GoToDemoOnClick.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo", "OutSystemsUI.controller$AddFavicon"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_FlatpickrJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_GoToDemoOnClick_RudderStackJS) {
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$translationsResources", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.OnReady.FlatpickrJS", "tradershub.Layouts.RealAccountCreationLayout.mvc$controller.GoToDemoOnClick.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_8391f9d0c6b78f74493c47987669deecStructure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "OutSystemsUI.controller$ScrollToElement", "tradershub.controller$SyncAccountInfo"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_TranslationsResources, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_OnReady_FlatpickrJS, tradershub_Layouts_RealAccountCreationLayout_mvc_controller_GoToDemoOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Layouts_RealAccountCreationLayout_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -1776,7 +1776,6 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsyst
                             try {
                                 controller.ensureControllerAlive("OnInitialize");
                                 callContext = controller.callContext(callContext);
-                                var addFaviconVar = new OS.DataTypes.VariableHolder();
                                 // IsLoading = True
                                 model.variables.isLoadingVar = true;
                                 if ((((tradershubClientVariables.getAuthToken() === OS.BuiltinFunctions.nullTextIdentifier()) || (tradershubClientVariables.getActiveLoginId() === (OS.BuiltinFunctions.nullIdentifier()).toString())))) {
@@ -1789,9 +1788,6 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller", ["@outsyst
                                     } else {
                                         // IsLoading = False
                                         model.variables.isLoadingVar = false;
-                                        // Execute Action: AddFavicon
-                                        addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("/tradershub/favicon.png", callContext);
-
                                     }
 
                                 }
@@ -2191,5 +2187,47 @@ define("tradershub.Layouts.RealAccountCreationLayout.mvc$controller.GoToDemoOnCl
             });
             $resolve()
         });
+    };
+});
+
+
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "TGotkGwAd0mP+Rfg+z+ejQ#Value": "Aller à la démo",
+        "dfo3eZPJdEadIldymCRAug#Value": "Continuer la configuration",
+        "NPlnceVpDk+tMW25I6omMA#Value": "Vous allez perdre vos progrès.",
+        "wFdeBW5220eorYzALA2eOA#Value": "Configuration du profil de sortie",
+        "97AJAO2p1UKJAmK3_cOxHA#Value": "Conditions d\'utilisation",
+        "4eWbPfLxhkyA4QexdkCLug#ValueExpression.3226745.1": "icon",
+        "XaX07m9utEqz4IFCKHk1IQ#Value": "Détails de l\'adresse",
+        "A82oAB7jTk+u34awc1ClTQ#ValueExpression.3226745.1": "icon",
+        "uUJ9gobL1E6Hjki9Ek_z2g#Value": "Détails de l\'emploi",
+        "60LJWhUtjU6YkEOpQXty5w#ValueExpression.3226745.1": "icon",
+        "HprxTZESnEm1dWrnbactIg#Value": "Détails personnels",
+        "wozlCeYWpkiG21u4kFpNeg#ValueExpression.3226745.1": "icon",
+        "6yiEe7NMmkakyBhPZlCDsw#Value": "Devise du compte",
+        "ccC24elit0qGUu+syfqRew#ValueExpression.3226745.1": "icon",
+        "GUwJJeampkGR2XUJyILgfw#Value": "Conditions d\'utilisation",
+        "toj9jrU0oUKtEIi32OKkUA#ValueExpression.3226745.1": "icon",
+        "gi313ljLuU6jS8TOtY5r2w#Value": "Détails de l\'adresse",
+        "L59znZgIrUGZoNRU38+OJg#ValueExpression.3226745.1": "icon",
+        "vw6lScPcw0+Fmxkmet36Cg#Value": "Détails de l\'emploi",
+        "LHEnYOw__ECNBkNAfVUV1g#ValueExpression.3226745.1": "icon",
+        "WnNWxB+9Qk6Fll_MJQySwg#Value": "Vérification d\'identité",
+        "2EEIVitDwkelS+H9TRyCmQ#ValueExpression.3226745.1": "icon",
+        "HSuugJpXv0yhQKBD_yZzRA#Value": "Détails personnels",
+        "w2KrMBCITEuwkvTmK27h9Q#ValueExpression.3226745.1": "icon",
+        "NFfRCmwYtkyXwItR0dgtAw#Value": "Devise du compte",
+        "SOfKJ5_BB0OpkR2bFQGiPQ#ValueExpression.3226745.1": "icon",
+        "00Hg9JXhFU+VYKs5xFdaZg#Value": "Ajouter un compte réel"
+    };
+});
+
+define("tradershub.Layouts.RealAccountCreationLayout.mvc$translationsResources", ["exports", "tradershub.Layouts.RealAccountCreationLayout.mvc$translationsResources.fr-FR"], function(exports, tradershub_Layouts_RealAccountCreationLayout_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Layouts_RealAccountCreationLayout_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

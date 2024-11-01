@@ -1,4 +1,4 @@
-define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, PartnersHubController) {
+define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubController) {
     var OS = OSRuntimeCore;
 
 
@@ -58,7 +58,7 @@ define("PartnersHub.Signup.Signup.mvc$model", ["@outsystems/runtime-core-js", "P
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
+define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Signup.Signup.mvc$model", "PartnersHub.Signup.Signup.mvc$controller", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutSignup.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Utilities.ButtonLoading.mvc$view", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Signup_Signup_mvc_model, PartnersHub_Signup_Signup_mvc_controller, PartnersHubClientVariables, PartnersHub_Layouts_LayoutSignup_mvc_view, OSWidgets, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -89,7 +89,7 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
         }
 
         static getBlocks() {
-            return [PartnersHub_Layouts_LayoutSignup_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
+            return [PartnersHub_Layouts_LayoutSignup_mvc_view, OutSystemsUI_Utilities_ButtonLoading_mvc_view, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view];
         }
 
         get modelFactory() {
@@ -145,901 +145,907 @@ define("PartnersHub.Signup.Signup.mvc$view", ["@outsystems/runtime-core-js", "Pa
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     mainContent: new PlaceholderContent(function() {
-                        return [React.createElement(OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {},
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "1",
-                                alias: "2"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                onDesktop: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "margin-top: 0px;"
-                                        },
-                                        style: "login-screen",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "margin-right: 16px; max-width: 486px;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 32px; font-style: normal; font-weight: 700; line-height: 40px;"
-                                        },
-                                        text: [$text(getTranslation("NUE9Av88JUW57tUvUyPWEQ#Value", "Join a global network of over 60,000 partners today!"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "4"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "margin-bottom: 16px; margin-top: 16px;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "5"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "6"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "7"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 16px; margin-left: 8px;"
-                                        },
-                                        text: [$text(getTranslation("PnykNTEllk+PQ9Rsd8YOqg#Value", "USD 47m+ paid out, withdraw anytime"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "8"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "9"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "10"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 16px; margin-left: 8px;"
-                                        },
-                                        text: [$text(getTranslation("CZyoBh_+1EW6Y_WCvw3hIw#Value", "1m+ clients across 190 countries"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "11"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "12"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "13"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 16px; margin-left: 8px;"
-                                        },
-                                        text: [$text(getTranslation("yhaxBYZgTkOwelFDbxicGA#Value", "24/7 support, whenever you need it"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "14"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 20px; font-style: normal; font-weight: 700; line-height: 30px;"
-                                        },
-                                        text: [$text(getTranslation("PP_s+MHOVEGduA59cQfqHw#Value", "Refer traders and earn up to 45% commissions."))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "15"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "max-width: 486px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "486px"
-                                        },
-                                        style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1", "signup"),
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "16"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Form, {
-                                        _validationProps: {
-                                            validationService: validationService
-                                        },
-                                        extendedProperties: {
-                                            style: "align-items: flex-start; display: flex; flex-direction: column; gap: 24px; padding: 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSFillParent"
-                                        },
-                                        style: "",
-                                        _idProps: {
-                                            service: idService,
-                                            name: "Form3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652; font-size: 24px; font-weight: bold;"
-                                        },
-                                        text: [$text(getTranslation("TX4OPpy22U2SkyVYKprXWw#Value", "Become a Deriv partner"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "18"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "display: flex; flex-direction: column; gap: 8px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "19"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #4F575E;"
-                                        },
-                                        text: [$text(getTranslation("aeBIgOJxkUqYhK4XqNTECQ#Value", "Email"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "20"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Input, {
-                                        _validationProps: {
-                                            validationService: validationService,
-                                            validationParentId: idService.getId("Form3")
-                                        },
-                                        enabled: true,
-                                        extendedProperties: {
-                                            style: "font-size: 16px; height: 48px;"
-                                        },
-                                        gridProperties: {
-                                            width: "100%"
-                                        },
-                                        inputType: /*Text*/ 0,
-                                        mandatory: true,
-                                        maxLength: 50,
-                                        prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1", "Enter your email"),
-                                        style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1", "form-control"),
-                                        variable: model.createVariable(OS.DataTypes.DataTypes.Text, PartnersHubClientVariables.getSignupEmail(), function(value) {
-                                            PartnersHubClientVariables.setSignupEmail(value);
-                                        }),
-                                        _idProps: {
-                                            service: idService,
-                                            name: "Email3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "22"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #414652;"
-                                        },
-                                        text: [$text(getTranslation("UzK6LDIORkGy+zMhhwAHcw#Value", "By pressing “Continue”, I agree to the"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "23"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        extendedProperties: {
-                                            target: "_blank",
-                                            rel: "noopener",
-                                            style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
-                                        },
-                                        gridProperties: {
-                                            classes: "ThemeGrid_MarginGutter"
-                                        },
-                                        transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("https://deriv.com/terms-and-conditions#clients", {}),
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "24"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("WIEsOXfpGUi2+DMFKkNA9A#Value", "terms and conditions.")))), React.createElement(OutSystemsUI_Utilities_ButtonLoading_mvc_view, {
-                                        getOwnerSpan: function() {
-                                            return _this.getChildSpan("render");
-                                        },
-                                        getOwnerDisposeSpan: function() {
-                                            return _this.getChildSpan("destroy");
-                                        },
-                                        inputs: {
-                                            IsLoading: model.variables.isCreateAccountLoadingVar
-                                        },
-                                        events: {
-                                            _handleError: function(ex) {
-                                                controller.handleError(ex);
-                                            }
-                                        },
-                                        _validationProps: {
-                                            validationService: validationService,
-                                            validationParentId: idService.getId("Form3")
-                                        },
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "25",
-                                            alias: "3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider,
-                                        placeholders: {
-                                            button: new PlaceholderContent(function() {
-                                                return [React.createElement(OSWidgets.Button, {
-                                                    enabled: true,
-                                                    extendedProperties: {
-                                                        style: "border-radius: 100px; height: 48px;"
-                                                    },
-                                                    gridProperties: {
-                                                        width: "100%"
-                                                    },
-                                                    isDefault: false,
-                                                    onClick: function() {
-                                                        _this.validateWidget(idService.getId("Form3"));
-                                                        return Promise.resolve().then(function() {
-                                                            var eventHandlerContext = callContext.clone();
-                                                            return controller.createPartnerAccountOnClick$Action(controller.callContext(eventHandlerContext));
-                                                        });
-
-                                                        ;
-                                                    },
-                                                    style: "btn btn-primary primary-button",
-                                                    visible: true,
-                                                    _idProps: {
-                                                        service: idService,
-                                                        uuid: "26"
-                                                    },
-                                                    _widgetRecordProvider: widgetsRecordProvider
-                                                }, React.createElement(OSWidgets.Container, {
-                                                    align: /*Default*/ 0,
-                                                    animate: false,
-                                                    style: "osui-btn-loading__spinner-animation",
-                                                    visible: true,
-                                                    _idProps: {
-                                                        service: idService,
-                                                        uuid: "27"
-                                                    },
-                                                    _widgetRecordProvider: widgetsRecordProvider
-                                                }), $text(getTranslation("+wQAlCIU8UOOzqoHho57SA#Value", "Continue")))];
-                                            })
-                                        },
-                                        _dependencies: []
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; display: flex; justify-content: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "28"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "background: #6A7178; height: 1px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "29"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #6A7178; text-align: center; width: 100%;"
-                                        },
-                                        text: [$text(getTranslation("Wa0l8SgwWEeXbv9c1b1vcg#Value", "Or sign up with"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "30"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "background: #6A7178; height: 1px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "31"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; display: flex; justify-content: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "32"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; padding: 8px 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "72px"
-                                        },
-                                        style: "social-btn",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "33"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.google_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "34"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; margin-right: 16px; padding: 8px 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "72px",
-                                            marginLeft: "16px"
-                                        },
-                                        style: "social-btn",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "35"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.facebook_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "36"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; padding: 8px 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "72px"
-                                        },
-                                        style: "social-btn",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "37"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.apple_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "38"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "text-align: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "39"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("hGK_oFGcIk6TuWvNEoLq+Q#Value", "Already have an account?")), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        extendedProperties: {
-                                            style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
-                                        },
-                                        gridProperties: {
-                                            classes: "ThemeGrid_MarginGutter"
-                                        },
-                                        onClick: function() {
-                                            var eventHandlerContext = callContext.clone();
-                                            controller.redirectOAuth$Action(controller.callContext(eventHandlerContext));
-
-                                            ;
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "40"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("u1QYOVO6N0+nAeebXkQ63A#Value", "Log in")))))))];
+                        return [$if(PartnersHubClientVariables.getIsDesktop(), false, this, function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin-top: 0px;"
+                                },
+                                style: "login-screen",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "1"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin-right: 16px; max-width: 486px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 32px; font-style: normal; font-weight: 700; line-height: 40px;"
+                                },
+                                text: [$text(getTranslation("H5ORjX4MREGP9PO_Fsleqw#Value", "Join a global network of over 60,000 partners today!"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "margin-bottom: 16px; margin-top: 16px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "4"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "5"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "6"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 16px; margin-left: 8px;"
+                                },
+                                text: [$text(getTranslation("cm5WkDzsTUGV432ue4a_Mw#Value", "USD 47m+ paid out, withdraw anytime"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "7"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "8"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "9"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 16px; margin-left: 8px;"
+                                },
+                                text: [$text(getTranslation("HFo2TwnWNkq34L7I6n52ag#Value", "1m+ clients across 190 countries"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "10"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "11"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.checkmark.svg"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "12"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 16px; margin-left: 8px;"
+                                },
+                                text: [$text(getTranslation("8emUWCB8GkGEI0nX00eBAA#Value", "24/7 support, whenever you need it"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "13"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 20px; font-style: normal; font-weight: 700; line-height: 30px;"
+                                },
+                                text: [$text(getTranslation("dqQQL1AfRkWrhX_057RFtQ#Value", "Refer traders and earn up to 45% commissions."))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "14"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "max-width: 486px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "486px"
+                                },
+                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1", "signup"),
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "15"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Form, {
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                extendedProperties: {
+                                    style: "align-items: flex-start; display: flex; flex-direction: column; gap: 24px; padding: 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                style: "",
+                                _idProps: {
+                                    service: idService,
+                                    name: "Form3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #414652; font-size: 24px; font-weight: bold;"
+                                },
+                                text: [$text(getTranslation("xKYtyF2ZAEC5BFyvUCEUZQ#Value", "Become a Deriv partner"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "17"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "display: flex; flex-direction: column; gap: 8px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "18"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #4F575E;"
+                                },
+                                text: [$text(getTranslation("rds1k5TSDES69x+yqh7kWw#Value", "Email"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "19"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Input, {
+                                _validationProps: {
+                                    validationService: validationService,
+                                    validationParentId: idService.getId("Form3")
+                                },
+                                enabled: true,
+                                extendedProperties: {
+                                    style: "font-size: 16px; height: 48px;"
+                                },
+                                gridProperties: {
+                                    width: "100%"
+                                },
+                                inputType: /*Text*/ 0,
+                                mandatory: true,
+                                maxLength: 50,
+                                prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1", "Enter your email"),
+                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1", "form-control"),
+                                variable: model.createVariable(OS.DataTypes.DataTypes.Text, PartnersHubClientVariables.getSignupEmail(), function(value) {
+                                    PartnersHubClientVariables.setSignupEmail(value);
                                 }),
-                                onTablet: PlaceholderContent.Empty,
-                                onPhone: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "41"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Form, {
-                                        _validationProps: {
-                                            validationService: validationService
-                                        },
-                                        extendedProperties: {
-                                            style: "align-items: flex-start; display: flex; flex-direction: column; gap: 24px; padding: 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSFillParent"
-                                        },
-                                        style: "",
-                                        _idProps: {
-                                            service: idService,
-                                            name: "Form2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #222; font-size: 20px; font-weight: bold; margin-top: -8px;"
-                                        },
-                                        text: [$text(getTranslation("pq9Ju9FMp0qda1dlJdT3_g#Value", "Become a Deriv partner"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "43"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "display: flex; flex-direction: column;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "44"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "font-size: 16px; margin-bottom: 8px;"
-                                        },
-                                        text: [$text(getTranslation("_0L9onq+f0G3KclYVpp7Pg#Value", "Email"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "45"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Input, {
-                                        _validationProps: {
-                                            validationService: validationService,
-                                            validationParentId: idService.getId("Form2")
-                                        },
-                                        enabled: true,
-                                        extendedProperties: {
-                                            style: "font-size: 16px; height: 48px;"
-                                        },
-                                        gridProperties: {
-                                            width: "100%"
-                                        },
-                                        inputType: /*Text*/ 0,
-                                        mandatory: true,
-                                        maxLength: 50,
-                                        prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1", "Enter your email"),
-                                        style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1", "form-control"),
-                                        variable: model.createVariable(OS.DataTypes.DataTypes.Text, PartnersHubClientVariables.getSignupEmail(), function(value) {
-                                            PartnersHubClientVariables.setSignupEmail(value);
-                                        }),
-                                        _idProps: {
-                                            service: idService,
-                                            name: "Email2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "47"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("j0ZohXspeE2qmvgbYqw0UA#Value", "By pressing “Create account”, I agree to the")), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        extendedProperties: {
-                                            target: "_blank",
-                                            rel: "noopener",
-                                            style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
-                                        },
-                                        gridProperties: {
-                                            classes: "ThemeGrid_MarginGutter"
-                                        },
-                                        transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("https://deriv.com/terms-and-conditions#clients", {}),
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "48"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("If_l85cWxEO6d6tLUbNSEw#Value", "terms and conditions.")))), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
-                                        getOwnerSpan: function() {
-                                            return _this.getChildSpan("render");
-                                        },
-                                        getOwnerDisposeSpan: function() {
-                                            return _this.getChildSpan("destroy");
-                                        },
-                                        inputs: {
-                                            Width: "100%",
-                                            title: "Create account",
-                                            isLoading: model.variables.isCreateAccountLoadingVar
-                                        },
-                                        events: {
-                                            _handleError: function(ex) {
-                                                controller.handleError(ex);
+                                _idProps: {
+                                    service: idService,
+                                    name: "Email3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "21"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "ph-terms",
+                                text: [$text(getTranslation("0L9t5V69GUWqH4EBUFv2IA#Value", "By creating an account, you confirm you are 18+ and understand we may send you updates and marketing materials (see "))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "22"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.AdvancedHtml, {
+                                extendedProperties: {
+                                    href: "https://docs.deriv.com/tnc/security-and-privacy.pdf",
+                                    target: "_blank"
+                                },
+                                tag: "a",
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "23"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "ph-terms-link",
+                                text: ["Security and privacy"],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "24"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Text, {
+                                style: "ph-terms",
+                                text: ["). Unsubscribe in your account settings anytime.\u2028By signing up, you agree to our "],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "25"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.AdvancedHtml, {
+                                extendedProperties: {
+                                    href: "https://deriv.com/terms-and-conditions#clients",
+                                    target: "_blank"
+                                },
+                                tag: "a",
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "26"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "ph-terms-link",
+                                text: ["Terms and conditions"],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "27"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Text, {
+                                style: "ph-terms",
+                                text: [$text(getTranslation("05+Idh4XEUuXubQDn_Jaqw#Value", "."))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "28"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OutSystemsUI_Utilities_ButtonLoading_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {
+                                    IsLoading: model.variables.isCreateAccountLoadingVar
+                                },
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService,
+                                    validationParentId: idService.getId("Form3")
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "29",
+                                    alias: "2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                placeholders: {
+                                    button: new PlaceholderContent(function() {
+                                        return [React.createElement(OSWidgets.Button, {
+                                            enabled: true,
+                                            extendedProperties: {
+                                                style: "border-radius: 100px; height: 48px;"
                                             },
-                                            onClick$Action: function() {
+                                            gridProperties: {
+                                                width: "100%"
+                                            },
+                                            isDefault: false,
+                                            onClick: function() {
+                                                _this.validateWidget(idService.getId("Form3"));
                                                 return Promise.resolve().then(function() {
                                                     var eventHandlerContext = callContext.clone();
                                                     return controller.createPartnerAccountOnClick$Action(controller.callContext(eventHandlerContext));
-                                                });;
-                                            }
-                                        },
-                                        _validationProps: {
-                                            validationService: validationService,
-                                            validationParentId: idService.getId("Form2")
-                                        },
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "49",
-                                            alias: "4"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider,
-                                        _dependencies: []
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; display: flex; justify-content: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "50"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "background: #6A7178; height: 1px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "51"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #6A7178; text-align: center; width: 100%;"
-                                        },
-                                        text: [$text(getTranslation("bHruHR+n6k69_enxlJJZFw#Value", "Or sign up with"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "52"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "background: #6A7178; height: 1px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "53"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: center; display: flex; justify-content: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "54"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; padding: 8px 16px;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "55"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.google_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "56"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; margin-right: 24px; padding: 8px 16px;"
-                                        },
-                                        gridProperties: {
-                                            marginLeft: "24px"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "57"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.facebook_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "58"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; padding: 8px 16px;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "59"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.apple_md.png"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "60"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "text-align: center;"
-                                        },
-                                        gridProperties: {
-                                            classes: "OSInline",
-                                            width: "100%"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "61"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("lEqYjxLh8E22q7g4DFeAKQ#Value", "Already have an account?")), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        extendedProperties: {
-                                            style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
-                                        },
-                                        gridProperties: {
-                                            classes: "ThemeGrid_MarginGutter"
-                                        },
-                                        onClick: function() {
-                                            var eventHandlerContext = callContext.clone();
-                                            controller.redirectOAuth$Action(controller.callContext(eventHandlerContext));
+                                                });
 
-                                            ;
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "62"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("l61PbA7DH0qIdtgYY8ibyg#Value", "Log in"))))))];
-                                })
-                            },
-                            _dependencies: [asPrimitiveValue(model.variables.isCreateAccountLoadingVar), asPrimitiveValue(PartnersHubClientVariables.getSignupEmail())]
+                                                ;
+                                            },
+                                            style: "btn btn-primary primary-button",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "30"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            style: "osui-btn-loading__spinner-animation",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "31"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), $text(getTranslation("viLAwbFCgEykFfLz6nIlEw#Value", "Continue")))];
+                                    })
+                                },
+                                _dependencies: []
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; display: flex; justify-content: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "32"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "background: #6A7178; height: 1px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "33"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #6A7178; text-align: center; width: 100%;"
+                                },
+                                text: [$text(getTranslation("sk9Hv6_X+UaRUOHB88t1Hg#Value", "Or sign up with"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "34"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "background: #6A7178; height: 1px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "35"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; display: flex; justify-content: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "36"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; padding: 8px 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "72px"
+                                },
+                                style: "social-btn",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "37"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.google_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "38"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; margin-right: 16px; padding: 8px 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "72px",
+                                    marginLeft: "16px"
+                                },
+                                style: "social-btn",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "39"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.facebook_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "40"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; height: 48px; justify-content: center; padding: 8px 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "72px"
+                                },
+                                style: "social-btn",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "41"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.apple_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "42"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "text-align: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "43"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("4SgkofLBVkmPS+sdVNO+ew#Value", "Already have an account?")), React.createElement(OSWidgets.Link, {
+                                enabled: true,
+                                extendedProperties: {
+                                    style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
+                                },
+                                gridProperties: {
+                                    classes: "ThemeGrid_MarginGutter"
+                                },
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.redirectOAuth$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "44"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("nkGOS_qDGke94U1sfqY2Bw#Value", "Log in")))))))];
+                        }, function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "45"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Form, {
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                extendedProperties: {
+                                    style: "align-items: flex-start; display: flex; flex-direction: column; gap: 24px; padding: 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                style: "",
+                                _idProps: {
+                                    service: idService,
+                                    name: "Form2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #222; font-size: 20px; font-weight: bold; margin-top: -8px;"
+                                },
+                                text: [$text(getTranslation("JFUJhSppXkCG+NL7xoSBoA#Value", "Become a Deriv partner"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "47"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "display: flex; flex-direction: column;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "48"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "font-size: 16px; margin-bottom: 8px;"
+                                },
+                                text: [$text(getTranslation("YLEukSC4ZkC9qdBghyW4Gg#Value", "Email"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "49"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Input, {
+                                _validationProps: {
+                                    validationService: validationService,
+                                    validationParentId: idService.getId("Form2")
+                                },
+                                enabled: true,
+                                extendedProperties: {
+                                    style: "font-size: 16px; height: 48px;"
+                                },
+                                gridProperties: {
+                                    width: "100%"
+                                },
+                                inputType: /*Text*/ 0,
+                                mandatory: true,
+                                maxLength: 50,
+                                prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1", "Enter your email"),
+                                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1", "form-control"),
+                                variable: model.createVariable(OS.DataTypes.DataTypes.Text, PartnersHubClientVariables.getSignupEmail(), function(value) {
+                                    PartnersHubClientVariables.setSignupEmail(value);
+                                }),
+                                _idProps: {
+                                    service: idService,
+                                    name: "Email2"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "51"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("wCzi7gRCQUixy+Qxm4YQ7g#Value", "By pressing “Create account”, I agree to the")), React.createElement(OSWidgets.Link, {
+                                enabled: true,
+                                extendedProperties: {
+                                    target: "_blank",
+                                    rel: "noopener",
+                                    style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
+                                },
+                                gridProperties: {
+                                    classes: "ThemeGrid_MarginGutter"
+                                },
+                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                url: OS.Navigation.generateScreenURL("https://deriv.com/terms-and-conditions#clients", {}),
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "52"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("WAJkSKH+U0CFX3WEtz2o2w#Value", "terms and conditions.")))), React.createElement(CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {
+                                    title: "Create account",
+                                    Width: "100%",
+                                    isLoading: model.variables.isCreateAccountLoadingVar
+                                },
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    },
+                                    onClick$Action: function() {
+                                        return Promise.resolve().then(function() {
+                                            var eventHandlerContext = callContext.clone();
+                                            return controller.createPartnerAccountOnClick$Action(controller.callContext(eventHandlerContext));
+                                        });;
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService,
+                                    validationParentId: idService.getId("Form2")
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "53",
+                                    alias: "3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; display: flex; justify-content: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "54"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "background: #6A7178; height: 1px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "55"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #6A7178; text-align: center; width: 100%;"
+                                },
+                                text: [$text(getTranslation("0zW1LO+dMEyUa1rhdaLzGA#Value", "Or sign up with"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "56"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "background: #6A7178; height: 1px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "57"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: center; display: flex; justify-content: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "58"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; padding: 8px 16px;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "59"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.google_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "60"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; margin-right: 24px; padding: 8px 16px;"
+                                },
+                                gridProperties: {
+                                    marginLeft: "24px"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "61"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.facebook_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "62"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "align-items: flex-start; border: 0.5px solid #414652; border-radius: 100px; display: flex; flex-shrink: 0; gap: 8px; justify-content: center; padding: 8px 16px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "63"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Image, {
+                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/PartnersHub.apple_md.png"),
+                                type: /*Static*/ 0,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "64"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "text-align: center;"
+                                },
+                                gridProperties: {
+                                    classes: "OSInline",
+                                    width: "100%"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "65"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("slSCZLC1Ck+qFlC2cFbkcg#Value", "Already have an account?")), React.createElement(OSWidgets.Link, {
+                                enabled: true,
+                                extendedProperties: {
+                                    style: "border: none; color: #000; font-weight: bold; text-decoration: underline;"
+                                },
+                                gridProperties: {
+                                    classes: "ThemeGrid_MarginGutter"
+                                },
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.redirectOAuth$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "66"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, $text(getTranslation("lmOiOFXHYUe5iEXKvSI4+Q#Value", "Log in"))))))];
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.isCreateAccountLoadingVar), asPrimitiveValue(PartnersHubClientVariables.getSignupEmail())]
+                _dependencies: [asPrimitiveValue(model.variables.isCreateAccountLoadingVar), asPrimitiveValue(PartnersHubClientVariables.getSignupEmail()), asPrimitiveValue(PartnersHubClientVariables.getIsDesktop())]
             }));
         }
     }
 
     return View;
 });
-define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "DerivLogger.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Signup.Signup.mvc$translationsResources", "PartnersHub.Signup.controller", "PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.EmailCheckJS", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "DerivLogger.controller$ConsoleLog", "PartnersHub.referencesHealth$DerivLogger", "RESTAPIWebsocketOfficial.model$ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, DerivLoggerController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Signup_Signup_mvc_TranslationsResources, PartnersHub_SignupController, PartnersHub_Signup_Signup_mvc_controller_CreatePartnerAccountOnClick_EmailCheckJS) {
+define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Signup.Signup.mvc$translationsResources", "PartnersHub.Signup.controller", "PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.EmailCheckJS", "RESTAPIWebsocketOfficial.model$ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "RESTAPIWebsocketOfficial.controller$PostVerifyEmail", "PartnersHub.controller$RedirectToOauth", "PartnersHub.controller$UseDevice"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Signup_Signup_mvc_TranslationsResources, PartnersHub_SignupController, PartnersHub_Signup_Signup_mvc_controller_CreatePartnerAccountOnClick_EmailCheckJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1164,39 +1170,14 @@ define("PartnersHub.Signup.Signup.mvc$controller", ["@outsystems/runtime-core-js
                                                         var rec = new RESTAPIWebsocketOfficialModel.ST_89d14f8b4008cb2b12eb9082eeeb95a6Structure();
                                                         rec.verify_emailAttr = PartnersHubClientVariables.getSignupEmail();
                                                         rec.typeAttr = "account_opening";
-                                                        rec.url_parametersAttr = function() {
-                                                            var rec = new RESTAPIWebsocketOfficialModel.ST_66a31b6dc85d7150aaf5da4cc4b359a4Structure();
-                                                            rec.affiliate_tokenAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.date_first_contactAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.gclid_urlAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.pa_amountAttr = OS.BuiltinFunctions.nullIdentifier();
-                                                            rec.pa_currencyAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.pa_loginidAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.pa_remarksAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.redirect_toAttr = OS.BuiltinFunctions.nullIdentifier();
-                                                            rec.signup_deviceAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_ad_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_adgroup_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_adrollclk_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_campaignAttr = "testc";
-                                                            rec.utm_campaign_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_contentAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_fbcl_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_gl_client_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_mediumAttr = "testm";
-                                                            rec.utm_msclk_idAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            rec.utm_sourceAttr = "tests";
-                                                            rec.utm_termAttr = (OS.BuiltinFunctions.nullIdentifier()).toString();
-                                                            return rec;
-                                                        }();
                                                         return rec;
                                                     }(), PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
                                                         postVerifyEmailVar.value = value;
                                                     }).then(function() {
                                                         // isCreateAccountLoading = False
                                                         model.variables.isCreateAccountLoadingVar = false;
-                                                        // Execute Action: ConsoleLog
-                                                        DerivLoggerController.default.consoleLog$Action(postVerifyEmailVar.value.responseOut.errorAttr.messageAttr, 0, callContext);
+                                                        // Destination: /PartnersHub/EmailVerification
+                                                        return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("PartnersHub", "EmailVerification", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                                     });
                                                 } else {
                                                     // Email2.Valid = False
@@ -1533,238 +1514,238 @@ define("PartnersHub.Signup.Signup.mvc$controller.CreatePartnerAccountOnClick.Ema
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.ar-001", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "تسجيل الدخول",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "هل لديك حساب بالفعل؟",
-        "bHruHR+n6k69_enxlJJZFw#Value": "أو سجّل باستخدام",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "الشروط والأحكام",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "بالضغط على \"إنشاء حساب\"، أوافق على",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "بريد إلكتروني",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "كن شريكًا في Deriv",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "تسجيل الدخول",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "لديك حساب بالفعل؟",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "أو قم بالتسجيل باستخدام",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "متابعة",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "الشروط والأحكام",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "بالضغط على \"متابعة\"، أوافق على",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "بريد إلكتروني",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "كن شريكًا في Deriv",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "قم بإحالة المتداولين واحصل على عمولات تصل إلى 45%.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "دعم متاح على مدار الساعة، متى ما احتجت إليه",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "أكثر من 1 مليون عميل في 190 دولة",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "تم دفع أكثر من 47 مليون دولار، يمكنك السحب في أي وقت",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "انضم إلى شبكة عالمية تضم أكثر من 60,000 شريك اليوم!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "تسجيل الدخول",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "هل لديك حساب بالفعل؟",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "أو سجّل باستخدام",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "الشروط والأحكام",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "بالضغط على \"إنشاء حساب\"، أوافق على",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "بريد إلكتروني",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "كن شريكًا في Deriv",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "تسجيل الدخول",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "لديك حساب بالفعل؟",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "أو قم بالتسجيل باستخدام",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "متابعة",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "بالضغط على \"متابعة\"، أوافق على",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "بالضغط على \"متابعة\"، أوافق على",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "أدخل بريدك الإلكتروني",
+        "rds1k5TSDES69x+yqh7kWw#Value": "بريد إلكتروني",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "كن شريكًا في Deriv",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "قم بإحالة المتداولين واحصل على عمولات تصل إلى 45%.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "دعم متاح على مدار الساعة، متى ما احتجت إليه",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "أكثر من 1 مليون عميل في 190 دولة",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "تم دفع أكثر من 47 مليون دولار، يمكنك السحب في أي وقت",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "انضم إلى شبكة عالمية تضم أكثر من 60,000 شريك اليوم!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.de-DE", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Einloggen",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "Haben Sie bereits ein Konto?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "Oder melden Sie sich an mit",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Allgemeine Geschäftsbedingungen",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Durch Drücken von „Konto erstellen“ stimme ich zu",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Geben Sie Ihre E-Mail-Adresse ein",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "E-Mail",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Werden Sie ein Deriv-Partner",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Anmeldung",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "Haben Sie bereits ein Konto?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Oder melden Sie sich an mit",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Fortfahren",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Allgemeine Geschäftsbedingungen",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Durch Drücken von „Weiter“ stimme ich zu, dass die",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Geben Sie Ihre E-Mail-Adresse ein",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "E-Mail",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Werde ein Deriv-Partner",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Empfehlen Sie Händler und verdienen Sie bis zu 45 % Provisionen.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "24/7 Unterstützung, wann immer Sie sie benötigen",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Über 1 Million Kunden in 190 Ländern",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Über 47 Millionen USD ausgezahlt, jederzeit abheben",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Treten Sie noch heute einem globalen Netzwerk von über 60.000 Partnern bei!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Einloggen",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "Haben Sie bereits ein Konto?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "Oder melden Sie sich an mit",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Allgemeine Geschäftsbedingungen",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Durch Drücken von „Konto erstellen“ stimme ich zu",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Geben Sie Ihre E-Mail-Adresse ein",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "E-Mail",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Werden Sie ein Deriv-Partner",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Anmeldung",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "Haben Sie bereits ein Konto?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Oder melden Sie sich an mit",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Fortfahren",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Durch Drücken von „Weiter“ stimme ich zu, dass die",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Durch Drücken von „Weiter“ stimme ich zu, dass die",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Geben Sie Ihre E-Mail-Adresse ein",
+        "rds1k5TSDES69x+yqh7kWw#Value": "E-Mail",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Werde ein Deriv-Partner",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Empfehlen Sie Händler und verdienen Sie bis zu 45 % Provisionen.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "24/7 Unterstützung, wann immer Sie sie benötigen",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Über 1 Million Kunden in 190 Ländern",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Über 47 Millionen USD ausgezahlt, jederzeit abheben",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Treten Sie noch heute einem globalen Netzwerk von über 60.000 Partnern bei!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.es-ES", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Iniciar sesión",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "¿Ya tienes una cuenta?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "O regístrate con",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Términos y condiciones",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Al presionar \"Crear cuenta\", acepto",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Introduce tu correo electrónico",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "Correo electrónico",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Conviértete en un Deriv partner",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Iniciar sesión",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "¿Ya tienes una cuenta?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "O regístrate con",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Continuar",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Términos y condiciones",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Al presionar \"Continuar\", acepto que la",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Introduzca su correo electrónico",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "Correo electrónico",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Conviértete en un Deriv Partner",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Recomienda traders y gana hasta un 45% de comisiones.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Soporte 24/7, cuando lo necesites",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Más de 1 millón de clientes en 190 países",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Más de 47 millones USD pagados, retira en cualquier momento",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "¡Únete hoy a una red global de más de 60,000 socios!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Iniciar sesión",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "¿Ya tienes una cuenta?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "O regístrate con",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Términos y condiciones",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Al presionar \"Crear cuenta\", acepto",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Introduce tu correo electrónico",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "Correo electrónico",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Conviértete en un Deriv partner",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Iniciar sesión",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "¿Ya tienes una cuenta?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "O regístrate con",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Continuar",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Al presionar \"Continuar\", acepto que la",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Al presionar \"Continuar\", acepto que la",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Introduzca su correo electrónico",
+        "rds1k5TSDES69x+yqh7kWw#Value": "Correo electrónico",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Conviértete en un Deriv Partner",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Recomienda traders y gana hasta un 45% de comisiones.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Soporte 24/7, cuando lo necesites",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Más de 1 millón de clientes en 190 países",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Más de 47 millones USD pagados, retira en cualquier momento",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "¡Únete hoy a una red global de más de 60,000 socios!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Se connecter",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "Vous avez déjà un compte ?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "Ou inscrivez-vous avec",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Conditions générales",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "En appuyant sur « Créer un compte », j\'accepte",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Entrez votre e-mail",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "E-mail",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Devenez un Deriv partenaire",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Connexion",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "Vous avez déjà un compte ?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Ou inscrivez-vous avec",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Continuer",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Conditions générales",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "En appuyant sur \"Continuer\", j\'accepte que la",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Entrez votre e-mail",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "E-mail",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Devenez partenaire Deriv",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Référez des traders et gagnez jusqu\'à 45 % de commissions.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Support 24/7, quand vous en avez besoin",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Plus de 1 million de clients dans 190 pays",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Plus de 47 millions USD versés, retirez à tout moment",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Rejoignez dès aujourd\'hui un réseau mondial de plus de 60 000 partenaires !"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Se connecter",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "Vous avez déjà un compte ?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "Ou inscrivez-vous avec",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Conditions générales",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "En appuyant sur « Créer un compte », j\'accepte",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Entrez votre e-mail",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "E-mail",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Devenez un Deriv partenaire",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Connexion",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "Vous avez déjà un compte ?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Ou inscrivez-vous avec",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Continuer",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "En appuyant sur \"Continuer\", j\'accepte que la",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "En appuyant sur \"Continuer\", j\'accepte que la",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Entrez votre e-mail",
+        "rds1k5TSDES69x+yqh7kWw#Value": "E-mail",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Devenez partenaire Deriv",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Référez des traders et gagnez jusqu\'à 45 % de commissions.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Support 24/7, quand vous en avez besoin",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Plus de 1 million de clients dans 190 pays",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Plus de 47 millions USD versés, retirez à tout moment",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Rejoignez dès aujourd\'hui un réseau mondial de plus de 60 000 partenaires !"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.it-IT", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Accedi",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "Hai già un account?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "O registrati con",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Termini e condizioni",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Premendo \"Crea account\", accetto",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Inserisci la tua email",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "Email",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Diventa un Deriv partner",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Accedi",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "Hai già un account?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Oppure registrati con",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Continuare",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Termini e condizioni",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Premendo \"Continua\", accetto che la",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Inserisci la tua email",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "Email",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Diventa un Deriv partner",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Riferisci trader e guadagna fino al 45% di commissioni.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Assistenza 24/7, ogni volta che ne hai bisogno",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Oltre 1 milione di clienti in 190 paesi",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Oltre 47 milioni di USD pagati, prelievo in qualsiasi momento",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Unisciti oggi a una rete globale di oltre 60.000 partner!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Accedi",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "Hai già un account?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "O registrati con",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Termini e condizioni",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Premendo \"Crea account\", accetto",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Inserisci la tua email",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "Email",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Diventa un Deriv partner",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Accedi",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "Hai già un account?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Oppure registrati con",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Continuare",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Premendo \"Continua\", accetto che la",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Premendo \"Continua\", accetto che la",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Inserisci la tua email",
+        "rds1k5TSDES69x+yqh7kWw#Value": "Email",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Diventa un Deriv partner",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Riferisci trader e guadagna fino al 45% di commissioni.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Assistenza 24/7, ogni volta che ne hai bisogno",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Oltre 1 milione di clienti in 190 paesi",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Oltre 47 milioni di USD pagati, prelievo in qualsiasi momento",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Unisciti oggi a una rete globale di oltre 60.000 partner!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Zaloguj się",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "Masz już konto?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "Lub zarejestruj się z",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Warunki i zasady",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Naciskając \"Utwórz konto\", zgadzam się",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Wprowadź swój adres e-mail",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "E-mail",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Zostań partnerem Deriv",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Zaloguj się",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "Masz już konto?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Lub zarejestruj się z",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Kontynuować",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Warunki i zasady",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Naciskając „Kontynuuj”, zgadzam się, że",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Wprowadź swój adres e-mail",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "E-mail",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Zostań partnerem Deriv",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Polecaj traderów i zarabiaj do 45% prowizji.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Wsparcie 24/7, kiedy tylko go potrzebujesz",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Ponad 1 milion klientów w 190 krajach",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Wypłacono ponad 47 milionów USD, wypłata w dowolnym momencie",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Dołącz już dziś do globalnej sieci ponad 60 000 partnerów!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Zaloguj się",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "Masz już konto?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "Lub zarejestruj się z",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Warunki i zasady",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Naciskając \"Utwórz konto\", zgadzam się",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Wprowadź swój adres e-mail",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "E-mail",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Zostań partnerem Deriv",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Zaloguj się",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "Masz już konto?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Lub zarejestruj się z",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Kontynuować",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Naciskając „Kontynuuj”, zgadzam się, że",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Naciskając „Kontynuuj”, zgadzam się, że",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Wprowadź swój adres e-mail",
+        "rds1k5TSDES69x+yqh7kWw#Value": "E-mail",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Zostań partnerem Deriv",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Polecaj traderów i zarabiaj do 45% prowizji.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Wsparcie 24/7, kiedy tylko go potrzebujesz",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Ponad 1 milion klientów w 190 krajach",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Wypłacono ponad 47 milionów USD, wypłata w dowolnym momencie",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Dołącz już dziś do globalnej sieci ponad 60 000 partnerów!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Iniciar sessão",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "Já tem uma conta?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "Ou inscreva-se com",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Termos e condições",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Ao pressionar \"Criar conta\", concordo",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Insira o seu e-mail",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "E-mail",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Torne-se um Deriv partner",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Iniciar sessão",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "Já tem uma conta?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Ou inscreva-se com",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Continuar",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Termos e condições",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Ao pressionar \"Continuar\", concordo que a",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Insira o seu e-mail",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "E-mail",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Torne-se um Deriv partner",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Recomende traders e ganhe até 45% de comissões.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Suporte 24/7, sempre que precisar",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Mais de 1 milhão de clientes em 190 países",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Mais de 47 milhões USD pagos, retire a qualquer momento",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Junte-se hoje a uma rede global de mais de 60.000 parceiros!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Iniciar sessão",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "Já tem uma conta?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "Ou inscreva-se com",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Termos e condições",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Ao pressionar \"Criar conta\", concordo",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Insira o seu e-mail",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "E-mail",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Torne-se um Deriv partner",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Iniciar sessão",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "Já tem uma conta?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Ou inscreva-se com",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Continuar",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Ao pressionar \"Continuar\", concordo que a",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Ao pressionar \"Continuar\", concordo que a",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Insira o seu e-mail",
+        "rds1k5TSDES69x+yqh7kWw#Value": "E-mail",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Torne-se um Deriv partner",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Recomende traders e ganhe até 45% de comissões.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Suporte 24/7, sempre que precisar",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Mais de 1 milhão de clientes em 190 países",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Mais de 47 milhões USD pagos, retire a qualquer momento",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Junte-se hoje a uma rede global de mais de 60.000 parceiros!"
     };
 });
 
 define("PartnersHub.Signup.Signup.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "l61PbA7DH0qIdtgYY8ibyg#Value": "Войти",
-        "lEqYjxLh8E22q7g4DFeAKQ#Value": "У вас уже есть аккаунт?",
-        "bHruHR+n6k69_enxlJJZFw#Value": "Или зарегистрируйтесь с",
-        "If_l85cWxEO6d6tLUbNSEw#Value": "Условия и положения",
-        "j0ZohXspeE2qmvgbYqw0UA#Value": "Нажимая \"Создать аккаунт\", я согласен",
-        "1_7WXDvpnEW_RMmHjGCNZQ#ValueExpression.85283156.1": "form-control",
-        "zJIT6+3ELEaa6zIl_77N7A#ValueExpression.-374653993.1": "Введите ваш адрес электронной почты",
-        "_0L9onq+f0G3KclYVpp7Pg#Value": "Электронная почта",
-        "pq9Ju9FMp0qda1dlJdT3_g#Value": "Станьте партнером Deriv",
-        "u1QYOVO6N0+nAeebXkQ63A#Value": "Вход",
-        "hGK_oFGcIk6TuWvNEoLq+Q#Value": "У вас уже есть аккаунт?",
-        "Wa0l8SgwWEeXbv9c1b1vcg#Value": "Или зарегистрируйтесь с",
-        "+wQAlCIU8UOOzqoHho57SA#Value": "Продолжить",
-        "WIEsOXfpGUi2+DMFKkNA9A#Value": "Условия и положения",
-        "UzK6LDIORkGy+zMhhwAHcw#Value": "Нажимая \"Продолжить\", я согласен с тем, что",
-        "8zxRrlLQrkOlCAqZeHjSMw#ValueExpression.85283156.1": "form-control",
-        "ClVaMGHkPkWTIQlXXQlP2g#ValueExpression.-374653993.1": "Введите ваш адрес электронной почты",
-        "aeBIgOJxkUqYhK4XqNTECQ#Value": "Электронная почта",
-        "TX4OPpy22U2SkyVYKprXWw#Value": "Станьте партнером Deriv",
-        "525EUsXUAUmkMNKtXpu0cg#ValueExpression.-902467304.1": "signup",
-        "PP_s+MHOVEGduA59cQfqHw#Value": "Рекомендуйте трейдеров и зарабатывайте до 45% комиссий.",
-        "yhaxBYZgTkOwelFDbxicGA#Value": "Поддержка 24/7, когда вам это нужно",
-        "CZyoBh_+1EW6Y_WCvw3hIw#Value": "Более 1 миллиона клиентов в 190 странах",
-        "PnykNTEllk+PQ9Rsd8YOqg#Value": "Более 47 миллионов USD выплачено, выводите в любое время",
-        "NUE9Av88JUW57tUvUyPWEQ#Value": "Присоединяйтесь к глобальной сети из более чем 60 000 партнеров уже сегодня!"
+        "lmOiOFXHYUe5iEXKvSI4+Q#Value": "Войти",
+        "slSCZLC1Ck+qFlC2cFbkcg#Value": "У вас уже есть аккаунт?",
+        "0zW1LO+dMEyUa1rhdaLzGA#Value": "Или зарегистрируйтесь с",
+        "WAJkSKH+U0CFX3WEtz2o2w#Value": "Условия и положения",
+        "wCzi7gRCQUixy+Qxm4YQ7g#Value": "Нажимая \"Создать аккаунт\", я согласен",
+        "1iKpFahJvkOWNvrHYCrlVg#ValueExpression.85283156.1": "form-control",
+        "_CmBqDw0B0GBdlmS6oCbwA#ValueExpression.-374653993.1": "Введите ваш адрес электронной почты",
+        "YLEukSC4ZkC9qdBghyW4Gg#Value": "Электронная почта",
+        "JFUJhSppXkCG+NL7xoSBoA#Value": "Станьте партнером Deriv",
+        "nkGOS_qDGke94U1sfqY2Bw#Value": "Вход",
+        "4SgkofLBVkmPS+sdVNO+ew#Value": "У вас уже есть аккаунт?",
+        "sk9Hv6_X+UaRUOHB88t1Hg#Value": "Или зарегистрируйтесь с",
+        "viLAwbFCgEykFfLz6nIlEw#Value": "Продолжить",
+        "05+Idh4XEUuXubQDn_Jaqw#Value": "Нажимая \"Продолжить\", я согласен с тем, что",
+        "0L9t5V69GUWqH4EBUFv2IA#Value": "Нажимая \"Продолжить\", я согласен с тем, что",
+        "Rwa9eKDoaEyJHDheMo_z+g#ValueExpression.85283156.1": "form-control",
+        "djEM5nSQdEuRP1YwHhFkfA#ValueExpression.-374653993.1": "Введите ваш адрес электронной почты",
+        "rds1k5TSDES69x+yqh7kWw#Value": "Электронная почта",
+        "xKYtyF2ZAEC5BFyvUCEUZQ#Value": "Станьте партнером Deriv",
+        "NLUHMUw1i0mBTKyFzyWj7g#ValueExpression.-902467304.1": "signup",
+        "dqQQL1AfRkWrhX_057RFtQ#Value": "Рекомендуйте трейдеров и зарабатывайте до 45% комиссий.",
+        "8emUWCB8GkGEI0nX00eBAA#Value": "Поддержка 24/7, когда вам это нужно",
+        "HFo2TwnWNkq34L7I6n52ag#Value": "Более 1 миллиона клиентов в 190 странах",
+        "cm5WkDzsTUGV432ue4a_Mw#Value": "Более 47 миллионов USD выплачено, выводите в любое время",
+        "H5ORjX4MREGP9PO_Fsleqw#Value": "Присоединяйтесь к глобальной сети из более чем 60 000 партнеров уже сегодня!"
     };
 });
 

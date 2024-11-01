@@ -28,7 +28,8 @@ define("PartnersHub.Developer.Endpoint.mvc$model", ["@outsystems/runtime-core-js
                 Form1: OS.Model.ValidationWidgetRecord,
                 Server: OS.Model.ValidationWidgetRecord,
                 OAuthAppID: OS.Model.ValidationWidgetRecord,
-                LanguageSwitcherToggle: OS.Model.ValidationWidgetRecord
+                LanguageSwitcherToggle: OS.Model.ValidationWidgetRecord,
+                CFDCommissionToggle: OS.Model.ValidationWidgetRecord
             };
         }
 
@@ -82,7 +83,7 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
         }
 
         static getJsDependencies() {
-            return [];
+            return ["scripts/PartnersHub.DerivAnalytics.js"];
         }
 
         static getBlocks() {
@@ -446,10 +447,53 @@ define("PartnersHub.Developer.Endpoint.mvc$view", ["@outsystems/runtime-core-js"
                                 name: "LanguageSwitcherToggle"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "align-items: center; display: flex;"
+                            },
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "CFDCommissionFeatureFlag"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Label, {
+                            gridProperties: {
+                                classes: "OSFillParent"
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "25"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            text: [$text(getTranslation("SnrIUlIHwUiamFowyHw2jg#Value", "CFD Commissions Modal"))],
+                            _idProps: {
+                                service: idService,
+                                name: "CFDCommssion"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Switch, {
+                            _validationProps: {
+                                validationService: validationService,
+                                validationParentId: idService.getId("Form1")
+                            },
+                            enabled: true,
+                            style: "switch",
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Boolean, PartnersHubClientVariables.getisCFDCommissionsPlanFormEnabledFF(), function(value) {
+                                PartnersHubClientVariables.setisCFDCommissionsPlanFormEnabledFF(value);
+                            }),
+                            _idProps: {
+                                service: idService,
+                                name: "CFDCommissionToggle"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
                         }))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()), asPrimitiveValue(model.variables.oAuthAppID2Var), asPrimitiveValue(model.variables.serverURLVar)]
+                _dependencies: [asPrimitiveValue(PartnersHubClientVariables.getisCFDCommissionsPlanFormEnabledFF()), asPrimitiveValue(PartnersHubClientVariables.getisLanguageSwitcherEnabledFF()), asPrimitiveValue(model.variables.oAuthAppID2Var), asPrimitiveValue(model.variables.serverURLVar)]
             }));
         }
     }
@@ -914,20 +958,22 @@ define("PartnersHub.Developer.Endpoint.mvc$controller.OnClick.JavaScript1JS", []
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.ar-001", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "محول اللغة",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "محول اللغة",
         "z4E221d1vEeR43uMRxpE+A#Value": "إعادة تعيين إلى الإعدادات الأصلية",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "إرسال",
         "40bWnUM0M0qjslHd09SpUw#Value": "لاستخدام الخادم أعلاه لتسجيل الدخول.",
-        "ZIpQdKMSh029jJ2Kl8HJIg#Value": "معرف التطبيق",
-        "jso1GJeBzkmbFB0QlMBT5Q#Value": "سجل",
+        "ZIpQdKMSh029jJ2Kl8HJIg#Value": "معرّف التطبيق",
+        "jso1GJeBzkmbFB0QlMBT5Q#Value": "سجّل",
         "tYSnXt74LEe+5+sVcqPLpw#Value": "معرف تطبيق OAuth",
         "DWYZMDPB40Oa+r4IbtgTyg#Value": "خادم",
-        "xq6aFQV3i0GlkG17lS85RA#Value": "تغيير نقطة نهاية واجهة برمجة التطبيقات"
+        "xq6aFQV3i0GlkG17lS85RA#Value": "تغيير نقطة النهاية لواجهة برمجة التطبيقات (API)"
     };
 });
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Sprachumschalter",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Sprachumschalter",
         "z4E221d1vEeR43uMRxpE+A#Value": "Auf die Werkseinstellungen zurücksetzen",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Einreichen",
@@ -942,7 +988,8 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.de-DE", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", [], function() {
     return {
-        "NkzbLfXeBUerQrAW2zsQfA#Value": "Selector de idioma",
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Cambiador de idioma",
+        "NkzbLfXeBUerQrAW2zsQfA#Value": "Cambiador de idioma",
         "z4E221d1vEeR43uMRxpE+A#Value": "Restablecer a la configuración original",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Enviar",
         "40bWnUM0M0qjslHd09SpUw#Value": "para usar el servidor anterior para iniciar sesión.",
@@ -956,6 +1003,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.es-ES", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Sélecteur de langue",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Sélecteur de langue",
         "z4E221d1vEeR43uMRxpE+A#Value": "Réinitialiser aux paramètres d\'origine",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Soumettre",
@@ -970,6 +1018,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.fr-FR", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Selettore della lingua",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Selettore della lingua",
         "z4E221d1vEeR43uMRxpE+A#Value": "Ripristina le impostazioni originali",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Inviare",
@@ -984,6 +1033,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.it-IT", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Przełącznik języka",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Przełącznik języka",
         "z4E221d1vEeR43uMRxpE+A#Value": "Przywróć ustawienia fabryczne",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Zatwierdź",
@@ -998,6 +1048,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pl-PL", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Seletor de idioma",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Seletor de idioma",
         "z4E221d1vEeR43uMRxpE+A#Value": "Reiniciar para as configurações originais",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Submeter",
@@ -1012,6 +1063,7 @@ define("PartnersHub.Developer.Endpoint.mvc$translationsResources.pt-PT", [], fun
 
 define("PartnersHub.Developer.Endpoint.mvc$translationsResources.ru-RU", [], function() {
     return {
+        "SnrIUlIHwUiamFowyHw2jg#Value": "Переключатель языка",
         "NkzbLfXeBUerQrAW2zsQfA#Value": "Переключатель языка",
         "z4E221d1vEeR43uMRxpE+A#Value": "Сбросить до заводских настроек",
         "KIeuFldrS0KldY+5Z10Nrw#Value": "Отправить",

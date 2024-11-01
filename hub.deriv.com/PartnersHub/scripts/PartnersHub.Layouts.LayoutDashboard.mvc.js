@@ -1,4 +1,4 @@
-define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-core-js", "PartnersHub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$model", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$model", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, OutSystemsUIModel, OutSystemsUIController, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvcModel, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvcModel, OutSystemsUI_Adaptive_DisplayOnDevice_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -94,7 +94,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$model", ["@outsystems/runtime-co
     return new OS.Model.ModelFactory(Model);
 });
 
-define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "react", "@outsystems/runtime-view-js", "PartnersHub.Layouts.LayoutDashboard.mvc$model", "PartnersHub.Layouts.LayoutDashboard.mvc$controller", "PartnersHub.clientVariables", "@outsystems/runtime-widgets-js", "CustomComponentsOfficial.ButtonVariants.PrimaryButton.mvc$view", "CustomComponentsOfficial.ButtonVariants.SecondaryButton.mvc$view", "OutSystemsUI.Adaptive.DisplayOnDevice.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, React, OSView, PartnersHub_Layouts_LayoutDashboard_mvc_model, PartnersHub_Layouts_LayoutDashboard_mvc_controller, PartnersHubClientVariables, OSWidgets, CustomComponentsOfficial_ButtonVariants_PrimaryButton_mvc_view, CustomComponentsOfficial_ButtonVariants_SecondaryButton_mvc_view, OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -259,7 +259,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    title: "Yes, log out",
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1", "Yes, log out"),
                     height: "40px",
                     Width: "100%"
                 },
@@ -302,7 +302,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                 },
                 inputs: {
                     height: "40px",
-                    title: "Cancel",
+                    title: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1", "Cancel"),
                     borderRadius: "100px",
                     Width: "100%"
                 },
@@ -383,7 +383,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                         return [React.createElement(OSWidgets.AdvancedHtml, {
                             extendedProperties: {
                                 role: "banner",
-                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1", "header")
+                                className: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1", "header")
                             },
                             tag: "header",
                             _idProps: {
@@ -465,8 +465,8 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
-                                ExtendedClass: "tooltip",
-                                Position: PartnersHubModel.staticEntities.position.bottom
+                                Position: PartnersHubModel.staticEntities.position.bottom,
+                                ExtendedClass: "tooltip"
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -535,7 +535,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                             uuid: "21"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("jHgL0nZwmUqbmQ22LEVMJQ#Value", "Live chat")))];
+                                    }, $text(getTranslation("o4kGB_KdxkKdXAAKNGEqcw#Value", "Live chat")))];
                                 })
                             },
                             _dependencies: []
@@ -611,7 +611,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
                                             uuid: "25"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, $text(getTranslation("ZqXGHgmYOUKuOnAfIM5aYA#Value", "Log out")))];
+                                    }, $text(getTranslation("Hgt5YD3uj0i+pu6+SQ02MQ#Value", "Log out")))];
                                 })
                             },
                             _dependencies: []
@@ -921,7 +921,7 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$view", ["@outsystems/runtime-cor
 
     return View;
 });
-define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "OutSystemsUI.controller$AddFavicon", "PartnersHub.controller$UseDevice", "PartnersHub.controller$MountDatadogClient", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
+define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.languageResources", "PartnersHub.clientVariables", "PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources", "PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$MenuShow", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure", "PartnersHub.controller$RudderstackTrackEvent", "PartnersHub.controller$UseDevice", "PartnersHub.controller$ShowLiveChat", "RESTAPIWebsocketOfficial.model$ST_bc9f0cd5cd952aeeadf59ee9a5dfb79aStructure", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$WebsocketLogout", "PartnersHub.controller$RedirectToOauth"], function(OSRuntimeCore, PartnersHubModel, PartnersHubController, OutSystemsUIModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHubLanguageResources, PartnersHubClientVariables, PartnersHub_Layouts_LayoutDashboard_mvc_TranslationsResources, PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnClickLogout_HandleLogoutJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
@@ -1070,14 +1070,8 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                             try {
                                 controller.ensureControllerAlive("OnInitialize");
                                 callContext = controller.callContext(callContext);
-                                var addFaviconVar = new OS.DataTypes.VariableHolder();
                                 // Execute Action: UseDevice
                                 PartnersHubController.default.useDevice$Action(callContext);
-                                // Execute Action: AddFavicon
-                                addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("favicon.ico", callContext);
-
-                                // Execute Action: MountDatadog
-                                PartnersHubController.default.mountDatadogClient$Action(callContext);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1113,25 +1107,6 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
                             try {
                                 controller.ensureControllerAlive("OnRender");
                                 callContext = controller.callContext(callContext);
-                                OS.Logger.startActiveSpan("JavaScript1", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "JavaScript1");
-                                        span.setAttribute("outsystems.function.key", "95908930-c311-453e-8dc5-b639ebff7e7b");
-                                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(PartnersHub_Layouts_LayoutDashboard_mvc_controller_OnRender_JavaScript1JS, "JavaScript1", "OnRender", null, function($parameters) {}, {}, {});
-                                    } finally {
-                                        if (span) {
-                                            span.end();
-                                        }
-
-                                    }
-
-                                }, 1);
                             } finally {
                                 if (span) {
                                     span.end();
@@ -1723,37 +1698,6 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller", ["@outsystems/runti
     return new OS.Controller.ControllerFactory(Controller, PartnersHubLanguageResources);
 });
 
-define("PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnRender.JavaScript1JS", [], function() {
-    return function($actions, $roles, $public) {
-        function styleTitleOnPath() {
-            // Define the element ID
-            var elementId = 'b1-PartnershubTitle';
-
-            // Define the target pathname
-            var targetPathname = '/PartnersHub/PartnersHubDashboard';
-
-            // Get the current pathname
-            var currentPathname = window.location.pathname;
-
-            // Check if the current pathname matches the target pathname
-            if (currentPathname.includes(targetPathname)) {
-                // Find the element by ID
-                var element = document.getElementById(elementId);
-
-                // Check if the element exists
-                if (element) {
-                    // Set the style to bold
-                    element.style.fontWeight = 'bold';
-                }
-            }
-        }
-
-        // Call the function to apply styles based on the current path
-        styleTitleOnPath();
-
-    };
-});
-
 define("PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleLogoutJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         return new Promise(function($resolve, $reject) {
@@ -1851,71 +1795,85 @@ define("PartnersHub.Layouts.LayoutDashboard.mvc$controller.OnClickLogout.HandleL
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.de-DE", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Abmelden",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Live-Chat",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Abmelden",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Live-Chat",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Abbrechen",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Ja, abmelden",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Bist du dir sicher, dass du dich abmelden möchtest?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.es-ES", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Cerrar sesión",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en vivo",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Cerrar sesión",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Chat en vivo",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Cancelar",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Sí, cerrar sesión",
         "u6D_wbxGcUC2hnueavwrUA#Value": "¿Estás seguro de que quieres cerrar sesión?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Se déconnecter",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat en direct",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Se déconnecter",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Chat en direct",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Annuler",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Oui, déconnecter",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Êtes-vous sûr de vouloir vous déconnecter ?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.it-IT", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Disconnettersi",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat dal vivo",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Disconnettersi",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Chat dal vivo",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Annulla",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Sì, termina sessione",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Sei sicuro di voler effettuare il logout?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Wyloguj się",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Czat na żywo",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Wyloguj się",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Czat na żywo",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Czy jesteś pewien, że chcesz się wylogować?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Sair",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Chat ao vivo",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Sair",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Chat ao vivo",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Cancelar",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Sim, pretendo terminar sessão",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Tem certeza de que deseja sair?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "txSp4P1R3EiHubr1BtnHDw#Value.-1221270899.1": "header",
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "Выйти",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "Живой чат",
+        "TFhMy84yeUCHm3Dwqrm9gQ#Value.-1221270899.1": "header",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "Выйти",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "Живой чат",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "Отмена",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "Да, выйти",
         "u6D_wbxGcUC2hnueavwrUA#Value": "Вы уверены, что хотите выйти?"
     };
 });
 
 define("PartnersHub.Layouts.LayoutDashboard.mvc$translationsResources.ar-001", [], function() {
     return {
-        "ZqXGHgmYOUKuOnAfIM5aYA#Value": "تسجيل الخروج",
-        "jHgL0nZwmUqbmQ22LEVMJQ#Value": "دردشة حية",
+        "Hgt5YD3uj0i+pu6+SQ02MQ#Value": "تسجيل الخروج",
+        "o4kGB_KdxkKdXAAKNGEqcw#Value": "دردشة حية",
+        "I5_3w7IyFEOhPdN7amixSA#Value.2011110042.1": "إلغاء",
+        "TzWngVsoX02XksAr2aDRPQ#Value.-1272307305.1": "نعم، تسجيل الخروج",
         "u6D_wbxGcUC2hnueavwrUA#Value": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
     };
 });

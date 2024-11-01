@@ -112,7 +112,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
             var _this = this;
 
 
-            return "Endpoint | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Nz1ECC2fMEqSLKQHL_o6YQ#TitleExpression.1629896911.1", "Endpoint | Deriv");
         }
 
         internalRender() {
@@ -190,7 +190,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                 uuid: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Change API endpoint"), React.createElement(OSWidgets.Form, {
+                        }, $text(getTranslation("0pzc0E9tEkKafaLsKv+uSw#Value", "Change API endpoint"))), React.createElement(OSWidgets.Form, {
                             _validationProps: {
                                 validationService: validationService
                             },
@@ -226,7 +226,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                 uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "URL"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("AEXNPcgQakKnKjJOkOVzrA#Value", "URL"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService,
                                 validationParentId: idService.getId("Form1")
@@ -267,7 +267,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                 uuid: "9"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "App Id"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("_jEEKfVxaUqriZ1u9xhKpw#Value", "App Id"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService,
                                 validationParentId: idService.getId("Form1")
@@ -315,7 +315,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                 uuid: "12"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Save"))), React.createElement(OSWidgets.Button, {
+                        }, $text(getTranslation("MV8ukmNCwE26Dfhf2CcJQA#Value", "Save"))))), React.createElement(OSWidgets.Button, {
                             enabled: true,
                             isDefault: false,
                             onClick: function() {
@@ -331,7 +331,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                 uuid: "13"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Reset"), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("XwjnmG0C5k6E0fljXSpEbA#Value", "Reset"))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: true,
                             visible: !(model.variables.featureFlagsVar.isEmpty),
@@ -360,7 +360,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider,
                                         _dependencies: []
-                                    }, "Flag Name"), React.createElement(OSWidgets.HeaderCell, {
+                                    }, $text(getTranslation("FawrB0ncP0yh8_O65T6_HA#Value", "Flag Name"))), React.createElement(OSWidgets.HeaderCell, {
                                         extendedProperties: {
                                             style: "text-align: center"
                                         },
@@ -370,7 +370,7 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider,
                                         _dependencies: []
-                                    }, "Enabled")];
+                                    }, $text(getTranslation("A4Xjk+9CgEm9m3gqtwXjHw#Value", "Enabled")))];
                                 }),
                                 row: new IteratorPlaceholderContent(function(idService, callContext) {
                                     return [React.createElement(OSWidgets.RowCell, {
@@ -437,12 +437,12 @@ define("tradershub.MainFlow.Endpoint.mvc$view", ["@outsystems/runtime-core-js", 
 
     return View;
 });
-define("tradershub.MainFlow.Endpoint.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Endpoint.mvc$controller.SaveOnClick.SaveWSURLJS", "tradershub.MainFlow.Endpoint.mvc$controller.OnReady.GetConfigJS", "tradershub.MainFlow.Endpoint.mvc$controller.ResetOnClick.ResetWSConfigJS", "tradershub.MainFlow.Endpoint.mvc$controller.SwitchOnChange.UpdateFeatureFlagByNameJS", "tradershub.model$ST_c9321e98763823c3fe8b25101ee9afbdStructure", "tradershub.model$RL_65125be14dfacc3673d277ed0ec6faeb"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Endpoint_mvc_controller_SaveOnClick_SaveWSURLJS, tradershub_MainFlow_Endpoint_mvc_controller_OnReady_GetConfigJS, tradershub_MainFlow_Endpoint_mvc_controller_ResetOnClick_ResetWSConfigJS, tradershub_MainFlow_Endpoint_mvc_controller_SwitchOnChange_UpdateFeatureFlagByNameJS) {
+define("tradershub.MainFlow.Endpoint.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.Endpoint.mvc$translationsResources", "tradershub.MainFlow.controller", "tradershub.MainFlow.Endpoint.mvc$controller.SaveOnClick.SaveWSURLJS", "tradershub.MainFlow.Endpoint.mvc$controller.OnReady.GetConfigJS", "tradershub.MainFlow.Endpoint.mvc$controller.ResetOnClick.ResetWSConfigJS", "tradershub.MainFlow.Endpoint.mvc$controller.SwitchOnChange.UpdateFeatureFlagByNameJS", "tradershub.model$ST_c9321e98763823c3fe8b25101ee9afbdStructure", "tradershub.model$RL_65125be14dfacc3673d277ed0ec6faeb"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_Endpoint_mvc_TranslationsResources, tradershub_MainFlowController, tradershub_MainFlow_Endpoint_mvc_controller_SaveOnClick_SaveWSURLJS, tradershub_MainFlow_Endpoint_mvc_controller_OnReady_GetConfigJS, tradershub_MainFlow_Endpoint_mvc_controller_ResetOnClick_ResetWSConfigJS, tradershub_MainFlow_Endpoint_mvc_controller_SwitchOnChange_UpdateFeatureFlagByNameJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_Endpoint_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -1002,5 +1002,29 @@ define("tradershub.MainFlow.Endpoint.mvc$controller.ResetOnClick.ResetWSConfigJS
 define("tradershub.MainFlow.Endpoint.mvc$controller.SwitchOnChange.UpdateFeatureFlagByNameJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         window?.toggleFeatureFlag($parameters.FlagName)
+    };
+});
+
+
+define("tradershub.MainFlow.Endpoint.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "A4Xjk+9CgEm9m3gqtwXjHw#Value": "Activé",
+        "FawrB0ncP0yh8_O65T6_HA#Value": "Nom du drapeau",
+        "XwjnmG0C5k6E0fljXSpEbA#Value": "Réinitialiser",
+        "MV8ukmNCwE26Dfhf2CcJQA#Value": "Sauvegarder",
+        "_jEEKfVxaUqriZ1u9xhKpw#Value": "Identifiant de l\'application",
+        "AEXNPcgQakKnKjJOkOVzrA#Value": "URL",
+        "0pzc0E9tEkKafaLsKv+uSw#Value": "Changer le point de terminaison de l\'API",
+        "Nz1ECC2fMEqSLKQHL_o6YQ#Title": "Point de terminaison | Deriv",
+        "Nz1ECC2fMEqSLKQHL_o6YQ#TitleExpression.1629896911.1": "Point de terminaison | Deriv"
+    };
+});
+
+define("tradershub.MainFlow.Endpoint.mvc$translationsResources", ["exports", "tradershub.MainFlow.Endpoint.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_Endpoint_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_Endpoint_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

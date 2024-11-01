@@ -108,779 +108,783 @@ define("PartnersHub.Home.CommissionPlans.mvc$view", ["@outsystems/runtime-core-j
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: true,
-                gridProperties: {
-                    classes: "OSInline",
-                    width: "100%"
-                },
-                visible: (PartnersHubClientVariables.getisCommisionsPlansEnabledFF() === true),
-                _idProps: {
-                    service: idService,
-                    uuid: "0"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                extendedProperties: {
-                    style: "border: 1px solid #DEE2E6; border-radius: 8px; gap: 16px; padding: 16px;"
-                },
-                gridProperties: {
-                    classes: "OSInline",
-                    width: "100%"
-                },
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    uuid: "1"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                extendedProperties: {
-                    style: "display: flex; flex-direction: column; gap: 16px;"
-                },
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    uuid: "2"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.AdvancedHtml, {
-                tag: "h5",
-                _idProps: {
-                    service: idService,
-                    uuid: "3"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Text, {
-                extendedProperties: {
-                    "OSTagName": "h5"
-                },
-                style: "container-title",
-                text: [$text(getTranslation("7KaXe6C0nEqxpykIt84DYA#Value", "You can earn commissions from"))],
-                _idProps: {
-                    service: idService,
-                    name: "Youcanearncommissionsfrom"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            })), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                style: "cfd-container",
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    uuid: "5"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.AdvancedHtml, {
-                extendedProperties: {
-                    value: "CFDs"
-                },
-                tag: "h6",
-                _idProps: {
-                    service: idService,
-                    uuid: "6"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Text, {
-                style: "section-subtitle",
-                text: [$text(getTranslation("sHFYNLZu_0WxTchJzBk4Kw#Value", "CFDs trading"))],
-                _idProps: {
-                    service: idService,
-                    uuid: "7"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            })), React.createElement(OSWidgets.Label, {
-                gridProperties: {
-                    classes: "OSFillParent"
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "8"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Text, {
-                style: "description",
-                text: [$text(getTranslation("NpVN_qK5Ukq96BzyPFgppw#Value", "Earn with our instrument-based commission plan."))],
-                _idProps: {
-                    service: idService,
-                    uuid: "9"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }), React.createElement(OSWidgets.AdvancedHtml, {
-                extendedEvents: {
-                    onClick: function() {
-                        return Promise.resolve().then(function() {
-                            var eventHandlerContext = callContext.clone();
-                            return controller.onClickToCFDs$Action(controller.callContext(eventHandlerContext));
-                        });;
-                    }
-                },
-                tag: "span",
-                _idProps: {
-                    service: idService,
-                    uuid: "10"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Text, {
-                extendedProperties: {
-                    style: "color: #222; cursor: pointer; font-weight: bold; margin-left: 4px; text-decoration: underline;"
-                },
-                style: "learn-more",
-                text: [$text(getTranslation("V1v8Zxvrd0S2qgA4Mc58lg#Value", "Learn more"))],
-                _idProps: {
-                    service: idService,
-                    uuid: "11"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            })))), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {
-                    Space: PartnersHubModel.staticEntities.space.small
-                },
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "12",
-                    alias: "1"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                _dependencies: []
-            }), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: false,
-                extendedProperties: {
-                    style: "display: flex; flex-direction: column; gap: 8px;"
-                },
-                visible: true,
-                _idProps: {
-                    service: idService,
-                    uuid: "13"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.AdvancedHtml, {
-                tag: "h6",
-                _idProps: {
-                    service: idService,
-                    uuid: "14"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(OSWidgets.Text, {
-                style: "section-subtitle",
-                text: [$text(getTranslation("KiD9uiu9wka+5H5+rFqK_w#Value", "Options trading"))],
-                _idProps: {
-                    service: idService,
-                    uuid: "15"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            })), React.createElement(OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {},
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "16",
-                    alias: "2"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                placeholders: {
-                    onDesktop: new PlaceholderContent(function() {
-                        return [React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "display: flex; gap: 8px;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "17"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "OSInline"
-                            },
-                            style: "options-trading-container",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "RevShare"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "padding: 0;"
-                            },
-                            style: "ph-card-title",
-                            text: [$text(getTranslation("4plaLNKz2Ua1ALgzrQoy+w#Value", "RevShare plan"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "19"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "20"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Label, {
-                            extendedProperties: {
-                                style: "display: flex; flex-direction: column;"
-                            },
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "21"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            style: "description",
-                            text: [$text(getTranslation("gt+H5N_aHkSBMLkdMCYkSA#Value", "Earn up to 40% commissions from client trades. "))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "22"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+            return React.createElement("div", this.getRootNodeProperties(), $if(PartnersHubClientVariables.getisCommisionsPlansEnabledFF(), false, this, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "100%"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "0"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    extendedProperties: {
+                        style: "border: 1px solid #DEE2E6; border-radius: 8px; gap: 16px; padding: 16px;"
+                    },
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "100%"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "1"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    extendedProperties: {
+                        style: "display: flex; flex-direction: column; gap: 16px;"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.AdvancedHtml, {
+                    tag: "h5",
+                    _idProps: {
+                        service: idService,
+                        uuid: "3"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Text, {
+                    extendedProperties: {
+                        "OSTagName": "h5"
+                    },
+                    style: "container-title",
+                    text: [$text(getTranslation("IOkWIqJMPUO_Lk53vxAtSw#Value", "You can earn commissions from"))],
+                    _idProps: {
+                        service: idService,
+                        name: "Youcanearncommissionsfrom"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    style: "cfd-container",
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "5"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.AdvancedHtml, {
+                    extendedProperties: {
+                        value: "CFDs"
+                    },
+                    tag: "h6",
+                    _idProps: {
+                        service: idService,
+                        uuid: "6"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Text, {
+                    style: "section-subtitle",
+                    text: [$text(getTranslation("AU0UR7so4UepymTL5+f0Hg#Value", "CFDs trading"))],
+                    _idProps: {
+                        service: idService,
+                        uuid: "7"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })), React.createElement(OSWidgets.Label, {
+                    gridProperties: {
+                        classes: "OSFillParent"
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "8"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Text, {
+                    style: "description",
+                    text: [$text(getTranslation("rEEPHXMxSkqto6iJFQRDow#Value", "Earn with our instrument-based commission plan."))],
+                    _idProps: {
+                        service: idService,
+                        uuid: "9"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }), React.createElement(OSWidgets.AdvancedHtml, {
+                    extendedEvents: {
+                        onClick: function() {
+                            return Promise.resolve().then(function() {
+                                var eventHandlerContext = callContext.clone();
+                                return controller.onClickToCFDs$Action(controller.callContext(eventHandlerContext));
+                            });;
+                        }
+                    },
+                    tag: "span",
+                    _idProps: {
+                        service: idService,
+                        uuid: "10"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Text, {
+                    extendedProperties: {
+                        style: "color: #222; cursor: pointer; font-weight: bold; margin-left: 4px; text-decoration: underline;"
+                    },
+                    style: "learn-more",
+                    text: [$text(getTranslation("WWVqgcxwK02Qs6tbKp5Mmg#Value", "Learn more"))],
+                    _idProps: {
+                        service: idService,
+                        uuid: "11"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })))), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {
+                        Space: PartnersHubModel.staticEntities.space.small
+                    },
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "12",
+                        alias: "1"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                }), React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    extendedProperties: {
+                        style: "display: flex; flex-direction: column; gap: 8px;"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "13"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.AdvancedHtml, {
+                    tag: "h6",
+                    _idProps: {
+                        service: idService,
+                        uuid: "14"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(OSWidgets.Text, {
+                    style: "section-subtitle",
+                    text: [$text(getTranslation("7ulhFOTk5k+CkAaszoytRA#Value", "Options trading"))],
+                    _idProps: {
+                        service: idService,
+                        uuid: "15"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                })), React.createElement(OutSystemsUI_Adaptive_DisplayOnDevice_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "16",
+                        alias: "2"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    placeholders: {
+                        onDesktop: new PlaceholderContent(function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "display: flex; gap: 8px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "17"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                style: "options-trading-container",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "RevShare"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "padding: 0;"
+                                },
+                                style: "ph-card-title",
+                                text: [$text(getTranslation("EYg8N4WXw0uJI10lyUKi7Q#Value", "RevShare plan"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "19"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "20"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Label, {
+                                extendedProperties: {
+                                    style: "display: flex; flex-direction: column;"
+                                },
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "21"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "description",
+                                text: [$text(getTranslation("SLerLFjvfkWtG9Y9RHDzJQ#Value", "Earn up to 40% commissions from client trades. "))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "22"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedEvents: {
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
 
-                                    ;
-                                }
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "23"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "color: #222; cursor: pointer; font-weight: bold; text-decoration: underline;"
-                            },
-                            style: "learn-more",
-                            text: [$text(getTranslation("COWaVbW+50GxFaXvTDnLMA#Value", "Learn more"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "24"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))))), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "OSInline"
-                            },
-                            style: "options-trading-container",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "Turnover"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "font-weight: 700;"
-                            },
-                            style: "ph-card-title",
-                            text: [$text(getTranslation("KF6rxhiQHUCPZlhucSkXHA#Value", "Turnover plan"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "26"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "27"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Label, {
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "28"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            style: "description",
-                            text: [$text(getTranslation("BJnUP6H85k6qK5QbrgKnDw#Value", "Earn based on each contract\'s payout probability. "))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "29"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
+                                        ;
+                                    }
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "23"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #222; cursor: pointer; font-weight: bold; text-decoration: underline;"
+                                },
+                                style: "learn-more",
+                                text: [$text(getTranslation("gqFqY_hmtEqB00VisGJ7PA#Value", "Learn more"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "24"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))))), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                style: "options-trading-container",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "Turnover"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "font-weight: 700;"
+                                },
+                                style: "ph-card-title",
+                                text: [$text(getTranslation("49aHbJx2ykGyMfF0QTFbJQ#Value", "Turnover plan"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "26"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "27"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Label, {
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "28"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "description",
+                                text: [$text(getTranslation("kh4sLye1VkediZ_papE5UA#Value", "Earn based on each contract\'s payout probability. "))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "29"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedEvents: {
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
 
-                                    ;
-                                }
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "30"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "color: #222; cursor: pointer; font-weight: bold; text-decoration: underline;"
-                            },
-                            style: "learn-more",
-                            text: [$text(getTranslation("6Mkcfp682kiVuIVLeuwJpQ#Value", "Learn more"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "31"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))))))];
-                    }),
-                    onTablet: new PlaceholderContent(function() {
-                        return [React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "display: flex; gap: 8px;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "32"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "OSInline"
-                            },
-                            style: "options-trading-container",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "RevShare3"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "padding: 0px;"
-                            },
-                            style: "ph-card-title",
-                            text: [$text(getTranslation("9MGEQFYinUuqv5ONJSug6Q#Value", "RevShare plan"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "34"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "35"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Label, {
-                            extendedProperties: {
-                                style: "display: flex; flex-direction: column;"
-                            },
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "36"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            style: "description",
-                            text: [$text(getTranslation("kmLWI2Fj3UyyvaId+Ka4qw#Value", "Earn up to 40% commissions from client trades. "))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "37"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+                                        ;
+                                    }
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "30"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "color: #222; cursor: pointer; font-weight: bold; text-decoration: underline;"
+                                },
+                                style: "learn-more",
+                                text: [$text(getTranslation("pcZDJsFxJE6u6Dad3I_6lw#Value", "Learn more"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "31"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))))))];
+                        }),
+                        onTablet: new PlaceholderContent(function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedProperties: {
+                                    style: "display: flex; gap: 8px;"
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "32"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                style: "options-trading-container",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "RevShare3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "padding: 0px;"
+                                },
+                                style: "ph-card-title",
+                                text: [$text(getTranslation("FdViVhAQlkGnzPj6tMhRkA#Value", "RevShare plan"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "34"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "35"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Label, {
+                                extendedProperties: {
+                                    style: "display: flex; flex-direction: column;"
+                                },
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "36"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "description",
+                                text: [$text(getTranslation("fyGSjsifXUe_gnMUYXyUwQ#Value", "Earn up to 40% commissions from client trades. "))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "37"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedEvents: {
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
 
-                                    ;
-                                }
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "38"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "width: 400px;"
-                            },
-                            style: "learn-more",
-                            text: [$text(getTranslation("H_8s8y5W7k6nFr07OnjdOA#Value", "Learn more"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "39"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))))), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "OSInline"
-                            },
-                            style: "options-trading-container",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "Turnover3"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "padding: 0px;"
-                            },
-                            style: "ph-card-title",
-                            text: [$text(getTranslation("G25Euvj6_Uiu0ay3U5QIGw#Value", "Turnover plan"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "41"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "42"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Label, {
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "43"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            style: "description",
-                            text: [$text(getTranslation("7BbYgbOM4UC5hZ4RnciyGQ#Value", "Earn based on each contract\'s payout probability. "))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "44"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
+                                        ;
+                                    }
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "38"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "width: 400px;"
+                                },
+                                style: "learn-more",
+                                text: [$text(getTranslation("re4x2mAFAUCi0Uzf_QD9jQ#Value", "Learn more"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "39"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))))), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                gridProperties: {
+                                    classes: "OSInline"
+                                },
+                                style: "options-trading-container",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    name: "Turnover3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                extendedProperties: {
+                                    style: "padding: 0px;"
+                                },
+                                style: "ph-card-title",
+                                text: [$text(getTranslation("5816DwH_oUCqTG2CWRiGlw#Value", "Turnover plan"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "41"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "42"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Label, {
+                                gridProperties: {
+                                    classes: "OSFillParent"
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "43"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "description",
+                                text: [$text(getTranslation("8PuQXxeY_kWA63n55v6LWw#Value", "Earn based on each contract\'s payout probability. "))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "44"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }), React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                extendedEvents: {
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
 
-                                    ;
-                                }
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "45"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            style: "learn-more",
-                            text: [$text(getTranslation("O8vDF2sCDEeEVUOi5iDjBg#Value", "Learn more"))],
-                            _idProps: {
-                                service: idService,
-                                uuid: "46"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))))))];
-                    }),
-                    onPhone: new PlaceholderContent(function() {
-                        return [React.createElement(OutSystemsUI_Interaction_Carousel_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {
-                                Navigation: PartnersHubModel.staticEntities.carouselNavigation.dots,
-                                OptionalConfigs: model.getCachedValue(idService.getId("FIJ+qVw8rE+BqY_qAAmVGA.OptionalConfigs"), function() {
-                                    return function() {
-                                        var rec = new OutSystemsUIModel.ST_7d99fd1de65649f174aff6854b052539Structure();
-                                        rec.autoPlayAttr = false;
-                                        rec.loopAttr = false;
-                                        rec.itemsGapAttr = "8px";
-                                        return rec;
-                                    }();
-                                })
-                            },
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "47",
-                                alias: "3"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                carouselItems: new PlaceholderContent(function() {
-                                    return [React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        gridProperties: {
-                                            classes: "OSInline"
-                                        },
-                                        style: "options-trading-container",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            name: "RevShare2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "padding: 0px;"
-                                        },
-                                        style: "ph-card-title",
-                                        text: [$text(getTranslation("OT+Q+aNlZ0ubjTn64bCXPA#Value", "RevShare plan"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "49"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "50"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.AdvancedHtml, {
-                                        tag: "span",
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "51"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        style: "description",
-                                        text: [$text(getTranslation("oWQ91TdGnUW2up+5zWhM5A#Value", "Earn up to 40% commissions from client trades. "))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "52"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.AdvancedHtml, {
-                                        extendedEvents: {
-                                            onClick: function() {
-                                                var eventHandlerContext = callContext.clone();
-                                                controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
+                                        ;
+                                    }
+                                },
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "45"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "learn-more",
+                                text: [$text(getTranslation("n+i_Qvrm2kCUpA6OBct+Aw#Value", "Learn more"))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "46"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))))))];
+                        }),
+                        onPhone: new PlaceholderContent(function() {
+                            return [React.createElement(OutSystemsUI_Interaction_Carousel_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {
+                                    Navigation: PartnersHubModel.staticEntities.carouselNavigation.dots,
+                                    OptionalConfigs: model.getCachedValue(idService.getId("OoMZK4WfKEK1HTTf55TPtQ.OptionalConfigs"), function() {
+                                        return function() {
+                                            var rec = new OutSystemsUIModel.ST_7d99fd1de65649f174aff6854b052539Structure();
+                                            rec.autoPlayAttr = false;
+                                            rec.loopAttr = false;
+                                            rec.itemsGapAttr = "8px";
+                                            return rec;
+                                        }();
+                                    })
+                                },
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "47",
+                                    alias: "3"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                placeholders: {
+                                    carouselItems: new PlaceholderContent(function() {
+                                        return [React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            gridProperties: {
+                                                classes: "OSInline"
+                                            },
+                                            style: "options-trading-container",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                name: "RevShare2"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            extendedProperties: {
+                                                style: "padding: 0px;"
+                                            },
+                                            style: "ph-card-title",
+                                            text: [$text(getTranslation("6t0OI_bKbEWg8POkhOIkpA#Value", "RevShare plan"))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "49"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "50"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.AdvancedHtml, {
+                                            tag: "span",
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "51"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            style: "description",
+                                            text: [$text(getTranslation("XJlYjScU5EGNahb_Fsa1lw#Value", "Earn up to 40% commissions from client trades. "))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "52"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), React.createElement(OSWidgets.AdvancedHtml, {
+                                            extendedEvents: {
+                                                onClick: function() {
+                                                    var eventHandlerContext = callContext.clone();
+                                                    controller.onClickToRevShare$Action(controller.callContext(eventHandlerContext));
 
-                                                ;
-                                            }
-                                        },
-                                        tag: "span",
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "53"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        style: "learn-more",
-                                        text: [$text(getTranslation("XpuhnUJZhkCOJWwxhQRimA#Value", "Learn more"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "54"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))))), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        gridProperties: {
-                                            classes: "OSInline"
-                                        },
-                                        style: "options-trading-container",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            name: "Turnover2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "padding: 0px;"
-                                        },
-                                        style: "ph-card-title",
-                                        text: [$text(getTranslation("r5_UelL9JEKc+uItVIcsvw#Value", "Turnover plan"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "56"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "57"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.AdvancedHtml, {
-                                        tag: "span",
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "58"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        style: "description",
-                                        text: [$text(getTranslation("NxZlgZbZfkeVBUD_LTGhyQ#Value", "Earn based on each contract\'s payout probability. "))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "59"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.AdvancedHtml, {
-                                        extendedEvents: {
-                                            onClick: function() {
-                                                var eventHandlerContext = callContext.clone();
-                                                controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
+                                                    ;
+                                                }
+                                            },
+                                            tag: "span",
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "53"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            style: "learn-more",
+                                            text: [$text(getTranslation("HonwjG9X0kymyBgfrA6GHw#Value", "Learn more"))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "54"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }))))), React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            gridProperties: {
+                                                classes: "OSInline"
+                                            },
+                                            style: "options-trading-container",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                name: "Turnover2"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            extendedProperties: {
+                                                style: "padding: 0px;"
+                                            },
+                                            style: "ph-card-title",
+                                            text: [$text(getTranslation("ZuMG9+BVKkCj6EqAsUHojQ#Value", "Turnover plan"))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "56"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "57"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.AdvancedHtml, {
+                                            tag: "span",
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "58"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            style: "description",
+                                            text: [$text(getTranslation("qTIgKtxxeUyfC2jIbHnPRg#Value", "Earn based on each contract\'s payout probability. "))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "59"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), React.createElement(OSWidgets.AdvancedHtml, {
+                                            extendedEvents: {
+                                                onClick: function() {
+                                                    var eventHandlerContext = callContext.clone();
+                                                    controller.onClickToTurnoverPlan$Action(controller.callContext(eventHandlerContext));
 
-                                                ;
-                                            }
-                                        },
-                                        tag: "span",
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "60"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        style: "learn-more",
-                                        text: [$text(getTranslation("+5Z65b9NU0+2VfiXdsB0Ug#Value", "Learn more"))],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "61"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })))))];
-                                })
-                            },
-                            _dependencies: []
-                        })];
-                    })
-                },
-                _dependencies: []
-            }))))), React.createElement(OSWidgets.Container, {
-                align: /*Default*/ 0,
-                animate: true,
-                gridProperties: {
-                    classes: "OSInline",
-                    width: "100%"
-                },
-                visible: (PartnersHubClientVariables.getisCommisionsPlansEnabledFF() === false),
-                _idProps: {
-                    service: idService,
-                    uuid: "62"
-                },
-                _widgetRecordProvider: widgetsRecordProvider
-            }, React.createElement(PartnersHub_Home_CommissionBanner_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {},
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "63",
-                    alias: "4"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                _dependencies: []
-            })));
+                                                    ;
+                                                }
+                                            },
+                                            tag: "span",
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "60"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            style: "learn-more",
+                                            text: [$text(getTranslation("rsT4IPLlZkie9KkQmxX5rw#Value", "Learn more"))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "61"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        })))))];
+                                    })
+                                },
+                                _dependencies: []
+                            })];
+                        })
+                    },
+                    _dependencies: []
+                })))))];
+            }, function() {
+                return [React.createElement(OSWidgets.Container, {
+                    align: /*Default*/ 0,
+                    animate: false,
+                    gridProperties: {
+                        classes: "OSInline",
+                        width: "100%"
+                    },
+                    visible: true,
+                    _idProps: {
+                        service: idService,
+                        uuid: "62"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider
+                }, React.createElement(PartnersHub_Home_CommissionBanner_mvc_view, {
+                    getOwnerSpan: function() {
+                        return _this.getChildSpan("render");
+                    },
+                    getOwnerDisposeSpan: function() {
+                        return _this.getChildSpan("destroy");
+                    },
+                    inputs: {},
+                    events: {
+                        _handleError: function(ex) {
+                            controller.handleError(ex);
+                        }
+                    },
+                    _validationProps: {
+                        validationService: validationService
+                    },
+                    _idProps: {
+                        service: idService,
+                        uuid: "63",
+                        alias: "4"
+                    },
+                    _widgetRecordProvider: widgetsRecordProvider,
+                    _dependencies: []
+                }))];
+            }));
         }
     }
 
@@ -1276,225 +1280,225 @@ define("PartnersHub.Home.CommissionPlans.mvc$controller", ["@outsystems/runtime-
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.ar-001", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "تعرف على المزيد",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "اربح بناءً على احتمالية دفع كل عقد.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "خطة دوران",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "تعرف أكثر",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "اربح ما يصل إلى 40% من عمولات تداول العملاء.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "خطة RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "تعرف على المزيد",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "اربح بناءً على احتمالية دفع كل عقد.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "خطة دوران",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "تعرف على المزيد",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "اربح ما يصل إلى 40% عمولات من تداولات العملاء.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "خطة RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "تعلّم المزيد",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "كسب بناءً على احتمالية دفع كل عقد.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "خطة العائدات",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "تعرف على المزيد",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "احصل على عمولات تصل إلى 40% من تداولات العملاء.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "خطة RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "تداول الخيارات",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "تعرف على المزيد",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "اربح مع خطة العمولة المستندة إلى الأدوات لدينا.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "تداول العقود مقابل الفروقات",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "يمكنك كسب عمولات من"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "تعرف على المزيد",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "اربح بناءً على احتمالية دفع كل عقد.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "خطة دوران",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "تعرف أكثر",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "اربح ما يصل إلى 40% من عمولات تداول العملاء.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "خطة RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "تعرف على المزيد",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "اربح بناءً على احتمالية دفع كل عقد.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "خطة دوران",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "تعرف على المزيد",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "اربح ما يصل إلى 40% عمولات من تداولات العملاء.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "خطة RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "تعلّم المزيد",
+        "kh4sLye1VkediZ_papE5UA#Value": "كسب بناءً على احتمالية دفع كل عقد.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "خطة العائدات",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "تعرف على المزيد",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "احصل على عمولات تصل إلى 40% من تداولات العملاء.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "خطة RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "تداول الخيارات",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "تعرف على المزيد",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "اربح مع خطة العمولة المستندة إلى الأدوات لدينا.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "تداول العقود مقابل الفروقات",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "يمكنك كسب عمولات من"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.de-DE", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Mehr erfahren",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Umsatzplan",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Mehr erfahren",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Handelsgeschäften Ihrer Kunden.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "RevShare-Plan",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Mehr erfahren",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Umsatzplan",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Erfahren Sie mehr",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades von Kunden.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "RevShare-Plan",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Mehr erfahren",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Verdienen Sie basierend auf der Auszahlungwahrscheinlichkeit jedes Vertrags.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Umsatzplan",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Mehr erfahren",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades Ihrer Kunden.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "RevShare-Plan",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "Optionenhandel",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Mehr erfahren",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Verdienen Sie mit unserem instrumentenbasierten Provisionsplan.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Sie können Provisionen von verdienen"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Mehr erfahren",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Umsatzplan",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Mehr erfahren",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Handelsgeschäften Ihrer Kunden.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "RevShare-Plan",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Mehr erfahren",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Verdienen Sie basierend auf der Auszahlungswahrscheinlichkeit jedes Vertrags.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Umsatzplan",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Erfahren Sie mehr",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades von Kunden.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "RevShare-Plan",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Mehr erfahren",
+        "kh4sLye1VkediZ_papE5UA#Value": "Verdienen Sie basierend auf der Auszahlungwahrscheinlichkeit jedes Vertrags.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Umsatzplan",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Mehr erfahren",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Verdienen Sie bis zu 40 % Provisionen aus den Trades Ihrer Kunden.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "RevShare-Plan",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "Optionenhandel",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Mehr erfahren",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Verdienen Sie mit unserem instrumentenbasierten Provisionsplan.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Sie können Provisionen von verdienen"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.es-ES", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Aprende más",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Gana según la probabilidad de pago de cada contrato.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Plan de volumen",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Aprende más",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Gane hasta un 40% de comisiones por las operaciones de los clientes.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "Plan de RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Aprender más",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Gana según la probabilidad de pago de cada contrato.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Plan de facturación",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Aprende más",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Gana hasta un 40 % de comisiones por las operaciones de los clientes.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "Plan de RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Aprende más",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Gana según la probabilidad de pago de cada contrato.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Plan de facturación",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Aprende más",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Gana hasta un 40% de comisiones por las operaciones de los clientes.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "Plan de RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "comercio de opciones",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Aprende más",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Gana con nuestro plan de comisiones basado en instrumentos.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Puedes ganar comisiones de"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Aprende más",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Gana según la probabilidad de pago de cada contrato.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Plan de volumen",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Aprende más",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Gane hasta un 40% de comisiones por las operaciones de los clientes.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "Plan de RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Aprender más",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Gana según la probabilidad de pago de cada contrato.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Plan de facturación",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Aprende más",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Gana hasta un 40 % de comisiones por las operaciones de los clientes.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "Plan de RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Aprende más",
+        "kh4sLye1VkediZ_papE5UA#Value": "Gana según la probabilidad de pago de cada contrato.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Plan de facturación",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Aprende más",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Gana hasta un 40% de comisiones por las operaciones de los clientes.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "Plan de RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "comercio de opciones",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Aprende más",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Gana con nuestro plan de comisiones basado en instrumentos.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Puedes ganar comisiones de"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "En savoir plus",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Plan de chiffre d\'affaires",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "En savoir plus",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "Plan RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "En savoir plus",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Plan de chiffre d\'affaires",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "En savoir plus",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "Plan RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "En savoir plus",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Plan de chiffre d\'affaires",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "En savoir plus",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "Plan RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "trading d\'options",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "En savoir plus",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Gagnez avec notre plan de commission basé sur les instruments.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Vous pouvez gagner des commissions de"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "En savoir plus",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Plan de chiffre d\'affaires",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "En savoir plus",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "Plan RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "En savoir plus",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Plan de chiffre d\'affaires",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "En savoir plus",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "Plan RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "En savoir plus",
+        "kh4sLye1VkediZ_papE5UA#Value": "Gagnez en fonction de la probabilité de paiement de chaque contrat.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Plan de chiffre d\'affaires",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "En savoir plus",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Gagnez jusqu\'à 40 % de commissions sur les transactions des clients.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "Plan RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "trading d\'options",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "En savoir plus",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Gagnez avec notre plan de commission basé sur les instruments.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Vous pouvez gagner des commissions de"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.it-IT", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Scopri di più",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Piano di fatturato",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Scopri di più",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Guadagna fino al 40% di commissioni dalle operazioni dei clienti.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "Piano RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Scopri di più",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Piano di fatturato",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Scopri di più",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Guadagna fino al 40% di commissioni dai trade dei clienti.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "Piano RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Scopri di più",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Piano di fatturato",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Scopri di più",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Guadagna fino al 40% di commissioni dai trade dei tuoi clienti.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "Piano RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "trading di opzioni",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Scopri di più",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Guadagna con il nostro piano commissionale basato sugli strumenti.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Puoi guadagnare commissioni da"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Scopri di più",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Piano di fatturato",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Scopri di più",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Guadagna fino al 40% di commissioni dalle operazioni dei clienti.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "Piano RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Scopri di più",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Piano di fatturato",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Scopri di più",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Guadagna fino al 40% di commissioni dai trade dei clienti.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "Piano RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Scopri di più",
+        "kh4sLye1VkediZ_papE5UA#Value": "Guadagna in base alla probabilità di pagamento di ciascun contratto.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Piano di fatturato",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Scopri di più",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Guadagna fino al 40% di commissioni dai trade dei tuoi clienti.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "Piano RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "trading di opzioni",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Scopri di più",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Guadagna con il nostro piano commissionale basato sugli strumenti.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Puoi guadagnare commissioni da"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Dowiedz się więcej",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Plan obrotu",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Dowiedz się więcej",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "Plan RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Dowiedz się więcej",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Zarabiaj na podstawie prawdopodobieństwa wypłaty każdego kontraktu.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Plan obrotu",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Dowiedz się więcej",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "Plan RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Dowiedz się więcej",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Plan obrotu",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Dowiedz się więcej",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "Plan RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "handel opcjami",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Dowiedz się więcej",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Zarabiaj z naszym planem prowizyjnym opartym na instrumentach.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Możesz zarabiać prowizje z"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Dowiedz się więcej",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Plan obrotu",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Dowiedz się więcej",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "Plan RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Dowiedz się więcej",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Zarabiaj na podstawie prawdopodobieństwa wypłaty każdego kontraktu.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Plan obrotu",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Dowiedz się więcej",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "Plan RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Dowiedz się więcej",
+        "kh4sLye1VkediZ_papE5UA#Value": "Zarabiaj w oparciu o prawdopodobieństwo wypłaty każdego kontraktu.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Plan obrotu",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Dowiedz się więcej",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Zarabiaj do 40% prowizji od transakcji klientów.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "Plan RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "handel opcjami",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Dowiedz się więcej",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Zarabiaj z naszym planem prowizyjnym opartym na instrumentach.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Możesz zarabiać prowizje z"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Saiba mais",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "Plano de faturamento",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Saiba mais",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Ganhe até 40% de comissões nas operações dos clientes.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "Plano RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Saber mais",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "Plano de faturamento",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Saiba mais",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "Plano RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Saiba mais",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "Plano de faturamento",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Saiba mais",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "Plano RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "negociação de opções",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Saiba mais",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Ganhe com o nosso plano de comissões baseado em instrumentos.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Você pode ganhar comissões de"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Saiba mais",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "Plano de faturamento",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Saiba mais",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Ganhe até 40% de comissões nas operações dos clientes.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "Plano RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Saber mais",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "Plano de faturamento",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Saiba mais",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "Plano RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Saiba mais",
+        "kh4sLye1VkediZ_papE5UA#Value": "Ganhe com base na probabilidade de pagamento de cada contrato.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "Plano de faturamento",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Saiba mais",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Ganhe até 40% de comissões com as operações dos clientes.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "Plano RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "negociação de opções",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Saiba mais",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Ganhe com o nosso plano de comissões baseado em instrumentos.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Você pode ganhar comissões de"
     };
 });
 
 define("PartnersHub.Home.CommissionPlans.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "+5Z65b9NU0+2VfiXdsB0Ug#Value": "Узнать больше",
-        "NxZlgZbZfkeVBUD_LTGhyQ#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
-        "r5_UelL9JEKc+uItVIcsvw#Value": "План оборота",
-        "XpuhnUJZhkCOJWwxhQRimA#Value": "Узнать больше",
-        "oWQ91TdGnUW2up+5zWhM5A#Value": "Зарабатывайте до 40% комиссий от сделок клиентов.",
-        "OT+Q+aNlZ0ubjTn64bCXPA#Value": "План RevShare",
-        "O8vDF2sCDEeEVUOi5iDjBg#Value": "Узнать больше",
-        "7BbYgbOM4UC5hZ4RnciyGQ#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
-        "G25Euvj6_Uiu0ay3U5QIGw#Value": "План оборота",
-        "H_8s8y5W7k6nFr07OnjdOA#Value": "Узнать больше",
-        "kmLWI2Fj3UyyvaId+Ka4qw#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
-        "9MGEQFYinUuqv5ONJSug6Q#Value": "План RevShare",
-        "6Mkcfp682kiVuIVLeuwJpQ#Value": "Узнать больше",
-        "BJnUP6H85k6qK5QbrgKnDw#Value": "Зарабатывайте на основе вероятности выплаты по каждому контракту.",
-        "KF6rxhiQHUCPZlhucSkXHA#Value": "План оборота",
-        "COWaVbW+50GxFaXvTDnLMA#Value": "Узнать больше",
-        "gt+H5N_aHkSBMLkdMCYkSA#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
-        "4plaLNKz2Ua1ALgzrQoy+w#Value": "План RevShare",
-        "KiD9uiu9wka+5H5+rFqK_w#Value": "торговля опционами",
-        "V1v8Zxvrd0S2qgA4Mc58lg#Value": "Узнать больше",
-        "NpVN_qK5Ukq96BzyPFgppw#Value": "Зарабатывайте с нашим комиссионным планом, основанным на инструментах.",
-        "sHFYNLZu_0WxTchJzBk4Kw#Value": "CFDs",
-        "7KaXe6C0nEqxpykIt84DYA#Value": "Вы можете зарабатывать комиссионные от"
+        "rsT4IPLlZkie9KkQmxX5rw#Value": "Узнать больше",
+        "qTIgKtxxeUyfC2jIbHnPRg#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
+        "ZuMG9+BVKkCj6EqAsUHojQ#Value": "План оборота",
+        "HonwjG9X0kymyBgfrA6GHw#Value": "Узнать больше",
+        "XJlYjScU5EGNahb_Fsa1lw#Value": "Зарабатывайте до 40% комиссий от сделок клиентов.",
+        "6t0OI_bKbEWg8POkhOIkpA#Value": "План RevShare",
+        "n+i_Qvrm2kCUpA6OBct+Aw#Value": "Узнать больше",
+        "8PuQXxeY_kWA63n55v6LWw#Value": "Зарабатывайте в зависимости от вероятности выплаты по каждому контракту.",
+        "5816DwH_oUCqTG2CWRiGlw#Value": "План оборота",
+        "re4x2mAFAUCi0Uzf_QD9jQ#Value": "Узнать больше",
+        "fyGSjsifXUe_gnMUYXyUwQ#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
+        "FdViVhAQlkGnzPj6tMhRkA#Value": "План RevShare",
+        "pcZDJsFxJE6u6Dad3I_6lw#Value": "Узнать больше",
+        "kh4sLye1VkediZ_papE5UA#Value": "Зарабатывайте на основе вероятности выплаты по каждому контракту.",
+        "49aHbJx2ykGyMfF0QTFbJQ#Value": "План оборота",
+        "gqFqY_hmtEqB00VisGJ7PA#Value": "Узнать больше",
+        "SLerLFjvfkWtG9Y9RHDzJQ#Value": "Зарабатывайте до 40% комиссий с торгов клиентов.",
+        "EYg8N4WXw0uJI10lyUKi7Q#Value": "План RevShare",
+        "7ulhFOTk5k+CkAaszoytRA#Value": "торговля опционами",
+        "WWVqgcxwK02Qs6tbKp5Mmg#Value": "Узнать больше",
+        "rEEPHXMxSkqto6iJFQRDow#Value": "Зарабатывайте с нашим комиссионным планом, основанным на инструментах.",
+        "AU0UR7so4UepymTL5+f0Hg#Value": "CFDs",
+        "IOkWIqJMPUO_Lk53vxAtSw#Value": "Вы можете зарабатывать комиссионные от"
     };
 });
 

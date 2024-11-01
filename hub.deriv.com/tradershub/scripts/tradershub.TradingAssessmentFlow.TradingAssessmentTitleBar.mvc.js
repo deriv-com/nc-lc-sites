@@ -134,7 +134,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$view", ["
                 extendedProperties: {
                     style: "font-size: 18px; font-weight: bold;"
                 },
-                text: ["Trading assessment"],
+                text: [$text(getTranslation("rXpJmX78L0GOXXPzDs9xhQ#Value", "Trading assessment"))],
                 _idProps: {
                     service: idService,
                     uuid: "1"
@@ -160,12 +160,12 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$view", ["
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentTitleBar_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentTitleBar_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -275,4 +275,20 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$controlle
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "rXpJmX78L0GOXXPzDs9xhQ#Value": "Évaluation de trading"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentTitleBar.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentTitleBar_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentTitleBar_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

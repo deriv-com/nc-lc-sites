@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreation.IdentityVerification.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, tradershubController) {
+define("tradershub.RealAccountCreation.IdentityVerification.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -55,7 +55,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$model", ["@outsy
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.IdentityVerification.mvc$model", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$view", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreation_IdentityVerification_mvc_model, tradershub_RealAccountCreation_IdentityVerification_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_view) {
+define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreation.IdentityVerification.mvc$model", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_RealAccountCreation_IdentityVerification_mvc_model, tradershub_RealAccountCreation_IdentityVerification_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -109,7 +109,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
             var _this = this;
 
 
-            return "Identity verification | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("8PranFMcskO1Vm95fI64Gg#TitleExpression.1272643895.1", "Identity verification | Deriv");
         }
 
         internalRender() {
@@ -154,9 +154,11 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                     content: new PlaceholderContent(function() {
                         return [React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
-                            animate: false,
+                            animate: true,
                             style: "full-width identity-verification-list__desktop",
-                            visible: true,
+                            visible: model.getCachedValue(idService.getId("sa7oVEAUIUqf0f7UVATGwQ.Visible"), function() {
+                                return OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut;
+                            }),
                             _idProps: {
                                 service: idService,
                                 uuid: "1"
@@ -211,7 +213,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                             extendedProperties: {
                                 style: "font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["Skip"],
+                            text: [$text(getTranslation("V+t_iesdbkGcAVN32D4V0w#Value", "Skip"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -242,7 +244,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                                 uuid: "7"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Document type"), React.createElement(OSWidgets.Dropdown, {
+                        }, $text(getTranslation("IsCVlHAg60yzbIoHFFOqgg#Value", "Document type"))), React.createElement(OSWidgets.Dropdown, {
                             _validationProps: {
                                 validationService: validationService,
                                 validationParentId: idService.getId("Form")
@@ -449,7 +451,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                             extendedProperties: {
                                 style: "border-radius: 1px;"
                             },
-                            text: ["Next"],
+                            text: [$text(getTranslation("Pj10iobUZ02yNHL_mn2r4Q#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "20"
@@ -457,9 +459,11 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
                             _widgetRecordProvider: widgetsRecordProvider
                         }))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
-                            animate: false,
+                            animate: true,
                             style: "full-width identity-verification-list__mobile",
-                            visible: true,
+                            visible: model.getCachedValue(idService.getId("SZffVKcZkk6JlZbVtBHriQ.Visible"), function() {
+                                return !(OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut);
+                            }),
                             _idProps: {
                                 service: idService,
                                 uuid: "21"
@@ -498,12 +502,12 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$view", ["@outsys
 
     return View;
 });
-define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountry2JS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.Input_DocumentTypeOnChange.JavaScript1JS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.NextOnClick.ValidateIDVJS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountry2JS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_Input_DocumentTypeOnChange_JavaScript1JS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_NextOnClick_ValidateIDVJS) {
+define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.IdentityVerification.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountry2JS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.Input_DocumentTypeOnChange.JavaScript1JS", "tradershub.RealAccountCreation.IdentityVerification.mvc$controller.NextOnClick.ValidateIDVJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_IdentityVerification_mvc_TranslationsResources, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountry2JS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_Input_DocumentTypeOnChange_JavaScript1JS, tradershub_RealAccountCreation_IdentityVerification_mvc_controller_NextOnClick_ValidateIDVJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_IdentityVerification_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -566,7 +570,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@
                                                     return controller.safeExecuteJSNode(tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountryJS, "GetIDVCountry", "OnReady", {
                                                         SelectedDocument: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupIDVDocumentName(), OS.DataTypes.DataTypes.Text),
                                                         Response: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawResidenceListResponse(), OS.DataTypes.DataTypes.Text),
-                                                        Citizenship: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getSelectedCitizenship(), OS.DataTypes.DataTypes.Text),
+                                                        Residence: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getSelectedResidence(), OS.DataTypes.DataTypes.Text),
                                                         SupportedDocuments: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
                                                         AdditionalDocumentLabel: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
                                                     }, function($parameters) {
@@ -608,7 +612,7 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@
 
                                                     try {
                                                         return controller.safeExecuteJSNode(tradershub_RealAccountCreation_IdentityVerification_mvc_controller_OnReady_GetIDVCountry2JS, "GetIDVCountry2", "OnReady", {
-                                                            Citizenship: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getSelectedCitizenship(), OS.DataTypes.DataTypes.Text),
+                                                            Residence: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getSelectedResidence(), OS.DataTypes.DataTypes.Text),
                                                             Response: OS.DataConversion.JSNodeParamConverter.to(derivApiSendMessageVar.value.responseOut, OS.DataTypes.DataTypes.Text),
                                                             SelectedDocument: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupIDVDocumentName(), OS.DataTypes.DataTypes.Text),
                                                             SupportedDocuments: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
@@ -884,6 +888,8 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@
                                         if ((model.widgets.get(idService.getId("Form")).validAttr)) {
                                             // RealSignupSkippedIDV = False
                                             tradershubClientVariables.setRealSignupSkippedIDV(false);
+                                            // RealSignupPassedStepCount = 3
+                                            tradershubClientVariables.setRealSignupPassedStepCount(3);
                                             // Destination: /tradershub/EmploymentDetails
                                             return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "employment-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         }
@@ -1187,29 +1193,19 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller", ["@
 
 define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountry2JS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const country = JSON.parse($parameters.Response).residence_list.find(c => c.value == $parameters.Citizenship)
-
+        const country = JSON.parse($parameters.Response).residence_list.find(c => c.value == $parameters.Residence)
         const supportedDocuments = Object.values(country.identity.services.idv.documents_supported)
-
         $parameters.SupportedDocuments = JSON.stringify(supportedDocuments)
-
         $parameters.AdditionalDocumentLabel = supportedDocuments.find(doc => doc.display_name === $parameters.SelectedDocument)?.additional?.display_name ?? ""
-
     };
 });
 
 define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller.OnReady.GetIDVCountryJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const country = JSON.parse($parameters.Response).residence_list.find(c => c.value == $parameters.Citizenship)
-
+        const country = JSON.parse($parameters.Response).residence_list.find(c => c.value == $parameters.Residence)
         const supportedDocuments = Object.values(country.identity.services.idv.documents_supported)
-
-
-
         $parameters.SupportedDocuments = JSON.stringify(supportedDocuments)
-
         $parameters.AdditionalDocumentLabel = supportedDocuments.find(doc => doc.display_name === $parameters.SelectedDocument)?.additional?.display_name ?? ""
-
     };
 });
 
@@ -1271,7 +1267,6 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller.NextO
                 })
             }
 
-
             const payload = {
                 DocumentType: $parameters.SelectedDocument,
                 DocumentNumber: $parameters.DocumentNumber
@@ -1285,11 +1280,29 @@ define("tradershub.RealAccountCreation.IdentityVerification.mvc$controller.NextO
                 errors,
                 validFields
             } = validate(isAdditionalDocumentRequired ? mergeSchema(validationSchema, additionalDocumentValidationSchema) : validationSchema, payload)
-
             $parameters.ValidationErrors = JSON.stringify(errors)
-
             $parameters.ValidFields = JSON.stringify(validFields)
             $resolve()
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreation.IdentityVerification.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "Pj10iobUZ02yNHL_mn2r4Q#Value": "Suivant",
+        "IsCVlHAg60yzbIoHFFOqgg#Value": "Type de document",
+        "V+t_iesdbkGcAVN32D4V0w#Value": "Passer",
+        "8PranFMcskO1Vm95fI64Gg#Title": "Vérification d\'identité | Deriv",
+        "8PranFMcskO1Vm95fI64Gg#TitleExpression.1272643895.1": "Vérification d\'identité | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreation.IdentityVerification.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.IdentityVerification.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_IdentityVerification_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_IdentityVerification_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

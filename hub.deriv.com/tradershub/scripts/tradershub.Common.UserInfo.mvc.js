@@ -237,7 +237,7 @@ define("tradershub.Common.UserInfo.mvc$view", ["@outsystems/runtime-core-js", "t
                     _widgetRecordProvider: widgetsRecordProvider
                 }), React.createElement(OSWidgets.Text, {
                     style: "margin-left-s wcag-hide-text",
-                    text: ["Log out"],
+                    text: [$text(getTranslation("2Djm+3zPL0anWsH6xyInWg#Value", "Log out"))],
                     _idProps: {
                         service: idService,
                         uuid: "10"
@@ -270,7 +270,7 @@ define("tradershub.Common.UserInfo.mvc$view", ["@outsystems/runtime-core-js", "t
                     _widgetRecordProvider: widgetsRecordProvider
                 }), React.createElement(OSWidgets.Text, {
                     style: "margin-left-s",
-                    text: ["Login"],
+                    text: [$text(getTranslation("nej3A_4R7kaUkfwGE5ub6w#Value", "Login"))],
                     _idProps: {
                         service: idService,
                         uuid: "13"
@@ -283,12 +283,12 @@ define("tradershub.Common.UserInfo.mvc$view", ["@outsystems/runtime-core-js", "t
 
     return View;
 });
-define("tradershub.Common.UserInfo.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "System_.model$UserInfoRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Common.UserInfo.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.UserInfo.mvc$translationsResources", "System_.model$UserInfoRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_UserInfo_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_UserInfo_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -615,4 +615,21 @@ define("tradershub.Common.UserInfo.mvc$controller", ["@outsystems/runtime-core-j
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.UserInfo.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "nej3A_4R7kaUkfwGE5ub6w#Value": "Connexion",
+        "2Djm+3zPL0anWsH6xyInWg#Value": "Se déconnecter"
+    };
+});
+
+define("tradershub.Common.UserInfo.mvc$translationsResources", ["exports", "tradershub.Common.UserInfo.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_UserInfo_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_UserInfo_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

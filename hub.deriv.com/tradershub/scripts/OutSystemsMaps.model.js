@@ -609,7 +609,7 @@ define("OutSystemsMaps.model$RL_3e9d003efe19bfd5edf008a600c8d3af", ["exports", "
 
 });
 
-define("OutSystemsMaps.model$BasicTypeList<Text>", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model"], function(exports, OSRuntimeCore, OutSystemsMapsModel) {
+define("OutSystemsMaps.model$RL_4d8a97df13a7539a1a0177dbcd05fbb2", ["exports", "@outsystems/runtime-core-js", "OutSystemsMaps.model"], function(exports, OSRuntimeCore, OutSystemsMapsModel) {
     var OS = OSRuntimeCore;
     class TextList extends
     OS.DataTypes.GenericRecordList {

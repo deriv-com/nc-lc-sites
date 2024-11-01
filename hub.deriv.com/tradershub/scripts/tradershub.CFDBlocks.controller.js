@@ -1,4 +1,4 @@
-define("tradershub.CFDBlocks.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.CFDBlocks.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.CFDBlocks.controller$translationsResources"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables, tradershub_CFDBlocks_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_CFDBlocksController = exports;
     class Controller extends
@@ -30,5 +30,10 @@ define("tradershub.CFDBlocks.controller", ["exports", "@outsystems/runtime-core-
 
 
 
-    tradershub_CFDBlocksController.default = new Controller();
+    tradershub_CFDBlocksController.default = new Controller(tradershub_CFDBlocks_Controller_translationsResources);
+});
+
+
+define("tradershub.CFDBlocks.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

@@ -114,7 +114,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
             var _this = this;
 
 
-            return "Log in";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("SC9qqiQIAk+74yCwjQZ78Q#TitleExpression.-2013538399.1", "Log in");
         }
 
         internalRender() {
@@ -286,7 +286,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
                                             uuid: "11"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Email")];
+                                    }, $text(getTranslation("qDK+3S3XYEGiMltItsRr8Q#Value", "Email")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OSWidgets.Input, {
@@ -363,7 +363,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
                                             uuid: "15"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Password")];
+                                    }, $text(getTranslation("yCHbK0e2FkGfIimm0zgofw#Value", "Password")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OutSystemsUI_Interaction_InputWithIcon_mvc_view, {
@@ -507,7 +507,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
                             extendedProperties: {
                                 "aria-label": "Forgot your password? Click here to recover it"
                             },
-                            text: ["Forgot your password?"],
+                            text: [$text(getTranslation("ZqnTDiKdrk22FX5AJbVIvw#Value", "Forgot your password?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "24"
@@ -587,7 +587,7 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
                                             uuid: "28"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "Log in")];
+                                    }), $text(getTranslation("p_KjAUhTxkykorMMZGMrOg#Value", "Log in")))];
                                 })
                             },
                             _dependencies: []
@@ -601,12 +601,12 @@ define("tradershub.Common.Login.mvc$view", ["@outsystems/runtime-core-js", "trad
 
     return View;
 });
-define("tradershub.Common.Login.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "OutSystemsUI.controller$FeedbackMessageClose", "tradershub.controller$DoLogin"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.Login.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.Login.mvc$translationsResources", "tradershub.Common.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "OutSystemsUI.controller$FeedbackMessageClose", "tradershub.controller$DoLogin"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_Login_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_Login_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -1006,4 +1006,25 @@ define("tradershub.Common.Login.mvc$controller", ["@outsystems/runtime-core-js",
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.Login.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "p_KjAUhTxkykorMMZGMrOg#Value": "Se connecter",
+        "ZqnTDiKdrk22FX5AJbVIvw#Value": "Mot de passe oublié ?",
+        "yCHbK0e2FkGfIimm0zgofw#Value": "Mot de passe",
+        "qDK+3S3XYEGiMltItsRr8Q#Value": "Email",
+        "SC9qqiQIAk+74yCwjQZ78Q#Title": "Se connecter",
+        "SC9qqiQIAk+74yCwjQZ78Q#TitleExpression.-2013538399.1": "Se connecter"
+    };
+});
+
+define("tradershub.Common.Login.mvc$translationsResources", ["exports", "tradershub.Common.Login.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_Login_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_Login_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

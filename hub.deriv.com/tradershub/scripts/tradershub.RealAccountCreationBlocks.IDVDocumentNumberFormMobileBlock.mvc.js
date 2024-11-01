@@ -276,18 +276,18 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mv
                     uuid: "10"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "Save"))));
+            }, $text(getTranslation("lCkD_4uwjUmRwL4MuY2OiQ#Value", "Save"))))));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller.NextOnClick.ValidateIDVJS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_controller_NextOnClick_ValidateIDVJS) {
+define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$controller.NextOnClick.ValidateIDVJS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd", "tradershub.model$ST_b9fa9c81e682aaa4746021d7919cd480Structure", "tradershub.model$ST_5ee2e7ff29695cda8882106170100facStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_controller_NextOnClick_ValidateIDVJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -451,6 +451,8 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mv
                                         model.widgets.get(idService.getId("Input_DocumentName2")).validationMessageAttr = jSONDeserializeIDVValidationErrorVar.value.dataOut.additionalDocumentNumberAttr;
                                     }).then(function() {
                                         if ((model.widgets.get(idService.getId("DocumentNumberForm")).validAttr)) {
+                                            // RealSignupPassedStepCount = 3
+                                            tradershubClientVariables.setRealSignupPassedStepCount(3);
                                             // Destination: /tradershub/EmploymentDetails
                                             return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "employment-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         }
@@ -707,5 +709,21 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mv
             $parameters.ValidFields = JSON.stringify(validFields)
             $resolve()
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "lCkD_4uwjUmRwL4MuY2OiQ#Value": "Sauvegarder"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.IDVDocumentNumberFormMobileBlock.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_IDVDocumentNumberFormMobileBlock_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

@@ -1,4 +1,4 @@
-// Version 1.0.5
+// Version 1.0.8
 const cacheTrackEvents = {
     interval: null,
     responses: [],
@@ -23,6 +23,20 @@ const cacheTrackEvents = {
         }
 
         return combined.substring(0, desiredLength);
+    },
+    getCookies: (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            const cookieValue = decodeURIComponent(parts.pop().split(";").shift());
+
+            try {
+                return JSON.parse(cookieValue);
+            } catch (e) {
+                return cookieValue;
+            }
+        }
+        return null;
     },
     trackPageUnload: () => {
         window.addEventListener("beforeunload", (event) => {
@@ -87,7 +101,11 @@ const cacheTrackEvents = {
             return acc;
         }, {});
 
-        return JSON.parse(cookies[cookieName] || null);
+        try {
+            return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
+        } catch (error) {
+            return null;
+        }
     },
     isPageViewSent: () =>
         !!cacheTrackEvents.responses.find(
@@ -103,10 +121,21 @@ const cacheTrackEvents = {
         storedCookies.push(data);
 
         document.cookie = `${cookieName}=${JSON.stringify(
-            storedCookies
-        )}; path=/; Domain=.deriv.com`;
+      storedCookies
+    )}; path=/; Domain=.deriv.com`;
     },
     processEvent: (event) => {
+        const clientInfo = cacheTrackEvents.getCookies("client_information");
+
+        if (clientInfo) {
+            const {
+                email = null
+            } = clientInfo;
+
+            if (email) {
+                event.properties.email_hash = cacheTrackEvents.hash(email);
+            }
+        }
         if (event?.properties?.email) {
             const email = event.properties.email;
             delete event.properties.email;
@@ -117,6 +146,7 @@ const cacheTrackEvents = {
     },
     track: (originalEvent, cache) => {
         const event = cacheTrackEvents.processEvent(originalEvent);
+
         if (cacheTrackEvents.isReady() && !cache) {
             Analytics.Analytics.trackEvent(event.name, event.properties);
         } else {
@@ -233,31 +263,34 @@ const cacheTrackEvents = {
     },
     pageLoadEvent: (items) => {
         const pathname = window.location.pathname.slice(1);
-
-        items.forEach(({
-            pages = [],
-            excludedPages = [],
-            event
-        }) => {
-            let dispatch = false;
-            if (pages.length) {
-                if (pages.includes(pathname)) {
+        items.forEach(
+            ({
+                pages = [],
+                excludedPages = [],
+                event,
+                callback = null
+            }) => {
+                let dispatch = false;
+                if (pages.length) {
+                    if (pages.includes(pathname)) {
+                        dispatch = true;
+                    }
+                } else if (excludedPages.length) {
+                    if (!excludedPages.includes(pathname)) {
+                        dispatch = true;
+                    }
+                } else {
                     dispatch = true;
                 }
-            } else if (excludedPages.length) {
-                if (!excludedPages.includes(pathname)) {
-                    dispatch = true;
-                }
-            } else {
-                dispatch = true;
-            }
 
-            if (dispatch) {
-                cacheTrackEvents.loadEvent([{
-                    event
-                }]);
+                if (dispatch) {
+                    const eventData = callback ? callback() : event;
+                    cacheTrackEvents.loadEvent([{
+                        event: eventData
+                    }]);
+                }
             }
-        });
+        );
 
         return cacheTrackEvents;
     },

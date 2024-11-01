@@ -12,9 +12,6 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$model", ["@outsyste
                     }, false),
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -100,7 +97,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
         get title() {
 
 
-            return "TradingAssessment";
+            return OSView.BaseView.BaseWebScreen.getTranslation("95wz6X+LwUmS9wAoKnTPBA#Title", "TradingAssessment");
         }
 
         internalRender() {
@@ -168,7 +165,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                                 uuid: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "To assess your trading experience and if our products are suitable for you, please provide accurate and complete answers. Your responses may affect the outcome of this assessment.", React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("boUc_gpVe0ClamyTvBZwwg#Value", "To assess your trading experience and if our products are suitable for you, please provide accurate and complete answers. Your responses may affect the outcome of this assessment.")), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -203,7 +200,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                             extendedProperties: {
                                 style: "font-family: \"Roboto\"; font-weight: normal;"
                             },
-                            text: ["OK"],
+                            text: [$text(getTranslation("D3R4p+xfek+rTx8uGXxPUg#Value", "OK"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -223,7 +220,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                             extendedProperties: {
                                 style: "font-size: 18px; font-weight: bold;"
                             },
-                            text: ["Trading assessment"],
+                            text: [$text(getTranslation("4wYsnyxVo0SonHryyQHEXw#Value", "Trading assessment"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "7"
@@ -287,7 +284,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                             extendedProperties: {
                                 style: "font-size: 12px; font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["Why do we collect this?"],
+                            text: [$text(getTranslation("jUYWD6F4N0eByXMIJnY4Dg#Value", "Why do we collect this?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "12"
@@ -305,7 +302,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("K6Dt8OdqM0GMV3bwg5peGg#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "14"
@@ -318,7 +315,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Do you understand that you could potentially lose 100% of the money you use to trade?"],
+                            text: [$text(getTranslation("7tZL0ANaDkmPEdwEFUu74A#Value", "Do you understand that you could potentially lose 100% of the money you use to trade?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "15"
@@ -343,8 +340,8 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getPotentialLost(), function(value) {
+                                tradershubClientVariables.setPotentialLost(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -364,7 +361,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                                 name: "Yes"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Yes"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("TF+Sb+Z600qsauI0w8IuXg#Value", "Yes"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -377,7 +374,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                                 name: "No"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "No"))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("pUstD2ryck+V9Dnzrgtmxw#Value", "No"))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -411,7 +408,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("n20JqgCw5kOe+FYG7j6OzA#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "22"
@@ -420,19 +417,19 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$view", ["@outsystem
                         }))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar), asPrimitiveValue(model.variables.whyWeCollectPopupVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getPotentialLost()), asPrimitiveValue(model.variables.isRequiredVar), asPrimitiveValue(model.variables.whyWeCollectPopupVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreation.TradingAssessment.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController) {
+define("tradershub.RealAccountCreation.TradingAssessment.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.TradingAssessment.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_TradingAssessment_mvc_TranslationsResources, tradershub_RealAccountCreationController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_TradingAssessment_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -583,7 +580,7 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$controller", ["@out
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getPotentialLost() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -797,4 +794,28 @@ define("tradershub.RealAccountCreation.TradingAssessment.mvc$controller", ["@out
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.RealAccountCreation.TradingAssessment.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "n20JqgCw5kOe+FYG7j6OzA#Value": "Suivant",
+        "pUstD2ryck+V9Dnzrgtmxw#Value": "Non",
+        "TF+Sb+Z600qsauI0w8IuXg#Value": "Oui",
+        "7tZL0ANaDkmPEdwEFUu74A#Value": "Comprenez-vous que vous pourriez potentiellement perdre 100 % de l\'argent que vous utilisez pour trader ?",
+        "K6Dt8OdqM0GMV3bwg5peGg#Value": "Ceci est requis.",
+        "jUYWD6F4N0eByXMIJnY4Dg#Value": "Pourquoi collectons-nous cela ?",
+        "4wYsnyxVo0SonHryyQHEXw#Value": "Évaluation de trading",
+        "D3R4p+xfek+rTx8uGXxPUg#Value": "O",
+        "boUc_gpVe0ClamyTvBZwwg#Value": "Afin d\'évaluer votre expérience de trading et de déterminer si nos produits vous conviennent, veuillez fournir des réponses précises et complètes. Vos réponses peuvent influencer le résultat de cette évaluation."
+    };
+});
+
+define("tradershub.RealAccountCreation.TradingAssessment.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.TradingAssessment.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_TradingAssessment_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_TradingAssessment_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

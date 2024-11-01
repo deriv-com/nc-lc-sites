@@ -101,7 +101,7 @@ define("tradershub.Common.InvalidPermissions.mvc$view", ["@outsystems/runtime-co
             var _this = this;
 
 
-            return "Invalid permissions";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("5nVIK0JIkEq75V4SgIpFYw#TitleExpression.-1269489733.1", "Invalid permissions");
         }
 
         internalRender() {
@@ -194,7 +194,7 @@ define("tradershub.Common.InvalidPermissions.mvc$view", ["@outsystems/runtime-co
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
                                         style: "heading6",
-                                        text: ["You don\'t have the necessary permission to see this screen."],
+                                        text: [$text(getTranslation("33gIhDYS6E6qIKReu+2PmA#Value", "You don\'t have the necessary permission to see this screen."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "4"
@@ -210,7 +210,7 @@ define("tradershub.Common.InvalidPermissions.mvc$view", ["@outsystems/runtime-co
                                             uuid: "5"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Please contact your system administrator.")];
+                                    }, $text(getTranslation("QGbT7R8uHkmdaWHw9qRphw#Value", "Please contact your system administrator.")))];
                                 }),
                                 actions: new PlaceholderContent(function() {
                                     return [$if(((OS.BuiltinFunctions.getUserId()).toString() === OS.BuiltinFunctions.nullTextIdentifier()), false, this, function() {
@@ -227,7 +227,7 @@ define("tradershub.Common.InvalidPermissions.mvc$view", ["@outsystems/runtime-co
                                                 uuid: "6"
                                             },
                                             _widgetRecordProvider: widgetsRecordProvider
-                                        }, "Go to login")];
+                                        }, $text(getTranslation("Ok0_TnXGtUi0Kpgc0Z60Pg#Value", "Go to login")))];
                                     }, function() {
                                         return [];
                                     })];
@@ -245,12 +245,12 @@ define("tradershub.Common.InvalidPermissions.mvc$view", ["@outsystems/runtime-co
 
     return View;
 });
-define("tradershub.Common.InvalidPermissions.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.InvalidPermissions.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.InvalidPermissions.mvc$translationsResources", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_InvalidPermissions_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_InvalidPermissions_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -360,4 +360,24 @@ define("tradershub.Common.InvalidPermissions.mvc$controller", ["@outsystems/runt
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.InvalidPermissions.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "Ok0_TnXGtUi0Kpgc0Z60Pg#Value": "Aller à la connexion",
+        "QGbT7R8uHkmdaWHw9qRphw#Value": "Veuillez contacter votre administrateur système.",
+        "33gIhDYS6E6qIKReu+2PmA#Value": "Vous n\'avez pas la permission nécessaire pour voir cet écran.",
+        "5nVIK0JIkEq75V4SgIpFYw#Title": "Autorisations invalides",
+        "5nVIK0JIkEq75V4SgIpFYw#TitleExpression.-1269489733.1": "Autorisations invalides"
+    };
+});
+
+define("tradershub.Common.InvalidPermissions.mvc$translationsResources", ["exports", "tradershub.Common.InvalidPermissions.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_InvalidPermissions_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_InvalidPermissions_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

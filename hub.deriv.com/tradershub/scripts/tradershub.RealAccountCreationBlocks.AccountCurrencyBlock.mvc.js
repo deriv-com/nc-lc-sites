@@ -1,5 +1,23 @@
-define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.LoaderBlock.mvc$model", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Common_LoaderBlock_mvcModel) {
-    var OS = OSRuntimeCore;
+define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.LoaderBlock.mvc$model", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Common_LoaderBlock_mvcModel) {
+    var OS = OSRuntimeCore; {
+        class GetCurrenciesAggrRecInner extends
+        OS.Model.AggregateRecord {
+            static attributesToDeclare() {
+                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new GetCurrenciesAggrRec(new GetCurrenciesAggrRec.RecordClass({
+                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        GetCurrenciesAggrRecInner.RecordListType = tradershubModel.RL_5ee36d8deb03b51810340e621ea66d4b;
+        var GetCurrenciesAggrRec = GetCurrenciesAggrRecInner;
+        GetCurrenciesAggrRec.init();
+    }
 
 
     {
@@ -18,7 +36,10 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", ["
                     }, false, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d),
                     this.attr("IsLoading", "isLoadingVar", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return true;
-                    }, false)
+                    }, false),
+                    this.attr("GetCurrencies", "getCurrenciesAggr", "GetCurrencies", true, true, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new GetCurrenciesAggrRec());
+                    }, true, GetCurrenciesAggrRec)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -60,7 +81,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", ["
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller", "tradershub.clientVariables", "tradershub.Common.LoaderBlock.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_model, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller, tradershubClientVariables, tradershub_Common_LoaderBlock_mvc_view, OSWidgets) {
+define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$model", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller", "tradershub.clientVariables", "tradershub.Common.LoaderBlock.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_model, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller, tradershubClientVariables, tradershub_Common_LoaderBlock_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -164,7 +185,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                     extendedProperties: {
                         style: "color: #000; font-size: 16px;"
                     },
-                    text: ["Recommended"],
+                    text: [$text(getTranslation("q+pIc5+TSUOaZ9OTkms5Kw#Value", "Recommended"))],
                     _idProps: {
                         service: idService,
                         uuid: "2"
@@ -177,7 +198,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                     },
                     mode: /*Default*/ 0,
                     source: model.variables.filteredRecommendedCurrenciesVar,
-                    style: "list list-group display-flex flex-direction-column gap-base",
+                    style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("n3pa5MTfDEetDg1PJtKX5g#ValueExpression.-2051293826.1", "list list-group display-flex flex-direction-column gap-base"),
                     tag: "div",
                     _idProps: {
                         service: idService,
@@ -194,7 +215,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                     });;
                                 },
                                 style: model.getCachedValue(idService.getId("RecommendedListItem.Style"), function() {
-                                    return (((model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr === tradershubClientVariables.getSelectedCurrencyCode())) ? ("currency-list--selected") : ("currency-list"));
+                                    return (((model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr === tradershubClientVariables.getSelectedCurrencyCode())) ? (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("_5HSw2yk80Gp68zgD06zPw#ValueExpression.1984615573.1", "currency-list--selected")) : (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("_5HSw2yk80Gp68zgD06zPw#ValueExpression.1062814938.1", "currency-list")));
                                 }, function() {
                                     return model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr;
                                 }, function() {
@@ -232,7 +253,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                             extendedProperties: {
                                                 style: "text-align: center;"
                                             },
-                                            style: "display-flex align-items-center gap-s",
+                                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("SHEGKaeSAkCQXpegVzWyoA#ValueExpression.981163746.1", "display-flex align-items-center gap-s"),
                                             visible: true,
                                             _idProps: {
                                                 service: idService,
@@ -258,7 +279,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                                 classes: "OSFillParent",
                                                 marginLeft: "16px"
                                             },
-                                            style: "display-flex cursor-pointer",
+                                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("dlFGRdnm5E+DRH45jd+8Fg#ValueExpression.726304834.1", "display-flex cursor-pointer"),
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "8"
@@ -277,7 +298,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                                 marginLeft: "2px"
                                             },
                                             style: "curreny-name",
-                                            value: (("(" + model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr) + ")"),
+                                            value: (("(" + model.variables.filteredRecommendedCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr) + OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("Mw5eU0ONYECc9tOlfMaSig#ValueExpression.41.1", ")")),
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "10"
@@ -326,7 +347,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                     extendedProperties: {
                         style: "color: #000; font-size: 16px;"
                     },
-                    text: ["Other"],
+                    text: [$text(getTranslation("ib4gbC+_+0Gm2pyq1JbhWw#Value", "Other"))],
                     _idProps: {
                         service: idService,
                         uuid: "14"
@@ -339,7 +360,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                     },
                     mode: /*Default*/ 0,
                     source: model.variables.filteredOtherCurrenciesVar,
-                    style: "list list-group display-flex flex-direction-column gap-base",
+                    style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("xjPip09n9kmLToW+POv3aw#ValueExpression.-2051293826.1", "list list-group display-flex flex-direction-column gap-base"),
                     tag: "div",
                     _idProps: {
                         service: idService,
@@ -356,7 +377,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                     });;
                                 },
                                 style: model.getCachedValue(idService.getId("OtherCurrenciesItem.Style"), function() {
-                                    return (((model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr === tradershubClientVariables.getSelectedCurrencyCode())) ? ("currency-list--selected") : ("currency-list"));
+                                    return (((model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr === tradershubClientVariables.getSelectedCurrencyCode())) ? (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("d4kNr3d4wE+cn3AGsBgjDw#ValueExpression.1984615573.1", "currency-list--selected")) : (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("d4kNr3d4wE+cn3AGsBgjDw#ValueExpression.1062814938.1", "currency-list")));
                                 }, function() {
                                     return model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr;
                                 }, function() {
@@ -394,7 +415,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                             extendedProperties: {
                                                 style: "text-align: center;"
                                             },
-                                            style: "display-flex align-items-center gap-s",
+                                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("W0OOhl_Fa0OoWuwTqqTBeg#ValueExpression.981163746.1", "display-flex align-items-center gap-s"),
                                             visible: true,
                                             _idProps: {
                                                 service: idService,
@@ -420,7 +441,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                                 classes: "OSFillParent",
                                                 marginLeft: "16px"
                                             },
-                                            style: "display-flex",
+                                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("IcuJleU_oEWQE_vGen_wOw#ValueExpression.1568682532.1", "display-flex"),
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "20"
@@ -439,7 +460,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
                                                 marginLeft: "2px"
                                             },
                                             style: "curreny-name",
-                                            value: (("(" + model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr) + ")"),
+                                            value: (("(" + model.variables.filteredOtherCurrenciesVar.getCurrent(callContext.iterationContext).codeAttr) + OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("yJdrMF4dp0y2tWVSORVv_Q#ValueExpression.41.1", ")")),
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "22"
@@ -491,39 +512,52 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$view", ["@
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.FilterCurrenciesFunction.JavaScript1JS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.RecommendedListItemOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.OtherCurrenciesItemOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.OnReady.LandingCompanyPayloadJS", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_FilterCurrenciesFunction_JavaScript1JS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_RecommendedListItemOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OtherCurrenciesItemOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OnReady_LandingCompanyPayloadJS) {
+define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.FilterCurrenciesFunction.JavaScript1JS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.RecommendedListItemOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.OtherCurrenciesItemOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.OnReady.LandingCompanyPayloadJS", "tradershub.model$ST_8929e3c9fca60443ab65fcc0c5318922Structure", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.controller$DerivApiSendMessage", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_FilterCurrenciesFunction_JavaScript1JS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_RecommendedListItemOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OtherCurrenciesItemOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_OnReady_LandingCompanyPayloadJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {};
-                this.dataFetchDependentsGraph = {};
+                this.dataFetchDependenciesOriginal = {
+                    getCurrencies$AggrRefresh: 0
+                };
+                this.dataFetchDependentsGraph = {
+                    getCurrencies$AggrRefresh: []
+                };
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
-            get currenciesList$ServerAction() {
-                if (!(this.hasOwnProperty("_currenciesList$ServerAction"))) {
-                    this._currenciesList$ServerAction = function(callContext) {
-                        var controller = this.controller;
-                        return OS.Logger.startActiveSpan("CurrenciesList", function(span) {
+
+            // Aggregates and Data Actions
+            get getCurrencies$AggrRefresh() {
+                if (!(this.hasOwnProperty("_getCurrencies$AggrRefresh"))) {
+                    this._getCurrencies$AggrRefresh = function() {
+                        var innerBody = function(maxRecords, startIndex, callContext) {
+                            var model = this.model;
+                            var controller = this.controller;
+                            var callContext = controller.callContext(callContext);
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCurrencies", "screenservices/tradershub/RealAccountCreationBlocks/AccountCurrencyBlock/ScreenDataSetGetCurrencies", "npjMYW44GFvhkxw14gO3vA", maxRecords, startIndex, function(b) {
+                                model.variables.getCurrenciesAggr.dataFetchStatusAttr = b;
+                            }, function(json) {
+                                model.variables.getCurrenciesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCurrenciesAggr.constructor));
+                            }, undefined, undefined, undefined, callContext, undefined, true).then(function() {
+                                return controller._onReady$Action(controller.callContext(callContext));
+                            });
+                        }.bind(this);
+                        return OS.Logger.startActiveSpan("GetCurrencies", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "CurrenciesList");
-                                span.setAttribute("outsystems.function.key", "f15c4591-9739-418f-bc8d-14d275e849d1");
+                                span.setAttribute("code.function", "GetCurrencies");
+                                span.setAttribute("outsystems.function.key", "64ea3413-5b85-45ea-a634-df484db4d1c0");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/RealAccountCreationBlocks/AccountCurrencyBlock/ActionCurrenciesList", "mfqCJ8dyBBlp7VBala4nSQ", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
-                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock$ActionCurrenciesList"))();
-                                    executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
-                                    return executeServerActionResult;
-                                });
+                                return innerBody();
                             }, function() {
                                 if (span) {
                                     span.end();
@@ -531,21 +565,20 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
                             });
                         }, 0);
+
                     };
                 }
 
-                return this._currenciesList$ServerAction;
+                return this._getCurrencies$AggrRefresh;
             }
-            set currenciesList$ServerAction(value) {
-                this._currenciesList$ServerAction = value;
+            set getCurrencies$AggrRefresh(value) {
+                this._getCurrencies$AggrRefresh = value;
             }
 
-
-            // Aggregates and Data Actions
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = [];
+                    this._dataFetchActionNames = ["getCurrencies$AggrRefresh"];
                 }
 
                 return this._dataFetchActionNames;
@@ -570,67 +603,60 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            return OS.Flow.tryFinally(function() {
+                            try {
                                 controller.ensureControllerAlive("FilterCurrenciesFunction");
                                 callContext = controller.callContext(callContext);
-                                var currenciesListVar = new OS.DataTypes.VariableHolder();
                                 var javaScript1JSResult = new OS.DataTypes.VariableHolder();
                                 var jSONSerializeCurrencyListVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                                 var jSONDeserializeOtherCurrenciesVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d))());
                                 var jSONDeserializeCurrenciesListVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d))());
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: CurrenciesList
-                                    model.flush();
-                                    return controller.currenciesList$ServerAction(callContext).then(function(value) {
-                                        currenciesListVar.value = value;
-                                    }).then(function() {
-                                        // JSON Serialize: JSONSerializeCurrencyList
-                                        jSONSerializeCurrencyListVar.value.jSONOut = OS.JSONUtils.serializeToJSON(currenciesListVar.value.currenciesListOut, false, false);
-                                        javaScript1JSResult.value = OS.Logger.startActiveSpan("JavaScript1", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "JavaScript1");
-                                                span.setAttribute("outsystems.function.key", "81b40fd3-0118-4533-b23b-a5fc55b06b83");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
+                                // JSON Serialize: JSONSerializeCurrencyList
+                                jSONSerializeCurrencyListVar.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.getCurrenciesAggr.listOut, false, false);
+                                javaScript1JSResult.value = OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                                    if (span) {
+                                        span.setAttribute("code.function", "JavaScript1");
+                                        span.setAttribute("outsystems.function.key", "81b40fd3-0118-4533-b23b-a5fc55b06b83");
+                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                    }
 
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_FilterCurrenciesFunction_JavaScript1JS, "JavaScript1", "FilterCurrenciesFunction", {
-                                                    LandingCompanyResponse: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawLandingCompanyResponse(), OS.DataTypes.DataTypes.Text),
-                                                    RawCurrenciesList: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeCurrencyListVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
-                                                    RecommendedCurrencies: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                                    OtherCurrencies: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                                }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.FilterCurrenciesFunction$javaScript1JSResult"))();
-                                                    jsNodeResult.recommendedCurrenciesOut = OS.DataConversion.JSNodeParamConverter.from($parameters.RecommendedCurrencies, OS.DataTypes.DataTypes.Text);
-                                                    jsNodeResult.otherCurrenciesOut = OS.DataConversion.JSNodeParamConverter.from($parameters.OtherCurrencies, OS.DataTypes.DataTypes.Text);
-                                                    return jsNodeResult;
-                                                }, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
+                                    try {
+                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_controller_FilterCurrenciesFunction_JavaScript1JS, "JavaScript1", "FilterCurrenciesFunction", {
+                                            IsEU: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getIsEuUser(), OS.DataTypes.DataTypes.Boolean),
+                                            LandingCompanyResponse: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawLandingCompanyResponse(), OS.DataTypes.DataTypes.Text),
+                                            RawCurrenciesList: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeCurrencyListVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                            RecommendedCurrencies: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
+                                            OtherCurrencies: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                        }, function($parameters) {
+                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.FilterCurrenciesFunction$javaScript1JSResult"))();
+                                            jsNodeResult.recommendedCurrenciesOut = OS.DataConversion.JSNodeParamConverter.from($parameters.RecommendedCurrencies, OS.DataTypes.DataTypes.Text);
+                                            jsNodeResult.otherCurrenciesOut = OS.DataConversion.JSNodeParamConverter.from($parameters.OtherCurrencies, OS.DataTypes.DataTypes.Text);
+                                            return jsNodeResult;
+                                        }, {}, {});
+                                    } finally {
+                                        if (span) {
+                                            span.end();
+                                        }
 
-                                            }
+                                    }
 
-                                        }, 1);
-                                        // JSON Deserialize: JSONDeserializeCurrenciesList
-                                        jSONDeserializeCurrenciesListVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(javaScript1JSResult.value.recommendedCurrenciesOut, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d, false);
-                                        // JSON Deserialize: JSONDeserializeOtherCurrencies
-                                        jSONDeserializeOtherCurrenciesVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(javaScript1JSResult.value.otherCurrenciesOut, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d, false);
-                                        // FilteredRecommendedCurrencies = JSONDeserializeCurrenciesList.Data
-                                        model.variables.filteredRecommendedCurrenciesVar = jSONDeserializeCurrenciesListVar.value.dataOut;
-                                        // FilteredOtherCurrencies = JSONDeserializeOtherCurrencies.Data
-                                        model.variables.filteredOtherCurrenciesVar = jSONDeserializeOtherCurrenciesVar.value.dataOut;
-                                    });
-                                });
-                            }, function() {
+                                }, 1);
+                                // JSON Deserialize: JSONDeserializeCurrenciesList
+                                jSONDeserializeCurrenciesListVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(javaScript1JSResult.value.recommendedCurrenciesOut, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d, false);
+                                // JSON Deserialize: JSONDeserializeOtherCurrencies
+                                jSONDeserializeOtherCurrenciesVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(javaScript1JSResult.value.otherCurrenciesOut, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d, false);
+                                // FilteredRecommendedCurrencies = JSONDeserializeCurrenciesList.Data
+                                model.variables.filteredRecommendedCurrenciesVar = jSONDeserializeCurrenciesListVar.value.dataOut;
+                                // FilteredOtherCurrencies = JSONDeserializeOtherCurrencies.Data
+                                model.variables.filteredOtherCurrenciesVar = jSONDeserializeOtherCurrenciesVar.value.dataOut;
+                            } finally {
                                 if (span) {
                                     span.end();
                                 }
 
-                            });
+                            }
+
                         }, 1);
                     };
                 }
@@ -833,7 +859,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                                                         // SelectedCitizenship = SendGetSetting.GetSettingResponse.Citizen
                                                         tradershubClientVariables.setSelectedCitizenship(sendGetSettingVar.value.getSettingResponseOut.citizenAttr);
                                                         // Execute Action: FilterCurrenciesFunction
-                                                        return controller._filterCurrenciesFunction$Action(callContext);
+                                                        controller._filterCurrenciesFunction$Action(callContext);
                                                     });
                                                 } else {
                                                     return OS.Flow.returnAsync();
@@ -842,20 +868,18 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
                                             });
                                         } else {
-                                            return OS.Flow.executeSequence(function() {
-                                                if (((model.variables.landingCompanyVar.landing_companyAttr.gaming_companyAttr.legal_allowed_currenciesAttr.isEmpty && (OS.BuiltinFunctions.length(tradershubClientVariables.getAuthToken()) > 1)))) {
-                                                    // JSON Deserialize: JSONDeserializeLandingCompanyResponse2
-                                                    jSONDeserializeLandingCompanyResponse2Var.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawLandingCompanyResponse(), tradershubModel.ST_8929e3c9fca60443ab65fcc0c5318922Structure, false);
-                                                    // LandingCompany = JSONDeserializeLandingCompanyResponse2.Data
-                                                    model.variables.landingCompanyVar = jSONDeserializeLandingCompanyResponse2Var.value.dataOut;
-                                                    // Execute Action: FilterCurrenciesFunction2
-                                                    return controller._filterCurrenciesFunction$Action(callContext);
-                                                } else {
-                                                    return OS.Flow.returnAsync();
+                                            if (((model.variables.landingCompanyVar.landing_companyAttr.gaming_companyAttr.legal_allowed_currenciesAttr.isEmpty && (OS.BuiltinFunctions.length(tradershubClientVariables.getAuthToken()) > 1)))) {
+                                                // JSON Deserialize: JSONDeserializeLandingCompanyResponse2
+                                                jSONDeserializeLandingCompanyResponse2Var.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawLandingCompanyResponse(), tradershubModel.ST_8929e3c9fca60443ab65fcc0c5318922Structure, false);
+                                                // LandingCompany = JSONDeserializeLandingCompanyResponse2.Data
+                                                model.variables.landingCompanyVar = jSONDeserializeLandingCompanyResponse2Var.value.dataOut;
+                                                // Execute Action: FilterCurrenciesFunction2
+                                                controller._filterCurrenciesFunction$Action(callContext);
+                                            } else {
+                                                return OS.Flow.returnAsync();
 
-                                                }
+                                            }
 
-                                            });
                                         }
 
                                     }).then(function() {
@@ -891,14 +915,15 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    return OS.Flow.tryFinally(function() {
+                    try {
                         return controller.safeExecuteClientAction(controller._filterCurrenciesFunction$Action, callContext);
-                    }, function() {
+                    } finally {
                         if (span) {
                             span.end();
                         }
 
-                    });
+                    }
+
                 }, 0);
 
             }
@@ -1000,14 +1025,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;
@@ -1018,14 +1036,7 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
             get onRenderEventHandler() {
                 if (!(this.hasOwnProperty("_onRenderEventHandler"))) {
-                    this._onRenderEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onRenderEventHandler = null;
                 }
 
                 return this._onRenderEventHandler;
@@ -1079,16 +1090,6 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
         var Controller = ControllerInner;
         // Server Actions - Variables
-        Controller.registerVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock$ActionCurrenciesList", [{
-            name: "CurrenciesList",
-            attrName: "currenciesListOut",
-            mandatory: false,
-            dataType: OS.DataTypes.DataTypes.RecordList,
-            defaultValue: function() {
-                return new tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d();
-            },
-            complexType: tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d
-        }]);
 
         // Client Actions - Variables
         Controller.registerVariableGroupType("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.FilterCurrenciesFunction$javaScript1JSResult", [{
@@ -1124,31 +1125,30 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
 
 define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller.FilterCurrenciesFunction.JavaScript1JS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const currencies = JSON.parse($parameters.RawCurrenciesList);
+        const currencies = JSON.parse($parameters.RawCurrenciesList).map(i => i.Currencies);
 
         const landingCompany = JSON.parse($parameters.LandingCompanyResponse || JSON.stringify({
             landing_company: {
                 gaming_company: {
                     legal_allowed_currencies: []
+                },
+                financial_company: {
+                    legal_allowed_currencies: []
                 }
             }
         }))
+        const legalAllowedCurrenciesGaming = landingCompany.landing_company?.gaming_company?.legal_allowed_currencies ?? []
+        const legalAllowedCurrenciesFinancial = landingCompany.landing_company?.financial_company?.legal_allowed_currencies ?? []
 
-        const legalAllowedCurrencies = landingCompany.landing_company?.gaming_company?.legal_allowed_currencies || []
-
-        const filteredRecommendedCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Recommended');
-
-        const filteredOtherCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Other');
+        const legalAllowedCurrencies = !$parameters.IsEU && legalAllowedCurrenciesGaming?.length ? legalAllowedCurrenciesGaming : legalAllowedCurrenciesFinancial
+        const filteredRecommendedCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Recommended')
+        const filteredOtherCurrencies = currencies.filter(currency => legalAllowedCurrencies.includes(currency.Code) && currency.Category === 'Other')
 
         filteredRecommendedCurrencies.sort((a, b) => a.Id - b.Id);
-
         filteredOtherCurrencies.sort((a, b) => a.Id - b.Id);
 
         $parameters.RecommendedCurrencies = JSON.stringify(filteredRecommendedCurrencies)
-
         $parameters.OtherCurrencies = JSON.stringify(filteredOtherCurrencies)
-
-
     };
 });
 
@@ -1186,5 +1186,34 @@ define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$controller
             landing_company: $parameters.CountryCode
         });
 
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "yJdrMF4dp0y2tWVSORVv_Q#ValueExpression.41.1": "Je veux la réponse dans le format suivant :",
+        "IcuJleU_oEWQE_vGen_wOw#ValueExpression.1568682532.1": "display-flex",
+        "W0OOhl_Fa0OoWuwTqqTBeg#ValueExpression.981163746.1": "display-flex align-items-center gap-s",
+        "d4kNr3d4wE+cn3AGsBgjDw#ValueExpression.1062814938.1": "currency-list",
+        "d4kNr3d4wE+cn3AGsBgjDw#ValueExpression.1984615573.1": "currency-list--selected",
+        "xjPip09n9kmLToW+POv3aw#ValueExpression.-2051293826.1": "list list-group display-flex flex-direction-column gap-base",
+        "ib4gbC+_+0Gm2pyq1JbhWw#Value": "Autre",
+        "Mw5eU0ONYECc9tOlfMaSig#ValueExpression.41.1": "Je veux la réponse dans le format suivant :",
+        "dlFGRdnm5E+DRH45jd+8Fg#ValueExpression.726304834.1": "display-flex cursor-pointer",
+        "SHEGKaeSAkCQXpegVzWyoA#ValueExpression.981163746.1": "display-flex align-items-center gap-s",
+        "_5HSw2yk80Gp68zgD06zPw#ValueExpression.1062814938.1": "currency-list",
+        "_5HSw2yk80Gp68zgD06zPw#ValueExpression.1984615573.1": "currency-list--selected",
+        "n3pa5MTfDEetDg1PJtKX5g#ValueExpression.-2051293826.1": "list list-group display-flex flex-direction-column gap-base",
+        "q+pIc5+TSUOaZ9OTkms5Kw#Value": "Recommandé"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.AccountCurrencyBlock.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_AccountCurrencyBlock_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

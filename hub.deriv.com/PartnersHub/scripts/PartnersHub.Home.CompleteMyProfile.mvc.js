@@ -641,7 +641,7 @@ define("PartnersHub.Home.CompleteMyProfile.mvc$translationsResources.de-DE", [],
 
 define("PartnersHub.Home.CompleteMyProfile.mvc$translationsResources.es-ES", [], function() {
     return {
-        "zkE0A_QNHUO3f5+rZyPegQ#Value": "Paso",
+        "zkE0A_QNHUO3f5+rZyPegQ#Value": "Step",
         "V_f6UFrIQkCuMDCeq35TIQ#Value": "Completar mi perfil"
     };
 });

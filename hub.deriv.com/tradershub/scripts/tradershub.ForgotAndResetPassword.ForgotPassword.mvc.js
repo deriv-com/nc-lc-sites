@@ -103,7 +103,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
         get title() {
 
 
-            return "ForgotPassword";
+            return OSView.BaseView.BaseWebScreen.getTranslation("J801+cVjGkeM05KEJBFaHQ#Title", "ForgotPassword");
         }
 
         internalRender() {
@@ -202,7 +202,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 extendedProperties: {
                                     style: "font-size: 18px; font-weight: bold;"
                                 },
-                                text: ["Link expired"],
+                                text: [$text(getTranslation("Pxzixhjcl0S05rq_pbc7ZA#Value", "Link expired"))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "5"
@@ -275,7 +275,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 extendedProperties: {
                                     style: "color: #4F575E;"
                                 },
-                                text: ["Make sure you\'re using the link in our latest email. Or enter your email below to receive a new link."],
+                                text: [$text(getTranslation("T4vKH2zfpEmuS3eFMNHQng#Value", "Make sure you\'re using the link in our latest email. Or enter your email below to receive a new link."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "11"
@@ -307,7 +307,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 extendedProperties: {
                                     style: "margin-top: px;"
                                 },
-                                text: ["Email"],
+                                text: [$text(getTranslation("XM4pjsgDxESM9R3bguC1Ag#Value", "Email"))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "14"
@@ -328,7 +328,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 inputType: /*Email*/ 7,
                                 mandatory: false,
                                 maxLength: 50,
-                                prompt: "Enter your email",
+                                prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("8hADf5elLkudl1qmCaGIqA#ValueExpression.-374653993.1", "Enter your email"),
                                 style: "form-control",
                                 variable: model.createVariable(OS.DataTypes.DataTypes.Email, model.variables.emailVar, function(value) {
                                     model.variables.emailVar = value;
@@ -379,7 +379,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                 extendedProperties: {
                                     style: "font-size: 14px;"
                                 },
-                                text: ["Resend email"],
+                                text: [$text(getTranslation("Gk_WKj61ak+6jvGljsSOJg#Value", "Resend email"))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "18"
@@ -408,7 +408,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "font-size: 24px; font-weight: bold;"
                                     },
-                                    text: ["We’ve sent you an email"],
+                                    text: [$text(getTranslation("up3wQNU3ZEqij9XsmzAtCQ#Value", "We’ve sent you an email"))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "20"
@@ -442,7 +442,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "font-size: 16px;"
                                     },
-                                    text: ["Click the link in the email to reset your password."],
+                                    text: [$text(getTranslation("hEgP0XzXt0GFIZ+GN6xHLw#Value", "Click the link in the email to reset your password."))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "23"
@@ -469,7 +469,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "font-weight: bold; text-decoration: underline;"
                                     },
-                                    text: ["Didn’t receive the email?"],
+                                    text: [$text(getTranslation("5pu5z3ZK+EiWjaMEqLXNGg#Value", "Didn’t receive the email?"))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "25"
@@ -537,7 +537,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "font-size: 18px; font-weight: bold;"
                                     },
-                                    text: ["Forgot password"],
+                                    text: [$text(getTranslation("0IkcMMYNI0GR1RUiDfqppQ#Value", "Forgot password"))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "31"
@@ -581,7 +581,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                         uuid: "34"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
-                                }, "We’ll email you instructions to reset your password."), React.createElement(OSWidgets.Form, {
+                                }, $text(getTranslation("Iajy_eY9VE2jhnVtWwOoJA#Value", "We’ll email you instructions to reset your password."))), React.createElement(OSWidgets.Form, {
                                     _validationProps: {
                                         validationService: validationService
                                     },
@@ -607,7 +607,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "margin-top: px;"
                                     },
-                                    text: ["Email"],
+                                    text: [$text(getTranslation("tnc4I59H8EWTUtsAmaUo3g#Value", "Email"))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "37"
@@ -628,7 +628,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     inputType: /*Email*/ 7,
                                     mandatory: false,
                                     maxLength: 50,
-                                    prompt: "Enter your email",
+                                    prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("tfgAz1CTZEqDT0xqPoAasw#ValueExpression.-374653993.1", "Enter your email"),
                                     style: "form-control",
                                     variable: model.createVariable(OS.DataTypes.DataTypes.Email, model.variables.emailVar, function(value) {
                                         model.variables.emailVar = value;
@@ -679,7 +679,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
                                     extendedProperties: {
                                         style: "font-size: 14px;"
                                     },
-                                    text: ["Send email"],
+                                    text: [$text(getTranslation("09iHoosI3EOO1J1ZuaNREQ#Value", "Send email"))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "41"
@@ -697,12 +697,12 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$view", ["@outsystem
 
     return View;
 });
-define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.ForgotAndResetPassword.controller", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller.SendEmailOnClick.ValidateEmailJS", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller.SendResetPasswordEmail.verify_email_payloadJS", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_ForgotAndResetPasswordController, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_controller_SendEmailOnClick_ValidateEmailJS, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_controller_SendResetPasswordEmail_verify_email_payloadJS) {
+define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$translationsResources", "tradershub.ForgotAndResetPassword.controller", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller.SendEmailOnClick.ValidateEmailJS", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller.SendResetPasswordEmail.verify_email_payloadJS", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_TranslationsResources, tradershub_ForgotAndResetPasswordController, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_controller_SendEmailOnClick_ValidateEmailJS, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_controller_SendResetPasswordEmail_verify_email_payloadJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -825,7 +825,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller", ["@out
                                             // Email_Input.Valid = False
                                             model.widgets.get(idService.getId("Email_Input")).validAttr = false;
                                             // Email_Input.ValidationMessage = "Email is required."
-                                            model.widgets.get(idService.getId("Email_Input")).validationMessageAttr = "Email is required.";
+                                            model.widgets.get(idService.getId("Email_Input")).validationMessageAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("DsieOgAZnkiDeMc7ClkiYQ#Value.2117503773.1", "Email is required.");
                                         } else {
                                             validateEmailJSResult.value = OS.Logger.startActiveSpan("ValidateEmail", function(span) {
                                                 if (span) {
@@ -866,7 +866,7 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller", ["@out
                                                     // Email_Input.Valid = False
                                                     model.widgets.get(idService.getId("Email_Input")).validAttr = false;
                                                     // Email_Input.ValidationMessage = "That doesn't look like an email address."
-                                                    model.widgets.get(idService.getId("Email_Input")).validationMessageAttr = "That doesn\'t look like an email address.";
+                                                    model.widgets.get(idService.getId("Email_Input")).validationMessageAttr = OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("J_YImVX9qEKVIltJ9uDXrA#Value.-6690446.1", "That doesn\'t look like an email address.");
                                                 }
 
                                             });
@@ -1261,5 +1261,35 @@ define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$controller.SendRese
             type: "reset_password"
         });
 
+    };
+});
+
+
+define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "09iHoosI3EOO1J1ZuaNREQ#Value": "Envoyer un e-mail",
+        "tfgAz1CTZEqDT0xqPoAasw#ValueExpression.-374653993.1": "Entrez votre email",
+        "tnc4I59H8EWTUtsAmaUo3g#Value": "Email",
+        "Iajy_eY9VE2jhnVtWwOoJA#Value": "Nous vous enverrons par e-mail des instructions pour réinitialiser votre mot de passe.",
+        "0IkcMMYNI0GR1RUiDfqppQ#Value": "Mot de passe oublié",
+        "5pu5z3ZK+EiWjaMEqLXNGg#Value": "Vous n\'avez pas reçu l\'email ?",
+        "hEgP0XzXt0GFIZ+GN6xHLw#Value": "Cliquez sur le lien dans l\'e-mail pour réinitialiser votre mot de passe.",
+        "up3wQNU3ZEqij9XsmzAtCQ#Value": "Nous vous avons envoyé un e-mail",
+        "Gk_WKj61ak+6jvGljsSOJg#Value": "Renvoyer l\'e-mail",
+        "8hADf5elLkudl1qmCaGIqA#ValueExpression.-374653993.1": "Entrez votre e-mail",
+        "XM4pjsgDxESM9R3bguC1Ag#Value": "Email",
+        "T4vKH2zfpEmuS3eFMNHQng#Value": "Assurez-vous d\'utiliser le lien dans notre dernier email. Ou saisissez votre email ci-dessous pour recevoir un nouveau lien.",
+        "Pxzixhjcl0S05rq_pbc7ZA#Value": "Lien expiré",
+        "DsieOgAZnkiDeMc7ClkiYQ#Value.2117503773.1": "L\'email est requis.",
+        "J_YImVX9qEKVIltJ9uDXrA#Value.-6690446.1": "Cela ne ressemble pas à une adresse e-mail."
+    };
+});
+
+define("tradershub.ForgotAndResetPassword.ForgotPassword.mvc$translationsResources", ["exports", "tradershub.ForgotAndResetPassword.ForgotPassword.mvc$translationsResources.fr-FR"], function(exports, tradershub_ForgotAndResetPassword_ForgotPassword_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_ForgotAndResetPassword_ForgotPassword_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

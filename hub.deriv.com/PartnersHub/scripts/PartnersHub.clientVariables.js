@@ -30,6 +30,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("IsCountryUnavailable", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
         }
 
+        getisEventSectionEnabledFF() {
+            return clientVarsService.getVariable("isEventSectionEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, false);
+        }
+
+        setisEventSectionEnabledFF(value) {
+            return clientVarsService.setVariable("isEventSectionEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getRealSignupFirstName() {
             return clientVarsService.getVariable("RealSignupFirstName", "PartnersHub", OS.DataTypes.DataTypes.Text);
         }
@@ -414,6 +422,14 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
             return clientVarsService.setVariable("RealSignupCompanyWebsite", "PartnersHub", OS.DataTypes.DataTypes.Text, value);
         }
 
+        getisCFDCommissionsPlanFormEnabledFF() {
+            return clientVarsService.getVariable("isCFDCommissionsPlanFormEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean);
+        }
+
+        setisCFDCommissionsPlanFormEnabledFF(value) {
+            return clientVarsService.setVariable("isCFDCommissionsPlanFormEnabledFF", "PartnersHub", OS.DataTypes.DataTypes.Boolean, value);
+        }
+
         getProductionHostName() {
             return clientVarsService.getVariable("ProductionHostName", "PartnersHub", OS.DataTypes.DataTypes.Text, "hub.deriv.com");
         }
@@ -483,6 +499,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 SignupEmail: OS.DataConversion.ServerDataConverter.to(this.getSignupEmail(), OS.DataTypes.DataTypes.Text),
                 WebsiteStatusResponse: OS.DataConversion.ServerDataConverter.to(this.getWebsiteStatusResponse(), OS.DataTypes.DataTypes.Text),
                 IsCountryUnavailable: OS.DataConversion.ServerDataConverter.to(this.getIsCountryUnavailable(), OS.DataTypes.DataTypes.Boolean),
+                isEventSectionEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisEventSectionEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupFirstName: OS.DataConversion.ServerDataConverter.to(this.getRealSignupFirstName(), OS.DataTypes.DataTypes.Text),
                 RealSignupAddress: OS.DataConversion.ServerDataConverter.to(this.getRealSignupAddress(), OS.DataTypes.DataTypes.Text),
                 SelectedAccountType: OS.DataConversion.ServerDataConverter.to(this.getSelectedAccountType(), OS.DataTypes.DataTypes.Text),
@@ -531,6 +548,7 @@ define("PartnersHub.clientVariables", ["@outsystems/runtime-core-js"], function(
                 RealSignupEmploymentDetailMobileScreen: OS.DataConversion.ServerDataConverter.to(this.getRealSignupEmploymentDetailMobileScreen(), OS.DataTypes.DataTypes.Text),
                 isWhatsappBannerEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisWhatsappBannerEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 RealSignupCompanyWebsite: OS.DataConversion.ServerDataConverter.to(this.getRealSignupCompanyWebsite(), OS.DataTypes.DataTypes.Text),
+                isCFDCommissionsPlanFormEnabledFF: OS.DataConversion.ServerDataConverter.to(this.getisCFDCommissionsPlanFormEnabledFF(), OS.DataTypes.DataTypes.Boolean),
                 ProductionHostName: OS.DataConversion.ServerDataConverter.to(this.getProductionHostName(), OS.DataTypes.DataTypes.Text),
                 ClientCountry: OS.DataConversion.ServerDataConverter.to(this.getClientCountry(), OS.DataTypes.DataTypes.Text),
                 IsSnackBarVisible: OS.DataConversion.ServerDataConverter.to(this.getIsSnackBarVisible(), OS.DataTypes.DataTypes.Boolean),

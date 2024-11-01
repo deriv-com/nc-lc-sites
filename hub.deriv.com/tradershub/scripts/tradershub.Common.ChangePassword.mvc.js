@@ -148,7 +148,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
             var _this = this;
 
 
-            return "Change password";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("KRZ4442ho0CmgIxpfhgXAA#TitleExpression.244737259.1", "Change password");
         }
 
         internalRender() {
@@ -212,7 +212,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                             extendedProperties: {
                                 style: "margin-left: 5px;"
                             },
-                            text: ["Back to profile"],
+                            text: [$text(getTranslation("wCubOd1o8EWngEEcQZkHUg#Value", "Back to profile"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "3"
@@ -221,7 +221,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                         }))];
                     }),
                     title: new PlaceholderContent(function() {
-                        return ["Change your password"];
+                        return [$text(getTranslation("6jR9Gqgm5Ueq0OUOVa5xUQ#Value", "Change your password"))];
                     }),
                     actions: PlaceholderContent.Empty,
                     mainContent: new PlaceholderContent(function() {
@@ -307,7 +307,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                                                         uuid: "8"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }, "Current password")];
+                                                }, $text(getTranslation("BYvic0iNMkiP6WjAsSwHJg#Value", "Current password")))];
                                             }),
                                             input: new PlaceholderContent(function() {
                                                 return [React.createElement(OSWidgets.Input, {
@@ -391,7 +391,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                                                         uuid: "12"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }, "New password")];
+                                                }, $text(getTranslation("MBfigjbMyk2GnnxrepNJ7w#Value", "New password")))];
                                             }),
                                             input: new PlaceholderContent(function() {
                                                 return [React.createElement(OutSystemsUI_Interaction_InputWithIcon_mvc_view, {
@@ -575,7 +575,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                                                         uuid: "21"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }, "Confirm password")];
+                                                }, $text(getTranslation("3Zyu6HHlq0STeMAHdlBoAg#Value", "Confirm password")))];
                                             }),
                                             input: new PlaceholderContent(function() {
                                                 return [React.createElement(OutSystemsUI_Interaction_InputWithIcon_mvc_view, {
@@ -758,7 +758,7 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
                                                         uuid: "30"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }), "Set new password")];
+                                                }), $text(getTranslation("5N+sd0hFqUeYlA4hxRTJxQ#Value", "Set new password")))];
                                             })
                                         },
                                         _dependencies: [asPrimitiveValue(model.variables.isButtonEnabledVar)]
@@ -778,12 +778,12 @@ define("tradershub.Common.ChangePassword.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("tradershub.Common.ChangePassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller", "System_.model$ChangePasswordResultRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "tradershub.model$RC_ced013358a82a813f1d9a5108f17ce79", "tradershub.model$RL_8430333e95ceffc00def96d8abb01f75"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.ChangePassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.ChangePassword.mvc$translationsResources", "tradershub.Common.controller", "System_.model$ChangePasswordResultRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "tradershub.model$RC_ced013358a82a813f1d9a5108f17ce79", "tradershub.model$RL_8430333e95ceffc00def96d8abb01f75"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_ChangePassword_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_ChangePassword_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
@@ -809,7 +809,7 @@ define("tradershub.Common.ChangePassword.mvc$controller", ["@outsystems/runtime-
                                 model.variables.getUserDetailAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getUserDetailAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getUserDetailAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false);
+                            }, undefined, undefined, undefined, callContext, undefined, true);
                         }.bind(this);
                         return OS.Logger.startActiveSpan("GetUserDetail", function(span) {
                             if (span) {
@@ -1572,4 +1572,27 @@ define("tradershub.Common.ChangePassword.mvc$controller", ["@outsystems/runtime-
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.ChangePassword.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "5N+sd0hFqUeYlA4hxRTJxQ#Value": "Définir un nouveau mot de passe",
+        "3Zyu6HHlq0STeMAHdlBoAg#Value": "Confirmer le mot de passe",
+        "MBfigjbMyk2GnnxrepNJ7w#Value": "Nouveau mot de passe",
+        "BYvic0iNMkiP6WjAsSwHJg#Value": "Mot de passe actuel",
+        "6jR9Gqgm5Ueq0OUOVa5xUQ#Value": "Changez votre mot de passe",
+        "wCubOd1o8EWngEEcQZkHUg#Value": "Retour au profil",
+        "KRZ4442ho0CmgIxpfhgXAA#Title": "Changer le mot de passe",
+        "KRZ4442ho0CmgIxpfhgXAA#TitleExpression.244737259.1": "Changer le mot de passe"
+    };
+});
+
+define("tradershub.Common.ChangePassword.mvc$translationsResources", ["exports", "tradershub.Common.ChangePassword.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_ChangePassword_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_ChangePassword_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

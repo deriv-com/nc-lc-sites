@@ -101,7 +101,7 @@ define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$view", ["@outsystems
         get title() {
 
 
-            return "ResetPassword";
+            return OSView.BaseView.BaseWebScreen.getTranslation("R7ESjKZIAE6xhn_mF+xCsg#Title", "ResetPassword");
         }
 
         internalRender() {
@@ -214,7 +214,7 @@ define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$view", ["@outsystems
                             extendedProperties: {
                                 style: "font-size: 18px; font-weight: bold;"
                             },
-                            text: ["Reset Password"],
+                            text: [$text(getTranslation("dyHdmnqwXUiccPCTPcJsdg#Value", "Reset Password"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "7"
@@ -407,7 +407,7 @@ define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$view", ["@outsystems
                                 uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Reset my password"))))))];
+                        }, $text(getTranslation("kOrypI4zEkCt9ac3Ju1B1Q#Value", "Reset my password"))))))))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables.showPasswordVar), asPrimitiveValue(model.variables.passwordVar), asPrimitiveValue(model.widgets.get(idService.getId("Input_password")).validAttr)]
@@ -417,12 +417,12 @@ define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$view", ["@outsystems
 
     return View;
 });
-define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.ForgotAndResetPassword.controller", "tradershub.ForgotAndResetPassword.ResetPassword.mvc$controller.SendNewPassword.reset_password_payloadJS", "tradershub.controller$CleanupAfterResetPassword", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_ForgotAndResetPasswordController, tradershub_ForgotAndResetPassword_ResetPassword_mvc_controller_SendNewPassword_reset_password_payloadJS) {
+define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.ForgotAndResetPassword.ResetPassword.mvc$translationsResources", "tradershub.ForgotAndResetPassword.controller", "tradershub.ForgotAndResetPassword.ResetPassword.mvc$controller.SendNewPassword.reset_password_payloadJS", "tradershub.controller$CleanupAfterResetPassword", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_ForgotAndResetPassword_ResetPassword_mvc_TranslationsResources, tradershub_ForgotAndResetPasswordController, tradershub_ForgotAndResetPassword_ResetPassword_mvc_controller_SendNewPassword_reset_password_payloadJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_ForgotAndResetPassword_ResetPassword_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -874,5 +874,22 @@ define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$controller.SendNewPa
             verification_code: $parameters.VerificationCode,
             new_password: $parameters.NewPassword
         })
+    };
+});
+
+
+define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "kOrypI4zEkCt9ac3Ju1B1Q#Value": "Réinitialiser mon mot de passe",
+        "dyHdmnqwXUiccPCTPcJsdg#Value": "Réinitialiser le mot de passe"
+    };
+});
+
+define("tradershub.ForgotAndResetPassword.ResetPassword.mvc$translationsResources", ["exports", "tradershub.ForgotAndResetPassword.ResetPassword.mvc$translationsResources.fr-FR"], function(exports, tradershub_ForgotAndResetPassword_ResetPassword_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_ForgotAndResetPassword_ResetPassword_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

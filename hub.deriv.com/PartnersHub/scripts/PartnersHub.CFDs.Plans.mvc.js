@@ -287,7 +287,7 @@ define("PartnersHub.CFDs.Plans.mvc$view", ["@outsystems/runtime-core-js", "Partn
                                             _widgetRecordProvider: widgetsRecordProvider
                                         }, React.createElement(OSWidgets.Expression, {
                                             style: "to-description",
-                                            value: (("Earn when your clients trade on a " + model.variables.titleIn) + " account."),
+                                            value: ((OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1", "Earn when your clients trade on a ") + model.variables.titleIn) + OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("y+zwjIEM6EG8K95g4EkklA#ValueExpression.153852865.1", " account.")),
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "6"
@@ -919,6 +919,68 @@ define("PartnersHub.CFDs.Plans.mvc$controller", ["@outsystems/runtime-core-js", 
 });
 
 
-define("PartnersHub.CFDs.Plans.mvc$translationsResources", ["exports"], function(exports) {
-    return {};
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "اربح عندما يتداول عملاؤك على"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.de-DE", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "Verdienen Sie, wenn Ihre Kunden mit einem"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.es-ES", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "Gana cuando tus clientes operan en una",
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.153852865.1": "cuenta"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "Faites des gains lorsque vos clients tradent sur un"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.it-IT", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "Guadagna quando i tuoi clienti fanno trading su"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources.pt-PT", [], function() {
+    return {
+        "y+zwjIEM6EG8K95g4EkklA#ValueExpression.-486072707.1": "Ganhe quando os seus clientes negociarem numa"
+    };
+});
+
+define("PartnersHub.CFDs.Plans.mvc$translationsResources", ["exports", "PartnersHub.CFDs.Plans.mvc$translationsResources.ar-001", "PartnersHub.CFDs.Plans.mvc$translationsResources.de-DE", "PartnersHub.CFDs.Plans.mvc$translationsResources.es-ES", "PartnersHub.CFDs.Plans.mvc$translationsResources.fr-FR", "PartnersHub.CFDs.Plans.mvc$translationsResources.it-IT", "PartnersHub.CFDs.Plans.mvc$translationsResources.pt-PT"], function(exports, PartnersHub_CFDs_Plans_mvc_translationsResources_ar001, PartnersHub_CFDs_Plans_mvc_translationsResources_deDE, PartnersHub_CFDs_Plans_mvc_translationsResources_esES, PartnersHub_CFDs_Plans_mvc_translationsResources_frFR, PartnersHub_CFDs_Plans_mvc_translationsResources_itIT, PartnersHub_CFDs_Plans_mvc_translationsResources_ptPT) {
+    return {
+        "ar-001": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
+        "de-DE": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_deDE,
+            "isRTL": false
+        },
+        "es-ES": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_esES,
+            "isRTL": false
+        },
+        "fr-FR": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_frFR,
+            "isRTL": false
+        },
+        "it-IT": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_itIT,
+            "isRTL": false
+        },
+        "pt-PT": {
+            "translations": PartnersHub_CFDs_Plans_mvc_translationsResources_ptPT,
+            "isRTL": false
+        }
+    };
 });

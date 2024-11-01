@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel) {
+define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.controller$TINValidations", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel, tradershubController) {
     var OS = OSRuntimeCore;
 
 
@@ -12,7 +12,10 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", [
                     }, false, tradershubModel.RL_10436c71a703b5c08e6ed74c34052e0a),
                     this.attr("IsCountrySelectorPopupOpen", "isCountrySelectorPopupOpenVar", "IsCountrySelectorPopupOpen", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false)
+                    }, false),
+                    this.attr("TINValidationsResponse", "tINValidationsResponseVar", "TINValidationsResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_8011e4cc4d4f7bb6f204cedde99885f1Structure());
+                    }, false, tradershubModel.ST_8011e4cc4d4f7bb6f204cedde99885f1Structure)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -55,7 +58,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", [
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_model, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, tradershub_Common_CountryOfTaxResidenceSelector_mvc_view) {
+define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$model", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "OutSystemsUI.Interaction.InputWithIcon.mvc$view", "tradershub.Common.CountryOfTaxResidenceSelector.mvc$view", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.controller$TINValidations", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_model, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets, OutSystemsUI_Interaction_InputWithIcon_mvc_view, tradershub_Common_CountryOfTaxResidenceSelector_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -109,7 +112,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
             var _this = this;
 
 
-            return "Employment details | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("0rK82E5ELUGWAt438LMshQ#TitleExpression.1571453000.1", "Employment details | Deriv");
         }
 
         internalRender() {
@@ -210,7 +213,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                             extendedProperties: {
                                 style: "font-size: 18px; font-style: normal; font-weight: 700; line-height: normal;"
                             },
-                            text: ["Employment details"],
+                            text: [$text(getTranslation("p+_xQizsGk2ycU2im806yA#Value", "Employment details"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -242,7 +245,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                             extendedProperties: {
                                 style: "color: #333; font-style: normal; font-weight: 700; text-decoration: underline;"
                             },
-                            text: ["Skip"],
+                            text: [$text(getTranslation("whfLQWHd4kWoMpsFqiCuJg#Value", "Skip"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "7"
@@ -271,7 +274,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                             extendedProperties: {
                                 style: "margin-bottom: 0px;"
                             },
-                            text: ["Country of tax residence"],
+                            text: [$text(getTranslation("sIti02rdk0SUqtm_huV6CA#Value", "Country of tax residence"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "10"
@@ -380,7 +383,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                 uuid: "15"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Tax identification number"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("SDAz2eej7kKk2dlZUvZTQA#Value", "Tax identification number"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService,
                                 validationParentId: idService.getId("Form")
@@ -453,10 +456,10 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                     uuid: "20"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, "I confirm that my tax information is accurate and complete.")), $if(!(model.widgets.get(idService.getId("TaxIDConfirmationCheckbox")).validAttr), false, this, function() {
+                            }, $text(getTranslation("xElRVABJckWYpqQKe3AYDw#Value", "I confirm that my tax information is accurate and complete.")))), $if(!(model.widgets.get(idService.getId("TaxIDConfirmationCheckbox")).validAttr), false, this, function() {
                                 return [React.createElement(OSWidgets.Text, {
                                     style: "text-primary",
-                                    text: ["This is required."],
+                                    text: [$text(getTranslation("isWmNsmdLEW1wfFg_Hf_DA#Value", "This is required."))],
                                     _idProps: {
                                         service: idService,
                                         uuid: "21"
@@ -502,7 +505,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                 uuid: "23"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Next"))), React.createElement(OSWidgets.Popup, {
+                        }, $text(getTranslation("rCVIeWryX0mkEeuLZFiPaw#Value", "Next"))))), React.createElement(OSWidgets.Popup, {
                             showPopup: model.variables.isCountrySelectorPopupOpenVar,
                             style: "popup-dialog popup-dialog__mobile",
                             _idProps: {
@@ -556,7 +559,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                 style: "font-size: 18px; font-weight: bold;"
                             },
                             style: "margin-left-base",
-                            text: ["Country of tax residence"],
+                            text: [$text(getTranslation("ShgNhbHOO0yw0oREmi8uGg#Value", "Country of tax residence"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "29"
@@ -599,10 +602,10 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
                                     controller.handleError(ex);
                                 },
                                 onClickCountry$Action: function(residenceIn, labelIn) {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.countryOfTaxResidenceSelectorOnClickCountry$Action(residenceIn, labelIn, controller.callContext(eventHandlerContext));
-
-                                    ;
+                                    return Promise.resolve().then(function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        return controller.countryOfTaxResidenceSelectorOnClickCountry$Action(residenceIn, labelIn, controller.callContext(eventHandlerContext));
+                                    });;
                                 }
                             },
                             _validationProps: {
@@ -625,12 +628,12 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$view", ["
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SkipOnClick.RudderStackJS", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.ValidateJS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SkipOnClick_RudderStackJS, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_ValidateJS) {
+define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$translationsResources", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SkipOnClick.RudderStackJS", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.ValidateJS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$ST_f41b21ee1ca377ae619742cd5408a376Structure", "tradershub.model$ST_0690f5116aa54a9a733230ed909c87fbStructure", "tradershub.model$ST_d0797dfc77615b3a25728769b9f01e76Structure", "tradershub.model$ST_87555d90f21aa57fd03a9d7e779d31e3Structure", "tradershub.model$ST_739ced57b6317085dd90ed93a3159f3eStructure", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_f95d89703009688d0282052da4de0dc3", "tradershub.model$ST_2848cd79cb87a073a52246b673b32b79Structure", "tradershub.model$ST_8e51c0579a0eeb9a2bb60e1b5bc699e3Structure", "tradershub.controller$TINValidations", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure", "tradershub.model$ST_2437043bbd31c030b06d37eb045b623aStructure", "tradershub.model$ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_TranslationsResources, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SkipOnClick_RudderStackJS, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_ValidateJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -669,26 +672,36 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
+                            return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("OnReady");
                                 callContext = controller.callContext(callContext);
+                                var tINValidationsVar = new OS.DataTypes.VariableHolder();
                                 var listFilterVar = new OS.DataTypes.VariableHolder();
-                                // Execute Action: ListFilter
-                                listFilterVar.value = OS.SystemActions.listFilter(model.variables.residenceListVar, function(p) {
-                                    return ((((tradershubClientVariables.getRealSignupTaxResidence()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? ((p.valueAttr === tradershubClientVariables.getRealSignupTaxResidence())) : ((p.valueAttr === tradershubClientVariables.getSelectedResidence())));
-                                }, callContext);
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: ListFilter
+                                    listFilterVar.value = OS.SystemActions.listFilter(model.variables.residenceListVar, function(p) {
+                                        return ((((tradershubClientVariables.getRealSignupTaxResidence()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) ? ((p.valueAttr === tradershubClientVariables.getRealSignupTaxResidence())) : ((p.valueAttr === tradershubClientVariables.getSelectedResidence())));
+                                    }, callContext);
 
-                                // RealSignupTaxResidenceLabel = ListFilter.FilteredList.Current.Text
-                                tradershubClientVariables.setRealSignupTaxResidenceLabel(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).textAttr);
-                                // RealSignupTaxResidence = ListFilter.FilteredList.Current.Value
-                                tradershubClientVariables.setRealSignupTaxResidence(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).valueAttr);
-                            } finally {
+                                    // RealSignupTaxResidenceLabel = ListFilter.FilteredList.Current.Text
+                                    tradershubClientVariables.setRealSignupTaxResidenceLabel(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).textAttr);
+                                    // RealSignupTaxResidence = ListFilter.FilteredList.Current.Value
+                                    tradershubClientVariables.setRealSignupTaxResidence(listFilterVar.value.filteredListOut.getCurrent(callContext.iterationContext).valueAttr);
+                                    // Execute Action: TINValidations
+                                    model.flush();
+                                    return tradershubController.default.tINValidations$Action(tradershubClientVariables.getRealSignupTaxResidence(), callContext).then(function(value) {
+                                        tINValidationsVar.value = value;
+                                    }).then(function() {
+                                        // TINValidationsResponse = TINValidations.Response
+                                        model.variables.tINValidationsResponseVar = tINValidationsVar.value.responseOut;
+                                    });
+                                });
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
@@ -714,25 +727,35 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
+                            return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("CountryOfTaxResidenceSelectorOnClickCountry");
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.CountryOfTaxResidenceSelectorOnClickCountry$vars"))());
                                 vars.value.residenceInLocal = residenceIn;
                                 vars.value.labelInLocal = labelIn;
-                                // RealSignupTaxResidence = Residence
-                                tradershubClientVariables.setRealSignupTaxResidence(vars.value.residenceInLocal);
-                                // RealSignupTaxResidenceLabel = Label
-                                tradershubClientVariables.setRealSignupTaxResidenceLabel(vars.value.labelInLocal);
-                                // IsCountrySelectorPopupOpen = False
-                                model.variables.isCountrySelectorPopupOpenVar = false;
-                            } finally {
+                                var tINValidationsVar = new OS.DataTypes.VariableHolder();
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // RealSignupTaxResidence = Residence
+                                    tradershubClientVariables.setRealSignupTaxResidence(vars.value.residenceInLocal);
+                                    // RealSignupTaxResidenceLabel = Label
+                                    tradershubClientVariables.setRealSignupTaxResidenceLabel(vars.value.labelInLocal);
+                                    // IsCountrySelectorPopupOpen = False
+                                    model.variables.isCountrySelectorPopupOpenVar = false;
+                                    // Execute Action: TINValidations
+                                    model.flush();
+                                    return tradershubController.default.tINValidations$Action(tradershubClientVariables.getRealSignupTaxResidence(), callContext).then(function(value) {
+                                        tINValidationsVar.value = value;
+                                    }).then(function() {
+                                        // TINValidationsResponse = TINValidations.Response
+                                        model.variables.tINValidationsResponseVar = tINValidationsVar.value.responseOut;
+                                    });
+                                });
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
@@ -857,8 +880,10 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                     }
 
                                 }, 1);
-                                // RealSignupSkippedEmploymentTaxDetails = True
-                                tradershubClientVariables.setRealSignupSkippedEmploymentTaxDetails(true);
+                                // RealSignupTIDNumber = NullTextIdentifier
+                                tradershubClientVariables.setRealSignupTIDNumber(OS.BuiltinFunctions.nullTextIdentifier());
+                                // RealSignupTaxIDConfirmation = False
+                                tradershubClientVariables.setRealSignupTaxIDConfirmation(false);
                                 // Destination: /tradershub/AddressDetails
                                 return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "address-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                             } finally {
@@ -897,8 +922,11 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                 controller.ensureControllerAlive("SaveOnClick");
                                 callContext = controller.callContext(callContext);
                                 var validateJSResult = new OS.DataTypes.VariableHolder();
+                                var jSONSerializeTINValidationsVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                                 var jSONDeserializeEmploymentDetailsValidationErrorsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_2437043bbd31c030b06d37eb045b623aStructure))());
                                 var jSONDeserializeEmploymentStatusValidFieldsVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.ST_ab9963fdfdd5d4ab71d52ec3f27aa094Structure))());
+                                // JSON Serialize: JSONSerializeTINValidations
+                                jSONSerializeTINValidationsVar.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.tINValidationsResponseVar, false, false);
                                 validateJSResult.value = OS.Logger.startActiveSpan("Validate", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "Validate");
@@ -912,7 +940,7 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                         return controller.safeExecuteJSNode(tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_controller_SaveOnClick_ValidateJS, "Validate", "SaveOnClick", {
                                             EmployementStatus: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupEmployementStatus(), OS.DataTypes.DataTypes.Text),
                                             TIDNumber: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupTIDNumber(), OS.DataTypes.DataTypes.Text),
-                                            ResidenceList: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRawResidenceListResponse(), OS.DataTypes.DataTypes.Text),
+                                            Validations: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeTINValidationsVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
                                             TaxResidenceCountry: OS.DataConversion.JSNodeParamConverter.to(((((tradershubClientVariables.getRealSignupTaxResidence()) !== (""))) ? (tradershubClientVariables.getRealSignupTaxResidence()) : (tradershubClientVariables.getSelectedResidence())), OS.DataTypes.DataTypes.Text),
                                             TaxIDConfirmation: OS.DataConversion.JSNodeParamConverter.to((tradershubClientVariables.getRealSignupTaxIDConfirmation() ? "True" : "False"), OS.DataTypes.DataTypes.Text),
                                             ValidationErrors: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
@@ -963,10 +991,10 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                                         }
 
                                     }, 1);
-                                    // RealSignupCurrentStep = 3
-                                    tradershubClientVariables.setRealSignupCurrentStep(3);
-                                    // RealSignupSkippedEmploymentTaxDetails = False
-                                    tradershubClientVariables.setRealSignupSkippedEmploymentTaxDetails(false);
+                                    // RealSignupNoTaxInformation = False
+                                    tradershubClientVariables.setRealSignupNoTaxInformation(false);
+                                    // RealSignupPassedStepCount = If
+                                    tradershubClientVariables.setRealSignupPassedStepCount(((tradershubClientVariables.getRealSignupIsIDVSupported()) ? (4) : (3)));
                                     // Destination: /tradershub/AddressDetails
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "address-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
@@ -1037,15 +1065,14 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -1061,15 +1088,14 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
+                    return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._countryOfTaxResidenceSelectorOnClickCountry$Action, callContext, residenceIn, labelIn);
-                    } finally {
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -1359,8 +1385,8 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
 
 define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controller.SaveOnClick.ValidateJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const residenceList = (JSON.parse($parameters.ResidenceList)).residence_list;
-        const tinFormat = residenceList.find((resident) => resident.value === $parameters.TaxResidenceCountry)?.tin_format || [];
+        const invalidPatterns = JSON.parse($parameters.Validations)?.tin_validations?.invalid_patterns ?? []
+        const tinFormat = JSON.parse($parameters.Validations)?.tin_validations?.tin_format ?? []
 
         const payload = {
             TaxResidenceCountry: $parameters.TaxResidenceCountry,
@@ -1372,8 +1398,17 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
         const validationSchema = yup.object().shape({
             TaxResidenceCountry: yup.string().required('Tax residence country is required.'),
             TIDNumber: yup.string().max(25, "Tax Identification Number can't be longer than 25 characters.")
+                .matches(/^(?!^$|\s+)[A-Za-z0-9.\/\s-]{0,25}$/, {
+                    excludeEmptyString: true,
+                    message: 'Only letters, numbers, space, hyphen, period, and forward slash are allowed.',
+                })
                 .test("tin-format", "Tax identification number format is incorrect.", value => {
                     if (!value) return true;
+
+                    if (invalidPatterns.length && invalidPatterns.some(format => RegExp(format).test(value))) {
+                        return false
+                    }
+
                     if (tinFormat.length) {
                         return tinFormat.some(format => RegExp(format).test(value))
                     }
@@ -1393,11 +1428,32 @@ define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$controlle
             errors,
             validFields
         } = validate(validationSchema, payload);
-
-
         $parameters.ValidationErrors = JSON.stringify(errors)
-
         $parameters.ValidFields = JSON.stringify(validFields)
+    };
+});
 
+
+define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "ShgNhbHOO0yw0oREmi8uGg#Value": "Pays de résidence fiscale",
+        "rCVIeWryX0mkEeuLZFiPaw#Value": "Suivant",
+        "isWmNsmdLEW1wfFg_Hf_DA#Value": "Ceci est requis.",
+        "xElRVABJckWYpqQKe3AYDw#Value": "Je confirme que mes informations fiscales sont exactes et complètes.",
+        "SDAz2eej7kKk2dlZUvZTQA#Value": "Numéro d\'identification fiscale",
+        "sIti02rdk0SUqtm_huV6CA#Value": "Pays de résidence fiscale",
+        "whfLQWHd4kWoMpsFqiCuJg#Value": "Passer",
+        "p+_xQizsGk2ycU2im806yA#Value": "Détails de l\'emploi",
+        "0rK82E5ELUGWAt438LMshQ#Title": "Détails de l\'emploi | Deriv",
+        "0rK82E5ELUGWAt438LMshQ#TitleExpression.1571453000.1": "Détails de l\'emploi | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationMobile.EmploymentDetailsForm.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationMobile_EmploymentDetailsForm_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

@@ -146,7 +146,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
             var _this = this;
 
 
-            return "Set a new password";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("TNAEDlc4s0i1nQQFHUByLA#TitleExpression.-787762664.1", "Set a new password");
         }
 
         internalRender() {
@@ -253,7 +253,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                 uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Reset password"), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("RyWkZ2V37k6kDAl2adJqXw#Value", "Reset password"))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "margin-top-s",
@@ -272,7 +272,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                 uuid: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "If the entered email is correct, we\'ll send a verification code to that email.", React.createElement("br"), "Please enter the code below to verify your identity.", React.createElement("br")))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("k4KVmCe6QEaS0B56phl+9g#Value", "If the entered email is correct, we\'ll send a verification code to that email.\nPlease enter the code below to verify your identity.\n"))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             visible: true,
@@ -327,7 +327,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                             uuid: "12"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Email")];
+                                    }, $text(getTranslation("QL1mqWwGjE2zCHgcaf2iCA#Value", "Email")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OSWidgets.Input, {
@@ -402,7 +402,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                             uuid: "16"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Verification code")];
+                                    }, $text(getTranslation("fyHM5Gx3wkWMLqJccQoLnw#Value", "Verification code")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OSWidgets.Input, {
@@ -485,7 +485,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                             uuid: "20"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "New password")];
+                                    }, $text(getTranslation("WrZQ2WIh0UejDSX42KwiwA#Value", "New password")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OutSystemsUI_Interaction_InputWithIcon_mvc_view, {
@@ -667,7 +667,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                             uuid: "29"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Confirm password")];
+                                    }, $text(getTranslation("D8SnzXdRCEuo2QnLs_vGRw#Value", "Confirm password")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OutSystemsUI_Interaction_InputWithIcon_mvc_view, {
@@ -850,7 +850,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                             uuid: "38"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "Save password")];
+                                    }), $text(getTranslation("lDd0coklNEO+7t7X5YyfQA#Value", "Save password")))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(model.variables.isButtonEnabledVar)]
@@ -867,7 +867,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                 uuid: "39"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Not in the right place?", React.createElement(OSWidgets.Link, {
+                        }, $text(getTranslation("U+g_NOruNkeUZxEnphvXbQ#Value", "Not in the right place?")), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             extendedProperties: {
                                 tabIndex: "5",
@@ -884,7 +884,7 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
                                 uuid: "40"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Go to login."))))];
+                        }, $text(getTranslation("4LDnfyb9g0GaneMelrpuhg#Value", "Go to login."))))))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables.isButtonEnabledVar), asPrimitiveValue(model.variables.isExecutingVar), asPrimitiveValue(model.variables.confirmPasswordVar), asPrimitiveValue(model.variables.isConfirmPasswordVisibleVar), asPrimitiveValue(model.variables.newPasswordVar), asPrimitiveValue(model.variables.isPasswordVisibleVar), asPrimitiveValue(model.variables.verificationCodeIn), asPrimitiveValue(model.variables.emailIn)]
@@ -894,12 +894,12 @@ define("tradershub.Common.RecoverPasswordReset.mvc$view", ["@outsystems/runtime-
 
     return View;
 });
-define("tradershub.Common.RecoverPasswordReset.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "tradershub.controller$DoLogin", "System_.model$FinishResetPasswordResultRec", "tradershub.referencesHealth$System_"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.RecoverPasswordReset.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.RecoverPasswordReset.mvc$translationsResources", "tradershub.Common.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$ShowPassword", "tradershub.controller$DoLogin", "System_.model$FinishResetPasswordResultRec", "tradershub.referencesHealth$System_"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_RecoverPasswordReset_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_RecoverPasswordReset_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -1597,4 +1597,30 @@ define("tradershub.Common.RecoverPasswordReset.mvc$controller", ["@outsystems/ru
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.RecoverPasswordReset.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "4LDnfyb9g0GaneMelrpuhg#Value": "Aller à la connexion.",
+        "U+g_NOruNkeUZxEnphvXbQ#Value": "Pas au bon endroit ?",
+        "lDd0coklNEO+7t7X5YyfQA#Value": "Enregistrer le mot de passe",
+        "D8SnzXdRCEuo2QnLs_vGRw#Value": "Confirmer le mot de passe",
+        "WrZQ2WIh0UejDSX42KwiwA#Value": "Nouveau mot de passe",
+        "fyHM5Gx3wkWMLqJccQoLnw#Value": "Code de vérification",
+        "QL1mqWwGjE2zCHgcaf2iCA#Value": "Email",
+        "k4KVmCe6QEaS0B56phl+9g#Value": "Si l\'adresse e-mail saisie est correcte, nous enverrons un code de vérification à cette adresse. Veuillez entrer le code ci-dessous pour vérifier votre identité.",
+        "RyWkZ2V37k6kDAl2adJqXw#Value": "Réinitialiser le mot de passe",
+        "TNAEDlc4s0i1nQQFHUByLA#Title": "Définir un nouveau mot de passe",
+        "TNAEDlc4s0i1nQQFHUByLA#TitleExpression.-787762664.1": "Définir un nouveau mot de passe"
+    };
+});
+
+define("tradershub.Common.RecoverPasswordReset.mvc$translationsResources", ["exports", "tradershub.Common.RecoverPasswordReset.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_RecoverPasswordReset_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_RecoverPasswordReset_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

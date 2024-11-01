@@ -1,8 +1,6 @@
 define("SharedUtilities.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "7c6899bc-58cf-4ca1-ae7a-761245ed915a",
         applicationName: "SharedUtilities",
         userProviderName: "Users",
@@ -18,10 +16,9 @@ define("SharedUtilities.appDefinition", ["@outsystems/runtime-core-js"], functio
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        frontendBuildWorkerVersion: "vv18.35.0",
+        buildSDKVersion: "v17.1688.1.0",
+        clientRuntimeVersion: "6.16.5",
         useESM: false,
         appVersion: "24"
     };

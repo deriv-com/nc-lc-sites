@@ -759,7 +759,7 @@ define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.m
 
 define("PartnersHub.PhoneNumberVerification.VerifyEmailPhoneNumberVerification.mvc$translationsResources.es-ES", [], function() {
     return {
-        "v5+MWDj2dkSNxfDF9HQMGA#Value": "Ingrese el código o haga clic en el enlace del correo electrónico para verificar que la cuenta le pertenece.",
+        "v5+MWDj2dkSNxfDF9HQMGA#Value": "Ingresa el código o haga clic en el enlace del correo electrónico para verificar que la cuenta te pertenece.",
         "Q5xGGMg4_Umu6dd_rTYEew#Value": "Hemos enviado un código de verificación a",
         "B3lrFIwzEE6kXtLKNxbdzQ#Value": "Confirma que eres tú"
     };

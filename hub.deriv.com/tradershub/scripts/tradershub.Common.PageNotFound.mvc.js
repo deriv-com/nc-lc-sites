@@ -101,7 +101,7 @@ define("tradershub.Common.PageNotFound.mvc$view", ["@outsystems/runtime-core-js"
             var _this = this;
 
 
-            return "404 - Page Not Found";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("UNSUqsFml02eH_fgK5zqeA#TitleExpression.1091591615.1", "404 - Page Not Found");
         }
 
         internalRender() {
@@ -208,13 +208,13 @@ define("tradershub.Common.PageNotFound.mvc$view", ["@outsystems/runtime-core-js"
                                         extendedProperties: {
                                             style: "font-size: 24px; font-weight: bold;"
                                         },
-                                        text: [React.createElement("br"), React.createElement("br"), "We couldn’t find that page", React.createElement("br")],
+                                        text: [$text(getTranslation("stOWzv_CDkKd6Bu+k37e7w#Value", "\n\nWe couldn’t find that page\n"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "5"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "It may not be available in your country, or a broken link has brought you here.", "We couldn’t find that page", React.createElement("br"), "It may not be available in your country, or a broken link has brought you here.", React.createElement("br"), React.createElement("br"))];
+                                    }), $text(getTranslation("Og0eU7daFE28e51Sg0JB6w#Value", "It may not be available in your country, or a broken link has brought you here.")), $text(getTranslation("qP+gusWZAEy3JrN6qtLweQ#Value", "We couldn’t find that page\nIt may not be available in your country, or a broken link has brought you here.\n\n")))];
                                 })
                             },
                             _dependencies: []
@@ -222,18 +222,18 @@ define("tradershub.Common.PageNotFound.mvc$view", ["@outsystems/runtime-core-js"
                     })
                 },
                 _dependencies: []
-            }), "ton");
+            }), $text(getTranslation("EzNNGKNDJkS1g44eYuUg0A#Value", "ton")));
         }
     }
 
     return View;
 });
-define("tradershub.Common.PageNotFound.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.PageNotFound.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.PageNotFound.mvc$translationsResources", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_PageNotFound_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_PageNotFound_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -343,4 +343,25 @@ define("tradershub.Common.PageNotFound.mvc$controller", ["@outsystems/runtime-co
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.PageNotFound.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "EzNNGKNDJkS1g44eYuUg0A#Value": "ton",
+        "qP+gusWZAEy3JrN6qtLweQ#Value": "Nous n\'avons pas pu trouver cette page. Elle n\'est peut-être pas disponible dans votre pays, ou un lien brisé vous a amené ici.",
+        "Og0eU7daFE28e51Sg0JB6w#Value": "Il se peut qu\'il ne soit pas disponible dans votre pays, ou qu\'un lien brisé vous ait amené ici.",
+        "stOWzv_CDkKd6Bu+k37e7w#Value": "Nous n\'avons pas pu trouver cette page",
+        "UNSUqsFml02eH_fgK5zqeA#Title": "404 - Page non trouvée",
+        "UNSUqsFml02eH_fgK5zqeA#TitleExpression.1091591615.1": "404 - Page non trouvée"
+    };
+});
+
+define("tradershub.Common.PageNotFound.mvc$translationsResources", ["exports", "tradershub.Common.PageNotFound.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_PageNotFound_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_PageNotFound_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

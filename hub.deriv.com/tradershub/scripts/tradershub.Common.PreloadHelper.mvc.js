@@ -1,4 +1,4 @@
-define("tradershub.Common.PreloadHelper.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.LayoutBlank.mvc$model", "tradershub.Layouts.SignupLayoutTopMenu.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_LayoutBlank_mvcModel, tradershub_Layouts_SignupLayoutTopMenu_mvcModel) {
+define("tradershub.Common.PreloadHelper.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model"], function(OSRuntimeCore, tradershubModel) {
     var OS = OSRuntimeCore;
 
 
@@ -33,11 +33,7 @@ define("tradershub.Common.PreloadHelper.mvc$model", ["@outsystems/runtime-core-j
         }
 
         static get hasValidationWidgets() {
-            if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (tradershub_Layouts_LayoutBlank_mvcModel.hasValidationWidgets || tradershub_Layouts_SignupLayoutTopMenu_mvcModel.hasValidationWidgets);
-            }
-
-            return Model._hasValidationWidgetsValue;
+            return false;
         }
         setInputs(inputs) {}
 
@@ -47,7 +43,7 @@ define("tradershub.Common.PreloadHelper.mvc$model", ["@outsystems/runtime-core-j
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Common.PreloadHelper.mvc$model", "tradershub.Common.PreloadHelper.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.LayoutBlank.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.Layouts.SignupLayoutTopMenu.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Common_PreloadHelper_mvc_model, tradershub_Common_PreloadHelper_mvc_controller, tradershubClientVariables, tradershub_Layouts_LayoutBlank_mvc_view, OSWidgets, tradershub_Layouts_SignupLayoutTopMenu_mvc_view) {
+define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Common.PreloadHelper.mvc$model", "tradershub.Common.PreloadHelper.mvc$controller", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Common_PreloadHelper_mvc_model, tradershub_Common_PreloadHelper_mvc_controller, tradershubClientVariables) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -70,7 +66,7 @@ define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css", "css/OutSystemsUI.OutSystemsUI.css", "css/tradershub.AccountCreation.css", "css/tradershub.AccountCreation.extra.css"];
+            return ["css/OutSystemsUI.OutSystemsUI.css", "css/tradershub.AccountCreation.css", "css/tradershub.AccountCreation.extra.css"];
         }
 
         static getJsDependencies() {
@@ -78,7 +74,7 @@ define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_LayoutBlank_mvc_view, tradershub_Layouts_SignupLayoutTopMenu_mvc_view];
+            return [];
         }
 
         get modelFactory() {
@@ -101,7 +97,7 @@ define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js
             var _this = this;
 
 
-            return "Preload Helper";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("PqK8goSVIkaCNMh+p4RLQQ#TitleExpression.1885050341.1", "Preload Helper");
         }
 
         internalRender() {
@@ -117,95 +113,18 @@ define("tradershub.Common.PreloadHelper.mvc$view", ["@outsystems/runtime-core-js
             var getTranslation = View.getTranslation;
             var _this = this;
 
-            return React.createElement("div", this.getRootNodeProperties(), React.createElement(tradershub_Layouts_LayoutBlank_mvc_view, {
-                getOwnerSpan: function() {
-                    return _this.getChildSpan("render");
-                },
-                getOwnerDisposeSpan: function() {
-                    return _this.getChildSpan("destroy");
-                },
-                inputs: {},
-                events: {
-                    _handleError: function(ex) {
-                        controller.handleError(ex);
-                    }
-                },
-                _validationProps: {
-                    validationService: validationService
-                },
-                _idProps: {
-                    service: idService,
-                    uuid: "0",
-                    alias: "1"
-                },
-                _widgetRecordProvider: widgetsRecordProvider,
-                placeholders: {
-                    content: new PlaceholderContent(function() {
-                        return [React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "1"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "text-align: center;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "2"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(tradershub_Layouts_SignupLayoutTopMenu_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {
-                                HasLink: true
-                            },
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "3",
-                                alias: "2"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            placeholders: {
-                                mainContent: PlaceholderContent.Empty
-                            },
-                            _dependencies: []
-                        })];
-                    })
-                },
-                _dependencies: []
-            }), "ton");
+            return React.createElement("div", this.getRootNodeProperties());
         }
     }
 
     return View;
 });
-define("tradershub.Common.PreloadHelper.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.PreloadHelper.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.PreloadHelper.mvc$translationsResources", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_PreloadHelper_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_PreloadHelper_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -315,4 +234,21 @@ define("tradershub.Common.PreloadHelper.mvc$controller", ["@outsystems/runtime-c
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.PreloadHelper.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "PqK8goSVIkaCNMh+p4RLQQ#Title": "Aide de préchargement",
+        "PqK8goSVIkaCNMh+p4RLQQ#TitleExpression.1885050341.1": "Aide de préchargement"
+    };
+});
+
+define("tradershub.Common.PreloadHelper.mvc$translationsResources", ["exports", "tradershub.Common.PreloadHelper.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_PreloadHelper_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_PreloadHelper_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

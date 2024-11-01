@@ -195,7 +195,7 @@ define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$view", ["@outsyst
                 extendedProperties: {
                     style: "color: #000000; font-size: 18px; font-weight: bold;"
                 },
-                text: ["Financial assessment"],
+                text: [$text(getTranslation("8xrddWfZQkOTola2E8E7dg#Value", "Financial assessment"))],
                 _idProps: {
                     service: idService,
                     uuid: "3"
@@ -238,7 +238,7 @@ define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$view", ["@outsyst
                         extendedProperties: {
                             style: "color: #EC3F3F;"
                         },
-                        text: ["* This is required."],
+                        text: [$text(getTranslation("bnbPcWlzJUahOYrXLe3SHw#Value", "* This is required."))],
                         _idProps: {
                             service: idService,
                             uuid: "7"
@@ -271,12 +271,12 @@ define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$view", ["@outsyst
 
     return View;
 });
-define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlow_AssessmentBlock_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_FinancialAssessmentFlow_AssessmentBlock_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -386,4 +386,21 @@ define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$controller", ["@o
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "bnbPcWlzJUahOYrXLe3SHw#Value": "Ceci est requis.",
+        "8xrddWfZQkOTola2E8E7dg#Value": "Évaluation financière"
+    };
+});
+
+define("tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$translationsResources", ["exports", "tradershub.FinancialAssessmentFlow.AssessmentBlock.mvc$translationsResources.fr-FR"], function(exports, tradershub_FinancialAssessmentFlow_AssessmentBlock_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_FinancialAssessmentFlow_AssessmentBlock_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

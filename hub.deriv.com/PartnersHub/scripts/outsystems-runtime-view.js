@@ -1,16 +1,16 @@
 (function(global, factory) {
     if (typeof define === "function" && define.amd) {
-        define("@outsystems/runtime-view-js", ["exports", "@outsystems/runtime-core-js", "react", "react-dom", "react-router-dom", "react-router-dom", "react-router"], factory);
+        define("@outsystems/runtime-view-js", ["exports", "@outsystems/runtime-core-js", "react", "react-dom", "react-router-dom", "react-router-dom"], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports, require("@outsystems/runtime-core-js"), require("react"), require("react-dom"), require("react-router-dom"), require("react-router-dom"), require("react-router"));
+        factory(exports, require("@outsystems/runtime-core-js"), require("react"), require("react-dom"), require("react-router-dom"), require("react-router-dom"));
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod.exports, global.runtimeCoreJs, global.react, global.reactDom, global.deprecatedReactRouterDom, global.v6ReactRouterDom, global.v6ReactRouter);
+        factory(mod.exports, global.runtimeCoreJs, global.react, global.reactDom, global.deprecatedReactRouterDom, global.v6ReactRouterDom);
         global.outsystemsRuntimeViewJs = mod.exports;
     }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function(_exports, _runtimeCoreJs, _react, _reactDom, _deprecatedReactRouterDom, _v6ReactRouterDom, _v6ReactRouter) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function(_exports, _runtimeCoreJs, _react, _reactDom, _deprecatedReactRouterDom, _v6ReactRouterDom) {
     "use strict";
 
     Object.defineProperty(_exports, "__esModule", {
@@ -18,7 +18,7 @@
     });
     _exports.routerV6 = _exports.fc = _exports.WidgetHelpers = _exports.Widget = _exports.VirtualizedScrollViewer = _exports.Version = _exports.ScrollExtensions = _exports.Router = _exports.RouteComponents = _exports.Portal = _exports.HtmlTags = _exports.FeedbackMessage = _exports.BaseView = _exports.AnimatedGroup = void 0;
     _react = _interopRequireWildcard(_react);
-    var O = _react;
+    var N = _react;
     _reactDom = _interopRequireWildcard(_reactDom);
     var B = _reactDom;
 
@@ -48,7 +48,7 @@
                 i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
             } return n.default = e, t && t.set(e, n), n;
     }
-    var se, ae;
+    var ie, se;
     ! function(e) {
         const t = /(auto|scroll)/;
         let n;
@@ -103,7 +103,7 @@
             const o = e;
             n && !isNaN(n) && (r && (n += o.scrollTop), o.scrollTop = n), t && !isNaN(t) && (r && (t += o.scrollLeft), o.scrollLeft = t);
         };
-    }(se || (se = {})),
+    }(ie || (ie = {})),
     function(e) {
         e.assign = function(e) {
             if (null === e) throw new TypeError("Cannot convert undefined or null to object");
@@ -115,11 +115,11 @@
             }
             return e;
         };
-    }(ae || (ae = {}));
-    var le = {
+    }(se || (se = {}));
+    var ae = {
             exports: {}
         },
-        ce = {};
+        le = {};
     Object.getOwnPropertySymbols, Object.prototype.hasOwnProperty, Object.prototype.propertyIsEnumerable;
     ! function() {
         try {
@@ -147,52 +147,52 @@
      * This source code is licensed under the MIT license found in the
      * LICENSE file in the root directory of this source tree.
      */
-    var de = _react.default,
-        ue = 60103;
-    if (ce.Fragment = 60107, "function" == typeof Symbol && Symbol.for) {
-        var pe = Symbol.for;
-        ue = pe("react.element"), ce.Fragment = pe("react.fragment");
+    var ce = _react.default,
+        de = 60103;
+    if (le.Fragment = 60107, "function" == typeof Symbol && Symbol.for) {
+        var ue = Symbol.for;
+        de = ue("react.element"), le.Fragment = ue("react.fragment");
     }
-    var he = de.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,
-        me = Object.prototype.hasOwnProperty,
-        ve = {
+    var pe = ce.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,
+        he = Object.prototype.hasOwnProperty,
+        me = {
             key: !0,
             ref: !0,
             __self: !0,
             __source: !0
         };
 
-    function fe(e, t, n) {
+    function ve(e, t, n) {
         var r,
             o = {},
             i = null,
             s = null;
-        for (r in void 0 !== n && (i = "" + n), void 0 !== t.key && (i = "" + t.key), void 0 !== t.ref && (s = t.ref), t) me.call(t, r) && !ve.hasOwnProperty(r) && (o[r] = t[r]);
+        for (r in void 0 !== n && (i = "" + n), void 0 !== t.key && (i = "" + t.key), void 0 !== t.ref && (s = t.ref), t) he.call(t, r) && !me.hasOwnProperty(r) && (o[r] = t[r]);
         if (e && e.defaultProps)
             for (r in t = e.defaultProps) void 0 === o[r] && (o[r] = t[r]);
         return {
-            $$typeof: ue,
+            $$typeof: de,
             type: e,
             key: i,
             ref: s,
             props: o,
-            _owner: he.current
+            _owner: pe.current
         };
     }
-    ce.jsx = fe, ce.jsxs = fe, le.exports = ce;
-    var ge = le.exports;
+    le.jsx = ve, le.jsxs = ve, ae.exports = le;
+    var fe = ae.exports;
 
-    function Se() {
-        return Se = Object.assign ? Object.assign.bind() : function(e) {
+    function ge() {
+        return ge = Object.assign ? Object.assign.bind() : function(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var r in n)({}).hasOwnProperty.call(n, r) && (e[r] = n[r]);
             }
             return e;
-        }, Se.apply(null, arguments);
+        }, ge.apply(null, arguments);
     }
 
-    function ye(e, t) {
+    function Se(e, t) {
         if (null == e) return {};
         var n = {};
         for (var r in e)
@@ -203,24 +203,24 @@
         return n;
     }
 
-    function we(e, t) {
-        return we = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function(e, t) {
+    function ye(e, t) {
+        return ye = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function(e, t) {
             return e.__proto__ = t, e;
-        }, we(e, t);
+        }, ye(e, t);
     }
 
-    function Ce(e, t) {
-        e.prototype = Object.create(t.prototype), e.prototype.constructor = e, we(e, t);
+    function we(e, t) {
+        e.prototype = Object.create(t.prototype), e.prototype.constructor = e, ye(e, t);
     }
-    var Ee = {
+    var Ce = {
         exports: {}
     };
 
-    function be() {}
+    function Ee() {}
 
-    function xe() {}
-    xe.resetWarningCache = be;
-    Ee.exports = function() {
+    function be() {}
+    be.resetWarningCache = Ee;
+    Ce.exports = function() {
         function e(e, t, n, r, o, i) {
             if ("SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED" !== i) {
                 var s = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
@@ -252,39 +252,39 @@
             oneOfType: t,
             shape: t,
             exact: t,
-            checkPropTypes: xe,
-            resetWarningCache: be
+            checkPropTypes: be,
+            resetWarningCache: Ee
         };
         return n.PropTypes = n, n;
     }();
-    var Ne = Ee.exports;
+    var xe = Ce.exports;
 
     function Oe(e, t) {
         return e.replace(new RegExp("(^|\\s)" + t + "(?:\\s|$)", "g"), "$1").replace(/\s+/g, " ").replace(/^\s*|\s*$/g, "");
     }
-    var Re = !1,
-        Ie = _react.default.createContext(null),
-        De = function(e) {
+    var Ne = !1,
+        Re = _react.default.createContext(null),
+        Ie = function(e) {
             return e.scrollTop;
         },
-        Pe = "unmounted",
-        Me = "exited",
-        Te = "entering",
-        Le = "entered",
-        ke = "exiting",
+        De = "unmounted",
+        Pe = "exited",
+        Me = "entering",
+        Te = "entered",
+        Le = "exiting",
         je = function(e) {
             function t(t, n) {
                 var r;
                 r = e.call(this, t, n) || this;
                 var o,
                     i = n && !n.isMounting ? t.enter : t.appear;
-                return r.appearStatus = null, t.in ? i ? (o = Me, r.appearStatus = Te) : o = Le : o = t.unmountOnExit || t.mountOnEnter ? Pe : Me, r.state = {
+                return r.appearStatus = null, t.in ? i ? (o = Pe, r.appearStatus = Me) : o = Te : o = t.unmountOnExit || t.mountOnEnter ? De : Pe, r.state = {
                     status: o
                 }, r.nextCallback = null, r;
             }
-            Ce(t, e), t.getDerivedStateFromProps = function(e, t) {
-                return e.in && t.status === Pe ? {
-                    status: Me
+            we(t, e), t.getDerivedStateFromProps = function(e, t) {
+                return e.in && t.status === De ? {
+                    status: Pe
                 } : null;
             };
             var n = t.prototype;
@@ -294,7 +294,7 @@
                 var t = null;
                 if (e !== this.props) {
                     var n = this.state.status;
-                    this.props.in ? n !== Te && n !== Le && (t = Te) : n !== Te && n !== Le || (t = ke);
+                    this.props.in ? n !== Me && n !== Te && (t = Me) : n !== Me && n !== Te || (t = Le);
                 }
                 this.updateStatus(!1, t);
             }, n.componentWillUnmount = function() {
@@ -311,15 +311,15 @@
                 };
             }, n.updateStatus = function(e, t) {
                 if (void 0 === e && (e = !1), null !== t) {
-                    if (this.cancelNextCallback(), t === Te) {
+                    if (this.cancelNextCallback(), t === Me) {
                         if (this.props.unmountOnExit || this.props.mountOnEnter) {
                             var n = this.props.nodeRef ? this.props.nodeRef.current : _reactDom.default.findDOMNode(this);
-                            n && De(n);
+                            n && Ie(n);
                         }
                         this.performEnter(e);
                     } else this.performExit();
-                } else this.props.unmountOnExit && this.state.status === Me && this.setState({
-                    status: Pe
+                } else this.props.unmountOnExit && this.state.status === Pe && this.setState({
+                    status: De
                 });
             }, n.performEnter = function(e) {
                 var t = this,
@@ -330,16 +330,16 @@
                     s = o[1],
                     a = this.getTimeouts(),
                     l = r ? a.appear : a.enter;
-                !e && !n || Re ? this.safeSetState({
-                    status: Le
+                !e && !n || Ne ? this.safeSetState({
+                    status: Te
                 }, function() {
                     t.props.onEntered(i);
                 }) : (this.props.onEnter(i, s), this.safeSetState({
-                    status: Te
+                    status: Me
                 }, function() {
                     t.props.onEntering(i, s), t.onTransitionEnd(l, function() {
                         t.safeSetState({
-                            status: Le
+                            status: Te
                         }, function() {
                             t.props.onEntered(i, s);
                         });
@@ -350,18 +350,18 @@
                     t = this.props.exit,
                     n = this.getTimeouts(),
                     r = this.props.nodeRef ? void 0 : _reactDom.default.findDOMNode(this);
-                t && !Re ? (this.props.onExit(r), this.safeSetState({
-                    status: ke
+                t && !Ne ? (this.props.onExit(r), this.safeSetState({
+                    status: Le
                 }, function() {
                     e.props.onExiting(r), e.onTransitionEnd(n.exit, function() {
                         e.safeSetState({
-                            status: Me
+                            status: Pe
                         }, function() {
                             e.props.onExited(r);
                         });
                     });
                 })) : this.safeSetState({
-                    status: Me
+                    status: Pe
                 }, function() {
                     e.props.onExited(r);
                 });
@@ -392,33 +392,33 @@
                 } else setTimeout(this.nextCallback, 0);
             }, n.render = function() {
                 var e = this.state.status;
-                if (e === Pe) return null;
+                if (e === De) return null;
                 var t = this.props,
                     n = t.children;
                 t.in, t.mountOnEnter, t.unmountOnExit, t.appear, t.enter, t.exit, t.timeout, t.addEndListener, t.onEnter, t.onEntering, t.onEntered, t.onExit, t.onExiting, t.onExited, t.nodeRef;
-                var r = ye(t, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
-                return _react.default.createElement(Ie.Provider, {
+                var r = Se(t, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+                return _react.default.createElement(Re.Provider, {
                     value: null
                 }, "function" == typeof n ? n(e, r) : _react.default.cloneElement(_react.default.Children.only(n), r));
             }, t;
         }(_react.default.Component);
 
-    function Ae() {}
-    je.contextType = Ie, je.propTypes = {}, je.defaultProps = {
+    function ke() {}
+    je.contextType = Re, je.propTypes = {}, je.defaultProps = {
         in: !1,
         mountOnEnter: !1,
         unmountOnExit: !1,
         appear: !1,
         enter: !0,
         exit: !0,
-        onEnter: Ae,
-        onEntering: Ae,
-        onEntered: Ae,
-        onExit: Ae,
-        onExiting: Ae,
-        onExited: Ae
-    }, je.UNMOUNTED = Pe, je.EXITED = Me, je.ENTERING = Te, je.ENTERED = Le, je.EXITING = ke;
-    var We = function(e, t) {
+        onEnter: ke,
+        onEntering: ke,
+        onEntered: ke,
+        onExit: ke,
+        onExiting: ke,
+        onExited: ke
+    }, je.UNMOUNTED = De, je.EXITED = Pe, je.ENTERING = Me, je.ENTERED = Te, je.EXITING = Le;
+    var Ae = function(e, t) {
             return e && t && t.split(" ").forEach(function(t) {
                 return r = t, void((n = e).classList ? n.classList.add(r) : function(e, t) {
                     return e.classList ? !!t && e.classList.contains(t) : -1 !== (" " + (e.className.baseVal || e.className) + " ").indexOf(" " + t + " ");
@@ -426,13 +426,13 @@
                 var n, r;
             });
         },
-        Fe = function(e, t) {
+        We = function(e, t) {
             return e && t && t.split(" ").forEach(function(t) {
                 return r = t, void((n = e).classList ? n.classList.remove(r) : "string" == typeof n.className ? n.className = Oe(n.className, r) : n.setAttribute("class", Oe(n.className && n.className.baseVal || "", r)));
                 var n, r;
             });
         },
-        Ue = function(e) {
+        Fe = function(e) {
             function t() {
                 for (var t, n = arguments.length, r = new Array(n), o = 0; o < n; o++) r[o] = arguments[o];
                 return (t = e.call.apply(e, [this].concat(r)) || this).appliedClasses = {
@@ -476,23 +476,23 @@
                     };
                 }, t;
             }
-            Ce(t, e);
+            we(t, e);
             var n = t.prototype;
             return n.addClass = function(e, t, n) {
                 var r = this.getClassNames(t)[n + "ClassName"],
                     o = this.getClassNames("enter").doneClassName;
-                "appear" === t && "done" === n && o && (r += " " + o), "active" === n && e && De(e), r && (this.appliedClasses[t][n] = r, We(e, r));
+                "appear" === t && "done" === n && o && (r += " " + o), "active" === n && e && Ie(e), r && (this.appliedClasses[t][n] = r, Ae(e, r));
             }, n.removeClasses = function(e, t) {
                 var n = this.appliedClasses[t],
                     r = n.base,
                     o = n.active,
                     i = n.done;
-                this.appliedClasses[t] = {}, r && Fe(e, r), o && Fe(e, o), i && Fe(e, i);
+                this.appliedClasses[t] = {}, r && We(e, r), o && We(e, o), i && We(e, i);
             }, n.render = function() {
                 var e = this.props;
                 e.classNames;
-                var t = ye(e, ["classNames"]);
-                return _react.default.createElement(je, Se({}, t, {
+                var t = Se(e, ["classNames"]);
+                return _react.default.createElement(je, ge({}, t, {
                     onEnter: this.onEnter,
                     onEntered: this.onEntered,
                     onEntering: this.onEntering,
@@ -503,7 +503,7 @@
             }, t;
         }(_react.default.Component);
 
-    function _e(e, t) {
+    function Ue(e, t) {
         var n = Object.create(null);
         return e && _react.Children.map(e, function(e) {
             return e;
@@ -514,12 +514,12 @@
         }), n;
     }
 
-    function He(e, t, n) {
+    function _e(e, t, n) {
         return null != n[t] ? n[t] : e.props[t];
     }
 
-    function Ve(e, t, n) {
-        var r = _e(e.children),
+    function He(e, t, n) {
+        var r = Ue(e.children),
             o = function(e, t) {
                 function n(n) {
                     return n in t ? t[n] : e[n];
@@ -551,28 +551,28 @@
                 !l || a && !d ? l || !a || d ? l && a && (0, _react.isValidElement)(c) && (o[i] = (0, _react.cloneElement)(s, {
                     onExited: n.bind(null, s),
                     in: c.props.in,
-                    exit: He(s, "exit", e),
-                    enter: He(s, "enter", e)
+                    exit: _e(s, "exit", e),
+                    enter: _e(s, "enter", e)
                 })) : o[i] = (0, _react.cloneElement)(s, {
                     in: !1
                 }) : o[i] = (0, _react.cloneElement)(s, {
                     onExited: n.bind(null, s),
                     in: !0,
-                    exit: He(s, "exit", e),
-                    enter: He(s, "enter", e)
+                    exit: _e(s, "exit", e),
+                    enter: _e(s, "enter", e)
                 });
             }
         }), o;
     }
-    Ue.defaultProps = {
+    Fe.defaultProps = {
         classNames: ""
-    }, Ue.propTypes = {};
-    var ze = Object.values || function(e) {
+    }, Fe.propTypes = {};
+    var Ve = Object.values || function(e) {
             return Object.keys(e).map(function(t) {
                 return e[t];
             });
         },
-        Be = function(e) {
+        ze = function(e) {
             function t(t, n) {
                 var r,
                     o = (r = e.call(this, t, n) || this).handleExited.bind(function(e) {
@@ -587,7 +587,7 @@
                     firstRender: !0
                 }, r;
             }
-            Ce(t, e);
+            we(t, e);
             var n = t.prototype;
             return n.componentDidMount = function() {
                 this.mounted = !0, this.setState({
@@ -603,21 +603,21 @@
                     o = t.children,
                     i = t.handleExited;
                 return {
-                    children: t.firstRender ? (n = e, r = i, _e(n.children, function(e) {
+                    children: t.firstRender ? (n = e, r = i, Ue(n.children, function(e) {
                         return (0, _react.cloneElement)(e, {
                             onExited: r.bind(null, e),
                             in: !0,
-                            appear: He(e, "appear", n),
-                            enter: He(e, "enter", n),
-                            exit: He(e, "exit", n)
+                            appear: _e(e, "appear", n),
+                            enter: _e(e, "enter", n),
+                            exit: _e(e, "exit", n)
                         });
-                    })) : Ve(e, o, i),
+                    })) : He(e, o, i),
                     firstRender: !1
                 };
             }, n.handleExited = function(e, t) {
-                var n = _e(this.props.children);
+                var n = Ue(this.props.children);
                 e.key in n || (e.props.onExited && e.props.onExited(t), this.mounted && this.setState(function(t) {
-                    var n = Se({}, t.children);
+                    var n = ge({}, t.children);
                     return delete n[e.key], {
                         children: n
                     };
@@ -626,25 +626,25 @@
                 var e = this.props,
                     t = e.component,
                     n = e.childFactory,
-                    r = ye(e, ["component", "childFactory"]),
+                    r = Se(e, ["component", "childFactory"]),
                     o = this.state.contextValue,
-                    i = ze(this.state.children).map(n);
-                return delete r.appear, delete r.enter, delete r.exit, null === t ? _react.default.createElement(Ie.Provider, {
+                    i = Ve(this.state.children).map(n);
+                return delete r.appear, delete r.enter, delete r.exit, null === t ? _react.default.createElement(Re.Provider, {
                     value: o
-                }, i) : _react.default.createElement(Ie.Provider, {
+                }, i) : _react.default.createElement(Re.Provider, {
                     value: o
                 }, _react.default.createElement(t, r, i));
             }, t;
         }(_react.default.Component);
-    Be.propTypes = {}, Be.defaultProps = {
+    ze.propTypes = {}, ze.defaultProps = {
         component: "div",
         childFactory: function(e) {
             return e;
         }
     };
-    let $e = class extends O.Component {
+    let Be = class extends N.Component {
         getAnimatedItem() {
-            return Ge;
+            return $e;
         }
         render() {
             const e = this.getAnimatedItem(),
@@ -660,7 +660,7 @@
                     exitActive: `${this.props.transitionName}-leave-active`,
                     exitDone: `${this.props.transitionName}-leave-done`
                 },
-                r = O.Children.map(this.props.children, r => ge.jsx(e, {
+                r = N.Children.map(this.props.children, r => fe.jsx(e, {
                     enter: !t,
                     exit: !t,
                     classNames: n,
@@ -674,25 +674,25 @@
                     },
                     children: r
                 }, r.key));
-            return ge.jsx(Be, {
+            return fe.jsx(ze, {
                 component: this.props.component,
                 className: this.props.className,
                 children: r
             });
         }
     };
-    class Ge extends O.Component {
+    class $e extends N.Component {
         render() {
-            return ge.jsx(Ue, Object.assign({}, this.props));
+            return fe.jsx(Fe, Object.assign({}, this.props));
         }
     }
-    const Ke = "px";
-    class qe extends $e {
+    const Ge = "px";
+    class Ke extends Be {
         getAnimatedItem() {
-            return Je;
+            return qe;
         }
     }
-    class Je extends O.Component {
+    class qe extends N.Component {
         constructor() {
             super(...arguments), this.previousWidth = 0, this.previousHeight = 0, this.previousStyleWidth = "", this.previousStyleHeight = "", this.storeStyleSize = e => {
                 this.previousStyleWidth = e.style.width, this.previousStyleHeight = e.style.height;
@@ -707,12 +707,12 @@
                 if (!this.props.enter) return;
                 this.props.onEntering && this.props.onEntering(), this.storeStyleSize(e);
                 const t = e.getBoundingClientRect();
-                t.width !== this.previousWidth && (e.style.width = this.previousWidth + Ke), t.height !== this.previousHeight && (e.style.height = this.previousHeight + Ke);
+                t.width !== this.previousWidth && (e.style.width = this.previousWidth + Ge), t.height !== this.previousHeight && (e.style.height = this.previousHeight + Ge);
             }, this.onExit = e => {
                 if (!this.props.exit) return;
                 this.props.onExit && this.props.onExit(), this.storeStyleSize(e);
                 const t = e.getBoundingClientRect();
-                e.style.width = t.width + Ke, e.style.height = t.height + Ke;
+                e.style.width = t.width + Ge, e.style.height = t.height + Ge;
             }, this.onExiting = e => {
                 this.props.exit && (this.props.onExiting && this.props.onExiting(), this.restorePreviousStyleSize(e));
             }, this.onExited = e => {
@@ -720,7 +720,7 @@
             };
         }
         render() {
-            return ge.jsx(Ue, Object.assign({}, this.props, {
+            return fe.jsx(Fe, Object.assign({}, this.props, {
                 onEnter: this.onEnter,
                 onEntering: this.onEntering,
                 onExit: this.onExit,
@@ -729,33 +729,33 @@
             }));
         }
     }
-    const Qe = void 0 === document.createElement("p").style.flex ? "-webkit-flex" : "flex";
-    class Xe extends O.Component {
+    const Je = void 0 === document.createElement("p").style.flex ? "-webkit-flex" : "flex";
+    class Qe extends N.Component {
         render() {
             const e = "100%",
                 t = {
-                    display: Qe
+                    display: Je
                 },
                 {
                     scrollDirection: n,
                     dimension: r,
                     childKey: o
                 } = this.props;
-            return n === se.ScrollDirection.Horizontal ? (t.width = r + "px", t.height = e) : n === se.ScrollDirection.Vertical && (t.height = r + "px", t.width = e), ge.jsx("script", {
+            return n === ie.ScrollDirection.Horizontal ? (t.width = r + "px", t.height = e) : n === ie.ScrollDirection.Vertical && (t.height = r + "px", t.width = e), fe.jsx("script", {
                 style: t
             }, o);
         }
     }
-    const Ye = "scroll",
-        Ze = "resize",
-        et = "px",
-        tt = 10;
-    class nt extends O.Component {
+    const Xe = "scroll",
+        Ye = "resize",
+        Ze = "px",
+        et = 10;
+    class tt extends N.Component {
         constructor(e, t) {
             var _this;
-            super(e, t), _this = this, this.scrollDirection = se.ScrollDirection.Vertical, this.hasPendingPropertiesUpdate = !1, this.pendingScrollAsyncUpdateHandle = 0, this.isScrollOngoing = !1, this.isComponentInitialized = !1, this.getScrollHostInfo = () => (this.scrollHostInfo || (this.scrollHostInfo = se.getScrollHostInfo(this.itemsContainer)), this.scrollHostInfo), this.getScrollInfo = () => {
+            super(e, t), _this = this, this.scrollDirection = ie.ScrollDirection.Vertical, this.hasPendingPropertiesUpdate = !1, this.pendingScrollAsyncUpdateHandle = 0, this.isScrollOngoing = !1, this.isComponentInitialized = !1, this.getScrollHostInfo = () => (this.scrollHostInfo || (this.scrollHostInfo = ie.getScrollHostInfo(this.itemsContainer)), this.scrollHostInfo), this.getScrollInfo = () => {
                 const e = this.getScrollHostInfo().scrollHost,
-                    t = se.getScrollInfo(e),
+                    t = ie.getScrollInfo(e),
                     n = {
                         scrollHost: e,
                         scrollOffset: t ? this.getDimension(t.scroll.y, t.scroll.x) : 0,
@@ -773,22 +773,22 @@
                 if (this.isDisposed) return;
                 this.scrollHostInfo = null;
                 const e = this.getScrollHostInfo();
-                e.scrollHost.addEventListener(Ye, this.onScroll, {
+                e.scrollHost.addEventListener(Xe, this.onScroll, {
                     capture: !0
-                }), window.addEventListener(Ze, this.onScroll), this.scrollDirection = e.scrollDirection;
+                }), window.addEventListener(Ye, this.onScroll), this.scrollDirection = e.scrollDirection;
             }, this.removeScrollHandler = () => {
-                this.getScrollHostInfo().scrollHost.removeEventListener(Ye, this.onScroll), window.removeEventListener(Ze, this.onScroll);
+                this.getScrollHostInfo().scrollHost.removeEventListener(Xe, this.onScroll), window.removeEventListener(Ye, this.onScroll);
             }, this.onWindowScrollOrResize = () => {
                 this.removeWindowScrollHandlers(), this.addScrollHandler();
             }, this.removeWindowScrollHandlers = () => {
-                window.removeEventListener(Ye, this.onWindowScrollOrResize, !0), window.removeEventListener(Ze, this.onWindowScrollOrResize, !0);
+                window.removeEventListener(Xe, this.onWindowScrollOrResize, !0), window.removeEventListener(Ye, this.onWindowScrollOrResize, !0);
             }, this.setPadHeight = (e, t) => {
                 const n = null == e ? void 0 : e.item(0),
                     r = null == e ? void 0 : e.item(t - 1);
-                n && (n.style.height = this.state.scrollOffset + et), r && (r.style.height = this.getRemainingSize(this.state.firstRenderedItemIndex, this.state.lastRenderedItemIndex) + et);
+                n && (n.style.height = this.state.scrollOffset + Ze), r && (r.style.height = this.getRemainingSize(this.state.firstRenderedItemIndex, this.state.lastRenderedItemIndex) + Ze);
             }, this.renderOffScreenBuffer = () => {
                 var e;
-                if (this.scrollDirection !== se.ScrollDirection.Vertical) return void(this.state.offScreenItemsCount > 0 && console.warn("Virtualization attempting offscreen items with horizontal stacking..."));
+                if (this.scrollDirection !== ie.ScrollDirection.Vertical) return void(this.state.offScreenItemsCount > 0 && console.warn("Virtualization attempting offscreen items with horizontal stacking..."));
                 this.itemsContainer && (this.itemsContainer.style.position = "relative");
                 const t = null === (e = this.itemsContainer) || void 0 === e ? void 0 : e.children,
                     n = this.itemsContainer ? this.itemsContainer.childElementCount : 0;
@@ -805,7 +805,7 @@
                 this.pendingScrollAsyncUpdateHandle || (this.pendingScrollAsyncUpdateHandle = requestAnimationFrame(() => {
                     if (!this.isDisposed) {
                         try {
-                            const t = this.getCurrentScrollViewerState(this.props.length, this.state, this.props, this.itemsContainer, e.type !== Ze);
+                            const t = this.getCurrentScrollViewerState(this.props.length, this.state, this.props, this.itemsContainer, e.type !== Ye);
                             t !== this.state && (this.isScrollOngoing = !0, this.setState(t, () => this.isScrollOngoing = !1));
                         } finally {
                             this.pendingScrollAsyncUpdateHandle = 0;
@@ -816,7 +816,7 @@
             }, this.getRemainingSize = (e, t) => {
                 const n = Math.min(this.props.length, t - e + 1);
                 let r = 0;
-                const o = Math.max(tt, this.state.averageItemSize);
+                const o = Math.max(et, this.state.averageItemSize);
                 if (t < this.props.length - 1) {
                     r = o * this.props.length - (o * (n - this.state.offScreenItemsCount) + this.state.scrollOffset);
                 }
@@ -826,10 +826,10 @@
                     r = this.state.scrollOffset,
                     o = this.getRemainingSize(e, t),
                     i = this.props.renderItems(e, n),
-                    s = Math.max(tt, this.state.averageItemSize),
+                    s = Math.max(et, this.state.averageItemSize),
                     a = [];
-                return this.scrollDirection !== se.ScrollDirection.None && a.push(this.renderSpacer("first-spacer", r, s, e => this.firstSpacer = e)), i && i.length > 0 ? i.forEach(e => a.push(e)) : a.push(i), this.scrollDirection !== se.ScrollDirection.None && a.push(this.renderSpacer("last-spacer", o, s, e => this.lastSpacer = e)), this.props.renderWrapper(a);
-            }, this.renderSpacer = (e, t, n, r) => ge.jsx(Xe, {
+                return this.scrollDirection !== ie.ScrollDirection.None && a.push(this.renderSpacer("first-spacer", r, s, e => this.firstSpacer = e)), i && i.length > 0 ? i.forEach(e => a.push(e)) : a.push(i), this.scrollDirection !== ie.ScrollDirection.None && a.push(this.renderSpacer("last-spacer", o, s, e => this.lastSpacer = e)), this.props.renderWrapper(a);
+            }, this.renderSpacer = (e, t, n, r) => fe.jsx(Qe, {
                 childKey: e,
                 dimension: t,
                 averageItemSize: n,
@@ -857,7 +857,7 @@
                         top: t.top,
                         bottom: t.bottom
                     };
-                return this.scrollDirection === se.ScrollDirection.Horizontal ? n.width < tt && (n.width = tt, n.right = n.left + n.width) : this.scrollDirection === se.ScrollDirection.Vertical && n.height < tt && (n.height = tt, n.bottom = n.top + n.height), n;
+                return this.scrollDirection === ie.ScrollDirection.Horizontal ? n.width < et && (n.width = et, n.right = n.left + n.width) : this.scrollDirection === ie.ScrollDirection.Vertical && n.height < et && (n.height = et, n.bottom = n.top + n.height), n;
             }, this.areElementsStacked = e => {
                 if (e.length < 2) return !1;
                 const t = e[e.length - 2],
@@ -908,7 +908,7 @@
                 let d = !1;
                 a.scrollOffset < a.viewportSize / 4 && (t.firstRenderedItemIndex > 0 || t.offScreenItemsCount > 0) && (d = !0);
                 const u = r ? _this.getListItems(r) : [];
-                if (u.length >= 2 && !_this.areElementsStacked(u) && (_this.scrollDirection = se.ScrollDirection.None), _this.scrollDirection !== se.ScrollDirection.Vertical || u.length < 2) return {
+                if (u.length >= 2 && !_this.areElementsStacked(u) && (_this.scrollDirection = ie.ScrollDirection.None), _this.scrollDirection !== ie.ScrollDirection.Vertical || u.length < 2) return {
                     firstRenderedItemIndex: 0,
                     lastRenderedItemIndex: Math.max(1, n.length - 1),
                     averageItemSize: 0,
@@ -931,17 +931,17 @@
                     E = Math.min(e, S + w + C + m);
                 let b = t.scrollOffset,
                     x = t.firstRenderedItemIndex;
-                const N = a.viewportLowerBound - l,
-                    O = null === (s = null == r ? void 0 : r.firstElementChild) || void 0 === s ? void 0 : s.getBoundingClientRect(),
-                    R = O ? _this.getDimension(O.bottom, O.right) : 0;
-                if (!d && Math.abs(R - N) <= f) {
-                    if (R < N) {
-                        const e = _this.countItemsAndSizeThatFitIn(v, Math.abs(N - R));
+                const O = a.viewportLowerBound - l,
+                    N = null === (s = null == r ? void 0 : r.firstElementChild) || void 0 === s ? void 0 : s.getBoundingClientRect(),
+                    R = N ? _this.getDimension(N.bottom, N.right) : 0;
+                if (!d && Math.abs(R - O) <= f) {
+                    if (R < O) {
+                        const e = _this.countItemsAndSizeThatFitIn(v, Math.abs(O - R));
                         if (e.count > 0 && (b += e.size, m += e.count, m > y)) {
                             x += m - y, m = y;
                         }
-                    } else if (R > N) {
-                        let e = Math.abs(R - N);
+                    } else if (R > O) {
+                        let e = Math.abs(R - O);
                         const t = h.sizes.slice(0, m),
                             n = _this.countItemsAndSizeThatFitIn(t, e, !0, !0);
                         if (n.count > 0 && (b = Math.max(0, b - n.size), m -= n.count, e -= n.size), e > 0) {
@@ -955,7 +955,7 @@
                         }
                     }
                 } else {
-                    let t = O ? _this.getDimension(O.top, O.left) : 0;
+                    let t = N ? _this.getDimension(N.top, N.left) : 0;
                     t = t < a.viewportLowerBound ? Math.abs(t - a.viewportLowerBound) : 0, x = Math.max(0, Math.floor(t / g) - 1), m = 0, x > 0 && (x = Math.max(0, x - Math.ceil(l / g))), x = Math.max(0, Math.min(x, e - 1 - E)), b = x * g;
                 }
                 0 === x && 0 === m && (b = 0);
@@ -984,14 +984,14 @@
                     if (!i) return;
                     const s = this.getDimension(0, r),
                         a = this.getDimension(r, 0);
-                    se.setScrollOffset(n, s, a, !1);
+                    ie.setScrollOffset(n, s, a, !1);
                 });
             }, this.scrollToOffset = (e, t) => {
                 this.internalSetScrollOffset(() => {
                     const n = this.getScrollInfo().scrollHost,
                         r = this.getDimension(0, e),
                         o = this.getDimension(t, 0);
-                    se.setScrollOffset(n, r, o);
+                    ie.setScrollOffset(n, r, o);
                 });
             }, this.setScrollOffset = this.scrollToOffset, this.internalSetScrollOffset = e => {
                 this.isInitialized ? e() : this.setPendingScroll = e;
@@ -1006,7 +1006,7 @@
         }
         componentDidMount() {
             this.itemsContainer = B.findDOMNode(this), requestAnimationFrame(() => {
-                this.isDisposed || (window.addEventListener(Ye, this.onWindowScrollOrResize, !0), window.addEventListener(Ze, this.onWindowScrollOrResize, !0));
+                this.isDisposed || (window.addEventListener(Xe, this.onWindowScrollOrResize, !0), window.addEventListener(Ye, this.onWindowScrollOrResize, !0));
             }), this.setState(this.getCurrentScrollViewerState(this.props.length, this.state, this.props));
         }
         componentWillUnmount() {
@@ -1032,7 +1032,7 @@
             return this.renderList(this.state.firstRenderedItemIndex, this.state.lastRenderedItemIndex);
         }
         getDimension(e, t) {
-            return this.scrollDirection === se.ScrollDirection.Vertical ? e : t;
+            return this.scrollDirection === ie.ScrollDirection.Vertical ? e : t;
         }
         get isScrolling() {
             return this.isScrollOngoing;
@@ -1044,17 +1044,17 @@
             return !this.itemsContainer;
         }
     }
-    _exports.VirtualizedScrollViewer = nt;
-    var rt = _exports.AnimatedGroup = Object.freeze({
+    _exports.VirtualizedScrollViewer = tt;
+    var nt = _exports.AnimatedGroup = Object.freeze({
         __proto__: null,
-        AnimatedGroup: class extends qe {
+        AnimatedGroup: class extends Ke {
             getDefaultTransitionName() {
                 return "os-animated";
             }
         }
     });
 
-    function ot(e, t, n, r) {
+    function rt(e, t, n, r) {
         return new(n || (n = Promise))(function(o, i) {
             function s(e) {
                 try {
@@ -1082,23 +1082,23 @@
         });
     }
 
-    function it(e, t, n, r) {
+    function ot(e, t, n, r) {
         if ("a" === n && !r) throw new TypeError("Private accessor was defined without a getter");
         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
         return "m" === n ? r : "a" === n ? r.call(e) : r ? r.value : t.get(e);
     }
 
-    function st(e, t, n, r, o) {
+    function it(e, t, n, r, o) {
         if ("m" === r) throw new TypeError("Private method is not writable");
         if ("a" === r && !o) throw new TypeError("Private accessor was defined without a setter");
         if ("function" == typeof t ? e !== t || !o : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
         return "a" === r ? o.call(e, n) : o ? o.value = n : t.set(e, n), n;
     }
     "function" == typeof SuppressedError && SuppressedError;
-    const at = "CSSHelper";
-    let lt = 0;
+    const st = "CSSHelper";
+    let at = 0;
 
-    function ct(e, t) {
+    function lt(e, t) {
         if (0 === e.length) return {
             loadStylesPromise: Promise.resolve(),
             triggerRemoveStyles: () => {}
@@ -1113,12 +1113,12 @@
                     a = 0;
                 t.reverse();
                 for (const l of t) {
-                    const [t, c] = dt(e, l, a);
+                    const [t, c] = ct(e, l, a);
                     if (t) {
                         s = t, o.push(t), a = c + 1;
                         continue;
                     }
-                    const d = vt(l, r, n);
+                    const d = mt(l, r, n);
                     i.push({
                         beforeElement: s,
                         element: d
@@ -1126,28 +1126,28 @@
                 }
                 return [i, o, Promise.all(r)];
             }(r, e, t);
-        ut("Adding", o);
+        dt("Adding", o);
         for (const {
                 beforeElement: e,
                 element: t
-            } of o) pt("Adding", t.id), e ? n.insertBefore(t, e) : n.appendChild(t);
-        lt += 1;
+            } of o) ut("Adding", t.id), e ? n.insertBefore(t, e) : n.appendChild(t);
+        at += 1;
         const a = function(e, t, n) {
             return () => {
-                if (lt === e) {
-                    ut("Retaining", t);
-                    for (const e of t) pt("Retaining", e.id);
-                    for (const e of n) e.parentNode && -1 === t.indexOf(e) && (pt("Removing", e.id), e.parentNode.removeChild(e));
+                if (at === e) {
+                    dt("Retaining", t);
+                    for (const e of t) ut("Retaining", e.id);
+                    for (const e of n) e.parentNode && -1 === t.indexOf(e) && (ut("Removing", e.id), e.parentNode.removeChild(e));
                 }
             };
-        }(lt, i, r);
+        }(at, i, r);
         return {
             loadStylesPromise: s,
             triggerRemoveStyles: a
         };
     }
 
-    function dt(e, t, n) {
+    function ct(e, t, n) {
         for (let r = n; r < e.length; r++) {
             const n = e[r];
             if (n.id === t) return [n, r];
@@ -1155,32 +1155,32 @@
         return [void 0, n];
     }
 
+    function dt(n, r) {
+        const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(document.baseURI);
+        _runtimeCoreJs.Logger.debug(st, `${n} ${r.length} stylesheets : document '${o}':`);
+    }
+
     function ut(n, r) {
         const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(document.baseURI);
-        _runtimeCoreJs.Logger.debug(at, `${n} ${r.length} stylesheets : document '${o}':`);
+        _runtimeCoreJs.Logger.debug(st, `${n} stylesheet '${r}' : document '${o}'`);
+    }
+    let pt = !1;
+
+    function ht(t) {
+        _runtimeCoreJs.Logger.debug(st, `Setting ignore load errors to ${t}`), pt = t;
     }
 
-    function pt(n, r) {
-        const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(document.baseURI);
-        _runtimeCoreJs.Logger.debug(at, `${n} stylesheet '${r}' : document '${o}'`);
-    }
-    let ht = !1;
-
-    function mt(t) {
-        _runtimeCoreJs.Logger.debug(at, `Setting ignore load errors to ${t}`), ht = t;
-    }
-
-    function vt(t, n, r) {
-        _runtimeCoreJs.Logger.debug(at, `Loading stylesheet '${t}'`);
+    function mt(t, n, r) {
+        _runtimeCoreJs.Logger.debug(st, `Loading stylesheet '${t}'`);
         const o = document.createElement("link");
         return o.type = "text/css", o.rel = "stylesheet", o.id = t, o.href = t, o.setAttribute("data-os", "true"), n.push(new Promise(n => {
             o.onerror = o.onabort = i => {
                 var s;
-                ht ? _runtimeCoreJs.Logger.debug(at, `Ignored error while loading stylesheet '${t}'`) : r("Error loading stylesheet: " + t, "OS-CLRT-60500"), null === (s = o.parentNode) || void 0 === s || s.removeChild(o), n(i);
+                pt ? _runtimeCoreJs.Logger.debug(st, `Ignored error while loading stylesheet '${t}'`) : r("Error loading stylesheet: " + t, "OS-CLRT-60500"), null === (s = o.parentNode) || void 0 === s || s.removeChild(o), n(i);
             }, o.onload = n;
         })), o;
     }
-    let ft = class extends O.Component {
+    let vt = class extends N.Component {
         constructor(e) {
             super(e), this.state = {
                 hasError: !1
@@ -1204,18 +1204,18 @@
             return e ? null : this.props.children;
         }
     };
-    var gt;
+    var ft;
     ! function(e) {
         e.a = "a", e.button = "button", e.div = "div", e.form = "form", e.i = "i", e.img = "img", e.input = "input", e.label = "label", e.span = "span", e.textarea = "textarea";
-    }(gt || (gt = {}));
-    var St = _exports.HtmlTags = Object.freeze({
+    }(ft || (ft = {}));
+    var gt = _exports.HtmlTags = Object.freeze({
         __proto__: null,
         get HtmlTags() {
-            return gt;
+            return ft;
         }
     });
 
-    function yt(e) {
+    function St(e) {
         const t = {};
         if (!e) return t;
         const n = e.scrollLeft,
@@ -1223,34 +1223,34 @@
         return n && (t.scrollLeft = n), r && (t.scrollTop = r), t;
     }
 
-    function wt(e, t) {
+    function yt(e, t) {
         e && (t.scrollLeft && (e.scrollLeft = t.scrollLeft), t.scrollTop && (e.scrollTop = t.scrollTop));
     }
-    var Ct,
-        Et = _exports.ScrollExtensions = Object.freeze({
+    var wt,
+        Ct = _exports.ScrollExtensions = Object.freeze({
             __proto__: null,
             getScrollHostInfo: function(e, t) {
-                return se.getScrollHostInfo(e.parentElement, t);
+                return ie.getScrollHostInfo(e.parentElement, t);
             },
             getScrollInfo: function(e) {
-                return se.getScrollInfo(e);
+                return ie.getScrollInfo(e);
             },
-            loadScrollProperties: wt,
-            serializeScrollProperties: yt,
+            loadScrollProperties: yt,
+            serializeScrollProperties: St,
             setScrollOffset: function(e, t, n) {
-                se.setScrollOffset(e, t, n);
+                ie.setScrollOffset(e, t, n);
             }
         });
 
-    function bt(e, t, n) {
+    function Et(e, t, n) {
         var r, o, i;
         return t && n && (t.setAttribute("code.function", n.codeFunction), t.setAttribute("outsystems.function.key", null !== (r = n.functionKey) && void 0 !== r ? r : ""), t.setAttribute("outsystems.function.owner.name", null !== (o = n.functionOwnerName) && void 0 !== o ? o : ""), t.setAttribute("outsystems.function.owner.key", null !== (i = n.functionOwnerKey) && void 0 !== i ? i : ""), t.setAttribute("outsystems.function.type", e), n.screen && t.setAttribute("outsystems.runtime.screen", n.screen)), t;
     }! function(e) {
         e[e.Internal = 0] = "Internal", e[e.External = 1] = "External", e[e.Client = 2] = "Client";
-    }(Ct || (Ct = {}));
-    var xt = Ct;
-    const Nt = "_screen";
-    class Ot extends O.Component {
+    }(wt || (wt = {}));
+    var bt = wt;
+    const xt = "_screen";
+    class Ot extends N.Component {
         constructor() {
             super(...arguments), this.originalNavigationKey = "";
         }
@@ -1324,13 +1324,13 @@
         }
     }
     Ot.contextTypes = {
-        getScreenStateCache: Ne.func
+        getScreenStateCache: xe.func
     };
-    class Rt extends Ot {
+    class Nt extends Ot {
         constructor(t, n) {
             super(t, n), this.onError = t => {
-                const n = Rt.isLoopError(t);
-                _runtimeCoreJs.Logger.error("View", t, n ? "OS-CLRT-60501" : "OS-CLRT-60500", t instanceof Error ? t : void 0, xt.External), n ? Rt.handleError(Rt.createRenderLoopError(this.viewName)) : (this.exception = t, this.controllerInstance.handleError(this.exception));
+                const n = Nt.isLoopError(t);
+                _runtimeCoreJs.Logger.error("View", t, n ? "OS-CLRT-60501" : "OS-CLRT-60500", t instanceof Error ? t : void 0, bt.External), n ? Nt.handleError(Nt.createRenderLoopError(this.viewName)) : (this.exception = t, this.controllerInstance.handleError(this.exception));
             };
             const r = {
                 model: t.model
@@ -1351,13 +1351,13 @@
         }
         static ifWidget(e, t, n, r, o) {
             let i, s;
-            return e ? i = r.call(n) : s = o.call(n), O.createElement(O.Fragment, null, i ? O.createElement(O.Fragment, null, ...i) : null, s ? O.createElement(O.Fragment, null, ...s) : null);
+            return e ? i = r.call(n) : s = o.call(n), N.createElement(N.Fragment, null, i ? N.createElement(N.Fragment, null, ...i) : null, s ? N.createElement(N.Fragment, null, ...s) : null);
         }
         static textWidget(e) {
             const t = [];
             if (0 !== e.length) {
                 const n = e.split("\n");
-                for (const e of n.slice(0, n.length - 1)) 0 !== e.length && t.push(e), t.push(O.createElement("br"));
+                for (const e of n.slice(0, n.length - 1)) 0 !== e.length && t.push(e), t.push(N.createElement("br"));
                 const r = n[n.length - 1];
                 0 !== r.length && t.push(r);
             }
@@ -1377,7 +1377,7 @@
             this.saveModelStateForCache();
         }
         onTransitionStart() {
-            this.transitionEventStartListenerId = null, this.pendingModel && Mt(() => {
+            this.transitionEventStartListenerId = null, this.pendingModel && Pt(() => {
                 this.pendingModel && this.onModelChanged(this.pendingModel);
             });
         }
@@ -1416,7 +1416,7 @@
         onRender() {
             const e = this.controller.fireAfterViewRender();
             e && e.catch(e => {
-                Rt.isLoopError(e) && Rt.handleError(Rt.createRenderLoopError(this.viewName, this.constructor.displayName));
+                Nt.isLoopError(e) && Nt.handleError(Nt.createRenderLoopError(this.viewName, this.constructor.displayName));
             });
         }
         onDestroy() {
@@ -1474,7 +1474,7 @@
             return new Error(`Render loop avoided. This is likely due to variables of ${t ? `block '${t}' on ` : ""}screen '${e}' being changed inside its 'On Render' event handler. Avoid changing variables inside 'On Render' event handlers.`);
         }
         render() {
-            return this.exception = void 0, ge.jsx(ft, {
+            return this.exception = void 0, fe.jsx(vt, {
                 onError: this.onError,
                 children: this.internalRender()
             });
@@ -1489,11 +1489,11 @@
             _runtimeCoreJs.ErrorHandling.handleError(e);
         }
     }
-    Rt.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
-        hasScreenRendered: Ne.func,
-        locale: Ne.string
+    Nt.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
+        hasScreenRendered: xe.func,
+        locale: xe.string
     }, Ot.contextTypes);
-    class It extends Rt {
+    class Rt extends Nt {
         get span() {
             return this.localRootSpan || this.loadLocalRootSpan(!0), this.localRootSpan;
         }
@@ -1533,7 +1533,7 @@
             return this.constructor.getChildSpanName(e);
         }
         doWithChildSpan(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : bt;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Et;
             return this.executeInChildSpan({
                 type: "main",
                 childName: e,
@@ -1542,7 +1542,7 @@
             });
         }
         doWithChildDisposeSpan(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : bt;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Et;
             return this.executeInChildSpan({
                 type: "dispose",
                 childName: e,
@@ -1562,7 +1562,7 @@
                 a = this.constructor.getSpanType({
                     disposeSpan: "dispose" === t
                 });
-            return _runtimeCoreJs.Logger.startActiveSpan(this.getChildSpanName(n), e => (e && (null == o || o(a, e, s), this.childSpans.set(n, e)), r(e)), xt.Internal, i);
+            return _runtimeCoreJs.Logger.startActiveSpan(this.getChildSpanName(n), e => (e && (null == o || o(a, e, s), this.childSpans.set(n, e)), r(e)), bt.Internal, i);
         }
         getDisposeRootSpan() {
             if (this.localDisposeRootSpan) return this.localDisposeRootSpan;
@@ -1572,8 +1572,8 @@
                     disposeSpan: !0
                 });
             if (!n || !n.codeFunction) return;
-            const o = _runtimeCoreJs.Logger.startSpan(n.codeFunction, xt.External, this.ownerDisposeSpan);
-            return this.localDisposeRootSpan = bt(r, o, n), this.localDisposeRootSpan;
+            const o = _runtimeCoreJs.Logger.startSpan(n.codeFunction, bt.External, this.ownerDisposeSpan);
+            return this.localDisposeRootSpan = Et(r, o, n), this.localDisposeRootSpan;
         }
         getChildSpan(e) {
             return this.childSpans.get(e);
@@ -1587,8 +1587,8 @@
             if (this.screenSpan && !t) return this.screenSpan;
             const r = this.getAttributes();
             if (!(null == r ? void 0 : r.codeFunction)) return;
-            const o = _runtimeCoreJs.Logger.startSpan(r.codeFunction, xt.External, n);
-            return this.screenSpan = bt(this.getSpanType(), o, r), this.screenSpan;
+            const o = _runtimeCoreJs.Logger.startSpan(r.codeFunction, bt.External, n);
+            return this.screenSpan = Et(this.getSpanType(), o, r), this.screenSpan;
         }
         render() {
             return this.doWithChildSpan("render", () => super.render());
@@ -1605,7 +1605,7 @@
             super.componentWillUnmount(), this.endLocalDisposeSpan();
         }
     }
-    class Dt extends It {
+    class It extends Rt {
         static getSpanType() {
             let {
                 disposeSpan: e = !1
@@ -1688,7 +1688,7 @@
         getRootNodeProperties() {
             return {
                 "data-block": this.constructor.displayName,
-                ref: Dt.ReferenceName,
+                ref: It.ReferenceName,
                 className: "OSBlockWidget"
             };
         }
@@ -1737,20 +1737,20 @@
             e ? super.validateWidget(e) : null === (t = this.parentValidationService) || void 0 === t || t.validate(null !== (n = this.validationParentId) && void 0 !== n ? n : void 0);
         }
         getHTMLNode() {
-            const e = this.refs[Dt.ReferenceName];
+            const e = this.refs[It.ReferenceName];
             return e && this.findDOMNode(e) || this.findDOMNode(this);
         }
     }
-    Dt.ReferenceName = "block-reference", Dt.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
-        ancestorGenerationNode: Ne.object,
-        refreshCurrentGeneration: Ne.func,
-        isGenerationUpToDate: Ne.func,
-        viewName: Ne.string
-    }, Rt.contextTypes), Dt.childContextTypes = {
-        ancestorGenerationNode: Ne.object,
-        locale: Ne.string
+    It.ReferenceName = "block-reference", It.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
+        ancestorGenerationNode: xe.object,
+        refreshCurrentGeneration: xe.func,
+        isGenerationUpToDate: xe.func,
+        viewName: xe.string
+    }, Nt.contextTypes), It.childContextTypes = {
+        ancestorGenerationNode: xe.object,
+        locale: xe.string
     };
-    class Pt extends It {
+    class Dt extends Rt {
         constructor(e, t) {
             super(e, t), this.isUnloading = !1, this.isLoadingFromHistory = !1, this.screenElement = void 0, e.controller || this.doWithChildSpan("initialize", e => {
                 try {
@@ -1761,10 +1761,10 @@
             }), this.subscribeModelChanges(), this.savePreviousModelState(), this.isLoadingFromHistory = !!e.cachedScreenState;
         }
         serializeCustomStateProperties() {
-            return yt(document.body);
+            return St(document.body);
         }
         loadCustomStateProperties(e) {
-            wt(document.body, e);
+            yt(document.body, e);
         }
         getScreenStateCache() {
             return {
@@ -1794,11 +1794,11 @@
         get idServiceProperties() {
             return {
                 service: this.idService,
-                uuid: Nt
+                uuid: xt
             };
         }
         getComponentKey() {
-            return Nt;
+            return xt;
         }
         static collectResourcesOrderedByPriority(e, t) {
             const n = {},
@@ -1811,14 +1811,14 @@
             return o(e), r;
         }
         static getJavascriptsOrderedByPriority(e) {
-            return Pt.collectResourcesOrderedByPriority(e, e => e.getJsDependencies());
+            return Dt.collectResourcesOrderedByPriority(e, e => e.getJsDependencies());
         }
         static getStylesheetsOrderedByPriority(e) {
-            return Pt.collectResourcesOrderedByPriority(e, e => e.getCssDependencies());
+            return Dt.collectResourcesOrderedByPriority(e, e => e.getCssDependencies());
         }
         componentDidMount() {
             const e = () => {
-                this.screenElement = this.findDOMNode(this), super.componentDidMount(), this.exception || (document.title = this.title, Pt.updateHTMLLang(), Pt.updateRightToLeftStyleClass(), this.refreshCurrentGeneration(), this.isLoadingFromHistory = !1, _runtimeCoreJs.ScreenStateCache.ScreenStateCache.clear(this.getScreenStateCache().navigationKey));
+                this.screenElement = this.findDOMNode(this), super.componentDidMount(), this.exception || (document.title = this.title, Dt.updateHTMLLang(), Dt.updateRightToLeftStyleClass(), this.refreshCurrentGeneration(), this.isLoadingFromHistory = !1, _runtimeCoreJs.ScreenStateCache.ScreenStateCache.clear(this.getScreenStateCache().navigationKey));
             };
             this.doWithChildSpan("ready", t => {
                 try {
@@ -1829,7 +1829,7 @@
             }), this.endLocalSpan();
         }
         componentDidUpdate() {
-            this.screenElement = this.findDOMNode(this), super.componentDidUpdate(), this.exception || (document.title = this.title, Pt.updateHTMLLang(), Pt.updateRightToLeftStyleClass(), this.refreshCurrentGeneration(), this.endLocalSpan());
+            this.screenElement = this.findDOMNode(this), super.componentDidUpdate(), this.exception || (document.title = this.title, Dt.updateHTMLLang(), Dt.updateRightToLeftStyleClass(), this.refreshCurrentGeneration(), this.endLocalSpan());
         }
         static updateHTMLLang() {
             const e = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.LocaleService);
@@ -1862,18 +1862,18 @@
             super.onNavigationStart(), this.screenElement && this.screenElement.classList.remove(_runtimeCoreJs.Public.View.ActiveScreenCssClass);
         }
         static loadResources(t, n) {
-            return ot(this, arguments, void 0, function(t, n) {
-                let r = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ct;
+            return rt(this, arguments, void 0, function(t, n) {
+                let r = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : lt;
                 let i = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _runtimeCoreJs.ScriptsManager.scheduleCustomJsLoading;
                 let s = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _runtimeCoreJs.ApplicationInfo.isWebApplication();
                 return function*() {
-                    const a = Pt.getStylesheetsOrderedByPriority(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
-                        l = Pt.getJavascriptsOrderedByPriority(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
-                        c = r(a, (t, n) => _runtimeCoreJs.Logger.error("BaseWebScreen", t, n, t instanceof Error ? t : void 0, xt.Client)),
+                    const a = Dt.getStylesheetsOrderedByPriority(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
+                        l = Dt.getJavascriptsOrderedByPriority(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
+                        c = r(a, (t, n) => _runtimeCoreJs.Logger.error("BaseWebScreen", t, n, t instanceof Error ? t : void 0, bt.Client)),
                         d = c.triggerRemoveStyles;
                     _runtimeCoreJs.EventDispatcher.EventDispatcher.listenOnce(_runtimeCoreJs.EventDispatcher.EventType.TransitionEnd, e => {
                         e === _runtimeCoreJs.EventDispatcher.TransitionEndResult.Success && d();
-                    }), yield i(l, t => _runtimeCoreJs.Logger.error("BaseWebScreen", t, "OS-CLRT-60500", t instanceof Error ? t : void 0, xt.External), {
+                    }), yield i(l, t => _runtimeCoreJs.Logger.error("BaseWebScreen", t, "OS-CLRT-60500", t instanceof Error ? t : void 0, bt.External), {
                         parentSpan: n
                     }), s && (yield c.loadStylesPromise);
                 }();
@@ -1888,44 +1888,44 @@
         }
     }
 
-    function Mt(e) {
+    function Pt(e) {
         requestAnimationFrame(() => setTimeout(e, 1));
     }
-    Pt.childContextTypes = {
-        ancestorGenerationNode: Ne.object,
-        isGenerationUpToDate: Ne.func,
-        refreshCurrentGeneration: Ne.func,
-        viewName: Ne.string,
-        getScreenStateCache: Ne.func,
-        locale: Ne.string
+    Dt.childContextTypes = {
+        ancestorGenerationNode: xe.object,
+        isGenerationUpToDate: xe.func,
+        refreshCurrentGeneration: xe.func,
+        viewName: xe.string,
+        getScreenStateCache: xe.func,
+        locale: xe.string
     };
-    var Tt = _exports.BaseView = Object.freeze({
+    var Mt = _exports.BaseView = Object.freeze({
         __proto__: null,
-        BaseWebBlock: Dt,
-        BaseWebScreen: Pt,
-        SCREEN_UUID: Nt,
-        TraceableView: It,
-        View: Rt,
+        BaseWebBlock: It,
+        BaseWebScreen: Dt,
+        SCREEN_UUID: xt,
+        TraceableView: Rt,
+        View: Nt,
         ViewComponent: Ot,
-        executeAfterPaint: Mt
+        executeAfterPaint: Pt
     });
 
-    function Lt(e) {
+    function Tt(e) {
         let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "i-default";
         if (Array.isArray(e)) {
             const n = {};
             for (let t = 0; t < e.length; t++) n["i" + t] = e[t];
-            return O.createElement(O.Fragment, {
+            return N.createElement(N.Fragment, {
                 key: t
-            }, Object.keys(n).map(e => O.createElement(O.Fragment, {
+            }, Object.keys(n).map(e => N.createElement(N.Fragment, {
                 key: e
             }, n[e])));
         }
         return e;
     }
-    var kt = _exports.WidgetHelpers = Object.freeze({
+    var Lt = _exports.WidgetHelpers = Object.freeze({
         __proto__: null,
-        wrapElements: Lt
+        wrapElements: Tt
     });
     const jt = e => {
         var t;
@@ -1977,9 +1977,9 @@
             }
         }).__hasWidgetSpec = !0, t.displayName = e.name, t;
     };
-    class At extends Ot {
+    class kt extends Ot {
         constructor(e, t) {
-            super(e, t), this.ref = O.createRef();
+            super(e, t), this.ref = N.createRef();
             const n = this.constructor;
             if (this.exception = null, this.isDisposed = !1, !n.__hasWidgetSpec) throw new Error("Invalid widget. The widget must be decorated with WidgetSpec.");
             this.props._dependencies && (this._generationNode = t.ancestorGenerationNode.addChild());
@@ -2024,7 +2024,7 @@
                 if (n > 0) {
                     const r = e.substr(0, n).trim(),
                         o = e.substr(n + 1).trim(),
-                        i = At.formatCssPropertyName(r);
+                        i = kt.formatCssPropertyName(r);
                     t[i] = _runtimeCoreJs.StringUtils.StringUtils.safeParseInt(o);
                 }
             });
@@ -2040,9 +2040,9 @@
             }
             const r = this.props.extendedProperties;
             if (r) {
-                for (const t in r) t !== At.StyleAttribute && (e[t.valueOf()] = r[t]);
-                const t = r[At.StyleAttribute];
-                t && At.fillWithStyleProperties(t, e.style);
+                for (const t in r) t !== kt.StyleAttribute && (e[t.valueOf()] = r[t]);
+                const t = r[kt.StyleAttribute];
+                t && kt.fillWithStyleProperties(t, e.style);
             }
             const o = this.props.extendedEvents;
             if (o)
@@ -2068,14 +2068,14 @@
                 }
         }
         hasOrWillHaveChildren(e) {
-            return !!e.placeholders || O.Children.count(this.props.children) > 0 || O.Children.count(e.children) > 0;
+            return !!e.placeholders || N.Children.count(this.props.children) > 0 || N.Children.count(e.children) > 0;
         }
         get displayName() {
             return this.constructor.displayName;
         }
         shouldComponentUpdate(e, t, r) {
             var o, i;
-            return !(e._dependencies || !this.hasOrWillHaveChildren(e)) || !(!this._generationNode || r.isGenerationUpToDate(this._generationNode.generation)) || !_runtimeCoreJs.ObjectExtensions.arrayShallowEquals(null !== (o = this.props._dependencies) && void 0 !== o ? o : [], null !== (i = e._dependencies) && void 0 !== i ? i : []) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.props, e, At.affectsRender) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.state, t) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.props.extendedProperties, e.extendedProperties) || this.context.locale !== r.locale;
+            return !(e._dependencies || !this.hasOrWillHaveChildren(e)) || !(!this._generationNode || r.isGenerationUpToDate(this._generationNode.generation)) || !_runtimeCoreJs.ObjectExtensions.arrayShallowEquals(null !== (o = this.props._dependencies) && void 0 !== o ? o : [], null !== (i = e._dependencies) && void 0 !== i ? i : []) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.props, e, kt.affectsRender) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.state, t) || !_runtimeCoreJs.ObjectExtensions.shallowEquals(this.props.extendedProperties, e.extendedProperties) || this.context.locale !== r.locale;
         }
         static affectsRender(e, t) {
             if ("_" === t.charAt(0)) return !1;
@@ -2098,7 +2098,7 @@
             }
         }
         executeAfterPaint(e) {
-            Mt(() => {
+            Pt(() => {
                 this.isDisposed || e();
             });
         }
@@ -2121,15 +2121,15 @@
             return this.findDOMNode(null != e ? e : this);
         }
     }
-    At.StyleAttribute = "style", At.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
-        isGenerationUpToDate: Ne.func,
-        ancestorGenerationNode: Ne.object,
-        locale: Ne.string
-    }, Ot.contextTypes), At.childContextTypes = {
-        ancestorGenerationNode: Ne.object,
-        locale: Ne.string
+    kt.StyleAttribute = "style", kt.contextTypes = _runtimeCoreJs.ObjectExtensions.assign({
+        isGenerationUpToDate: xe.func,
+        ancestorGenerationNode: xe.object,
+        locale: xe.string
+    }, Ot.contextTypes), kt.childContextTypes = {
+        ancestorGenerationNode: xe.object,
+        locale: xe.string
     };
-    class Wt extends At {
+    class At extends kt {
         constructor(e, t) {
             var n;
             super(e, t), this._generationNode || (this._generationNode = null === (n = t.ancestorGenerationNode) || void 0 === n ? void 0 : n.addChild());
@@ -2175,8 +2175,8 @@
         }
         createValidationElement() {
             var e, t;
-            return this.hasValidationMessage() ? O.createElement(gt.span, {
-                id: this.getId() + Wt.DescribedBySuffix,
+            return this.hasValidationMessage() ? N.createElement(ft.span, {
+                id: this.getId() + At.DescribedBySuffix,
                 className: "validation-message"
             }, null !== (t = null === (e = this.getValidationRecord()) || void 0 === e ? void 0 : e.validationMessageAttr) && void 0 !== t ? t : "") : null;
         }
@@ -2188,8 +2188,8 @@
             super.fillWithBuiltinProperties(e), this.hasValidationMessage() && (e.className = void 0 === e.className ? "not-valid" : e.className + " not-valid");
         }
     }
-    Wt.DescribedBySuffix = "_DescribedBy";
-    class Ft extends Wt {
+    At.DescribedBySuffix = "_DescribedBy";
+    class Wt extends At {
         get variable() {
             throw new Error("InputWithVariableWidget.variable not implemented");
         }
@@ -2222,7 +2222,7 @@
         isValueReallyEmpty() {
             var e;
             const t = this.inputedValue;
-            return !!Ft.isEmptyValue(t) && !(null === (e = this.inputedValueValidity) || void 0 === e ? void 0 : e.badInput);
+            return !!Wt.isEmptyValue(t) && !(null === (e = this.inputedValueValidity) || void 0 === e ? void 0 : e.badInput);
         }
         validate() {
             var e, t;
@@ -2237,24 +2237,24 @@
             return null == e || "" === e || e.trim && "" === e.trim();
         }
     }
-    class Ut {
+    class Ft {
         constructor(e) {
             this.renderPlaceholder = e;
         }
         static get Empty() {
-            return Ut._empty;
+            return Ft._empty;
         }
         render() {
-            return Lt(this.renderPlaceholder());
+            return Tt(this.renderPlaceholder());
         }
     }
-    Ut._empty = new Ut(() => null);
-    class _t extends Error {
+    Ft._empty = new Ft(() => null);
+    class Ut extends Error {
         constructor(e) {
             super("Widget iteration contexts are immutable: " + e), this.messageDetail = e;
         }
     }
-    class Ht {
+    class _t {
         constructor(e, t, n) {
             this.parentContext = e, this.list = t, this.currentRowNumber = n;
         }
@@ -2269,19 +2269,19 @@
             return !1;
         }
         setCurrentRowNumber(e) {
-            throw new _t("unable to set a new CurrentRowNumber");
+            throw new Ut("unable to set a new CurrentRowNumber");
         }
         registerIterationStart(e) {
-            throw new _t("unable to register the start of a new iteration");
+            throw new Ut("unable to register the start of a new iteration");
         }
         registerIterationEnd(e) {
-            throw new _t("unable to register the end of an iteration");
+            throw new Ut("unable to register the end of an iteration");
         }
         getIterator(e) {
-            throw new _t("unable to get an iterator state");
+            throw new Ut("unable to get an iterator state");
         }
     }
-    class Vt {
+    class Ht {
         constructor(e, t) {
             let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : void 0;
             let r = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
@@ -2295,8 +2295,8 @@
             if (!e) throw new Error("Owner widget cannot be null");
             if (n) {
                 const e = n;
-                n = (t, n, r) => e(Lt(t, `i-${r}`), n);
-            } else n = (e, t, n) => Lt(e, `i-${n}`);
+                n = (t, n, r) => e(Tt(t, `i-${r}`), n);
+            } else n = (e, t, n) => Tt(e, `i-${n}`);
             const s = this.getItemContextCachePropertyName();
             let l = e[s];
             l || (l = {});
@@ -2309,50 +2309,50 @@
                     s = new _runtimeCoreJs.WidgetNaming.WidgetIdService(null !== (i = this.parentIdService) && void 0 !== i ? i : null, this.ownerAlias, _runtimeCoreJs.WidgetNaming.NamespaceKind.IteratorItem, r);
                 d["i" + r] = n(this.renderItem(s, o.callContext), e, r);
             }
-            return e[s] = c, O.createElement(O.Fragment, {
+            return e[s] = c, N.createElement(N.Fragment, {
                 key: "fragmentKey"
-            }, Object.keys(d).map(e => O.createElement(O.Fragment, {
+            }, Object.keys(d).map(e => N.createElement(N.Fragment, {
                 key: e
             }, d[e])));
         }
         createOrUpdateItemContext(e, t, n, r, o) {
-            const i = new Ht(this.parentCallContext.iterationContext, e, n);
+            const i = new _t(this.parentCallContext.iterationContext, e, n);
             let s = r[t];
             return s || (s = {
                 callContext: this.parentCallContext.clone()
             }), s.callContext.iterationContext = i, s.callContext.iterationContext = s.callContext.clone().iterationContext, o[t] = s, s;
         }
         getItemContextCachePropertyName() {
-            return Vt.ItemContextCachePropertyName + this.ownerAlias;
+            return Ht.ItemContextCachePropertyName + this.ownerAlias;
         }
     }
-    Vt.ItemContextCachePropertyName = "__itemContextCache";
-    var zt,
-        Bt = _exports.Widget = Object.freeze({
+    Ht.ItemContextCachePropertyName = "__itemContextCache";
+    var Vt,
+        zt = _exports.Widget = Object.freeze({
             __proto__: null,
-            InputWithVariableWidget: Ft,
-            IteratorPlaceholderContent: Vt,
-            PlaceholderContent: Ut,
-            ValidationWidget: Wt,
-            Widget: At,
+            InputWithVariableWidget: Wt,
+            IteratorPlaceholderContent: Ht,
+            PlaceholderContent: Ft,
+            ValidationWidget: At,
+            Widget: kt,
             WidgetSpec: jt,
-            executeAfterPaint: Mt
+            executeAfterPaint: Pt
         });
-    class $t {
+    class Bt {
         constructor() {
-            if ($t.instance) throw new Error("Error: Instantiation failed, use FeedbackMessageService.getInstance() instead of new.");
-            $t.instance = this;
+            if (Bt.instance) throw new Error("Error: Instantiation failed, use FeedbackMessageService.getInstance() instead of new.");
+            Bt.instance = this;
         }
         static get Instance() {
-            return $t.instance;
+            return Bt.instance;
         }
         showMessage(e, t) {
             let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : !0;
             let r = arguments.length > 3 ? arguments[3] : undefined;
             let o = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !0;
             let i = arguments.length > 5 ? arguments[5] : undefined;
-            let s = document.getElementById($t.FeedbackMessageId);
-            s ? B.unmountComponentAtNode(s) : (s = document.createElement("div"), s.id = $t.FeedbackMessageId, s.className = "feedback-message-wrapper", document.body.insertBefore(s, document.body.firstChild));
+            let s = document.getElementById(Bt.FeedbackMessageId);
+            s ? B.unmountComponentAtNode(s) : (s = document.createElement("div"), s.id = Bt.FeedbackMessageId, s.className = "feedback-message-wrapper", document.body.insertBefore(s, document.body.firstChild));
             const l = {
                 message: e,
                 messageType: t,
@@ -2364,21 +2364,21 @@
                     service: new _runtimeCoreJs.WidgetNaming.WidgetIdService(null)
                 }
             };
-            B.render(O.createElement(Gt, l), s);
+            B.render(N.createElement($t, l), s);
         }
         closeMessage() {
-            const e = document.getElementById($t.FeedbackMessageId);
+            const e = document.getElementById(Bt.FeedbackMessageId);
             e && (B.unmountComponentAtNode(e), e.remove());
         }
     }
-    $t.FeedbackMessageId = "feedbackMessageContainer", $t.instance = new $t();
-    let Gt = zt = class extends At {
+    Bt.FeedbackMessageId = "feedbackMessageContainer", Bt.instance = new Bt();
+    let $t = Vt = class extends kt {
         closeMessage(e) {
-            this.feedbackMessageElement && ($t.Instance.closeMessage(), e.preventDefault(), this.feedbackMessageElement = null);
+            this.feedbackMessageElement && (Bt.Instance.closeMessage(), e.preventDefault(), this.feedbackMessageElement = null);
         }
         componentDidMount() {
             var e;
-            this.feedbackMessageElement = this.getHTMLNode(), -1 !== (null === (e = this.feedbackMessageElement.getAttribute("class")) || void 0 === e ? void 0 : e.indexOf(zt.AUTOCLOSE_CLASS)) && this.feedbackMessageElement.addEventListener("animationend", this.closeMessage.bind(this), !1);
+            this.feedbackMessageElement = this.getHTMLNode(), -1 !== (null === (e = this.feedbackMessageElement.getAttribute("class")) || void 0 === e ? void 0 : e.indexOf(Vt.AUTOCLOSE_CLASS)) && this.feedbackMessageElement.addEventListener("animationend", this.closeMessage.bind(this), !1);
         }
         static getMessageType(e) {
             switch (e) {
@@ -2395,8 +2395,8 @@
             }
         }
         render() {
-            let e = "feedback-message feedback-message-" + zt.getMessageType(this.props.messageType);
-            0 !== this.props.messageType && 1 !== this.props.messageType || (e += zt.AUTOCLOSE_CLASS), this.props.extraCssClasses && (e += " " + this.props.extraCssClasses);
+            let e = "feedback-message feedback-message-" + Vt.getMessageType(this.props.messageType);
+            0 !== this.props.messageType && 1 !== this.props.messageType || (e += Vt.AUTOCLOSE_CLASS), this.props.extraCssClasses && (e += " " + this.props.extraCssClasses);
             const t = {
                 className: e
             };
@@ -2409,10 +2409,10 @@
             };
             return this.props.encodeHTML ? n.children = this.props.message : n.dangerouslySetInnerHTML = {
                 __html: this.props.message
-            }, O.createElement(gt.div, t, O.createElement(gt.i), O.createElement(gt.div, n));
+            }, N.createElement(ft.div, t, N.createElement(ft.i), N.createElement(ft.div, n));
         }
     };
-    Gt.AUTOCLOSE_CLASS = " feedback-message-autoclose", Gt = zt = function(e, t, n, r) {
+    $t.AUTOCLOSE_CLASS = " feedback-message-autoclose", $t = Vt = function(e, t, n, r) {
         var o,
             i = arguments.length,
             s = i < 3 ? t : null === r ? r = Object.getOwnPropertyDescriptor(t, n) : r;
@@ -2420,29 +2420,29 @@
         else
             for (var a = e.length - 1; a >= 0; a--)(o = e[a]) && (s = (i < 3 ? o(s) : i > 3 ? o(t, n, s) : o(t, n)) || s);
         return i > 3 && s && Object.defineProperty(t, n, s), s;
-    }([jt], Gt), _runtimeCoreJs.FeedbackMessageService.registerFeedbackMessageService($t.Instance);
-    var Kt = _exports.FeedbackMessage = Object.freeze({
+    }([jt], $t), _runtimeCoreJs.FeedbackMessageService.registerFeedbackMessageService(Bt.Instance);
+    var Gt = _exports.FeedbackMessage = Object.freeze({
         __proto__: null
     });
-    class qt extends O.Component {
+    class Kt extends N.Component {
         constructor(e) {
-            super(null != e ? e : {}), this.portalContainer = document.createElement("div"), this.portalContainer.style.display = "inline", this.portalContainer.className = qt.PortalClassName, document.body.appendChild(this.portalContainer);
+            super(null != e ? e : {}), this.portalContainer = document.createElement("div"), this.portalContainer.style.display = "inline", this.portalContainer.className = Kt.PortalClassName, document.body.appendChild(this.portalContainer);
         }
         componentWillUnmount() {
             setTimeout(() => document.body.removeChild(this.portalContainer));
         }
         render() {
-            return B.createPortal(O.createElement(gt.div, {
+            return B.createPortal(N.createElement(ft.div, {
                 context: this.context
             }, this.props.children), this.portalContainer);
         }
     }
-    qt.PortalClassName = "portal-class";
-    var Jt = _exports.Portal = Object.freeze({
+    Kt.PortalClassName = "portal-class";
+    var qt = _exports.Portal = Object.freeze({
         __proto__: null,
-        Portal: qt
+        Portal: Kt
     });
-    class Qt extends O.Component {
+    class Jt extends N.Component {
         getErrorMessage() {
             var e;
             const t = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
@@ -2462,20 +2462,20 @@
             return [];
         }
         render() {
-            return O.createElement(gt.div);
+            return N.createElement(ft.div);
         }
         componentDidMount() {
             _runtimeCoreJs.ErrorHandling.navigateToErrorPage(void 0, this.getErrorMessage(), this.getExtraErrorMessage());
         }
     }
-    let Xt = class extends Qt {
+    let Qt = class extends Jt {
             getErrorMessage() {
                 var e;
                 const t = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
                 return (null === (e = null == t ? void 0 : t.messages) || void 0 === e ? void 0 : e.screenNotFound) || `Screen not found: ${this.props.location.pathname || "(none)"}`;
             }
         },
-        Yt = class extends Qt {
+        Xt = class extends Jt {
             getErrorMessage() {
                 var e;
                 const t = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig();
@@ -2483,8 +2483,8 @@
             }
         };
 
-    function Zt(e, t, n, r, o) {
-        return class extends O.Component {
+    function Yt(e, t, n, r, o) {
+        return class extends N.Component {
             render() {
                 var i;
                 const s = {
@@ -2494,18 +2494,18 @@
                     cachedScreenState: r,
                     shallSaveStateOnLeave: o
                 };
-                return O.createElement(e, s);
+                return N.createElement(e, s);
             }
         };
     }
-    var en = _exports.RouteComponents = Object.freeze({
+    var Zt = _exports.RouteComponents = Object.freeze({
         __proto__: null,
-        AbstractErrorComponent: Qt,
-        NoDefaultScreen: Yt,
-        NotFoundScreen: Xt,
-        createView: Zt
+        AbstractErrorComponent: Jt,
+        NoDefaultScreen: Xt,
+        NotFoundScreen: Qt,
+        createView: Yt
     });
-    const tn = _ref2 => {
+    const en = _ref2 => {
         let {
             url: e = window.location.href,
             resumeAction: t,
@@ -2514,7 +2514,7 @@
         const [r, o] = (0, _react.useState)(),
         [i, s] = (0, _react.useState)();
         if ((0, _react.useEffect)(() => {
-                ot(void 0, void 0, void 0, function*() {
+                rt(void 0, void 0, void 0, function*() {
                     s(void 0);
                     try {
                         const r = yield t({
@@ -2535,18 +2535,18 @@
                     }
                 });
             }, [e, o, n]), i) throw i;
-        return r ? ge.jsx(_deprecatedReactRouterDom.Redirect, {
+        return r ? fe.jsx(_deprecatedReactRouterDom.Redirect, {
             push: !0,
             to: r
-        }) : ge.jsx(_react.Fragment, {});
+        }) : fe.jsx(_react.Fragment, {});
     };
-    var nn = {},
-        rn = e => encodeURIComponent(e).replace(/[!'()*]/g, e => `%${e.charCodeAt(0).toString(16).toUpperCase()}`),
-        on = "%[a-f0-9]{2}",
-        sn = new RegExp("(" + on + ")|([^%]+?)", "gi"),
-        an = new RegExp("(" + on + ")+", "gi");
+    var tn = {},
+        nn = e => encodeURIComponent(e).replace(/[!'()*]/g, e => `%${e.charCodeAt(0).toString(16).toUpperCase()}`),
+        rn = "%[a-f0-9]{2}",
+        on = new RegExp("(" + rn + ")|([^%]+?)", "gi"),
+        sn = new RegExp("(" + rn + ")+", "gi");
 
-    function ln(e, t) {
+    function an(e, t) {
         try {
             return [decodeURIComponent(e.join(""))];
         } catch (e) {}
@@ -2554,18 +2554,18 @@
         t = t || 1;
         var n = e.slice(0, t),
             r = e.slice(t);
-        return Array.prototype.concat.call([], ln(n), ln(r));
+        return Array.prototype.concat.call([], an(n), an(r));
     }
 
-    function cn(e) {
+    function ln(e) {
         try {
             return decodeURIComponent(e);
         } catch (r) {
-            for (var t = e.match(sn) || [], n = 1; n < t.length; n++) t = (e = ln(t, n).join("")).match(sn) || [];
+            for (var t = e.match(on) || [], n = 1; n < t.length; n++) t = (e = an(t, n).join("")).match(on) || [];
             return e;
         }
     }
-    var dn = function(e) {
+    var cn = function(e) {
             if ("string" != typeof e) throw new TypeError("Expected `encodedURI` to be of type `string`, got `" + typeof e + "`");
             try {
                 return e = e.replace(/\+/g, " "), decodeURIComponent(e);
@@ -2574,14 +2574,14 @@
                     for (var t = {
                             "%FE%FF": "��",
                             "%FF%FE": "��"
-                        }, n = an.exec(e); n;) {
+                        }, n = sn.exec(e); n;) {
                         try {
                             t[n[0]] = decodeURIComponent(n[0]);
                         } catch (e) {
-                            var r = cn(n[0]);
+                            var r = ln(n[0]);
                             r !== n[0] && (t[n[0]] = r);
                         }
-                        n = an.exec(e);
+                        n = sn.exec(e);
                     }
                     t["%C2"] = "�";
                     for (var o = Object.keys(t), i = 0; i < o.length; i++) {
@@ -2592,13 +2592,13 @@
                 }(e);
             }
         },
-        un = (e, t) => {
+        dn = (e, t) => {
             if ("string" != typeof e || "string" != typeof t) throw new TypeError("Expected the arguments to be of type `string`");
             if ("" === t) return [e];
             const n = e.indexOf(t);
             return -1 === n ? [e] : [e.slice(0, n), e.slice(n + t.length)];
         },
-        pn = function(e, t) {
+        un = function(e, t) {
             for (var n = {}, r = Object.keys(e), o = Array.isArray(t), i = 0; i < r.length; i++) {
                 var s = r[i],
                     a = e[s];
@@ -2607,10 +2607,10 @@
             return n;
         };
     ! function(e) {
-        const t = rn,
-            n = dn,
-            r = un,
-            o = pn,
+        const t = nn,
+            n = cn,
+            r = dn,
+            o = un,
             i = Symbol("encodeFragmentIdentifier");
 
         function s(e) {
@@ -2799,8 +2799,8 @@
             const o = Array.isArray(n) ? e => !n.includes(e) : (e, t) => !n(e, t);
             return e.pick(t, o, r);
         };
-    }(nn);
-    const hn = e => ({
+    }(tn);
+    const pn = e => ({
         appear: `${e}-appear`,
         appearActive: `${e}-appear-active`,
         appearDone: `${e}-appear-done`,
@@ -2811,7 +2811,7 @@
         exitActive: `${e}-leave-active`,
         exitDone: `${e}-leave-done`
     });
-    var mn;
+    var hn;
     ! function(e) {
         let t = [];
 
@@ -2837,8 +2837,8 @@
         _runtimeCoreJs.Injector.addRegistrationListener(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider, (e, t) => r = t || n), e.clearDeviceClasses = o, e.setDeviceClasses = function() {
             o(), t = r(), t.forEach(e => document.body.classList.add(e));
         };
-    }(mn || (mn = {}));
-    let vn = class n extends O.Component {
+    }(hn || (hn = {}));
+    let mn = class n extends N.Component {
         constructor(e, t) {
             super(e, t), this.hasScreenRendered = !1, this.state = {
                 transition: new _runtimeCoreJs.Transitions.Transition(""),
@@ -2858,11 +2858,11 @@
         }
         static onBeforeNavigation(e, t) {
             let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _runtimeCoreJs.Navigation.onBeforeNavigate;
-            return !!n(e, t) && (mt(!0), !0);
+            return !!n(e, t) && (ht(!0), !0);
         }
         static onAfterNavigation(n) {
             let r = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _runtimeCoreJs.Navigation.hasPendingReload;
-            if (mt(!1), n.isShowingSplashScreen || r()) return;
+            if (ht(!1), n.isShowingSplashScreen || r()) return;
             const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(_runtimeCoreJs.Navigation.getCurrentLocation().href);
             _runtimeCoreJs.Logger.debug("Root", `Navigated to: ${o}`);
             const i = _runtimeCoreJs.Application.ApplicationStorage.pendingUpgradeFeedback.get();
@@ -2882,7 +2882,7 @@
             }));
         }
         UNSAFE_componentWillMount() {
-            mn.setDeviceClasses();
+            hn.setDeviceClasses();
             const e = "onorientationchange" in window ? "orientationchange" : "resize",
                 t = () => this.handleOrientationChanges();
             window.addEventListener(e, t, !1), this.handleDispose = () => {
@@ -2903,7 +2903,7 @@
         }
         handleOrientationChanges() {
             setTimeout(() => {
-                mn.setDeviceClasses();
+                hn.setDeviceClasses();
             }, 300);
         }
         onTransitionStarted() {
@@ -2932,43 +2932,43 @@
                     firstRender: i,
                     animate: s
                 } = this.state,
-                a = hn(o.name);
+                a = pn(o.name);
             if (i) {
                 const e = r.load(t, n.action, n);
                 return e && e.then(() => this.setState(() => ({
                     firstRender: !1
                 }))).catch(() => {}), null;
             }
-            return ge.jsx(Be, {
+            return fe.jsx(ze, {
                 component: "div",
                 id: "transitionContainer",
-                childFactory: e => O.cloneElement(e, {
+                childFactory: e => N.cloneElement(e, {
                     classNames: a,
                     timeout: s ? 300 : 0
                 }),
-                children: ge.jsx(Ue, {
+                children: fe.jsx(Fe, {
                     classNames: a,
                     timeout: s ? 300 : 0,
                     onEnter: () => this.onTransitionStarted(),
                     onExited: () => this.onTransitionEnded(),
-                    children: ge.jsx(O.Fragment, {
+                    children: fe.jsx(N.Fragment, {
                         children: e
                     })
                 }, t.key)
             });
         }
     };
-    vn.childContextTypes = {
-        hasScreenRendered: Ne.func
+    mn.childContextTypes = {
+        hasScreenRendered: xe.func
     };
-    let fn = class e {
+    let vn = class e {
         constructor(e, t) {
             this.currentHistory = e, this.currentRuntime = t;
         }
         static urlToLocationDescriptor(e, t) {
             return {
                 pathname: e.path,
-                search: nn.stringify(e.queryParams),
+                search: tn.stringify(e.queryParams),
                 state: {
                     transition: t
                 },
@@ -2987,25 +2987,25 @@
             r || (null === (o = this.currentRuntime) || void 0 === o ? void 0 : o.isShowingSplashScreen) ? this.replace(i) : this.push(i);
         }
         goBack(e) {
-            e && (vn.transitionOverride = e), this.currentHistory.goBack();
+            e && (mn.transitionOverride = e), this.currentHistory.goBack();
         }
         goForward(e) {
-            e && (vn.transitionOverride = e), this.currentHistory.goForward();
+            e && (mn.transitionOverride = e), this.currentHistory.goForward();
         }
         dispose(e) {}
     };
 
-    function gn(e) {
+    function fn(e) {
         return "/" === e.charAt(0);
     }
 
-    function Sn(e, t) {
+    function gn(e, t) {
         for (var n = t, r = n + 1, o = e.length; r < o; n += 1, r += 1) e[n] = e[r];
         e.pop();
     }
-    var yn = "Invariant failed";
+    var Sn = "Invariant failed";
 
-    function wn(e, t, n, r) {
+    function yn(e, t, n, r) {
         var o;
         "string" == typeof e ? (o = function(e) {
             var t = e || "/",
@@ -3019,7 +3019,7 @@
                 search: "?" === n ? "" : n,
                 hash: "#" === r ? "" : r
             };
-        }(e), o.state = t) : (void 0 === (o = Se({}, e)).pathname && (o.pathname = ""), o.search ? "?" !== o.search.charAt(0) && (o.search = "?" + o.search) : o.search = "", o.hash ? "#" !== o.hash.charAt(0) && (o.hash = "#" + o.hash) : o.hash = "", void 0 !== t && void 0 === o.state && (o.state = t));
+        }(e), o.state = t) : (void 0 === (o = ge({}, e)).pathname && (o.pathname = ""), o.search ? "?" !== o.search.charAt(0) && (o.search = "?" + o.search) : o.search = "", o.hash ? "#" !== o.hash.charAt(0) && (o.hash = "#" + o.hash) : o.hash = "", void 0 !== t && void 0 === o.state && (o.state = t));
         try {
             o.pathname = decodeURI(o.pathname);
         } catch (e) {
@@ -3030,34 +3030,34 @@
             var n,
                 r = e && e.split("/") || [],
                 o = t && t.split("/") || [],
-                i = e && gn(e),
-                s = t && gn(t),
+                i = e && fn(e),
+                s = t && fn(t),
                 a = i || s;
-            if (e && gn(e) ? o = r : r.length && (o.pop(), o = o.concat(r)), !o.length) return "/";
+            if (e && fn(e) ? o = r : r.length && (o.pop(), o = o.concat(r)), !o.length) return "/";
             if (o.length) {
                 var l = o[o.length - 1];
                 n = "." === l || ".." === l || "" === l;
             } else n = !1;
             for (var c = 0, d = o.length; d >= 0; d--) {
                 var u = o[d];
-                "." === u ? Sn(o, d) : ".." === u ? (Sn(o, d), c++) : c && (Sn(o, d), c--);
+                "." === u ? gn(o, d) : ".." === u ? (gn(o, d), c++) : c && (gn(o, d), c--);
             }
             if (!a)
                 for (; c--; c) o.unshift("..");
-            !a || "" === o[0] || o[0] && gn(o[0]) || o.unshift("");
+            !a || "" === o[0] || o[0] && fn(o[0]) || o.unshift("");
             var p = o.join("/");
             return n && "/" !== p.substr(-1) && (p += "/"), p;
         }(o.pathname, r.pathname)) : o.pathname = r.pathname : o.pathname || (o.pathname = "/"), o;
     }
-    var Cn = !("undefined" == typeof window || !window.document || !window.document.createElement);
+    var wn = !("undefined" == typeof window || !window.document || !window.document.createElement);
 
-    function En(e, t) {
+    function Cn(e, t) {
         t(window.confirm(e));
     }
-    var bn = "popstate",
-        xn = "hashchange";
+    var En = "popstate",
+        bn = "hashchange";
 
-    function Nn() {
+    function xn() {
         try {
             return window.history.state || {};
         } catch (e) {
@@ -3066,8 +3066,8 @@
     }
 
     function On(e) {
-        void 0 === e && (e = {}), Cn || function() {
-            throw new Error(yn);
+        void 0 === e && (e = {}), wn || function() {
+            throw new Error(Sn);
         }();
         var t,
             n,
@@ -3078,7 +3078,7 @@
             a = s.forceRefresh,
             l = void 0 !== a && a,
             c = s.getUserConfirmation,
-            d = void 0 === c ? En : c,
+            d = void 0 === c ? Cn : c,
             u = s.keyLength,
             p = void 0 === u ? 6 : u,
             h = e.basename ? function(e) {
@@ -3095,7 +3095,7 @@
                 return function(e, t) {
                     return 0 === e.toLowerCase().indexOf(t.toLowerCase()) && -1 !== "/?#".indexOf(e.charAt(t.length));
                 }(e, t) ? e.substr(t.length) : e;
-            }(i, h)), wn(i, r, n);
+            }(i, h)), yn(i, r, n);
         }
 
         function v() {
@@ -3138,7 +3138,7 @@
             });
 
         function y(e) {
-            Se(M, e), M.length = r.length, S.notifyListeners(M.location, M.action);
+            ge(M, e), M.length = r.length, S.notifyListeners(M.location, M.action);
         }
 
         function w(e) {
@@ -3148,7 +3148,7 @@
         }
 
         function C() {
-            b(m(Nn()));
+            b(m(xn()));
         }
         var E = !1;
 
@@ -3161,9 +3161,9 @@
                         location: e
                     }) : function(e) {
                         var t = M.location,
-                            n = N.indexOf(t.key); -
+                            n = O.indexOf(t.key); -
                         1 === n && (n = 0);
-                        var r = N.indexOf(e.key); -
+                        var r = O.indexOf(e.key); -
                         1 === r && (r = 0);
                         var o = n - r;
                         o && (E = !0, R(o));
@@ -3171,10 +3171,10 @@
                 });
             }
         }
-        var x = m(Nn()),
-            N = [x.key];
+        var x = m(xn()),
+            O = [x.key];
 
-        function O(e) {
+        function N(e) {
             return h + function(e) {
                 var t = e.pathname,
                     n = e.search,
@@ -3190,20 +3190,20 @@
         var I = 0;
 
         function D(e) {
-            1 === (I += e) && 1 === e ? (window.addEventListener(bn, w), i && window.addEventListener(xn, C)) : 0 === I && (window.removeEventListener(bn, w), i && window.removeEventListener(xn, C));
+            1 === (I += e) && 1 === e ? (window.addEventListener(En, w), i && window.addEventListener(bn, C)) : 0 === I && (window.removeEventListener(En, w), i && window.removeEventListener(bn, C));
         }
         var P = !1;
         var M = {
             length: r.length,
             action: "POP",
             location: x,
-            createHref: O,
+            createHref: N,
             push: function(e, t) {
                 var n = "PUSH",
-                    i = wn(e, t, v(), M.location);
+                    i = yn(e, t, v(), M.location);
                 S.confirmTransitionTo(i, n, d, function(e) {
                     if (e) {
-                        var t = O(i),
+                        var t = N(i),
                             s = i.key,
                             a = i.state;
                         if (o) {
@@ -3212,9 +3212,9 @@
                                     state: a
                                 }, null, t), l) window.location.href = t;
                             else {
-                                var c = N.indexOf(M.location.key),
-                                    d = N.slice(0, c + 1);
-                                d.push(i.key), N = d, y({
+                                var c = O.indexOf(M.location.key),
+                                    d = O.slice(0, c + 1);
+                                d.push(i.key), O = d, y({
                                     action: n,
                                     location: i
                                 });
@@ -3225,10 +3225,10 @@
             },
             replace: function(e, t) {
                 var n = "REPLACE",
-                    i = wn(e, t, v(), M.location);
+                    i = yn(e, t, v(), M.location);
                 S.confirmTransitionTo(i, n, d, function(e) {
                     if (e) {
-                        var t = O(i),
+                        var t = N(i),
                             s = i.key,
                             a = i.state;
                         if (o) {
@@ -3237,8 +3237,8 @@
                                     state: a
                                 }, null, t), l) window.location.replace(t);
                             else {
-                                var c = N.indexOf(M.location.key); -
-                                1 !== c && (N[c] = i.key), y({
+                                var c = O.indexOf(M.location.key); -
+                                1 !== c && (O[c] = i.key), y({
                                     action: n,
                                     location: i
                                 });
@@ -3272,14 +3272,14 @@
         };
         return M;
     }
-    const Rn = function() {
+    const Nn = function() {
         let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : () => !0;
         let t = arguments.length > 1 ? arguments[1] : undefined;
         let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : e => On(e);
         const r = {},
             o = n({
                 getUserConfirmation(e, n) {
-                    return ot(this, void 0, void 0, function*() {
+                    return rt(this, void 0, void 0, function*() {
                         const i = r[e];
                         let s = !1;
                         try {
@@ -3311,7 +3311,7 @@
             }), s;
         }), o;
     };
-    let In = class extends _react.Component {
+    let Rn = class extends _react.Component {
         constructor(e, t) {
             super(e, t);
         }
@@ -3334,7 +3334,7 @@
             return e ? (0, _react.createElement)(e, this.props) : null;
         }
     };
-    const Dn = (e, t, n, r) => {
+    const In = (e, t, n, r) => {
             switch (n) {
                 case "PUSH":
                     return r + 1;
@@ -3346,7 +3346,7 @@
                     throw new Error(`Missing case for ${n} in setLocationAge`);
             }
         },
-        Pn = (e, t, n) => {
+        Dn = (e, t, n) => {
             switch (t) {
                 case "POP":
                     return n >= e;
@@ -3357,18 +3357,18 @@
                     throw new Error(`Missing case for ${t} in isBackNavigation`);
             }
         };
-    class Mn extends fn {
+    class Pn extends vn {
         constructor(e, t) {
             super(e, t);
         }
         goTo(e, t, n) {
-            const r = fn.urlToLocationDescriptor(e, t);
+            const r = vn.urlToLocationDescriptor(e, t);
             this.push(r);
         }
         dispose(e) {}
     }
 
-    function Tn() {
+    function Mn() {
         let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
         var n;
@@ -3377,11 +3377,11 @@
             }(function(e) {
                 return Object.keys(e).filter(e => isNaN(Number(e))).reduce((t, n) => (t[n] = e[n], t), {});
             }((n = e, Object.keys(n).filter(e => null !== n[e] && void 0 !== n[e]).reduce((e, t) => (e[t] = n[t], e), {})))),
-            o = nn.parse(t);
+            o = tn.parse(t);
         return Object.assign(Object.assign({}, o), r);
     }
-    const Ln = "ScreenLoader";
-    let kn = class {
+    const Tn = "ScreenLoader";
+    let Ln = class {
         constructor(e, t, n) {
             this.runtime = e, this.routes = t, this.splashRoute = n, this.isFirstNavigation = !0, this.loadedComponents = [];
         }
@@ -3407,7 +3407,7 @@
                     });
                     return !(!r || n || (n = {
                         routeInfo: e,
-                        matchedParams: Tn(r.params, t.search)
+                        matchedParams: Mn(r.params, t.search)
                     }, 0));
                 }), n;
             }((null === (a = this.runtime) || void 0 === a ? void 0 : a.shouldRenderSplashScreen()) && this.splashRoute ? [this.splashRoute] : this.routes, t);
@@ -3425,25 +3425,25 @@
                 component: null
             };
             return this.loadedComponents.push(m), new Promise((a, l) => {
-                if (!h) throw _runtimeCoreJs.Logger.log(Ln, "Component to load was empty.", xt.Internal), new Error("There was a problem loading routes.");
+                if (!h) throw _runtimeCoreJs.Logger.log(Tn, "Component to load was empty.", bt.Internal), new Error("There was a problem loading routes.");
                 let u;
                 if (h.useESM) {
-                    if (void 0 === h.modelModule.importer || void 0 === h.controllerModule.importer || void 0 === h.webFlowControllerModule.importer || void 0 === h.viewModule.importer) throw _runtimeCoreJs.Logger.debug(Ln, "Lazy component module importer was missing.", xt.Internal), new Error("There was a problem loading routes.");
+                    if (void 0 === h.modelModule.importer || void 0 === h.controllerModule.importer || void 0 === h.webFlowControllerModule.importer || void 0 === h.viewModule.importer) throw _runtimeCoreJs.Logger.debug(Tn, "Lazy component module importer was missing.", bt.Internal), new Error("There was a problem loading routes.");
                     u = [h.modelModule.importer, h.controllerModule.importer, h.webFlowControllerModule.importer, h.viewModule.importer];
                 } else u = [h.modelModule.name, h.controllerModule.name, h.webFlowControllerModule.name, h.viewModule.name];
                 s(u, (s, u, v, f) => {
                     var g;
-                    const S = new fn(i, this.runtime),
+                    const S = new vn(i, this.runtime),
                         y = f.getRootSpan(!0);
                     null == y || y.activate();
-                    const w = new Mn(i, this.runtime);
+                    const w = new Pn(i, this.runtime);
                     let C = null,
                         E = !1;
                     const b = !this.isFirstNavigation && _runtimeCoreJs.Navigation.locationReachedFromHistory(Object.assign(Object.assign({}, t), {
                         action: n
                     }));
                     if (b && (C = _runtimeCoreJs.ScreenStateCache.ScreenStateCache.loadScreenCache(null !== (g = t.key) && void 0 !== g ? g : ""), C)) {
-                        const e = C.components[Nt].state;
+                        const e = C.components[xt].state;
                         if (e) {
                             const t = s;
                             s = {
@@ -3475,9 +3475,9 @@
                         if (0 === this.loadedComponents.length || this.loadedComponents[this.loadedComponents.length - 1] !== m) return void l(new Error("No longer on screen"));
                         if (!t.controller || !t.model) return void l(new Error("Error loading screen dependencies"));
                         if (c.screenName !== t.controller.constructor.activeScreen.viewName) return void l(new Error("Screen is no longer active"));
-                        C || _runtimeCoreJs.Logger.debug(Ln, "No screen state cache found.");
-                        const n = Zt(f, t.controller, t.model, C, h.shallSaveStateOnLeave);
-                        Pt.loadResources(f, y).then(() => {
+                        C || _runtimeCoreJs.Logger.debug(Tn, "No screen state cache found.");
+                        const n = Yt(f, t.controller, t.model, C, h.shallSaveStateOnLeave);
+                        Dt.loadResources(f, y).then(() => {
                             this.isFirstNavigation = !1, m.component = n, a(n);
                         });
                     });
@@ -3486,39 +3486,39 @@
         }
     };
     const jn = "Router",
-        An = "screen-route-key",
-        Wn = function(e) {
+        kn = "screen-route-key",
+        An = function(e) {
             let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
-            return `${An}${t ? "-default-" : "-"}${e}`;
+            return `${kn}${t ? "-default-" : "-"}${e}`;
         },
-        Fn = (_ref3, o) => {
+        Wn = (_ref3, o) => {
             let {
                 pathname: e,
                 forDefaultPath: t,
                 screenName: n,
                 component: r
             } = _ref3;
-            return ge.jsx(_deprecatedReactRouterDom.Route, {
+            return fe.jsx(_deprecatedReactRouterDom.Route, {
                 path: e,
                 exact: !0,
                 location: o,
                 component: r
-            }, Wn(n, t));
+            }, An(n, t));
         },
-        Un = (_ref4, r, o, i, s) => {
+        Fn = (_ref4, r, o, i, s) => {
             let {
                 screenName: e,
                 forDefaultPath: t,
                 pathname: n
             } = _ref4;
-            return ge.jsx(_deprecatedReactRouterDom.Route, {
+            return fe.jsx(_deprecatedReactRouterDom.Route, {
                 exact: !0,
                 path: n,
                 location: o,
                 render: e => {
                     var t;
                     const n = r.getLoadedComponent(null !== (t = e.location.key) && void 0 !== t ? t : "");
-                    return ge.jsx(In, Object.assign({
+                    return fe.jsx(Rn, Object.assign({
                         onEnter: i,
                         onLeave: () => {
                             var t;
@@ -3527,13 +3527,13 @@
                         component: null != n ? n : void 0
                     }, e));
                 }
-            }, Wn(e, t));
+            }, An(e, t));
         },
-        _n = (e, t, n) => e.map(e => e.component ? Fn(e, n) : Un(e, t, n)),
-        Hn = {
+        Un = (e, t, n) => e.map(e => e.component ? Wn(e, n) : Fn(e, t, n)),
+        _n = {
             currentAge: new _runtimeCoreJs.StorageProvider.StorageObject(_runtimeCoreJs.StorageProvider.StorageType.Session, "RouterHistoryAge", 0)
         };
-    const Vn = function(e, t) {
+    const Hn = function(e, t) {
             let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _runtimeCoreJs.ApplicationInfo.useESM;
             let r = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _runtimeCoreJs.ApplicationInfo.getScreensDefinition;
             var o;
@@ -3558,7 +3558,7 @@
             }
             return i;
         },
-        zn = function() {
+        Vn = function() {
             let {
                 getModules: t = _runtimeCoreJs.ApplicationInfo.getModules,
                 getHomeModuleDefinition: n = _runtimeCoreJs.ApplicationInfo.getHomeModuleDefinition,
@@ -3577,53 +3577,53 @@
                                 pathname: s,
                                 forDefaultPath: !0,
                                 screenName: t.screenName,
-                                lazyComponentInfo: Vn(!0, t)
+                                lazyComponentInfo: Hn(!0, t)
                             } : {
                                 pathname: s,
                                 forDefaultPath: !0,
                                 screenName: "no-default-screen",
-                                component: Yt
+                                component: Xt
                             };
                         o.push(n), _runtimeCoreJs.Logger.debug(jn, `Created default application route for ${n.pathname}`), o.push(...r.screens.map(e => ({
                             pathname: `${s}/${e.screenUrl}`,
                             forDefaultPath: !1,
                             screenName: e.screenName,
-                            lazyComponentInfo: Vn(!0, e)
+                            lazyComponentInfo: Hn(!0, e)
                         })));
                     }
                 }
             return o;
         },
-        Bn = function() {
+        zn = function() {
             let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _runtimeCoreJs.ApplicationInfo.getBasePath;
             const t = e().replace(/\/$/, "");
-            return ge.jsx(_deprecatedReactRouterDom.Route, {
+            return fe.jsx(_deprecatedReactRouterDom.Route, {
                 exact: !0,
                 path: `${t}/${_runtimeCoreJs.Authentication.LOGIN_REDIRECT_PATH}`,
-                component: () => ge.jsx(tn, {
+                component: () => fe.jsx(en, {
                     resumeAction: _runtimeCoreJs.Authentication.resumeLogin
                 })
             }, "authentication-redirect-login");
         },
-        $n = function() {
+        Bn = function() {
             let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _runtimeCoreJs.ApplicationInfo.getBasePath;
             const t = e().replace(/\/$/, "");
-            return ge.jsx(_deprecatedReactRouterDom.Route, {
+            return fe.jsx(_deprecatedReactRouterDom.Route, {
                 exact: !0,
                 path: `${t}/${_runtimeCoreJs.Authentication.LOGOUT_REDIRECT_PATH}`,
-                component: () => ge.jsx(tn, {
+                component: () => fe.jsx(en, {
                     resumeAction: _runtimeCoreJs.Authentication.resumeLogout
                 })
             }, "authentication-redirect-logout");
         };
-    var Gn = _exports.Router = Object.freeze({
+    var $n = _exports.Router = Object.freeze({
         __proto__: null,
-        createApplicationRoutes: _n,
-        createLazyScreenRoute: Un,
-        createScreenRoute: Fn,
-        getAppRouteInfos: zn,
-        getBuiltInLoginRoute: Bn,
-        getBuiltInLogoutRoute: $n,
+        createApplicationRoutes: Un,
+        createLazyScreenRoute: Fn,
+        createScreenRoute: Wn,
+        getAppRouteInfos: Vn,
+        getBuiltInLoginRoute: zn,
+        getBuiltInLogoutRoute: Bn,
         load: function(t, n, r) {
             var i;
             _runtimeCoreJs.Logger.debug(jn, "Loading Router.");
@@ -3635,35 +3635,35 @@
                 pathname: "*",
                 forDefaultPath: !1,
                 screenName: a.screenName,
-                lazyComponentInfo: Vn(!1, a)
+                lazyComponentInfo: Hn(!1, a)
             });
-            const c = zn(),
-                d = new kn(t, c, l),
-                u = Rn((e, n, r) => function(e, t, n) {
+            const c = Vn(),
+                d = new Ln(t, c, l),
+                u = Nn((e, n, r) => function(e, t, n) {
                     var r, i, s, a, l, c;
-                    const d = null !== (r = Hn.currentAge.get()) && void 0 !== r ? r : 0,
-                        u = Dn(null !== (s = null === (i = t.state) || void 0 === i ? void 0 : i.age) && void 0 !== s ? s : 0, t.hash, n, d);
+                    const d = null !== (r = _n.currentAge.get()) && void 0 !== r ? r : 0,
+                        u = In(null !== (s = null === (i = t.state) || void 0 === i ? void 0 : i.age) && void 0 !== s ? s : 0, t.hash, n, d);
                     t.state = Object.assign(Object.assign({}, null !== (a = t.state) && void 0 !== a ? a : {}), {
                         age: u
                     });
-                    const h = Pn(null !== (l = t.state.age) && void 0 !== l ? l : 0, n, d);
-                    return !!vn.onBeforeNavigation(Object.assign(Object.assign({}, t), {
+                    const h = Dn(null !== (l = t.state.age) && void 0 !== l ? l : 0, n, d);
+                    return !!mn.onBeforeNavigation(Object.assign(Object.assign({}, t), {
                         action: n
-                    }), h) && (h && !t.key ? (_runtimeCoreJs.Navigation.navigateBack(null), e.exit()) : (Hn.currentAge.set(null !== (c = t.state.age) && void 0 !== c ? c : 0), _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
+                    }), h) && (h && !t.key ? (_runtimeCoreJs.Navigation.navigateBack(null), e.exit()) : (_n.currentAge.set(null !== (c = t.state.age) && void 0 !== c ? c : 0), _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
                         type: _runtimeCoreJs.EventDispatcher.EventType.NavigationStart,
                         args: t
                     }), !0));
                 }(t, n, r), d, r);
-            _runtimeCoreJs.Navigation.setNavigationCallbacks(new fn(u, t)), B.render(ge.jsx(ft, {
+            _runtimeCoreJs.Navigation.setNavigationCallbacks(new vn(u, t)), B.render(fe.jsx(vt, {
                 onError: e => {
                     t.handleError(e);
                 },
-                children: ge.jsxs(_deprecatedReactRouterDom.Router, {
+                children: fe.jsxs(_deprecatedReactRouterDom.Router, {
                     history: u,
-                    children: [Bn(), $n(), ge.jsx(_deprecatedReactRouterDom.Route, {
+                    children: [zn(), Bn(), fe.jsx(_deprecatedReactRouterDom.Route, {
                         render: e => {
-                            const n = t.shouldRenderSplashScreen() && a && l ? [Un(l, d, e.location, () => t.isShowingSplashScreen = !0, () => t.isShowingSplashScreen = !1)] : _n(c, d, e.location);
-                            return ge.jsx(_deprecatedReactRouterDom.Route, {
+                            const n = t.shouldRenderSplashScreen() && a && l ? [Fn(l, d, e.location, () => t.isShowingSplashScreen = !0, () => t.isShowingSplashScreen = !1)] : Un(c, d, e.location);
+                            return fe.jsx(_deprecatedReactRouterDom.Route, {
                                 path: "/",
                                 location: e.location,
                                 render: e => {
@@ -3671,17 +3671,17 @@
                                         runtime: t,
                                         screenLoader: d
                                     }, e);
-                                    return ge.jsx(vn, Object.assign({}, r, {
-                                        children: ge.jsxs(_deprecatedReactRouterDom.Switch, {
+                                    return fe.jsx(mn, Object.assign({}, r, {
+                                        children: fe.jsxs(_deprecatedReactRouterDom.Switch, {
                                             location: e.location,
-                                            children: [n, ge.jsx(_deprecatedReactRouterDom.Route, {
+                                            children: [n, fe.jsx(_deprecatedReactRouterDom.Route, {
                                                 location: e.location,
-                                                component: Xt
+                                                component: Qt
                                             }, "not-found-screen")]
                                         })
                                     }));
                                 }
-                            }, An);
+                            }, kn);
                         }
                     }, `module-route-key-${s.moduleName}`)]
                 })
@@ -3689,11 +3689,11 @@
                 _runtimeCoreJs.Performance.end("Router load triggered render"), "function" == typeof n && n();
             });
         },
-        makeLazyComponentInfo: Vn
+        makeLazyComponentInfo: Hn
     });
-    class Kn extends _react.Component {
+    class Gn extends _react.Component {
         constructor(e, t) {
-            super(e, t), this.innerContext = Object.keys(Kn.childContextTypes).reduce((t, n) => (void 0 !== e[n] && (t[n] = e[n]), t), {});
+            super(e, t), this.innerContext = Object.keys(Gn.childContextTypes).reduce((t, n) => (void 0 !== e[n] && (t[n] = e[n]), t), {});
         }
         getChildContext() {
             return Object.assign(Object.assign({}, this.context), this.innerContext);
@@ -3702,58 +3702,58 @@
             return this.props.children;
         }
     }
-    Kn.contextTypes = {
-        ancestorGenerationNode: Ne.object,
-        refreshCurrentGeneration: Ne.func,
-        isGenerationUpToDate: Ne.func,
-        viewName: Ne.string,
-        hasScreenRendered: Ne.func,
-        getScreenStateCache: Ne.func,
-        locale: Ne.string
-    }, Kn.childContextTypes = {
-        ancestorGenerationNode: Ne.object,
-        refreshCurrentGeneration: Ne.func,
-        isGenerationUpToDate: Ne.func,
-        viewName: Ne.string,
-        hasScreenRendered: Ne.func,
-        getScreenStateCache: Ne.func,
-        locale: Ne.string
+    Gn.contextTypes = {
+        ancestorGenerationNode: xe.object,
+        refreshCurrentGeneration: xe.func,
+        isGenerationUpToDate: xe.func,
+        viewName: xe.string,
+        hasScreenRendered: xe.func,
+        getScreenStateCache: xe.func,
+        locale: xe.string
+    }, Gn.childContextTypes = {
+        ancestorGenerationNode: xe.object,
+        refreshCurrentGeneration: xe.func,
+        isGenerationUpToDate: xe.func,
+        viewName: xe.string,
+        hasScreenRendered: xe.func,
+        getScreenStateCache: xe.func,
+        locale: xe.string
     };
-    const qn = (0, _react.createContext)(void 0),
-        Jn = _ref5 => {
+    const Kn = (0, _react.createContext)(void 0),
+        qn = _ref5 => {
             let {
                 children: e,
                 value: t
             } = _ref5;
-            return ge.jsx(qn.Provider, {
+            return fe.jsx(Kn.Provider, {
                 value: t,
                 children: e
             });
         },
-        Qn = e => {
-            const t = (0, _react.useContext)(qn),
+        Jn = e => {
+            const t = (0, _react.useContext)(Kn),
                 n = (0, _react.useRef)(void 0),
                 r = (0, _react.useRef)(!1);
             return e && !r.current && t && (n.current = t.addChild()), (0, _react.useEffect)(() => {
                 r.current = !0;
             }, []), n.current;
         },
-        Xn = "style",
-        Yn = "not-valid",
-        Zn = e => (e = e.replace(/-([\da-z])/gi, (e, t) => t.toUpperCase()), /^(?:Webkit|Moz|O)[A-Z]/.test(e) ? e : e.charAt(0).toLowerCase() + e.slice(1)),
-        er = (e, t) => {
+        Qn = "style",
+        Xn = "not-valid",
+        Yn = e => (e = e.replace(/-([\da-z])/gi, (e, t) => t.toUpperCase()), /^(?:Webkit|Moz|O)[A-Z]/.test(e) ? e : e.charAt(0).toLowerCase() + e.slice(1)),
+        Zn = (e, t) => {
             e.split(";").forEach(e => {
                 const n = e.indexOf(":");
                 if (n > 0) {
                     const r = e.substring(0, n).trim(),
                         o = e.substring(n + 1).trim(),
-                        i = Zn(r);
+                        i = Yn(r);
                     t[i] = _runtimeCoreJs.StringUtils.StringUtils.safeParseInt(o);
                 }
             });
         },
-        tr = e => void 0 !== e && !e.validAttr && "" !== e.validationMessageAttr,
-        nr = (e, t) => {
+        er = e => void 0 !== e && !e.validAttr && "" !== e.validationMessageAttr,
+        tr = (e, t) => {
             if (t.startsWith("_")) return !1;
             let n, r;
             switch (t) {
@@ -3772,10 +3772,10 @@
                     return !1;
             }
         },
-        rr = e => null == e || "" === e || e.trim && "" === e.trim();
-    var or = Object.freeze({
+        nr = e => null == e || "" === e || e.trim && "" === e.trim();
+    var rr = Object.freeze({
         __proto__: null,
-        affectsRender: nr,
+        affectsRender: tr,
         fillWithBuiltinProperties: (e, t) => {
             var n;
             e.style = null !== (n = e.style) && void 0 !== n ? n : {}, ((e, t) => {
@@ -3792,43 +3792,43 @@
                     extendedProperties: n
                 } = null != t ? t : {};
                 if (n) {
-                    for (const t in n) t !== Xn && (e[t.valueOf()] = n[t]);
-                    const t = n[Xn];
-                    t && e.style && er(t, e.style);
+                    for (const t in n) t !== Qn && (e[t.valueOf()] = n[t]);
+                    const t = n[Qn];
+                    t && e.style && Zn(t, e.style);
                 }
             })(e, t);
         },
-        fillWithStyleProperties: er,
+        fillWithStyleProperties: Zn,
         fillWithValidationProperties: (e, t) => {
-            tr(t) && (e.className = e.className ? `${e.className} ${Yn}` : Yn);
+            er(t) && (e.className = e.className ? `${e.className} ${Xn}` : Xn);
         },
-        formatCssPropertyName: Zn,
-        hasValidationMessage: tr,
-        isEmptyValue: rr
+        formatCssPropertyName: Yn,
+        hasValidationMessage: er,
+        isEmptyValue: nr
     });
-    const ir = {
+    const or = {
             navigationKey: "",
             shouldLoad: !1,
             shouldSave: !1,
             state: null
         },
-        sr = (0, _react.createContext)(ir),
-        ar = (e, t) => n => {
+        ir = (0, _react.createContext)(or),
+        sr = (e, t) => n => {
             var r;
-            const o = null !== (r = null == t ? void 0 : t.screenState) && void 0 !== r ? r : ir;
-            return ge.jsx(sr.Provider, {
+            const o = null !== (r = null == t ? void 0 : t.screenState) && void 0 !== r ? r : or;
+            return fe.jsx(ir.Provider, {
                 value: o,
-                children: ge.jsx(e, Object.assign({}, n))
+                children: fe.jsx(e, Object.assign({}, n))
             });
         },
-        lr = (0, _react.createContext)(null),
-        cr = {
+        ar = (0, _react.createContext)(null),
+        lr = {
             didCatch: !1,
             error: null
         };
-    class dr extends _react.Component {
+    class cr extends _react.Component {
         constructor(e) {
-            super(e), this.resetErrorBoundary = this.resetErrorBoundary.bind(this), this.state = cr;
+            super(e), this.resetErrorBoundary = this.resetErrorBoundary.bind(this), this.state = lr;
         }
         static getDerivedStateFromError(e) {
             return {
@@ -3845,7 +3845,7 @@
                 null === (t = (n = this.props).onReset) || void 0 === t || t.call(n, {
                     args: o,
                     reason: "imperative-api"
-                }), this.setState(cr);
+                }), this.setState(lr);
             }
         }
         componentDidCatch(e, t) {
@@ -3867,7 +3867,7 @@
                 next: r,
                 prev: e.resetKeys,
                 reason: "keys"
-            }), this.setState(cr));
+            }), this.setState(lr));
         }
         render() {
             const {
@@ -3892,7 +3892,7 @@
                     s = r;
                 }
             }
-            return (0, _react.createElement)(lr.Provider, {
+            return (0, _react.createElement)(ar.Provider, {
                 value: {
                     didCatch: o,
                     error: i,
@@ -3901,21 +3901,21 @@
             }, s);
         }
     }
-    const ur = (0, _react.createContext)(void 0),
-        pr = (0, _react.createContext)({
+    const dr = (0, _react.createContext)(void 0),
+        ur = (0, _react.createContext)({
             controllerFactory: void 0,
             modelFactory: void 0
         }),
-        hr = (0, _react.createContext)({
+        pr = (0, _react.createContext)({
             viewName: void 0
         }),
-        mr = (e, t, n, r) => {
+        hr = (e, t, n, r) => {
             const {
                 controllerFactory: o,
                 modelFactory: i
-            } = (0, _react.useContext)(pr), {
+            } = (0, _react.useContext)(ur), {
                 viewName: s = t
-            } = (0, _react.useContext)(hr),
+            } = (0, _react.useContext)(pr),
             [a, l] = (0, _react.useState)(() => {
                 var t;
                 if (e) return {
@@ -3943,12 +3943,12 @@
                 controller: c.current
             };
         },
-        vr = e => {
+        mr = e => {
             var t, n, r;
             return null === (t = null == e ? void 0 : e.service) || void 0 === t ? void 0 : t.getId(null !== (r = null !== (n = e.name) && void 0 !== n ? n : e.uuid) && void 0 !== r ? r : "");
         },
-        fr = e => {
-            const t = (0, _react.useContext)(sr),
+        vr = e => {
+            const t = (0, _react.useContext)(ir),
                 o = (0, _react.useRef)(""),
                 {
                     _idProps: i,
@@ -3959,7 +3959,7 @@
             (0, _react.useEffect)(() => {
                 var e, c;
                 if (o.current = t.navigationKey, t.shouldLoad && l) {
-                    const r = null === (e = t.state) || void 0 === e ? void 0 : e.components[null !== (c = vr(i)) && void 0 !== c ? c : ""];
+                    const r = null === (e = t.state) || void 0 === e ? void 0 : e.components[null !== (c = mr(i)) && void 0 !== c ? c : ""];
                     !r || _runtimeCoreJs.ObjectExtensions.isEmptyObject(r.customProperties) && _runtimeCoreJs.ObjectExtensions.isEmptyObject(r.state) || l(r.customProperties, r.state);
                 }
                 return () => {
@@ -3967,20 +3967,20 @@
                     if (t.shouldSave) {
                         const t = null == s ? void 0 : s(),
                             l = null == a ? void 0 : a();
-                        _runtimeCoreJs.ObjectExtensions.isEmptyObject(l) && _runtimeCoreJs.ObjectExtensions.isEmptyObject(t) || _runtimeCoreJs.ScreenStateCache.ScreenStateCache.save(o.current, null !== (e = vr(i)) && void 0 !== e ? e : "", l, t);
+                        _runtimeCoreJs.ObjectExtensions.isEmptyObject(l) && _runtimeCoreJs.ObjectExtensions.isEmptyObject(t) || _runtimeCoreJs.ScreenStateCache.ScreenStateCache.save(o.current, null !== (e = mr(i)) && void 0 !== e ? e : "", l, t);
                     }
                 };
             }, []);
         },
-        gr = e => /Maximum update depth exceeded/gi.test(e.message),
-        Sr = (e, t) => new Error(`Render loop avoided. This is likely due to variables of ${t ? `block '${t}' on ` : ""}screen '${e}' being changed inside its 'On Render' event handler. Avoid changing variables inside 'On Render' event handlers.`),
-        yr = () => new _runtimeCoreJs.WidgetNaming.WidgetIdService(null),
-        wr = (t, n) => {
+        fr = e => /Maximum update depth exceeded/gi.test(e.message),
+        gr = (e, t) => new Error(`Render loop avoided. This is likely due to variables of ${t ? `block '${t}' on ` : ""}screen '${e}' being changed inside its 'On Render' event handler. Avoid changing variables inside 'On Render' event handlers.`),
+        Sr = () => new _runtimeCoreJs.WidgetNaming.WidgetIdService(null),
+        yr = (t, n) => {
             const r = (0, _react.forwardRef)((r, i) => {
                     var s, a;
                     const {
                         _idProps: c,
-                        createIdService: d = yr,
+                        createIdService: d = Sr,
                         screenStateCacheOverrides: u
                     } = r,
                     p = (0, _react.useRef)(void 0),
@@ -3989,7 +3989,7 @@
                             modelState: v,
                             setModel: f,
                             controller: g
-                        } = mr(r.model, n.displayName, r.controller, d()),
+                        } = hr(r.model, n.displayName, r.controller, d()),
                         S = v.model;
                     (0, _react.useEffect)(() => {
                         S.subscribeWrites(e => {
@@ -4007,7 +4007,7 @@
                         name: "View",
                         service: d()
                     };
-                    fr({
+                    vr({
                         _idProps: null != c ? c : y,
                         onLoad: null == u ? void 0 : u.onLoad,
                         serializeState: null !== (s = null == u ? void 0 : u.serializeState) && void 0 !== s ? s : () => w(),
@@ -4021,7 +4021,7 @@
                         C = () => {
                             h.current = p.current;
                         },
-                        E = (0, _react.useContext)(ur);
+                        E = (0, _react.useContext)(dr);
                     var b, x;
                     b = null === (a = n.getId) || void 0 === a ? void 0 : a.call(n, r._idProps), x = () => {
                         var e;
@@ -4041,7 +4041,7 @@
                         (null !== (e = r.onRender) && void 0 !== e ? e : e => e())(() => {
                             const e = g.fireAfterViewRender();
                             e && e.catch(e => {
-                                gr(e) && _runtimeCoreJs.ErrorHandling.handleError(Sr(n.displayName, null == E ? void 0 : E.viewName));
+                                fr(e) && _runtimeCoreJs.ErrorHandling.handleError(gr(n.displayName, null == E ? void 0 : E.viewName));
                             });
                         });
                     }), (0, _react.useEffect)(() => () => {
@@ -4050,15 +4050,15 @@
                             S.clearSubscriptions(), g.fireAfterViewDestroy(), setTimeout(() => g.dispose());
                         });
                     }, []);
-                    return p.current = S.toImmutableData(), ge.jsx(Kn, {
+                    return p.current = S.toImmutableData(), fe.jsx(Gn, {
                         viewName: n.displayName,
-                        children: ge.jsx(dr, {
+                        children: fe.jsx(cr, {
                             onError: t => {
-                                const r = gr(t);
-                                _runtimeCoreJs.Logger.error("View", t, r ? "OS-CLRT-60501" : "OS-CLRT-60500", t, xt.External), r ? _runtimeCoreJs.ErrorHandling.handleError(Sr(n.displayName)) : g.handleError(t);
+                                const r = fr(t);
+                                _runtimeCoreJs.Logger.error("View", t, r ? "OS-CLRT-60501" : "OS-CLRT-60500", t, bt.External), r ? _runtimeCoreJs.ErrorHandling.handleError(gr(n.displayName)) : g.handleError(t);
                             },
                             fallbackRender: () => null,
-                            children: ge.jsx(t, Object.assign({
+                            children: fe.jsx(t, Object.assign({
                                 ref: i
                             }, r, {
                                 children: r.children
@@ -4066,16 +4066,16 @@
                         })
                     });
                 }),
-                i = e => ge.jsx(pr.Provider, {
+                i = e => fe.jsx(ur.Provider, {
                     value: n,
-                    children: ge.jsx(r, Object.assign({}, e))
+                    children: fe.jsx(r, Object.assign({}, e))
                 });
             return i.displayName = n.displayName, i;
         },
+        wr = (0, _react.createContext)(void 0),
         Cr = (0, _react.createContext)(void 0),
-        Er = (0, _react.createContext)(void 0),
-        br = () => (0, _react.useContext)(Er);
-    class xr {
+        Er = () => (0, _react.useContext)(Cr);
+    class br {
         constructor(_ref6) {
             let {
                 viewSpanProvider: t,
@@ -4119,7 +4119,7 @@
             return this.viewSpanProvider.getChildSpanName(e);
         }
         doWithChildSpan(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : bt;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Et;
             return this.executeInChildSpan({
                 type: "main",
                 childName: e,
@@ -4128,7 +4128,7 @@
             });
         }
         doWithChildDisposeSpan(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : bt;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Et;
             return this.executeInChildSpan({
                 type: "dispose",
                 childName: e,
@@ -4146,21 +4146,21 @@
             const o = "main" === e ? this.span : this.disposeSpan,
                 i = this.viewSpanProvider.getAttributes(),
                 s = this.viewSpanProvider.getSpanType("dispose" === e);
-            return this.startActiveSpan(this.getChildSpanName(t), e => (e && (null == r || r(s, e, i), this.childSpans.set(t, e)), n(e)), xt.Internal, o);
+            return this.startActiveSpan(this.getChildSpanName(t), e => (e && (null == r || r(s, e, i), this.childSpans.set(t, e)), n(e)), bt.Internal, o);
         }
         getDisposeRootSpan() {
             if (this.localDisposeRootSpan) return this.localDisposeRootSpan;
             const e = this.viewSpanProvider.getAttributes(),
                 t = this.viewSpanProvider.getSpanType(!0);
             if (!(null == e ? void 0 : e.codeFunction)) return;
-            const n = this.startSpan(e.codeFunction, xt.External, this.ownerDisposeSpan);
-            return this.localDisposeRootSpan = bt(t, n, e), this.localDisposeRootSpan;
+            const n = this.startSpan(e.codeFunction, bt.External, this.ownerDisposeSpan);
+            return this.localDisposeRootSpan = Et(t, n, e), this.localDisposeRootSpan;
         }
         getChildSpan(e) {
             return this.childSpans.get(e);
         }
     }
-    class Nr {
+    class xr {
         constructor(_ref8) {
             let {
                 getAttributes: t = () => {},
@@ -4179,8 +4179,8 @@
             if (this.screenSpan && !e) return this.screenSpan;
             const r = this.getAttributes();
             if (!(null == r ? void 0 : r.codeFunction)) return;
-            const o = this.startSpan(r.codeFunction, xt.External, t);
-            return null === (n = this.screenSpan) || void 0 === n || n.end(), this.screenSpan = bt(this.getSpanType(), o, r), this.screenSpan;
+            const o = this.startSpan(r.codeFunction, bt.External, t);
+            return null === (n = this.screenSpan) || void 0 === n || n.end(), this.screenSpan = Et(this.getSpanType(), o, r), this.screenSpan;
         }
         makeProviderForInstance(_ref9) {
             let {
@@ -4188,7 +4188,7 @@
                 getOwnerDisposeSpan: t,
                 forceRefresh: n
             } = _ref9;
-            return new xr({
+            return new br({
                 viewSpanProvider: this,
                 getOwnerSpan: e,
                 getOwnerDisposeSpan: t,
@@ -4205,7 +4205,7 @@
                     for (var _len9 = arguments.length, e = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
                         e[_key9] = arguments[_key9];
                     }
-                    return new Nr(...e);
+                    return new xr(...e);
                 }
             } = _ref10;
             const i = o({
@@ -4249,9 +4249,9 @@
                                 }
                             });
                         }, [n.onDestroy, o]);
-                    return ge.jsx(Er.Provider, {
+                    return fe.jsx(Cr.Provider, {
                         value: o,
-                        children: ge.jsx(e, Object.assign({}, n, {
+                        children: fe.jsx(e, Object.assign({}, n, {
                             onReady: s,
                             onRender: a,
                             onDestroy: l,
@@ -4262,13 +4262,13 @@
                 viewSpanProvider: i
             };
         },
-        Rr = () => yt(document.body),
-        Ir = e => wt(document.body, e),
-        Dr = (e, t) => {
+        Nr = () => St(document.body),
+        Rr = e => yt(document.body, e),
+        Ir = (e, t) => {
             var n;
             null === (n = e.controller) || void 0 === n || n.validationService.validate(t);
         },
-        Pr = (e, _ref11) => {
+        Dr = (e, _ref11) => {
             let {
                 isWebBlockInstance: t,
                 isValidationAggregator: n,
@@ -4298,21 +4298,21 @@
                 a.current && i && i.unregister(a.current.getId());
             }), []);
         },
-        Mr = (e, t) => {
+        Pr = (e, t) => {
             const {
                 inputs: n,
                 model: r
             } = e;
             n && Object.keys(n).length > 0 && r && (r.setInputs(n), t && r.flush());
         },
-        Tr = _ref12 => {
+        Mr = _ref12 => {
             let {
                 _idProps: e
             } = _ref12;
             var t;
             return new _runtimeCoreJs.WidgetNaming.WidgetIdService(null !== (t = null == e ? void 0 : e.service) && void 0 !== t ? t : null, null == e ? void 0 : e.alias, _runtimeCoreJs.WidgetNaming.NamespaceKind.Block);
         },
-        Lr = (e, t) => {
+        Tr = (e, t) => {
             var n;
             if (t) null === (n = e.controller) || void 0 === n || n.validationService.validate(t);
             else {
@@ -4320,7 +4320,7 @@
                 null == t || t.validationService.validate(null == t ? void 0 : t.validationParentId);
             }
         },
-        kr = e => {
+        Lr = e => {
             var t, n;
             return null !== (n = null === (t = null == e ? void 0 : e.service) || void 0 === t ? void 0 : t.getId(e.name || "$b" + e.alias)) && void 0 !== n ? n : "";
         },
@@ -4332,17 +4332,17 @@
                 falseBranch: r
             } = _ref13;
             let o, i;
-            return e ? o = n.call(t) : i = r.call(t), ge.jsxs(ge.Fragment, {
-                children: [o && ge.jsx(ge.Fragment, {
+            return e ? o = n.call(t) : i = r.call(t), fe.jsxs(fe.Fragment, {
+                children: [o && fe.jsx(fe.Fragment, {
                     children: o
-                }), i && ge.jsx(ge.Fragment, {
+                }), i && fe.jsx(fe.Fragment, {
                     children: i
                 })]
             });
         };
-    var Ar = _exports.fc = Object.freeze({
+    var kr = _exports.fc = Object.freeze({
         __proto__: null,
-        WidgetUtils: or,
+        WidgetUtils: rr,
         asPrimitiveValue: e => null == e ? e : e.valueOf(),
         getTranslation: (e, t) => {
             const n = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.TranslationsService);
@@ -4358,7 +4358,7 @@
             const t = [];
             if (0 !== e.length) {
                 const n = e.split("\n");
-                for (const e of n.slice(0, n.length - 1)) 0 !== e.length && t.push(e), t.push(ge.jsx("br", {}));
+                for (const e of n.slice(0, n.length - 1)) 0 !== e.length && t.push(e), t.push(fe.jsx("br", {}));
                 const r = n[n.length - 1];
                 0 !== r.length && t.push(r);
             }
@@ -4381,11 +4381,11 @@
                     }
                 }),
                 a = s.current.validity;
-            return Pr(() => {
+            return Dr(() => {
                 if ((e => {
                         var t;
                         const n = e.value;
-                        return !!rr(n) && !(null === (t = e.validity) || void 0 === t ? void 0 : t.badInput);
+                        return !!nr(n) && !(null === (t = e.validity) || void 0 === t ? void 0 : t.badInput);
                     })(s.current)) {
                     if (t) return new _runtimeCoreJs.Validation.ValidationResult(!1, null == r ? void 0 : r.getMandatoryValueMessage());
                 } else if (a && !a.valid || !n.isAcceptable(s.current)) return new _runtimeCoreJs.Validation.ValidationResult(!1, null == r ? void 0 : r.getInvalidValueMessage(n.type));
@@ -4403,31 +4403,31 @@
                 return t || r || o;
             };
         },
-        useScreenStateCache: fr,
-        useTracing: br,
-        useValidation: Pr,
+        useScreenStateCache: vr,
+        useTracing: Er,
+        useValidation: Dr,
         withBaseWebBlock: (t, r) => {
             const o = (0, _react.createRef)(),
-                i = wr(t, Object.assign(Object.assign({}, r), {
-                    getId: kr,
+                i = yr(t, Object.assign(Object.assign({}, r), {
+                    getId: Lr,
                     rootNodeReference: o
                 })),
                 s = (0, _react.memo)(e => {
-                    const t = br();
+                    const t = Er();
                     if (!t) throw new Error("Web blocks must have tracing");
                     const n = (0, _react.useRef)(!1);
-                    n.current || (Mr(e, !0), n.current = !0), fr({
+                    n.current || (Pr(e, !0), n.current = !0), vr({
                         _idProps: e._idProps,
                         onLoad: (t, n) => {
-                            e.model.fromImmutableData(n), e.model.context.viewWasRestoredFromCache = !0, Mr(e, !0);
+                            e.model.fromImmutableData(n), e.model.context.viewWasRestoredFromCache = !0, Pr(e, !0);
                         }
-                    }), Pr(() => (e => {
+                    }), Dr(() => (e => {
                         var t;
                         return new _runtimeCoreJs.Validation.ValidationResult(null === (t = e.controller) || void 0 === t ? void 0 : t.validationService.validate(""));
                     })(e), {
                         isValidationAggregator: !1,
                         isWebBlockInstance: !0,
-                        id: kr(e._idProps),
+                        id: Lr(e._idProps),
                         validationServiceProperties: e._validationProps
                     }), (0, _react.useMemo)(() => {
                         var n;
@@ -4440,7 +4440,7 @@
                                     for (var _len10 = arguments.length, e = new Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
                                         e[_key10] = arguments[_key10];
                                     }
-                                    return ot(void 0, void 0, void 0, function*() {
+                                    return rt(void 0, void 0, void 0, function*() {
                                         return yield o(...e);
                                     });
                                 });
@@ -4467,8 +4467,8 @@
                     }, []);
                     return e.onWillUpdate(e.model), t.doWithChildSpan("render", t => {
                         try {
-                            return ge.jsx(i, Object.assign({}, e, {
-                                createIdService: () => Tr(e),
+                            return fe.jsx(i, Object.assign({}, e, {
+                                createIdService: () => Mr(e),
                                 onReady: r
                             }));
                         } finally {
@@ -4479,11 +4479,11 @@
                     if (r.previousModelData !== r.model.toImmutableData()) return !1;
                     if (!_runtimeCoreJs.ObjectExtensions.shallowEquals(t.inputs, r.inputs)) return (t => {
                         var n;
-                        _runtimeCoreJs.Logger.debug("BaseWebBlock", () => `Inputs of '${kr(t._idProps)}' changed`), Mr(t, !1);
+                        _runtimeCoreJs.Logger.debug("BaseWebBlock", () => `Inputs of '${Lr(t._idProps)}' changed`), Pr(t, !1);
                         try {
                             null === (n = t.controller) || void 0 === n || n.fireAfterInputsChanged();
                         } finally {
-                            _runtimeCoreJs.Logger.debug("BaseWebBlock", () => "InputsChanged event fired on '" + kr(t._idProps) + "'");
+                            _runtimeCoreJs.Logger.debug("BaseWebBlock", () => "InputsChanged event fired on '" + Lr(t._idProps) + "'");
                         }
                     })(r), !1;
                     if (!r._dependencies && r.placeholders) return !1;
@@ -4495,20 +4495,20 @@
                         controller: t,
                         setModel: n,
                         modelState: o
-                    } = mr(e.model, r.displayName, e.controller, Tr(e)),
-                        i = Qn(!!e._dependencies),
-                        a = (0, _react.useContext)(qn),
+                    } = hr(e.model, r.displayName, e.controller, Mr(e)),
+                        i = Jn(!!e._dependencies),
+                        a = (0, _react.useContext)(Kn),
                         l = (0, _react.useRef)(void 0),
-                        c = (0, _react.useContext)(Cr),
+                        c = (0, _react.useContext)(wr),
                         d = !(!a || !i) && i.generation >= a.generation;
                     (0, _react.useEffect)(() => {
                         null == c || c();
                     }, [o]);
-                    return ge.jsx(Kn, {
+                    return fe.jsx(Gn, {
                         ancestorGenerationNode: i,
-                        children: ge.jsx(Jn, {
+                        children: fe.jsx(qn, {
                             value: i,
-                            children: ge.jsx(s, Object.assign({}, e, {
+                            children: fe.jsx(s, Object.assign({}, e, {
                                 generationNode: i,
                                 isGenerationUpToDate: d,
                                 previousModelData: l.current,
@@ -4522,14 +4522,14 @@
                                         model: e.model
                                     });
                                 },
-                                validateWidget: Lr
+                                validateWidget: Tr
                             }))
                         })
                     });
                 },
-                l = ar(e => ge.jsx(pr.Provider, {
+                l = sr(e => fe.jsx(ur.Provider, {
                     value: r,
-                    children: ge.jsx(a, Object.assign({}, e))
+                    children: fe.jsx(a, Object.assign({}, e))
                 }), r),
                 c = Object.assign({
                     getSpanType: e => e ? "BLOCK_DISPOSE" : "BLOCK"
@@ -4548,13 +4548,13 @@
             }, p;
         },
         withBaseWebScreen: (e, t) => {
-            const n = wr(e, t),
+            const n = yr(e, t),
                 a = (0, _react.memo)((0, _react.forwardRef)((e, r) => {
                     var a, l, c;
-                    const d = br();
+                    const d = Er();
                     if (!d) throw new Error("Screens must be traceable.");
                     const {
-                        createIdService: p = yr,
+                        createIdService: p = Sr,
                         _idProps: h,
                         cachedScreenState: m,
                         navigationKey: v,
@@ -4577,32 +4577,32 @@
                     }), () => {
                         w.current && _runtimeCoreJs.EventDispatcher.EventDispatcher.unregister(w.current);
                     }), []);
-                    const x = ge.jsx(hr.Provider, {
+                    const x = fe.jsx(pr.Provider, {
                             value: {
                                 viewName: t.displayName
                             },
-                            children: ge.jsx(pr.Provider, {
+                            children: fe.jsx(ur.Provider, {
                                 value: t,
-                                children: ge.jsx(Jn, {
+                                children: fe.jsx(qn, {
                                     value: null === (l = null === (a = e.model) || void 0 === a ? void 0 : a.widgetsGenerationsTree) || void 0 === l ? void 0 : l.root,
-                                    children: ge.jsx(Cr.Provider, {
+                                    children: fe.jsx(wr.Provider, {
                                         value: b,
-                                        children: ge.jsx(n, Object.assign({}, e, {
+                                        children: fe.jsx(n, Object.assign({}, e, {
                                             ref: C,
                                             _idProps: {
                                                 service: null !== (c = null == h ? void 0 : h.service) && void 0 !== c ? c : p(),
-                                                uuid: Nt
+                                                uuid: xt
                                             },
                                             screenStateCacheOverrides: {
-                                                onLoad: Ir,
-                                                serializeCustomProperties: Rr
+                                                onLoad: Rr,
+                                                serializeCustomProperties: Nr
                                             }
                                         }))
                                     })
                                 })
                             })
                         }),
-                        N = (0, _react.useMemo)(() => ({
+                        O = (0, _react.useMemo)(() => ({
                             navigationKey: v,
                             shouldSave: S && f,
                             shouldLoad: g.current,
@@ -4621,14 +4621,14 @@
                     }, []), e.onWillUpdate(), d.doWithChildSpan("render", t => {
                         var n, r, o;
                         try {
-                            return ge.jsx(Kn, {
+                            return fe.jsx(Gn, {
                                 ancestorGenerationNode: null === (r = null === (n = e.model) || void 0 === n ? void 0 : n.widgetsGenerationsTree) || void 0 === r ? void 0 : r.root,
                                 isGenerationUpToDate: e => e <= E.current,
                                 refreshCurrentGeneration: b,
-                                getScreenStateCache: () => N,
+                                getScreenStateCache: () => O,
                                 locale: null === (o = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.LocaleService)) || void 0 === o ? void 0 : o.getCurrentLocale(),
-                                children: ge.jsx(sr.Provider, {
-                                    value: N,
+                                children: fe.jsx(ir.Provider, {
+                                    value: O,
                                     children: x
                                 })
                             });
@@ -4645,10 +4645,10 @@
                     TraceableView: c,
                     viewSpanProvider: d
                 } = Or(n => {
-                    const o = br();
+                    const o = Er();
                     if (!o) throw new Error("Web screens must have tracing");
                     const {
-                        createIdService: l = yr,
+                        createIdService: l = Sr,
                         model: c,
                         controller: d,
                         cachedScreenState: u,
@@ -4657,7 +4657,7 @@
                         modelState: h,
                         setModel: m,
                         controller: v
-                    } = mr(c, t.displayName, d, l()),
+                    } = hr(c, t.displayName, d, l()),
                         f = (0, _react.useRef)(void 0),
                         g = (0, _react.useRef)(!1),
                         S = (0, _react.useRef)(!!u),
@@ -4692,7 +4692,7 @@
                         }, []);
                     return (0, _react.useEffect)(() => {
                         g.current ? w() : g.current = !0;
-                    }), ge.jsx(a, Object.assign({}, n, {
+                    }), fe.jsx(a, Object.assign({}, n, {
                         previousModelData: f.current,
                         model: h.model,
                         onWillUpdate: () => {
@@ -4703,7 +4703,7 @@
                         setModelState: m,
                         controller: v,
                         onReady: C,
-                        validateWidget: Dr
+                        validateWidget: Ir
                     }));
                 }, l),
                 p = c;
@@ -4713,25 +4713,25 @@
                 return d.getRootSpan(...arguments);
             }, p;
         },
-        withScreenStateCache: ar,
-        withView: wr,
+        withScreenStateCache: sr,
+        withView: yr,
         withWidget: function(e) {
             let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
                 skipRenderWhenHidden: !0
             };
-            const r = (0, _react.memo)(n => !t.skipRenderWhenHidden || void 0 === n.visible || !0 === n.visible ? ge.jsx(e, Object.assign({}, n)) : null, (e, t) => {
+            const r = (0, _react.memo)(n => !t.skipRenderWhenHidden || void 0 === n.visible || !0 === n.visible ? fe.jsx(e, Object.assign({}, n)) : null, (e, t) => {
                 var r, o;
-                return !(!t._dependencies && ((e, t) => !!t.placeholders || _react.Children.count(e.children) > 0 || _react.Children.count(t.children) > 0)(e, t)) && !(e.generationNode && !t.isGenerationUpToDate) && !!_runtimeCoreJs.ObjectExtensions.arrayShallowEquals(null !== (r = e._dependencies) && void 0 !== r ? r : [], null !== (o = t._dependencies) && void 0 !== o ? o : []) && !!_runtimeCoreJs.ObjectExtensions.shallowEquals(e, t, nr) && !!_runtimeCoreJs.ObjectExtensions.shallowEquals(e.extendedProperties, t.extendedProperties);
+                return !(!t._dependencies && ((e, t) => !!t.placeholders || _react.Children.count(e.children) > 0 || _react.Children.count(t.children) > 0)(e, t)) && !(e.generationNode && !t.isGenerationUpToDate) && !!_runtimeCoreJs.ObjectExtensions.arrayShallowEquals(null !== (r = e._dependencies) && void 0 !== r ? r : [], null !== (o = t._dependencies) && void 0 !== o ? o : []) && !!_runtimeCoreJs.ObjectExtensions.shallowEquals(e, t, tr) && !!_runtimeCoreJs.ObjectExtensions.shallowEquals(e.extendedProperties, t.extendedProperties);
             });
-            return ar(e => {
-                const t = Qn(!!e._dependencies),
-                    n = (0, _react.useContext)(qn),
+            return sr(e => {
+                const t = Jn(!!e._dependencies),
+                    n = (0, _react.useContext)(Kn),
                     o = !(!n || !t) && t.generation >= n.generation;
-                return ge.jsx(Kn, {
+                return fe.jsx(Gn, {
                     ancestorGenerationNode: t,
-                    children: ge.jsx(Jn, {
+                    children: fe.jsx(qn, {
                         value: t,
-                        children: ge.jsx(r, Object.assign({}, e, {
+                        children: fe.jsx(r, Object.assign({}, e, {
                             generationNode: t,
                             isGenerationUpToDate: o
                         }))
@@ -4740,19 +4740,9 @@
             });
         }
     });
-    const Wr = e => {
-        const {
-            component: t,
-            onEnter: n,
-            onLeave: r
-        } = e;
-        return (0, _react.useEffect)(() => (n && n(), () => {
-            r && r();
-        }), []), t ? (0, _react.createElement)(t, e) : null;
-    };
-    let Fr = [];
+    let Ar = [];
 
-    function Ur() {
+    function Wr() {
         const e = {
             width: window.innerWidth || document.documentElement.clientWidth,
             height: window.innerHeight || document.documentElement.clientHeight
@@ -4766,133 +4756,163 @@
         }
         return t = e.width > e.height ? "landscape" : "portrait", [n, t];
     }
-    let _r = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider) || Ur;
+    let Fr = _runtimeCoreJs.Injector.resolve(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider) || Wr;
 
-    function Hr() {
-        Fr.forEach(e => document.body.classList.remove(e)), Fr = _r(), Fr.forEach(e => document.body.classList.add(e));
+    function Ur() {
+        Ar.forEach(e => document.body.classList.remove(e)), Ar = Fr(), Ar.forEach(e => document.body.classList.add(e));
     }
+    _runtimeCoreJs.Injector.addRegistrationListener(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider, (e, t) => Fr = t || Wr);
+    const _r = (0, _react.createContext)(void 0);
 
-    function Vr(n) {
+    function Hr(n) {
         let r = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _runtimeCoreJs.Navigation.hasPendingReload;
-        if (mt(!1), n.isShowingSplashScreen || r()) return;
+        if (ht(!1), n.isShowingSplashScreen || r()) return;
         const o = _runtimeCoreJs.UrlUtils.removeQueryParametersFromUrls(_runtimeCoreJs.Navigation.getCurrentLocation().href);
         _runtimeCoreJs.Logger.debug("Root", `Navigated to: ${o}`);
         const i = _runtimeCoreJs.Application.ApplicationStorage.pendingUpgradeFeedback.get();
         i && (n.showUpgradeFeedback(i), _runtimeCoreJs.Application.ApplicationStorage.pendingUpgradeFeedback.remove());
     }
-    _runtimeCoreJs.Injector.addRegistrationListener(_runtimeCoreJs.ServiceNames.DeviceHelperClassProvider, (e, t) => _r = t || Ur);
-    const zr = (0, _react.createContext)(!0);
-    let Br = null;
+    const Vr = (0, _react.createContext)(() => !0);
+    let zr = null;
 
-    function $r(e) {
-        Br = e;
+    function Br(e) {
+        zr = e;
     }
-    const Gr = _ref15 => {
-        let {
-            runtime: e,
-            screenLoader: t,
-            children: n,
-            onBeforeNavigate: r
-        } = _ref15;
-        var i, s;
-        const a = (0, _v6ReactRouterDom.useLocation)(),
-            l = (0, _v6ReactRouterDom.useNavigate)(),
-            c = (0, _v6ReactRouterDom.useNavigationType)(),
-            [d, u] = (0, _react.useState)(!1),
-            [h, m] = (0, _react.useState)(null !== (s = null === (i = a.state) || void 0 === i ? void 0 : i.transition) && void 0 !== s ? s : new _runtimeCoreJs.Transitions.Transition("")),
-            [v, f] = (0, _react.useState)(!1),
-            [g, S] = (0, _react.useState)(!0),
-            w = (0, _react.useRef)(!1),
-            C = (0, _react.useRef)(void 0),
-            E = "onorientationchange" in window ? "orientationchange" : "resize",
-            b = (e, n) => ot(void 0, void 0, void 0, function*() {
-                try {
-                    return yield null == t ? void 0 : t.load({
-                        action: n,
-                        location: e,
-                        navigate: l
-                    }), !0;
-                } catch (e) {}
-                return !1;
-            }),
-            x = (0, _v6ReactRouterDom.useBlocker)(_ref16 => {
-                let {
-                    nextLocation: t,
-                    historyAction: n
-                } = _ref16;
-                return r(e, t, n) && (C.current = e => b(t, n).then(t => {
-                    var n, r;
-                    return t ? null === (n = e.proceed) || void 0 === n ? void 0 : n.call(e) : null === (r = e.reset) || void 0 === r ? void 0 : r.call(e);
-                })), !0;
-            }),
-            N = () => {
-                setTimeout(() => {
-                    Hr();
-                }, 300);
-            },
-            O = () => {
-                u(!0), setTimeout(() => {
-                    _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
-                        type: _runtimeCoreJs.EventDispatcher.EventType.TransitionStart
-                    });
-                });
-            };
-        if (w.current || (Hr(), window.addEventListener(E, N, !1)), (0, _react.useEffect)(() => (w.current = !0, v || O(), Vr(e), () => {
-                window.removeEventListener(E, N);
-            }), []), (0, _react.useEffect)(() => {
-                w.current && (O(), Vr(e));
-            }), (0, _react.useEffect)(() => {
-                var e;
-                "blocked" === x.state && (null === (e = C.current) || void 0 === e || e.call(C, x));
-            }, [x]), (0, _react.useEffect)(() => {
-                const e = ((e, t, n) => {
-                    var r;
-                    return Br ? _runtimeCoreJs.Transitions.sanitizeTransition(Br) : _runtimeCoreJs.Navigation.locationReachedFromHistory(Object.assign({
-                        action: e
-                    }, t)) ? _runtimeCoreJs.Transitions.reverseTransition(_runtimeCoreJs.Transitions.sanitizeTransition(n)) : (null === (r = t.state) || void 0 === r ? void 0 : r.transition) ? _runtimeCoreJs.Transitions.sanitizeTransition(t.state.transition) : new _runtimeCoreJs.Transitions.Transition("");
-                })(c, a, h);
-                m(e), f(!!e.name), u(!1);
-            }, [a.key]), g) return b(a, c).then(e => {
-            e && S(!1);
-        }), null;
-        const R = hn(h.name);
-        return ge.jsx(zr.Provider, {
-            value: d,
-            children: ge.jsx(Be, {
-                component: "div",
-                id: "transitionContainer",
-                childFactory: e => (0, _react.cloneElement)(e, {
-                    classNames: R,
-                    timeout: v ? 300 : 0
-                }),
-                children: ge.jsx(Ue, {
-                    classNames: R,
-                    timeout: v ? 300 : 0,
-                    onEnter: () => O(),
-                    onExited: () => {
-                        setTimeout(() => {
-                            _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
-                                type: _runtimeCoreJs.EventDispatcher.EventType.TransitionEnd,
-                                args: _runtimeCoreJs.EventDispatcher.TransitionEndResult.Success
-                            });
+    const $r = (e, t, n, r) => rt(void 0, void 0, void 0, function*() {
+            try {
+                return yield null == n ? void 0 : n.load({
+                    action: t,
+                    location: e,
+                    navigate: r
+                }), !0;
+            } catch (e) {}
+            return !1;
+        }),
+        Gr = (0, _react.memo)(_ref15 => {
+            let {
+                runtime: e,
+                screenLoader: t,
+                children: n,
+                location: r,
+                navigationAction: i,
+                navigate: s
+            } = _ref15;
+            const a = (0, _react.useRef)(r),
+                l = (0, _react.useRef)(!1),
+                c = (0, _react.useRef)(!1),
+                [d, u] = (0, _react.useState)(!0),
+                h = (0, _react.useRef)(!1),
+                m = "onorientationchange" in window ? "orientationchange" : "resize",
+                v = (0, _react.useCallback)(() => l.current, [l]);
+            l.current = !1;
+            const f = ((e, t, n) => {
+                var r;
+                return zr ? _runtimeCoreJs.Transitions.sanitizeTransition(zr) : _runtimeCoreJs.Navigation.locationReachedFromHistory(Object.assign({
+                    action: e
+                }, t)) ? _runtimeCoreJs.Transitions.reverseTransition(_runtimeCoreJs.Transitions.sanitizeTransition(n)) : (null === (r = t.state) || void 0 === r ? void 0 : r.transition) ? _runtimeCoreJs.Transitions.sanitizeTransition(t.state.transition) : new _runtimeCoreJs.Transitions.Transition("");
+            })(i, r, (null === (g = a.current.state) || void 0 === g ? void 0 : g.transition) ? _runtimeCoreJs.Transitions.sanitizeTransition(null === (S = a.current.state) || void 0 === S ? void 0 : S.transition) : new _runtimeCoreJs.Transitions.Transition(""));
+            var g, S;
+            r !== a.current && (c.current = !!f.name, a.current = r, d && u(!1));
+            const w = () => {
+                    setTimeout(() => {
+                        Ur();
+                    }, 300);
+                },
+                C = () => {
+                    l.current = !0, setTimeout(() => {
+                        _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
+                            type: _runtimeCoreJs.EventDispatcher.EventType.TransitionStart
                         });
-                    },
-                    children: ge.jsx(_react.Fragment, {
-                        children: n
+                    });
+                };
+            if (h.current || (Ur(), window.addEventListener(m, w, !1)), (0, _react.useEffect)(() => (h.current = !0, f.name || C(), Hr(e), () => {
+                    window.removeEventListener(m, w);
+                }), []), (0, _react.useEffect)(() => {
+                    h.current && (C(), Hr(e));
+                }), d) return $r(r, i, t, s).then(e => {
+                e && u(!1);
+            }), null;
+            const E = pn(f.name);
+            return fe.jsx(Vr.Provider, {
+                value: v,
+                children: fe.jsx(Gn, {
+                    hasScreenRendered: v,
+                    children: fe.jsx(ze, {
+                        component: "div",
+                        id: "transitionContainer",
+                        childFactory: e => (0, _react.cloneElement)(e, {
+                            classNames: E,
+                            timeout: c.current ? 300 : 0
+                        }),
+                        children: fe.jsx(Fe, {
+                            classNames: E,
+                            timeout: c.current ? 300 : 0,
+                            onEnter: () => C(),
+                            onExited: () => {
+                                setTimeout(() => {
+                                    _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
+                                        type: _runtimeCoreJs.EventDispatcher.EventType.TransitionEnd,
+                                        args: _runtimeCoreJs.EventDispatcher.TransitionEndResult.Success
+                                    });
+                                });
+                            },
+                            children: fe.jsx(_r.Provider, {
+                                value: r,
+                                children: n
+                            })
+                        }, r.key)
                     })
-                }, a.key)
-            })
-        });
-    };
-    class Kr {
+                })
+            });
+        }, (e, t) => e.location.key === t.location.key),
+        Kr = e => {
+            var {
+                children: t
+            } = e,
+            n = function(e, t) {
+                var n = {};
+                for (var r in e) Object.prototype.hasOwnProperty.call(e, r) && t.indexOf(r) < 0 && (n[r] = e[r]);
+                if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
+                    var o = 0;
+                    for (r = Object.getOwnPropertySymbols(e); o < r.length; o++) t.indexOf(r[o]) < 0 && Object.prototype.propertyIsEnumerable.call(e, r[o]) && (n[r[o]] = e[r[o]]);
+                }
+                return n;
+            }(e, ["children"]);
+            const r = (0, _v6ReactRouterDom.useLocation)(),
+                o = (0, _v6ReactRouterDom.useNavigationType)(),
+                i = (0, _v6ReactRouterDom.useNavigate)(),
+                s = (0, _react.useRef)("POP"),
+                a = (0, _v6ReactRouterDom.useBlocker)(_ref16 => {
+                    let {
+                        historyAction: e
+                    } = _ref16;
+                    return s.current = e, !0;
+                });
+            return (0, _react.useEffect)(() => {
+                rt(void 0, void 0, void 0, function*() {
+                    if ("blocked" === a.state) {
+                        const e = n.onBeforeNavigate(n.runtime, a.location, s.current) && (yield $r(a.location, s.current, n.screenLoader, i));
+                        setTimeout(() => {
+                            e ? a.proceed() : a.reset();
+                        }, 30);
+                    }
+                });
+            }, [a.state]), fe.jsx(Gr, Object.assign({}, n, {
+                location: r,
+                navigationAction: o,
+                navigate: i,
+                children: t
+            }));
+        };
+    class qr {
         constructor(e, t) {
-            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $r;
+            let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Br;
             this.navigate = e, this.currentRuntime = t, this.setTransition = n;
         }
         static urlToLocationDescriptor(e, t) {
             return [{
                 pathname: e.path.replace(/\/$/, ""),
-                search: nn.stringify(e.queryParams),
+                search: tn.stringify(e.queryParams),
                 hash: e.hash ? "#" + e.hash : ""
             }, {
                 transition: t
@@ -4911,7 +4931,7 @@
         }
         goTo(e, t, n) {
             var r;
-            const [o, i] = Kr.urlToLocationDescriptor(e, t);
+            const [o, i] = qr.urlToLocationDescriptor(e, t);
             n || (null === (r = this.currentRuntime) || void 0 === r ? void 0 : r.isShowingSplashScreen) ? this.replace(o, i) : this.push(o, i);
         }
         goBack(e) {
@@ -4922,16 +4942,16 @@
         }
         dispose(e) {}
     }
-    class qr extends Kr {
+    class Jr extends qr {
         constructor(e, t) {
             super(e, t);
         }
         goTo(e, t) {
-            const [n, r] = Kr.urlToLocationDescriptor(e, t);
+            const [n, r] = qr.urlToLocationDescriptor(e, t);
             this.push(n, r);
         }
     }
-    const Jr = _ref17 => {
+    const Qr = _ref17 => {
             let {
                 errorMessage: e,
                 extraErrorMessage: t
@@ -4946,25 +4966,57 @@
                         return (null == e ? void 0 : e.extraMessage) || "";
                     })();
                 _runtimeCoreJs.ErrorHandling.navigateToErrorPage(void 0, n, r);
-            }, []), ge.jsx("div", {});
+            }, []), fe.jsx("div", {});
         },
-        Qr = () => {
+        Xr = () => {
             const e = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
                 t = (null == e ? void 0 : e.messages.noDefaultScreen) || "This application does not contain a default entry.";
-            return ge.jsx(Jr, {
+            return fe.jsx(Qr, {
                 errorMessage: t
             });
         },
-        Xr = () => {
+        Yr = () => {
             var e;
-            const t = `Screen not found: ${(0, _v6ReactRouterDom.useLocation)().pathname || "(none)"}`,
-                n = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
-                r = (null === (e = null == n ? void 0 : n.messages) || void 0 === e ? void 0 : e.screenNotFound) || t;
-            return ge.jsx(Jr, {
-                errorMessage: r
+            const t = (0, _react.useContext)(_r),
+                n = `Screen not found: ${(null == t ? void 0 : t.pathname) || "(none)"}`,
+                r = _runtimeCoreJs.ApplicationInfo.getErrorPageConfig(),
+                o = (null === (e = null == r ? void 0 : r.messages) || void 0 === e ? void 0 : e.screenNotFound) || n;
+            return fe.jsx(Qr, {
+                errorMessage: o
             });
         },
-        Yr = (e, t) => {
+        Zr = e => {
+            const {
+                component: t,
+                onEnter: n,
+                onLeave: r
+            } = e;
+            return (0, _react.useEffect)(() => (n && n(), () => {
+                r && r();
+            }), []), t ? (0, _react.createElement)(t, e) : null;
+        },
+        eo = _ref18 => {
+            let {
+                screenLoader: e,
+                onEnter: t,
+                onLeave: n,
+                onError: r
+            } = _ref18;
+            const o = (0, _react.useContext)(_r);
+            if (!o) throw new Error("Trying to load a Route Component outside the application Root");
+            const i = (0, _react.useMemo)(() => e.getLoadedComponent(o), []);
+            return fe.jsx(vt, {
+                onError: r,
+                children: fe.jsx(Zr, {
+                    onEnter: t,
+                    onLeave: () => {
+                        e.freeLoadedComponent(o), n && n();
+                    },
+                    component: i
+                })
+            });
+        },
+        to = (e, t) => {
             const n = {},
                 r = [],
                 o = e => {
@@ -4974,92 +5026,76 @@
                 };
             return o(e), r;
         },
-        Zr = function(t, n) {
+        no = function(t, n) {
             for (var _len11 = arguments.length, r = new Array(_len11 > 2 ? _len11 - 2 : 0), _key11 = 2; _key11 < _len11; _key11++) {
                 r[_key11 - 2] = arguments[_key11];
             }
-            return ot(void 0, [t, n, ...r], void 0, function(t, n) {
-                let r = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ct;
+            return rt(void 0, [t, n, ...r], void 0, function(t, n) {
+                let r = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : lt;
                 let i = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _runtimeCoreJs.ScriptsManager.scheduleCustomJsLoading;
                 let s = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _runtimeCoreJs.ApplicationInfo.isWebApplication();
                 return function*() {
                     const a = "#loadResources",
-                        l = (c = t, Yr(c, e => e.getCssDependencies())).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e));
+                        l = (c = t, to(c, e => e.getCssDependencies())).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e));
                     var c;
-                    const d = (e => Yr(e, e => e.getJsDependencies()))(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
-                        u = r(l, (t, n) => _runtimeCoreJs.Logger.error(a, t, n, t instanceof Error ? t : void 0, xt.Client)),
+                    const d = (e => to(e, e => e.getJsDependencies()))(t).map(e => _runtimeCoreJs.Navigation.VersionedURL.getVersionedUrl(e)),
+                        u = r(l, (t, n) => _runtimeCoreJs.Logger.error(a, t, n, t instanceof Error ? t : void 0, bt.Client)),
                         v = u.triggerRemoveStyles;
                     _runtimeCoreJs.EventDispatcher.EventDispatcher.listenOnce(_runtimeCoreJs.EventDispatcher.EventType.TransitionEnd, e => {
                         e === _runtimeCoreJs.EventDispatcher.TransitionEndResult.Success && v();
-                    }), yield i(d, t => _runtimeCoreJs.Logger.error(a, t, "OS-CLRT-60500", t instanceof Error ? t : void 0, xt.External), {
+                    }), yield i(d, t => _runtimeCoreJs.Logger.error(a, t, "OS-CLRT-60500", t instanceof Error ? t : void 0, bt.External), {
                         parentSpan: n
                     }), s && (yield u.loadStylesPromise);
                 }();
             });
         };
-    var eo, to, no, ro, oo, io, so;
-    class ao {
+    var ro, oo, io, so, ao, lo;
+    class co {
         constructor() {
-            eo.set(this, new Map()), to.set(this, []);
+            ro.set(this, []);
         }
         push(e, t) {
-            const n = this.calculateKey(e);
-            if (it(this, eo, "f").has(n)) throw new Error(`Component already exists for key: ${n}`);
-            it(this, eo, "f").set(n, {
-                key: n,
+            const n = {
+                key: this.calculateKey(e),
                 component: t
-            }), it(this, to, "f").push(n);
-        }
-        update(e, t) {
-            const n = this.calculateKey(e);
-            if (!it(this, eo, "f").has(n)) throw new Error(`Component does not exist for key: ${n}`);
-            it(this, eo, "f").set(n, {
-                key: n,
-                component: t
-            });
+            };
+            return ot(this, ro, "f").push(n), n;
         }
         get(e) {
-            const t = this.calculateKey(e),
-                n = it(this, eo, "f").get(t);
-            return null == n ? void 0 : n.component;
+            const t = this.calculateKey(e);
+            for (let e = ot(this, ro, "f").length - 1; e >= 0; e--)
+                if (ot(this, ro, "f")[e].key === t) return ot(this, ro, "f")[e].component;
         }
         release(e) {
-            if (0 === it(this, eo, "f").size) return;
             const t = this.calculateKey(e),
-                n = it(this, to, "f").indexOf(t);
-            if (void 0 === n) return;
-            const r = it(this, to, "f").slice(0, n + 1);
-            st(this, to, it(this, to, "f").slice(n + 1), "f");
-            for (const e of r) it(this, eo, "f").delete(e);
+                n = ot(this, ro, "f").findIndex(e => e.key === t);
+            it(this, ro, ot(this, ro, "f").slice(n + 1), "f");
         }
         isLast(e) {
             const t = this.calculateKey(e);
-            return it(this, to, "f")[it(this, to, "f").length - 1] === t;
+            return ot(this, ro, "f")[ot(this, ro, "f").length - 1].key === t;
         }
         calculateKey(e) {
             return `${e.pathname}${e.search}${e.hash}`;
         }
     }
 
-    function lo(e, t) {
-        let {
-            useCurrentLocation: n = _v6ReactRouter.useLocation
-        } = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    function uo(e, t) {
         return () => {
-            var r;
-            const o = n();
-            return O.createElement(e, Object.assign(Object.assign({}, t), {
-                navigationKey: null !== (r = o.key) && void 0 !== r ? r : ""
+            var n;
+            const r = N.useContext(_r);
+            return N.createElement(e, Object.assign(Object.assign({}, t), {
+                navigationKey: null !== (n = null == r ? void 0 : r.key) && void 0 !== n ? n : ""
             }));
         };
     }
 
-    function co(e) {
-        return ot(this, arguments, void 0, function(_ref18) {
+    function po(e) {
+        return rt(this, arguments, void 0, function(_ref19) {
             let {
                 componentInfo: e,
                 loadModules: t = _runtimeCoreJs.RequireManager.loadModule
-            } = _ref18;
+            } = _ref19;
             return function*() {
                 if (!e) return {
                     success: !1,
@@ -5104,7 +5140,7 @@
         });
     }
 
-    function uo(_ref19) {
+    function ho(_ref20) {
         let {
             cacheKey: e,
             location: t,
@@ -5116,7 +5152,7 @@
                 return _runtimeCoreJs.ScreenStateCache.ScreenStateCache.loadScreenCache(...arguments);
             },
             checkReachedFromHistory: l = _runtimeCoreJs.Navigation.locationReachedFromHistory
-        } = _ref19;
+        } = _ref20;
         var c;
         const d = !i && l(Object.assign(Object.assign({}, t), {
             action: o
@@ -5124,10 +5160,10 @@
         if (!d) return {
             isNavFromHistory: d,
             isRestoredFromCache: !1,
-            newModelFactory: n
+            newModelFactory: mo(n, s)
         };
         const u = a(e),
-            h = null === (c = null == u ? void 0 : u.components[Nt]) || void 0 === c ? void 0 : c.state,
+            h = null === (c = null == u ? void 0 : u.components[xt]) || void 0 === c ? void 0 : c.state,
             m = !!h,
             v = m ? function(e, t) {
                 return {
@@ -5136,14 +5172,7 @@
                         return r.fromImmutableData(t), r;
                     }
                 };
-            }(n, h) : function(e, t) {
-                return {
-                    create: n => {
-                        const r = e.create(n);
-                        return r.setInputs(t), r;
-                    }
-                };
-            }(n, s);
+            }(n, h) : mo(n, s);
         return {
             isNavFromHistory: d,
             isRestoredFromCache: m,
@@ -5152,16 +5181,25 @@
         };
     }
 
-    function po(e) {
+    function mo(e, t) {
+        return {
+            create: n => {
+                const r = e.create(n);
+                return r.setInputs(t), r;
+            }
+        };
+    }
+
+    function vo(e) {
         let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
         return Object.assign(Object.assign({}, function(e) {
             const t = {};
             for (const [n, r] of Object.entries(e)) null != r && isNaN(Number(n)) && (t[n] = decodeURIComponent(r));
             return t;
-        }(e)), nn.parse(t));
+        }(e)), tn.parse(t));
     }
 
-    function ho() {
+    function fo() {
         let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
         let t = arguments.length > 1 ? arguments[1] : undefined;
         if (0 !== e.length && t)
@@ -5171,15 +5209,15 @@
                 }, t.pathname);
                 if (e) return {
                     routeInfo: n,
-                    matchedParams: po(e.params, t.search)
+                    matchedParams: vo(e.params, t.search)
                 };
             }
     }
-    eo = new WeakMap(), to = new WeakMap();
-    const mo = "ScreenLoader";
-    class vo {
+    ro = new WeakMap();
+    const go = "ScreenLoader";
+    class So {
         get isFirstNavigation() {
-            return it(this, ro, "f");
+            return ot(this, io, "f");
         }
         constructor() {
             let {
@@ -5188,130 +5226,125 @@
                 splashRoute: n,
                 componentCache: r
             } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-            no.set(this, void 0), ro.set(this, !0), oo.set(this, void 0), io.set(this, void 0), so.set(this, void 0), st(this, oo, e, "f"), st(this, so, null != t ? t : [], "f"), st(this, io, n, "f"), st(this, no, null != r ? r : new ao(), "f");
+            oo.set(this, void 0), io.set(this, !0), so.set(this, void 0), ao.set(this, void 0), lo.set(this, void 0), it(this, so, e, "f"), it(this, lo, null != t ? t : [], "f"), it(this, ao, n, "f"), it(this, oo, null != r ? r : new co(), "f");
         }
         getLoadedComponent(e) {
-            return it(this, no, "f").get(e);
+            return ot(this, oo, "f").get(e);
         }
         freeLoadedComponent(e) {
-            it(this, no, "f").release(e);
+            ot(this, oo, "f").release(e);
         }
         load(t) {
-            return ot(this, arguments, void 0, function(_ref20) {
+            return rt(this, arguments, void 0, function(_ref21) {
                 var _this2 = this;
                 let {
                     location: t,
                     action: n,
                     navigate: r,
                     loadModules: i = _runtimeCoreJs.RequireManager.loadModule,
-                    findRoute: s = ho,
-                    loadComponentModules: a = co,
-                    loadScreenStateCache: l = uo,
-                    loadScreenResources: c = Zr,
-                    createScreenWrapper: d = lo,
+                    findRoute: s = fo,
+                    loadComponentModules: a = po,
+                    loadScreenStateCache: l = ho,
+                    loadScreenResources: c = no,
+                    createScreenWrapper: d = uo,
                     dispatchEvent: u = _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch
-                } = _ref20;
+                } = _ref21;
                 return function*() {
-                    var p, h;
-                    const m = s((null === (p = it(_this2, oo, "f")) || void 0 === p ? void 0 : p.shouldRenderSplashScreen()) && it(_this2, io, "f") ? [it(_this2, io, "f")] : it(_this2, so, "f"), t);
-                    if (!m) return;
+                    var p, h, m;
+                    const v = s((null === (p = ot(_this2, so, "f")) || void 0 === p ? void 0 : p.shouldRenderSplashScreen()) && ot(_this2, ao, "f") ? [ot(_this2, ao, "f")] : ot(_this2, lo, "f"), t);
+                    if (!v) return;
                     const {
-                        component: v,
-                        lazyComponentInfo: f
-                    } = m.routeInfo;
-                    if (v) return v;
-                    it(_this2, no, "f").push(t);
-                    const g = yield a({
-                        componentInfo: f,
-                        loadModules: i
-                    });
-                    if (!g.success) throw _runtimeCoreJs.Logger.log(mo, g.error, xt.Internal), new Error("Error while loading application routes");
-                    const [S, y, w, E] = g.modules,
-                        b = new Kr(r, it(_this2, oo, "f")),
-                        x = new qr(r, it(_this2, oo, "f")),
-                        N = E.getRootSpan(!0);
-                    null == N || N.activate();
-                    const O = l({
+                        component: f,
+                        lazyComponentInfo: g
+                    } = v.routeInfo;
+                    if (f) return f;
+                    const S = ot(_this2, oo, "f").push(t),
+                        y = yield a({
+                            componentInfo: g,
+                            loadModules: i
+                        });
+                    if (!y.success) throw _runtimeCoreJs.Logger.log(go, y.error, bt.Internal), new Error("Error while loading application routes");
+                    const [w, E, b, x] = y.modules,
+                        O = new qr(r, ot(_this2, so, "f")),
+                        N = new Jr(r, ot(_this2, so, "f")),
+                        R = x.getRootSpan(!0);
+                    null == R || R.activate();
+                    const I = l({
                             action: n,
                             location: t,
-                            modelFactory: S,
-                            routeParams: m.matchedParams,
-                            isFirstNavigation: it(_this2, ro, "f"),
-                            cacheKey: it(_this2, no, "f").calculateKey(t)
+                            modelFactory: w,
+                            routeParams: v.matchedParams,
+                            isFirstNavigation: ot(_this2, io, "f"),
+                            cacheKey: null !== (h = t.key) && void 0 !== h ? h : ""
                         }),
-                        R = yield y.initialize({
-                            viewName: m.routeInfo.screenName,
-                            navigatedFromHistory: O.isNavFromHistory,
-                            viewWasRestoredFromCache: O.isRestoredFromCache
-                        }, O.newModelFactory, w.default, b, x, N);
-                    if (!R.permissionsOk) throw u({
+                        D = yield E.initialize({
+                            viewName: v.routeInfo.screenName,
+                            navigatedFromHistory: I.isNavFromHistory,
+                            viewWasRestoredFromCache: I.isRestoredFromCache
+                        }, I.newModelFactory, b.default, O, N, R);
+                    if (!D.permissionsOk) throw u({
                         type: _runtimeCoreJs.EventDispatcher.EventType.TransitionEnd,
                         args: _runtimeCoreJs.EventDispatcher.TransitionEndResult.Failure
                     }), new Error("Invalid Permissions");
-                    if (!it(_this2, no, "f").isLast(t)) throw new Error("No longer on screen");
-                    if (!R.model || !R.controller) throw new Error("Error loading screen dependencies");
-                    if (m.routeInfo.screenName !== R.controller.constructor.activeScreen.viewName) throw new Error("Screen is no longer active");
-                    O.value || _runtimeCoreJs.Logger.debug(mo, "No screen state cache found.");
-                    const I = d(E, {
-                        controller: R.controller,
-                        model: R.model,
-                        cachedScreenState: O.value,
-                        shallSaveStateOnLeave: null !== (h = null == f ? void 0 : f.shallSaveStateOnLeave) && void 0 !== h && h
+                    if (!ot(_this2, oo, "f").isLast(t)) throw new Error("No longer on screen");
+                    if (!D.model || !D.controller) throw new Error("Error loading screen dependencies");
+                    if (v.routeInfo.screenName !== D.controller.constructor.activeScreen.viewName) throw new Error("Screen is no longer active");
+                    I.value || _runtimeCoreJs.Logger.debug(go, "No screen state cache found.");
+                    const P = d(x, {
+                        controller: D.controller,
+                        model: D.model,
+                        cachedScreenState: I.value,
+                        shallSaveStateOnLeave: null !== (m = null == g ? void 0 : g.shallSaveStateOnLeave) && void 0 !== m && m
                     });
-                    return yield c(E, N), st(_this2, ro, !1, "f"), it(_this2, no, "f").update(t, I), I;
+                    return yield c(x, R), it(_this2, io, !1, "f"), S.component = P, P;
                 }();
             });
         }
     }
-    no = new WeakMap(), ro = new WeakMap(), oo = new WeakMap(), io = new WeakMap(), so = new WeakMap();
-    const fo = "Router",
-        go = (e, t, n, r) => e.map(e => e.component ? (_ref21 => {
+    oo = new WeakMap(), io = new WeakMap(), so = new WeakMap(), ao = new WeakMap(), lo = new WeakMap();
+    const yo = "Router",
+        wo = (e, t, n, r, o) => e.map(e => e.component ? (_ref22 => {
             let {
                 pathname: e,
                 component: t
-            } = _ref21;
+            } = _ref22;
             return {
                 path: e,
                 Component: t
             };
-        })(e) : ((e, t, n, r) => ({
+        })(e) : ((e, t, n, r, o) => ({
             path: e.pathname,
-            Component: e => {
-                const o = (0, _v6ReactRouterDom.useLocation)(),
-                    i = t.getLoadedComponent(o);
-                return console.log(`Rendering ${o.key} with component loaded from key ${o.key}: ${i}`), ge.jsx(Wr, Object.assign({
-                    onEnter: n,
-                    onLeave: () => {
-                        t.freeLoadedComponent(o), r && r();
-                    },
-                    component: null != i ? i : void 0
-                }, e));
-            }
-        }))(e, t, n, r)),
-        So = {
+            element: fe.jsx(eo, {
+                screenLoader: t,
+                onError: n,
+                onEnter: r,
+                onLeave: o
+            })
+        }))(e, t, n, r, o)),
+        Co = {
             currentAge: new _runtimeCoreJs.StorageProvider.StorageObject(_runtimeCoreJs.StorageProvider.StorageType.Session, "RouterHistoryAge", 0)
         };
 
-    function yo(e, t, n) {
+    function Eo(e, t, n) {
         var r, i, s, a, l, c;
-        const d = null !== (r = So.currentAge.get()) && void 0 !== r ? r : 0,
-            u = Dn(null !== (s = null === (i = t.state) || void 0 === i ? void 0 : i.age) && void 0 !== s ? s : 0, t.hash, n, d);
+        const d = null !== (r = Co.currentAge.get()) && void 0 !== r ? r : 0,
+            u = In(null !== (s = null === (i = t.state) || void 0 === i ? void 0 : i.age) && void 0 !== s ? s : 0, t.hash, n, d);
         t.state = Object.assign(Object.assign({}, null !== (a = t.state) && void 0 !== a ? a : {}), {
             age: u
         });
-        const h = Pn(null !== (l = t.state.age) && void 0 !== l ? l : 0, n, d),
+        const h = Dn(null !== (l = t.state.age) && void 0 !== l ? l : 0, n, d),
             m = function(e, t) {
                 let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _runtimeCoreJs.Navigation.onBeforeNavigate;
-                return !!n(e, t) && (mt(!0), !0);
+                return !!n(e, t) && (ht(!0), !0);
             }(Object.assign(Object.assign({}, t), {
                 action: n
             }), h);
-        return !!m && (h && !t.key ? (_runtimeCoreJs.Navigation.navigateBack(null), e.exit()) : (So.currentAge.set(null !== (c = t.state.age) && void 0 !== c ? c : 0), _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
+        return !!m && (h && !t.key ? (_runtimeCoreJs.Navigation.navigateBack(null), e.exit()) : (Co.currentAge.set(null !== (c = t.state.age) && void 0 !== c ? c : 0), _runtimeCoreJs.EventDispatcher.EventDispatcher.dispatch({
             type: _runtimeCoreJs.EventDispatcher.EventType.NavigationStart,
             args: t
         }), !0));
     }
-    const wo = function(e, t) {
+    const bo = function(e, t) {
             let n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _runtimeCoreJs.ApplicationInfo.useESM;
             let r = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _runtimeCoreJs.ApplicationInfo.getScreensDefinition;
             var o;
@@ -5336,13 +5369,13 @@
             }
             return i;
         },
-        Co = function() {
+        xo = function() {
             let {
                 getModules: t = _runtimeCoreJs.ApplicationInfo.getModules,
                 getHomeModuleDefinition: n = _runtimeCoreJs.ApplicationInfo.getHomeModuleDefinition,
                 getBasePath: r = _runtimeCoreJs.ApplicationInfo.getBasePath
             } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-            _runtimeCoreJs.Logger.debug(fo, "Creating application routes.");
+            _runtimeCoreJs.Logger.debug(yo, "Creating application routes.");
             const o = [],
                 i = t(),
                 s = r().replace(/\/$/, "");
@@ -5355,59 +5388,59 @@
                                 pathname: s,
                                 forDefaultPath: !0,
                                 screenName: t.screenName,
-                                lazyComponentInfo: wo(!0, t)
+                                lazyComponentInfo: bo(!0, t)
                             } : {
                                 pathname: s,
                                 forDefaultPath: !0,
                                 screenName: "no-default-screen",
-                                component: Qr
+                                component: Xr
                             };
-                        o.push(n), _runtimeCoreJs.Logger.debug(fo, `Created default application route for ${n.pathname}`), o.push(...r.screens.map(e => ({
+                        o.push(n), _runtimeCoreJs.Logger.debug(yo, `Created default application route for ${n.pathname}`), o.push(...r.screens.map(e => ({
                             pathname: `${s}/${e.screenUrl}`,
                             forDefaultPath: !1,
                             screenName: e.screenName,
-                            lazyComponentInfo: wo(!0, e)
+                            lazyComponentInfo: bo(!0, e)
                         })));
                     }
                 }
             return o;
         },
-        Eo = function() {
+        Oo = function() {
             let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _runtimeCoreJs.ApplicationInfo.getBasePath;
             return {
                 path: `${e().replace(/\/$/, "")}/${_runtimeCoreJs.Authentication.LOGIN_REDIRECT_PATH}`,
-                Component: () => ge.jsx(tn, {
+                Component: () => fe.jsx(en, {
                     resumeAction: _runtimeCoreJs.Authentication.resumeLogin
                 })
             };
         },
-        bo = function() {
+        No = function() {
             let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _runtimeCoreJs.ApplicationInfo.getBasePath;
             return {
                 path: `${e().replace(/\/$/, "")}/${_runtimeCoreJs.Authentication.LOGOUT_REDIRECT_PATH}`,
-                Component: () => ge.jsx(tn, {
+                Component: () => fe.jsx(en, {
                     resumeAction: _runtimeCoreJs.Authentication.resumeLogout
                 })
             };
         };
-    var xo = _exports.routerV6 = Object.freeze({
+    var Ro = _exports.routerV6 = Object.freeze({
         __proto__: null,
         load: function(t, n) {
             let {
                 render: r = B.render,
                 getHomeModuleDefinition: o = _runtimeCoreJs.ApplicationInfo.getHomeModuleDefinition,
                 createRouter: i = _v6ReactRouterDom.createBrowserRouter,
-                getAppRouteInfosMethod: s = Co,
+                getAppRouteInfosMethod: s = xo,
                 getBasePath: a = _runtimeCoreJs.ApplicationInfo.getBasePath,
                 makeScreenLoader: l = function() {
                     for (var _len13 = arguments.length, e = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
                         e[_key13] = arguments[_key13];
                     }
-                    return new vo(...e);
+                    return new So(...e);
                 }
             } = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
             var c;
-            _runtimeCoreJs.Logger.debug(fo, "Loading Router.");
+            _runtimeCoreJs.Logger.debug(yo, "Loading Router.");
             const d = o();
             if (!d) throw new Error("No Home Module definition was found.");
             const u = s(),
@@ -5417,42 +5450,43 @@
                 pathname: "*",
                 forDefaultPath: !1,
                 screenName: h.screenName,
-                lazyComponentInfo: wo(!1, h)
+                lazyComponentInfo: bo(!1, h)
             });
             const f = l({
                     runtime: t,
                     appRoutes: u,
                     splashRoute: v
                 }),
-                g = i([Eo(a), bo(a), {
+                g = e => {
+                    t.handleError(e);
+                },
+                S = i([Oo(a), No(a), {
                     path: "/",
-                    element: ge.jsx(Gr, {
+                    element: fe.jsx(Kr, {
                         runtime: t,
                         screenLoader: f,
-                        onBeforeNavigate: yo,
-                        children: ge.jsx(_v6ReactRouterDom.Outlet, {})
+                        onBeforeNavigate: Eo,
+                        children: fe.jsx(_v6ReactRouterDom.Outlet, {})
                     }),
-                    children: [...go(u, f, () => {
+                    children: [...wo(u, f, g, () => {
                         t.shouldRenderSplashScreen() && (t.isShowingSplashScreen = !0);
                     }, () => {
                         t.shouldRenderSplashScreen() && (t.isShowingSplashScreen = !1);
                     }), {
                         path: "*",
-                        Component: Xr
+                        Component: Yr
                     }]
                 }]);
-            _runtimeCoreJs.Navigation.setNavigationCallbacks(new Kr(g.navigate, t)), r(ge.jsx(ft, {
-                onError: e => {
-                    t.handleError(e);
-                },
-                children: ge.jsx(_v6ReactRouterDom.RouterProvider, {
-                    router: g
+            _runtimeCoreJs.Navigation.setNavigationCallbacks(new qr(S.navigate, t)), r(fe.jsx(vt, {
+                onError: g,
+                children: fe.jsx(_v6ReactRouterDom.RouterProvider, {
+                    router: S
                 })
             }), document.getElementById("reactContainer"), () => {
                 _runtimeCoreJs.Performance.end("Router load triggered render"), "function" == typeof n && n();
             });
         }
     });
-    const No = _exports.Version = "6.5.14";
-    _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-view-framework-react", No);
+    const Io = _exports.Version = "6.5.18";
+    _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-view-framework-react", Io);
 });

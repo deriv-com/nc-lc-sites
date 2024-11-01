@@ -128,7 +128,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
             var _this = this;
 
 
-            return "Your profile";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("BCj50fqknk2pzWrhIjEw5A#TitleExpression.-777369892.1", "Your profile");
         }
 
         internalRender() {
@@ -169,7 +169,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                 placeholders: {
                     breadcrumbs: PlaceholderContent.Empty,
                     title: new PlaceholderContent(function() {
-                        return ["Your profile"];
+                        return [$text(getTranslation("p2BRIdDiM0u9QmUgGEZ+eg#Value", "Your profile"))];
                     }),
                     actions: new PlaceholderContent(function() {
                         return [$if(model.variables.isExternalVar, false, this, function() {
@@ -185,7 +185,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                                     uuid: "1"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, "Change your password")];
+                            }, $text(getTranslation("CC+GcxKJA0WGIoSdH+66Dw#Value", "Change your password")))];
                         })];
                     }),
                     mainContent: new PlaceholderContent(function() {
@@ -248,7 +248,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                                             name: "EmailLabel"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Email"), React.createElement(OSWidgets.Expression, {
+                                    }, $text(getTranslation("OGG8gySjFk2Kx4j_mw0Hzw#Value", "Email"))), React.createElement(OSWidgets.Expression, {
                                         value: model.variables.getUserByIdAggr.listOut.getCurrent(callContext.iterationContext).userAttr.emailAttr,
                                         _idProps: {
                                             service: idService,
@@ -299,7 +299,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                                                         name: "NameLabel"
                                                     },
                                                     _widgetRecordProvider: widgetsRecordProvider
-                                                }, "Name")];
+                                                }, $text(getTranslation("ig1Naf1fU0imQgQDJfJNhw#Value", "Name")))];
                                             }),
                                             input: new PlaceholderContent(function() {
                                                 return [React.createElement(OSWidgets.Input, {
@@ -362,7 +362,7 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
                                                 name: "SaveChangesButton"
                                             },
                                             _widgetRecordProvider: widgetsRecordProvider
-                                        }, "Save changes")];
+                                        }, $text(getTranslation("goGC0Dzn50uVKpTfkT+PXg#Value", "Save changes")))];
                                     })];
                                 }),
                                 column2: PlaceholderContent.Empty
@@ -379,12 +379,12 @@ define("tradershub.Common.UserProfile.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller", "System_.model$UserUpdateInfoRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "System_.model$UpdateUserResultRec", "System_.model$ENUserEntityRecord", "tradershub.model$RC_ced013358a82a813f1d9a5108f17ce79", "tradershub.model$RL_8430333e95ceffc00def96d8abb01f75"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.UserProfile.mvc$translationsResources", "tradershub.Common.controller", "System_.model$UserUpdateInfoRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "System_.model$UpdateUserResultRec", "System_.model$ENUserEntityRecord", "tradershub.model$RC_ced013358a82a813f1d9a5108f17ce79", "tradershub.model$RL_8430333e95ceffc00def96d8abb01f75"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_UserProfile_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_UserProfile_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
@@ -414,7 +414,7 @@ define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-cor
                                 var inputs = {
                                     UserUpdateInfo: OS.DataConversion.ServerDataConverter.to(userUpdateInfoIn, OS.DataTypes.DataTypes.Record)
                                 };
-                                return controller.callServerAction("UpdateUser", "screenservices/tradershub/Common/UserProfile/ActionUpdateUser", "f+w9TRZi1JqSKbln3hu0zw", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                                return controller.callServerAction("UpdateUser", "screenservices/tradershub/Common/UserProfile/ActionUpdateUser", "f+w9TRZi1JqSKbln3hu0zw", inputs, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
                                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.Common.UserProfile$ActionUpdateUser"))();
                                     executeServerActionResult.updateUserResultOut = OS.DataConversion.ServerDataConverter.from(outputs.UpdateUserResult, OS.SystemStructures.UpdateUserResultRec);
                                     return executeServerActionResult;
@@ -448,7 +448,7 @@ define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-cor
                                 model.variables.getUserByIdAggr.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.getUserByIdAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getUserByIdAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false).then(function() {
+                            }, undefined, undefined, undefined, callContext, undefined, true).then(function() {
                                 controller._setIsButtonEnabled$Action(controller.callContext(callContext));
                             });
                         }.bind(this);
@@ -884,4 +884,26 @@ define("tradershub.Common.UserProfile.mvc$controller", ["@outsystems/runtime-cor
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.UserProfile.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "goGC0Dzn50uVKpTfkT+PXg#Value": "Enregistrer les modifications",
+        "ig1Naf1fU0imQgQDJfJNhw#Value": "Nom",
+        "OGG8gySjFk2Kx4j_mw0Hzw#Value": "Email",
+        "CC+GcxKJA0WGIoSdH+66Dw#Value": "Changez votre mot de passe",
+        "p2BRIdDiM0u9QmUgGEZ+eg#Value": "Votre profil",
+        "BCj50fqknk2pzWrhIjEw5A#Title": "Votre profil",
+        "BCj50fqknk2pzWrhIjEw5A#TitleExpression.-777369892.1": "Votre profil"
+    };
+});
+
+define("tradershub.Common.UserProfile.mvc$translationsResources", ["exports", "tradershub.Common.UserProfile.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_UserProfile_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_UserProfile_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

@@ -1,5 +1,23 @@
-define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "RESTAPIWebsocketOfficial.model", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", "RESTAPIWebsocketOfficial.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController, RESTAPIWebsocketOfficialModel) {
-    var OS = OSRuntimeCore;
+define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "SharedUtilities.controller", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$model", "OutSystemsUI.Content.Tooltip.mvc$model", "tradershub.MainFlowBlocks.RealDemoSwitcher.mvc$model", "tradershub.Common.BalanceSkeletonLoader.mvc$model", "tradershub.MainFlowBlocks.InlineMessage.mvc$model", "tradershub.MainFlowBlocks.OptionsProductCard.mvc$model", "tradershub.MainFlowBlocks.EmptyPlatformModal.mvc$model", "tradershub.model$ST_6c16f90c70691372df90a55aa5e72bd7Structure", "tradershub.model$RL_5ab9438d98871a1f612419941cad5407", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "tradershub.model$ST_0a3b9035d8da0d7db249ce5f6a01e8b3Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.controller$GetAvailableAccounts", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$FeatureFlagValueByName", "tradershub.controller$SetTokenByLoginId", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.model$ST_a9a623c261c1ffe1c25d512e5c56df69Structure", "tradershub.model$RL_b34647d303b62dd6376f5a3a6702fe40", "tradershub.controller$GetBackOfficeLocks"], function(OSRuntimeCore, tradershubModel, SharedUtilitiesController, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel, OutSystemsUI_Content_Tooltip_mvcModel, tradershub_MainFlowBlocks_RealDemoSwitcher_mvcModel, tradershub_Common_BalanceSkeletonLoader_mvcModel, tradershub_MainFlowBlocks_InlineMessage_mvcModel, tradershub_MainFlowBlocks_OptionsProductCard_mvcModel, tradershub_MainFlowBlocks_EmptyPlatformModal_mvcModel) {
+    var OS = OSRuntimeCore; {
+        class GetCurrenciesAggrRecInner extends
+        OS.Model.AggregateRecord {
+            static attributesToDeclare() {
+                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new GetCurrenciesAggrRec(new GetCurrenciesAggrRec.RecordClass({
+                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
+                }));
+            }
+
+        }
+
+        GetCurrenciesAggrRecInner.RecordListType = tradershubModel.RL_5ee36d8deb03b51810340e621ea66d4b;
+        var GetCurrenciesAggrRec = GetCurrenciesAggrRecInner;
+        GetCurrenciesAggrRec.init();
+    }
 
 
     {
@@ -10,12 +28,9 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                     this.attr("IsDerivGoModalVisible", "isDerivGoModalVisibleVar", "IsDerivGoModalVisible", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
-                    this.attr("AccountType", "accountTypeVar", "AccountType", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "demo";
-                    }, false),
                     this.attr("FilteredAccountList", "filteredAccountListVar", "FilteredAccountList", true, false, OS.DataTypes.DataTypes.RecordList, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_5efabb620fce6e69244e61944ef4417d());
-                    }, false, tradershubModel.RL_5efabb620fce6e69244e61944ef4417d),
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_5ab9438d98871a1f612419941cad5407());
+                    }, false, tradershubModel.RL_5ab9438d98871a1f612419941cad5407),
                     this.attr("IsAccountSwitcherOpen", "isAccountSwitcherOpenVar", "IsAccountSwitcherOpen", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
@@ -32,7 +47,7 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                         return false;
                     }, false),
                     this.attr("IsLoading", "isLoadingVar", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
+                        return true;
                     }, false),
                     this.attr("OpenAccountSwitcherModal", "openAccountSwitcherModalVar", "OpenAccountSwitcherModal", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
@@ -43,12 +58,15 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
                     this.attr("TradingPlatformProductListingResponse", "tradingPlatformProductListingResponseVar", "TradingPlatformProductListingResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
                         return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure());
                     }, false, tradershubModel.ST_43e221b4a9439e2ea71501e5244dde34Structure),
-                    this.attr("ClientCountryText", "clientCountryTextVar", "ClientCountryText", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
+                    this.attr("ShowAddMoreAccount", "showAddMoreAccountVar", "ShowAddMoreAccount", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
                     }, false),
-                    this.attr("IsNotResident", "isNotResidentVar", "IsNotResident", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false)
+                    this.attr("BackOfficeLocks", "backOfficeLocksVar", "BackOfficeLocks", true, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_0a3b9035d8da0d7db249ce5f6a01e8b3Structure());
+                    }, false, tradershubModel.ST_0a3b9035d8da0d7db249ce5f6a01e8b3Structure),
+                    this.attr("GetCurrencies", "getCurrenciesAggr", "GetCurrencies", true, true, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new GetCurrenciesAggrRec());
+                    }, true, GetCurrenciesAggrRec)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -60,10 +78,7 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
     class WidgetsRecord extends
     OS.Model.BaseWidgetRecordMap {
         static getWidgetsType() {
-            return {
-                RealDemoSwitcher: OS.Model.ValidationWidgetRecord,
-                CheckIcon: OS.Model.ValidationWidgetRecord
-            };
+            return {};
         }
 
     }
@@ -79,7 +94,11 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
         }
 
         static get hasValidationWidgets() {
-            return true;
+            if ((Model._hasValidationWidgetsValue === undefined)) {
+                Model._hasValidationWidgetsValue = (((((((tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_MainFlowBlocks_LoggedOutBanner_mvcModel.hasValidationWidgets) || OutSystemsUI_Content_Tooltip_mvcModel.hasValidationWidgets) || tradershub_MainFlowBlocks_RealDemoSwitcher_mvcModel.hasValidationWidgets) || tradershub_Common_BalanceSkeletonLoader_mvcModel.hasValidationWidgets) || tradershub_MainFlowBlocks_InlineMessage_mvcModel.hasValidationWidgets) || tradershub_MainFlowBlocks_OptionsProductCard_mvcModel.hasValidationWidgets) || tradershub_MainFlowBlocks_EmptyPlatformModal_mvcModel.hasValidationWidgets);
+            }
+
+            return Model._hasValidationWidgetsValue;
         }
         setInputs(inputs) {}
 
@@ -89,7 +108,7 @@ define("tradershub.MainFlow.Options.mvc$model", ["@outsystems/runtime-core-js", 
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "tradershub.MainFlowBlocks.OptionsProductCard.mvc$view", "OutSystemsUI.Utilities.Separator.mvc$view", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", "RESTAPIWebsocketOfficial.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, tradershub_MainFlowBlocks_OptionsProductCard_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view) {
+define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "react", "@outsystems/runtime-view-js", "tradershub.MainFlow.Options.mvc$model", "tradershub.MainFlow.Options.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", "OutSystemsUI.Content.Tooltip.mvc$view", "tradershub.MainFlowBlocks.RealDemoSwitcher.mvc$view", "tradershub.Common.BalanceSkeletonLoader.mvc$view", "tradershub.MainFlowBlocks.InlineMessage.mvc$view", "tradershub.MainFlowBlocks.OptionsProductCard.mvc$view", "tradershub.MainFlowBlocks.EmptyPlatformModal.mvc$view", "tradershub.model$ST_6c16f90c70691372df90a55aa5e72bd7Structure", "tradershub.model$RL_5ab9438d98871a1f612419941cad5407", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "tradershub.model$ST_0a3b9035d8da0d7db249ce5f6a01e8b3Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.controller$GetAvailableAccounts", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$FeatureFlagValueByName", "tradershub.controller$SetTokenByLoginId", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.model$ST_a9a623c261c1ffe1c25d512e5c56df69Structure", "tradershub.model$RL_b34647d303b62dd6376f5a3a6702fe40", "tradershub.controller$GetBackOfficeLocks"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, React, OSView, tradershub_MainFlow_Options_mvc_model, tradershub_MainFlow_Options_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_MainFlowBlocks_RealDemoSwitcher_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, tradershub_MainFlowBlocks_InlineMessage_mvc_view, tradershub_MainFlowBlocks_OptionsProductCard_mvc_view, tradershub_MainFlowBlocks_EmptyPlatformModal_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -120,7 +139,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, tradershub_MainFlowBlocks_OptionsProductCard_mvc_view, OutSystemsUI_Utilities_Separator_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, OutSystemsUI_Content_Tooltip_mvc_view, tradershub_MainFlowBlocks_RealDemoSwitcher_mvc_view, tradershub_Common_BalanceSkeletonLoader_mvc_view, tradershub_MainFlowBlocks_InlineMessage_mvc_view, tradershub_MainFlowBlocks_OptionsProductCard_mvc_view, tradershub_MainFlowBlocks_EmptyPlatformModal_mvc_view];
         }
 
         get modelFactory() {
@@ -134,7 +153,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
         get title() {
 
 
-            return "Options";
+            return OSView.BaseView.BaseWebScreen.getTranslation("S0cFRi0TMUONLLNn0PN+nw#Title", "Options");
         }
 
         internalRender() {
@@ -158,7 +177,6 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                     return _this.getChildSpan("destroy");
                 },
                 inputs: {
-                    IsLoading: model.variables.isLoadingVar,
                     ActiveTab: 2
                 },
                 events: {
@@ -186,7 +204,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 uuid: "1"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, $if((((model.variables.accountTypeVar === "demo") && ((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) && !(model.variables.hasRealAccountVar)), false, this, function() {
+                        }, $if(((((tradershubClientVariables.getAccountType() === "demo") && ((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier()))) && !(model.variables.hasRealAccountVar)) && !(model.variables.isLoadingVar)), false, this, function() {
                             return [React.createElement(OSWidgets.Link, {
                                 enabled: true,
                                 extendedProperties: {
@@ -214,7 +232,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 extendedProperties: {
                                     style: "color: #101213; font-weight: 400;"
                                 },
-                                text: ["Fill in your account details to make your first deposit."],
+                                text: [$text(getTranslation("fQyJTO5UMUWyDTxHyiY_eA#Value", "Fill in your account details to make your first deposit."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "4"
@@ -245,14 +263,6 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }))))];
-                        }, function() {
-                            return [];
-                        }), $if(false, false, this, function() {
-                            return [];
-                        }, function() {
-                            return [];
-                        }), $if(false, false, this, function() {
-                            return [];
                         }, function() {
                             return [];
                         }), React.createElement(tradershub_MainFlowBlocks_LoggedOutBanner_mvc_view, {
@@ -310,7 +320,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             style: "main-title",
-                            text: ["Options trading"],
+                            text: [$text(getTranslation("EfSaScn+JkC6q6ZXjwuaGA#Value", "Options trading"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "11"
@@ -360,67 +370,47 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     })];
                                 }),
                                 tooltip: new PlaceholderContent(function() {
-                                    return ["Predict the market; profit if you’re right; risk only what you put in."];
+                                    return [$text(getTranslation("87UEjCWKgEyDAveDBC6OOw#Value", "Predict the market; profit if you’re right; risk only what you put in."))];
                                 })
                             },
                             _dependencies: []
+                        })), React.createElement(tradershub_MainFlowBlocks_RealDemoSwitcher_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
+                            },
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
+                            },
+                            inputs: {},
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                },
+                                realClickEvent$Action: function() {
+                                    return Promise.resolve().then(function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        return controller.setRealValue$Action(controller.callContext(eventHandlerContext));
+                                    });;
+                                },
+                                demoClickEvent$Action: function() {
+                                    return Promise.resolve().then(function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        return controller.setDemoValue$Action(controller.callContext(eventHandlerContext));
+                                    });;
+                                }
+                            },
+                            _validationProps: {
+                                validationService: validationService
+                            },
+                            _idProps: {
+                                service: idService,
+                                uuid: "14",
+                                alias: "4"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            _dependencies: []
                         })), $if(((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())), false, this, function() {
-                            return [React.createElement(OSWidgets.ButtonGroup, {
-                                _validationProps: {
-                                    validationService: validationService
-                                },
-                                enabled: true,
-                                mandatory: true,
-                                style: "real-demo-switcher",
-                                variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.accountTypeVar, function(value) {
-                                    model.variables.accountTypeVar = value;
-                                }),
-                                _idProps: {
-                                    service: idService,
-                                    name: "RealDemoSwitcher"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.ButtonGroupItem, {
-                                enabled: true,
-                                extendedEvents: {
-                                    onClick: function() {
-                                        return Promise.resolve().then(function() {
-                                            var eventHandlerContext = callContext.clone();
-                                            return controller.setDemoValue$Action(controller.callContext(eventHandlerContext));
-                                        });;
-                                    }
-                                },
-                                style: "real-demo-switcher-item",
-                                value: "demo",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "demo"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Demo"), React.createElement(OSWidgets.ButtonGroupItem, {
-                                enabled: true,
-                                extendedEvents: {
-                                    onClick: function() {
-                                        return Promise.resolve().then(function() {
-                                            var eventHandlerContext = callContext.clone();
-                                            return controller.setRealValue$Action(controller.callContext(eventHandlerContext));
-                                        });;
-                                    }
-                                },
-                                style: "real-demo-switcher-item",
-                                value: "real",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "real"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Real"))];
-                        }, function() {
-                            return [];
-                        })), $if(((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())), false, this, function() {
-                            return [$if((model.variables.accountTypeVar === "real"), true, this, function() {
+                            return [$if((tradershubClientVariables.getAccountType() === "real"), true, this, function() {
                                 return [React.createElement(OSWidgets.Container, {
                                     align: /*Default*/ 0,
                                     animate: false,
@@ -431,7 +421,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "17"
+                                        uuid: "15"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Container, {
@@ -469,296 +459,80 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     extendedProperties: {
                                         style: "color: #101213; min-width: 135px;"
                                     },
-                                    text: ["Balance:"],
+                                    text: [$text(getTranslation("Q2gQOo4Ojke_T+XVGnIdUg#Value", "Balance:"))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "20"
+                                        uuid: "18"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
-                                }), $if(model.variables.isAccountSwitcherOpenVar, true, this, function() {
+                                }), $if(model.variables.isBalanceLoadingVar, false, this, function() {
+                                    return [React.createElement(tradershub_Common_BalanceSkeletonLoader_mvc_view, {
+                                        getOwnerSpan: function() {
+                                            return _this.getChildSpan("render");
+                                        },
+                                        getOwnerDisposeSpan: function() {
+                                            return _this.getChildSpan("destroy");
+                                        },
+                                        inputs: {},
+                                        events: {
+                                            _handleError: function(ex) {
+                                                controller.handleError(ex);
+                                            }
+                                        },
+                                        _validationProps: {
+                                            validationService: validationService
+                                        },
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "19",
+                                            alias: "5"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider,
+                                        _dependencies: []
+                                    })];
+                                }, function() {
                                     return [React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
-                                        style: "account-switcher__dropdown hide-mobile",
+                                        style: "display-flex align-items-center",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            name: "Dropdown2"
+                                            uuid: "20"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
+                                    }, React.createElement(OSWidgets.Expression, {
                                         extendedProperties: {
-                                            style: "border-color: #E9ECEF; border-style: none none solid none; border-width: 0px 0px 1px 0px; padding: 10px;"
+                                            style: "color: #101213; font-size: 16px; font-weight: 700;"
                                         },
-                                        visible: true,
+                                        value: ((model.variables.selectedAccountBalanceVar + " ") + model.variables.selectedAccountCurrencyVar),
                                         _idProps: {
                                             service: idService,
-                                            name: "TitleContainer2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #101213; font-weight: 700;"
-                                        },
-                                        text: ["Select account"],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "23"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    })), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "padding: 10px;"
-                                        },
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            name: "AccountListContainer2"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.List, {
-                                        animateItems: true,
-                                        gridProperties: {
-                                            classes: "OSFillParent"
-                                        },
-                                        mode: /*Default*/ 0,
-                                        source: model.variables.filteredAccountListVar,
-                                        style: "list list-group",
-                                        tag: "div",
-                                        _idProps: {
-                                            service: idService,
-                                            name: "AccountList3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider,
-                                        placeholders: {
-                                            content: new IteratorPlaceholderContent(function(idService, callContext) {
-                                                return [React.createElement(OSWidgets.ListItem, {
-                                                    onClick: function() {
-                                                        return Promise.resolve().then(function() {
-                                                            var eventHandlerContext = callContext.clone();
-                                                            return controller.accountListItemOnClick$Action(controller.callContext(eventHandlerContext));
-                                                        });;
-                                                    },
-                                                    style: "list-item",
-                                                    triggerActionOnFullSwipeLeft: true,
-                                                    triggerActionOnFullSwipeRight: true,
-                                                    _idProps: {
-                                                        service: idService,
-                                                        name: "ListItem3"
-                                                    },
-                                                    _widgetRecordProvider: widgetsRecordProvider,
-                                                    placeholders: {
-                                                        leftActions: PlaceholderContent.Empty,
-                                                        content: new PlaceholderContent(function() {
-                                                            return [React.createElement(OSWidgets.Container, {
-                                                                align: /*Default*/ 0,
-                                                                animate: false,
-                                                                style: model.getCachedValue(idService.getId("69vichJKzkazcOCBgU9wsQ.Style"), function() {
-                                                                    return (((tradershubClientVariables.getActiveLoginId() === model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr)) ? ("account-list-item active-account") : ("account-list-item"));
-                                                                }, function() {
-                                                                    return tradershubClientVariables.getActiveLoginId();
-                                                                }, function() {
-                                                                    return model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr;
-                                                                }),
-                                                                visible: true,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    uuid: "27"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            }, React.createElement(OSWidgets.Container, {
-                                                                align: /*Default*/ 0,
-                                                                animate: false,
-                                                                extendedProperties: {
-                                                                    style: "border-radius: 100%; height: 24px; overflow: hidden;"
-                                                                },
-                                                                gridProperties: {
-                                                                    classes: "OSInline",
-                                                                    width: "24px"
-                                                                },
-                                                                style: "display-flex align-items-center justify-content-center",
-                                                                visible: true,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    name: "Icon3"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            }, React.createElement(OSWidgets.Image, {
-                                                                type: /*External*/ 1,
-                                                                url: model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    uuid: "29"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            })), React.createElement(OSWidgets.Container, {
-                                                                align: /*Default*/ 0,
-                                                                animate: false,
-                                                                gridProperties: {
-                                                                    marginLeft: "8px"
-                                                                },
-                                                                style: "display-flex align-items-center",
-                                                                visible: true,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    name: "text3"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            }, React.createElement(OSWidgets.Expression, {
-                                                                style: "account-list-item__text",
-                                                                value: model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).balanceAttr,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    name: "AccountBalance3"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            }), React.createElement(OSWidgets.Expression, {
-                                                                gridProperties: {
-                                                                    marginLeft: "5px"
-                                                                },
-                                                                style: "account-list-item__text",
-                                                                value: model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).currencyAttr,
-                                                                _idProps: {
-                                                                    service: idService,
-                                                                    name: "AccountCurrency3"
-                                                                },
-                                                                _widgetRecordProvider: widgetsRecordProvider
-                                                            })))];
-                                                        }),
-                                                        rightActions: PlaceholderContent.Empty
-                                                    },
-                                                    _dependencies: [asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).currencyAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).balanceAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr), asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
-                                                })];
-                                            }, callContext, idService, "1")
-                                        },
-                                        _dependencies: [asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
-                                    }), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        style: "remove-hover",
-                                        transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "33"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "border-color: #DEE2E6; border-style: solid; border-width: 1px 0px 0px 0px; padding: 8px;"
-                                        },
-                                        style: "display-flex align-items-center justify-content-space-between",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            name: "AddMoreAccountContainer3"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #272B30; font-weight: 700;"
-                                        },
-                                        text: ["Add more accounts"],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "35"
+                                            uuid: "21"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
+                                        gridProperties: {
+                                            marginLeft: "8px"
+                                        },
                                         style: "display-flex align-items-center justify-content-center",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "36"
+                                            uuid: "22"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
+                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevrondownsm.svg"),
                                         type: /*Static*/ 0,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "37"
+                                            uuid: "23"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }))))))];
-                                }, function() {
-                                    return [$if(model.variables.isBalanceLoadingVar, false, this, function() {
-                                        return [React.createElement(tradershub_Common_BalanceSkeletonLoader_mvc_view, {
-                                            getOwnerSpan: function() {
-                                                return _this.getChildSpan("render");
-                                            },
-                                            getOwnerDisposeSpan: function() {
-                                                return _this.getChildSpan("destroy");
-                                            },
-                                            inputs: {},
-                                            events: {
-                                                _handleError: function(ex) {
-                                                    controller.handleError(ex);
-                                                }
-                                            },
-                                            _validationProps: {
-                                                validationService: validationService
-                                            },
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "38",
-                                                alias: "4"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider,
-                                            _dependencies: []
-                                        })];
-                                    }, function() {
-                                        return [React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            style: "display-flex align-items-center",
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "39"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Expression, {
-                                            extendedProperties: {
-                                                style: "color: #101213; font-size: 16px; font-weight: 700;"
-                                            },
-                                            value: ((model.variables.selectedAccountBalanceVar + " ") + model.variables.selectedAccountCurrencyVar),
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "40"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }), React.createElement(OSWidgets.Container, {
-                                            align: /*Default*/ 0,
-                                            animate: false,
-                                            gridProperties: {
-                                                marginLeft: "8px"
-                                            },
-                                            style: "display-flex align-items-center justify-content-center",
-                                            visible: true,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "41"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        }, React.createElement(OSWidgets.Image, {
-                                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevrondownsm.svg"),
-                                            type: /*Static*/ 0,
-                                            _idProps: {
-                                                service: idService,
-                                                uuid: "42"
-                                            },
-                                            _widgetRecordProvider: widgetsRecordProvider
-                                        })))];
-                                    })];
+                                    })))];
                                 })), React.createElement(OSWidgets.Container, {
                                     align: /*Default*/ 0,
                                     animate: false,
@@ -784,10 +558,10 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     extendedProperties: {
                                         style: "color: #101213; min-width: 135px;"
                                     },
-                                    text: ["Balance:"],
+                                    text: [$text(getTranslation("G5zUJP31nEWIo2MFWeEVcg#Value", "Balance:"))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "44"
+                                        uuid: "25"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }), $if(model.variables.isBalanceLoadingVar, false, this, function() {
@@ -809,8 +583,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         },
                                         _idProps: {
                                             service: idService,
-                                            uuid: "45",
-                                            alias: "5"
+                                            uuid: "26",
+                                            alias: "6"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider,
                                         _dependencies: []
@@ -823,7 +597,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "46"
+                                            uuid: "27"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Expression, {
@@ -833,7 +607,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         value: ((model.variables.selectedAccountBalanceVar + " ") + model.variables.selectedAccountCurrencyVar),
                                         _idProps: {
                                             service: idService,
-                                            uuid: "47"
+                                            uuid: "28"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }), React.createElement(OSWidgets.Container, {
@@ -846,7 +620,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "48"
+                                            uuid: "29"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Image, {
@@ -854,7 +628,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         type: /*Static*/ 0,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "49"
+                                            uuid: "30"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })))];
@@ -868,15 +642,15 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "50"
+                                        uuid: "31"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Button, {
-                                    enabled: true,
+                                    enabled: model.variables.backOfficeLocksVar.isTransferAllowedAttr,
                                     isDefault: false,
                                     onClick: function() {
                                         try {
-                                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "Wallets", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                                         } catch (ex) {
                                             if (((ex.name) !== ("RedirectOccurredException"))) {
                                                 throw ex;
@@ -884,11 +658,15 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
 
                                         };
                                     },
-                                    style: "transactions-button",
+                                    style: model.getCachedValue(idService.getId("XEUvLFudNUyYj2v1WJRpqA.Style"), function() {
+                                        return ((model.variables.backOfficeLocksVar.isTransferAllowedAttr) ? ("transactions-button") : ("disabled transactions-button"));
+                                    }, function() {
+                                        return model.variables.backOfficeLocksVar.isTransferAllowedAttr;
+                                    }),
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "51"
+                                        uuid: "32"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Image, {
@@ -896,7 +674,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "52"
+                                        uuid: "33"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }), React.createElement(OSWidgets.Text, {
@@ -904,24 +682,28 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         style: "font-size: 14px; margin-left: 8px;"
                                     },
                                     style: "hide-mobile",
-                                    text: ["Transfer"],
+                                    text: [$text(getTranslation("pkbvuSgiW0iS0ssRLDRjzg#Value", "Transfer"))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "53"
+                                        uuid: "34"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })), React.createElement(OSWidgets.Link, {
-                                    enabled: true,
+                                    enabled: model.variables.backOfficeLocksVar.isTransferAllowedAttr,
                                     gridProperties: {
                                         classes: "ThemeGrid_MarginGutter"
                                     },
-                                    style: "remove-hover",
+                                    style: model.getCachedValue(idService.getId("qKzVFp3FLkWeytdtYrIW3A.Style"), function() {
+                                        return ((model.variables.backOfficeLocksVar.isTransferAllowedAttr) ? ("remove-hover") : ("disabled remove-hover"));
+                                    }, function() {
+                                        return model.variables.backOfficeLocksVar.isTransferAllowedAttr;
+                                    }),
                                     transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                    url: OS.Navigation.generateScreenURL("tradershub", "Wallets", {}),
+                                    url: OS.Navigation.generateScreenURL("tradershub", "wallets", {}),
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "54"
+                                        uuid: "35"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Text, {
@@ -929,10 +711,10 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         style: "color: #FF444F; font-size: 12px; font-weight: 700; margin-top: 4px;"
                                     },
                                     style: "hide-desktop",
-                                    text: ["Transfer"],
+                                    text: [$text(getTranslation("9ow+XnQp9EeyxEVPpTo5ng#Value", "Transfer"))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "55"
+                                        uuid: "36"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })))), $if(model.variables.isAccountSwitcherOpenVar, true, this, function() {
@@ -962,17 +744,17 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         extendedProperties: {
                                             style: "color: #101213; font-weight: 700;"
                                         },
-                                        text: ["Select account"],
+                                        text: [$text(getTranslation("jG6VFun4h0Wswi+EwOVi7A#Value", "Select account"))],
                                         _idProps: {
                                             service: idService,
-                                            uuid: "58"
+                                            uuid: "39"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     })), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         extendedProperties: {
-                                            style: "padding: 10px;"
+                                            style: "padding: 10px 10px 0px 10px;"
                                         },
                                         visible: true,
                                         _idProps: {
@@ -987,7 +769,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         },
                                         mode: /*Default*/ 0,
                                         source: model.variables.filteredAccountListVar,
-                                        style: "list list-group",
+                                        style: "list list-group account-list-container",
                                         tag: "div",
                                         _idProps: {
                                             service: idService,
@@ -1027,7 +809,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                                                 visible: true,
                                                                 _idProps: {
                                                                     service: idService,
-                                                                    uuid: "62"
+                                                                    uuid: "43"
                                                                 },
                                                                 _widgetRecordProvider: widgetsRecordProvider
                                                             }, React.createElement(OSWidgets.Container, {
@@ -1052,7 +834,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                                                 url: model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr,
                                                                 _idProps: {
                                                                     service: idService,
-                                                                    uuid: "64"
+                                                                    uuid: "45"
                                                                 },
                                                                 _widgetRecordProvider: widgetsRecordProvider
                                                             })), React.createElement(OSWidgets.Container, {
@@ -1093,62 +875,66 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                                     },
                                                     _dependencies: [asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).currencyAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).balanceAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr), asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
                                                 })];
-                                            }, callContext, idService, "2")
+                                            }, callContext, idService, "1")
                                         },
                                         _dependencies: [asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
-                                    }), React.createElement(OSWidgets.Link, {
-                                        enabled: true,
-                                        style: "remove-hover",
-                                        transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                        url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "68"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        extendedProperties: {
-                                            style: "border-color: #DEE2E6; border-style: solid; border-width: 1px 0px 0px 0px; padding: 8px;"
-                                        },
-                                        style: "display-flex align-items-center justify-content-space-between",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            name: "AddMoreAccountContainer"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Text, {
-                                        extendedProperties: {
-                                            style: "color: #272B30; font-weight: 700;"
-                                        },
-                                        text: ["Add more accounts"],
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "70"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }), React.createElement(OSWidgets.Container, {
-                                        align: /*Default*/ 0,
-                                        animate: false,
-                                        style: "display-flex align-items-center justify-content-center",
-                                        visible: true,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "71"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }, React.createElement(OSWidgets.Image, {
-                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
-                                        type: /*Static*/ 0,
-                                        _idProps: {
-                                            service: idService,
-                                            uuid: "72"
-                                        },
-                                        _widgetRecordProvider: widgetsRecordProvider
-                                    }))))))];
+                                    })), $if(model.variables.showAddMoreAccountVar, false, this, function() {
+                                        return [React.createElement(OSWidgets.Link, {
+                                            enabled: true,
+                                            style: "remove-hover",
+                                            transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                            url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "49"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            extendedProperties: {
+                                                style: "border-color: #DEE2E6; border-style: solid; border-width: 1px 0px 0px 0px; padding: 8px;"
+                                            },
+                                            style: "display-flex align-items-center justify-content-space-between",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                name: "AddMoreAccountContainer"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Text, {
+                                            extendedProperties: {
+                                                style: "color: #272B30; font-weight: 700;"
+                                            },
+                                            text: [$text(getTranslation("daVfdbga4USTPBVggSsdgw#Value", "Add more accounts"))],
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "51"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }), React.createElement(OSWidgets.Container, {
+                                            align: /*Default*/ 0,
+                                            animate: false,
+                                            style: "display-flex align-items-center justify-content-center",
+                                            visible: true,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "52"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }, React.createElement(OSWidgets.Image, {
+                                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
+                                            type: /*Static*/ 0,
+                                            _idProps: {
+                                                service: idService,
+                                                uuid: "53"
+                                            },
+                                            _widgetRecordProvider: widgetsRecordProvider
+                                        }))))];
+                                    }, function() {
+                                        return [];
+                                    }))];
                                 }, function() {
                                     return [];
                                 }))];
@@ -1172,17 +958,17 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "74"
+                                        uuid: "55"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Text, {
                                     extendedProperties: {
                                         style: "color: #101213; min-width: 135px;"
                                     },
-                                    text: ["Balance:"],
+                                    text: [$text(getTranslation("W31RGGIUvkWN5r9647mLfg#Value", "Balance:"))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "75"
+                                        uuid: "56"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }), $if(model.variables.isBalanceLoadingVar, false, this, function() {
@@ -1204,8 +990,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         },
                                         _idProps: {
                                             service: idService,
-                                            uuid: "76",
-                                            alias: "6"
+                                            uuid: "57",
+                                            alias: "7"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider,
                                         _dependencies: []
@@ -1217,7 +1003,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "77"
+                                            uuid: "58"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Expression, {
@@ -1234,14 +1020,6 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 })), React.createElement(OSWidgets.Container, {
                                     align: /*Default*/ 0,
                                     animate: false,
-                                    extendedEvents: {
-                                        onClick: function() {
-                                            return Promise.resolve().then(function() {
-                                                var eventHandlerContext = callContext.clone();
-                                                return controller.topupDemoAccount$Action(controller.callContext(eventHandlerContext));
-                                            });;
-                                        }
-                                    },
                                     extendedProperties: {
                                         style: "min-width: 79.5px;"
                                     },
@@ -1249,31 +1027,39 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        name: "ResetBalanceButton"
+                                        uuid: "60"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Button, {
-                                    enabled: true,
+                                    enabled: model.variables.backOfficeLocksVar.isTransferAllowedAttr,
                                     isDefault: false,
                                     onClick: function() {
-                                        return Promise.resolve().then(function() {
-                                            var eventHandlerContext = callContext.clone();
-                                            return controller.topupDemoAccount$Action(controller.callContext(eventHandlerContext));
-                                        });;
+                                        try {
+                                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                                        } catch (ex) {
+                                            if (((ex.name) !== ("RedirectOccurredException"))) {
+                                                throw ex;
+                                            }
+
+                                        };
                                     },
-                                    style: "transactions-button",
+                                    style: model.getCachedValue(idService.getId("yrB_28txQUyFT5CuIXP1KQ.Style"), function() {
+                                        return ((model.variables.backOfficeLocksVar.isTransferAllowedAttr) ? ("transactions-button") : ("disabled transactions-button"));
+                                    }, function() {
+                                        return model.variables.backOfficeLocksVar.isTransferAllowedAttr;
+                                    }),
                                     visible: true,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "80"
+                                        uuid: "61"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }, React.createElement(OSWidgets.Image, {
-                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.resetbalance.svg"),
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.transfer.svg"),
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "81"
+                                        uuid: "62"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 }), React.createElement(OSWidgets.Text, {
@@ -1281,383 +1067,448 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                         style: "font-size: 14px; margin-left: 8px;"
                                     },
                                     style: "hide-mobile",
-                                    text: ["Reset balance"],
+                                    text: [$text(getTranslation("DB7Uc9hKmESFIqDzmlZT5g#Value", "Transfer"))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "63"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), React.createElement(OSWidgets.Link, {
+                                    enabled: model.variables.backOfficeLocksVar.isTransferAllowedAttr,
+                                    gridProperties: {
+                                        classes: "ThemeGrid_MarginGutter"
+                                    },
+                                    style: model.getCachedValue(idService.getId("TM4bJQqIg0enzmtsZPz1Iw.Style"), function() {
+                                        return ((model.variables.backOfficeLocksVar.isTransferAllowedAttr) ? ("remove-hover") : ("disabled remove-hover"));
+                                    }, function() {
+                                        return model.variables.backOfficeLocksVar.isTransferAllowedAttr;
+                                    }),
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                    url: OS.Navigation.generateScreenURL("tradershub", "wallets", {}),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "64"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "color: #FF444F; font-size: 12px; font-weight: 700; margin-top: 4px;"
+                                    },
+                                    style: "hide-desktop",
+                                    text: [$text(getTranslation("tYBywluJ6kmvLSoG3Awuqw#Value", "Transfer"))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "65"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }))))];
+                            })];
+                        }, function() {
+                            return [];
+                        })), $if((model.variables.backOfficeLocksVar.isTradingDisabledAttr || !(model.variables.backOfficeLocksVar.isTransferAllowedAttr)), false, this, function() {
+                            return [React.createElement(tradershub_MainFlowBlocks_InlineMessage_mvc_view, {
+                                getOwnerSpan: function() {
+                                    return _this.getChildSpan("render");
+                                },
+                                getOwnerDisposeSpan: function() {
+                                    return _this.getChildSpan("destroy");
+                                },
+                                inputs: {
+                                    Currency: model.variables.selectedAccountCurrencyVar
+                                },
+                                events: {
+                                    _handleError: function(ex) {
+                                        controller.handleError(ex);
+                                    }
+                                },
+                                _validationProps: {
+                                    validationService: validationService
+                                },
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "66",
+                                    alias: "8"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider,
+                                _dependencies: []
+                            })];
+                        }, function() {
+                            return [];
+                        }), $if(model.variables.isLoadingVar, false, this, function() {
+                            return [React.createElement(OSWidgets.Container, {
+                                align: /*Default*/ 0,
+                                animate: false,
+                                style: "skeleton dtrader-loader",
+                                visible: true,
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "67"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            })];
+                        }, function() {
+                            return [$if(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr, false, this, function() {
+                                return [React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: model.getCachedValue(idService.getId("DTraderContainer.Style"), function() {
+                                        return ((model.variables.backOfficeLocksVar.isTradingDisabledAttr) ? ("dtrader-container disabled") : ("dtrader-container"));
+                                    }, function() {
+                                        return model.variables.backOfficeLocksVar.isTradingDisabledAttr;
+                                    }),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "DTraderContainer"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Link, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.dTraderRedirection$Action(controller.callContext(eventHandlerContext));
+
+                                        ;
+                                    },
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "69"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "color: #222;"
+                                    },
+                                    style: "display-flex align-items-center justify-content-space-between",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "DTrader"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "display-flex align-items-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "71"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    extendedProperties: {
+                                        style: "height: 32px;"
+                                    },
+                                    gridProperties: {
+                                        width: "32px"
+                                    },
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.dtrader.svg"),
+                                    style: "",
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "72"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    gridProperties: {
+                                        marginLeft: "16"
+                                    },
+                                    style: "display-flex flex-direction-column",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "73"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "font-weight: bold;"
+                                    },
+                                    text: [$text(getTranslation("Wql9gnhE6EOluO0PGRlRRA#Value", "Deriv Trader"))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "74"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }), React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "font-size: 12px; margin-top: 4px;"
+                                    },
+                                    text: [$text(getTranslation("bnRuapxJ7kWBxK7gVOOlTg#Value", "Diverse trading options, low-entry costs."))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "75"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }))), $if(((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())), false, this, function() {
+                                    return [];
+                                }, function() {
+                                    return [React.createElement(OSWidgets.Image, {
+                                        image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
+                                        style: "cursor-pointer",
+                                        type: /*Static*/ 0,
+                                        _idProps: {
+                                            service: idService,
+                                            uuid: "76"
+                                        },
+                                        _widgetRecordProvider: widgetsRecordProvider
+                                    })];
+                                }))), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "trade-types-header",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "TraderTypesHeader"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, $text(getTranslation("+sT2nYtfGkmU4Q8tbnfa4Q#Value", "Trade types:"))), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "trade-types-body",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "TradeTypesBody"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Link, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    gridProperties: {
+                                        classes: "OSFillParent"
+                                    },
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                    url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?symbol=1HZ100V&trade_type=accumulator", {}),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "79"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "color: #222;"
+                                    },
+                                    style: "trade-type-item",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "80"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 4px;"
+                                    },
+                                    style: "display-flex align-items-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "81"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.accumulators.svg"),
+                                    style: "display-block",
+                                    type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
                                         uuid: "82"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
-                                })), React.createElement(OSWidgets.Text, {
-                                    extendedProperties: {
-                                        style: "color: #FF444F; font-size: 12px; font-weight: 700; margin-top: 4px;"
+                                })), $text(getTranslation("K+kpK2OSDEK0gOrMsWOSMA#Value", "Accumulators")))), React.createElement(OSWidgets.Link, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    gridProperties: {
+                                        classes: "OSFillParent"
                                     },
-                                    style: "hide-desktop",
-                                    text: ["Reset balance"],
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                    url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?symbol=1HZ100V&trade_type=turboslong", {}),
+                                    visible: true,
                                     _idProps: {
                                         service: idService,
                                         uuid: "83"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
-                                })))];
-                            })];
-                        }, function() {
-                            return [];
-                        })), $if(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr, false, this, function() {
-                            return [React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "dtrader-container",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "DTraderContainer"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.dTraderRedirection$Action(controller.callContext(eventHandlerContext));
-
-                                    ;
-                                },
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "85"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "color: #222;"
-                                },
-                                style: "display-flex align-items-center justify-content-space-between",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "DTrader"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "display-flex align-items-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "87"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                extendedProperties: {
-                                    style: "height: 32px;"
-                                },
-                                gridProperties: {
-                                    width: "32px"
-                                },
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.dtrader.svg"),
-                                style: "",
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "88"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                gridProperties: {
-                                    marginLeft: "16"
-                                },
-                                style: "display-flex flex-direction-column",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "89"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "font-weight: bold;"
-                                },
-                                text: ["Deriv Trader"],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "90"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "font-size: 12px; margin-top: 4px;"
-                                },
-                                text: ["Diverse trading options, low-entry costs."],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "91"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }))), $if(((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())), false, this, function() {
-                                return [];
-                            }, function() {
-                                return [React.createElement(OSWidgets.Image, {
-                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
-                                    style: "cursor-pointer",
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "color: #222;"
+                                    },
+                                    style: "trade-type-item",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "84"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 4px;"
+                                    },
+                                    style: "display-flex align-items-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "85"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.turbos.svg"),
+                                    style: "display-block",
                                     type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "86"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), $text(getTranslation("SBTSUnEXHUu9K6Q+gHiVyQ#Value", "Turbos")))), React.createElement(OSWidgets.Link, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    gridProperties: {
+                                        classes: "OSFillParent"
+                                    },
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                    url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?symbol=1HZ100V&trade_type=vanillalongcall", {}),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "87"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "color: #222;"
+                                    },
+                                    style: "trade-type-item",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "88"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 4px;"
+                                    },
+                                    style: "display-flex align-items-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "89"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.vanilla_options.svg"),
+                                    style: "display-block",
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "90"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), $text(getTranslation("zCSyKfNfN0ySBwkI7fzobQ#Value", "Vanilla options")))), React.createElement(OSWidgets.Link, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    gridProperties: {
+                                        classes: "OSFillParent"
+                                    },
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
+                                    url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?symbol=1HZ100V&trade_type=multiplier", {}),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "91"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "color: #222;"
+                                    },
+                                    style: "trade-type-item",
+                                    visible: true,
                                     _idProps: {
                                         service: idService,
                                         uuid: "92"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
-                                })];
-                            }))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "trade-types-header",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "TraderTypesHeader"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Trade types:"), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "trade-types-body",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "TradeTypesBody"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=accumulator", {}),
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "95"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "color: #222;"
-                                },
-                                style: "trade-type-item",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "96"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "margin-bottom: 4px;"
-                                },
-                                style: "display-flex align-items-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "97"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.accumulators.svg"),
-                                style: "display-block",
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "98"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), "Accumulators")), React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=turboslong", {}),
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "99"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "color: #222;"
-                                },
-                                style: "trade-type-item",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "100"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "margin-bottom: 4px;"
-                                },
-                                style: "display-flex align-items-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "101"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.turbos.svg"),
-                                style: "display-block",
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "102"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), "Turbos")), React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=vanillalongcall", {}),
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "103"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "color: #222;"
-                                },
-                                style: "trade-type-item",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "104"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "margin-bottom: 4px;"
-                                },
-                                style: "display-flex align-items-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "105"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.vanilla_options.svg"),
-                                style: "display-block",
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "106"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), "Vanilla options")), React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                                url: OS.Navigation.generateScreenURL("https://app.deriv.com/dtrader?trade_type=multiplier", {}),
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "107"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "color: #222;"
-                                },
-                                style: "trade-type-item",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "108"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "margin-bottom: 4px;"
-                                },
-                                style: "display-flex align-items-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "109"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.multipliers.svg"),
-                                style: "display-block",
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "110"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            })), "Multipliers"))), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "hide-desktop",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "111"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Button, {
-                                enabled: true,
-                                extendedProperties: {
-                                    style: "height: 40px; margin-top: 16px; padding: 16px 0;"
-                                },
-                                gridProperties: {
-                                    classes: "OSFillParent"
-                                },
-                                isDefault: false,
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.dTraderRedirection$Action(controller.callContext(eventHandlerContext));
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "margin-bottom: 4px;"
+                                    },
+                                    style: "display-flex align-items-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "93"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.multipliers.svg"),
+                                    style: "display-block",
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "94"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                })), $text(getTranslation("nVSJowR5Kkir1L0PrqiNiQ#Value", "Multipliers"))))), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "hide-desktop",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "95"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Button, {
+                                    enabled: !(model.variables.backOfficeLocksVar.isTradingDisabledAttr),
+                                    extendedProperties: {
+                                        style: "height: 40px; margin-top: 16px; padding: 16px 0;"
+                                    },
+                                    gridProperties: {
+                                        classes: "OSFillParent"
+                                    },
+                                    isDefault: false,
+                                    onClick: function() {
+                                        var eventHandlerContext = callContext.clone();
+                                        controller.dTraderRedirection$Action(controller.callContext(eventHandlerContext));
 
-                                    ;
-                                },
-                                style: "btn btn-primary",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "ResponsiveTradeButton2"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, "Trade")))];
-                        }, function() {
-                            return [];
+                                        ;
+                                    },
+                                    style: "btn btn-primary",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "ResponsiveTradeButton2"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, $text(getTranslation("GgRGDuCYjUW1MzilRbh91w#Value", "Trade")))))];
+                            }, function() {
+                                return [];
+                            })];
                         }), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
@@ -1679,7 +1530,9 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 ShouldShowProduct: model.variables.tradingPlatformProductListingResponseVar.shouldShowDBotAttr,
                                 Description: "Automated trading with custom bots.",
                                 Icon: "/tradershub/img/tradershub.dbot.svg",
-                                Title: "Deriv Bot"
+                                IsLoading: model.variables.isLoadingVar,
+                                Title: "Deriv Bot",
+                                IsDisabled: model.variables.backOfficeLocksVar.isTradingDisabledAttr
                             },
                             events: {
                                 _handleError: function(ex) {
@@ -1697,8 +1550,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "114",
-                                alias: "7"
+                                uuid: "98",
+                                alias: "9"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
                             _dependencies: []
@@ -1710,6 +1563,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
+                                IsDisabled: model.variables.backOfficeLocksVar.isTradingDisabledAttr,
+                                IsLoading: model.variables.isLoadingVar,
                                 Icon: "/tradershub/img/tradershub.smart_trader.svg",
                                 ShouldShowProduct: model.variables.tradingPlatformProductListingResponseVar.shouldShowSmartTraderAttr,
                                 Description: "Simple interface for traders of all levels.",
@@ -1731,8 +1586,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "115",
-                                alias: "8"
+                                uuid: "99",
+                                alias: "10"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
                             _dependencies: []
@@ -1750,10 +1605,10 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: bold; margin-top: 20px;"
                             },
-                            text: ["Download our mobile app:"],
+                            text: [$text(getTranslation("b02H41d_uUCdlwJgsUp1XA#Value", "Download our mobile app:"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "117"
+                                uuid: "101"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(tradershub_MainFlowBlocks_OptionsProductCard_mvc_view, {
@@ -1766,7 +1621,8 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             inputs: {
                                 ShouldShowProduct: model.variables.tradingPlatformProductListingResponseVar.shouldShowDerivGoAttr,
                                 Icon: "/tradershub/img/tradershub.dgo.svg",
-                                Title: "Deriv Go",
+                                Title: "Deriv GO",
+                                IsLoading: model.variables.isLoadingVar,
                                 Description: "Mobile trading on-the-go."
                             },
                             events: {
@@ -1785,26 +1641,14 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "118",
-                                alias: "9"
+                                uuid: "102",
+                                alias: "11"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
                             _dependencies: []
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "DerivGoModal"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Popup, {
-                            extendedProperties: {
-                                style: "height: 100%; margin-bottom: 0px; margin-left: auto; margin-right: 0px; margin-top: 0px; overflow-y: scroll; padding: 10px;"
-                            },
+                        }), React.createElement(OSWidgets.Popup, {
                             showPopup: model.variables.isDerivGoModalVisibleVar,
-                            style: "\"popup-dialog\"",
+                            style: "popup-dialog full-height-popup",
                             _idProps: {
                                 service: idService,
                                 name: "DerivGoTradeModal"
@@ -1814,7 +1658,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
-                                style: "margin-top: 10%;"
+                                style: "border-color: #DEE2E6; border-style: none none solid none; border-width: 0px 0px 2px 0px; padding: 11px 16px;"
                             },
                             style: "display-flex align-items-center justify-content-space-between",
                             visible: true,
@@ -1825,15 +1669,36 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
-                                style: "font-weight: bold; margin-left: 0px; padding: 0px;"
+                                style: "color: #272B30; font-size: 20px; font-weight: bold;"
                             },
-                            text: ["Trade with Deriv Go"],
+                            text: [$text(getTranslation("BzyRc_7WbESj95bM9dHedA#Value", "Trade with Deriv GO"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "122"
+                                uuid: "105"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Image, {
+                        }), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedEvents: {
+                                onClick: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.closeDerivGoModal$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
+                            },
+                            gridProperties: {
+                                marginLeft: "8px"
+                            },
+                            style: "display-flex align-items-center justify-content-center",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "CloseBtn"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
                             extendedEvents: {
                                 onClick: function() {
                                     var eventHandlerContext = callContext.clone();
@@ -1842,49 +1707,16 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                     ;
                                 }
                             },
-                            extendedProperties: {
-                                style: "padding: 0px;"
-                            },
-                            gridProperties: {
-                                classes: "ThemeGrid_MarginGutter"
-                            },
-                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.closeicon.svg"),
-                            style: "cursor-pointer",
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standaloneSMClose.svg"),
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "123"
+                                uuid: "107"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
-                            getOwnerSpan: function() {
-                                return _this.getChildSpan("render");
-                            },
-                            getOwnerDisposeSpan: function() {
-                                return _this.getChildSpan("destroy");
-                            },
-                            inputs: {},
-                            events: {
-                                _handleError: function(ex) {
-                                    controller.handleError(ex);
-                                }
-                            },
-                            _validationProps: {
-                                validationService: validationService
-                            },
-                            _idProps: {
-                                service: idService,
-                                uuid: "124",
-                                alias: "10"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider,
-                            _dependencies: []
-                        }), React.createElement(OSWidgets.Container, {
+                        }))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "padding: 10px;"
-                            },
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -1895,13 +1727,26 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
-                                style: "text-align: center;"
+                                style: "padding: 16px;"
                             },
                             style: "display-flex align-items-center justify-content-center",
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "126"
+                                name: "DerivGOLogo"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "margin-right: 8px;"
+                            },
+                            style: "display-flex align-items-center justify-content-center",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "Logo"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -1909,20 +1754,29 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "127"
+                                uuid: "111"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Text, {
+                        })), React.createElement(OSWidgets.Text, {
                             extendedProperties: {
-                                style: "font-weight: bold; margin-left: 10px;"
+                                style: "color: #101213; font-size: 16px; font-weight: bold;"
                             },
-                            text: ["Deriv GO"],
+                            text: [$text(getTranslation("GZdd9NxHHEm3_2N4R_F7qw#Value", "Deriv GO"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "128"
+                                uuid: "112"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })), React.createElement(OSWidgets.Image, {
+                        })), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "Baner"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
                             gridProperties: {
                                 classes: "OSFillParent"
                             },
@@ -1930,39 +1784,38 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "129"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "text-align: left;"
-                            },
-                            style: "display-flex align-items-center justify-content-center",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "Description"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "margin-bottom: 10px; margin-top: 10px;"
-                            },
-                            text: ["Download Deriv GO and dive into trading on your mobile."],
-                            _idProps: {
-                                service: idService,
-                                uuid: "131"
+                                uuid: "114"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
-                                style: "text-align: center;"
+                                style: "margin: 40px 55px;"
                             },
-                            style: "display-flex justify-content-center",
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                name: "ContentContainer"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "color: #101213; font-weight: 400; line-height: 22px;"
+                            },
+                            text: [$text(getTranslation("HQNXzJrDnUW_Y_u7n_JGYw#Value", "Download Deriv GO and dive into trading on your mobile."))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "116"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Container, {
+                            align: /*Default*/ 0,
+                            animate: false,
+                            extendedProperties: {
+                                style: "margin-top: 8px; text-align: center;"
+                            },
+                            style: "display-flex",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -1972,10 +1825,14 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                         }, React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            gridProperties: {
-                                classes: "ThemeGrid_Width4"
+                            extendedProperties: {
+                                style: "border-color: #E6E9E9; border-radius: 4px; border-style: solid; border-width: 1px; margin-right: 16px; padding: 8px;"
                             },
-                            style: "display-flex flex-direction-column justify-content-center product-container",
+                            gridProperties: {
+                                classes: "OSInline",
+                                width: "50%"
+                            },
+                            style: "",
                             visible: true,
                             _idProps: {
                                 service: idService,
@@ -1986,291 +1843,150 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
-                                style: "text-align: center;"
+                                style: "margin-bottom: 8px; margin-right: auto;"
                             },
+                            gridProperties: {
+                                classes: "OSInline",
+                                width: "80px",
+                                marginLeft: "auto"
+                            },
+                            style: "display-flex align-items-center justify-content-center",
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "134"
+                                uuid: "119"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
-                            extendedProperties: {
-                                style: "height: 80px;"
-                            },
-                            gridProperties: {
-                                width: "80px"
-                            },
-                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.derivgoonelink.svg"),
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.DerivGoQRCode.svg"),
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "135"
+                                uuid: "120"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Text, {
+                            extendedProperties: {
+                                style: "color: #333333; font-size: 12px;"
+                            },
+                            text: [$text(getTranslation("uKyrCzscnka86elWTeXYXg#Value", "Scan the QR code to download Deriv GO"))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "121"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
-                            extendedProperties: {
-                                style: "text-align: center;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "136"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "font-size: 14px; width: 400px;"
-                            },
-                            text: ["Scan the QR code to download Deriv GO"],
-                            _idProps: {
-                                service: idService,
-                                uuid: "137"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
                             gridProperties: {
-                                classes: "ThemeGrid_Width4 ThemeGrid_MarginGutter"
+                                classes: "OSInline",
+                                width: "50%"
                             },
-                            style: "display-flex flex-direction-column justify-content-center",
+                            style: "display-flex flex-direction-column align-items-center justify-content-space-between",
                             visible: true,
                             _idProps: {
                                 service: idService,
                                 name: "DownloadLinks"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Image, {
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.androidDGoRedirection$Action(controller.callContext(eventHandlerContext));
-
-                                    ;
-                                }
-                            },
+                        }, React.createElement(OSWidgets.Link, {
+                            enabled: true,
                             extendedProperties: {
-                                style: "margin-bottom: 10px;"
+                                target: "_blank"
                             },
-                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.googleplay.svg"),
-                            style: "cursor-pointer",
+                            transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
+                            url: OS.Navigation.generateScreenURL("https://play.google.com/store/apps/details?id=com.deriv.app&pli=1", {}),
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "123"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.GooglePlayBadge.svg"),
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "139"
+                                name: "GooglePlay"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Image, {
-                            extendedEvents: {
-                                onClick: function() {
-                                    var eventHandlerContext = callContext.clone();
-                                    controller.iOSDGoRedirection$Action(controller.callContext(eventHandlerContext));
-
-                                    ;
-                                }
+                        })), React.createElement(OSWidgets.Link, {
+                            enabled: true,
+                            extendedProperties: {
+                                target: "_blank"
+                            },
+                            transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
+                            url: OS.Navigation.generateScreenURL("https://apps.apple.com/my/app/deriv-go-online-trading-app/id1550561298", {}),
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "125"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.AppstoreBadge.svg"),
+                            type: /*Static*/ 0,
+                            _idProps: {
+                                service: idService,
+                                name: "AppStore"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        })), React.createElement(OSWidgets.Link, {
+                            enabled: true,
+                            extendedProperties: {
+                                target: "_blank"
                             },
                             gridProperties: {
                                 classes: "ThemeGrid_MarginGutter"
                             },
-                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.appstore.svg"),
-                            style: "cursor-pointer",
+                            transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
+                            url: OS.Navigation.generateScreenURL("https://appgallery.huawei.com/app/C103801913", {}),
+                            visible: true,
+                            _idProps: {
+                                service: idService,
+                                uuid: "127"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }, React.createElement(OSWidgets.Image, {
+                            image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.AppGalleryBadge.svg"),
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "140"
+                                name: "AppGallery"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }))), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "margin-top: 10px; text-align: center;"
+                        }))))))), React.createElement(tradershub_MainFlowBlocks_EmptyPlatformModal_mvc_view, {
+                            getOwnerSpan: function() {
+                                return _this.getChildSpan("render");
                             },
-                            gridProperties: {
-                                marginLeft: "0"
+                            getOwnerDisposeSpan: function() {
+                                return _this.getChildSpan("destroy");
                             },
-                            style: "display-flex justify-content-center",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "Note"
+                            inputs: {
+                                IsVisible: model.variables.shouldShowWarningPopupVar
                             },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            gridProperties: {
-                                classes: "ThemeGrid_Width8"
+                            events: {
+                                _handleError: function(ex) {
+                                    controller.handleError(ex);
+                                },
+                                onCloseClick$Action: function() {
+                                    var eventHandlerContext = callContext.clone();
+                                    controller.confirmedNotResidentOnClick$Action(controller.callContext(eventHandlerContext));
+
+                                    ;
+                                }
                             },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "142"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "font-weight: bold;"
-                            },
-                            text: ["Note: "],
-                            _idProps: {
-                                service: idService,
-                                uuid: "143"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), "Already have Deriv GO? Open the app and trade now."))))), React.createElement(OSWidgets.Popup, {
-                            showPopup: model.variables.shouldShowWarningPopupVar,
-                            style: "popup-dialog restricted-country-popup-dialog",
-                            _idProps: {
-                                service: idService,
-                                name: "EmptyPlatformModal"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            style: "warning-modal",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "145"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "color: #101213; font-size: 18px; font-weight: bold;"
-                            },
-                            text: ["Warning"],
-                            _idProps: {
-                                service: idService,
-                                uuid: "146"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "margin: 16px 0;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "content"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Expression, {
-                            extendedProperties: {
-                                style: "color: #101213; font-size: 16px;"
-                            },
-                            value: ((("According to our policy, we do not provide services to residents or entities based in" + " ") + model.variables.clientCountryTextVar) + "."),
-                            _idProps: {
-                                service: idService,
-                                name: "FirstParagraph"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            extendedProperties: {
-                                style: "margin-top: 24px;"
-                            },
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "SecondParagraph"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Expression, {
-                            extendedProperties: {
-                                style: "color: #101213; font-size: 16px;"
-                            },
-                            value: (("If you are not a resident of " + model.variables.clientCountryTextVar) + ", you may proceed."),
-                            _idProps: {
-                                service: idService,
-                                name: "paragraph"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))), React.createElement(OSWidgets.Container, {
-                            align: /*Default*/ 0,
-                            animate: false,
-                            style: "display-flex align-items-center gap-s checkbox-container",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                name: "Checkbox"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Checkbox, {
                             _validationProps: {
                                 validationService: validationService
                             },
-                            enabled: true,
-                            style: "checkbox",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Boolean, model.variables.isNotResidentVar, function(value) {
-                                model.variables.isNotResidentVar = value;
-                            }),
                             _idProps: {
                                 service: idService,
-                                name: "CheckIcon"
+                                uuid: "129",
+                                alias: "12"
                             },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }), React.createElement(OSWidgets.Label, {
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            style: "cursor-pointer",
-                            targetWidget: "CheckIcon",
-                            _idProps: {
-                                service: idService,
-                                uuid: "153"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Expression, {
-                            extendedProperties: {
-                                style: "color: #272B30;"
-                            },
-                            value: (("I confirm that I am not a resident of " + model.variables.clientCountryTextVar) + "."),
-                            _idProps: {
-                                service: idService,
-                                uuid: "154"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }))), React.createElement(OSWidgets.Button, {
-                            enabled: model.variables.isNotResidentVar,
-                            extendedProperties: {
-                                style: "margin-top: 16px;"
-                            },
-                            gridProperties: {
-                                classes: "OSFillParent"
-                            },
-                            isDefault: false,
-                            onClick: function() {
-                                var eventHandlerContext = callContext.clone();
-                                controller.confirmedNotResidentOnClick$Action(controller.callContext(eventHandlerContext));
-
-                                ;
-                            },
-                            style: "btn btn-primary",
-                            visible: true,
-                            _idProps: {
-                                service: idService,
-                                uuid: "155"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        }, React.createElement(OSWidgets.Text, {
-                            extendedProperties: {
-                                style: "font-size: 14px;"
-                            },
-                            text: ["Proceed"],
-                            _idProps: {
-                                service: idService,
-                                uuid: "156"
-                            },
-                            _widgetRecordProvider: widgetsRecordProvider
-                        })))), React.createElement(OSWidgets.Popup, {
+                            _widgetRecordProvider: widgetsRecordProvider,
+                            _dependencies: []
+                        }), React.createElement(OSWidgets.Popup, {
                             showPopup: model.variables.openAccountSwitcherModalVar,
                             style: "popup-dialog popup-dialog__mobile",
                             _idProps: {
@@ -2319,7 +2035,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "160"
+                                    uuid: "133"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Image, {
@@ -2327,17 +2043,17 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "161"
+                                    uuid: "134"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })), React.createElement(OSWidgets.Text, {
                                 extendedProperties: {
                                     style: "color: #272B30; font-size: 18px; font-weight: 700;"
                                 },
-                                text: ["Select account"],
+                                text: [$text(getTranslation("NONZJt0gW0+sZ4IXAPIq4Q#Value", "Select account"))],
                                 _idProps: {
                                     service: idService,
-                                    uuid: "162"
+                                    uuid: "135"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })), React.createElement(OSWidgets.Container, {
@@ -2399,7 +2115,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                                         visible: true,
                                                         _idProps: {
                                                             service: idService,
-                                                            uuid: "166"
+                                                            uuid: "139"
                                                         },
                                                         _widgetRecordProvider: widgetsRecordProvider
                                                     }, React.createElement(OSWidgets.Container, {
@@ -2424,7 +2140,7 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                                         url: model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr,
                                                         _idProps: {
                                                             service: idService,
-                                                            uuid: "168"
+                                                            uuid: "141"
                                                         },
                                                         _widgetRecordProvider: widgetsRecordProvider
                                                     })), React.createElement(OSWidgets.Container, {
@@ -2465,107 +2181,124 @@ define("tradershub.MainFlow.Options.mvc$view", ["@outsystems/runtime-core-js", "
                                             },
                                             _dependencies: [asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).currencyAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).balanceAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).iconAttr), asPrimitiveValue(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr), asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
                                         })];
-                                    }, callContext, idService, "3")
+                                    }, callContext, idService, "2")
                                 },
                                 _dependencies: [asPrimitiveValue(tradershubClientVariables.getActiveLoginId())]
-                            }), React.createElement(OSWidgets.Link, {
-                                enabled: true,
-                                style: "remove-hover",
-                                transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
-                                url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "172"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                extendedProperties: {
-                                    style: "border-color: #DEE2E6; border-style: solid; border-width: 1px 0px 0px 0px; padding: 8px;"
-                                },
-                                style: "display-flex align-items-center justify-content-space-between",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    name: "AddMoreAccountContainer2"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Text, {
-                                extendedProperties: {
-                                    style: "color: #272B30; font-weight: 700;"
-                                },
-                                text: ["Add more accounts"],
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "174"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }), React.createElement(OSWidgets.Container, {
-                                align: /*Default*/ 0,
-                                animate: false,
-                                style: "display-flex align-items-center justify-content-center",
-                                visible: true,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "175"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }, React.createElement(OSWidgets.Image, {
-                                image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
-                                type: /*Static*/ 0,
-                                _idProps: {
-                                    service: idService,
-                                    uuid: "176"
-                                },
-                                _widgetRecordProvider: widgetsRecordProvider
-                            }))))))];
+                            }), $if(model.variables.showAddMoreAccountVar, false, this, function() {
+                                return [React.createElement(OSWidgets.Link, {
+                                    enabled: true,
+                                    style: "remove-hover",
+                                    transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Fade),
+                                    url: OS.Navigation.generateScreenURL("tradershub", "add-account", {}),
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "145"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    extendedProperties: {
+                                        style: "border-color: #DEE2E6; border-style: solid; border-width: 1px 0px 0px 0px; padding: 8px;"
+                                    },
+                                    style: "display-flex align-items-center justify-content-space-between",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        name: "AddMoreAccountContainer2"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Text, {
+                                    extendedProperties: {
+                                        style: "color: #272B30; font-weight: 700;"
+                                    },
+                                    text: [$text(getTranslation("7v6bg5YzEEaO0ja23TEysA#Value", "Add more accounts"))],
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "147"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }), React.createElement(OSWidgets.Container, {
+                                    align: /*Default*/ 0,
+                                    animate: false,
+                                    style: "display-flex align-items-center justify-content-center",
+                                    visible: true,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "148"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }, React.createElement(OSWidgets.Image, {
+                                    image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.standalone_chevron_right_md.svg"),
+                                    type: /*Static*/ 0,
+                                    _idProps: {
+                                        service: idService,
+                                        uuid: "149"
+                                    },
+                                    _widgetRecordProvider: widgetsRecordProvider
+                                }))))];
+                            }, function() {
+                                return [];
+                            })))];
                         }, function() {
                             return [];
                         })))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.openAccountSwitcherModalVar), asPrimitiveValue(model.variables.isNotResidentVar), asPrimitiveValue(model.variables.clientCountryTextVar), asPrimitiveValue(model.variables.shouldShowWarningPopupVar), asPrimitiveValue(model.variables.isDerivGoModalVisibleVar), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDerivGoAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowSmartTraderAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDBotAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr), asPrimitiveValue(model.variables.selectedAccountCurrencyVar), asPrimitiveValue(model.variables.selectedAccountBalanceVar), asPrimitiveValue(model.variables.isBalanceLoadingVar), asPrimitiveValue(tradershubClientVariables.getActiveLoginId()), asPrimitiveValue(model.variables.filteredAccountListVar), asPrimitiveValue(model.variables.isAccountSwitcherOpenVar), asPrimitiveValue(model.variables.hasRealAccountVar), asPrimitiveValue(tradershubClientVariables.getAuthToken()), asPrimitiveValue(model.variables.accountTypeVar)]
+                _dependencies: [asPrimitiveValue(model.variables.openAccountSwitcherModalVar), asPrimitiveValue(model.variables.shouldShowWarningPopupVar), asPrimitiveValue(model.variables.isDerivGoModalVisibleVar), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDerivGoAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowSmartTraderAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDBotAttr), asPrimitiveValue(model.variables.tradingPlatformProductListingResponseVar.shouldShowDTraderAttr), asPrimitiveValue(model.variables.showAddMoreAccountVar), asPrimitiveValue(tradershubClientVariables.getActiveLoginId()), asPrimitiveValue(model.variables.filteredAccountListVar), asPrimitiveValue(model.variables.isAccountSwitcherOpenVar), asPrimitiveValue(model.variables.backOfficeLocksVar.isTradingDisabledAttr), asPrimitiveValue(model.variables.backOfficeLocksVar.isTransferAllowedAttr), asPrimitiveValue(model.variables.selectedAccountCurrencyVar), asPrimitiveValue(model.variables.selectedAccountBalanceVar), asPrimitiveValue(model.variables.isBalanceLoadingVar), asPrimitiveValue(model.variables.isLoadingVar), asPrimitiveValue(model.variables.hasRealAccountVar), asPrimitiveValue(tradershubClientVariables.getAuthToken()), asPrimitiveValue(tradershubClientVariables.getAccountType())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", "tradershub.model$ST_dda3674fb618c7350645a460f303a303Structure", "tradershub.model$RL_5efabb620fce6e69244e61944ef4417d", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "RESTAPIWebsocketOfficial.model$ST_bf5d4ab423fae3ff38a977653adc8398Structure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.model$RL_071a5687136a6dbeecb0a0d193c188a2", "RESTAPIWebsocketOfficial.model$ST_63a473e932ef99f5271718b62399e682Structure", "tradershub.controller$FeatureFlagValueByName", "tradershub.model$ST_52667a49e65b5175f66dacecb12f345fStructure", "tradershub.controller$GetAccountByLoginId", "tradershub.controller$TopupVirtualAccount", "tradershub.model$EN_bf87ce2ee46f8f5bc73889fe14426739EntityRecord", "tradershub.model$RL_7f0ff0d0a70a4e41424efbf5ef899b8d", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS) {
+define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "SharedUtilities.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.Options.mvc$translationsResources", "tradershub.MainFlow.controller", "tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.CheckShowAddMoreAccount.CheckShowAddMoreAccountJS", "tradershub.MainFlow.Options.mvc$controller.SetDemoValue.GenerateDemoAccountTokenJS", "tradershub.MainFlow.Options.mvc$controller.SmarttraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRedirectURLJS", "tradershub.MainFlow.Options.mvc$controller.OnAfterFetch.FilterAccountListJS", "tradershub.model$ST_6c16f90c70691372df90a55aa5e72bd7Structure", "tradershub.model$RL_5ab9438d98871a1f612419941cad5407", "tradershub.model$ST_43e221b4a9439e2ea71501e5244dde34Structure", "tradershub.model$ST_0a3b9035d8da0d7db249ce5f6a01e8b3Structure", "SharedUtilities.controller$GetPlatformFromURL", "tradershub.referencesHealth", "tradershub.referencesHealth$SharedUtilities", "SharedUtilities.controller$GetURL", "tradershub.controller$GetAvailableAccounts", "tradershub.model$ST_2b68b61da9b8f6db8463a60cc48350faStructure", "tradershub.controller$SendAuthorize", "SharedUtilities.controller$FormatMoney", "tradershub.controller$FeatureFlagValueByName", "tradershub.controller$SetTokenByLoginId", "tradershub.controller$TradingPlatformProductListing", "tradershub.controller$GetWebsiteStatus", "tradershub.controller$GetAllAccountsBalance", "tradershub.controller$GetCurrencyIcon", "tradershub.model$RC_6a44851bc01e80a885c4aa0ae740b8fc", "tradershub.model$RL_5ee36d8deb03b51810340e621ea66d4b", "tradershub.model$ST_a9a623c261c1ffe1c25d512e5c56df69Structure", "tradershub.model$RL_b34647d303b62dd6376f5a3a6702fe40", "tradershub.controller$GetBackOfficeLocks"], function(OSRuntimeCore, tradershubModel, tradershubController, SharedUtilitiesController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_Options_mvc_TranslationsResources, tradershub_MainFlowController, tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_CheckShowAddMoreAccount_CheckShowAddMoreAccountJS, tradershub_MainFlow_Options_mvc_controller_SetDemoValue_GenerateDemoAccountTokenJS, tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, tradershub_MainFlow_Options_mvc_controller_OnAfterFetch_FilterAccountListJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_Options_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {};
-                this.dataFetchDependentsGraph = {};
+                this.dataFetchDependenciesOriginal = {
+                    getCurrencies$AggrRefresh: 0
+                };
+                this.dataFetchDependentsGraph = {
+                    getCurrencies$AggrRefresh: []
+                };
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
-            get currenciesList$ServerAction() {
-                if (!(this.hasOwnProperty("_currenciesList$ServerAction"))) {
-                    this._currenciesList$ServerAction = function(callContext) {
-                        var controller = this.controller;
-                        return OS.Logger.startActiveSpan("CurrenciesList", function(span) {
+
+            // Aggregates and Data Actions
+            get getCurrencies$AggrRefresh() {
+                if (!(this.hasOwnProperty("_getCurrencies$AggrRefresh"))) {
+                    this._getCurrencies$AggrRefresh = function() {
+                        var innerBody = function(maxRecords, startIndex, callContext) {
+                            var model = this.model;
+                            var controller = this.controller;
+                            var callContext = controller.callContext(callContext);
+                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetCurrencies", "screenservices/tradershub/MainFlow/Options/ScreenDataSetGetCurrencies", "npjMYW44GFvhkxw14gO3vA", maxRecords, startIndex, function(b) {
+                                model.variables.getCurrenciesAggr.dataFetchStatusAttr = b;
+                            }, function(json) {
+                                model.variables.getCurrenciesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getCurrenciesAggr.constructor));
+                            }, undefined, undefined, undefined, callContext, undefined, true).then(function() {
+                                return controller._onAfterFetch$Action(controller.callContext(callContext));
+                            });
+                        }.bind(this);
+                        return OS.Logger.startActiveSpan("GetCurrencies", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "CurrenciesList");
-                                span.setAttribute("outsystems.function.key", "f15c4591-9739-418f-bc8d-14d275e849d1");
+                                span.setAttribute("code.function", "GetCurrencies");
+                                span.setAttribute("outsystems.function.key", "5ca5553a-205a-4b9f-9f91-b0cfa26538cc");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_SERVER_ACTION_CALL");
+                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                return controller.callServerAction("CurrenciesList", "screenservices/tradershub/MainFlow/Options/ActionCurrenciesList", "mfqCJ8dyBBlp7VBala4nSQ", {}, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
-                                    var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options$ActionCurrenciesList"))();
-                                    executeServerActionResult.currenciesListOut = OS.DataConversion.ServerDataConverter.from(outputs.CurrenciesList, tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d);
-                                    return executeServerActionResult;
-                                });
+                                return innerBody();
                             }, function() {
                                 if (span) {
                                     span.end();
@@ -2573,21 +2306,20 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
                             });
                         }, 0);
+
                     };
                 }
 
-                return this._currenciesList$ServerAction;
+                return this._getCurrencies$AggrRefresh;
             }
-            set currenciesList$ServerAction(value) {
-                this._currenciesList$ServerAction = value;
+            set getCurrencies$AggrRefresh(value) {
+                this._getCurrencies$AggrRefresh = value;
             }
 
-
-            // Aggregates and Data Actions
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = [];
+                    this._dataFetchActionNames = ["getCurrencies$AggrRefresh"];
                 }
 
                 return this._dataFetchActionNames;
@@ -2618,42 +2350,45 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var getPlatformFromURLVar = new OS.DataTypes.VariableHolder();
                                 var getURLVar = new OS.DataTypes.VariableHolder();
                                 var generateRedirectURLJSResult = new OS.DataTypes.VariableHolder();
-                                // Execute Action: GetPlatformFromURL
-                                getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
+                                if ((!(model.variables.backOfficeLocksVar.isTradingDisabledAttr))) {
+                                    // Execute Action: GetPlatformFromURL
+                                    getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
 
-                                // Execute Action: GetURL
-                                getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
+                                    // Execute Action: GetURL
+                                    getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
 
-                                generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "GenerateRedirectURL");
-                                        span.setAttribute("outsystems.function.key", "0b4ff3b1-bf3e-4954-8862-feb5da9a63b5");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "BotRedirection", {
-                                            BotStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.binaryBotStagingOut, OS.DataTypes.DataTypes.Text),
-                                            IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
-                                            BotProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.binaryBotProductionOut, OS.DataTypes.DataTypes.Text),
-                                            BotURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {
-                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.BotRedirection$generateRedirectURLJSResult"))();
-                                            jsNodeResult.botURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.BotURL, OS.DataTypes.DataTypes.Text);
-                                            return jsNodeResult;
-                                        }, {}, {});
-                                    } finally {
+                                    generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
                                         if (span) {
-                                            span.end();
+                                            span.setAttribute("code.function", "GenerateRedirectURL");
+                                            span.setAttribute("outsystems.function.key", "0b4ff3b1-bf3e-4954-8862-feb5da9a63b5");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                         }
 
-                                    }
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_BotRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "BotRedirection", {
+                                                BotStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.binaryBotStagingOut, OS.DataTypes.DataTypes.Text),
+                                                IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
+                                                BotProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.binaryBotProductionOut, OS.DataTypes.DataTypes.Text),
+                                                BotURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                            }, function($parameters) {
+                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.BotRedirection$generateRedirectURLJSResult"))();
+                                                jsNodeResult.botURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.BotURL, OS.DataTypes.DataTypes.Text);
+                                                return jsNodeResult;
+                                            }, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
 
-                                }, 1);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.botURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                        }
+
+                                    }, 1);
+                                    // Destination: /tradershub/
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.botURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                }
+
                             } finally {
                                 if (span) {
                                     span.end();
@@ -2669,6 +2404,115 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             }
             set _botRedirection$Action(value) {
                 this.__botRedirection$Action = value;
+            }
+
+            get _checkShowAddMoreAccount$Action() {
+                if (!(this.hasOwnProperty("__checkShowAddMoreAccount$Action"))) {
+                    this.__checkShowAddMoreAccount$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("CheckShowAddMoreAccount", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "CheckShowAddMoreAccount");
+                                span.setAttribute("outsystems.function.key", "2f09bd65-eb6e-43fb-ba87-3f604bedecd4");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("CheckShowAddMoreAccount");
+                                callContext = controller.callContext(callContext);
+                                var getAvailableAccountsVar = new OS.DataTypes.VariableHolder();
+                                var checkShowAddMoreAccountJSResult = new OS.DataTypes.VariableHolder();
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: GetAvailableAccounts
+                                    model.flush();
+                                    return tradershubController.default.getAvailableAccounts$Action(callContext).then(function(value) {
+                                        getAvailableAccountsVar.value = value;
+                                    }).then(function() {
+                                        checkShowAddMoreAccountJSResult.value = OS.Logger.startActiveSpan("CheckShowAddMoreAccount", function(span) {
+                                            if (span) {
+                                                span.setAttribute("code.function", "CheckShowAddMoreAccount");
+                                                span.setAttribute("outsystems.function.key", "ffcdd2cc-cdab-49df-8312-3e3c2ebabb19");
+                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                            }
+
+                                            try {
+                                                return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_CheckShowAddMoreAccount_CheckShowAddMoreAccountJS, "CheckShowAddMoreAccount", "CheckShowAddMoreAccount", {
+                                                    AvailableAccounts: OS.DataConversion.JSNodeParamConverter.to(getAvailableAccountsVar.value.responseOut, OS.DataTypes.DataTypes.Text),
+                                                    ShowAddMoreAccount: OS.DataConversion.JSNodeParamConverter.to(true, OS.DataTypes.DataTypes.Boolean)
+                                                }, function($parameters) {
+                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.CheckShowAddMoreAccount$checkShowAddMoreAccountJSResult"))();
+                                                    jsNodeResult.showAddMoreAccountOut = OS.DataConversion.JSNodeParamConverter.from($parameters.ShowAddMoreAccount, OS.DataTypes.DataTypes.Boolean);
+                                                    return jsNodeResult;
+                                                }, {}, {});
+                                            } finally {
+                                                if (span) {
+                                                    span.end();
+                                                }
+
+                                            }
+
+                                        }, 1);
+                                        // ShowAddMoreAccount = CheckShowAddMoreAccount.ShowAddMoreAccount
+                                        model.variables.showAddMoreAccountVar = checkShowAddMoreAccountJSResult.value.showAddMoreAccountOut;
+                                    });
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__checkShowAddMoreAccount$Action;
+            }
+            set _checkShowAddMoreAccount$Action(value) {
+                this.__checkShowAddMoreAccount$Action = value;
+            }
+
+            get _closeDerivGoModal$Action() {
+                if (!(this.hasOwnProperty("__closeDerivGoModal$Action"))) {
+                    this.__closeDerivGoModal$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("CloseDerivGoModal", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "CloseDerivGoModal");
+                                span.setAttribute("outsystems.function.key", "63d65366-894e-4940-8ca4-b9c0b3839019");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("CloseDerivGoModal");
+                                callContext = controller.callContext(callContext);
+                                // IsDerivGoModalVisible = False
+                                model.variables.isDerivGoModalVisibleVar = false;
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__closeDerivGoModal$Action;
+            }
+            set _closeDerivGoModal$Action(value) {
+                this.__closeDerivGoModal$Action = value;
             }
 
             get _setDemoValue$Action() {
@@ -2694,9 +2538,9 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var generateDemoAccountTokenJSResult = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     return OS.Flow.executeSequence(function() {
-                                        if ((!((model.variables.accountTypeVar === "demo")))) {
+                                        if ((!((tradershubClientVariables.getAccountType() === "demo")))) {
                                             // AccountType = "demo"
-                                            model.variables.accountTypeVar = "demo";
+                                            tradershubClientVariables.setAccountType("demo");
                                             generateDemoAccountTokenJSResult.value = OS.Logger.startActiveSpan("GenerateDemoAccountToken", function(span) {
                                                 if (span) {
                                                     span.setAttribute("code.function", "GenerateDemoAccountToken");
@@ -2734,12 +2578,17 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                                 // Execute Action: FormatMoney
                                                 formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
+                                                // Execute Action: GetBOLocks
+                                                return controller._getBOLocks$Action(callContext);
+                                            }).then(function() {
                                                 // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
                                                 model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
                                                 // SelectedAccountBalance = FormatMoney.FormattedNumber
                                                 model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
                                                 // IsBalanceLoading = False
                                                 model.variables.isBalanceLoadingVar = false;
+                                                // DemoLoginId = SendAuthorize.Response.Authorize.Loginid
+                                                tradershubClientVariables.setDemoLoginId(sendAuthorizeVar.value.responseOut.authorizeAttr.loginidAttr);
                                             });
                                         }
 
@@ -2759,147 +2608,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             }
             set _setDemoValue$Action(value) {
                 this.__setDemoValue$Action = value;
-            }
-
-            get _androidDGoRedirection$Action() {
-                if (!(this.hasOwnProperty("__androidDGoRedirection$Action"))) {
-                    this.__androidDGoRedirection$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("AndroidDGoRedirection", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "AndroidDGoRedirection");
-                                span.setAttribute("outsystems.function.key", "79e5f91a-6c9a-402a-8928-277a43d4ff43");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("AndroidDGoRedirection");
-                                callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://play.google.com/store/apps/details?id=com.deriv.app", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__androidDGoRedirection$Action;
-            }
-            set _androidDGoRedirection$Action(value) {
-                this.__androidDGoRedirection$Action = value;
-            }
-
-            get _onReady$Action() {
-                if (!(this.hasOwnProperty("__onReady$Action"))) {
-                    this.__onReady$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("OnReady", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "OnReady");
-                                span.setAttribute("outsystems.function.key", "7afdb3bf-4125-4448-a985-c79d43a16650");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("OnReady");
-                                callContext = controller.callContext(callContext);
-                                var tradingPlatformProductListingIDVar = new OS.DataTypes.VariableHolder();
-                                var currentClientCountryVar = new OS.DataTypes.VariableHolder();
-                                var tradingPlatformProductListingVar = new OS.DataTypes.VariableHolder();
-                                var jSONDeserializeResidenceListResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure))());
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // IsLoading = True
-                                    model.variables.isLoadingVar = true;
-                                    // IsBalanceLoading = True
-                                    model.variables.isBalanceLoadingVar = true;
-                                    // TempClientCountry = ""
-                                    tradershubClientVariables.setTempClientCountry("");
-                                    // Execute Action: GetWebsiteStatus
-                                    model.flush();
-                                    return tradershubController.default.getWebsiteStatus$Action(callContext).then(function() {
-                                        // JSON Deserialize: JSONDeserializeResidenceListResponse
-                                        jSONDeserializeResidenceListResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(tradershubClientVariables.getRawResidenceListResponse(), RESTAPIWebsocketOfficialModel.ST_63a473e932ef99f5271718b62399e682Structure, false);
-                                        // Execute Action: currentClientCountry
-                                        currentClientCountryVar.value = OS.SystemActions.listFilter(jSONDeserializeResidenceListResponseVar.value.dataOut.residence_listAttr, function(p) {
-                                            return (tradershubClientVariables.getClientCountry() === p.valueAttr);
-                                        }, callContext);
-
-                                    }).then(function() {
-                                        // HasToken
-                                        return OS.Flow.executeSequence(function() {
-                                            if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
-                                                // Execute Action: FilterAccountListAction
-                                                return controller._filterAccountListAction$Action(callContext);
-                                            }
-
-                                        });
-                                    }).then(function() {
-                                        // Execute Action: TradingPlatformProductListing
-                                        model.flush();
-                                        return tradershubController.default.tradingPlatformProductListing$Action(callContext).then(function(value) {
-                                            tradingPlatformProductListingVar.value = value;
-                                        });
-                                    }).then(function() {
-                                        // IsTradingAllowed
-                                        return OS.Flow.executeSequence(function() {
-                                            if ((tradingPlatformProductListingVar.value.responseOut.isTradingAllowedAttr)) {
-                                                // TradingPlatformProductListingResponse = TradingPlatformProductListing.Response
-                                                model.variables.tradingPlatformProductListingResponseVar = tradingPlatformProductListingVar.value.responseOut;
-                                            } else {
-                                                if ((!(tradershubClientVariables.getconfirmedNotResident()))) {
-                                                    // ShouldShowWarningPopup = True
-                                                    model.variables.shouldShowWarningPopupVar = true;
-                                                }
-
-                                                // TempClientCountry = "id"
-                                                tradershubClientVariables.setTempClientCountry("id");
-                                                // Execute Action: TradingPlatformProductListingID
-                                                model.flush();
-                                                return tradershubController.default.tradingPlatformProductListing$Action(callContext).then(function(value) {
-                                                    tradingPlatformProductListingIDVar.value = value;
-                                                }).then(function() {
-                                                    // TradingPlatformProductListingResponse = TradingPlatformProductListingID.Response
-                                                    model.variables.tradingPlatformProductListingResponseVar = tradingPlatformProductListingIDVar.value.responseOut;
-                                                });
-                                            }
-
-                                        });
-                                    }).then(function() {
-                                        // IsLoading = False
-                                        model.variables.isLoadingVar = false;
-                                        // IsBalanceLoading = False
-                                        model.variables.isBalanceLoadingVar = false;
-                                        // ClientCountryText = currentClientCountry.FilteredList.Current.Text
-                                        model.variables.clientCountryTextVar = currentClientCountryVar.value.filteredListOut.getCurrent(callContext.iterationContext).textAttr;
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__onReady$Action;
-            }
-            set _onReady$Action(value) {
-                this.__onReady$Action = value;
             }
 
             get _titleContainerMobileOnClick$Action() {
@@ -3006,41 +2714,45 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("SetRealValue");
                                 callContext = controller.callContext(callContext);
-                                var getTokenByLoginIdVar = new OS.DataTypes.VariableHolder();
                                 var formatMoneyVar = new OS.DataTypes.VariableHolder();
-                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
+                                var setTokenByLoginIdVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     return OS.Flow.executeSequence(function() {
-                                        if ((model.variables.hasRealAccountVar)) {
-                                            // AccountType = "real"
-                                            model.variables.accountTypeVar = "real";
-                                            // Execute Action: GetTokenByLoginId
-                                            getTokenByLoginIdVar.value = tradershubController.default.getAccountByLoginId$Action(tradershubClientVariables.getActiveLoginId(), callContext);
+                                        if ((!((tradershubClientVariables.getAccountType() === "real")))) {
+                                            return OS.Flow.executeSequence(function() {
+                                                if ((model.variables.hasRealAccountVar)) {
+                                                    // AccountType = "real"
+                                                    tradershubClientVariables.setAccountType("real");
+                                                    // IsBalanceLoading = True
+                                                    model.variables.isBalanceLoadingVar = true;
+                                                    // DemoLoginId = ""
+                                                    tradershubClientVariables.setDemoLoginId("");
+                                                    // Execute Action: SetTokenByLoginId
+                                                    model.flush();
+                                                    return tradershubController.default.setTokenByLoginId$Action(tradershubClientVariables.getActiveLoginId(), callContext).then(function(value) {
+                                                        setTokenByLoginIdVar.value = value;
+                                                    }).then(function() {
+                                                        // Execute Action: FormatMoney
+                                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(setTokenByLoginIdVar.value.responseOut.authorizeAttr.balanceAttr, setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
-                                            // AuthToken = GetTokenByLoginId.Token
-                                            tradershubClientVariables.setAuthToken(getTokenByLoginIdVar.value.tokenOut);
-                                            // IsBalanceLoading = True
-                                            model.variables.isBalanceLoadingVar = true;
-                                            // Execute Action: SendAuthorize
-                                            model.flush();
-                                            return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                                sendAuthorizeVar.value = value;
-                                            }).then(function() {
-                                                // Execute Action: FormatMoney
-                                                formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
+                                                        // Execute Action: GetBOLocks
+                                                        return controller._getBOLocks$Action(callContext);
+                                                    }).then(function() {
+                                                        // SelectedAccountCurrency = SetTokenByLoginId.Response.Authorize.Currency
+                                                        model.variables.selectedAccountCurrencyVar = setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr;
+                                                        // SelectedAccountBalance = FormatMoney.FormattedNumber
+                                                        model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
+                                                        // IsBalanceLoading = False
+                                                        model.variables.isBalanceLoadingVar = false;
+                                                    });
+                                                } else {
+                                                    // InitializeRealSignup = True
+                                                    tradershubClientVariables.setInitializeRealSignup(true);
+                                                    // Destination: /tradershub/CurrencySelection
+                                                    return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "currency-selection", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
+                                                }
 
-                                                // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
-                                                model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
-                                                // SelectedAccountBalance = FormatMoney.FormattedNumber
-                                                model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
-                                                // IsBalanceLoading = False
-                                                model.variables.isBalanceLoadingVar = false;
                                             });
-                                        } else {
-                                            // InitializeRealSignup = True
-                                            tradershubClientVariables.setInitializeRealSignup(true);
-                                            // Destination: /tradershub/CurrencySelection
-                                            return OS.Flow.returnAsync(OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "currency-selection", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true));
                                         }
 
                                     });
@@ -3126,43 +2838,46 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var getURLVar = new OS.DataTypes.VariableHolder();
                                 var getPlatformFromURLVar = new OS.DataTypes.VariableHolder();
                                 var generateRedirectURLJSResult = new OS.DataTypes.VariableHolder();
-                                // Execute Action: GetPlatformFromURL
-                                getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
+                                if ((!(model.variables.backOfficeLocksVar.isTradingDisabledAttr))) {
+                                    // Execute Action: GetPlatformFromURL
+                                    getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
 
-                                // Execute Action: GetURL
-                                getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
+                                    // Execute Action: GetURL
+                                    getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
 
-                                generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "GenerateRedirectURL");
-                                        span.setAttribute("outsystems.function.key", "a6a19897-89cd-4d4c-8c86-58b20f617e2d");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "SmarttraderRedirection", {
-                                            IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
-                                            Language: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getLang(), OS.DataTypes.DataTypes.Text),
-                                            SmartTraderStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.smartTraderStagingOut, OS.DataTypes.DataTypes.Text),
-                                            SmartTraderProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.smartTraderProductionOut, OS.DataTypes.DataTypes.Text),
-                                            SmartTraderURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {
-                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.SmarttraderRedirection$generateRedirectURLJSResult"))();
-                                            jsNodeResult.smartTraderURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.SmartTraderURL, OS.DataTypes.DataTypes.Text);
-                                            return jsNodeResult;
-                                        }, {}, {});
-                                    } finally {
+                                    generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
                                         if (span) {
-                                            span.end();
+                                            span.setAttribute("code.function", "GenerateRedirectURL");
+                                            span.setAttribute("outsystems.function.key", "a6a19897-89cd-4d4c-8c86-58b20f617e2d");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                         }
 
-                                    }
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_SmarttraderRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "SmarttraderRedirection", {
+                                                IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
+                                                Language: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getLang(), OS.DataTypes.DataTypes.Text),
+                                                SmartTraderStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.smartTraderStagingOut, OS.DataTypes.DataTypes.Text),
+                                                SmartTraderProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.smartTraderProductionOut, OS.DataTypes.DataTypes.Text),
+                                                SmartTraderURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                            }, function($parameters) {
+                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.SmarttraderRedirection$generateRedirectURLJSResult"))();
+                                                jsNodeResult.smartTraderURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.SmartTraderURL, OS.DataTypes.DataTypes.Text);
+                                                return jsNodeResult;
+                                            }, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
 
-                                }, 1);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.smartTraderURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                        }
+
+                                    }, 1);
+                                    // Destination: /tradershub/
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.smartTraderURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                }
+
                             } finally {
                                 if (span) {
                                     span.end();
@@ -3201,42 +2916,45 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                 var getURLVar = new OS.DataTypes.VariableHolder();
                                 var getPlatformFromURLVar = new OS.DataTypes.VariableHolder();
                                 var generateRedirectURLJSResult = new OS.DataTypes.VariableHolder();
-                                // Execute Action: GetPlatformFromURL
-                                getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
+                                if ((!(model.variables.backOfficeLocksVar.isTradingDisabledAttr))) {
+                                    // Execute Action: GetPlatformFromURL
+                                    getPlatformFromURLVar.value = SharedUtilitiesController.default.getPlatformFromURL$Action("", callContext);
 
-                                // Execute Action: GetURL
-                                getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
+                                    // Execute Action: GetURL
+                                    getURLVar.value = SharedUtilitiesController.default.getURL$Action(callContext);
 
-                                generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
-                                    if (span) {
-                                        span.setAttribute("code.function", "GenerateRedirectURL");
-                                        span.setAttribute("outsystems.function.key", "e7a5bc8a-073b-4f06-97be-53ddb87bd860");
-                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                    }
-
-                                    try {
-                                        return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "DTraderRedirection", {
-                                            IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
-                                            DerivAppProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.derivAppProductionOut, OS.DataTypes.DataTypes.Text),
-                                            DerivAppStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.derivAppStagingOut, OS.DataTypes.DataTypes.Text),
-                                            DTraderURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                        }, function($parameters) {
-                                            var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.DTraderRedirection$generateRedirectURLJSResult"))();
-                                            jsNodeResult.dTraderURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.DTraderURL, OS.DataTypes.DataTypes.Text);
-                                            return jsNodeResult;
-                                        }, {}, {});
-                                    } finally {
+                                    generateRedirectURLJSResult.value = OS.Logger.startActiveSpan("GenerateRedirectURL", function(span) {
                                         if (span) {
-                                            span.end();
+                                            span.setAttribute("code.function", "GenerateRedirectURL");
+                                            span.setAttribute("outsystems.function.key", "e7a5bc8a-073b-4f06-97be-53ddb87bd860");
+                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
                                         }
 
-                                    }
+                                        try {
+                                            return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_DTraderRedirection_GenerateRedirectURLJS, "GenerateRedirectURL", "DTraderRedirection", {
+                                                IsStaging: OS.DataConversion.JSNodeParamConverter.to(getPlatformFromURLVar.value.isStagingOut, OS.DataTypes.DataTypes.Boolean),
+                                                DerivAppProduction: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.derivAppProductionOut, OS.DataTypes.DataTypes.Text),
+                                                DerivAppStaging: OS.DataConversion.JSNodeParamConverter.to(getURLVar.value.derivAppStagingOut, OS.DataTypes.DataTypes.Text),
+                                                DTraderURL: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                            }, function($parameters) {
+                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.DTraderRedirection$generateRedirectURLJSResult"))();
+                                                jsNodeResult.dTraderURLOut = OS.DataConversion.JSNodeParamConverter.from($parameters.DTraderURL, OS.DataTypes.DataTypes.Text);
+                                                return jsNodeResult;
+                                            }, {}, {});
+                                        } finally {
+                                            if (span) {
+                                                span.end();
+                                            }
 
-                                }, 1);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.dTraderURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                        }
+
+                                    }, 1);
+                                    // Destination: /tradershub/
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL(generateRedirectURLJSResult.value.dTraderURLOut, {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                }
+
                             } finally {
                                 if (span) {
                                     span.end();
@@ -3254,41 +2972,172 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 this.__dTraderRedirection$Action = value;
             }
 
-            get _iOSDGoRedirection$Action() {
-                if (!(this.hasOwnProperty("__iOSDGoRedirection$Action"))) {
-                    this.__iOSDGoRedirection$Action = function(callContext) {
+            get _onAfterFetch$Action() {
+                if (!(this.hasOwnProperty("__onAfterFetch$Action"))) {
+                    this.__onAfterFetch$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("IOSDGoRedirection", function(span) {
+                        return OS.Logger.startActiveSpan("OnAfterFetch", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "IOSDGoRedirection");
-                                span.setAttribute("outsystems.function.key", "cef242ee-2c2a-4c36-a247-3143e7d2120d");
+                                span.setAttribute("code.function", "OnAfterFetch");
+                                span.setAttribute("outsystems.function.key", "c8ca48b3-64fd-4078-b6ca-984ca31166a3");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
-                            try {
-                                controller.ensureControllerAlive("IOSDGoRedirection");
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnAfterFetch");
                                 callContext = controller.callContext(callContext);
-                                // Destination: /tradershub/
-                                return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("https://apps.apple.com/my/app/deriv-go-online-trading-app/id1550561298", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
-                            } finally {
+                                var formatMoneyVar = new OS.DataTypes.VariableHolder();
+                                var tradingPlatformProductListingIDVar = new OS.DataTypes.VariableHolder();
+                                var setTokenByLoginIdVar = new OS.DataTypes.VariableHolder();
+                                var tradingPlatformProductListingVar = new OS.DataTypes.VariableHolder();
+                                var getAllAccountsBalanceVar = new OS.DataTypes.VariableHolder();
+                                var filterAccountListJSResult = new OS.DataTypes.VariableHolder();
+                                var jSONSerializeAuthorizeVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var jSONSerializeCurrenciesVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                                var jSONDeserializeFilteredAccountListListVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.RL_5ab9438d98871a1f612419941cad5407))());
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // IsLoading = True
+                                    model.variables.isLoadingVar = true;
+                                    // IsBalanceLoading = True
+                                    model.variables.isBalanceLoadingVar = true;
+                                    // TempClientCountry = ""
+                                    tradershubClientVariables.setTempClientCountry("");
+                                    // Execute Action: GetWebsiteStatus
+                                    model.flush();
+                                    return tradershubController.default.getWebsiteStatus$Action(callContext).then(function() {
+                                        // HasToken
+                                        return OS.Flow.executeSequence(function() {
+                                            if ((((tradershubClientVariables.getAuthToken()) !== (OS.BuiltinFunctions.nullTextIdentifier())))) {
+                                                // Execute Action: GetBOLocks
+                                                return controller._getBOLocks$Action(callContext).then(function() {
+                                                    // Execute Action: SetTokenByLoginId
+                                                    model.flush();
+                                                    return tradershubController.default.setTokenByLoginId$Action((((tradershubClientVariables.getDemoLoginId() === "")) ? (tradershubClientVariables.getActiveLoginId()) : (tradershubClientVariables.getDemoLoginId())), callContext).then(function(value) {
+                                                        setTokenByLoginIdVar.value = value;
+                                                    });
+                                                }).then(function() {
+                                                    // Execute Action: FormatMoney
+                                                    formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(setTokenByLoginIdVar.value.responseOut.authorizeAttr.balanceAttr, setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
+
+                                                    // SelectedAccountCurrency = SetTokenByLoginId.Response.Authorize.Currency
+                                                    model.variables.selectedAccountCurrencyVar = setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr;
+                                                    // SelectedAccountBalance = FormatMoney.FormattedNumber
+                                                    model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
+                                                    // JSON Serialize: JSONSerializeAuthorize
+                                                    jSONSerializeAuthorizeVar.value.jSONOut = OS.JSONUtils.serializeToJSON(setTokenByLoginIdVar.value.responseOut, true, false);
+                                                    // Execute Action: GetAllAccountsBalance
+                                                    model.flush();
+                                                    return tradershubController.default.getAllAccountsBalance$Action(callContext).then(function(value) {
+                                                        getAllAccountsBalanceVar.value = value;
+                                                    });
+                                                }).then(function() {
+                                                    // JSON Serialize: JSONSerializeCurrencies
+                                                    jSONSerializeCurrenciesVar.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.getCurrenciesAggr.listOut, false, false);
+                                                    filterAccountListJSResult.value = OS.Logger.startActiveSpan("FilterAccountList", function(span) {
+                                                        if (span) {
+                                                            span.setAttribute("code.function", "FilterAccountList");
+                                                            span.setAttribute("outsystems.function.key", "67a17f15-b3e2-47ab-b230-c06052743047");
+                                                            span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                            span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                        }
+
+                                                        try {
+                                                            return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_OnAfterFetch_FilterAccountListJS, "FilterAccountList", "OnAfterFetch", {
+                                                                AllAccountsBalance: OS.DataConversion.JSNodeParamConverter.to(getAllAccountsBalanceVar.value.responseOut, OS.DataTypes.DataTypes.Text),
+                                                                CurrenciesList: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeCurrenciesVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                                AuthorizeResponse: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeAuthorizeVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                                modifiedAccountList: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
+                                                                HasRealAccount: OS.DataConversion.JSNodeParamConverter.to(true, OS.DataTypes.DataTypes.Boolean)
+                                                            }, function($parameters) {
+                                                                var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.OnAfterFetch$filterAccountListJSResult"))();
+                                                                jsNodeResult.modifiedAccountListOut = OS.DataConversion.JSNodeParamConverter.from($parameters.modifiedAccountList, OS.DataTypes.DataTypes.Text);
+                                                                jsNodeResult.hasRealAccountOut = OS.DataConversion.JSNodeParamConverter.from($parameters.HasRealAccount, OS.DataTypes.DataTypes.Boolean);
+                                                                return jsNodeResult;
+                                                            }, {
+                                                                GetCurrencyIcon: tradershubController.default.clientActionProxies.getCurrencyIcon$Action,
+                                                                FormatMoney: SharedUtilitiesController.default.clientActionProxies.formatMoney$Action
+                                                            }, {});
+                                                        } finally {
+                                                            if (span) {
+                                                                span.end();
+                                                            }
+
+                                                        }
+
+                                                    }, 1);
+                                                    // JSON Deserialize: JSONDeserializeFilteredAccountListList
+                                                    jSONDeserializeFilteredAccountListListVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(filterAccountListJSResult.value.modifiedAccountListOut, tradershubModel.RL_5ab9438d98871a1f612419941cad5407, false);
+                                                    // FilteredAccountList = JSONDeserializeFilteredAccountListList.Data
+                                                    model.variables.filteredAccountListVar = jSONDeserializeFilteredAccountListListVar.value.dataOut;
+                                                    // HasRealAccount = FilterAccountList.HasRealAccount
+                                                    model.variables.hasRealAccountVar = filterAccountListJSResult.value.hasRealAccountOut;
+                                                    // AccountType = If
+                                                    tradershubClientVariables.setAccountType((((filterAccountListJSResult.value.hasRealAccountOut && (tradershubClientVariables.getDemoLoginId() === ""))) ? ("real") : ("demo")));
+                                                    // ClientCountry = SetTokenByLoginId.Response.Authorize.Country
+                                                    tradershubClientVariables.setClientCountry(setTokenByLoginIdVar.value.responseOut.authorizeAttr.countryAttr);
+                                                    // Execute Action: CheckShowAddMoreAccount
+                                                    return controller._checkShowAddMoreAccount$Action(callContext);
+                                                });
+                                            }
+
+                                        });
+                                    }).then(function() {
+                                        // Execute Action: TradingPlatformProductListing
+                                        model.flush();
+                                        return tradershubController.default.tradingPlatformProductListing$Action(tradershubClientVariables.getClientCountry(), callContext).then(function(value) {
+                                            tradingPlatformProductListingVar.value = value;
+                                        });
+                                    }).then(function() {
+                                        // IsTradingAllowed
+                                        return OS.Flow.executeSequence(function() {
+                                            if ((tradingPlatformProductListingVar.value.responseOut.isTradingAllowedAttr)) {
+                                                // TradingPlatformProductListingResponse = TradingPlatformProductListing.Response
+                                                model.variables.tradingPlatformProductListingResponseVar = tradingPlatformProductListingVar.value.responseOut;
+                                            } else {
+                                                if ((!(tradershubClientVariables.getConfirmedNotResident()))) {
+                                                    // ShouldShowWarningPopup = True
+                                                    model.variables.shouldShowWarningPopupVar = true;
+                                                }
+
+                                                // TempClientCountry = "id"
+                                                tradershubClientVariables.setTempClientCountry("id");
+                                                // Execute Action: TradingPlatformProductListingID
+                                                model.flush();
+                                                return tradershubController.default.tradingPlatformProductListing$Action(tradershubClientVariables.getClientCountry(), callContext).then(function(value) {
+                                                    tradingPlatformProductListingIDVar.value = value;
+                                                }).then(function() {
+                                                    // TradingPlatformProductListingResponse = TradingPlatformProductListingID.Response
+                                                    model.variables.tradingPlatformProductListingResponseVar = tradingPlatformProductListingIDVar.value.responseOut;
+                                                });
+                                            }
+
+                                        });
+                                    }).then(function() {
+                                        // IsLoading = False
+                                        model.variables.isLoadingVar = false;
+                                        // IsBalanceLoading = False
+                                        model.variables.isBalanceLoadingVar = false;
+                                    });
+                                });
+                            }, function() {
                                 if (span) {
                                     span.end();
                                 }
 
-                            }
-
+                            });
                         }, 1);
                     };
                 }
 
-                return this.__iOSDGoRedirection$Action;
+                return this.__onAfterFetch$Action;
             }
-            set _iOSDGoRedirection$Action(value) {
-                this.__iOSDGoRedirection$Action = value;
+            set _onAfterFetch$Action(value) {
+                this.__onAfterFetch$Action = value;
             }
 
             get _mobileAccountSwitcherOnClick$Action() {
@@ -3346,9 +3195,9 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("AccountListItemOnClick");
                                 callContext = controller.callContext(callContext);
-                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
+                                var setTokenByLoginIdVar = new OS.DataTypes.VariableHolder();
                                 var formatMoneyVar = new OS.DataTypes.VariableHolder();
-                                var getTokenByLoginIdVar = new OS.DataTypes.VariableHolder();
+                                var jSONSerializeCurrentLinkedToVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                                 return OS.Flow.executeAsyncFlow(function() {
                                     return OS.Flow.executeSequence(function() {
                                         if (((((tradershubClientVariables.getActiveLoginId() === model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr)) ? (false) : (true)))) {
@@ -3356,34 +3205,33 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                                             model.variables.isAccountSwitcherOpenVar = false;
                                             // OpenAccountSwitcherModal = False
                                             model.variables.openAccountSwitcherModalVar = false;
-                                            // Execute Action: GetTokenByLoginId
-                                            getTokenByLoginIdVar.value = tradershubController.default.getAccountByLoginId$Action(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr, callContext);
-
-                                            // AuthToken = GetTokenByLoginId.Token
-                                            tradershubClientVariables.setAuthToken(getTokenByLoginIdVar.value.tokenOut);
-                                            // Execute Action: SendAuthorize
+                                            // Execute Action: SetTokenByLoginId
                                             model.flush();
-                                            return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                                sendAuthorizeVar.value = value;
+                                            return tradershubController.default.setTokenByLoginId$Action(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr, callContext).then(function(value) {
+                                                setTokenByLoginIdVar.value = value;
                                             }).then(function() {
                                                 // IsBalanceLoading = True
                                                 model.variables.isBalanceLoadingVar = true;
                                             }).then(function() {
-                                                if ((sendAuthorizeVar.value.isErrorOut)) {
+                                                if ((setTokenByLoginIdVar.value.isErrorOut)) {
                                                     // IsBalanceLoading = False
                                                     model.variables.isBalanceLoadingVar = false;
                                                 } else {
                                                     // Execute Action: FormatMoney
-                                                    formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
+                                                    formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(setTokenByLoginIdVar.value.responseOut.authorizeAttr.balanceAttr, setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
 
-                                                    // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
-                                                    model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
+                                                    // JSON Serialize: JSONSerializeCurrentLinkedTo
+                                                    jSONSerializeCurrentLinkedToVar.value.jSONOut = OS.JSONUtils.serializeToJSON(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).linkedToAttr, false, false);
+                                                    // SelectedAccountCurrency = SetTokenByLoginId.Response.Authorize.Currency
+                                                    model.variables.selectedAccountCurrencyVar = setTokenByLoginIdVar.value.responseOut.authorizeAttr.currencyAttr;
                                                     // SelectedAccountBalance = FormatMoney.FormattedNumber
                                                     model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
                                                     // ActiveLoginId = FilteredAccountList.Current.Loginid
                                                     tradershubClientVariables.setActiveLoginId(model.variables.filteredAccountListVar.getCurrent(callContext.iterationContext).loginidAttr);
                                                     // IsBalanceLoading = False
                                                     model.variables.isBalanceLoadingVar = false;
+                                                    // LinkedTo = JSONSerializeCurrentLinkedTo.JSON
+                                                    tradershubClientVariables.setLinkedTo(jSONSerializeCurrentLinkedToVar.value.jSONOut);
                                                 }
 
                                             });
@@ -3444,29 +3292,33 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 this.__openAccountSwitcherOnClick$Action = value;
             }
 
-            get _topupDemoAccount$Action() {
-                if (!(this.hasOwnProperty("__topupDemoAccount$Action"))) {
-                    this.__topupDemoAccount$Action = function(callContext) {
+            get _getBOLocks$Action() {
+                if (!(this.hasOwnProperty("__getBOLocks$Action"))) {
+                    this.__getBOLocks$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("TopupDemoAccount", function(span) {
+                        return OS.Logger.startActiveSpan("GetBOLocks", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "TopupDemoAccount");
-                                span.setAttribute("outsystems.function.key", "e522a808-6967-48f8-8027-bea735f76085");
+                                span.setAttribute("code.function", "GetBOLocks");
+                                span.setAttribute("outsystems.function.key", "f6e83c42-f57b-4248-99a1-ac5dd7b8eb1f");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                                 span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                             }
 
                             return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("TopupDemoAccount");
+                                controller.ensureControllerAlive("GetBOLocks");
                                 callContext = controller.callContext(callContext);
+                                var getBackOfficeLocksVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: TopupVirtualAccount
+                                    // Execute Action: GetBackOfficeLocks
                                     model.flush();
-                                    return tradershubController.default.topupVirtualAccount$Action(callContext).then(function() {
-                                        OS.FeedbackMessageService.showFeedbackMessage("You\'ve reset your demo account balance to USD 10,000.", /*Success*/ 1);
+                                    return tradershubController.default.getBackOfficeLocks$Action(callContext).then(function(value) {
+                                        getBackOfficeLocksVar.value = value;
+                                    }).then(function() {
+                                        // BackOfficeLocks = GetBackOfficeLocks.Response
+                                        model.variables.backOfficeLocksVar = getBackOfficeLocksVar.value.responseOut;
                                     });
                                 });
                             }, function() {
@@ -3479,124 +3331,10 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                     };
                 }
 
-                return this.__topupDemoAccount$Action;
+                return this.__getBOLocks$Action;
             }
-            set _topupDemoAccount$Action(value) {
-                this.__topupDemoAccount$Action = value;
-            }
-
-            get _filterAccountListAction$Action() {
-                if (!(this.hasOwnProperty("__filterAccountListAction$Action"))) {
-                    this.__filterAccountListAction$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("FilterAccountListAction", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "FilterAccountListAction");
-                                span.setAttribute("outsystems.function.key", "e7aa87d1-d38e-4107-800f-a9b9daabb919");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                controller.ensureControllerAlive("FilterAccountListAction");
-                                callContext = controller.callContext(callContext);
-                                var currenciesListVar = new OS.DataTypes.VariableHolder();
-                                var formatMoneyVar = new OS.DataTypes.VariableHolder();
-                                var getAllAccountsBalanceVar = new OS.DataTypes.VariableHolder();
-                                var sendAuthorizeVar = new OS.DataTypes.VariableHolder();
-                                var filterAccountListJSResult = new OS.DataTypes.VariableHolder();
-                                var jSONSerializeCurrenciesListVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                                var jSONSerializeAuthorizeVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                                var jSONDeserializeFilteredAccountListListVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(tradershubModel.RL_5efabb620fce6e69244e61944ef4417d))());
-                                return OS.Flow.executeAsyncFlow(function() {
-                                    // Execute Action: SendAuthorize
-                                    model.flush();
-                                    return tradershubController.default.sendAuthorize$Action(false, callContext).then(function(value) {
-                                        sendAuthorizeVar.value = value;
-                                    }).then(function() {
-                                        // Execute Action: FormatMoney
-                                        formatMoneyVar.value = SharedUtilitiesController.default.formatMoney$Action(sendAuthorizeVar.value.responseOut.authorizeAttr.balanceAttr, sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr, "en-US", "", callContext);
-
-                                        // SelectedAccountCurrency = SendAuthorize.Response.Authorize.Currency
-                                        model.variables.selectedAccountCurrencyVar = sendAuthorizeVar.value.responseOut.authorizeAttr.currencyAttr;
-                                        // SelectedAccountBalance = FormatMoney.FormattedNumber
-                                        model.variables.selectedAccountBalanceVar = formatMoneyVar.value.formattedNumberOut;
-                                        // JSON Serialize: JSONSerializeAuthorize
-                                        jSONSerializeAuthorizeVar.value.jSONOut = OS.JSONUtils.serializeToJSON(sendAuthorizeVar.value.responseOut, true, false);
-                                        // Execute Action: GetAllAccountsBalance
-                                        model.flush();
-                                        return tradershubController.default.getAllAccountsBalance$Action(callContext).then(function(value) {
-                                            getAllAccountsBalanceVar.value = value;
-                                        });
-                                    }).then(function() {
-                                        // Execute Action: CurrenciesList
-                                        model.flush();
-                                        return controller.currenciesList$ServerAction(callContext).then(function(value) {
-                                            currenciesListVar.value = value;
-                                        });
-                                    }).then(function() {
-                                        // JSON Serialize: JSONSerializeCurrenciesList
-                                        jSONSerializeCurrenciesListVar.value.jSONOut = OS.JSONUtils.serializeToJSON(currenciesListVar.value.currenciesListOut, false, false);
-                                        filterAccountListJSResult.value = OS.Logger.startActiveSpan("FilterAccountList", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "FilterAccountList");
-                                                span.setAttribute("outsystems.function.key", "ce6b6c20-1c58-4401-979c-504cab78b6c0");
-                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(tradershub_MainFlow_Options_mvc_controller_FilterAccountListAction_FilterAccountListJS, "FilterAccountList", "FilterAccountListAction", {
-                                                    CurrenciesList: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeCurrenciesListVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
-                                                    AllAccountsBalance: OS.DataConversion.JSNodeParamConverter.to(getAllAccountsBalanceVar.value.responseOut, OS.DataTypes.DataTypes.Text),
-                                                    AuthorizeResponse: OS.DataConversion.JSNodeParamConverter.to(jSONSerializeAuthorizeVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
-                                                    modifiedAccountList: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
-                                                    HasRealAccount: OS.DataConversion.JSNodeParamConverter.to(true, OS.DataTypes.DataTypes.Boolean)
-                                                }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("tradershub.MainFlow.Options.FilterAccountListAction$filterAccountListJSResult"))();
-                                                    jsNodeResult.modifiedAccountListOut = OS.DataConversion.JSNodeParamConverter.from($parameters.modifiedAccountList, OS.DataTypes.DataTypes.Text);
-                                                    jsNodeResult.hasRealAccountOut = OS.DataConversion.JSNodeParamConverter.from($parameters.HasRealAccount, OS.DataTypes.DataTypes.Boolean);
-                                                    return jsNodeResult;
-                                                }, {
-                                                    GetCurrencyIcon: tradershubController.default.clientActionProxies.getCurrencyIcon$Action,
-                                                    FormatMoney: SharedUtilitiesController.default.clientActionProxies.formatMoney$Action
-                                                }, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
-
-                                            }
-
-                                        }, 1);
-                                        // JSON Deserialize: JSONDeserializeFilteredAccountListList
-                                        jSONDeserializeFilteredAccountListListVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(filterAccountListJSResult.value.modifiedAccountListOut, tradershubModel.RL_5efabb620fce6e69244e61944ef4417d, false);
-                                        // FilteredAccountList = JSONDeserializeFilteredAccountListList.Data
-                                        model.variables.filteredAccountListVar = jSONDeserializeFilteredAccountListListVar.value.dataOut;
-                                        // HasRealAccount = FilterAccountList.HasRealAccount
-                                        model.variables.hasRealAccountVar = filterAccountListJSResult.value.hasRealAccountOut;
-                                        // AccountType = If
-                                        model.variables.accountTypeVar = ((filterAccountListJSResult.value.hasRealAccountOut) ? ("real") : ("demo"));
-                                    });
-                                });
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 1);
-                    };
-                }
-
-                return this.__filterAccountListAction$Action;
-            }
-            set _filterAccountListAction$Action(value) {
-                this.__filterAccountListAction$Action = value;
+            set _getBOLocks$Action(value) {
+                this.__getBOLocks$Action = value;
             }
 
             get _confirmedNotResidentOnClick$Action() {
@@ -3617,8 +3355,8 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                             try {
                                 controller.ensureControllerAlive("confirmedNotResidentOnClick");
                                 callContext = controller.callContext(callContext);
-                                // confirmedNotResident = True
-                                tradershubClientVariables.setconfirmedNotResident(true);
+                                // ConfirmedNotResident = True
+                                tradershubClientVariables.setConfirmedNotResident(true);
                                 // ShouldShowWarningPopup = False
                                 model.variables.shouldShowWarningPopupVar = false;
                             } finally {
@@ -3663,6 +3401,53 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             }
 
+            checkShowAddMoreAccount$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("CheckShowAddMoreAccount__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "CheckShowAddMoreAccount");
+                        span.setAttribute("outsystems.function.key", "2f09bd65-eb6e-43fb-ba87-3f604bedecd4");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._checkShowAddMoreAccount$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
+                }, 0);
+
+            }
+
+            closeDerivGoModal$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("CloseDerivGoModal__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "CloseDerivGoModal");
+                        span.setAttribute("outsystems.function.key", "63d65366-894e-4940-8ca4-b9c0b3839019");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._closeDerivGoModal$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
+
             setDemoValue$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("SetDemoValue__proxy", function(span) {
@@ -3676,53 +3461,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
                     return OS.Flow.tryFinally(function() {
                         return controller.safeExecuteClientAction(controller._setDemoValue$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
-            androidDGoRedirection$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("AndroidDGoRedirection__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "AndroidDGoRedirection");
-                        span.setAttribute("outsystems.function.key", "79e5f91a-6c9a-402a-8928-277a43d4ff43");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._androidDGoRedirection$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            onReady$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "OnReady");
-                        span.setAttribute("outsystems.function.key", "7afdb3bf-4125-4448-a985-c79d43a16650");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
                     }, function() {
                         if (span) {
                             span.end();
@@ -3876,26 +3614,25 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             }
 
-            iOSDGoRedirection$Action(callContext) {
+            onAfterFetch$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("IOSDGoRedirection__proxy", function(span) {
+                return OS.Logger.startActiveSpan("OnAfterFetch__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "IOSDGoRedirection");
-                        span.setAttribute("outsystems.function.key", "cef242ee-2c2a-4c36-a247-3143e7d2120d");
+                        span.setAttribute("code.function", "OnAfterFetch");
+                        span.setAttribute("outsystems.function.key", "c8ca48b3-64fd-4078-b6ca-984ca31166a3");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    try {
-                        return controller.safeExecuteClientAction(controller._iOSDGoRedirection$Action, callContext);
-                    } finally {
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onAfterFetch$Action, callContext);
+                    }, function() {
                         if (span) {
                             span.end();
                         }
 
-                    }
-
+                    });
                 }, 0);
 
             }
@@ -3971,42 +3708,19 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             }
 
-            topupDemoAccount$Action(callContext) {
+            getBOLocks$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("TopupDemoAccount__proxy", function(span) {
+                return OS.Logger.startActiveSpan("GetBOLocks__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "TopupDemoAccount");
-                        span.setAttribute("outsystems.function.key", "e522a808-6967-48f8-8027-bea735f76085");
+                        span.setAttribute("code.function", "GetBOLocks");
+                        span.setAttribute("outsystems.function.key", "f6e83c42-f57b-4248-99a1-ac5dd7b8eb1f");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
                     return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._topupDemoAccount$Action, callContext);
-                    }, function() {
-                        if (span) {
-                            span.end();
-                        }
-
-                    });
-                }, 0);
-
-            }
-
-            filterAccountListAction$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("FilterAccountListAction__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "FilterAccountListAction");
-                        span.setAttribute("outsystems.function.key", "e7aa87d1-d38e-4107-800f-a9b9daabb919");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._filterAccountListAction$Action, callContext);
+                        return controller.safeExecuteClientAction(controller._getBOLocks$Action, callContext);
                     }, function() {
                         if (span) {
                             span.end();
@@ -4063,14 +3777,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = function(callContext) {
-                        var controller = this.controller;
-                        var model = this.model;
-                        var idService = this.idService;
-
-                        return controller.onReady$Action(callContext);
-
-                    };
+                    this._onReadyEventHandler = null;
                 }
 
                 return this._onReadyEventHandler;
@@ -4135,16 +3842,6 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
 
         var Controller = ControllerInner;
         // Server Actions - Variables
-        Controller.registerVariableGroupType("tradershub.MainFlow.Options$ActionCurrenciesList", [{
-            name: "CurrenciesList",
-            attrName: "currenciesListOut",
-            mandatory: false,
-            dataType: OS.DataTypes.DataTypes.RecordList,
-            defaultValue: function() {
-                return new tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d();
-            },
-            complexType: tradershubModel.RL_7f0ff0d0a70a4e41424efbf5ef899b8d
-        }]);
 
         // Client Actions - Variables
         Controller.registerVariableGroupType("tradershub.MainFlow.Options.BotRedirection$generateRedirectURLJSResult", [{
@@ -4154,6 +3851,15 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
             dataType: OS.DataTypes.DataTypes.Text,
             defaultValue: function() {
                 return "";
+            }
+        }]);
+        Controller.registerVariableGroupType("tradershub.MainFlow.Options.CheckShowAddMoreAccount$checkShowAddMoreAccountJSResult", [{
+            name: "ShowAddMoreAccount",
+            attrName: "showAddMoreAccountOut",
+            mandatory: true,
+            dataType: OS.DataTypes.DataTypes.Boolean,
+            defaultValue: function() {
+                return true;
             }
         }]);
         Controller.registerVariableGroupType("tradershub.MainFlow.Options.SetDemoValue$generateDemoAccountTokenJSResult", [{
@@ -4183,7 +3889,7 @@ define("tradershub.MainFlow.Options.mvc$controller", ["@outsystems/runtime-core-
                 return "";
             }
         }]);
-        Controller.registerVariableGroupType("tradershub.MainFlow.Options.FilterAccountListAction$filterAccountListJSResult", [{
+        Controller.registerVariableGroupType("tradershub.MainFlow.Options.OnAfterFetch$filterAccountListJSResult", [{
             name: "modifiedAccountList",
             attrName: "modifiedAccountListOut",
             mandatory: true,
@@ -4211,6 +3917,19 @@ define("tradershub.MainFlow.Options.mvc$controller.BotRedirection.GenerateRedire
             $parameters.BotURL = `${$parameters.BotStaging}/bot`
         } else {
             $parameters.BotURL = `${$parameters.BotProduction}/bot`
+        }
+
+    };
+});
+
+define("tradershub.MainFlow.Options.mvc$controller.CheckShowAddMoreAccount.CheckShowAddMoreAccountJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const availableAccounts = JSON.parse($parameters.AvailableAccounts);
+
+        if (availableAccounts?.available_accounts?.trading.length > 0) {
+            $parameters.ShowAddMoreAccount = true;
+        } else {
+            $parameters.ShowAddMoreAccount = false;
         }
 
     };
@@ -4252,7 +3971,7 @@ define("tradershub.MainFlow.Options.mvc$controller.DTraderRedirection.GenerateRe
     };
 });
 
-define("tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.FilterAccountListJS", [], function() {
+define("tradershub.MainFlow.Options.mvc$controller.OnAfterFetch.FilterAccountListJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
         const authorize = JSON.parse($parameters.AuthorizeResponse);
         const accountList = authorize?.authorize?.account_list;
@@ -4264,11 +3983,13 @@ define("tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.Filte
             $parameters.HasRealAccount = false;
         }
 
-        const filterAccountList = accountList?.filter((account) => !account.is_virtual);
+        const filterAccountList = accountList?.filter(
+            (account) => account.broker !== "CRW" && account.broker !== "VRW" && account.broker !== "VRTC"
+        );
 
         const modifiedAccountList = filterAccountList?.map((account) => {
             const currency = account.currency;
-            const icon = $actions.GetCurrencyIcon(currency || "USD", $parameters.CurrenciesList)?.CurrencyIcon;
+            const icon = $actions.GetCurrencyIcon(currency, $parameters.CurrenciesList)?.CurrencyIcon;
             const loginid = account.loginid;
             const balanceObj = allAccountsBalance?.balance?.accounts;
             const formattedBalance = $actions.FormatMoney(balanceObj[loginid]?.balance, currency)?.FormattedNumber;
@@ -4278,11 +3999,54 @@ define("tradershub.MainFlow.Options.mvc$controller.FilterAccountListAction.Filte
                 is_disabled: account.is_disabled,
                 loginid,
                 currency,
-                balance: formattedBalance
+                balance: formattedBalance,
+                linkedTo: account.linked_to
             };
         });
 
         $parameters.modifiedAccountList = JSON.stringify(modifiedAccountList);
 
+    };
+});
+
+
+define("tradershub.MainFlow.Options.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "7v6bg5YzEEaO0ja23TEysA#Value": "Ajouter plus de comptes",
+        "NONZJt0gW0+sZ4IXAPIq4Q#Value": "Sélectionner un compte",
+        "uKyrCzscnka86elWTeXYXg#Value": "Scannez le code QR pour télécharger Deriv GO",
+        "HQNXzJrDnUW_Y_u7n_JGYw#Value": "Téléchargez Deriv GO et plongez dans le trading sur votre mobile.",
+        "GZdd9NxHHEm3_2N4R_F7qw#Value": "Deriv GO",
+        "BzyRc_7WbESj95bM9dHedA#Value": "Trade with Deriv GO",
+        "b02H41d_uUCdlwJgsUp1XA#Value": "Téléchargez notre application mobile :",
+        "GgRGDuCYjUW1MzilRbh91w#Value": "Trader",
+        "nVSJowR5Kkir1L0PrqiNiQ#Value": "Multiplicateurs",
+        "zCSyKfNfN0ySBwkI7fzobQ#Value": "Options vanille",
+        "SBTSUnEXHUu9K6Q+gHiVyQ#Value": "Turbos",
+        "K+kpK2OSDEK0gOrMsWOSMA#Value": "Accumulateurs",
+        "+sT2nYtfGkmU4Q8tbnfa4Q#Value": "Types de trading :",
+        "bnRuapxJ7kWBxK7gVOOlTg#Value": "Options de trading diversifiées, faibles coûts d\'entrée.",
+        "Wql9gnhE6EOluO0PGRlRRA#Value": "Deriv Trader",
+        "tYBywluJ6kmvLSoG3Awuqw#Value": "Transfert",
+        "DB7Uc9hKmESFIqDzmlZT5g#Value": "Transfert",
+        "W31RGGIUvkWN5r9647mLfg#Value": "Solde",
+        "daVfdbga4USTPBVggSsdgw#Value": "Ajouter plus de comptes",
+        "jG6VFun4h0Wswi+EwOVi7A#Value": "Sélectionner le compte",
+        "9ow+XnQp9EeyxEVPpTo5ng#Value": "Transférer",
+        "pkbvuSgiW0iS0ssRLDRjzg#Value": "Transfert",
+        "G5zUJP31nEWIo2MFWeEVcg#Value": "Solde",
+        "Q2gQOo4Ojke_T+XVGnIdUg#Value": "Solde",
+        "87UEjCWKgEyDAveDBC6OOw#Value": "Prévoyez le marché ; profitez si vous avez raison ; ne risquez que ce que vous investissez.",
+        "EfSaScn+JkC6q6ZXjwuaGA#Value": "Trading d\'options",
+        "fQyJTO5UMUWyDTxHyiY_eA#Value": "Remplissez vos informations de compte pour effectuer votre premier dépôt."
+    };
+});
+
+define("tradershub.MainFlow.Options.mvc$translationsResources", ["exports", "tradershub.MainFlow.Options.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_Options_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_Options_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

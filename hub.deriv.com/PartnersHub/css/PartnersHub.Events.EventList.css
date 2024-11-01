@@ -1,0 +1,49 @@
+﻿.ph-event-card-container {
+    background: var(--Neutral-Neutral-0, #FFF);
+    border: 1px solid var(--Neutral-Neutral-4, #DEE2E6);
+    border-radius: 8px;
+    flex-grow: 1;
+    min-width: 276px;
+    overflow: auto;
+}
+.ph-event-card-container:hover {
+    box-shadow: var(--shadow-s);
+}
+
+.desktop .ph-event-card-container {
+    min-width: unset;
+}
+.desktop .ph-one-event-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.ph-event-list {
+    display: grid;
+    gap: 16px;
+    max-width: calc(100vw - 32px);
+}
+.ph-event-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+}
+.ph-event-grid-three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ph-event-card-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+.desktop .ph-one-event-card-info {
+    padding: 0 24px;
+}
+
+.ph-event-card-image {
+    height: 154px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+}

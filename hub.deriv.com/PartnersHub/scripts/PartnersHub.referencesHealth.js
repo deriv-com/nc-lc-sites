@@ -6,6 +6,10 @@ define("PartnersHub.referencesHealth$BinaryData", [], function() {
     // Reference to producer 'BinaryData' is OK.
 });
 
+define("PartnersHub.referencesHealth$CKEditor5", [], function() {
+    // Reference to producer 'CKEditor5' is OK.
+});
+
 define("PartnersHub.referencesHealth$CommonPlugin", [], function() {
     // Reference to producer 'CommonPlugin' is OK.
 });
@@ -18,10 +22,6 @@ define("PartnersHub.referencesHealth$DerivLogger", [], function() {
     // Reference to producer 'DerivLogger' is OK.
 });
 
-define("PartnersHub.referencesHealth$FEReleaseSlackIntegration", [], function() {
-    // Reference to producer 'FEReleaseSlackIntegration' is OK.
-});
-
 define("PartnersHub.referencesHealth$OutSystemsCharts", [], function() {
     // Reference to producer 'OutSystemsCharts' is OK.
 });
@@ -30,8 +30,16 @@ define("PartnersHub.referencesHealth$OutSystemsUI", [], function() {
     // Reference to producer 'OutSystemsUI' is OK.
 });
 
+define("PartnersHub.referencesHealth$PartnerEventManagement", [], function() {
+    // Reference to producer 'PartnerEventManagement' is OK.
+});
+
 define("PartnersHub.referencesHealth$QuillIcons", [], function() {
     // Reference to producer 'QuillIcons' is OK.
+});
+
+define("PartnersHub.referencesHealth$ReleaseSlackIntegrationOfficial", [], function() {
+    // Reference to producer 'ReleaseSlackIntegrationOfficial' is OK.
 });
 
 define("PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", [], function() {
@@ -52,6 +60,14 @@ define("PartnersHub.referencesHealth$SleepClientSide", [], function() {
 
 define("PartnersHub.referencesHealth$System_", [], function() {
     // Reference to producer 'System_' is OK.
+});
+
+define("PartnersHub.referencesHealth$TestIMAPIOfficial", [], function() {
+    // Reference to producer 'TestIMAPIOfficial' is OK.
+});
+
+define("PartnersHub.referencesHealth$TimezoneUtils", [], function() {
+    // Reference to producer 'TimezoneUtils' is OK.
 });
 
 define("PartnersHub.referencesHealth", [], function() {});

@@ -340,7 +340,7 @@ define("tradershub.Common.PasswordPolicy.mvc$view", ["@outsystems/runtime-core-j
                     extendedProperties: {
                         style: "color: #6A7178; font-size: 12px;"
                     },
-                    text: ["-25 characters long"],
+                    text: [$text(getTranslation("_PkplsxQX0u2VyoqVIQ8rQ#Value", "-25 characters long"))],
                     _idProps: {
                         service: idService,
                         uuid: "9"
@@ -453,7 +453,7 @@ define("tradershub.Common.PasswordPolicy.mvc$view", ["@outsystems/runtime-core-j
                     extendedProperties: {
                         style: "color: #6A7178; font-size: 12px;"
                     },
-                    text: ["At least one uppercase letter and one lowercase letter"],
+                    text: [$text(getTranslation("NF1sI9th60q4FEIS53OHJA#Value", "At least one uppercase letter and one lowercase letter"))],
                     _idProps: {
                         service: idService,
                         uuid: "16"
@@ -564,7 +564,7 @@ define("tradershub.Common.PasswordPolicy.mvc$view", ["@outsystems/runtime-core-j
                     extendedProperties: {
                         style: "color: #6A7178; font-size: 12px;"
                     },
-                    text: ["At least one number"],
+                    text: [$text(getTranslation("buyD26Tl7kq1mrWHkFBDcw#Value", "At least one number"))],
                     _idProps: {
                         service: idService,
                         uuid: "23"
@@ -579,12 +579,12 @@ define("tradershub.Common.PasswordPolicy.mvc$view", ["@outsystems/runtime-core-j
 
     return View;
 });
-define("tradershub.Common.PasswordPolicy.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.PasswordPolicy.mvc$controller.OnParametersChanged.checkValidJS", "System_.model$PasswordValidationResultRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "System_.model$PasswordComplexityPolicyRec"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_PasswordPolicy_mvc_controller_OnParametersChanged_checkValidJS) {
+define("tradershub.Common.PasswordPolicy.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "System_.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.PasswordPolicy.mvc$translationsResources", "tradershub.Common.PasswordPolicy.mvc$controller.OnParametersChanged.checkValidJS", "System_.model$PasswordValidationResultRec", "tradershub.referencesHealth", "tradershub.referencesHealth$System_", "System_.model$PasswordComplexityPolicyRec"], function(OSRuntimeCore, tradershubModel, tradershubController, System_Model, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_PasswordPolicy_mvc_TranslationsResources, tradershub_Common_PasswordPolicy_mvc_controller_OnParametersChanged_checkValidJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_PasswordPolicy_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -986,5 +986,23 @@ define("tradershub.Common.PasswordPolicy.mvc$controller.OnParametersChanged.chec
         $parameters.hasGoodLength = $parameters.RequiresNumber ? hasGoodLength($parameters.String) : true;
         $parameters.hasSpecialChar = $parameters.RequiresSpecialChar ? hasSpecialChar($parameters.String) : true;
 
+    };
+});
+
+
+define("tradershub.Common.PasswordPolicy.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "buyD26Tl7kq1mrWHkFBDcw#Value": "Au moins un chiffre",
+        "NF1sI9th60q4FEIS53OHJA#Value": "Au moins une lettre majuscule et une lettre minuscule",
+        "_PkplsxQX0u2VyoqVIQ8rQ#Value": "Je veux la réponse au format suivant:"
+    };
+});
+
+define("tradershub.Common.PasswordPolicy.mvc$translationsResources", ["exports", "tradershub.Common.PasswordPolicy.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_PasswordPolicy_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_PasswordPolicy_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

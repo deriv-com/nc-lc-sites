@@ -1,8 +1,6 @@
 define("QuillIcons.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "1bb28e51-8209-4c1b-a978-5f53cf4a47e8",
         applicationName: "Quill Icons",
         userProviderName: "Users",
@@ -18,10 +16,8 @@ define("QuillIcons.appDefinition", ["@outsystems/runtime-core-js"], function(OSR
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        buildServiceVersion: "v17.1668.2.0",
+        clientRuntimeVersion: "6.16.1",
         useESM: false,
         appVersion: "8"
     };

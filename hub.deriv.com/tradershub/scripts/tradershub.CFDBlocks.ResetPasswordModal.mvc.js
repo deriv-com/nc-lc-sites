@@ -110,12 +110,12 @@ define("tradershub.CFDBlocks.ResetPasswordModal.mvc$view", ["@outsystems/runtime
 
     return View;
 });
-define("tradershub.CFDBlocks.ResetPasswordModal.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.CFDBlocks.ResetPasswordModal.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.CFDBlocks.ResetPasswordModal.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_CFDBlocks_ResetPasswordModal_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_CFDBlocks_ResetPasswordModal_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -225,4 +225,9 @@ define("tradershub.CFDBlocks.ResetPasswordModal.mvc$controller", ["@outsystems/r
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.CFDBlocks.ResetPasswordModal.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

@@ -719,10 +719,10 @@ define("PartnersHub.Signup.EmailVerificationBlock.mvc$controller.OnClickTimer.Ja
 define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.ar-001", [], function() {
     return {
         "EShNp62YjUep+kX04AAY+g#Value": "تأكد من أن البريد الإلكتروني غير محجوب بواسطة جدران الحماية أو الفلاتر.",
-        "kSn5sLsbmkmpruyoXIZ6LQ#Value": "تحقق من مجلد الرسائل غير المرغوب فيها.",
+        "kSn5sLsbmkmpruyoXIZ6LQ#Value": "تحقق من مجلد البريد العشوائي.",
         "Gti3g47eEU+oenmecSnO6Q#Value": "تأكد من أنك قد أدخلت بريدك الإلكتروني بشكل صحيح.",
         "etHx6o0xsEibhJs7jg1Onw#ValueExpression.-831934195.1": "إعادة إرسال الرمز في",
-        "etHx6o0xsEibhJs7jg1Onw#ValueExpression.1067057.1": "sec",
+        "etHx6o0xsEibhJs7jg1Onw#ValueExpression.1067057.1": "ثواني",
         "gmoJ9bRlBk2hPDhbG6xeKw#Value": "إعادة إرسال البريد الإلكتروني",
         "X44uz9A6JkW4bDTdx+u2Dw#Value": "لم تتلقَ بريدًا إلكترونيًا؟",
         "nmZ5mUvyNEKM2qCLevum5Q#Value": "لقد أرسلنا رابط التحقق إلى"
@@ -751,7 +751,7 @@ define("PartnersHub.Signup.EmailVerificationBlock.mvc$translationsResources.es-E
         "etHx6o0xsEibhJs7jg1Onw#ValueExpression.1067057.1": "segundo",
         "gmoJ9bRlBk2hPDhbG6xeKw#Value": "Reenviar correo electrónico",
         "X44uz9A6JkW4bDTdx+u2Dw#Value": "¿No recibiste un correo electrónico?",
-        "nmZ5mUvyNEKM2qCLevum5Q#Value": "Hemos enviado un enlace de verificación a usted."
+        "nmZ5mUvyNEKM2qCLevum5Q#Value": "Hemos enviado un enlace de verificación a"
     };
 });
 

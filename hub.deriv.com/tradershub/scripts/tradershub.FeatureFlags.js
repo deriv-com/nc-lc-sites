@@ -1,15 +1,15 @@
 // Define your feature flags here and add them to the array
 // example { name: "foo", enabled: true },
 let FEATURE_FLAGS = [{
-        name: "NewSignupUI",
-        enabled: false
-    },
-    {
         name: "Options",
         enabled: true
     },
     {
         name: "RESTAPI",
+        enabled: false
+    },
+    {
+        name: "EURealAccountCreation",
         enabled: false
     },
 ]
@@ -34,7 +34,8 @@ if (
     const filteredFeatureFlags = savedFlags ?
         savedFlags.filter(savedFlag =>
             FEATURE_FLAGS.some(flag => flag.name === savedFlag.name)
-        ) : [];
+        ) :
+        [];
 
     // Merge the feature flags, keeping values from saved flags when applicable
     const mergedFlags = FEATURE_FLAGS.map(newFlag => {

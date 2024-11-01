@@ -1,4 +1,4 @@
-define("tradershub.ForgotAndResetPassword.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.ForgotAndResetPassword.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.ForgotAndResetPassword.controller$translationsResources"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables, tradershub_ForgotAndResetPassword_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_ForgotAndResetPasswordController = exports;
     class Controller extends
@@ -30,5 +30,10 @@ define("tradershub.ForgotAndResetPassword.controller", ["exports", "@outsystems/
 
 
 
-    tradershub_ForgotAndResetPasswordController.default = new Controller();
+    tradershub_ForgotAndResetPasswordController.default = new Controller(tradershub_ForgotAndResetPassword_Controller_translationsResources);
+});
+
+
+define("tradershub.ForgotAndResetPassword.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

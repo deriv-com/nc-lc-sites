@@ -592,6 +592,121 @@ define("PartnersHub.controller$GetHeaderTitle", ["exports", "@outsystems/runtime
 });
 
 
+define("PartnersHub.controller$GetMt5LoginListAction", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller$GetMt5LoginListAction.JavaScript1JS", "PartnersHub.clientVariables", "RESTAPIWebsocketOfficial.model$ST_2f457e0a5b13526850516eea23ae0e9aStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetMt5LoginList"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHub_controller_GetMt5LoginListAction_JavaScript1JS, PartnersHubClientVariables) {
+    var OS = OSRuntimeCore;
+    PartnersHubController.default.getMt5LoginListAction$Action = function(authTokenIn, callContext) {
+        return OS.Logger.startActiveSpan("GetMt5LoginListAction", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "GetMt5LoginListAction");
+                span.setAttribute("outsystems.function.key", "295120fb-337d-4ce3-bb67-e141c75207b2");
+                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.GetMt5LoginListAction$vars"))());
+                vars.value.authTokenInLocal = authTokenIn;
+                var getMt5LoginListVar = new OS.DataTypes.VariableHolder();
+                var javaScript1JSResult = new OS.DataTypes.VariableHolder();
+                var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                var outVars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.GetMt5LoginListAction$outVars"))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: GetMt5LoginList
+                    return RESTAPIWebsocketOfficialController.default.getMt5LoginList$Action(PartnersHubClientVariables.getServer(), vars.value.authTokenInLocal, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                        getMt5LoginListVar.value = value;
+                    }).then(function() {
+                        // JSON Serialize: JSONSerialize1
+                        jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(getMt5LoginListVar.value.responseOut, false, false);
+                        javaScript1JSResult.value = OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "JavaScript1");
+                                span.setAttribute("outsystems.function.key", "5889cacb-27b2-442e-b5da-21528f1316c4");
+                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                            }
+
+                            try {
+                                return controller.safeExecuteJSNode(PartnersHub_controller_GetMt5LoginListAction_JavaScript1JS, "JavaScript1", "GetMt5LoginListAction", {
+                                    Mt5LoginListData: OS.DataConversion.JSNodeParamConverter.to(jSONSerialize1Var.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                    showCFDCommissionModal: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                                }, function($parameters) {
+                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.GetMt5LoginListAction$javaScript1JSResult"))();
+                                    jsNodeResult.showCFDCommissionModalOut = OS.DataConversion.JSNodeParamConverter.from($parameters.showCFDCommissionModal, OS.DataTypes.DataTypes.Boolean);
+                                    return jsNodeResult;
+                                }, {}, {});
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                        // showCFDCommissionModal = JavaScript1.showCFDCommissionModal
+                        outVars.value.showCFDCommissionModalOut = javaScript1JSResult.value.showCFDCommissionModalOut;
+                    });
+                }).then(function() {
+                    return outVars.value;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = PartnersHubController.default;
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.GetMt5LoginListAction$vars", [{
+        name: "AuthToken",
+        attrName: "authTokenInLocal",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.GetMt5LoginListAction$javaScript1JSResult", [{
+        name: "showCFDCommissionModal",
+        attrName: "showCFDCommissionModalOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.GetMt5LoginListAction$outVars", [{
+        name: "showCFDCommissionModal",
+        attrName: "showCFDCommissionModalOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    PartnersHubController.default.clientActionProxies.getMt5LoginListAction$Action = function(authTokenIn) {
+        authTokenIn = (authTokenIn === undefined) ? "" : authTokenIn;
+        return controller.executeActionInsideJSNode(PartnersHubController.default.getMt5LoginListAction$Action.bind(controller, OS.DataConversion.JSNodeParamConverter.from(authTokenIn, OS.DataTypes.DataTypes.Text)), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {
+                showCFDCommissionModal: OS.DataConversion.JSNodeParamConverter.to(actionResults.showCFDCommissionModalOut, OS.DataTypes.DataTypes.Boolean)
+            };
+        });
+    };
+});
+
+define("PartnersHub.controller$GetMt5LoginListAction.JavaScript1JS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const mt5LoginList = JSON.parse($parameters.Mt5LoginListData).mt5_login_list;
+        const showCFDCommissionModal = mt5LoginList.some(item => item.is_main_agent);
+
+        $parameters.showCFDCommissionModal = showCFDCommissionModal
+    };
+});
+
+
 define("PartnersHub.controller$GetToken", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$GetToken.JavaScript1JS", "PartnersHub.clientVariables"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_GetToken_JavaScript1JS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.getToken$Action = function(callContext) {
@@ -906,7 +1021,22 @@ define("PartnersHub.controller$HandleRedirectOnLogin.SetuseridJS", [], function(
 
 define("PartnersHub.controller$HandleRedirectOnLogin.ClearParamsJS", [], function() {
     return function($actions, $roles, $public) {
-        window.history.replaceState({}, document.title, window.location.pathname);
+        const currentURL = new URL(window.location.href);
+        const params = new URLSearchParams(currentURL.search);
+
+        const paramsToRemove = ['lang'];
+        const paramsToDeleteRegex = /^(acct|token|cur)\d*$/;
+        const paramsEntries = Array.from(params.entries());
+
+        for (const entry of paramsEntries) {
+            if (paramsToDeleteRegex.test(entry[0]) || paramsToRemove.includes(entry[0])) {
+                params.delete(entry[0]);
+            }
+        }
+
+        const newURL = params.size ? window.location.pathname + "?" + params.toString() : window.location.pathname;
+
+        window.history.pushState({}, document.title, newURL);
     };
 });
 
@@ -1075,7 +1205,6 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                 vars.value.countryInLocal = countryIn;
                 vars.value.isMobileInLocal = isMobileIn;
                 var getDefaultAppIdVar = new OS.DataTypes.VariableHolder();
-                var assignFeatureFlagsJSResult = new OS.DataTypes.VariableHolder();
                 return OS.Flow.executeAsyncFlow(function() {
                     // Execute Action: GetDefaultAppId
                     getDefaultAppIdVar.value = PartnersHubController.default.getDefaultAppId$Action(callContext);
@@ -1113,7 +1242,7 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                         }
 
                     }, 1).then(function() {
-                        assignFeatureFlagsJSResult.value = OS.Logger.startActiveSpan("AssignFeatureFlags", function(span) {
+                        OS.Logger.startActiveSpan("AssignFeatureFlags", function(span) {
                             if (span) {
                                 span.setAttribute("code.function", "AssignFeatureFlags");
                                 span.setAttribute("outsystems.function.key", "9a2d65bf-e4e9-4177-a8e0-c9a323475df6");
@@ -1123,15 +1252,7 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                             }
 
                             try {
-                                return controller.safeExecuteJSNode(PartnersHub_controller_InitGrowthbook_AssignFeatureFlagsJS, "AssignFeatureFlags", "InitGrowthbook", {
-                                    isCompleteMyProfileEnabledGB: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean),
-                                    Out1: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
-                                }, function($parameters) {
-                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.InitGrowthbook$assignFeatureFlagsJSResult"))();
-                                    jsNodeResult.isCompleteMyProfileEnabledGBOut = OS.DataConversion.JSNodeParamConverter.from($parameters.isCompleteMyProfileEnabledGB, OS.DataTypes.DataTypes.Boolean);
-                                    jsNodeResult.out1Out = OS.DataConversion.JSNodeParamConverter.from($parameters.Out1, OS.DataTypes.DataTypes.Boolean);
-                                    return jsNodeResult;
-                                }, {
+                                return controller.safeExecuteJSNode(PartnersHub_controller_InitGrowthbook_AssignFeatureFlagsJS, "AssignFeatureFlags", "InitGrowthbook", null, function($parameters) {}, {
                                     AssignFeatureFlag: PartnersHubController.default.clientActionProxies.assignFeatureFlag$Action
                                 }, {});
                             } finally {
@@ -1142,10 +1263,6 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
                             }
 
                         }, 1);
-                        // isCommisionsPlansEnabledFF = AssignFeatureFlags.Out1
-                        PartnersHubClientVariables.setisCommisionsPlansEnabledFF(assignFeatureFlagsJSResult.value.out1Out);
-                        // isCompleteMyProfileEnabledFF = AssignFeatureFlags.isCompleteMyProfileEnabledGB
-                        PartnersHubClientVariables.setisCompleteMyProfileEnabledFF(assignFeatureFlagsJSResult.value.isCompleteMyProfileEnabledGBOut);
                     });
                 }).then(function() {
                     return;
@@ -1176,23 +1293,6 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
             return false;
         }
     }]);
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitGrowthbook$assignFeatureFlagsJSResult", [{
-        name: "isCompleteMyProfileEnabledGB",
-        attrName: "isCompleteMyProfileEnabledGBOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }, {
-        name: "Out1",
-        attrName: "out1Out",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }]);
     PartnersHubController.default.clientActionProxies.initGrowthbook$Action = function(countryIn, isMobileIn) {
         countryIn = (countryIn === undefined) ? "" : countryIn;
         isMobileIn = (isMobileIn === undefined) ? false : isMobileIn;
@@ -1203,7 +1303,7 @@ define("PartnersHub.controller$InitGrowthbook", ["exports", "@outsystems/runtime
 });
 
 define("PartnersHub.controller$InitGrowthbook.AssignFeatureFlagsJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
+    return function($actions, $roles, $public) {
         const checkInstancesInterval = setInterval(() => {
             if (window.Analytics.Analytics &&
                 typeof window.Analytics.Analytics.getInstances === 'function') {
@@ -1275,7 +1375,7 @@ define("PartnersHub.controller$InitGrowthbook.InitGrowthbookJS", [], function() 
                     try {
                         let instances;
                         if (Analytics?.getInstances()) {
-                            instances = Analytics.getInstances()
+                            instances = Analytics.getInstances();
                         }
 
                         if (!instances?.tracking?.has_initialized && !instances?.ab?.GrowthBook?.ready) {
@@ -1295,6 +1395,398 @@ define("PartnersHub.controller$InitGrowthbook.InitGrowthbookJS", [], function() 
             })
 
         });
+    };
+});
+
+
+define("PartnersHub.controller$InitialScriptNeeded", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "PartnersHub.controller$InitialScriptNeeded.CheckScreenNoLoginNeededJS", "PartnersHub.controller$InitialScriptNeeded.GetAuthTokenJS", "PartnersHub.controller$InitialScriptNeeded.RedirectToNonPartnerAccountScreenJS", "PartnersHub.controller$InitialScriptNeeded.ParsePlatformURLJS", "PartnersHub.clientVariables", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.controller$GetMt5LoginListAction", "PartnersHub.controller$InitGrowthbook", "PartnersHub.controller$MountDatadogClient", "RESTAPIWebsocketOfficial.model$ST_f98977622822548114c6901450f9dfcdStructure", "RESTAPIWebsocketOfficial.controller$PartnerSettings", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$RudderstackIdentifyEvent", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$ServerAction.GetAllSettings", "PartnersHub.controller$SetDefaultAppId", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "RESTAPIWebsocketOfficial.controller$GetWebsiteStatus", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "PartnersHub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$AddFavicon"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, OutSystemsUIModel, OutSystemsUIController, PartnersHub_controller_InitialScriptNeeded_CheckScreenNoLoginNeededJS, PartnersHub_controller_InitialScriptNeeded_GetAuthTokenJS, PartnersHub_controller_InitialScriptNeeded_RedirectToNonPartnerAccountScreenJS, PartnersHub_controller_InitialScriptNeeded_ParsePlatformURLJS, PartnersHubClientVariables) {
+    var OS = OSRuntimeCore;
+    PartnersHubController.default.initialScriptNeeded$Action = function(callContext) {
+        return OS.Logger.startActiveSpan("InitialScriptNeeded", function(span) {
+            if (span) {
+                span.setAttribute("code.function", "InitialScriptNeeded");
+                span.setAttribute("outsystems.function.key", "fe96c3ed-1c63-4ca5-bfa0-4935d00e45f1");
+                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                span.setAttribute("outsystems.function.type", "CLIENT_ACTION");
+            }
+
+            return OS.Flow.tryFinally(function() {
+                callContext = controller.callContext(callContext);
+                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.InitialScriptNeeded$vars"))());
+                var getAllSettingsVar = new OS.DataTypes.VariableHolder();
+                var getSettingsVar = new OS.DataTypes.VariableHolder();
+                var getMt5LoginListActionVar = new OS.DataTypes.VariableHolder();
+                var partnerSettingsVar = new OS.DataTypes.VariableHolder();
+                var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
+                var getWebsiteStatusForEndpointVar = new OS.DataTypes.VariableHolder();
+                var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
+                var addFaviconVar = new OS.DataTypes.VariableHolder();
+                var checkScreenNoLoginNeededJSResult = new OS.DataTypes.VariableHolder();
+                var getAuthTokenJSResult = new OS.DataTypes.VariableHolder();
+                var parsePlatformURLJSResult = new OS.DataTypes.VariableHolder();
+                var jSONSerializeVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                var serializeResponseVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
+                var jSONDeserializeGetWebsiteStatusResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure))());
+                return OS.Flow.executeAsyncFlow(function() {
+                    // Execute Action: AddFavicon
+                    addFaviconVar.value = OutSystemsUIController.default.addFavicon$Action("favicon.ico", callContext);
+
+                    // Start Assign
+                    // IsCheckingAuthentication = True
+                    PartnersHubClientVariables.setIsCheckingAuthentication(true);
+                    // IsAppReady = False
+                    PartnersHubClientVariables.setIsAppReady(false);
+                    // Execute Action: SetDefaultAppId
+                    PartnersHubController.default.setDefaultAppId$Action(false, callContext);
+                    // Execute Action: MountDatadogClient
+                    PartnersHubController.default.mountDatadogClient$Action(callContext);
+                    checkScreenNoLoginNeededJSResult.value = OS.Logger.startActiveSpan("CheckScreenNoLoginNeeded", function(span) {
+                        if (span) {
+                            span.setAttribute("code.function", "CheckScreenNoLoginNeeded");
+                            span.setAttribute("outsystems.function.key", "597b2442-ea64-4501-8ab5-2131d9484ceb");
+                            span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                            span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                        }
+
+                        try {
+                            return controller.safeExecuteJSNode(PartnersHub_controller_InitialScriptNeeded_CheckScreenNoLoginNeededJS, "CheckScreenNoLoginNeeded", "InitialScriptNeeded", {
+                                NoLoginNeeded: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                            }, function($parameters) {
+                                var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.InitialScriptNeeded$checkScreenNoLoginNeededJSResult"))();
+                                jsNodeResult.noLoginNeededOut = OS.DataConversion.JSNodeParamConverter.from($parameters.NoLoginNeeded, OS.DataTypes.DataTypes.Boolean);
+                                return jsNodeResult;
+                            }, {}, {});
+                        } finally {
+                            if (span) {
+                                span.end();
+                            }
+
+                        }
+
+                    }, 1);
+                    return OS.Flow.executeSequence(function() {
+                        if ((checkScreenNoLoginNeededJSResult.value.noLoginNeededOut)) {
+                            // Execute Action: GetWebsiteStatusForEndpoint
+                            return RESTAPIWebsocketOfficialController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                getWebsiteStatusForEndpointVar.value = value;
+                            }).then(function() {
+                                // Execute Action: InitGrowthbookForEndpoint
+                                return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusForEndpointVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
+                            }).then(function() {
+                                // Assign Application Ready
+                                // IsCheckingAuthentication = False
+                                PartnersHubClientVariables.setIsCheckingAuthentication(false);
+                                // IsAppReady = True
+                                PartnersHubClientVariables.setIsAppReady(true);
+                            });
+                        } else {
+                            // Execute Action: HandleRedirectOnLogin
+                            return PartnersHubController.default.handleRedirectOnLogin$Action(callContext).then(function(value) {
+                                handleRedirectOnLoginVar.value = value;
+                            }).then(function() {
+                                return OS.Flow.executeSequence(function() {
+                                    if ((handleRedirectOnLoginVar.value.isLoggedInOut)) {
+                                        // Done Checking Authentication
+                                        // IsCheckingAuthentication = False
+                                        PartnersHubClientVariables.setIsCheckingAuthentication(false);
+                                        // Execute Action: RudderstackIdentifyEvent
+                                        PartnersHubController.default.rudderstackIdentifyEvent$Action(callContext);
+                                        getAuthTokenJSResult.value = OS.Logger.startActiveSpan("GetAuthToken", function(span) {
+                                            if (span) {
+                                                span.setAttribute("code.function", "GetAuthToken");
+                                                span.setAttribute("outsystems.function.key", "6f684038-89d2-4f37-9027-a02f559ec61b");
+                                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                            }
+
+                                            try {
+                                                return controller.safeExecuteJSNode(PartnersHub_controller_InitialScriptNeeded_GetAuthTokenJS, "GetAuthToken", "InitialScriptNeeded", {
+                                                    Token: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
+                                                }, function($parameters) {
+                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.InitialScriptNeeded$getAuthTokenJSResult"))();
+                                                    jsNodeResult.tokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Token, OS.DataTypes.DataTypes.Text);
+                                                    return jsNodeResult;
+                                                }, {}, {});
+                                            } finally {
+                                                if (span) {
+                                                    span.end();
+                                                }
+
+                                            }
+
+                                        }, 1);
+                                        // Execute Action: GetSettings
+                                        return RESTAPIWebsocketOfficialController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                            getSettingsVar.value = value;
+                                        }).then(function() {
+                                            // Execute Action: MountLiveChat
+                                            PartnersHubController.default.mountLiveChat$Action(getSettingsVar.value.responseOut, callContext);
+                                            // Execute Action: GetWebsiteStatus
+                                            return RESTAPIWebsocketOfficialController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                                getWebsiteStatusVar.value = value;
+                                            });
+                                        }).then(function() {
+                                            // Execute Action: InitGrowthbook
+                                            return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
+                                        }).then(function() {
+                                            // JSON Serialize: JSONSerialize
+                                            jSONSerializeVar.value.jSONOut = OS.JSONUtils.serializeToJSON(getWebsiteStatusVar.value.responseOut, false, false);
+                                            // Execute Action: GetAllSettings
+                                            return controller.getAllSettings$ServerAction(callContext).then(function(value) {
+                                                getAllSettingsVar.value = value;
+                                            });
+                                        }).then(function() {
+                                            return OS.Flow.executeSequence(function() {
+                                                if ((getAllSettingsVar.value.enablePartnerAccountOut)) {
+                                                    // Execute Action: PartnerSettings
+                                                    return RESTAPIWebsocketOfficialController.default.partnerSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
+                                                        partnerSettingsVar.value = value;
+                                                    }).then(function() {
+                                                        // JSON Serialize: SerializeResponse
+                                                        serializeResponseVar.value.jSONOut = OS.JSONUtils.serializeToJSON(partnerSettingsVar.value.responseOut, false, false);
+                                                        parsePlatformURLJSResult.value = OS.Logger.startActiveSpan("ParsePlatformURL", function(span) {
+                                                            if (span) {
+                                                                span.setAttribute("code.function", "ParsePlatformURL");
+                                                                span.setAttribute("outsystems.function.key", "f3387e73-7708-41a6-be8c-8860aa860096");
+                                                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                            }
+
+                                                            try {
+                                                                return controller.safeExecuteJSNode(PartnersHub_controller_InitialScriptNeeded_ParsePlatformURLJS, "ParsePlatformURL", "InitialScriptNeeded", {
+                                                                    partner_accounts: OS.DataConversion.JSNodeParamConverter.to(serializeResponseVar.value.jSONOut, OS.DataTypes.DataTypes.Text),
+                                                                    website_platform_url: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
+                                                                    not_a_partner: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
+                                                                }, function($parameters) {
+                                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.InitialScriptNeeded$parsePlatformURLJSResult"))();
+                                                                    jsNodeResult.website_platform_urlOut = OS.DataConversion.JSNodeParamConverter.from($parameters.website_platform_url, OS.DataTypes.DataTypes.Text);
+                                                                    jsNodeResult.not_a_partnerOut = OS.DataConversion.JSNodeParamConverter.from($parameters.not_a_partner, OS.DataTypes.DataTypes.Boolean);
+                                                                    return jsNodeResult;
+                                                                }, {}, {});
+                                                            } finally {
+                                                                if (span) {
+                                                                    span.end();
+                                                                }
+
+                                                            }
+
+                                                        }, 1);
+                                                        // WebsitePlatformUrl = ParsePlatformURL.website_platform_url
+                                                        PartnersHubClientVariables.setWebsitePlatformUrl(parsePlatformURLJSResult.value.website_platform_urlOut);
+                                                        // IsNotAPartner = ParsePlatformURL.not_a_partner
+                                                        PartnersHubClientVariables.setIsNotAPartner(parsePlatformURLJSResult.value.not_a_partnerOut);
+                                                    }).then(function() {
+                                                        return OS.Flow.executeSequence(function() {
+                                                            if ((parsePlatformURLJSResult.value.not_a_partnerOut)) {
+                                                                OS.Logger.startActiveSpan("RedirectToNonPartnerAccountScreen", function(span) {
+                                                                    if (span) {
+                                                                        span.setAttribute("code.function", "RedirectToNonPartnerAccountScreen");
+                                                                        span.setAttribute("outsystems.function.key", "acc5a8b9-5104-4adb-a467-afb64de57a46");
+                                                                        span.setAttribute("outsystems.function.owner.name", "PartnersHub");
+                                                                        span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
+                                                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                                    }
+
+                                                                    try {
+                                                                        return controller.safeExecuteJSNode(PartnersHub_controller_InitialScriptNeeded_RedirectToNonPartnerAccountScreenJS, "RedirectToNonPartnerAccountScreen", "InitialScriptNeeded", null, function($parameters) {}, {}, {});
+                                                                    } finally {
+                                                                        if (span) {
+                                                                            span.end();
+                                                                        }
+
+                                                                    }
+
+                                                                }, 1);
+                                                                return OS.Flow.returnAsync();
+
+                                                            } else {
+                                                                // Execute Action: GetMt5LoginListAction
+                                                                return PartnersHubController.default.getMt5LoginListAction$Action(getAuthTokenJSResult.value.tokenOut, callContext).then(function(value) {
+                                                                    getMt5LoginListActionVar.value = value;
+                                                                });
+                                                            }
+
+                                                        });
+                                                    });
+                                                }
+
+                                            });
+                                        }).then(function() {
+                                            // JSON Deserialize: JSONDeserializeGetWebsiteStatusResponse
+                                            jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(PartnersHubClientVariables.getWebsiteStatusResponse(), RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure, false);
+                                            // InitialGetSettingsEmail = GetSettings.Response.Get_settings.Email
+                                            PartnersHubClientVariables.setInitialGetSettingsEmail(getSettingsVar.value.responseOut.get_settingsAttr.emailAttr);
+                                            // IsPhoneNumberVerified = GetSettings.Response.Get_settings.Phone_number_verification.Verified
+                                            PartnersHubClientVariables.setIsPhoneNumberVerified(getSettingsVar.value.responseOut.get_settingsAttr.phone_number_verificationAttr.verifiedAttr);
+                                            // WebsiteStatusResponse = JSONDeserializeGetWebsiteStatusResponse.Data
+                                            vars.value.websiteStatusResponseVar = jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut;
+                                            // GetSettingsResponse = GetSettings.Response
+                                            vars.value.getSettingsResponseVar = getSettingsVar.value.responseOut;
+                                            // WebsiteStatusResponse = JSONSerialize.JSON
+                                            PartnersHubClientVariables.setWebsiteStatusResponse(jSONSerializeVar.value.jSONOut);
+                                            // isWhatsappBannerEnabledFF = GetAllSettings.EnableWhatsappBanner
+                                            PartnersHubClientVariables.setisWhatsappBannerEnabledFF(getAllSettingsVar.value.enableWhatsappBannerOut);
+                                            // isLanguageSwitcherEnabledFF = GetAllSettings.EnableLanguageSwitcher
+                                            PartnersHubClientVariables.setisLanguageSwitcherEnabledFF(getAllSettingsVar.value.enableLanguageSwitcherOut);
+                                            // isEventSectionEnabledFF = GetAllSettings.EnableEventSection
+                                            PartnersHubClientVariables.setisEventSectionEnabledFF(getAllSettingsVar.value.enableEventSectionOut);
+                                            // IsAppReady = True
+                                            PartnersHubClientVariables.setIsAppReady(true);
+                                        });
+                                    } else {
+                                        // Execute Action: IFrameLogout
+                                        return PartnersHubController.default.iFrameLogout$Action(callContext);
+                                    }
+
+                                });
+                            });
+                        }
+
+                    });
+                }).then(function() {
+                    return;
+                });
+            }, function() {
+                if (span) {
+                    span.end();
+                }
+
+            });
+        }, 1);
+    };
+    var controller = PartnersHubController.default;
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitialScriptNeeded$vars", [{
+        name: "GetSettingsResponse",
+        attrName: "getSettingsResponseVar",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure
+    }, {
+        name: "WebsiteStatusResponse",
+        attrName: "websiteStatusResponseVar",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Record,
+        defaultValue: function() {
+            return new RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure();
+        },
+        complexType: RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure
+    }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitialScriptNeeded$checkScreenNoLoginNeededJSResult", [{
+        name: "NoLoginNeeded",
+        attrName: "noLoginNeededOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitialScriptNeeded$getAuthTokenJSResult", [{
+        name: "Token",
+        attrName: "tokenOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }]);
+    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.InitialScriptNeeded$parsePlatformURLJSResult", [{
+        name: "website_platform_url",
+        attrName: "website_platform_urlOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "not_a_partner",
+        attrName: "not_a_partnerOut",
+        mandatory: true,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }]);
+    PartnersHubController.default.clientActionProxies.initialScriptNeeded$Action = function() {
+        return controller.executeActionInsideJSNode(PartnersHubController.default.initialScriptNeeded$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
+            return {};
+        });
+    };
+});
+
+define("PartnersHub.controller$InitialScriptNeeded.CheckScreenNoLoginNeededJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const path = window.location.pathname.toLowerCase();
+
+        const pathSegments = path.split('/').filter(segment => segment !== '');
+        const lastSegment = pathSegments[pathSegments.length - 1];
+
+        // List of allowed segments without login
+        const AllowNoLoginScreen = ["endpoint", "signup", "forgotpassword", "resetpassword", "tokenexpired", "verificationemailsent", "emailverification"];
+
+        if (AllowNoLoginScreen.includes(lastSegment)) {
+            $parameters.NoLoginNeeded = true;
+        }
+    };
+});
+
+define("PartnersHub.controller$InitialScriptNeeded.GetAuthTokenJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const token = localStorage.getItem('token')
+
+        $parameters.Token = token
+    };
+});
+
+define("PartnersHub.controller$InitialScriptNeeded.RedirectToNonPartnerAccountScreenJS", [], function() {
+    return function($actions, $roles, $public) {
+        // $public.Navigation.navigateTo('/NonPartnerAccount', 'none', false);
+        window.location.replace('/PartnersHub/NonPartnerAccount');
+    };
+});
+
+define("PartnersHub.controller$InitialScriptNeeded.ParsePlatformURLJS", [], function() {
+    return function($parameters, $actions, $roles, $public) {
+        const default_url = {
+            myaffiliates: 'https://login.deriv.com/signin.php?lang=0',
+            dynamicworks: 'https://partners.deriv.com/login?brd=1'
+        }
+
+        const response = JSON.parse($parameters.partner_accounts);
+        const partner_accounts = response?.Partner_accounts;
+        const partner_settings = partner_accounts?.Partner_settings;
+        const url = partner_accounts?.Platform_url;
+
+        if (!partner_settings) return $parameters.not_a_partner = true
+
+        const login_id = localStorage.getItem("loginId");
+        const user_id = localStorage.getItem("active_user_id");
+
+        function GetProvider() {
+            const has_provider = partner_settings.find((partner) => {
+                return partner?.Partner_loginid === login_id;
+            });
+
+            if (has_provider) {
+                return has_provider
+            } else {
+                return partner_settings.find((partner) => {
+                    return partner?.Binary_user_id == user_id;
+                });
+            }
+        }
+
+        const get_provider = GetProvider();
+        const provider = get_provider?.provider;
+
+        const platform_url = url[provider] || default_url['myaffiliates'];
+        $parameters.website_platform_url = platform_url;
     };
 });
 
@@ -2012,7 +2504,7 @@ define("PartnersHub.controller$NextStepReal", ["exports", "@outsystems/runtime-c
 });
 
 
-define("PartnersHub.controller$OnApplicationReady", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "RESTAPIWebsocketOfficial.model", "RESTAPIWebsocketOfficial.controller", "PartnersHub.controller$OnApplicationReady.CheckScreenNoLoginNeededJS", "PartnersHub.controller$OnApplicationReady.GetAuthTokenJS", "PartnersHub.controller$OnApplicationReady.ParsePlatformURLJS", "PartnersHub.controller$OnApplicationReady.RedirectToNonPartnerAccountScreenJS", "PartnersHub.clientVariables", "PartnersHub.controller$InitGrowthbook", "RESTAPIWebsocketOfficial.model$ST_e89429535bbc3a843fdfa9ff6a750a5fStructure", "PartnersHub.referencesHealth", "PartnersHub.referencesHealth$RESTAPIWebsocketOfficial", "RESTAPIWebsocketOfficial.controller$PartnerSettings", "RESTAPIWebsocketOfficial.model$ST_5fc2e4a935064c1413d6e989e87decd2Structure", "RESTAPIWebsocketOfficial.controller$GetSettings", "PartnersHub.controller$RudderstackIdentifyEvent", "RESTAPIWebsocketOfficial.model$ST_c864353821feed79663806f3e445d40eStructure", "RESTAPIWebsocketOfficial.controller$GetWebsiteStatus", "PartnersHub.controller$HandleRedirectOnLogin", "PartnersHub.controller$ServerAction.GetAllSettings", "PartnersHub.controller$MountLiveChat", "PartnersHub.controller$IFrameLogout", "PartnersHub.controller$SetDefaultAppId"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, RESTAPIWebsocketOfficialModel, RESTAPIWebsocketOfficialController, PartnersHub_controller_OnApplicationReady_CheckScreenNoLoginNeededJS, PartnersHub_controller_OnApplicationReady_GetAuthTokenJS, PartnersHub_controller_OnApplicationReady_ParsePlatformURLJS, PartnersHub_controller_OnApplicationReady_RedirectToNonPartnerAccountScreenJS, PartnersHubClientVariables) {
+define("PartnersHub.controller$OnApplicationReady", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.clientVariables", "PartnersHub.controller$InitialScriptNeeded"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.onApplicationReady$Action = function(callContext) {
         var model = this.model;
@@ -2029,218 +2521,9 @@ define("PartnersHub.controller$OnApplicationReady", ["exports", "@outsystems/run
 
             return OS.Flow.tryFinally(function() {
                 callContext = controller.callContext(callContext);
-                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("PartnersHub.OnApplicationReady$vars"))());
-                var getAllSettingsVar = new OS.DataTypes.VariableHolder();
-                var partnerSettingsVar = new OS.DataTypes.VariableHolder();
-                var getSettingsVar = new OS.DataTypes.VariableHolder();
-                var getWebsiteStatusVar = new OS.DataTypes.VariableHolder();
-                var handleRedirectOnLoginVar = new OS.DataTypes.VariableHolder();
-                var getWebsiteStatusForEndpointVar = new OS.DataTypes.VariableHolder();
-                var checkScreenNoLoginNeededJSResult = new OS.DataTypes.VariableHolder();
-                var getAuthTokenJSResult = new OS.DataTypes.VariableHolder();
-                var parsePlatformURLJSResult = new OS.DataTypes.VariableHolder();
-                var jSONSerializeVar = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
-                var jSONDeserializeGetWebsiteStatusResponseVar = new OS.DataTypes.VariableHolder(new(OS.Controller.BaseController.getJSONDeserializeOutputType(RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure))());
                 return OS.Flow.executeAsyncFlow(function() {
-                    // Start Assign
-                    // IsCheckingAuthentication = True
-                    PartnersHubClientVariables.setIsCheckingAuthentication(true);
-                    // IsAppReady = False
-                    PartnersHubClientVariables.setIsAppReady(false);
-                    // Execute Action: SetDefaultAppId
-                    PartnersHubController.default.setDefaultAppId$Action(false, callContext);
-                    checkScreenNoLoginNeededJSResult.value = OS.Logger.startActiveSpan("CheckScreenNoLoginNeeded", function(span) {
-                        if (span) {
-                            span.setAttribute("code.function", "CheckScreenNoLoginNeeded");
-                            span.setAttribute("outsystems.function.key", "3666a0ca-df7c-4a68-92b3-52a2f3d13a26");
-                            span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                            span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                            span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                        }
-
-                        try {
-                            return controller.safeExecuteJSNode(PartnersHub_controller_OnApplicationReady_CheckScreenNoLoginNeededJS, "CheckScreenNoLoginNeeded", "On Application Ready", {
-                                NoLoginNeeded: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
-                            }, function($parameters) {
-                                var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.OnApplicationReady$checkScreenNoLoginNeededJSResult"))();
-                                jsNodeResult.noLoginNeededOut = OS.DataConversion.JSNodeParamConverter.from($parameters.NoLoginNeeded, OS.DataTypes.DataTypes.Boolean);
-                                return jsNodeResult;
-                            }, {}, {});
-                        } finally {
-                            if (span) {
-                                span.end();
-                            }
-
-                        }
-
-                    }, 1);
-                    return OS.Flow.executeSequence(function() {
-                        if ((checkScreenNoLoginNeededJSResult.value.noLoginNeededOut)) {
-                            // Execute Action: GetWebsiteStatusForEndpoint
-                            return RESTAPIWebsocketOfficialController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                getWebsiteStatusForEndpointVar.value = value;
-                            }).then(function() {
-                                // Execute Action: InitGrowthbookForEndpoint
-                                return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusForEndpointVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
-                            }).then(function() {
-                                // Assign Application Ready
-                                // IsCheckingAuthentication = False
-                                PartnersHubClientVariables.setIsCheckingAuthentication(false);
-                                // IsAppReady = True
-                                PartnersHubClientVariables.setIsAppReady(true);
-                            });
-                        } else {
-                            // Execute Action: HandleRedirectOnLogin
-                            return PartnersHubController.default.handleRedirectOnLogin$Action(callContext).then(function(value) {
-                                handleRedirectOnLoginVar.value = value;
-                            }).then(function() {
-                                return OS.Flow.executeSequence(function() {
-                                    if ((handleRedirectOnLoginVar.value.isLoggedInOut)) {
-                                        // Done Checking Authentication
-                                        // IsCheckingAuthentication = False
-                                        PartnersHubClientVariables.setIsCheckingAuthentication(false);
-                                        // Execute Action: RudderstackIdentifyEvent
-                                        PartnersHubController.default.rudderstackIdentifyEvent$Action(callContext);
-                                        getAuthTokenJSResult.value = OS.Logger.startActiveSpan("GetAuthToken", function(span) {
-                                            if (span) {
-                                                span.setAttribute("code.function", "GetAuthToken");
-                                                span.setAttribute("outsystems.function.key", "7611568a-76dd-4ae1-afdb-9ff1cf065c60");
-                                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                            }
-
-                                            try {
-                                                return controller.safeExecuteJSNode(PartnersHub_controller_OnApplicationReady_GetAuthTokenJS, "GetAuthToken", "On Application Ready", {
-                                                    Token: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                                }, function($parameters) {
-                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.OnApplicationReady$getAuthTokenJSResult"))();
-                                                    jsNodeResult.tokenOut = OS.DataConversion.JSNodeParamConverter.from($parameters.Token, OS.DataTypes.DataTypes.Text);
-                                                    return jsNodeResult;
-                                                }, {}, {});
-                                            } finally {
-                                                if (span) {
-                                                    span.end();
-                                                }
-
-                                            }
-
-                                        }, 1);
-                                        // Execute Action: GetSettings
-                                        return RESTAPIWebsocketOfficialController.default.getSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                            getSettingsVar.value = value;
-                                        }).then(function() {
-                                            // Execute Action: MountLiveChat
-                                            PartnersHubController.default.mountLiveChat$Action(getSettingsVar.value.responseOut, callContext);
-                                            // Execute Action: GetWebsiteStatus
-                                            return RESTAPIWebsocketOfficialController.default.getWebsiteStatus$Action(PartnersHubClientVariables.getServer(), PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                                getWebsiteStatusVar.value = value;
-                                            });
-                                        }).then(function() {
-                                            // Execute Action: InitGrowthbook
-                                            return PartnersHubController.default.initGrowthbook$Action(getWebsiteStatusVar.value.responseOut.website_statusAttr.clients_countryAttr, PartnersHubClientVariables.getIsMobile(), callContext);
-                                        }).then(function() {
-                                            // JSON Serialize: JSONSerialize
-                                            jSONSerializeVar.value.jSONOut = OS.JSONUtils.serializeToJSON(getWebsiteStatusVar.value.responseOut, false, false);
-                                            // Execute Action: GetAllSettings
-                                            return controller.getAllSettings$ServerAction(callContext).then(function(value) {
-                                                getAllSettingsVar.value = value;
-                                            });
-                                        }).then(function() {
-                                            return OS.Flow.executeSequence(function() {
-                                                if ((getAllSettingsVar.value.enablePartnerAccountOut)) {
-                                                    // Execute Action: PartnerSettings
-                                                    return RESTAPIWebsocketOfficialController.default.partnerSettings$Action(PartnersHubClientVariables.getServer(), getAuthTokenJSResult.value.tokenOut, PartnersHubClientVariables.getAppId(), "EN", callContext).then(function(value) {
-                                                        partnerSettingsVar.value = value;
-                                                    }).then(function() {
-                                                        parsePlatformURLJSResult.value = OS.Logger.startActiveSpan("ParsePlatformURL", function(span) {
-                                                            if (span) {
-                                                                span.setAttribute("code.function", "ParsePlatformURL");
-                                                                span.setAttribute("outsystems.function.key", "b1c2890e-c777-40b7-a5aa-fc9b75b55923");
-                                                                span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                                                span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                            }
-
-                                                            try {
-                                                                return controller.safeExecuteJSNode(PartnersHub_controller_OnApplicationReady_ParsePlatformURLJS, "ParsePlatformURL", "On Application Ready", {
-                                                                    platform_url: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.platform_urlAttr, OS.DataTypes.DataTypes.Text),
-                                                                    provider: OS.DataConversion.JSNodeParamConverter.to(partnerSettingsVar.value.responseOut.partner_settingsAttr.providerAttr, OS.DataTypes.DataTypes.Text),
-                                                                    website_platform_url: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text)
-                                                                }, function($parameters) {
-                                                                    var jsNodeResult = new(controller.constructor.getVariableGroupType("PartnersHub.OnApplicationReady$parsePlatformURLJSResult"))();
-                                                                    jsNodeResult.website_platform_urlOut = OS.DataConversion.JSNodeParamConverter.from($parameters.website_platform_url, OS.DataTypes.DataTypes.Text);
-                                                                    return jsNodeResult;
-                                                                }, {}, {});
-                                                            } finally {
-                                                                if (span) {
-                                                                    span.end();
-                                                                }
-
-                                                            }
-
-                                                        }, 1);
-                                                        // WebsitePlatformUrl = ParsePlatformURL.website_platform_url
-                                                        PartnersHubClientVariables.setWebsitePlatformUrl(parsePlatformURLJSResult.value.website_platform_urlOut);
-                                                        // IsNotAPartner = False
-                                                        PartnersHubClientVariables.setIsNotAPartner(false);
-                                                    }).then(function() {
-                                                        if (((partnerSettingsVar.value.responseOut.errorAttr.codeAttr === "InputValidationFailed"))) {
-                                                            OS.Logger.startActiveSpan("RedirectToNonPartnerAccountScreen", function(span) {
-                                                                if (span) {
-                                                                    span.setAttribute("code.function", "RedirectToNonPartnerAccountScreen");
-                                                                    span.setAttribute("outsystems.function.key", "c948e4a3-c25f-4186-95b3-2fc4f0dadd0f");
-                                                                    span.setAttribute("outsystems.function.owner.name", "PartnersHub");
-                                                                    span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
-                                                                    span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                                }
-
-                                                                try {
-                                                                    return controller.safeExecuteJSNode(PartnersHub_controller_OnApplicationReady_RedirectToNonPartnerAccountScreenJS, "RedirectToNonPartnerAccountScreen", "On Application Ready", null, function($parameters) {}, {}, {});
-                                                                } finally {
-                                                                    if (span) {
-                                                                        span.end();
-                                                                    }
-
-                                                                }
-
-                                                            }, 1);
-                                                        }
-
-                                                    });
-                                                }
-
-                                            });
-                                        }).then(function() {
-                                            // JSON Deserialize: JSONDeserializeGetWebsiteStatusResponse
-                                            jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut = OS.JSONUtils.deserializeFromJSON(PartnersHubClientVariables.getWebsiteStatusResponse(), RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure, false);
-                                            // InitialGetSettingsEmail = GetSettings.Response.Get_settings.Email
-                                            PartnersHubClientVariables.setInitialGetSettingsEmail(getSettingsVar.value.responseOut.get_settingsAttr.emailAttr);
-                                            // IsPhoneNumberVerified = GetSettings.Response.Get_settings.Phone_number_verification.Verified
-                                            PartnersHubClientVariables.setIsPhoneNumberVerified(getSettingsVar.value.responseOut.get_settingsAttr.phone_number_verificationAttr.verifiedAttr);
-                                            // WebsiteStatusResponse = JSONDeserializeGetWebsiteStatusResponse.Data
-                                            vars.value.websiteStatusResponseVar = jSONDeserializeGetWebsiteStatusResponseVar.value.dataOut;
-                                            // GetSettingsResponse = GetSettings.Response
-                                            vars.value.getSettingsResponseVar = getSettingsVar.value.responseOut;
-                                            // WebsiteStatusResponse = JSONSerialize.JSON
-                                            PartnersHubClientVariables.setWebsiteStatusResponse(jSONSerializeVar.value.jSONOut);
-                                            // isWhatsappBannerEnabledFF = GetAllSettings.EnableWhatsappBanner
-                                            PartnersHubClientVariables.setisWhatsappBannerEnabledFF(getAllSettingsVar.value.enableWhatsappBannerOut);
-                                            // isLanguageSwitcherEnabledFF = GetAllSettings.EnableLanguageSwitcher
-                                            PartnersHubClientVariables.setisLanguageSwitcherEnabledFF(getAllSettingsVar.value.enableLanguageSwitcherOut);
-                                            // IsAppReady = True
-                                            PartnersHubClientVariables.setIsAppReady(true);
-                                        });
-                                    } else {
-                                        // Execute Action: IFrameLogout
-                                        return PartnersHubController.default.iFrameLogout$Action(callContext);
-                                    }
-
-                                });
-                            });
-                        }
-
-                    });
+                    // Execute Action: InitialScriptNeeded
+                    return PartnersHubController.default.initialScriptNeeded$Action(callContext);
                 });
             }, function() {
                 if (span) {
@@ -2251,100 +2534,10 @@ define("PartnersHub.controller$OnApplicationReady", ["exports", "@outsystems/run
         }, 1);
     };
     var controller = PartnersHubController.default;
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.OnApplicationReady$vars", [{
-        name: "GetSettingsResponse",
-        attrName: "getSettingsResponseVar",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_5fc2e4a935064c1413d6e989e87decd2Structure
-    }, {
-        name: "WebsiteStatusResponse",
-        attrName: "websiteStatusResponseVar",
-        mandatory: false,
-        dataType: OS.DataTypes.DataTypes.Record,
-        defaultValue: function() {
-            return new RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure();
-        },
-        complexType: RESTAPIWebsocketOfficialModel.ST_c864353821feed79663806f3e445d40eStructure
-    }]);
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.OnApplicationReady$checkScreenNoLoginNeededJSResult", [{
-        name: "NoLoginNeeded",
-        attrName: "noLoginNeededOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Boolean,
-        defaultValue: function() {
-            return false;
-        }
-    }]);
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.OnApplicationReady$getAuthTokenJSResult", [{
-        name: "Token",
-        attrName: "tokenOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
-    PartnersHubController.default.constructor.registerVariableGroupType("PartnersHub.OnApplicationReady$parsePlatformURLJSResult", [{
-        name: "website_platform_url",
-        attrName: "website_platform_urlOut",
-        mandatory: true,
-        dataType: OS.DataTypes.DataTypes.Text,
-        defaultValue: function() {
-            return "";
-        }
-    }]);
     PartnersHubController.default.clientActionProxies.onApplicationReady$Action = function() {
         return controller.executeActionInsideJSNode(PartnersHubController.default.onApplicationReady$Action.bind(controller), OS.Controller.BaseViewController.activeScreen ? OS.Controller.BaseViewController.activeScreen.callContext() : undefined, function(actionResults) {
             return {};
         });
-    };
-});
-
-define("PartnersHub.controller$OnApplicationReady.CheckScreenNoLoginNeededJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const path = window.location.pathname.toLowerCase();
-
-        const pathSegments = path.split('/').filter(segment => segment !== '');
-        const lastSegment = pathSegments[pathSegments.length - 1];
-
-        // List of allowed segments without login
-        const AllowNoLoginScreen = ["endpoint", "signup", "forgotpassword", "resetpassword", "tokenexpired", "verificationemailsent", "emailverification"];
-
-        if (AllowNoLoginScreen.includes(lastSegment)) {
-            $parameters.NoLoginNeeded = true;
-        }
-    };
-});
-
-define("PartnersHub.controller$OnApplicationReady.GetAuthTokenJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const token = localStorage.getItem('token')
-
-        $parameters.Token = token
-    };
-});
-
-define("PartnersHub.controller$OnApplicationReady.ParsePlatformURLJS", [], function() {
-    return function($parameters, $actions, $roles, $public) {
-        const default_url = {
-            myaffiliates: 'https://login.deriv.com/signin.php?lang=0',
-            dynamicworks: 'https://partners.deriv.com/login?brd=1'
-        }
-        const platform_url_obj = $parameters.platform_url ? JSON.parse($parameters.platform_url) : default_url
-        const provider = $parameters.provider || 'myaffiliates'
-
-        $parameters.website_platform_url = platform_url_obj[provider]
-    };
-});
-
-define("PartnersHub.controller$OnApplicationReady.RedirectToNonPartnerAccountScreenJS", [], function() {
-    return function($actions, $roles, $public) {
-        // $public.Navigation.navigateTo('/NonPartnerAccount', 'none', false);
-        window.location.replace('/PartnersHub/NonPartnerAccount');
     };
 });
 
@@ -2760,7 +2953,7 @@ define("PartnersHub.controller$RudderstackIdentifyEvent.JavaScript1JS", [], func
 });
 
 
-define("PartnersHub.controller$RudderstackTrackEvent", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$RudderstackTrackEvent.JavaScript1JS", "PartnersHub.clientVariables", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_RudderstackTrackEvent_JavaScript1JS, PartnersHubClientVariables) {
+define("PartnersHub.controller$RudderstackTrackEvent", ["exports", "@outsystems/runtime-core-js", "PartnersHub.model", "PartnersHub.controller", "PartnersHub.controller$RudderstackTrackEvent.TrackScriptJS", "PartnersHub.clientVariables", "PartnersHub.model$ST_23ff1d290ec4691b1c668ad437100cd0Structure"], function(exports, OSRuntimeCore, PartnersHubModel, PartnersHubController, PartnersHub_controller_RudderstackTrackEvent_TrackScriptJS, PartnersHubClientVariables) {
     var OS = OSRuntimeCore;
     PartnersHubController.default.rudderstackTrackEvent$Action = function(payloadIn, eventNameIn, callContext) {
         return OS.Logger.startActiveSpan("RudderstackTrackEvent", function(span) {
@@ -2780,9 +2973,9 @@ define("PartnersHub.controller$RudderstackTrackEvent", ["exports", "@outsystems/
                 var jSONSerialize1Var = new OS.DataTypes.VariableHolder(new OS.DataTypes.JSONSerializeOutputType());
                 // JSON Serialize: JSONSerialize1
                 jSONSerialize1Var.value.jSONOut = OS.JSONUtils.serializeToJSON(vars.value.payloadInLocal, false, false);
-                OS.Logger.startActiveSpan("JavaScript1", function(span) {
+                OS.Logger.startActiveSpan("TrackScript", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "JavaScript1");
+                        span.setAttribute("code.function", "TrackScript");
                         span.setAttribute("outsystems.function.key", "c0f6183a-2ac0-4ccf-8234-9a6347f7695a");
                         span.setAttribute("outsystems.function.owner.name", "PartnersHub");
                         span.setAttribute("outsystems.function.owner.key", "9587f849-ee05-428a-81d2-3be0a1b1dccc");
@@ -2790,7 +2983,7 @@ define("PartnersHub.controller$RudderstackTrackEvent", ["exports", "@outsystems/
                     }
 
                     try {
-                        return controller.safeExecuteJSNode(PartnersHub_controller_RudderstackTrackEvent_JavaScript1JS, "JavaScript1", "RudderstackTrackEvent", {
+                        return controller.safeExecuteJSNode(PartnersHub_controller_RudderstackTrackEvent_TrackScriptJS, "TrackScript", "RudderstackTrackEvent", {
                             eventName: OS.DataConversion.JSNodeParamConverter.to(vars.value.eventNameInLocal, OS.DataTypes.DataTypes.Text),
                             isMobile: OS.DataConversion.JSNodeParamConverter.to(PartnersHubClientVariables.getIsMobile(), OS.DataTypes.DataTypes.Boolean),
                             payload: OS.DataConversion.JSNodeParamConverter.to(jSONSerialize1Var.value.jSONOut, OS.DataTypes.DataTypes.Text)
@@ -2841,9 +3034,9 @@ define("PartnersHub.controller$RudderstackTrackEvent", ["exports", "@outsystems/
     };
 });
 
-define("PartnersHub.controller$RudderstackTrackEvent.JavaScript1JS", [], function() {
+define("PartnersHub.controller$RudderstackTrackEvent.TrackScriptJS", [], function() {
     return function($parameters, $actions, $roles, $public) {
-        const Analytics = window?.Analytics?.Analytics
+        const analytics = window.cacheTrackEvents;
         const userId = localStorage.getItem('active_user_id')
         const deviceType = $parameters.isMobile ? 'mobile' : 'desktop'
         const loginId = localStorage.getItem('loginId') || ''
@@ -2857,14 +3050,17 @@ define("PartnersHub.controller$RudderstackTrackEvent.JavaScript1JS", [], functio
             ...rest
         } = payload;
 
-        if (Analytics) {
-            Analytics.trackEvent($parameters.eventName, {
-                deviceType,
-                accountType,
-                ...(showUserId && {
-                    user_id: userId
-                }),
-                ...rest,
+        if (analytics) {
+            analytics.track({
+                name: $parameters.eventName,
+                properties: {
+                    deviceType,
+                    accountType,
+                    ...(showUserId && {
+                        user_id: userId
+                    }),
+                    ...rest,
+                }
             })
         }
     };
@@ -4300,12 +4496,15 @@ define("PartnersHub.controller$ServerAction.GetAllSettings", ["exports", "@outsy
             }
 
             return OS.Flow.tryFinally(function() {
-                return controller.callServerAction("GetAllSettings", "screenservices/PartnersHub/ActionGetAllSettings", "vgKK7HEfH5rkI6_SpvVlTg", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
+                return controller.callServerAction("GetAllSettings", "screenservices/PartnersHub/ActionGetAllSettings", "4S9HKODw1pJUA5h60YWWXA", {}, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("PartnersHub$ActionGetAllSettings"))();
                     executeServerActionResult.enableWhatsappBannerOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableWhatsappBanner, OS.DataTypes.DataTypes.Boolean);
                     executeServerActionResult.enablePartnerAccountOut = OS.DataConversion.ServerDataConverter.from(outputs.EnablePartnerAccount, OS.DataTypes.DataTypes.Boolean);
                     executeServerActionResult.enableCFDsScreensOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableCFDsScreens, OS.DataTypes.DataTypes.Boolean);
                     executeServerActionResult.enableLanguageSwitcherOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableLanguageSwitcher, OS.DataTypes.DataTypes.Boolean);
+                    executeServerActionResult.environmentOut = OS.DataConversion.ServerDataConverter.from(outputs.Environment, OS.DataTypes.DataTypes.Text);
+                    executeServerActionResult.enableEventSectionOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableEventSection, OS.DataTypes.DataTypes.Boolean);
+                    executeServerActionResult.enableCFDCommissionsFormOut = OS.DataConversion.ServerDataConverter.from(outputs.EnableCFDCommissionsForm, OS.DataTypes.DataTypes.Boolean);
                     return executeServerActionResult;
                 });
             }, function() {
@@ -4343,6 +4542,30 @@ define("PartnersHub.controller$ServerAction.GetAllSettings", ["exports", "@outsy
     }, {
         name: "EnableLanguageSwitcher",
         attrName: "enableLanguageSwitcherOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "Environment",
+        attrName: "environmentOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Text,
+        defaultValue: function() {
+            return "";
+        }
+    }, {
+        name: "EnableEventSection",
+        attrName: "enableEventSectionOut",
+        mandatory: false,
+        dataType: OS.DataTypes.DataTypes.Boolean,
+        defaultValue: function() {
+            return false;
+        }
+    }, {
+        name: "EnableCFDCommissionsForm",
+        attrName: "enableCFDCommissionsFormOut",
         mandatory: false,
         dataType: OS.DataTypes.DataTypes.Boolean,
         defaultValue: function() {

@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel) {
+define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletsOverlayPageWithPopup.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletsOverlayPageWithPopup_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -6,14 +6,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/r
         class VariablesRecordInner extends
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
-                return [
-                    this.attr("Email", "emailIn", "Email", true, false, OS.DataTypes.DataTypes.Email, function() {
-                        return "";
-                    }, false),
-                    this.attr("_emailInDataFetchStatus", "_emailInDataFetchStatus", "_emailInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false)
-                ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+                return [].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
         }
@@ -30,7 +23,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/r
     }
 
     class Model extends
-    OS.Model.BaseViewModel {
+    OS.Model.VariablelessViewModel {
         static getVariablesRecordConstructor() {
             return VariablesRecord;
         }
@@ -41,17 +34,12 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/r
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletOverlayPage_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletsOverlayPageWithPopup_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
         }
-        setInputs(inputs) {
-            if ("Email" in inputs) {
-                this.variables.emailIn = OS.DataConversion.ServerDataConverter.from(inputs.Email, OS.DataTypes.DataTypes.Email);
-            }
-
-        }
+        setInputs(inputs) {}
 
     }
 
@@ -59,7 +47,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", ["@outsystems/r
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_model, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view) {
+define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$model", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletsOverlayPageWithPopup.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, React, OSView, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_model, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletsOverlayPageWithPopup_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -90,7 +78,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletOverlayPage_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletsOverlayPageWithPopup_mvc_view];
         }
 
         get modelFactory() {
@@ -104,7 +92,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
         get title() {
 
 
-            return "WalletEmailWithdrawal";
+            return OSView.BaseView.BaseWebScreen.getTranslation("HNjpeyD7hUOwS+64wrK8cg#Title", "WalletEmailWithdrawal");
         }
 
         internalRender() {
@@ -146,7 +134,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     content: new PlaceholderContent(function() {
-                        return [React.createElement(tradershub_WalletBlocks_WalletOverlayPage_mvc_view, {
+                        return [React.createElement(tradershub_WalletBlocks_WalletsOverlayPageWithPopup_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -154,8 +142,6 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                 return _this.getChildSpan("destroy");
                             },
                             inputs: {
-                                HideWalletHeader: false,
-                                HideBackButton: true,
                                 PageTitle: "Withdraw"
                             },
                             events: {
@@ -196,10 +182,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         gridProperties: {
                                             classes: "ThemeGrid_MarginGutter"
                                         },
-                                        style: model.getCachedValue(idService.getId("Iz5nyG_jGkeyZHnfgrn1yw.Style"), function() {
+                                        style: model.getCachedValue(idService.getId("qYyTyGAqF0KLW_TopIoyaA.Style"), function() {
                                             return ("font-bold text-align-center " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("heading5") : ("heading4")));
                                         }),
-                                        value: ("We’ve sent a verification link to " + model.variables.emailIn),
+                                        value: ("We’ve sent a verification link to " + tradershubClientVariables.getSignupEmail()),
                                         _idProps: {
                                             service: idService,
                                             uuid: "4"
@@ -242,10 +228,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         extendedProperties: {
                                             style: "font-weight: normal;"
                                         },
-                                        style: model.getCachedValue(idService.getId("Rj9fSnF3Ek2PIFSLbXxjGw.Style"), function() {
+                                        style: model.getCachedValue(idService.getId("Mu5Z7QhqtEep5bQxuRMbZg.Style"), function() {
                                             return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
                                         }),
-                                        text: ["Didn\'t get an email? "],
+                                        text: [$text(getTranslation("Mu5Z7QhqtEep5bQxuRMbZg#Value", "Didn\'t get an email? "))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "8"
@@ -266,10 +252,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
-                                        style: model.getCachedValue(idService.getId("Dv0LQ+_vjEuyrhPF3OPU3A.Style"), function() {
+                                        style: model.getCachedValue(idService.getId("bMz7RJEhOkKiyHlzwLV23A.Style"), function() {
                                             return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
                                         }),
-                                        text: ["Make sure you’ve entered your email correctly."],
+                                        text: [$text(getTranslation("bMz7RJEhOkKiyHlzwLV23A#Value", "Make sure you’ve entered your email correctly."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "11"
@@ -283,10 +269,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
-                                        style: model.getCachedValue(idService.getId("bhP43Gmcg02BjGIpFLA4Ww.Style"), function() {
+                                        style: model.getCachedValue(idService.getId("a4IdFkUeqUefd7Og6TWq5A.Style"), function() {
                                             return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
                                         }),
-                                        text: ["Check your spam folder."],
+                                        text: [$text(getTranslation("a4IdFkUeqUefd7Og6TWq5A#Value", "Check your spam folder."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "13"
@@ -300,10 +286,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Text, {
-                                        style: model.getCachedValue(idService.getId("_MVQsNtRUE2otk9_J0pw4w.Style"), function() {
+                                        style: model.getCachedValue(idService.getId("BO3xK8irDUuXyqM2KFFy9w.Style"), function() {
                                             return ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("font-size-s") : ("font-size-xs"));
                                         }),
-                                        text: ["Make sure the email isn’t blocked by firewalls or filters."],
+                                        text: [$text(getTranslation("BO3xK8irDUuXyqM2KFFy9w#Value", "Make sure the email isn’t blocked by firewalls or filters."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "15"
@@ -311,13 +297,11 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }))))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
-                                        animate: true,
-                                        style: model.getCachedValue(idService.getId("zYxVMrX1u0e3gQ+MYurPzA.Style"), function() {
+                                        animate: false,
+                                        style: model.getCachedValue(idService.getId("M2rtSyZFKkCkgAUpNLGlPA.Style"), function() {
                                             return ("display-flex gap-s " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("flex-direction-row") : ("flex-direction-column full-width")));
                                         }),
-                                        visible: model.getCachedValue(idService.getId("zYxVMrX1u0e3gQ+MYurPzA.Visible"), function() {
-                                            return OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut;
-                                        }),
+                                        visible: true,
                                         _idProps: {
                                             service: idService,
                                             uuid: "16"
@@ -329,10 +313,10 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         onClick: function() {
                                             return Promise.resolve().then(function() {
                                                 var eventHandlerContext = callContext.clone();
-                                                return controller.resendEmailOnClick$Action(model.variables.emailIn, controller.callContext(eventHandlerContext));
+                                                return controller.resendEmailOnClick$Action(controller.callContext(eventHandlerContext));
                                             });;
                                         },
-                                        style: "btn btn-large",
+                                        style: "btn",
                                         visible: true,
                                         _idProps: {
                                             service: idService,
@@ -343,7 +327,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                         extendedProperties: {
                                             style: "font-size: 14px;"
                                         },
-                                        text: ["Resend email"],
+                                        text: [$text(getTranslation("6O5vm_YB9UK8aL2IHyVmMA#Value", "Resend email"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "18"
@@ -352,23 +336,23 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$view", ["@outsystems/ru
                                     }))))];
                                 })
                             },
-                            _dependencies: [asPrimitiveValue(model.variables.emailIn)]
+                            _dependencies: [asPrimitiveValue(tradershubClientVariables.getSignupEmail())]
                         })];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.emailIn)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getSignupEmail())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
+define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "RESTAPIWebsocketOfficial.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$translationsResources", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "RESTAPIWebsocketOfficial.model$ST_b5532fbd5672db40752d556a46e96eaeStructure", "tradershub.referencesHealth$RESTAPIWebsocketOfficial", "tradershub.controller$VerifyEmail"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, RESTAPIWebsocketOfficialModel, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_TranslationsResources, tradershub_WalletFlowsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -394,7 +378,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsyst
             // Client Actions - Methods
             get _resendEmailOnClick$Action() {
                 if (!(this.hasOwnProperty("__resendEmailOnClick$Action"))) {
-                    this.__resendEmailOnClick$Action = function(email2In, callContext) {
+                    this.__resendEmailOnClick$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
@@ -410,13 +394,11 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsyst
                             return OS.Flow.tryFinally(function() {
                                 controller.ensureControllerAlive("ResendEmailOnClick");
                                 callContext = controller.callContext(callContext);
-                                var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.WalletFlows.WalletEmailWithdrawal.ResendEmailOnClick$vars"))());
-                                vars.value.email2InLocal = email2In;
                                 var verifyEmailVar = new OS.DataTypes.VariableHolder();
                                 return OS.Flow.executeAsyncFlow(function() {
                                     // Execute Action: VerifyEmail
                                     model.flush();
-                                    return tradershubController.default.verifyEmail$Action("payment_withdraw", model.variables.emailIn, callContext).then(function(value) {
+                                    return tradershubController.default.verifyEmail$Action("payment_withdraw", tradershubClientVariables.getSignupEmail(), callContext).then(function(value) {
                                         verifyEmailVar.value = value;
                                     }).then(function() {
                                         if ((verifyEmailVar.value.isErrorOut)) {
@@ -444,7 +426,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsyst
             }
 
 
-            resendEmailOnClick$Action(email2In, callContext) {
+            resendEmailOnClick$Action(callContext) {
                 var controller = this.controller;
                 return OS.Logger.startActiveSpan("ResendEmailOnClick__proxy", function(span) {
                     if (span) {
@@ -456,7 +438,7 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsyst
                     }
 
                     return OS.Flow.tryFinally(function() {
-                        return controller.safeExecuteClientAction(controller._resendEmailOnClick$Action, callContext, email2In);
+                        return controller.safeExecuteClientAction(controller._resendEmailOnClick$Action, callContext);
                     }, function() {
                         if (span) {
                             span.end();
@@ -549,16 +531,27 @@ define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$controller", ["@outsyst
         // Server Actions - Variables
 
         // Client Actions - Variables
-        Controller.registerVariableGroupType("tradershub.WalletFlows.WalletEmailWithdrawal.ResendEmailOnClick$vars", [{
-            name: "Email2",
-            attrName: "email2InLocal",
-            mandatory: true,
-            dataType: OS.DataTypes.DataTypes.Email,
-            defaultValue: function() {
-                return "";
-            }
-        }]);
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "6O5vm_YB9UK8aL2IHyVmMA#Value": "Renvoie l\'e-mail",
+        "BO3xK8irDUuXyqM2KFFy9w#Value": "Assurez-vous que l\'email n\'est pas bloqué par des pare-feu ou des filtres.",
+        "a4IdFkUeqUefd7Og6TWq5A#Value": "Vérifiez votre dossier de spam.",
+        "bMz7RJEhOkKiyHlzwLV23A#Value": "Assurez-vous d\'avoir correctement saisi votre adresse e-mail.",
+        "Mu5Z7QhqtEep5bQxuRMbZg#Value": "Vous n\'avez pas reçu d\'email ?"
+    };
+});
+
+define("tradershub.WalletFlows.WalletEmailWithdrawal.mvc$translationsResources", ["exports", "tradershub.WalletFlows.WalletEmailWithdrawal.mvc$translationsResources.fr-FR"], function(exports, tradershub_WalletFlows_WalletEmailWithdrawal_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_WalletFlows_WalletEmailWithdrawal_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

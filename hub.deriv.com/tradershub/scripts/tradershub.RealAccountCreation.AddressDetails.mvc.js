@@ -110,7 +110,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
             var _this = this;
 
 
-            return "Address details | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("yMGSwV1DFkKTgBF4Yx_L4w#TitleExpression.445684752.1", "Address details | Deriv");
         }
 
         internalRender() {
@@ -215,7 +215,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                             extendedProperties: {
                                 style: "color: #4F575E; font-size: 16px; margin-bottom: 0px;"
                             },
-                            text: ["Address"],
+                            text: [$text(getTranslation("I9ASAW8xR0Ggye8Pc48FEg#Value", "Address"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -277,7 +277,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                             extendedProperties: {
                                 style: "color: #4F575E; font-size: 16px;"
                             },
-                            text: ["Town/City"],
+                            text: [$text(getTranslation("hbG5YV4ub0upRZHLQdGEgA#Value", "Town/City"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "9"
@@ -339,7 +339,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                             extendedProperties: {
                                 style: "color: #4F575E;"
                             },
-                            text: ["State/Province"],
+                            text: [$text(getTranslation("mYN8wVUc2UK27u4F3fXjCg#Value", "State/Province"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "13"
@@ -534,7 +534,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Postal/ZIP code"],
+                            text: [$text(getTranslation("XcQhG2GCtk2su3luQZGIXA#Value", "Postal/ZIP code"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "22"
@@ -596,7 +596,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                                 uuid: "25"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Next"))), React.createElement(OSWidgets.Popup, {
+                        }, $text(getTranslation("w38dbPW8mUGI0DeQhHYdmg#Value", "Next"))))), React.createElement(OSWidgets.Popup, {
                             showPopup: model.variables.isStateSelectionPopopOpenVar,
                             style: "popup-dialog popup-dialog__mobile",
                             _idProps: {
@@ -650,7 +650,7 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
                                 style: "font-size: 18px; font-weight: bold;"
                             },
                             style: "margin-left-base",
-                            text: ["State/Province"],
+                            text: [$text(getTranslation("8Pnh1OZ9xEqJ+TUX87m6BA#Value", "State/Province"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "31"
@@ -719,12 +719,12 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$view", ["@outsystems/r
 
     return View;
 });
-define("tradershub.RealAccountCreation.AddressDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.OnReady.GenerateStatesListPayloadJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_27f8ec64ca98713144ae178da75c54abStructure", "tradershub.model$RL_f8f18d18d5de26fb445609e3f88624db", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_a99e5b4d6b08ee1b808de2fbce23bf4fStructure", "tradershub.model$ST_771888a7c88d31c2c35d9cb462eaf9dfStructure", "tradershub.model$ST_69d197f741008559fd9136ea6f31ca4cStructure", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_AddressDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_AddressDetails_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreation_AddressDetails_mvc_controller_OnReady_GenerateStatesListPayloadJS) {
+define("tradershub.RealAccountCreation.AddressDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "OutSystemsUI.model", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.AddressDetails.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreation.AddressDetails.mvc$controller.OnReady.GenerateStatesListPayloadJS", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_27f8ec64ca98713144ae178da75c54abStructure", "tradershub.model$RL_f8f18d18d5de26fb445609e3f88624db", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "OutSystemsUI.model$ST_60f22bd2e9b10a22278b8afe6d7f601aStructure", "tradershub.model$RL_c0f17d75c546075264f5d075e00ba65b", "OutSystemsUI.model$ST_4e53cb8815b86020ced1d2f2652c9b1dStructure", "tradershub.model$ST_a99e5b4d6b08ee1b808de2fbce23bf4fStructure", "tradershub.model$ST_771888a7c88d31c2c35d9cb462eaf9dfStructure", "tradershub.model$ST_69d197f741008559fd9136ea6f31ca4cStructure", "tradershub.model$ST_bd2236af041a218c8fde06ca0065cfd9Structure", "tradershub.controller$SendGetSetting", "tradershub.controller$DerivApiSendMessage"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, OutSystemsUIModel, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_AddressDetails_mvc_TranslationsResources, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_AddressDetails_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreation_AddressDetails_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreation_AddressDetails_mvc_controller_OnReady_GenerateStatesListPayloadJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_AddressDetails_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -954,8 +954,14 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$controller", ["@outsys
                                         }
 
                                     }, 1);
-                                    // Destination: /tradershub/TermsOfUse
-                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "terms-of-use", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    if ((tradershubClientVariables.getIsEuUser())) {
+                                        // Destination: /tradershub/TradingAssessment
+                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "trading-assessment", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    } else {
+                                        // Destination: /tradershub/TermsOfUse
+                                        return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "terms-of-use", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
+                                    }
+
                                 }
 
                             } finally {
@@ -1535,5 +1541,28 @@ define("tradershub.RealAccountCreation.AddressDetails.mvc$controller.OnReady.Gen
         $parameters.Payload = JSON.stringify({
             states_list: $parameters.CountryCode
         })
+    };
+});
+
+
+define("tradershub.RealAccountCreation.AddressDetails.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "8Pnh1OZ9xEqJ+TUX87m6BA#Value": "État/Province",
+        "w38dbPW8mUGI0DeQhHYdmg#Value": "Suivant",
+        "XcQhG2GCtk2su3luQZGIXA#Value": "Code postal",
+        "mYN8wVUc2UK27u4F3fXjCg#Value": "État/Province",
+        "hbG5YV4ub0upRZHLQdGEgA#Value": "Ville",
+        "I9ASAW8xR0Ggye8Pc48FEg#Value": "Adresse",
+        "yMGSwV1DFkKTgBF4Yx_L4w#Title": "Détails d\'adresse | Deriv",
+        "yMGSwV1DFkKTgBF4Yx_L4w#TitleExpression.445684752.1": "Détails d\'adresse | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreation.AddressDetails.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.AddressDetails.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_AddressDetails_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_AddressDetails_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

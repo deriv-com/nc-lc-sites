@@ -1,0 +1,104 @@
+﻿.cfd-commissions-modal {
+    z-index: 999;
+    display: flex;
+    justify-content: end;
+    --padding: 16px;
+    --modal-width: 100vw;
+    --header-height: 56px;
+}
+.desktop .cfd-commissions-modal-dialog{
+    --modal-width: 400px;
+}
+
+.cfd-commissions-modal-dialog {
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: var(--modal-width); 
+}
+
+.cfd-commissions-modal-header {
+    min-height: var(--header-height);
+    padding-inline: var(--padding);
+    padding-block: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9ECEF;
+}
+
+.cfd-commissions-modal-close {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.desktop .cfd-commissions-modal-body {
+    padding: var(--padding);
+}
+
+.cfd-commissions-modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 0 auto;
+}
+
+.cfd-commissions-modal-content {
+    padding: var(--padding);
+}
+
+.desktop .cfd-commissions-modal-text {
+    margin-block-end: 24px;
+    color: #000;
+    color: #000;
+}
+.cfd-commissions-modal-text {
+    margin-block-end: var(--padding);
+}
+.cfd-commissions-modal-footer {
+    padding: var(--padding);
+    border-top: 1px solid #E9ECEF;
+}
+
+.cfd-commissions-password-policy {
+    margin: 0;
+    list-style: none;
+    margin-top: var(--padding);
+    padding-inline: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(0, 0, 0, .72);
+}
+.password-input {
+    position: relative;
+}
+
+.desktop .password-input-label{
+    display: none;
+}
+.password-input-label{
+    display: block;
+    color: var(--color-neutral-8);
+}
+.password-input-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 48px;
+    border: none;
+    background: transparent;
+    padding-left: 8px;
+    padding-right: var(--padding);
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    cursor: pointer;
+}
+.password-input-error {
+    color: var(--color-error);
+}
+

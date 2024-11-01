@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$model", [
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
         get title() {
 
 
-            return "TradingAssessmentStepNine";
+            return OSView.BaseView.BaseWebScreen.getTranslation("9P2iW8hWMkeigbaZ5ylQvA#Title", "TradingAssessmentStepNine");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["9/10"],
+                            text: [$text(getTranslation("HOxqZu4mIUq7oAEtf5aW1A#Value", "9/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("Fun9OLd4NEOB_6Swxqtppg#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Leverage trading is high-risk, so it’s a good idea to use risk management features such as stop loss. Stop loss allows you to: "],
+                            text: [$text(getTranslation("lIDTnAWQhEiGOHfJ6Uj8XQ#Value", "Leverage trading is high-risk, so it’s a good idea to use risk management features such as stop loss. Stop loss allows you to: "))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getRiskManagement(), function(value) {
+                                tradershubClientVariables.setRiskManagement(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Cancel your trade at any time within a specified timeframe."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("ZQ9Na4t30kWoQBj66ezbaw#Value", "Cancel your trade at any time within a specified timeframe."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -296,7 +299,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Close your trade automatically when the loss is equal to or more than a specified amount, as long as there is adequate market liquidity."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("k_rqwowylUiKGTwa9TdX4A#Value", "Close your trade automatically when the loss is equal to or more than a specified amount, as long as there is adequate market liquidity."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Close your trade automatically when the profit is equal to or more than a specified amount, as long as there is adequate market liquidity."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("3ajtRoM6e0eDIDOxf0pe5w#Value", "Close your trade automatically when the profit is equal to or more than a specified amount, as long as there is adequate market liquidity."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -322,7 +325,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Make a guaranteed profit on your trade."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("qgLWumCBI0Wo6ilynXrMRA#Value", "Make a guaranteed profit on your trade."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -356,7 +359,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("fOqnLCbG6UqdbCnzWq7tCA#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -365,19 +368,19 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$view", ["
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getRiskManagement()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentStepNine_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentStepNine_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -419,7 +422,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$controlle
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getRiskManagement() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -554,4 +557,27 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$controlle
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "fOqnLCbG6UqdbCnzWq7tCA#Value": "Suivant",
+        "qgLWumCBI0Wo6ilynXrMRA#Value": "Réalisez un profit garanti sur votre trade.",
+        "3ajtRoM6e0eDIDOxf0pe5w#Value": "Fermez votre trade automatiquement lorsque le profit est égal ou supérieur à un montant spécifié, tant qu\'il y a une liquidité de marché adéquate.",
+        "k_rqwowylUiKGTwa9TdX4A#Value": "Fermez votre trade automatiquement lorsque la perte est égale ou supérieure à un montant spécifié, tant qu\'il y a une liquidité de marché adéquate.",
+        "ZQ9Na4t30kWoQBj66ezbaw#Value": "Annulez votre transaction à tout moment dans un délai spécifié.",
+        "lIDTnAWQhEiGOHfJ6Uj8XQ#Value": "Le trading à effet de levier présente des risques élevés, il est donc conseillé d\'utiliser des fonctions de gestion des risques telles que le stop loss. Le stop loss vous permet de :",
+        "Fun9OLd4NEOB_6Swxqtppg#Value": "Ceci est requis.",
+        "HOxqZu4mIUq7oAEtf5aW1A#Value": "Tue 10 sept. 2024 15:00:00 GMT+0800 (heure normale de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentStepNine.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentStepNine_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentStepNine_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

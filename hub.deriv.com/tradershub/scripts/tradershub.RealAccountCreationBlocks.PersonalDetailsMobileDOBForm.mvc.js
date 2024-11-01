@@ -166,7 +166,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$vi
                     uuid: "4"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "Date of birth"), React.createElement(OSWidgets.Container, {
+            }, $text(getTranslation("h20nWPcKL0ygWpUvX9RZQA#Value", "Date of birth"))), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
                 style: "input-flatpickr_mobile",
@@ -255,7 +255,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$vi
                 extendedProperties: {
                     style: "font-size: 12px;"
                 },
-                text: ["Enter your "],
+                text: [$text(getTranslation("DHVSSPqKjkKqmVIniWiXxA#Value", "Enter your "))],
                 _idProps: {
                     service: idService,
                     uuid: "11"
@@ -265,7 +265,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$vi
                 extendedProperties: {
                     style: "font-size: 12px; font-weight: bold;"
                 },
-                text: ["date of birth"],
+                text: [$text(getTranslation("k1pAqtTKXky+JzLcuZkOfQ#Value", "date of birth"))],
                 _idProps: {
                     service: idService,
                     uuid: "12"
@@ -275,7 +275,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$vi
                 extendedProperties: {
                     style: "font-size: 12px;"
                 },
-                text: [" exactly as it appears on your identity document."],
+                text: [$text(getTranslation("S7KIjno+mUurNZSFq644Mw#Value", " exactly as it appears on your identity document."))],
                 _idProps: {
                     service: idService,
                     uuid: "13"
@@ -359,18 +359,18 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$vi
                     uuid: "19"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "Next"))));
+            }, $text(getTranslation("0S7g+gp47kO+DUh8oIzCdQ#Value", "Next"))))));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.OnClick.OpenDatePickerJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_OnClick_OpenDatePickerJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_OnReady_InitializeFlatpickrJS) {
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.SaveOnClick.ValidateJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.SaveOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.OnClick.OpenDatePickerJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$controller.OnReady.InitializeFlatpickrJS", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_ValidateJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_SaveOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_OnClick_OpenDatePickerJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_controller_OnReady_InitializeFlatpickrJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {
                     datePickerOnSelected$Action: function(selectedDateTimeIn) {
@@ -480,6 +480,8 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
                                         }
 
                                     }, 1);
+                                    // RealSignupPassedStepCount = 2
+                                    tradershubClientVariables.setRealSignupPassedStepCount(2);
                                     // Destination: /tradershub/PersonalDetailsAdditional
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/additional", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
@@ -998,6 +1000,26 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$co
                     $actions.DatePickerOnSelected(formatDate(selectedDate[0]))
                 }
             });
+        }
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "0S7g+gp47kO+DUh8oIzCdQ#Value": "Suivant",
+        "S7KIjno+mUurNZSFq644Mw#Value": "exactement tel qu\'il apparaît sur votre document d\'identité.",
+        "k1pAqtTKXky+JzLcuZkOfQ#Value": "date de naissance",
+        "DHVSSPqKjkKqmVIniWiXxA#Value": "Entrez votre",
+        "h20nWPcKL0ygWpUvX9RZQA#Value": "Date de naissance"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobileDOBForm.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_PersonalDetailsMobileDOBForm_mvc_translationsResources_frFR,
+            "isRTL": false
         }
     };
 });

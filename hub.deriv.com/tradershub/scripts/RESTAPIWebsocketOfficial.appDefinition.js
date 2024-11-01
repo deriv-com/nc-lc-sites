@@ -1,8 +1,6 @@
 define("RESTAPIWebsocketOfficial.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "7f8cebf7-cfdc-4d8e-b4dd-0ba14627b017",
         applicationName: "REST API Websocket Official",
         userProviderName: "Users",
@@ -18,11 +16,10 @@ define("RESTAPIWebsocketOfficial.appDefinition", ["@outsystems/runtime-core-js"]
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        frontendBuildWorkerVersion: "vv18.35.0",
+        buildSDKVersion: "v17.1688.1.0",
+        clientRuntimeVersion: "6.16.5",
         useESM: false,
-        appVersion: "251"
+        appVersion: "335"
     };
 });

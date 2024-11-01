@@ -1,23 +1,5 @@
-define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel) {
-    var OS = OSRuntimeCore; {
-        class GetEmploymentStatusesAggrRecInner extends
-        OS.Model.AggregateRecord {
-            static attributesToDeclare() {
-                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new GetEmploymentStatusesAggrRec(new GetEmploymentStatusesAggrRec.RecordClass({
-                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        GetEmploymentStatusesAggrRecInner.RecordListType = tradershubModel.RL_d05ad81e70a826256d161d2b9afc0f03;
-        var GetEmploymentStatusesAggrRec = GetEmploymentStatusesAggrRecInner;
-        GetEmploymentStatusesAggrRec.init();
-    }
+define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$EN_772522d7b54f56f59fb8e1e743f444ecEntityRecord", "tradershub.model$RL_af98e667e22024fcd3f4c2355613ad7f"], function(OSRuntimeCore, tradershubModel) {
+    var OS = OSRuntimeCore;
 
 
     {
@@ -28,9 +10,18 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$mo
                     this.attr("ShowTaxConfirmationPopup", "showTaxConfirmationPopupVar", "ShowTaxConfirmationPopup", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
                     }, false),
-                    this.attr("GetEmploymentStatuses", "getEmploymentStatusesAggr", "GetEmploymentStatuses", true, true, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new GetEmploymentStatusesAggrRec());
-                    }, true, GetEmploymentStatusesAggrRec)
+                    this.attr("TINValidationsResponse", "tINValidationsResponseIn", "TINValidationsResponse", true, false, OS.DataTypes.DataTypes.Record, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.ST_8011e4cc4d4f7bb6f204cedde99885f1Structure());
+                    }, false, tradershubModel.ST_8011e4cc4d4f7bb6f204cedde99885f1Structure),
+                    this.attr("_tINValidationsResponseInDataFetchStatus", "_tINValidationsResponseInDataFetchStatus", "_tINValidationsResponseInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("EmploymentStatusList", "employmentStatusListIn", "EmploymentStatusList", true, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_af98e667e22024fcd3f4c2355613ad7f());
+                    }, false, tradershubModel.RL_af98e667e22024fcd3f4c2355613ad7f),
+                    this.attr("_employmentStatusListInDataFetchStatus", "_employmentStatusListInDataFetchStatus", "_employmentStatusListInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
+                    }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
@@ -60,7 +51,24 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$mo
         static get hasValidationWidgets() {
             return false;
         }
-        setInputs(inputs) {}
+        setInputs(inputs) {
+            if ("TINValidationsResponse" in inputs) {
+                this.variables.tINValidationsResponseIn = inputs.TINValidationsResponse;
+                if ("_tINValidationsResponseInDataFetchStatus" in inputs) {
+                    this.variables._tINValidationsResponseInDataFetchStatus = inputs._tINValidationsResponseInDataFetchStatus;
+                }
+
+            }
+
+            if ("EmploymentStatusList" in inputs) {
+                this.variables.employmentStatusListIn = inputs.EmploymentStatusList;
+                if ("_employmentStatusListInDataFetchStatus" in inputs) {
+                    this.variables._employmentStatusListInDataFetchStatus = inputs._employmentStatusListInDataFetchStatus;
+                }
+
+            }
+
+        }
 
     }
 
@@ -68,7 +76,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$mo
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$model", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_model, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller, tradershubClientVariables, OSWidgets) {
+define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$model", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$EN_772522d7b54f56f59fb8e1e743f444ecEntityRecord", "tradershub.model$RL_af98e667e22024fcd3f4c2355613ad7f"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_model, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller, tradershubClientVariables, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -143,7 +151,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                 extendedProperties: {
                     style: "font-size: 16px; margin-bottom: 0px;"
                 },
-                text: ["Select your employment status"],
+                text: [$text(getTranslation("HragfIjHc0Cps6Am_01KOw#Value", "Select your employment status"))],
                 _idProps: {
                     service: idService,
                     uuid: "1"
@@ -158,7 +166,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                     classes: "OSFillParent"
                 },
                 mode: /*Default*/ 0,
-                source: model.variables.getEmploymentStatusesAggr.listOut,
+                source: model.variables.employmentStatusListIn,
                 style: "list list-group display-flex flex-direction-column gap-base",
                 tag: "div",
                 _idProps: {
@@ -166,7 +174,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                     uuid: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
-                source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr),
+                source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._employmentStatusListInDataFetchStatus),
                 placeholders: {
                     content: new IteratorPlaceholderContent(function(idService, callContext) {
                         return [React.createElement(OSWidgets.ListItem, {
@@ -175,7 +183,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                             },
                             onClick: function() {
                                 var eventHandlerContext = callContext.clone();
-                                controller.listItemOnClick$Action(model.variables.getEmploymentStatusesAggr.listOut.getCurrent(callContext.iterationContext).employmentStatusAttr.labelAttr, controller.callContext(eventHandlerContext));
+                                controller.listItemOnClick$Action(model.variables.employmentStatusListIn.getCurrent(callContext.iterationContext).labelAttr, controller.callContext(eventHandlerContext));
 
                                 ;
                             },
@@ -207,13 +215,13 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                                         gridProperties: {
                                             classes: "OSFillParent"
                                         },
-                                        value: model.variables.getEmploymentStatusesAggr.listOut.getCurrent(callContext.iterationContext).employmentStatusAttr.labelAttr,
+                                        value: model.variables.employmentStatusListIn.getCurrent(callContext.iterationContext).labelAttr,
                                         _idProps: {
                                             service: idService,
                                             uuid: "5"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider,
-                                        value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr)
+                                        value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._employmentStatusListInDataFetchStatus)
                                     }), React.createElement(OSWidgets.Image, {
                                         image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.iconarrow.svg"),
                                         type: /*Static*/ 0,
@@ -226,11 +234,11 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                                 }),
                                 rightActions: PlaceholderContent.Empty
                             },
-                            _dependencies: [asPrimitiveValue(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getEmploymentStatusesAggr.listOut.getCurrent(callContext.iterationContext).employmentStatusAttr.labelAttr)]
+                            _dependencies: [asPrimitiveValue(model.variables._employmentStatusListInDataFetchStatus), asPrimitiveValue(model.variables.employmentStatusListIn.getCurrent(callContext.iterationContext).labelAttr)]
                         })];
                     }, callContext, idService, "1")
                 },
-                _dependencies: [asPrimitiveValue(model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr)]
+                _dependencies: [asPrimitiveValue(model.variables._employmentStatusListInDataFetchStatus)]
             })), React.createElement(OSWidgets.Popup, {
                 extendedProperties: {
                     style: "border-radius: 8px; padding: 16px; width: calc(100% - 32px);"
@@ -266,7 +274,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                 extendedProperties: {
                     style: "font-size: 16px; font-weight: bold;"
                 },
-                text: ["Tax information"],
+                text: [$text(getTranslation("dIuE3Avork6tOWGN7Vxl_w#Value", "Tax information"))],
                 _idProps: {
                     service: idService,
                     uuid: "10"
@@ -279,7 +287,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                 },
                 onClick: function() {
                     var eventHandlerContext = callContext.clone();
-                    controller.linkOnClick$Action(controller.callContext(eventHandlerContext));
+                    controller.popupCloseOnClick$Action(controller.callContext(eventHandlerContext));
 
                     ;
                 },
@@ -298,7 +306,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                     uuid: "12"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }))), "Do you have a tax identification number?", React.createElement(OSWidgets.Container, {
+            }))), $text(getTranslation("8lnK3Aap7EuKYmmhAQjX3Q#Value", "Do you have a tax identification number?")), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
                 style: "display-flex flex-direction-column gap-s",
@@ -327,7 +335,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                     uuid: "14"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "Yes"), React.createElement(OSWidgets.Button, {
+            }, $text(getTranslation("UjgOn49vA0i5j0q_u3WkMQ#Value", "Yes"))), React.createElement(OSWidgets.Button, {
                 enabled: true,
                 extendedProperties: {
                     style: "border-width: 1px; height: 32px;"
@@ -349,77 +357,32 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$vi
                     uuid: "15"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "No")))));
+            }, $text(getTranslation("vpfH7XxuIUaK72wKI4KFng#Value", "No")))))));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.NoOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.YesOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$RC_36f2cdc7fc2c30db68dab6767886090d", "tradershub.model$RL_d05ad81e70a826256d161d2b9afc0f03"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_NoOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_YesOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_ListItemOnClick_RudderStackJS) {
+define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.NoOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.YesOnClick.RudderStackJS", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$ST_8011e4cc4d4f7bb6f204cedde99885f1Structure", "tradershub.model$EN_772522d7b54f56f59fb8e1e743f444ecEntityRecord", "tradershub.model$RL_af98e667e22024fcd3f4c2355613ad7f"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_NoOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_YesOnClick_RudderStackJS, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_controller_ListItemOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {
-                    getEmploymentStatuses$AggrRefresh: 0
-                };
-                this.dataFetchDependentsGraph = {
-                    getEmploymentStatuses$AggrRefresh: []
-                };
+                this.dataFetchDependenciesOriginal = {};
+                this.dataFetchDependentsGraph = {};
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
 
             // Aggregates and Data Actions
-            get getEmploymentStatuses$AggrRefresh() {
-                if (!(this.hasOwnProperty("_getEmploymentStatuses$AggrRefresh"))) {
-                    this._getEmploymentStatuses$AggrRefresh = function() {
-                        var innerBody = function(maxRecords, startIndex, callContext) {
-                            var model = this.model;
-                            var controller = this.controller;
-                            var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetEmploymentStatuses", "screenservices/tradershub/RealAccountCreationBlocks/EmploymentDetailsMobileBlock/ScreenDataSetGetEmploymentStatuses", "q_yCt7hT7woB7YmjOE0ilA", maxRecords, startIndex, function(b) {
-                                model.variables.getEmploymentStatusesAggr.dataFetchStatusAttr = b;
-                            }, function(json) {
-                                model.variables.getEmploymentStatusesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getEmploymentStatusesAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false);
-                        }.bind(this);
-                        return OS.Logger.startActiveSpan("GetEmploymentStatuses", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "GetEmploymentStatuses");
-                                span.setAttribute("outsystems.function.key", "277b34b8-d67e-43e7-bd13-48534e3bb5a8");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return innerBody();
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 0);
-
-                    };
-                }
-
-                return this._getEmploymentStatuses$AggrRefresh;
-            }
-            set getEmploymentStatuses$AggrRefresh(value) {
-                this._getEmploymentStatuses$AggrRefresh = value;
-            }
-
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = ["getEmploymentStatuses$AggrRefresh"];
+                    this._dataFetchActionNames = [];
                 }
 
                 return this._dataFetchActionNames;
@@ -448,6 +411,8 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                                 controller.ensureControllerAlive("NoOnClick");
                                 callContext = controller.callContext(callContext);
                                 // Assisgn Employement Status
+                                // RealSignupNoTaxInformation = True
+                                tradershubClientVariables.setRealSignupNoTaxInformation(true);
                                 OS.Logger.startActiveSpan("RudderStack", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "RudderStack");
@@ -541,6 +506,9 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                             try {
                                 controller.ensureControllerAlive("YesOnClick");
                                 callContext = controller.callContext(callContext);
+                                // Assisgn Employement Status
+                                // RealSignupNoTaxInformation = False
+                                tradershubClientVariables.setRealSignupNoTaxInformation(false);
                                 OS.Logger.startActiveSpan("RudderStack", function(span) {
                                     if (span) {
                                         span.setAttribute("code.function", "RudderStack");
@@ -599,9 +567,15 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                                 callContext = controller.callContext(callContext);
                                 var vars = new OS.DataTypes.VariableHolder(new(controller.constructor.getVariableGroupType("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.ListItemOnClick$vars"))());
                                 vars.value.statusInLocal = statusIn;
+                                var listIndexOfVar = new OS.DataTypes.VariableHolder();
                                 // RealSignupEmployementStatus = Status
                                 tradershubClientVariables.setRealSignupEmployementStatus(vars.value.statusInLocal);
-                                if ((((vars.value.statusInLocal === "Student") || (vars.value.statusInLocal === "Unemployed")))) {
+                                // Execute Action: ListIndexOf
+                                listIndexOfVar.value = OS.SystemActions.listIndexOf(model.variables.tINValidationsResponseIn.tin_validationsAttr.tin_employment_status_bypassAttr, function(p) {
+                                    return (tradershubClientVariables.getRealSignupEmployementStatus() === p);
+                                }, callContext);
+
+                                if (((listIndexOfVar.value.positionOut > -1))) {
                                     // ShowTaxConfirmationPopup = True
                                     model.variables.showTaxConfirmationPopupVar = true;
                                 } else {
@@ -624,6 +598,8 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                                         }
 
                                     }, 1);
+                                    // RealSignupPassedStepCount = If
+                                    tradershubClientVariables.setRealSignupPassedStepCount(((tradershubClientVariables.getRealSignupIsIDVSupported()) ? (4) : (3)));
                                     // Destination: /tradershub/EmploymentDetailsForm
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "employment-details/form", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
@@ -645,15 +621,15 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                 this.__listItemOnClick$Action = value;
             }
 
-            get _linkOnClick$Action() {
-                if (!(this.hasOwnProperty("__linkOnClick$Action"))) {
-                    this.__linkOnClick$Action = function(callContext) {
+            get _popupCloseOnClick$Action() {
+                if (!(this.hasOwnProperty("__popupCloseOnClick$Action"))) {
+                    this.__popupCloseOnClick$Action = function(callContext) {
                         var model = this.model;
                         var controller = this.controller;
                         var idService = this.idService;
-                        return OS.Logger.startActiveSpan("LinkOnClick", function(span) {
+                        return OS.Logger.startActiveSpan("PopupCloseOnClick", function(span) {
                             if (span) {
-                                span.setAttribute("code.function", "LinkOnClick");
+                                span.setAttribute("code.function", "PopupCloseOnClick");
                                 span.setAttribute("outsystems.function.key", "96c4a22f-ff21-43bd-a194-eb82e2eff670");
                                 span.setAttribute("outsystems.function.owner.name", "tradershub");
                                 span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
@@ -661,7 +637,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                             }
 
                             try {
-                                controller.ensureControllerAlive("LinkOnClick");
+                                controller.ensureControllerAlive("PopupCloseOnClick");
                                 callContext = controller.callContext(callContext);
                                 // RealSignupEmployementStatus = NullTextIdentifier
                                 tradershubClientVariables.setRealSignupEmployementStatus(OS.BuiltinFunctions.nullTextIdentifier());
@@ -678,10 +654,10 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                     };
                 }
 
-                return this.__linkOnClick$Action;
+                return this.__popupCloseOnClick$Action;
             }
-            set _linkOnClick$Action(value) {
-                this.__linkOnClick$Action = value;
+            set _popupCloseOnClick$Action(value) {
+                this.__popupCloseOnClick$Action = value;
             }
 
 
@@ -781,11 +757,11 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
 
             }
 
-            linkOnClick$Action(callContext) {
+            popupCloseOnClick$Action(callContext) {
                 var controller = this.controller;
-                return OS.Logger.startActiveSpan("LinkOnClick__proxy", function(span) {
+                return OS.Logger.startActiveSpan("PopupCloseOnClick__proxy", function(span) {
                     if (span) {
-                        span.setAttribute("code.function", "LinkOnClick");
+                        span.setAttribute("code.function", "PopupCloseOnClick");
                         span.setAttribute("outsystems.function.key", "96c4a22f-ff21-43bd-a194-eb82e2eff670");
                         span.setAttribute("outsystems.function.owner.name", "tradershub");
                         span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
@@ -793,7 +769,7 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                     }
 
                     try {
-                        return controller.safeExecuteClientAction(controller._linkOnClick$Action, callContext);
+                        return controller.safeExecuteClientAction(controller._popupCloseOnClick$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -947,5 +923,25 @@ define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$co
                 form_name: "real_account_signup_form_outsystems"
             }
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "vpfH7XxuIUaK72wKI4KFng#Value": "Non",
+        "UjgOn49vA0i5j0q_u3WkMQ#Value": "Oui",
+        "8lnK3Aap7EuKYmmhAQjX3Q#Value": "Avez-vous un numéro d\'identification fiscale ?",
+        "dIuE3Avork6tOWGN7Vxl_w#Value": "Informations fiscales",
+        "HragfIjHc0Cps6Am_01KOw#Value": "Sélectionnez votre statut d\'emploi"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.EmploymentDetailsMobileBlock.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_EmploymentDetailsMobileBlock_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel) {
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.model", "OutSystemsUI.controller", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, OutSystemsUIModel, OutSystemsUIController) {
     var OS = OSRuntimeCore;
 
 
@@ -47,7 +47,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$model", [
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$model", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_model, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller, tradershubClientVariables, OSWidgets) {
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$model", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, React, OSView, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_model, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller, tradershubClientVariables, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -179,7 +179,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                 extendedProperties: {
                     style: "margin-bottom: 0px;"
                 },
-                text: ["First (and middle) name"],
+                text: [$text(getTranslation("zoWitfJS5UayquvqrK5HXA#Value", "First (and middle) name"))],
                 _idProps: {
                     service: idService,
                     uuid: "6"
@@ -231,7 +231,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                     uuid: "9"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, "Last name"), React.createElement(OSWidgets.Input, {
+            }, $text(getTranslation("3szrtOFgn0SyvVNBVKprTQ#Value", "Last name"))), React.createElement(OSWidgets.Input, {
                 _validationProps: {
                     validationService: validationService,
                     validationParentId: idService.getId("NameForm")
@@ -297,7 +297,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                 extendedProperties: {
                     style: "font-size: 12px; font-weight: bold;"
                 },
-                text: ["name"],
+                text: [$text(getTranslation("HNzGxxooR02wz0iCoXz5XA#Value", "name"))],
                 _idProps: {
                     service: idService,
                     uuid: "15"
@@ -307,7 +307,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                 extendedProperties: {
                     style: "font-size: 12px;"
                 },
-                text: [" exactly as it appears on your identity document."],
+                text: [$text(getTranslation("HnUKgbuKnk2ntHPgutrthQ#Value", " exactly as it appears on your identity document."))],
                 _idProps: {
                     service: idService,
                     uuid: "16"
@@ -393,7 +393,7 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "",
-                text: ["Next"],
+                text: [$text(getTranslation("LpW2OGqeaUiOXtNYVMfCYQ#Value", "Next"))],
                 _idProps: {
                     service: idService,
                     uuid: "23"
@@ -405,12 +405,12 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$view", ["
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller.OnClickNext.ValidateJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller.OnClickNext.RudderStackJS", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller_OnClickNext_ValidateJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller_OnClickNext_RudderStackJS) {
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller.OnClickNext.ValidateJS", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controller.OnClickNext.RudderStackJS", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetFocus", "tradershub.model$ST_3a6e5c84ccd1db0dd256408ff639cec5Structure", "tradershub.model$ST_89997516e5fa7eccf341304acb63651bStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller_OnClickNext_ValidateJS, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_controller_OnClickNext_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -434,6 +434,45 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
             }
 
             // Client Actions - Methods
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "224d9b63-ed59-4406-b3b7-3430d4029436");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            try {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                var setFocusVar = new OS.DataTypes.VariableHolder();
+                                // Execute Action: SetFocus
+                                setFocusVar.value = OutSystemsUIController.default.setFocus$Action(idService.getId("Input_FirstName"), callContext);
+
+                            } finally {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            }
+
+                        }, 1);
+                    };
+                }
+
+                return this.__onReady$Action;
+            }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
+            }
+
             get _onClickNext$Action() {
                 if (!(this.hasOwnProperty("__onClickNext$Action"))) {
                     this.__onClickNext$Action = function(callContext) {
@@ -516,6 +555,8 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
                                         }
 
                                     }, 1);
+                                    // RealSignupPassedStepCount = 2
+                                    tradershubClientVariables.setRealSignupPassedStepCount(2);
                                     // Destination: /tradershub/PersonalDetailsDateOfBirth
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details/dob", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
@@ -572,6 +613,30 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
                 this.__onInitialize$Action = value;
             }
 
+
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "224d9b63-ed59-4406-b3b7-3430d4029436");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    try {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                    } finally {
+                        if (span) {
+                            span.end();
+                        }
+
+                    }
+
+                }, 0);
+
+            }
 
             onClickNext$Action(callContext) {
                 var controller = this.controller;
@@ -643,7 +708,14 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;
@@ -775,5 +847,25 @@ define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$controlle
                 form_name: "real_account_signup_form_outsystems"
             }
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "LpW2OGqeaUiOXtNYVMfCYQ#Value": "Suivant",
+        "HnUKgbuKnk2ntHPgutrthQ#Value": "exactement tel qu\'il apparaît sur votre document d\'identité.",
+        "HNzGxxooR02wz0iCoXz5XA#Value": "nom",
+        "3szrtOFgn0SyvVNBVKprTQ#Value": "Nom de famille",
+        "zoWitfJS5UayquvqrK5HXA#Value": "Prénom (et deuxième prénom)"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.PersonalDetailsMobile.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_PersonalDetailsMobile_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

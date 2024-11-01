@@ -1,0 +1,31 @@
+﻿.real-demo-switcher {
+    height: 40px;
+    min-width: 120px;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: #F1F3F5;
+    margin-left: 24px;
+}
+
+.tablet .real-demo-switcher,
+.phone .real-demo-switcher {
+    margin-left: 0;
+}
+
+.real-demo-switcher-item {
+    border: none;
+    height: 32px;
+    min-width: 56px;
+    padding: 5px 8px;
+    color: #4F575E;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+[data-button-group-item].button-group-selected-item {
+    color: #101213;
+    background-color: #fff;
+}

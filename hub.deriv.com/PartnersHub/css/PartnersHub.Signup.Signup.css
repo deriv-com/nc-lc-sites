@@ -49,3 +49,20 @@ div[data-block="ButtonVariants.PrimaryButton"] {
 div[data-block="Utilities.ButtonLoading"] {
     width: 100% !important;
 }
+
+.ph-terms {
+    color: var(--Neutral-Neutral-9, #272B30);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.ph-terms-link {
+    color: var(--Neutral-Neutral-9, #272B30);
+    font-size: 12px;
+    font-style: normal;
+    line-height: 18px;
+    font-weight: 700;
+    text-decoration-line: underline;
+}

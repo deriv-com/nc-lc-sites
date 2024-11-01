@@ -140,7 +140,7 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
                 extendedProperties: {
                     style: "font-size: 18px; font-weight: bold;"
                 },
-                text: ["Identity verification"],
+                text: [$text(getTranslation("sQ2mDUpLSkeVulBs+z6XMA#Value", "Identity verification"))],
                 _idProps: {
                     service: idService,
                     uuid: "2"
@@ -167,7 +167,7 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
                 extendedProperties: {
                     style: "color: #222; font-style: normal; font-weight: bold; margin-bottom: 8px; text-decoration: underline;"
                 },
-                text: ["Skip"],
+                text: [$text(getTranslation("DL2B6kiE2UaHdszRXywp2w#Value", "Skip"))],
                 _idProps: {
                     service: idService,
                     uuid: "4"
@@ -256,12 +256,12 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
 
     return View;
 });
-define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.JavaScript1JS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_JavaScript1JS) {
+define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$translationsResources", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.OnReady.GetIDVCountryJS", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$controller.ListItemOnClick.JavaScript1JS", "tradershub.model$ST_81244dbb8e72a05a708e9a449198444eStructure", "tradershub.model$RL_9103c933715345647d34a3ebfe5f38fd"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_TranslationsResources, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_OnReady_GetIDVCountryJS, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_controller_ListItemOnClick_JavaScript1JS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -697,5 +697,22 @@ define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc
             $parameters.AdditionalDocumentFormat = document?.additional?.format ?? ""
             $resolve()
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "DL2B6kiE2UaHdszRXywp2w#Value": "Sauter",
+        "sQ2mDUpLSkeVulBs+z6XMA#Value": "Vérification d\'identité"
+    };
+});
+
+define("tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationBlocks.IDVDocumentSelectionMobileBlock.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationBlocks_IDVDocumentSelectionMobileBlock_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

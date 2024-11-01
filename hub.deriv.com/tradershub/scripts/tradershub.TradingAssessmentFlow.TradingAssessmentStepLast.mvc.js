@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$model", [
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
         get title() {
 
 
-            return "TradingAssessmentStepLast";
+            return OSView.BaseView.BaseWebScreen.getTranslation("INwAuj5ozE2vR_fhRFGBRw#Title", "TradingAssessmentStepLast");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["10/10"],
+                            text: [$text(getTranslation("eUjnOmdC8U6iP568fVBU+g#Value", "10/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("1I+UMKI5rUKpLMA8FWKF2w#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["When are you required to pay an initial margin?"],
+                            text: [$text(getTranslation("CeAiAxURt0+Io030q4CvMQ#Value", "When are you required to pay an initial margin?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getInitialMargin(), function(value) {
+                                tradershubClientVariables.setInitialMargin(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "When opening a leveraged CFD trade."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("RxBG7mSHAkWxwNVdWLjcyQ#Value", "When opening a leveraged CFD trade."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -296,7 +299,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "When trading multipliers."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("KTh+4DRTEkKyPjN7LZnxaw#Value", "When trading multipliers."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "When buying shares of a company."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("YUQNTqtA2Eeq0U_5Qxs3VA#Value", "When buying shares of a company."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -322,7 +325,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "All of the above."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("cs5ANllQhkCgcApdtJOk4Q#Value", "All of the above."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -356,7 +359,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("68dZI0WdbkCekiAObcC18g#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -365,19 +368,19 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$view", ["
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getInitialMargin()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentStepLast_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentStepLast_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -419,9 +422,12 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$controlle
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getInitialMargin() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
+                                } else {
+                                    // Destination: /tradershub/IncomeSource
+                                    return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "financial-assessment/source-of-income", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                                 }
 
                             } finally {
@@ -551,4 +557,27 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$controlle
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "68dZI0WdbkCekiAObcC18g#Value": "Suivant",
+        "cs5ANllQhkCgcApdtJOk4Q#Value": "Tout ce qui précède.",
+        "YUQNTqtA2Eeq0U_5Qxs3VA#Value": "Lors de l\'achat d\'actions d\'une entreprise.",
+        "KTh+4DRTEkKyPjN7LZnxaw#Value": "Lorsqu\'on négocie des multiplicateurs.",
+        "RxBG7mSHAkWxwNVdWLjcyQ#Value": "Lors de l\'ouverture d\'un trade CFD avec effet de levier.",
+        "CeAiAxURt0+Io030q4CvMQ#Value": "Quand devez-vous payer une marge initiale ?",
+        "1I+UMKI5rUKpLMA8FWKF2w#Value": "Ceci est requis.",
+        "eUjnOmdC8U6iP568fVBU+g#Value": "Jeu 10 oct. 2024 15:00:00 GMT+0800 (heure normale de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentStepLast.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentStepLast_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentStepLast_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

@@ -1,0 +1,10 @@
+﻿.ph-sticky-btn-bottom {
+    padding: 16px;
+    border-top: 1px solid var(--Neutral-Neutral-3, #E9ECEF);
+    background: var(--Neutral-Neutral-0, #FFF);
+    position: sticky;
+    bottom: 0;
+}
+.desktop .ph-sticky-btn-bottom {
+    display: none;
+}

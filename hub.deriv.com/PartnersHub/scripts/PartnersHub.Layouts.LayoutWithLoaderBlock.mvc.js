@@ -70,7 +70,7 @@ define("PartnersHub.Layouts.LayoutWithLoaderBlock.mvc$view", ["@outsystems/runti
         }
 
         static getCssDependencies() {
-            return ["css/OutSystemsReactWidgets.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/PartnersHub.Layouts.LayoutWithLoaderBlock.css"];
         }
 
         static getJsDependencies() {
@@ -161,6 +161,7 @@ define("PartnersHub.Layouts.LayoutWithLoaderBlock.mvc$view", ["@outsystems/runti
                             return [React.createElement(OSWidgets.Placeholder, {
                                 align: /*Default*/ 0,
                                 content: _this.props.placeholders.placeholder,
+                                style: "ph-layout-placeholder",
                                 _idProps: {
                                     service: idService,
                                     name: "Placeholder"

@@ -705,7 +705,7 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResour
         "D7GIKBcNckmFNlI5AzX_eg#Value": "إنشاء كلمة مرور",
         "ryfwHuhUXEaeQiOWlRR9vQ#ValueExpression.1281629883.1": "كلمة المرور",
         "Hb9Gdw4u8Eeak153q49qYA#Value": "كلمة المرور",
-        "w5Et4V_7ekuNEFI541nGmg#Value": "لتمكين عمولة CFDs، قم بإعداد كلمة مرور MT5 الخاصة بك"
+        "w5Et4V_7ekuNEFI541nGmg#Value": "لتفعيل عمولة عقود الفروقات (CFDs)، قم بإعداد كلمة مرور MT5 الخاصة بك."
     };
 });
 
@@ -723,7 +723,7 @@ define("PartnersHub.RealAccountCreationFlow.CFDCommission.mvc$translationsResour
         "D7GIKBcNckmFNlI5AzX_eg#Value": "Crear contraseña",
         "ryfwHuhUXEaeQiOWlRR9vQ#ValueExpression.1281629883.1": "Contraseña",
         "Hb9Gdw4u8Eeak153q49qYA#Value": "Contraseña",
-        "w5Et4V_7ekuNEFI541nGmg#Value": "Para habilitar la comisión de CFDs, configura tu contraseña de MT5."
+        "w5Et4V_7ekuNEFI541nGmg#Value": "Para habilitar la comisión de CFD, configure su contraseña de MT5."
     };
 });
 

@@ -1,8 +1,6 @@
 define("YupValidationsOfficial.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "e0162685-1b92-40fe-8f15-36b54a7b8361",
         applicationName: "Yup Validations Official",
         userProviderName: "Users",
@@ -18,10 +16,9 @@ define("YupValidationsOfficial.appDefinition", ["@outsystems/runtime-core-js"], 
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        frontendBuildWorkerVersion: "vv18.35.0",
+        buildSDKVersion: "v17.1688.1.0",
+        clientRuntimeVersion: "6.16.5",
         useESM: false,
         appVersion: "15"
     };

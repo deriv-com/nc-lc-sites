@@ -1,4 +1,4 @@
-define("tradershub.MainFlow.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "tradershub.Common.controller", "tradershub.clientVariables", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.MainFlow.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "BrowserConsoleLogging.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.MainFlow.controller$translationsResources", "BrowserConsoleLogging.controller$ConsoleLog", "tradershub.referencesHealth", "tradershub.referencesHealth$BrowserConsoleLogging"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, BrowserConsoleLoggingController, tradershub_CommonController, tradershubClientVariables, tradershub_MainFlow_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_MainFlowController = exports;
     class Controller extends
@@ -80,5 +80,10 @@ define("tradershub.MainFlow.controller", ["exports", "@outsystems/runtime-core-j
 
 
 
-    tradershub_MainFlowController.default = new Controller();
+    tradershub_MainFlowController.default = new Controller(tradershub_MainFlow_Controller_translationsResources);
+});
+
+
+define("tradershub.MainFlow.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

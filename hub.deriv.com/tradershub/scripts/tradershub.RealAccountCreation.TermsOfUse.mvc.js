@@ -121,7 +121,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
             var _this = this;
 
 
-            return "Terms of use | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("I6ndCk9qJkmgABWJerHPww#TitleExpression.-1562683983.1", "Terms of use | Deriv");
         }
 
         internalRender() {
@@ -175,7 +175,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
-                                style: "padding: 0px 0px 24px 0px;"
+                                style: "height: auto;"
                             },
                             style: "full-width",
                             visible: true,
@@ -198,13 +198,13 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: bold; margin-bottom: 8px;"
                             },
-                            text: ["Jurisdiction and choice of law"],
+                            text: [$text(getTranslation("VusAJHa2gUa7fnWF5noIAg#Value", "Jurisdiction and choice of law"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), "Your account will be opened with Deriv (SVG) LLC, and will be subject to the laws of Saint Vincent and the Grenadines.", React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
+                        }), $text(getTranslation("I3sTK7Z6wE6FTk5+eCFklw#Value", "Your account will be opened with Deriv (SVG) LLC, and will be subject to the laws of Saint Vincent and the Grenadines.")), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -241,13 +241,13 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: bold; margin-bottom: 8px;"
                             },
-                            text: ["Risk warning"],
+                            text: [$text(getTranslation("eXC3CAxTc0+k6VK++rLwlQ#Value", "Risk warning"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), "The financial trading services offered on this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the purchase of financial contracts. Transactions in financial contracts carry a high degree of risk. If the contracts you purchased expire as worthless, you will lose all your investment, which includes the contract premium.", React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
+                        }), $text(getTranslation("_x0u+xX_Pk+f6Z01UcVt1g#Value", "The financial trading services offered on this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the purchase of financial contracts. Transactions in financial contracts carry a high degree of risk. If the contracts you purchased expire as worthless, you will lose all your investment, which includes the contract premium.")), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -284,7 +284,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: bold; margin-bottom: 8px;"
                             },
-                            text: ["FATCA declaration"],
+                            text: [$text(getTranslation("ym785UB6uEOv0LxAxfmlwg#Value", "FATCA declaration"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "9"
@@ -304,42 +304,42 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 uuid: "11"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "US citizenship or lawful permanent resident (green card) status"), React.createElement(OSWidgets.AdvancedHtml, {
+                        }, $text(getTranslation("BMx7bOIxzUezmaiP7uJzNA#Value", "US citizenship or lawful permanent resident (green card) status"))), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
                                 uuid: "12"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "A US birthplace"), React.createElement(OSWidgets.AdvancedHtml, {
+                        }, $text(getTranslation("91iofZa7LUu0QF2w2HZr5g#Value", "A US birthplace"))), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
                                 uuid: "13"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "A US residence address or a US correspondence address (including a US PO box)"), React.createElement(OSWidgets.AdvancedHtml, {
+                        }, $text(getTranslation("UDoEQvO1_UiDZGRjPCadow#Value", "A US residence address or a US correspondence address (including a US PO box)"))), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
                                 uuid: "14"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Standing instructions to transfer funds to an account maintained in the United States, or directions regularly received from a US address"), React.createElement(OSWidgets.AdvancedHtml, {
+                        }, $text(getTranslation("hOVLqMM7LUC4cFFFmAzhDQ#Value", "Standing instructions to transfer funds to an account maintained in the United States, or directions regularly received from a US address"))), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
                                 uuid: "15"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "An “in care of” address or a “hold mail” address that is the sole address with respect to the client"), React.createElement(OSWidgets.AdvancedHtml, {
+                        }, $text(getTranslation("7he_rjhVW0WJl65CjTu67g#Value", "An “in care of” address or a “hold mail” address that is the sole address with respect to the client"))), React.createElement(OSWidgets.AdvancedHtml, {
                             tag: "li",
                             _idProps: {
                                 service: idService,
                                 uuid: "16"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "A power of attorney or signatory authority granted to a person with a US address")), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("RquJsScZek2gVLMPonVWtg#Value", "A power of attorney or signatory authority granted to a person with a US address")))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             visible: true,
@@ -348,27 +348,27 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "If any of the above applies to you, select ", React.createElement(OSWidgets.Text, {
+                        }, $text(getTranslation("Yt8YpD6lJUyGEx4M60aN1g#Value", "If any of the above applies to you, select ")), React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-weight: bold;"
                             },
-                            text: ["Yes"],
+                            text: [$text(getTranslation("NJ4r1N8vaEm5zYwJXiea9A#Value", "Yes"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "18"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), ". Otherwise, select ", React.createElement(OSWidgets.Text, {
+                        }), $text(getTranslation("5qoceU1ez0yLpAeHjUX7RQ#Value", ". Otherwise, select ")), React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-weight: bold;"
                             },
-                            text: ["No"],
+                            text: [$text(getTranslation("4gpmc3q+30WgOIUdx+UR+A#Value", "No"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "19"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), "."), React.createElement(OSWidgets.Container, {
+                        }), $text(getTranslation("xJFBmj1O3U6dwarP4LsyLQ#Value", "."))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -412,7 +412,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 name: "Yes"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Yes"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("pRjPQzGlgUSZxMS3u7A8+w#Value", "Yes"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -425,7 +425,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 name: "No"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "No")), $if(model.variables.validFieldsVar.fatcaDeclareAttr, false, this, function() {
+                        }, $text(getTranslation("WZWbOH6yRkai3UAR8iY76A#Value", "No")))), $if(model.variables.validFieldsVar.fatcaDeclareAttr, false, this, function() {
                             return [];
                         }, function() {
                             return [React.createElement(OSWidgets.Expression, {
@@ -474,13 +474,13 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "font-size: 16px; font-weight: bold; margin-bottom: 8px;"
                             },
-                            text: ["Real accounts are not available to politically exposed persons (PEPs)"],
+                            text: [$text(getTranslation("r2Yxl65wUk+wtwYbEcyPGw#Value", "Real accounts are not available to politically exposed persons (PEPs)"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "27"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), "A politically exposed person (PEP) is someone appointed with a prominent public position. Close associates and family members of a PEP are also considered to be PEPs.", React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
+                        }), $text(getTranslation("pO86_0W3HUmaXyUXXwdp8Q#Value", "A politically exposed person (PEP) is someone appointed with a prominent public position. Close associates and family members of a PEP are also considered to be PEPs.")), React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -547,13 +547,22 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             gridProperties: {
                                 classes: "OSFillParent"
                             },
+                            style: "text-neutral-9",
                             targetWidget: "Checkbox_PEP",
                             _idProps: {
                                 service: idService,
                                 uuid: "32"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I am not a PEP and have never been a PEP.")), $if(model.variables.validFieldsVar.pEPAttr, false, this, function() {
+                        }, React.createElement(OSWidgets.Text, {
+                            style: "text-neutral-9",
+                            text: [$text(getTranslation("fzXmFrM4eE6Ln7yxgEEoYA#Value", "I am not a PEP and have never been a PEP."))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "33"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }))), $if(model.variables.validFieldsVar.pEPAttr, false, this, function() {
                             return [];
                         }, function() {
                             return [React.createElement(OSWidgets.Text, {
@@ -561,10 +570,10 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                     style: "margin-top: 8px;"
                                 },
                                 style: "text-primary",
-                                text: ["This is required."],
+                                text: [$text(getTranslation("xMC4dNCQPU2RdjpgCxCsqQ#Value", "This is required."))],
                                 _idProps: {
                                     service: idService,
-                                    uuid: "33"
+                                    uuid: "34"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -575,7 +584,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "34"
+                                uuid: "35"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Checkbox, {
@@ -599,10 +608,18 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "36"
+                                uuid: "37"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "I agree to the", React.createElement(OSWidgets.Link, {
+                        }, React.createElement(OSWidgets.Text, {
+                            style: "text-neutral-9",
+                            text: [$text(getTranslation("QOwN3wQrYEW0TKYCWSMUpQ#Value", "I agree to the"))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "38"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             extendedProperties: {
                                 target: "_blank"
@@ -610,25 +627,35 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             gridProperties: {
                                 marginLeft: "4px"
                             },
+                            style: "text-neutral-9",
                             transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
                             url: OS.Navigation.generateScreenURL("https://deriv.com/terms-and-conditions#clients", {}),
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "37"
+                                uuid: "39"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "color: #272B30; font-weight: bold; text-decoration: underline;"
                             },
-                            text: ["terms and conditions"],
+                            style: "text-neutral-9",
+                            text: [$text(getTranslation("JPwweFvZvkOanle2ZaHzsQ#Value", "terms and conditions"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "38"
+                                uuid: "40"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        })), ".")), $if(model.variables.validFieldsVar.agreeToTermsAttr, false, this, function() {
+                        })), React.createElement(OSWidgets.Text, {
+                            style: "text-neutral-9",
+                            text: [$text(getTranslation("phRFM74P5EuqgZwaULHEhw#Value", "."))],
+                            _idProps: {
+                                service: idService,
+                                uuid: "41"
+                            },
+                            _widgetRecordProvider: widgetsRecordProvider
+                        }))), $if(model.variables.validFieldsVar.agreeToTermsAttr, false, this, function() {
                             return [];
                         }, function() {
                             return [React.createElement(OSWidgets.Expression, {
@@ -639,7 +666,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 value: "This is required.",
                                 _idProps: {
                                     service: idService,
-                                    uuid: "39"
+                                    uuid: "42"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -654,7 +681,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "40"
+                                    uuid: "43"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Container, {
@@ -667,7 +694,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 visible: true,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "41"
+                                    uuid: "44"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             }, React.createElement(OSWidgets.Checkbox, {
@@ -691,10 +718,18 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                 targetWidget: "Checkbox_Spain",
                                 _idProps: {
                                     service: idService,
-                                    uuid: "43"
+                                    uuid: "46"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
-                            }, "I hereby confirm that my request for opening an account with Deriv Investments (Europe) Ltd is made on my own initiative.")), $if(model.variables.validFieldsVar.pEPAttr, false, this, function() {
+                            }, React.createElement(OSWidgets.Text, {
+                                style: "text-neutral-9",
+                                text: [$text(getTranslation("bfzheCJXeUKMukyaueftxg#Value", "I hereby confirm that my request for opening an account with Deriv Investments (Europe) Ltd is made on my own initiative."))],
+                                _idProps: {
+                                    service: idService,
+                                    uuid: "47"
+                                },
+                                _widgetRecordProvider: widgetsRecordProvider
+                            }))), $if(model.variables.validFieldsVar.spainAgreementAttr, false, this, function() {
                                 return [];
                             }, function() {
                                 return [React.createElement(OSWidgets.Text, {
@@ -702,10 +737,10 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                         style: "margin-top: 8px;"
                                     },
                                     style: "text-primary",
-                                    text: ["This is required."],
+                                    text: [$text(getTranslation("UjFQ4fTUAkOlO+3KUyUAHQ#Value", "This is required."))],
                                     _idProps: {
                                         service: idService,
-                                        uuid: "44"
+                                        uuid: "48"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })];
@@ -718,11 +753,11 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "text-align: right;"
                             },
-                            style: "btn-container margin-y-base",
+                            style: "btn-container margin-top-base",
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "45"
+                                uuid: "49"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_ButtonLoading_mvc_view, {
@@ -746,7 +781,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "46",
+                                uuid: "50",
                                 alias: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -768,7 +803,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "47"
+                                            uuid: "51"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
                                     }, React.createElement(OSWidgets.Container, {
@@ -778,10 +813,10 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                                         visible: true,
                                         _idProps: {
                                             service: idService,
-                                            uuid: "48"
+                                            uuid: "52"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "Create account")];
+                                    }), $text(getTranslation("BWpnlDXN0EGrgGtZ3b9AKw#Value", "Create account")))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(model.variables.isExecutingVar)]
@@ -793,7 +828,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             style: "popup-dialog popup_account-already-exists",
                             _idProps: {
                                 service: idService,
-                                uuid: "49"
+                                uuid: "53"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -806,7 +841,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "50"
+                                uuid: "54"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -818,7 +853,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "51"
+                                uuid: "55"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Link, {
@@ -832,7 +867,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "52"
+                                uuid: "56"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -840,7 +875,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "53"
+                                uuid: "57"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -851,7 +886,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             }),
                             _idProps: {
                                 service: idService,
-                                uuid: "54"
+                                uuid: "58"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
@@ -874,7 +909,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "55",
+                                uuid: "59",
                                 alias: "7"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -885,7 +920,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "56"
+                                uuid: "60"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -897,7 +932,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "57"
+                                uuid: "61"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Image, {
@@ -905,7 +940,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             type: /*Static*/ 0,
                             _idProps: {
                                 service: idService,
-                                uuid: "58"
+                                uuid: "62"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Container, {
@@ -918,27 +953,27 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "59"
+                                uuid: "63"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-size: 18px; font-weight: bold;"
                             },
-                            text: ["Account already exists"],
+                            text: [$text(getTranslation("PwNGqEkCGECFPIKR3FeqVg#Value", "Account already exists"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "60"
+                                uuid: "64"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }), "If you think this is a mistake, contact us via live chat.")), React.createElement(OSWidgets.Container, {
+                        }), $text(getTranslation("UmktsKX6n0KmYFqdW2oPjA#Value", "If you think this is a mistake, contact us via live chat.")))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "display-flex flex-direction-column gap-s",
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "61"
+                                uuid: "65"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Container, {
@@ -949,7 +984,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             }),
                             _idProps: {
                                 service: idService,
-                                uuid: "62"
+                                uuid: "66"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OutSystemsUI_Utilities_Separator_mvc_view, {
@@ -972,7 +1007,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             },
                             _idProps: {
                                 service: idService,
-                                uuid: "63",
+                                uuid: "67",
                                 alias: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
@@ -1000,17 +1035,17 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "64"
+                                uuid: "68"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-weight: 500;"
                             },
-                            text: ["Try again"],
+                            text: [$text(getTranslation("MuFyNHS4c0+5HdSI5jqy+Q#Value", "Try again"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "65"
+                                uuid: "69"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })), React.createElement(OSWidgets.Button, {
@@ -1033,35 +1068,35 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$view", ["@outsystems/runti
                             visible: true,
                             _idProps: {
                                 service: idService,
-                                uuid: "66"
+                                uuid: "70"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         }, React.createElement(OSWidgets.Text, {
                             extendedProperties: {
                                 style: "font-weight: 500;"
                             },
-                            text: ["Live chat"],
+                            text: [$text(getTranslation("QfmkX07qmkClBghhnPprPA#Value", "Live chat"))],
                             _idProps: {
                                 service: idService,
-                                uuid: "67"
+                                uuid: "71"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.isDuplicateAccountVar), asPrimitiveValue(model.variables.isExecutingVar), asPrimitiveValue(model.variables.spainAgreementVar), asPrimitiveValue(tradershubClientVariables.getIsSpain()), asPrimitiveValue(model.variables.agreeToTermsVar), asPrimitiveValue(model.variables.pEPVar), asPrimitiveValue(model.variables.validFieldsVar.agreeToTermsAttr), asPrimitiveValue(model.variables.validFieldsVar.pEPAttr), asPrimitiveValue(model.variables.validFieldsVar.fatcaDeclareAttr), asPrimitiveValue(tradershubClientVariables.getRealSignupFatcaDeclaration())]
+                _dependencies: [asPrimitiveValue(model.variables.isDuplicateAccountVar), asPrimitiveValue(model.variables.isExecutingVar), asPrimitiveValue(model.variables.spainAgreementVar), asPrimitiveValue(tradershubClientVariables.getIsSpain()), asPrimitiveValue(model.variables.agreeToTermsVar), asPrimitiveValue(model.variables.pEPVar), asPrimitiveValue(model.variables.validFieldsVar.spainAgreementAttr), asPrimitiveValue(model.variables.validFieldsVar.agreeToTermsAttr), asPrimitiveValue(model.variables.validFieldsVar.pEPAttr), asPrimitiveValue(model.variables.validFieldsVar.fatcaDeclareAttr), asPrimitiveValue(tradershubClientVariables.getRealSignupFatcaDeclaration())]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackFailureJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.ValidateJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.LiveChatOnClick.SyncLocalStorageJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackFailureJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_ValidateJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_LiveChatOnClick_SyncLocalStorageJS) {
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.TermsOfUse.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackFailureJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.ValidateJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", "tradershub.RealAccountCreation.TermsOfUse.mvc$controller.LiveChatOnClick.SyncLocalStorageJS", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_bc7a92cde0807afeabb9fb7ba2ef9c4cStructure", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$SyncAccountInfo", "tradershub.controller$NewAccountReal"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_TermsOfUse_mvc_TranslationsResources, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackFailureJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_ValidateJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, tradershub_RealAccountCreation_TermsOfUse_mvc_controller_LiveChatOnClick_SyncLocalStorageJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_TermsOfUse_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -1234,6 +1269,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
                                                 FatcaDeclare: OS.DataConversion.JSNodeParamConverter.to(tradershubClientVariables.getRealSignupFatcaDeclaration(), OS.DataTypes.DataTypes.Text),
                                                 AgreeToTerms: OS.DataConversion.JSNodeParamConverter.to(model.variables.agreeToTermsVar, OS.DataTypes.DataTypes.Boolean),
                                                 PEP: OS.DataConversion.JSNodeParamConverter.to(model.variables.pEPVar, OS.DataTypes.DataTypes.Boolean),
+                                                SpainAgreement: OS.DataConversion.JSNodeParamConverter.to(model.variables.spainAgreementVar, OS.DataTypes.DataTypes.Boolean),
                                                 ValidFields: OS.DataConversion.JSNodeParamConverter.to("", OS.DataTypes.DataTypes.Text),
                                                 IsValid: OS.DataConversion.JSNodeParamConverter.to(false, OS.DataTypes.DataTypes.Boolean)
                                             }, function($parameters) {
@@ -1262,33 +1298,35 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
                                                 model.variables.validFieldsVar.pEPAttr = true;
                                                 // IsExecuting = True
                                                 model.variables.isExecutingVar = true;
+                                                // ValidFields.SpainAgreement = True
+                                                model.variables.validFieldsVar.spainAgreementAttr = true;
                                                 // RealSignupCurrentStep = 7
                                                 tradershubClientVariables.setRealSignupCurrentStep(7);
+                                                OS.Logger.startActiveSpan("RudderStackSuccess", function(span) {
+                                                    if (span) {
+                                                        span.setAttribute("code.function", "RudderStackSuccess");
+                                                        span.setAttribute("outsystems.function.key", "dc630acf-8b92-4c80-8122-fff598089c6e");
+                                                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                                        span.setAttribute("outsystems.function.type", "JAVASCRIPT");
+                                                    }
+
+                                                    try {
+                                                        return controller.safeExecuteJSNode(tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, "RudderStackSuccess", "ButtonOnClick", null, function($parameters) {}, {}, {});
+                                                    } finally {
+                                                        if (span) {
+                                                            span.end();
+                                                        }
+
+                                                    }
+
+                                                }, 1);
                                                 // Execute Action: NewAccountReal
                                                 model.flush();
                                                 return tradershubController.default.newAccountReal$Action(callContext).then(function(value) {
                                                     newAccountRealVar.value = value;
                                                 }).then(function() {
                                                     if ((newAccountRealVar.value.isSuccessOut)) {
-                                                        OS.Logger.startActiveSpan("RudderStackSuccess", function(span) {
-                                                            if (span) {
-                                                                span.setAttribute("code.function", "RudderStackSuccess");
-                                                                span.setAttribute("outsystems.function.key", "dc630acf-8b92-4c80-8122-fff598089c6e");
-                                                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                                                span.setAttribute("outsystems.function.type", "JAVASCRIPT");
-                                                            }
-
-                                                            try {
-                                                                return controller.safeExecuteJSNode(tradershub_RealAccountCreation_TermsOfUse_mvc_controller_ButtonOnClick_RudderStackSuccessJS, "RudderStackSuccess", "ButtonOnClick", null, function($parameters) {}, {}, {});
-                                                            } finally {
-                                                                if (span) {
-                                                                    span.end();
-                                                                }
-
-                                                            }
-
-                                                        }, 1);
                                                         // IsExecuting = False
                                                         model.variables.isExecutingVar = false;
                                                     } else {
@@ -1315,6 +1353,10 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
                                                         model.variables.isDuplicateAccountVar = (newAccountRealVar.value.errorCodeOut === "DuplicateAccount");
                                                         // IsExecuting = False
                                                         model.variables.isExecutingVar = false;
+                                                        if ((((newAccountRealVar.value.errorCodeOut) !== ("DuplicateAccount")))) {
+                                                            OS.FeedbackMessageService.showFeedbackMessage(newAccountRealVar.value.errorMessageOut, /*Info*/ 0);
+                                                        }
+
                                                     }
 
                                                 });
@@ -1327,6 +1369,8 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller", ["@outsystems
                                                 model.variables.validFieldsVar.agreeToTermsAttr = jSONDeserializeTermsOfUseValidFieldVar.value.dataOut.agreeToTermsAttr;
                                                 // ValidFields.PEP = JSONDeserializeTermsOfUseValidField.Data.PEP
                                                 model.variables.validFieldsVar.pEPAttr = jSONDeserializeTermsOfUseValidFieldVar.value.dataOut.pEPAttr;
+                                                // ValidFields.SpainAgreement = JSONDeserializeTermsOfUseValidField.Data.SpainAgreement
+                                                model.variables.validFieldsVar.spainAgreementAttr = jSONDeserializeTermsOfUseValidFieldVar.value.dataOut.spainAgreementAttr;
                                             }
 
                                         });
@@ -1663,7 +1707,7 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.V
                 FatcaDeclare: $parameters.FatcaDeclare,
                 PEP: $parameters.PEP,
                 AgreeToTerms: $parameters.AgreeToTerms,
-
+                // SpainAgreement: $parameters.SpainAgreement
             }
 
 
@@ -1671,18 +1715,15 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.V
                 FatcaDeclare: yup.string().required("This is required"),
                 PEP: yup.bool().oneOf([true], 'This is required'),
                 AgreeToTerms: yup.bool().oneOf([true], 'This is required'),
+                // SpainAgreement: yup.bool().oneOf([true], 'This is required'),
 
             });
 
             const {
                 validFields
             } = validate(validationSchema, payload)
-
-
             $parameters.ValidFields = JSON.stringify(validFields)
-
             $parameters.IsValid = Object.values(validFields).every(v => v)
-
             $resolve()
         });
     };
@@ -1690,14 +1731,6 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.V
 
 define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.ButtonOnClick.RudderStackSuccessJS", [], function() {
     return function($actions, $roles, $public) {
-        cacheTrackEvents.track({
-            name: "ce_real_account_signup_form",
-            properties: {
-                action: "real_signup_finished",
-                form_name: "real_account_signup_form_outsystems"
-            }
-        });
-
         cacheTrackEvents.track({
             name: "ce_real_account_signup_form",
             properties: {
@@ -1762,5 +1795,54 @@ define("tradershub.RealAccountCreation.TermsOfUse.mvc$controller.LiveChatOnClick
         }, 100)
 
 
+    };
+});
+
+
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "QfmkX07qmkClBghhnPprPA#Value": "Chat en direct",
+        "MuFyNHS4c0+5HdSI5jqy+Q#Value": "Réessayez",
+        "UmktsKX6n0KmYFqdW2oPjA#Value": "Si vous pensez qu\'il s\'agit d\'une erreur, contactez-nous via le chat en direct.",
+        "PwNGqEkCGECFPIKR3FeqVg#Value": "Un compte existe déjà",
+        "BWpnlDXN0EGrgGtZ3b9AKw#Value": "Créer un compte",
+        "UjFQ4fTUAkOlO+3KUyUAHQ#Value": "Ceci est requis.",
+        "bfzheCJXeUKMukyaueftxg#Value": "Je confirme par la présente que ma demande d\'ouverture d\'un compte avec Deriv Investments (Europe) Ltd est faite de ma propre initiative.",
+        "phRFM74P5EuqgZwaULHEhw#Value": ".",
+        "JPwweFvZvkOanle2ZaHzsQ#Value": "termes et conditions",
+        "QOwN3wQrYEW0TKYCWSMUpQ#Value": "J\'accepte les",
+        "xMC4dNCQPU2RdjpgCxCsqQ#Value": "Ceci est requis.",
+        "fzXmFrM4eE6Ln7yxgEEoYA#Value": "Je ne suis pas un PEP et je n\'ai jamais été un PEP.",
+        "pO86_0W3HUmaXyUXXwdp8Q#Value": "Une personne politiquement exposée (PEP) est quelqu\'un qui occupe une fonction publique importante. Les proches et les membres de la famille d\'une PEP sont également considérés comme des PEP.",
+        "r2Yxl65wUk+wtwYbEcyPGw#Value": "Les comptes réels ne sont pas disponibles pour les personnes politiquement exposées (PEP)",
+        "WZWbOH6yRkai3UAR8iY76A#Value": "Non",
+        "pRjPQzGlgUSZxMS3u7A8+w#Value": "Oui",
+        "xJFBmj1O3U6dwarP4LsyLQ#Value": ".",
+        "4gpmc3q+30WgOIUdx+UR+A#Value": "Non",
+        "5qoceU1ez0yLpAeHjUX7RQ#Value": "Sinon, sélectionnez",
+        "NJ4r1N8vaEm5zYwJXiea9A#Value": "Oui",
+        "Yt8YpD6lJUyGEx4M60aN1g#Value": "Si l\'un des éléments ci-dessus vous concerne, sélectionnez",
+        "RquJsScZek2gVLMPonVWtg#Value": "Une procuration ou autorité signataire accordée à une personne ayant une adresse aux États-Unis",
+        "7he_rjhVW0WJl65CjTu67g#Value": "Une adresse \"à l\'attention de\" ou une adresse \"de rétention de courrier\" qui est la seule adresse concernant le client",
+        "hOVLqMM7LUC4cFFFmAzhDQ#Value": "Instructions permanentes pour transférer des fonds vers un compte maintenu aux États-Unis, ou directives régulièrement reçues d\'une adresse américaine",
+        "UDoEQvO1_UiDZGRjPCadow#Value": "Une adresse de résidence aux États-Unis ou une adresse de correspondance aux États-Unis (y compris une boîte postale aux États-Unis)",
+        "91iofZa7LUu0QF2w2HZr5g#Value": "Un lieu de naissance aux États-Unis",
+        "BMx7bOIxzUezmaiP7uJzNA#Value": "statut de citoyen américain ou de résident permanent légal (carte verte)",
+        "ym785UB6uEOv0LxAxfmlwg#Value": "Déclaration FATCA",
+        "_x0u+xX_Pk+f6Z01UcVt1g#Value": "Les services de trading financier offerts sur ce site ne conviennent qu\'aux clients qui acceptent la possibilité de perdre tout l\'argent qu\'ils investissent et qui comprennent et ont de l\'expérience avec les risques liés à l\'achat de contrats financiers. Les transactions dans des contrats financiers comportent un degré de risque élevé. Si les contrats que vous avez achetés arrivent à expiration sans valeur, vous perdrez l\'intégralité de votre investissement, y compris la prime du contrat.",
+        "eXC3CAxTc0+k6VK++rLwlQ#Value": "Avertissement sur les risques",
+        "I3sTK7Z6wE6FTk5+eCFklw#Value": "Votre compte sera ouvert auprès de Deriv (SVG) LLC et sera soumis aux lois de Saint-Vincent-et-les-Grenadines.",
+        "VusAJHa2gUa7fnWF5noIAg#Value": "Juridiction et choix de la loi",
+        "I6ndCk9qJkmgABWJerHPww#Title": "Conditions d\'utilisation | Deriv",
+        "I6ndCk9qJkmgABWJerHPww#TitleExpression.-1562683983.1": "Conditions d\'utilisation | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreation.TermsOfUse.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.TermsOfUse.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_TermsOfUse_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_TermsOfUse_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

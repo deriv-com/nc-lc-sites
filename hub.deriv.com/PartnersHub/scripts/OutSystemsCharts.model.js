@@ -874,7 +874,7 @@ define("OutSystemsCharts.model$RL_199d1a1f8719ad3951d7b2b7a9c7e9bd", ["exports",
 
 });
 
-define("OutSystemsCharts.model$BasicTypeList<Text>", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model"], function(exports, OSRuntimeCore, OutSystemsChartsModel) {
+define("OutSystemsCharts.model$RL_4d8a97df13a7539a1a0177dbcd05fbb2", ["exports", "@outsystems/runtime-core-js", "OutSystemsCharts.model"], function(exports, OSRuntimeCore, OutSystemsChartsModel) {
     var OS = OSRuntimeCore;
     class TextList extends
     OS.DataTypes.GenericRecordList {

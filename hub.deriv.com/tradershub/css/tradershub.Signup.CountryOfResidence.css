@@ -11,7 +11,11 @@
     pointer-events: none !important;
 }
 
-.phone .country-of-residence {
+.phone .country-of-residence-container {
+    display: none;
+}
+
+.phone .deriv-25years-logo-container {
     display: none;
 }
 
@@ -22,7 +26,7 @@
 .deriv-full-screen-mobile-modal__header {
     padding: 4px 16px 8px 16px;
 }
-.desktop .content {
+.desktop .country-of-residence-container {
     background-color: #F8F9FA;
 }
 
@@ -49,3 +53,48 @@ border: 1px solid #FF444F;
     font-size: 12px !important;
 }
 
+.phone .main-container {
+display: none;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+ .country-of-residence-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.deriv-25years-logo-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.tablet .deriv-25years-logo-container {
+    display: none;
+}
+
+.desktop .main-content.ThemeGrid_Container,
+.tablet .main-content.ThemeGrid_Container {
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+}
+
+ .desktop .ThemeGrid_Container,
+ tablet .ThemeGrid_Container {
+    max-width: unset ;
+    padding-left: 0;
+    padding-right: o;
+ }
+
+ .desktop header,
+ .tablet header {
+     display: none;
+ }

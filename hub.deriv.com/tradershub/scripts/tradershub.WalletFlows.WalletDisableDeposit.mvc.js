@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletDisableDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel) {
+define("tradershub.WalletFlows.WalletDisableDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletsOverlayPage.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletsOverlayPage_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -34,7 +34,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$model", ["@outsystems/ru
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletOverlayPage_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletsOverlayPage_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -47,7 +47,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$model", ["@outsystems/ru
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletDisableDeposit.mvc$model", "tradershub.WalletFlows.WalletDisableDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletFlows_WalletDisableDeposit_mvc_model, tradershub_WalletFlows_WalletDisableDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view) {
+define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletDisableDeposit.mvc$model", "tradershub.WalletFlows.WalletDisableDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletsOverlayPage.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletFlows_WalletDisableDeposit_mvc_model, tradershub_WalletFlows_WalletDisableDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletsOverlayPage_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -78,7 +78,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletOverlayPage_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletsOverlayPage_mvc_view];
         }
 
         get modelFactory() {
@@ -92,7 +92,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
         get title() {
 
 
-            return "WalletDisableDeposit";
+            return OSView.BaseView.BaseWebScreen.getTranslation("cvh_fTNWI06ITb6gHa0aYA#Title", "WalletDisableDeposit");
         }
 
         internalRender() {
@@ -134,7 +134,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     content: new PlaceholderContent(function() {
-                        return [React.createElement(tradershub_WalletBlocks_WalletOverlayPage_mvc_view, {
+                        return [React.createElement(tradershub_WalletBlocks_WalletsOverlayPage_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -194,18 +194,18 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
                                         style: model.getCachedValue(idService.getId("Y0+ebZQivEObC+U8jpco3g.Style"), function() {
                                             return ("font-bold " + ((OutSystemsUIController.default.isDesktop$Action(callContext).isDesktopOut) ? ("heading5") : ("heading4")));
                                         }),
-                                        text: ["Deposit is temporarily down"],
+                                        text: [$text(getTranslation("Y0+ebZQivEObC+U8jpco3g#Value", "Deposit is temporarily down"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "5"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "Please contact us via live chat for assistance."), React.createElement(OSWidgets.Button, {
+                                    }), $text(getTranslation("XnKA6rBW3ke_P4X4nIbrkA#Value", "Please contact us via live chat for assistance."))), React.createElement(OSWidgets.Button, {
                                         enabled: true,
                                         isDefault: false,
                                         onClick: function() {
                                             try {
-                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                                                OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "wallets/deposit/disable", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                                             } catch (ex) {
                                                 if (((ex.name) !== ("RedirectOccurredException"))) {
                                                     throw ex;
@@ -226,7 +226,7 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
                                         extendedProperties: {
                                             style: "font-size: 14px;"
                                         },
-                                        text: ["Live chat"],
+                                        text: [$text(getTranslation("mtqytvJTgkS85R3T5qlSuw#Value", "Live chat"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "7"
@@ -246,12 +246,12 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$view", ["@outsystems/run
 
     return View;
 });
-define("tradershub.WalletFlows.WalletDisableDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
+define("tradershub.WalletFlows.WalletDisableDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.WalletDisableDeposit.mvc$translationsResources", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlows_WalletDisableDeposit_mvc_TranslationsResources, tradershub_WalletFlowsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_WalletFlows_WalletDisableDeposit_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -361,4 +361,22 @@ define("tradershub.WalletFlows.WalletDisableDeposit.mvc$controller", ["@outsyste
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.WalletFlows.WalletDisableDeposit.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "mtqytvJTgkS85R3T5qlSuw#Value": "Chat en direct",
+        "XnKA6rBW3ke_P4X4nIbrkA#Value": "Veuillez nous contacter via le chat en direct pour obtenir de l\'aide.",
+        "Y0+ebZQivEObC+U8jpco3g#Value": "Le dépôt est temporairement indisponible"
+    };
+});
+
+define("tradershub.WalletFlows.WalletDisableDeposit.mvc$translationsResources", ["exports", "tradershub.WalletFlows.WalletDisableDeposit.mvc$translationsResources.fr-FR"], function(exports, tradershub_WalletFlows_WalletDisableDeposit_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_WalletFlows_WalletDisableDeposit_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

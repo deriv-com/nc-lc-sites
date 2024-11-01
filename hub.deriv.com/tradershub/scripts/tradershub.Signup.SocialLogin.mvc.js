@@ -232,12 +232,12 @@ define("tradershub.Signup.SocialLogin.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("tradershub.Signup.SocialLogin.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.SocialLogin.mvc$controller.AppleAction.RudderStackJS", "tradershub.Signup.SocialLogin.mvc$controller.GoogleAction.RudderStackJS", "tradershub.Signup.SocialLogin.mvc$controller.FacebookAction.RudderStackJS", "tradershub.controller$GetSocialLoginRedirectURL"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Signup_SocialLogin_mvc_controller_AppleAction_RudderStackJS, tradershub_Signup_SocialLogin_mvc_controller_GoogleAction_RudderStackJS, tradershub_Signup_SocialLogin_mvc_controller_FacebookAction_RudderStackJS) {
+define("tradershub.Signup.SocialLogin.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.SocialLogin.mvc$translationsResources", "tradershub.Signup.SocialLogin.mvc$controller.AppleAction.RudderStackJS", "tradershub.Signup.SocialLogin.mvc$controller.GoogleAction.RudderStackJS", "tradershub.Signup.SocialLogin.mvc$controller.FacebookAction.RudderStackJS", "tradershub.controller$GetSocialLoginRedirectURL"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Signup_SocialLogin_mvc_TranslationsResources, tradershub_Signup_SocialLogin_mvc_controller_AppleAction_RudderStackJS, tradershub_Signup_SocialLogin_mvc_controller_GoogleAction_RudderStackJS, tradershub_Signup_SocialLogin_mvc_controller_FacebookAction_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Signup_SocialLogin_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -638,4 +638,9 @@ define("tradershub.Signup.SocialLogin.mvc$controller.FacebookAction.RudderStackJ
             }
         });
     };
+});
+
+
+define("tradershub.Signup.SocialLogin.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

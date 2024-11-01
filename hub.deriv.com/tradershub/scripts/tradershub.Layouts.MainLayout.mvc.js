@@ -1,4 +1,4 @@
-define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Common.LoaderBlock.mvc$model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model"], function(OSRuntimeCore, tradershubModel, tradershub_Common_LoaderBlock_mvcModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
+define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.Navigation.BottomBarItem.mvc$model"], function(OSRuntimeCore, tradershubModel, OutSystemsUI_Navigation_BottomBarItem_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -11,12 +11,6 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
                         return 0;
                     }, false),
                     this.attr("_activeTabInDataFetchStatus", "_activeTabInDataFetchStatus", "_activeTabInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
-                        return /*Fetched*/ 1;
-                    }, false),
-                    this.attr("IsLoading", "isLoadingIn", "IsLoading", true, false, OS.DataTypes.DataTypes.Boolean, function() {
-                        return false;
-                    }, false),
-                    this.attr("_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", "_isLoadingInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
@@ -47,7 +41,7 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (tradershub_Common_LoaderBlock_mvcModel.hasValidationWidgets || OutSystemsUI_Navigation_BottomBarItem_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = OutSystemsUI_Navigation_BottomBarItem_mvcModel.hasValidationWidgets;
             }
 
             return Model._hasValidationWidgetsValue;
@@ -61,14 +55,6 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
 
             }
 
-            if ("IsLoading" in inputs) {
-                this.variables.isLoadingIn = inputs.IsLoading;
-                if ("_isLoadingInDataFetchStatus" in inputs) {
-                    this.variables._isLoadingInDataFetchStatus = inputs._isLoadingInDataFetchStatus;
-                }
-
-            }
-
         }
 
     }
@@ -77,7 +63,7 @@ define("tradershub.Layouts.MainLayout.mvc$model", ["@outsystems/runtime-core-js"
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "tradershub.Common.LoaderBlock.mvc$view", "OutSystemsUI.Navigation.BottomBarItem.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
+define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.Layouts.MainLayout.mvc$controller", "tradershub.clientVariables", "@outsystems/runtime-widgets-js", "OutSystemsUI.Navigation.BottomBarItem.mvc$view"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_Layouts_MainLayout_mvc_model, tradershub_Layouts_MainLayout_mvc_controller, tradershubClientVariables, OSWidgets, OutSystemsUI_Navigation_BottomBarItem_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -108,7 +94,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
         }
 
         static getBlocks() {
-            return [tradershub_Common_LoaderBlock_mvc_view, OutSystemsUI_Navigation_BottomBarItem_mvc_view];
+            return [OutSystemsUI_Navigation_BottomBarItem_mvc_view];
         }
 
         get modelFactory() {
@@ -217,7 +203,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "tab-text",
-                text: ["Hub"],
+                text: [$text(getTranslation("sG7asUvVZE+3gG+tSpLo4g#Value", "Hub"))],
                 _idProps: {
                     service: idService,
                     uuid: "7"
@@ -252,7 +238,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "tab-text",
-                text: ["CFDs"],
+                text: [$text(getTranslation("kB7UxZmyl0y9giWJ7ErMdw#Value", "CFDs"))],
                 _idProps: {
                     service: idService,
                     uuid: "10"
@@ -284,7 +270,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OSWidgets.Text, {
                 style: "tab-text",
-                text: ["Options"],
+                text: [$text(getTranslation("wpOSZ2b4z0G9b+gZ0DgdAQ#Value", "Options"))],
                 _idProps: {
                     service: idService,
                     uuid: "13"
@@ -311,7 +297,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     enabled: true,
                     style: "tab-link",
                     transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                    url: OS.Navigation.generateScreenURL("tradershub", "Wallets", {}),
+                    url: OS.Navigation.generateScreenURL("tradershub", "wallets", {}),
                     visible: true,
                     _idProps: {
                         service: idService,
@@ -320,7 +306,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Text, {
                     style: "tab-text",
-                    text: ["Wallets"],
+                    text: [$text(getTranslation("61Sfqplm5ECuZ5_5FCkuwg#Value", "Wallets"))],
                     _idProps: {
                         service: idService,
                         uuid: "16"
@@ -387,7 +373,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     isDefault: false,
                     onClick: function() {
                         try {
-                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL((((OS.BuiltinFunctions.index(tradershubClientVariables.getURL(), "green", 0, false, false) > -1)) ? (("https://oauth.deriv.com/oauth2/authorize?app_id=" + tradershubClientVariables.getAppId())) : (((("https://" + tradershubClientVariables.getURL()) + "/oauth2/authorize?app_id=") + tradershubClientVariables.getAppId()))), {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL((((((("https://" + tradershubClientVariables.getURL()) + "/oauth2/authorize?app_id=") + tradershubClientVariables.getAppId()) + "&l=") + tradershubClientVariables.getLang()) + "&brand=deriv"), {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                         } catch (ex) {
                             if (((ex.name) !== ("RedirectOccurredException"))) {
                                 throw ex;
@@ -395,14 +381,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
 
                         };
                     },
-                    style: "btn",
+                    style: "btn header-btn",
                     visible: true,
                     _idProps: {
                         service: idService,
                         name: "Login"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, "Log in"), React.createElement(OSWidgets.Button, {
+                }, $text(getTranslation("9KT96p9skk2eY8FZoy2JcA#Value", "Log in"))), React.createElement(OSWidgets.Button, {
                     enabled: true,
                     gridProperties: {
                         marginLeft: "8px"
@@ -418,64 +404,37 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
 
                         };
                     },
-                    style: "btn btn-primary",
+                    style: "btn btn-primary header-btn",
                     visible: true,
                     _idProps: {
                         service: idService,
                         name: "Signup"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, "Sign up"))];
-            })), $if(model.variables.isLoadingIn, false, this, function() {
-                return [React.createElement(tradershub_Common_LoaderBlock_mvc_view, {
-                    getOwnerSpan: function() {
-                        return _this.getChildSpan("render");
-                    },
-                    getOwnerDisposeSpan: function() {
-                        return _this.getChildSpan("destroy");
-                    },
-                    inputs: {},
-                    events: {
-                        _handleError: function(ex) {
-                            controller.handleError(ex);
-                        }
-                    },
-                    _validationProps: {
-                        validationService: validationService
-                    },
-                    _idProps: {
-                        service: idService,
-                        uuid: "24",
-                        alias: "1"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider,
-                    _dependencies: []
-                })];
-            }, function() {
-                return [React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
-                    style: "content-wrapper",
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        name: "contentContainer"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OSWidgets.Placeholder, {
-                    align: /*Default*/ 0,
-                    content: _this.props.placeholders.content,
-                    gridProperties: {
-                        classes: "ThemeGrid_Width10"
-                    },
-                    style: "content",
-                    _idProps: {
-                        service: idService,
-                        name: "Content"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }))];
-            }), React.createElement(OSWidgets.Container, {
+                }, $text(getTranslation("WQhzFWzrfEmZKoVwi_zfRA#Value", "Sign up"))))];
+            })), React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: false,
+                style: "content-wrapper",
+                visible: true,
+                _idProps: {
+                    service: idService,
+                    name: "contentContainer"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            }, React.createElement(OSWidgets.Placeholder, {
+                align: /*Default*/ 0,
+                content: _this.props.placeholders.content,
+                gridProperties: {
+                    classes: "ThemeGrid_Width10"
+                },
+                style: "content",
+                _idProps: {
+                    service: idService,
+                    name: "Content"
+                },
+                _widgetRecordProvider: widgetsRecordProvider
+            })), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
                 extendedProperties: {
@@ -508,7 +467,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 visible: true,
                 _idProps: {
                     service: idService,
-                    uuid: "29"
+                    uuid: "28"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OutSystemsUI_Navigation_BottomBarItem_mvc_view, {
@@ -529,8 +488,8 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "30",
-                    alias: "2"
+                    uuid: "29",
+                    alias: "1"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
@@ -541,7 +500,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "31"
+                                    uuid: "30"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -551,14 +510,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "32"
+                                    uuid: "31"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
                         })];
                     }),
                     text: new PlaceholderContent(function() {
-                        return ["Hub"];
+                        return [$text(getTranslation("UzyMzzSKJUaoh_1XG8CiYg#Value", "Hub"))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables._activeTabInDataFetchStatus), asPrimitiveValue(model.variables.activeTabIn)]
@@ -582,7 +541,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 visible: true,
                 _idProps: {
                     service: idService,
-                    uuid: "34"
+                    uuid: "33"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OutSystemsUI_Navigation_BottomBarItem_mvc_view, {
@@ -603,8 +562,8 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "35",
-                    alias: "3"
+                    uuid: "34",
+                    alias: "2"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
@@ -615,7 +574,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "36"
+                                    uuid: "35"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -625,14 +584,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "37"
+                                    uuid: "36"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
                         })];
                     }),
                     text: new PlaceholderContent(function() {
-                        return ["CFDs"];
+                        return [$text(getTranslation("23L1I2NBGEWdW_1td988fw#Value", "CFDs"))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables._activeTabInDataFetchStatus), asPrimitiveValue(model.variables.activeTabIn)]
@@ -656,7 +615,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 visible: true,
                 _idProps: {
                     service: idService,
-                    uuid: "39"
+                    uuid: "38"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
             }, React.createElement(OutSystemsUI_Navigation_BottomBarItem_mvc_view, {
@@ -677,8 +636,8 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                 },
                 _idProps: {
                     service: idService,
-                    uuid: "40",
-                    alias: "4"
+                    uuid: "39",
+                    alias: "3"
                 },
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
@@ -689,7 +648,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "41"
+                                    uuid: "40"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
@@ -699,14 +658,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                 type: /*Static*/ 0,
                                 _idProps: {
                                     service: idService,
-                                    uuid: "42"
+                                    uuid: "41"
                                 },
                                 _widgetRecordProvider: widgetsRecordProvider
                             })];
                         })];
                     }),
                     text: new PlaceholderContent(function() {
-                        return ["Options"];
+                        return [$text(getTranslation("3PrWmaocKES8BZp00psl3g#Value", "Options"))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables._activeTabInDataFetchStatus), asPrimitiveValue(model.variables.activeTabIn)]
@@ -727,11 +686,11 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                         classes: "OSFillParent"
                     },
                     transition: OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default),
-                    url: OS.Navigation.generateScreenURL("tradershub", "Wallets", {}),
+                    url: OS.Navigation.generateScreenURL("tradershub", "wallets", {}),
                     visible: true,
                     _idProps: {
                         service: idService,
-                        uuid: "44"
+                        uuid: "43"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OutSystemsUI_Navigation_BottomBarItem_mvc_view, {
@@ -752,8 +711,8 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     },
                     _idProps: {
                         service: idService,
-                        uuid: "45",
-                        alias: "5"
+                        uuid: "44",
+                        alias: "4"
                     },
                     _widgetRecordProvider: widgetsRecordProvider,
                     placeholders: {
@@ -764,7 +723,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "46"
+                                        uuid: "45"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })];
@@ -774,14 +733,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "47"
+                                        uuid: "46"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })];
                             })];
                         }),
                         text: new PlaceholderContent(function() {
-                            return ["Wallets"];
+                            return [$text(getTranslation("mwg36cd2ykm8Lp2+ZuTyYg#Value", "Wallets"))];
                         })
                     },
                     _dependencies: [asPrimitiveValue(model.variables._activeTabInDataFetchStatus), asPrimitiveValue(model.variables.activeTabIn)]
@@ -805,7 +764,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     visible: true,
                     _idProps: {
                         service: idService,
-                        uuid: "49"
+                        uuid: "48"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OutSystemsUI_Navigation_BottomBarItem_mvc_view, {
@@ -826,8 +785,8 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                     },
                     _idProps: {
                         service: idService,
-                        uuid: "50",
-                        alias: "6"
+                        uuid: "49",
+                        alias: "5"
                     },
                     _widgetRecordProvider: widgetsRecordProvider,
                     placeholders: {
@@ -838,7 +797,7 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "51"
+                                        uuid: "50"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })];
@@ -848,14 +807,14 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
                                     type: /*Static*/ 0,
                                     _idProps: {
                                         service: idService,
-                                        uuid: "52"
+                                        uuid: "51"
                                     },
                                     _widgetRecordProvider: widgetsRecordProvider
                                 })];
                             })];
                         }),
                         text: new PlaceholderContent(function() {
-                            return ["Account"];
+                            return [$text(getTranslation("z3Xgo1EJ4U66TekcF3FtkQ#Value", "Account"))];
                         })
                     },
                     _dependencies: [asPrimitiveValue(model.variables._activeTabInDataFetchStatus), asPrimitiveValue(model.variables.activeTabIn)]
@@ -868,12 +827,12 @@ define("tradershub.Layouts.MainLayout.mvc$view", ["@outsystems/runtime-core-js",
 
     return View;
 });
-define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
+define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$translationsResources", "tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_TranslationsResources, tradershub_Layouts_MainLayout_mvc_controller_OnReady_AddActiveTabJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Layouts_MainLayout_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -965,14 +924,15 @@ define("tradershub.Layouts.MainLayout.mvc$controller", ["@outsystems/runtime-cor
                         span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
                     }
 
-                    return OS.Flow.tryFinally(function() {
+                    try {
                         return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
-                    }, function() {
+                    } finally {
                         if (span) {
                             span.end();
                         }
 
-                    });
+                    }
+
                 }, 0);
 
             }
@@ -1092,5 +1052,31 @@ define("tradershub.Layouts.MainLayout.mvc$controller.OnReady.AddActiveTabJS", []
             bottomTabText.classList.add('bottom-bar-item-text-active');
         }
 
+    };
+});
+
+
+define("tradershub.Layouts.MainLayout.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "z3Xgo1EJ4U66TekcF3FtkQ#Value": "Compte",
+        "mwg36cd2ykm8Lp2+ZuTyYg#Value": "Portefeuilles",
+        "3PrWmaocKES8BZp00psl3g#Value": "Options",
+        "23L1I2NBGEWdW_1td988fw#Value": "CFD",
+        "UzyMzzSKJUaoh_1XG8CiYg#Value": "Hub",
+        "WQhzFWzrfEmZKoVwi_zfRA#Value": "Inscrivez-vous",
+        "9KT96p9skk2eY8FZoy2JcA#Value": "Se connecter",
+        "61Sfqplm5ECuZ5_5FCkuwg#Value": "Portefeuilles",
+        "wpOSZ2b4z0G9b+gZ0DgdAQ#Value": "Options",
+        "kB7UxZmyl0y9giWJ7ErMdw#Value": "CFD",
+        "sG7asUvVZE+3gG+tSpLo4g#Value": "Hub"
+    };
+});
+
+define("tradershub.Layouts.MainLayout.mvc$translationsResources", ["exports", "tradershub.Layouts.MainLayout.mvc$translationsResources.fr-FR"], function(exports, tradershub_Layouts_MainLayout_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Layouts_MainLayout_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

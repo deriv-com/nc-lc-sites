@@ -101,7 +101,7 @@ define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$view",
             var _this = this;
 
 
-            return "Identity verification | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("MZs7VpFcU0ujYcDCb2maUA#TitleExpression.1272643895.1", "Identity verification | Deriv");
         }
 
         internalRender() {
@@ -176,12 +176,12 @@ define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$view",
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController) {
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$translationsResources", "tradershub.RealAccountCreationMobile.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_TranslationsResources, tradershub_RealAccountCreationMobileController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -291,4 +291,21 @@ define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$contro
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "MZs7VpFcU0ujYcDCb2maUA#Title": "Vérification d\'identité | Deriv",
+        "MZs7VpFcU0ujYcDCb2maUA#TitleExpression.1272643895.1": "Vérification d\'identité | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationMobile.IDVMobileDocumentDetails.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationMobile_IDVMobileDocumentDetails_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

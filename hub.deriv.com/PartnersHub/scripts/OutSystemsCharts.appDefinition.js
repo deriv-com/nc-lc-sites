@@ -1,8 +1,6 @@
 define("OutSystemsCharts.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "38b70e23-50fc-4710-80cf-3682a9dc998a",
         applicationName: "OutSystems Charts",
         userProviderName: "Users",
@@ -18,10 +16,8 @@ define("OutSystemsCharts.appDefinition", ["@outsystems/runtime-core-js"], functi
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        buildServiceVersion: "v17.1668.2.0",
+        clientRuntimeVersion: "6.16.1",
         useESM: false,
         appVersion: "4"
     };

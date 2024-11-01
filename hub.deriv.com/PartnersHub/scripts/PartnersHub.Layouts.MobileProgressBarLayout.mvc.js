@@ -909,7 +909,7 @@ define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.de
 
 define("PartnersHub.Layouts.MobileProgressBarLayout.mvc$translationsResources.es-ES", [], function() {
     return {
-        "2iMvGgd9qEuJciPIJfkzRw#Value": "Complete la configuración para acceder a planes de comisiones personalizados.",
+        "2iMvGgd9qEuJciPIJfkzRw#Value": "Completa la configuración para acceder a planes de comisiones personalizados.",
         "PUZk8rTKV0S6uWyOIu9xxQ#Value": "¿Configurar el perfil de salida?"
     };
 });

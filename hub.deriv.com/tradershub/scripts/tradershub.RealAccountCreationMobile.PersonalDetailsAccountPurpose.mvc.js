@@ -1,23 +1,5 @@
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershub_Layouts_RealAccountCreationLayout_mvcModel) {
-    var OS = OSRuntimeCore; {
-        class GetAccountPurposesAggrRecInner extends
-        OS.Model.AggregateRecord {
-            static attributesToDeclare() {
-                return [].concat(OS.Model.AggregateRecord.attributesToDeclare.call(this));
-            }
-
-            static fromStructure(str) {
-                return new GetAccountPurposesAggrRec(new GetAccountPurposesAggrRec.RecordClass({
-                    RecordListType: OS.DataTypes.ImmutableBase.getData(str)
-                }));
-            }
-
-        }
-
-        GetAccountPurposesAggrRecInner.RecordListType = tradershubModel.RL_ef219a8108d5189490479af17ef18c9c;
-        var GetAccountPurposesAggrRec = GetAccountPurposesAggrRecInner;
-        GetAccountPurposesAggrRec.init();
-    }
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Layouts.RealAccountCreationLayout.mvc$model", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RL_dd299c02eac5eb3e7ba5132848a21b2a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$FetchAccountPurposeList"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershub_Layouts_RealAccountCreationLayout_mvcModel) {
+    var OS = OSRuntimeCore;
 
 
     {
@@ -25,15 +7,15 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$m
         OS.DataTypes.GenericRecord {
             static attributesToDeclare() {
                 return [
-                    this.attr("GetAccountPurposes", "getAccountPurposesAggr", "GetAccountPurposes", true, true, OS.DataTypes.DataTypes.Record, function() {
-                        return OS.DataTypes.ImmutableBase.getData(new GetAccountPurposesAggrRec());
-                    }, true, GetAccountPurposesAggrRec)
+                    this.attr("AccountPurposeList", "accountPurposeListVar", "AccountPurposeList", true, false, OS.DataTypes.DataTypes.RecordList, function() {
+                        return OS.DataTypes.ImmutableBase.getData(new tradershubModel.RL_dd299c02eac5eb3e7ba5132848a21b2a());
+                    }, false, tradershubModel.RL_dd299c02eac5eb3e7ba5132848a21b2a)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
 
             static fromStructure(str) {
                 return new VariablesRecord(new VariablesRecord.RecordClass({
-                    getAccountPurposesAggr: OS.DataTypes.ImmutableBase.getData(str)
+                    accountPurposeListVar: OS.DataTypes.ImmutableBase.getData(str)
                 }));
             }
 
@@ -75,7 +57,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$m
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_model, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "react", "@outsystems/runtime-view-js", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$model", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.RealAccountCreationLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RL_dd299c02eac5eb3e7ba5132848a21b2a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$FetchAccountPurposeList"], function(OSRuntimeCore, tradershubModel, tradershubController, React, OSView, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_model, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller, tradershubClientVariables, tradershub_Layouts_RealAccountCreationLayout_mvc_view, OSWidgets) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -129,7 +111,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
             var _this = this;
 
 
-            return "Personal details | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("5tIUridRrEWKH47sBFPgmg#TitleExpression.-545367396.1", "Personal details | Deriv");
         }
 
         internalRender() {
@@ -197,7 +179,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                 uuid: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Select your account purpose"), React.createElement(OSWidgets.List, {
+                        }, $text(getTranslation("magvm8LDEkqQTh5s_xxCVQ#Value", "Select your account purpose"))), React.createElement(OSWidgets.List, {
                             animateItems: true,
                             extendedProperties: {
                                 style: "margin-top: 16px;"
@@ -206,7 +188,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                 classes: "OSFillParent"
                             },
                             mode: /*Default*/ 0,
-                            source: model.variables.getAccountPurposesAggr.listOut,
+                            source: model.variables.accountPurposeListVar,
                             style: "list list-group display-flex flex-direction-column gap-base",
                             tag: "div",
                             _idProps: {
@@ -214,7 +196,6 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                 uuid: "3"
                             },
                             _widgetRecordProvider: widgetsRecordProvider,
-                            source_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getAccountPurposesAggr.dataFetchStatusAttr),
                             placeholders: {
                                 content: new IteratorPlaceholderContent(function(idService, callContext) {
                                     return [React.createElement(OSWidgets.ListItem, {
@@ -223,7 +204,7 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                         },
                                         onClick: function() {
                                             var eventHandlerContext = callContext.clone();
-                                            controller.listItemOnClick$Action(model.variables.getAccountPurposesAggr.listOut.getCurrent(callContext.iterationContext).accountPurposeAttr, controller.callContext(eventHandlerContext));
+                                            controller.listItemOnClick$Action(model.variables.accountPurposeListVar.getCurrent(callContext.iterationContext), controller.callContext(eventHandlerContext));
 
                                             ;
                                         },
@@ -255,13 +236,12 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                                     gridProperties: {
                                                         classes: "OSFillParent"
                                                     },
-                                                    value: model.variables.getAccountPurposesAggr.listOut.getCurrent(callContext.iterationContext).accountPurposeAttr.labelAttr,
+                                                    value: model.variables.accountPurposeListVar.getCurrent(callContext.iterationContext).labelAttr,
                                                     _idProps: {
                                                         service: idService,
                                                         uuid: "6"
                                                     },
-                                                    _widgetRecordProvider: widgetsRecordProvider,
-                                                    value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables.getAccountPurposesAggr.dataFetchStatusAttr)
+                                                    _widgetRecordProvider: widgetsRecordProvider
                                                 }), React.createElement(OSWidgets.Image, {
                                                     image: OS.Navigation.VersionedURL.getVersionedUrl("img/tradershub.iconarrow.svg"),
                                                     type: /*Static*/ 0,
@@ -274,86 +254,41 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$v
                                             }),
                                             rightActions: PlaceholderContent.Empty
                                         },
-                                        _dependencies: [asPrimitiveValue(model.variables.getAccountPurposesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getAccountPurposesAggr.listOut.getCurrent(callContext.iterationContext).accountPurposeAttr.labelAttr)]
+                                        _dependencies: [asPrimitiveValue(model.variables.accountPurposeListVar.getCurrent(callContext.iterationContext).labelAttr)]
                                     })];
                                 }, callContext, idService, "1")
                             },
-                            _dependencies: [asPrimitiveValue(model.variables.getAccountPurposesAggr.dataFetchStatusAttr)]
+                            _dependencies: []
                         }))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.getAccountPurposesAggr.dataFetchStatusAttr), asPrimitiveValue(model.variables.getAccountPurposesAggr.listOut)]
+                _dependencies: [asPrimitiveValue(model.variables.accountPurposeListVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RC_7bb0307ace44108d04e35612d4da1d8c", "tradershub.model$RL_ef219a8108d5189490479af17ef18c9c"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS) {
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$translationsResources", "tradershub.RealAccountCreationMobile.controller", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$controller.ListItemOnClick.RudderStackJS", "tradershub.model$EN_3e32e8f97f4a30dd16a3843f28450f43EntityRecord", "tradershub.model$RL_dd299c02eac5eb3e7ba5132848a21b2a", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure", "tradershub.controller$FetchAccountPurposeList"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_TranslationsResources, tradershub_RealAccountCreationMobileController, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_controller_ListItemOnClick_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
-                this.dataFetchDependenciesOriginal = {
-                    getAccountPurposes$AggrRefresh: 0
-                };
-                this.dataFetchDependentsGraph = {
-                    getAccountPurposes$AggrRefresh: []
-                };
+                this.dataFetchDependenciesOriginal = {};
+                this.dataFetchDependentsGraph = {};
                 this.shouldSendClientVarsToDataSources = false;
             }
 
             // Server Actions - Methods
 
             // Aggregates and Data Actions
-            get getAccountPurposes$AggrRefresh() {
-                if (!(this.hasOwnProperty("_getAccountPurposes$AggrRefresh"))) {
-                    this._getAccountPurposes$AggrRefresh = function() {
-                        var innerBody = function(maxRecords, startIndex, callContext) {
-                            var model = this.model;
-                            var controller = this.controller;
-                            var callContext = controller.callContext(callContext);
-                            return controller.callAggregateWithStartIndexAndClientVars("ScreenDataSetGetAccountPurposes", "screenservices/tradershub/RealAccountCreationMobile/PersonalDetailsAccountPurpose/ScreenDataSetGetAccountPurposes", "i2URTrR8IO+nmsz+yoBmDA", maxRecords, startIndex, function(b) {
-                                model.variables.getAccountPurposesAggr.dataFetchStatusAttr = b;
-                            }, function(json) {
-                                model.variables.getAccountPurposesAggr.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.getAccountPurposesAggr.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false);
-                        }.bind(this);
-                        return OS.Logger.startActiveSpan("GetAccountPurposes", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "GetAccountPurposes");
-                                span.setAttribute("outsystems.function.key", "57f59a0d-84a2-41fd-9d7a-befbd8dd6363");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "SCREEN_SERVICE_AGGREGATE_CALL");
-                            }
-
-                            return OS.Flow.tryFinally(function() {
-                                return innerBody();
-                            }, function() {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            });
-                        }, 0);
-
-                    };
-                }
-
-                return this._getAccountPurposes$AggrRefresh;
-            }
-            set getAccountPurposes$AggrRefresh(value) {
-                this._getAccountPurposes$AggrRefresh = value;
-            }
-
 
             get dataFetchActionNames() {
                 if (!(this.hasOwnProperty("_dataFetchActionNames"))) {
-                    this._dataFetchActionNames = ["getAccountPurposes$AggrRefresh"];
+                    this._dataFetchActionNames = [];
                 }
 
                 return this._dataFetchActionNames;
@@ -363,6 +298,51 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
             }
 
             // Client Actions - Methods
+            get _onReady$Action() {
+                if (!(this.hasOwnProperty("__onReady$Action"))) {
+                    this.__onReady$Action = function(callContext) {
+                        var model = this.model;
+                        var controller = this.controller;
+                        var idService = this.idService;
+                        return OS.Logger.startActiveSpan("OnReady", function(span) {
+                            if (span) {
+                                span.setAttribute("code.function", "OnReady");
+                                span.setAttribute("outsystems.function.key", "a24804e9-cdb5-44d9-a05b-1bc622018700");
+                                span.setAttribute("outsystems.function.owner.name", "tradershub");
+                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                            }
+
+                            return OS.Flow.tryFinally(function() {
+                                controller.ensureControllerAlive("OnReady");
+                                callContext = controller.callContext(callContext);
+                                var fetchAccountPurposeListVar = new OS.DataTypes.VariableHolder();
+                                return OS.Flow.executeAsyncFlow(function() {
+                                    // Execute Action: FetchAccountPurposeList
+                                    model.flush();
+                                    return tradershubController.default.fetchAccountPurposeList$Action(callContext).then(function(value) {
+                                        fetchAccountPurposeListVar.value = value;
+                                    }).then(function() {
+                                        // AccountPurposeList = FetchAccountPurposeList.AccontPurposeList
+                                        model.variables.accountPurposeListVar = fetchAccountPurposeListVar.value.accontPurposeListOut;
+                                    });
+                                });
+                            }, function() {
+                                if (span) {
+                                    span.end();
+                                }
+
+                            });
+                        }, 1);
+                    };
+                }
+
+                return this.__onReady$Action;
+            }
+            set _onReady$Action(value) {
+                this.__onReady$Action = value;
+            }
+
             get _listItemOnClick$Action() {
                 if (!(this.hasOwnProperty("__listItemOnClick$Action"))) {
                     this.__listItemOnClick$Action = function(accountPurposeIn, callContext) {
@@ -404,6 +384,8 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
                                 }, 1);
                                 // RealSignupAccountOpeningReason = AccountPurpose.Value
                                 tradershubClientVariables.setRealSignupAccountOpeningReason(vars.value.accountPurposeInLocal.valueAttr);
+                                // RealSignupPassedStepCount = 2
+                                tradershubClientVariables.setRealSignupPassedStepCount(2);
                                 if ((tradershubClientVariables.getRealSignupIsIDVSupported())) {
                                     // Destination: /tradershub/IdentityVerification
                                     return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "identity-verification", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
@@ -429,6 +411,29 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
                 this.__listItemOnClick$Action = value;
             }
 
+
+            onReady$Action(callContext) {
+                var controller = this.controller;
+                return OS.Logger.startActiveSpan("OnReady__proxy", function(span) {
+                    if (span) {
+                        span.setAttribute("code.function", "OnReady");
+                        span.setAttribute("outsystems.function.key", "a24804e9-cdb5-44d9-a05b-1bc622018700");
+                        span.setAttribute("outsystems.function.owner.name", "tradershub");
+                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
+                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
+                    }
+
+                    return OS.Flow.tryFinally(function() {
+                        return controller.safeExecuteClientAction(controller._onReady$Action, callContext);
+                    }, function() {
+                        if (span) {
+                            span.end();
+                        }
+
+                    });
+                }, 0);
+
+            }
 
             listItemOnClick$Action(accountPurposeIn, callContext) {
                 var controller = this.controller;
@@ -469,7 +474,14 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
 
             get onReadyEventHandler() {
                 if (!(this.hasOwnProperty("_onReadyEventHandler"))) {
-                    this._onReadyEventHandler = null;
+                    this._onReadyEventHandler = function(callContext) {
+                        var controller = this.controller;
+                        var model = this.model;
+                        var idService = this.idService;
+
+                        return controller.onReady$Action(callContext);
+
+                    };
                 }
 
                 return this._onReadyEventHandler;
@@ -562,5 +574,23 @@ define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$c
                 form_name: "real_account_signup_form_outsystems"
             }
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "magvm8LDEkqQTh5s_xxCVQ#Value": "Sélectionnez l\'objectif de votre compte",
+        "5tIUridRrEWKH47sBFPgmg#Title": "Détails personnels | Deriv",
+        "5tIUridRrEWKH47sBFPgmg#TitleExpression.-545367396.1": "Détails personnels | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$translationsResources", ["exports", "tradershub.RealAccountCreationMobile.PersonalDetailsAccountPurpose.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreationMobile_PersonalDetailsAccountPurpose_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

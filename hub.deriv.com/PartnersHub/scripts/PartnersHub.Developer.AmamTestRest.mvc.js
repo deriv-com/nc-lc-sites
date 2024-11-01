@@ -709,7 +709,7 @@ define("PartnersHub.Developer.AmamTestRest.mvc$translationsResources.ar-001", []
         "U3Ya9XVpsE6UksqzSCPWsA#Value": "إرسال",
         "jidQpjar20yZW+MM7GCMNA#Value": "رمز المستخدم",
         "668BiAtrh0qFEzyWTJVN_w#Value": "خادم",
-        "HWpQT2_xsE6CBFCvVr23vw#Value": "تغيير نقطة نهاية واجهة برمجة التطبيقات"
+        "HWpQT2_xsE6CBFCvVr23vw#Value": "تغيير نقطة النهاية لواجهة برمجة التطبيقات (API)"
     };
 });
 

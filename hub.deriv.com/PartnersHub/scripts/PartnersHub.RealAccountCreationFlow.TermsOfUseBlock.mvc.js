@@ -778,13 +778,13 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$controller", ["@
 define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsResources.ar-001", [], function() {
     return {
         "LUFf5NOc9k+rogAz0AOq2g#Value": "أوافق على تلقي المواد الترويجية والإشعارات المتعلقة ببرنامج الشراكة مع Deriv.",
-        "u1wyVqIdrUu2AoUzziFrog#Value": "شروط وأحكام الشركاء والوسطاء المعرفين",
+        "u1wyVqIdrUu2AoUzziFrog#Value": "الشروط والأحكام للشركاء التابعين والوسطاء المعرفين",
         "tv_vYBYcz0+UfN5UFzWZkA#Value": "و",
-        "kHOr63YB0EeIo+eENGyzQQ#Value": "الشروط العامة لديريف لشركاء الأعمال",
-        "YZOevNXwRkiD5NJ9YA7JtQ#Value": "لقد قرأت ووافقت",
+        "kHOr63YB0EeIo+eENGyzQQ#Value": "الشروط العامة لشركاء Deriv",
+        "YZOevNXwRkiD5NJ9YA7JtQ#Value": "لقد قمت بالقراءة والموافقة",
         "4BRK3oZyVUi+KPRCJ4PBGQ#Value": "شروط وأحكام Deriv للعملاء.",
-        "xhbd6R06F069qBPrmfmluQ#Value": "لقد قرأت وقبلت",
-        "RLfb3cSw8UaqOgw46uRbbw#Value": "أنا لست شخصًا معرضًا سياسيًا (PEP).",
+        "xhbd6R06F069qBPrmfmluQ#Value": "لقد قمت بالقراءة والموافقة",
+        "RLfb3cSw8UaqOgw46uRbbw#Value": "أنا لست شخصًا مكشوفًا سياسيًا (PEP).",
         "rFYmz96HiEWPg06uCEFWdg#Value": "بالضغط على \"إنشاء حساب\"، أؤكد ما يلي:"
     };
 });
@@ -811,7 +811,7 @@ define("PartnersHub.RealAccountCreationFlow.TermsOfUseBlock.mvc$translationsReso
     return {
         "LUFf5NOc9k+rogAz0AOq2g#Value": "Consiento en recibir materiales promocionales y notificaciones sobre el programa de asociación de Deriv.",
         "Ia3uxqD610aro3H83QhpRg#ValueExpression.1536891843.1": "checkbox",
-        "u1wyVqIdrUu2AoUzziFrog#Value": "Términos y condiciones para afiliados y corredores introductores.",
+        "u1wyVqIdrUu2AoUzziFrog#Value": "Términos y condiciones para afiliados e introductores de bróker.",
         "tv_vYBYcz0+UfN5UFzWZkA#Value": "y",
         "kHOr63YB0EeIo+eENGyzQQ#Value": "Términos generales de Deriv para socios comerciales",
         "YZOevNXwRkiD5NJ9YA7JtQ#Value": "He leído y aceptado",

@@ -1,4 +1,4 @@
-define("tradershub.TradingAssessmentFlow.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.TradingAssessmentFlow.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller$translationsResources"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables, tradershub_TradingAssessmentFlow_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_TradingAssessmentFlowController = exports;
     class Controller extends
@@ -30,5 +30,10 @@ define("tradershub.TradingAssessmentFlow.controller", ["exports", "@outsystems/r
 
 
 
-    tradershub_TradingAssessmentFlowController.default = new Controller();
+    tradershub_TradingAssessmentFlowController.default = new Controller(tradershub_TradingAssessmentFlow_Controller_translationsResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

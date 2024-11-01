@@ -1,4 +1,4 @@
-define("tradershub.RealAccountCreationBlocks.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables) {
+define("tradershub.RealAccountCreationBlocks.controller", ["exports", "@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.Common.controller", "tradershub.clientVariables", "tradershub.RealAccountCreationBlocks.controller$translationsResources"], function(exports, OSRuntimeCore, tradershubModel, tradershubController, tradershub_CommonController, tradershubClientVariables, tradershub_RealAccountCreationBlocks_Controller_translationsResources) {
     var OS = OSRuntimeCore;
     var tradershub_RealAccountCreationBlocksController = exports;
     class Controller extends
@@ -30,5 +30,10 @@ define("tradershub.RealAccountCreationBlocks.controller", ["exports", "@outsyste
 
 
 
-    tradershub_RealAccountCreationBlocksController.default = new Controller();
+    tradershub_RealAccountCreationBlocksController.default = new Controller(tradershub_RealAccountCreationBlocks_Controller_translationsResources);
+});
+
+
+define("tradershub.RealAccountCreationBlocks.controller$translationsResources", ["exports"], function(exports) {
+    return {};
 });

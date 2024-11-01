@@ -18,6 +18,12 @@ define("PartnersHub.Common.TitleBlock.mvc$model", ["@outsystems/runtime-core-js"
                     }, false),
                     this.attr("_showPreviousButtonInDataFetchStatus", "_showPreviousButtonInDataFetchStatus", "_showPreviousButtonInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
                         return /*Fetched*/ 1;
+                    }, false),
+                    this.attr("ShowCloseButton", "showCloseButtonIn", "ShowCloseButton", true, false, OS.DataTypes.DataTypes.Boolean, function() {
+                        return true;
+                    }, false),
+                    this.attr("_showCloseButtonInDataFetchStatus", "_showCloseButtonInDataFetchStatus", "_showCloseButtonInDataFetchStatus", true, false, OS.DataTypes.DataTypes.Integer, function() {
+                        return /*Fetched*/ 1;
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
             }
@@ -65,6 +71,14 @@ define("PartnersHub.Common.TitleBlock.mvc$model", ["@outsystems/runtime-core-js"
                 this.variables.showPreviousButtonIn = inputs.ShowPreviousButton;
                 if ("_showPreviousButtonInDataFetchStatus" in inputs) {
                     this.variables._showPreviousButtonInDataFetchStatus = inputs._showPreviousButtonInDataFetchStatus;
+                }
+
+            }
+
+            if ("ShowCloseButton" in inputs) {
+                this.variables.showCloseButtonIn = inputs.ShowCloseButton;
+                if ("_showCloseButtonInDataFetchStatus" in inputs) {
+                    this.variables._showCloseButtonInDataFetchStatus = inputs._showCloseButtonInDataFetchStatus;
                 }
 
             }
@@ -148,54 +162,51 @@ define("PartnersHub.Common.TitleBlock.mvc$view", ["@outsystems/runtime-core-js",
                     name: "Container"
                 },
                 _widgetRecordProvider: widgetsRecordProvider
-            }, $if(model.variables.showPreviousButtonIn, false, this, function() {
-                return [React.createElement(OSWidgets.Container, {
-                    align: /*Default*/ 0,
-                    animate: false,
-                    extendedEvents: {
-                        onClick: function() {
-                            var eventHandlerContext = callContext.clone();
-                            controller.backButtonAction$Action(controller.callContext(eventHandlerContext));
+            }, React.createElement(OSWidgets.Container, {
+                align: /*Default*/ 0,
+                animate: true,
+                extendedEvents: {
+                    onClick: function() {
+                        var eventHandlerContext = callContext.clone();
+                        controller.backButtonAction$Action(controller.callContext(eventHandlerContext));
 
-                            ;
-                        }
-                    },
-                    visible: true,
-                    _idProps: {
-                        service: idService,
-                        uuid: "1"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider
-                }, React.createElement(OutSystemsUI_Utilities_InlineSVG_mvc_view, {
-                    getOwnerSpan: function() {
-                        return _this.getChildSpan("render");
-                    },
-                    getOwnerDisposeSpan: function() {
-                        return _this.getChildSpan("destroy");
-                    },
-                    inputs: {
-                        ExtendedClass: "custom-svg",
-                        SVGCode: "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M0.125 6.65625L5.625 1.15625C5.8125 0.96875 6.15625 0.96875 6.34375 1.15625C6.53125 1.34375 6.53125 1.6875 6.34375 1.875L1.6875 6.5H13.5C13.75 6.5 14 6.75 14 7C14 7.28125 13.75 7.5 13.5 7.5H1.6875L6.34375 12.1562C6.53125 12.3438 6.53125 12.6875 6.34375 12.875C6.15625 13.0625 5.8125 13.0625 5.625 12.875L0.125 7.375C-0.0625 7.1875 -0.0625 6.84375 0.125 6.65625Z\" fill=\"#101213\"/>\r\n</svg>"
-                    },
-                    events: {
-                        _handleError: function(ex) {
-                            controller.handleError(ex);
-                        }
-                    },
-                    _validationProps: {
-                        validationService: validationService
-                    },
-                    _idProps: {
-                        service: idService,
-                        uuid: "2",
-                        alias: "1"
-                    },
-                    _widgetRecordProvider: widgetsRecordProvider,
-                    _dependencies: []
-                }))];
-            }, function() {
-                return [];
-            }), React.createElement(OSWidgets.Container, {
+                        ;
+                    }
+                },
+                visible: model.variables.showPreviousButtonIn,
+                _idProps: {
+                    service: idService,
+                    uuid: "1"
+                },
+                _widgetRecordProvider: widgetsRecordProvider,
+                visible_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._showPreviousButtonInDataFetchStatus)
+            }, React.createElement(OutSystemsUI_Utilities_InlineSVG_mvc_view, {
+                getOwnerSpan: function() {
+                    return _this.getChildSpan("render");
+                },
+                getOwnerDisposeSpan: function() {
+                    return _this.getChildSpan("destroy");
+                },
+                inputs: {
+                    SVGCode: "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M0.125 6.65625L5.625 1.15625C5.8125 0.96875 6.15625 0.96875 6.34375 1.15625C6.53125 1.34375 6.53125 1.6875 6.34375 1.875L1.6875 6.5H13.5C13.75 6.5 14 6.75 14 7C14 7.28125 13.75 7.5 13.5 7.5H1.6875L6.34375 12.1562C6.53125 12.3438 6.53125 12.6875 6.34375 12.875C6.15625 13.0625 5.8125 13.0625 5.625 12.875L0.125 7.375C-0.0625 7.1875 -0.0625 6.84375 0.125 6.65625Z\" fill=\"#101213\"/>\r\n</svg>",
+                    ExtendedClass: "custom-svg"
+                },
+                events: {
+                    _handleError: function(ex) {
+                        controller.handleError(ex);
+                    }
+                },
+                _validationProps: {
+                    validationService: validationService
+                },
+                _idProps: {
+                    service: idService,
+                    uuid: "2",
+                    alias: "1"
+                },
+                _widgetRecordProvider: widgetsRecordProvider,
+                _dependencies: []
+            })), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
                 style: "title",
@@ -215,7 +226,7 @@ define("PartnersHub.Common.TitleBlock.mvc$view", ["@outsystems/runtime-core-js",
                 value_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._titleInDataFetchStatus)
             })), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
-                animate: false,
+                animate: true,
                 extendedEvents: {
                     onClick: function() {
                         var eventHandlerContext = callContext.clone();
@@ -227,12 +238,13 @@ define("PartnersHub.Common.TitleBlock.mvc$view", ["@outsystems/runtime-core-js",
                 extendedProperties: {
                     style: "cursor: pointer;"
                 },
-                visible: true,
+                visible: model.variables.showCloseButtonIn,
                 _idProps: {
                     service: idService,
                     uuid: "5"
                 },
-                _widgetRecordProvider: widgetsRecordProvider
+                _widgetRecordProvider: widgetsRecordProvider,
+                visible_dataFetchStatus: OS.Model.calculateDataFetchStatus(model.variables._showCloseButtonInDataFetchStatus)
             }, React.createElement(OutSystemsUI_Utilities_InlineSVG_mvc_view, {
                 getOwnerSpan: function() {
                     return _this.getChildSpan("render");

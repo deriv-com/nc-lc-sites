@@ -101,7 +101,7 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$view", ["@outsystems/runti
             var _this = this;
 
 
-            return "Verification link expired | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("p8ucEya1Ik6WcWrl8uciYA#TitleExpression.929560286.1", "Verification link expired | Deriv");
         }
 
         internalRender() {
@@ -191,7 +191,7 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$view", ["@outsystems/runti
                                 style: ("font-weight: 700;" + ((OutSystemsUIController.default.isPhone$Action(callContext).isPhoneOut) ? ("font-size: 18px;") : ("font-size: 20px")))
                             },
                             style: "link-expired-heading",
-                            text: ["Email verification link expired"],
+                            text: [$text(getTranslation("XE1yNfRdJ0iwXRRCn6CYPg#Value", "Email verification link expired"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "5"
@@ -201,7 +201,7 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$view", ["@outsystems/runti
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["Request a new one."],
+                            text: [$text(getTranslation("Qz3kVnpsxkWctevjeSCALQ#Value", "Request a new one."))],
                             _idProps: {
                                 service: idService,
                                 uuid: "6"
@@ -239,7 +239,7 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$view", ["@outsystems/runti
                                 uuid: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Resend email")))];
+                        }, $text(getTranslation("ami+Wu5n+UeeTU8tRrHI6w#Value", "Resend email")))))];
                     })
                 },
                 _dependencies: []
@@ -249,12 +249,12 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$view", ["@outsystems/runti
 
     return View;
 });
-define("tradershub.Signup.VerificationLinkExpired.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_SignupController) {
+define("tradershub.Signup.VerificationLinkExpired.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Signup.VerificationLinkExpired.mvc$translationsResources", "tradershub.Signup.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Signup_VerificationLinkExpired_mvc_TranslationsResources, tradershub_SignupController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Signup_VerificationLinkExpired_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -364,4 +364,24 @@ define("tradershub.Signup.VerificationLinkExpired.mvc$controller", ["@outsystems
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Signup.VerificationLinkExpired.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "ami+Wu5n+UeeTU8tRrHI6w#Value": "Renvoie l\'email",
+        "Qz3kVnpsxkWctevjeSCALQ#Value": "Demandez-en un nouveau.",
+        "XE1yNfRdJ0iwXRRCn6CYPg#Value": "Lien de vérification de l\'e-mail expiré",
+        "p8ucEya1Ik6WcWrl8uciYA#Title": "Lien de vérification expiré | Deriv",
+        "p8ucEya1Ik6WcWrl8uciYA#TitleExpression.929560286.1": "Lien de vérification expiré | Deriv"
+    };
+});
+
+define("tradershub.Signup.VerificationLinkExpired.mvc$translationsResources", ["exports", "tradershub.Signup.VerificationLinkExpired.mvc$translationsResources.fr-FR"], function(exports, tradershub_Signup_VerificationLinkExpired_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Signup_VerificationLinkExpired_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

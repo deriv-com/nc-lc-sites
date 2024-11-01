@@ -184,9 +184,9 @@ define("PartnersHub.Common.controller", ["exports", "@outsystems/runtime-core-js
 
 define("PartnersHub.Common.controller$translationsResources.ar-001", [], function() {
     return {
-        "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "كانت هناك مشكلة في التواصل مع الخادم. يرجى المحاولة مرة أخرى أو الاتصال بالمسؤول الخاص بك.",
-        "hd35JhN3zEmey3w4Y9h7LQ#Message.-1973574713.1": "كانت هناك مشكلة. يرجى الاتصال بالمسؤول",
-        "h3fWDwmg3UeT0Bqt_cQgxw#Message.878067834.1": "كان هناك مشكلة في طلب قاعدة البيانات. يرجى الاتصال بالمسؤول."
+        "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "حدثت مشكلة في التواصل مع الخادم. يرجى المحاولة مرة أخرى أو التواصل مع المسؤول.",
+        "hd35JhN3zEmey3w4Y9h7LQ#Message.-1973574713.1": "حدثت مشكلة. يرجى التواصل مع المسؤول.",
+        "h3fWDwmg3UeT0Bqt_cQgxw#Message.878067834.1": "حدثت مشكلة في طلب قاعدة البيانات. يرجى التواصل مع المسؤول."
     };
 });
 
@@ -200,9 +200,9 @@ define("PartnersHub.Common.controller$translationsResources.de-DE", [], function
 
 define("PartnersHub.Common.controller$translationsResources.es-ES", [], function() {
     return {
-        "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "Hubo un problema al comunicarse con el servidor. Por favor, inténtelo de nuevo o contacte a su administrador.",
-        "hd35JhN3zEmey3w4Y9h7LQ#Message.-1973574713.1": "Hubo un problema. Por favor, contacte al administrador.",
-        "h3fWDwmg3UeT0Bqt_cQgxw#Message.878067834.1": "Hubo un problema con la solicitud de la base de datos. Por favor, contacte al administrador."
+        "ZW2tO1gq9ke3K4B8INEM6w#Message.-1991744483.1": "Hubo un problema al comunicarse con el servidor. Por favor, inténtalo de nuevo o contacta a tu administrador.",
+        "hd35JhN3zEmey3w4Y9h7LQ#Message.-1973574713.1": "Hubo un problema. Por favor, contacta al administrador.",
+        "h3fWDwmg3UeT0Bqt_cQgxw#Message.878067834.1": "Hubo un problema con la solicitud de la base de datos. Por favor, contacta al administrador."
     };
 });
 

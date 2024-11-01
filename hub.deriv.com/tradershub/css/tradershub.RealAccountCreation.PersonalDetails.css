@@ -27,3 +27,13 @@
 .flatpickr-calendar:not(.open) {
     display: none;
 }
+
+div[data-radio-group] > div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+div[data-radio-button] {
+    width: auto;
+}

@@ -1,8 +1,6 @@
 define("System_.appDefinition", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
     var OS = OSRuntimeCore;
     return {
-        environmentKey: "DUMMY_KEY",
-        environmentName: "DUMMY_NAME",
         applicationKey: "478870b9-2d60-4f73-9eb3-7cd8b994a737",
         applicationName: "(System)",
         userProviderName: "System_",
@@ -18,11 +16,9 @@ define("System_.appDefinition", ["@outsystems/runtime-core-js"], function(OSRunt
             showExceptionStack: false
         },
         isWeb: true,
-        personalArea: null,
-        showWatermark: false,
-        buildServiceVersion: "v17.1637.0.0",
-        clientRuntimeVersion: "6.13.2",
+        buildServiceVersion: "v17.1668.2.0",
+        clientRuntimeVersion: "6.16.1",
         useESM: false,
-        appVersion: "5"
+        appVersion: "6"
     };
 });

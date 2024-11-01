@@ -179,12 +179,12 @@ define("tradershub.Layouts.LayoutBlank.mvc$view", ["@outsystems/runtime-core-js"
 
     return View;
 });
-define("tradershub.Layouts.LayoutBlank.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetLang", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Layouts.LayoutBlank.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.model", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Layouts.LayoutBlank.mvc$translationsResources", "OutSystemsUI.model$ST_b7d405ca4407e572da091e54d07e3bd1Structure", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "OutSystemsUI.controller$SetLang", "OutSystemsUI.controller$AddFavicon", "OutSystemsUI.controller$LayoutReady", "OutSystemsUI.controller$LayoutDestroy"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIModel, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_Layouts_LayoutBlank_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Layouts_LayoutBlank_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -440,4 +440,9 @@ define("tradershub.Layouts.LayoutBlank.mvc$controller", ["@outsystems/runtime-co
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Layouts.LayoutBlank.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

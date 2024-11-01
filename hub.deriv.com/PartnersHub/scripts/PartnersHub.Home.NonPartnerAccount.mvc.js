@@ -115,7 +115,9 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$view", ["@outsystems/runtime-core
                 getOwnerDisposeSpan: function() {
                     return _this.getChildSpan("destroy");
                 },
-                inputs: {},
+                inputs: {
+                    NoRedirect: true
+                },
                 events: {
                     _handleError: function(ex) {
                         controller.handleError(ex);
@@ -637,7 +639,7 @@ define("PartnersHub.Home.NonPartnerAccount.mvc$controller", ["@outsystems/runtim
 
 define("PartnersHub.Home.NonPartnerAccount.mvc$translationsResources.ar-001", [], function() {
     return {
-        "GSXpn47RvUqEYNp1DnG_0Q#Value": "لم نتمكن من العثور على حساب شريك بهذا البريد الإلكتروني."
+        "GSXpn47RvUqEYNp1DnG_0Q#Value": "لم نتمكن من العثور على حساب شريك مرتبط مع هذا البريد الإلكتروني."
     };
 });
 

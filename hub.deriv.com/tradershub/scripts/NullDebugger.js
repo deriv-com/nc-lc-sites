@@ -85,7 +85,7 @@
         }
     }
     _exports.NullDebugger = NullDebugger;
-    const Version = _exports.Version = "6.19.3";
+    const Version = _exports.Version = "6.20.2";
     _runtimeCoreJs.VersionDefinition.registerPackage("client-runtime-core", Version);
     const globalObj = typeof window !== "undefined" ? window : global;
     globalObj.OutSystemsDebugger = new NullDebugger();

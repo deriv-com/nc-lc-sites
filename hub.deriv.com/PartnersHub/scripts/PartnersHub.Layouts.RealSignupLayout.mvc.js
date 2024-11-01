@@ -1096,7 +1096,7 @@ define("PartnersHub.Layouts.RealSignupLayout.mvc$controller", ["@outsystems/runt
 
 define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.ar-001", [], function() {
     return {
-        "i8+dTC528EydZcwYoOEEvQ#Value": "عمولة CFDs",
+        "i8+dTC528EydZcwYoOEEvQ#Value": "عمولة عقود الفروقات (CFDs)",
         "X44sSTfLdkCkHEOfytCWPw#Value": "شروط الاستخدام",
         "u7BlRWdrt0+ixMyjgh6sBw#Value": "منصات الترويج",
         "KBGQ4pg10Ui30pijs4Xfew#Value": "تفاصيل العنوان",
@@ -1126,7 +1126,7 @@ define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.de-DE", [
 
 define("PartnersHub.Layouts.RealSignupLayout.mvc$translationsResources.es-ES", [], function() {
     return {
-        "i8+dTC528EydZcwYoOEEvQ#Value": "comisión de CFDs",
+        "i8+dTC528EydZcwYoOEEvQ#Value": "Comisión de CFD",
         "X44sSTfLdkCkHEOfytCWPw#Value": "Términos de uso",
         "u7BlRWdrt0+ixMyjgh6sBw#Value": "Plataformas de promoción",
         "KBGQ4pg10Ui30pijs4Xfew#Value": "Detalles de dirección",

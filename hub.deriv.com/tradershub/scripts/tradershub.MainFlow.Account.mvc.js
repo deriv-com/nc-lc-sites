@@ -92,7 +92,7 @@ define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "
         get title() {
 
 
-            return "Account";
+            return OSView.BaseView.BaseWebScreen.getTranslation("bDuZw8Z6KUmW7tvMpxiYuw#Title", "Account");
         }
 
         internalRender() {
@@ -143,7 +143,7 @@ define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "
                                 uuid: "1"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Account")];
+                        }, $text(getTranslation("3HINaGK4+EaJbhMsruccCw#Value", "Account")))];
                     })
                 },
                 _dependencies: []
@@ -153,12 +153,12 @@ define("tradershub.MainFlow.Account.mvc$view", ["@outsystems/runtime-core-js", "
 
     return View;
 });
-define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
+define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.Account.mvc$translationsResources", "tradershub.MainFlow.controller", "tradershub.controller$FeatureFlagValueByName"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_Account_mvc_TranslationsResources, tradershub_MainFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_Account_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -343,4 +343,20 @@ define("tradershub.MainFlow.Account.mvc$controller", ["@outsystems/runtime-core-
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.MainFlow.Account.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "3HINaGK4+EaJbhMsruccCw#Value": "Compte"
+    };
+});
+
+define("tradershub.MainFlow.Account.mvc$translationsResources", ["exports", "tradershub.MainFlow.Account.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_Account_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_Account_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

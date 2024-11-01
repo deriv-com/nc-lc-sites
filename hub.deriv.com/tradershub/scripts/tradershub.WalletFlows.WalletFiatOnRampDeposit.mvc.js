@@ -1,4 +1,4 @@
-define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletOverlayPage.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletOverlayPage_mvcModel) {
+define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", ["@outsystems/runtime-core-js", "tradershub.model", "OutSystemsUI.controller", "tradershub.controller", "tradershub.Layouts.MainLayout.mvc$model", "tradershub.WalletBlocks.WalletsOverlayPage.mvc$model", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, OutSystemsUIController, tradershubController, tradershub_Layouts_MainLayout_mvcModel, tradershub_WalletBlocks_WalletsOverlayPage_mvcModel) {
     var OS = OSRuntimeCore;
 
 
@@ -44,7 +44,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", ["@outsystems
 
         static get hasValidationWidgets() {
             if ((Model._hasValidationWidgetsValue === undefined)) {
-                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletOverlayPage_mvcModel.hasValidationWidgets);
+                Model._hasValidationWidgetsValue = (tradershub_Layouts_MainLayout_mvcModel.hasValidationWidgets || tradershub_WalletBlocks_WalletsOverlayPage_mvcModel.hasValidationWidgets);
             }
 
             return Model._hasValidationWidgetsValue;
@@ -57,7 +57,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", ["@outsystems
     return new OS.Model.ModelFactory(Model);
 });
 
-define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletOverlayPage.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_model, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletOverlayPage_mvc_view) {
+define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "react", "@outsystems/runtime-view-js", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$model", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$controller", "tradershub.clientVariables", "tradershub.Layouts.MainLayout.mvc$view", "@outsystems/runtime-widgets-js", "tradershub.WalletBlocks.WalletsOverlayPage.mvc$view", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, React, OSView, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_model, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_controller, tradershubClientVariables, tradershub_Layouts_MainLayout_mvc_view, OSWidgets, tradershub_WalletBlocks_WalletsOverlayPage_mvc_view) {
     var OS = OSRuntimeCore;
     var PlaceholderContent = OSView.Widget.PlaceholderContent;
     var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -88,7 +88,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
         }
 
         static getBlocks() {
-            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletOverlayPage_mvc_view];
+            return [tradershub_Layouts_MainLayout_mvc_view, tradershub_WalletBlocks_WalletsOverlayPage_mvc_view];
         }
 
         get modelFactory() {
@@ -102,7 +102,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
         get title() {
 
 
-            return "WalletFiatOnRampDeposit";
+            return OSView.BaseView.BaseWebScreen.getTranslation("cYm67QXya0ur1exEttutWg#Title", "WalletFiatOnRampDeposit");
         }
 
         internalRender() {
@@ -144,7 +144,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
                 _widgetRecordProvider: widgetsRecordProvider,
                 placeholders: {
                     content: new PlaceholderContent(function() {
-                        return [React.createElement(tradershub_WalletBlocks_WalletOverlayPage_mvc_view, {
+                        return [React.createElement(tradershub_WalletBlocks_WalletsOverlayPage_mvc_view, {
                             getOwnerSpan: function() {
                                 return _this.getChildSpan("render");
                             },
@@ -187,7 +187,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
                                             style: "font-size: 16px;"
                                         },
                                         style: "font-bold",
-                                        text: ["Choose a deposit method"],
+                                        text: [$text(getTranslation("1j4prjO3B0eLco4M5zq4zw#Value", "Choose a deposit method"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "3"
@@ -229,7 +229,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
                                         extendedProperties: {
                                             style: "font-size: 12px;"
                                         },
-                                        text: ["Banxa is a fast, secure service for fiat-to-crypto payments. Deposit cryptocurrencies with credit/debit cards or bank transfers from around the world."],
+                                        text: [$text(getTranslation("gXsNRFN1nU2i1pOS5Gt18w#Value", "Banxa is a fast, secure service for fiat-to-crypto payments. Deposit cryptocurrencies with credit/debit cards or bank transfers from around the world."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "7"
@@ -308,7 +308,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
                                         extendedProperties: {
                                             style: "font-weight: normal;"
                                         },
-                                        text: ["Deposit"],
+                                        text: [$text(getTranslation("V4YpRKl8+kiGkX6PZmwYeg#Value", "Deposit"))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "14"
@@ -319,7 +319,7 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
                                             style: "color: #6A7178; font-size: 12px;"
                                         },
                                         style: "wallet-fiat-onramp-message",
-                                        text: ["Fiat-to-crypto lets you fund your Deriv crypto Wallet(s). The above listed are third-party exchanges, so you\'ll need to create an account with them to use their services."],
+                                        text: [$text(getTranslation("GwSoOqywvEeqhPSWuiXy0w#Value", "Fiat-to-crypto lets you fund your Deriv crypto Wallet(s). The above listed are third-party exchanges, so you\'ll need to create an account with them to use their services."))],
                                         _idProps: {
                                             service: idService,
                                             uuid: "15"
@@ -339,12 +339,12 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$view", ["@outsystems/
 
     return View;
 });
-define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlowsController) {
+define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$translationsResources", "tradershub.WalletFlows.controller", "OutSystemsUI.controller$IsDesktop", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.controller$ServiceToken"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_TranslationsResources, tradershub_WalletFlowsController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -519,4 +519,23 @@ define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$controller", ["@outsy
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "GwSoOqywvEeqhPSWuiXy0w#Value": "La conversion fiat-crypto vous permet de financer votre(s) portefeuille(s) crypto Deriv. Les échanges listés ci-dessus sont des tiers, vous devrez donc créer un compte chez eux pour utiliser leurs services.",
+        "V4YpRKl8+kiGkX6PZmwYeg#Value": "Dépôt",
+        "gXsNRFN1nU2i1pOS5Gt18w#Value": "Banxa est un service rapide et sécurisé pour les paiements en fiat vers crypto. Déposez des cryptomonnaies avec des cartes de crédit/débit ou des virements bancaires du monde entier.",
+        "1j4prjO3B0eLco4M5zq4zw#Value": "Choisir un mode de dépôt"
+    };
+});
+
+define("tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$translationsResources", ["exports", "tradershub.WalletFlows.WalletFiatOnRampDeposit.mvc$translationsResources.fr-FR"], function(exports, tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_WalletFlows_WalletFiatOnRampDeposit_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

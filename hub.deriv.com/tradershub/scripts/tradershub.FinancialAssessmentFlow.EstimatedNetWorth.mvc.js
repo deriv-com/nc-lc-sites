@@ -100,7 +100,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
         get title() {
 
 
-            return "EstimatedNetWorth";
+            return OSView.BaseView.BaseWebScreen.getTranslation("fStlMFsGH06dDHGrmlRqrA#Title", "EstimatedNetWorth");
         }
 
         internalRender() {
@@ -179,7 +179,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                         extendedEvents: {
                                             onClick: function() {
                                                 var eventHandlerContext = callContext.clone();
-                                                controller.radioGroupOnClick$Action(controller.callContext(eventHandlerContext));
+                                                controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
 
                                                 ;
                                             }
@@ -210,7 +210,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             name: "one"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Less than $100,000"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("AdUWRjokxESubgQehy5Gbg#Value", "Less than $100,000"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -223,7 +223,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             name: "two"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "$100,000 - $250,000"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("nAAa32HKA0S8jxzdXy4sDw#Value", "$100,000 - $250,000"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -236,7 +236,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             name: "three"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "$250,001 - $500,000"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("oNgBrD9aFUi92C6fjaxjlg#Value", "$250,001 - $500,000"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -249,7 +249,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             name: "four"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "$500,001 - $1,000,000"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("fiFVWC5zHUimir0GJwKLsQ#Value", "$500,001 - $1,000,000"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -262,7 +262,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             name: "five"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Over $1,000,000")), React.createElement(OSWidgets.Container, {
+                                    }, $text(getTranslation("TNI9GzKdmkGVUPcPiGKwIQ#Value", "Over $1,000,000")))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         style: "btn-container",
@@ -288,7 +288,7 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
                                             uuid: "9"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Next"))];
+                                    }, $text(getTranslation("V57yT7yCqk633nH0+vZ78Q#Value", "Next"))))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(tradershubClientVariables.getFinancialAssessmentEstimatedWorth())]
@@ -302,12 +302,12 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$view", ["@outsy
 
     return View;
 });
-define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlowController) {
+define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$translationsResources", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlow_EstimatedNetWorth_mvc_TranslationsResources, tradershub_FinancialAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_FinancialAssessmentFlow_EstimatedNetWorth_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -374,43 +374,6 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$controller", ["
                 this.__nextOnClick$Action = value;
             }
 
-            get _radioGroupOnClick$Action() {
-                if (!(this.hasOwnProperty("__radioGroupOnClick$Action"))) {
-                    this.__radioGroupOnClick$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("RadioGroupOnClick", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "RadioGroupOnClick");
-                                span.setAttribute("outsystems.function.key", "da3eb0e2-16b0-497c-843c-d827375a3249");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("RadioGroupOnClick");
-                                callContext = controller.callContext(callContext);
-                                // IsRequired = False
-                                model.variables.isRequiredVar = false;
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__radioGroupOnClick$Action;
-            }
-            set _radioGroupOnClick$Action(value) {
-                this.__radioGroupOnClick$Action = value;
-            }
-
 
             nextOnClick$Action(callContext) {
                 var controller = this.controller;
@@ -425,30 +388,6 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$controller", ["
 
                     try {
                         return controller.safeExecuteClientAction(controller._nextOnClick$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
-
-            radioGroupOnClick$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("RadioGroupOnClick__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "RadioGroupOnClick");
-                        span.setAttribute("outsystems.function.key", "da3eb0e2-16b0-497c-843c-d827375a3249");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._radioGroupOnClick$Action, callContext);
                     } finally {
                         if (span) {
                             span.end();
@@ -545,4 +484,25 @@ define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$controller", ["
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "V57yT7yCqk633nH0+vZ78Q#Value": "Suivant",
+        "TNI9GzKdmkGVUPcPiGKwIQ#Value": "Plus de 1 000 000 $",
+        "fiFVWC5zHUimir0GJwKLsQ#Value": "500 001 $ - 1 000 000 $",
+        "oNgBrD9aFUi92C6fjaxjlg#Value": "250 001 $ - 500 000 $",
+        "nAAa32HKA0S8jxzdXy4sDw#Value": "100 000 $ - 250 000 $",
+        "AdUWRjokxESubgQehy5Gbg#Value": "Moins de 100 000 $"
+    };
+});
+
+define("tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$translationsResources", ["exports", "tradershub.FinancialAssessmentFlow.EstimatedNetWorth.mvc$translationsResources.fr-FR"], function(exports, tradershub_FinancialAssessmentFlow_EstimatedNetWorth_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_FinancialAssessmentFlow_EstimatedNetWorth_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

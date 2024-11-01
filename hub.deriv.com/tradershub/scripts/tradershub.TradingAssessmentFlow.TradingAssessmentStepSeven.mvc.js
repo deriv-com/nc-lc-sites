@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$model", 
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
         get title() {
 
 
-            return "TradingAssessmentStepSeven";
+            return OSView.BaseView.BaseWebScreen.getTranslation("YkoaSIX5kUO8VDLBMU6DMw#Title", "TradingAssessmentStepSeven");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["7/10"],
+                            text: [$text(getTranslation("gD6rBtfuykS9R3gpc9SeWw#Value", "7/10"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("cPJnBQCHPk6h7ZkB5FZSVw#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["How many CFD trades have you placed in the past 12 months?"],
+                            text: [$text(getTranslation("cgLlfinnoEWDQ1+il+r1jA#Value", "How many trades have you placed with other financial instruments in the past 12 months?"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getFinancialTradePastYear(), function(value) {
+                                tradershubClientVariables.setFinancialTradePastYear(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "None"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("hvJy+48xzkKBjScs_SJUWA#Value", "None"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "6 - 10"), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("sRa6CALnh0CFga7gz_hLYg#Value", "6 - 10"))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -369,7 +372,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("5yk9pxNXvUejbfpWGaRjmw#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "18"
@@ -378,19 +381,19 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$view", [
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getFinancialTradePastYear()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentStepSeven_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentStepSeven_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -432,7 +435,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$controll
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getFinancialTradePastYear() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -567,4 +570,25 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$controll
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "5yk9pxNXvUejbfpWGaRjmw#Value": "Suivant",
+        "sRa6CALnh0CFga7gz_hLYg#Value": "6 - 10",
+        "hvJy+48xzkKBjScs_SJUWA#Value": "Aucun",
+        "cgLlfinnoEWDQ1+il+r1jA#Value": "Combien de trades CFD avez-vous effectués au cours des 12 derniers mois ?",
+        "cPJnBQCHPk6h7ZkB5FZSVw#Value": "Ceci est requis.",
+        "gD6rBtfuykS9R3gpc9SeWw#Value": "Mer Jul 10 2024 15:00:00 GMT+0800 (Heure normale de Singapour)"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentStepSeven.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentStepSeven_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentStepSeven_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

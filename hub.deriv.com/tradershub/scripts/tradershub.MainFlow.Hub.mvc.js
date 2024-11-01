@@ -92,7 +92,7 @@ define("tradershub.MainFlow.Hub.mvc$view", ["@outsystems/runtime-core-js", "trad
         get title() {
 
 
-            return "Hub";
+            return OSView.BaseView.BaseWebScreen.getTranslation("FZGaE+igJk6VPhwgMJmFmg#Title", "Hub");
         }
 
         internalRender() {
@@ -143,7 +143,7 @@ define("tradershub.MainFlow.Hub.mvc$view", ["@outsystems/runtime-core-js", "trad
                                 uuid: "1"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Hubs")];
+                        }, $text(getTranslation("dyaJiXHbZkyyymUH8Znkog#Value", "Hubs")))];
                     })
                 },
                 _dependencies: []
@@ -153,12 +153,12 @@ define("tradershub.MainFlow.Hub.mvc$view", ["@outsystems/runtime-core-js", "trad
 
     return View;
 });
-define("tradershub.MainFlow.Hub.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowController) {
+define("tradershub.MainFlow.Hub.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlow.Hub.mvc$translationsResources", "tradershub.MainFlow.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlow_Hub_mvc_TranslationsResources, tradershub_MainFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlow_Hub_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -268,4 +268,20 @@ define("tradershub.MainFlow.Hub.mvc$controller", ["@outsystems/runtime-core-js",
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.MainFlow.Hub.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "dyaJiXHbZkyyymUH8Znkog#Value": "Hubs"
+    };
+});
+
+define("tradershub.MainFlow.Hub.mvc$translationsResources", ["exports", "tradershub.MainFlow.Hub.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlow_Hub_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlow_Hub_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

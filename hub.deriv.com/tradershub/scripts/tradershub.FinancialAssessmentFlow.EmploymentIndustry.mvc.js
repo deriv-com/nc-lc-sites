@@ -100,7 +100,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
         get title() {
 
 
-            return "EmploymentIndustry";
+            return OSView.BaseView.BaseWebScreen.getTranslation("Ts1YR96BU0mcHT7UzW3X4w#Title", "EmploymentIndustry");
         }
 
         internalRender() {
@@ -179,7 +179,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                         extendedEvents: {
                                             onClick: function() {
                                                 var eventHandlerContext = callContext.clone();
-                                                controller.radioGroupOnClick$Action(controller.callContext(eventHandlerContext));
+                                                controller.nextOnClick$Action(controller.callContext(eventHandlerContext));
 
                                                 ;
                                             }
@@ -210,7 +210,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Construction"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Construction"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("xvUAsCqDVEaaD3RVnQLR+Q#Value", "Construction"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -223,7 +223,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Education"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Education"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("RTO7XMI5MECNucE7X1Yalw#Value", "Education"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -236,7 +236,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Finance"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Finance"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("xCvZ_gRiqUqq7EySzyw1Yw#Value", "Finance"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -249,7 +249,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Health"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Health"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("1hNcnutiqkSM5maEmoL2nw#Value", "Health"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -262,7 +262,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Tourism"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Tourism"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("Drs9c4vzeECR2gNmWHqv7w#Value", "Tourism"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -275,7 +275,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "InformationCommunicationsTechnology"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Information & Communications Technology"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("ITkUljOIUE++RSn6qeHPzw#Value", "Information & Communications Technology"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -288,7 +288,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "ScienceEngineering"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Science & Engineering"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("Hi1pXtNFMkKDQ127YldaEQ#Value", "Science & Engineering"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -301,7 +301,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Legal"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Legal"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("PCwdh5yRJkWIl2zYlrRjtg#Value", "Legal"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -314,7 +314,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "SocialCultural"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Social & Cultural"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("+fsTzagydUW7RVZnM8Egng#Value", "Social & Cultural"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -327,7 +327,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "RealEstate"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Real Estate"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("O4k9Y65UUk6kDsYRlEWpZw#Value", "Real Estate"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -340,7 +340,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Manufacturing"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Manufacturing"), React.createElement(OSWidgets.RadioButton, {
+                                    }, $text(getTranslation("3KIzOASKZ0megMp4HSrftA#Value", "Manufacturing"))), React.createElement(OSWidgets.RadioButton, {
                                         enabled: true,
                                         gridProperties: {
                                             classes: "OSFillParent"
@@ -353,7 +353,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             name: "Unemployed"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Unemployed")), React.createElement(OSWidgets.Container, {
+                                    }, $text(getTranslation("LmtTAzg13ka03T5vWKPyNQ#Value", "Unemployed")))), React.createElement(OSWidgets.Container, {
                                         align: /*Default*/ 0,
                                         animate: false,
                                         style: "btn-container",
@@ -379,7 +379,7 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
                                             uuid: "16"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Next"))];
+                                    }, $text(getTranslation("QSG_knSeeUilaZ5O6CZ_bg#Value", "Next"))))];
                                 })
                             },
                             _dependencies: [asPrimitiveValue(tradershubClientVariables.getFinancialAssessmentEmploymentIndustry())]
@@ -393,12 +393,12 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$view", ["@outs
 
     return View;
 });
-define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlowController) {
+define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$translationsResources", "tradershub.FinancialAssessmentFlow.controller", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_FinancialAssessmentFlow_EmploymentIndustry_mvc_TranslationsResources, tradershub_FinancialAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_FinancialAssessmentFlow_EmploymentIndustry_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -422,43 +422,6 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$controller", [
             }
 
             // Client Actions - Methods
-            get _radioGroupOnClick$Action() {
-                if (!(this.hasOwnProperty("__radioGroupOnClick$Action"))) {
-                    this.__radioGroupOnClick$Action = function(callContext) {
-                        var model = this.model;
-                        var controller = this.controller;
-                        var idService = this.idService;
-                        return OS.Logger.startActiveSpan("RadioGroupOnClick", function(span) {
-                            if (span) {
-                                span.setAttribute("code.function", "RadioGroupOnClick");
-                                span.setAttribute("outsystems.function.key", "7612c143-8911-48e6-886e-6c813e7caed5");
-                                span.setAttribute("outsystems.function.owner.name", "tradershub");
-                                span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                                span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                            }
-
-                            try {
-                                controller.ensureControllerAlive("RadioGroupOnClick");
-                                callContext = controller.callContext(callContext);
-                                // IsRequired = False
-                                model.variables.isRequiredVar = false;
-                            } finally {
-                                if (span) {
-                                    span.end();
-                                }
-
-                            }
-
-                        }, 1);
-                    };
-                }
-
-                return this.__radioGroupOnClick$Action;
-            }
-            set _radioGroupOnClick$Action(value) {
-                this.__radioGroupOnClick$Action = value;
-            }
-
             get _nextOnClick$Action() {
                 if (!(this.hasOwnProperty("__nextOnClick$Action"))) {
                     this.__nextOnClick$Action = function(callContext) {
@@ -502,30 +465,6 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$controller", [
                 this.__nextOnClick$Action = value;
             }
 
-
-            radioGroupOnClick$Action(callContext) {
-                var controller = this.controller;
-                return OS.Logger.startActiveSpan("RadioGroupOnClick__proxy", function(span) {
-                    if (span) {
-                        span.setAttribute("code.function", "RadioGroupOnClick");
-                        span.setAttribute("outsystems.function.key", "7612c143-8911-48e6-886e-6c813e7caed5");
-                        span.setAttribute("outsystems.function.owner.name", "tradershub");
-                        span.setAttribute("outsystems.function.owner.key", "2ad446d5-32d7-4fbf-959d-82d8325bcfbc");
-                        span.setAttribute("outsystems.function.type", "CLIENT_SCREEN_ACTION");
-                    }
-
-                    try {
-                        return controller.safeExecuteClientAction(controller._radioGroupOnClick$Action, callContext);
-                    } finally {
-                        if (span) {
-                            span.end();
-                        }
-
-                    }
-
-                }, 0);
-
-            }
 
             nextOnClick$Action(callContext) {
                 var controller = this.controller;
@@ -636,4 +575,32 @@ define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$controller", [
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "QSG_knSeeUilaZ5O6CZ_bg#Value": "Suivant",
+        "LmtTAzg13ka03T5vWKPyNQ#Value": "Chômeur",
+        "3KIzOASKZ0megMp4HSrftA#Value": "Fabrication",
+        "O4k9Y65UUk6kDsYRlEWpZw#Value": "Immobilier",
+        "+fsTzagydUW7RVZnM8Egng#Value": "Social et culturel",
+        "PCwdh5yRJkWIl2zYlrRjtg#Value": "Juridique",
+        "Hi1pXtNFMkKDQ127YldaEQ#Value": "Science et ingénierie",
+        "ITkUljOIUE++RSn6qeHPzw#Value": "Technologies de l\'information et de la communication",
+        "Drs9c4vzeECR2gNmWHqv7w#Value": "Tourisme",
+        "1hNcnutiqkSM5maEmoL2nw#Value": "Santé",
+        "xCvZ_gRiqUqq7EySzyw1Yw#Value": "Finance",
+        "RTO7XMI5MECNucE7X1Yalw#Value": "Éducation",
+        "xvUAsCqDVEaaD3RVnQLR+Q#Value": "Construction"
+    };
+});
+
+define("tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$translationsResources", ["exports", "tradershub.FinancialAssessmentFlow.EmploymentIndustry.mvc$translationsResources.fr-FR"], function(exports, tradershub_FinancialAssessmentFlow_EmploymentIndustry_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_FinancialAssessmentFlow_EmploymentIndustry_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

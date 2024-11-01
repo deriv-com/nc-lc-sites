@@ -101,7 +101,7 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystem
             var _this = this;
 
 
-            return "Currency selection | Deriv";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("A4yj35UF7US2sHLuizv_8g#TitleExpression.-2098612361.1", "Currency selection | Deriv");
         }
 
         internalRender() {
@@ -190,12 +190,12 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$view", ["@outsystem
 
     return View;
 });
-define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_CurrencySelection_mvc_controller_OnReady_RudderStackJS) {
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.RealAccountCreation.CurrencySelection.mvc$translationsResources", "tradershub.RealAccountCreation.controller", "tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.RudderStackJS", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_RealAccountCreation_CurrencySelection_mvc_TranslationsResources, tradershub_RealAccountCreationController, tradershub_RealAccountCreation_CurrencySelection_mvc_controller_OnReady_RudderStackJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_RealAccountCreation_CurrencySelection_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -237,6 +237,8 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller", ["@out
                             try {
                                 controller.ensureControllerAlive("AccountCurrencyBlockNextStepEvent");
                                 callContext = controller.callContext(callContext);
+                                // RealSignupPassedStepCount = 1
+                                tradershubClientVariables.setRealSignupPassedStepCount(1);
                                 // Destination: /tradershub/PersonalDetails
                                 return OS.Navigation.navigateTo(OS.Navigation.generateScreenURL("tradershub", "personal-details", {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), callContext, true);
                             } finally {
@@ -531,5 +533,22 @@ define("tradershub.RealAccountCreation.CurrencySelection.mvc$controller.OnReady.
                 form_name: "real_account_signup_form_outsystems"
             }
         });
+    };
+});
+
+
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "A4yj35UF7US2sHLuizv_8g#Title": "Sélection de la devise | Deriv",
+        "A4yj35UF7US2sHLuizv_8g#TitleExpression.-2098612361.1": "Sélection de la devise | Deriv"
+    };
+});
+
+define("tradershub.RealAccountCreation.CurrencySelection.mvc$translationsResources", ["exports", "tradershub.RealAccountCreation.CurrencySelection.mvc$translationsResources.fr-FR"], function(exports, tradershub_RealAccountCreation_CurrencySelection_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_RealAccountCreation_CurrencySelection_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

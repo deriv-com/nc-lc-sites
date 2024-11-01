@@ -1,4 +1,4 @@
-define("tradershub.languageResources", ["@outsystems/runtime-core-js"], function(OSRuntimeCore) {
+define("tradershub.languageResources", ["@outsystems/runtime-core-js", "tradershub.languageResources.translationsResources"], function(OSRuntimeCore, tradershubLanguageResources_translationsResources) {
     var OS = OSRuntimeCore;
     class MessagesProvider extends
     OS.LanguageResources.BaseMessagesProvider {
@@ -25,5 +25,21 @@ define("tradershub.languageResources", ["@outsystems/runtime-core-js"], function
 
     }
 
-    return new MessagesProvider();
+    return new MessagesProvider(tradershubLanguageResources_translationsResources);
+});
+
+define("tradershub.languageResources.translationsResources.fr-FR", [], function() {
+    return {
+        "Validation.Email": "Entrez une adresse e-mail valide.",
+        "Validation.Mandatory": "Ce champ est requis."
+    };
+});
+
+define("tradershub.languageResources.translationsResources", ["exports", "tradershub.languageResources.translationsResources.fr-FR"], function(exports, tradershub_languageResources_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_languageResources_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

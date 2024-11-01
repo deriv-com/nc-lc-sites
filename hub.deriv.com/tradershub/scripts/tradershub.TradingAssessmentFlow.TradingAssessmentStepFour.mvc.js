@@ -9,11 +9,14 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$model", [
                 return [
                     this.attr("IsRequired", "isRequiredVar", "IsRequired", true, false, OS.DataTypes.DataTypes.Boolean, function() {
                         return false;
-                    }, false),
-                    this.attr("MoneyLoss", "moneyLossVar", "MoneyLoss", true, false, OS.DataTypes.DataTypes.Text, function() {
-                        return "";
                     }, false)
                 ].concat(OS.DataTypes.GenericRecord.attributesToDeclare.call(this));
+            }
+
+            static fromStructure(str) {
+                return new VariablesRecord(new VariablesRecord.RecordClass({
+                    isRequiredVar: OS.DataTypes.ImmutableBase.getData(str)
+                }));
             }
 
         }
@@ -97,7 +100,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
         get title() {
 
 
-            return "TradingAssessmentStepFour";
+            return OSView.BaseView.BaseWebScreen.getTranslation("Zq7WARAq6k+U+PmsJDh+qA#Title", "TradingAssessmentStepFour");
         }
 
         internalRender() {
@@ -194,7 +197,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 style: "font-weight: bold;"
                             },
                             style: "trading-assessment-steps__desktop",
-                            text: ["4/10 "],
+                            text: [$text(getTranslation("d93Rya9lqEaYaaeK9JlFXw#Value", "4/10 "))],
                             _idProps: {
                                 service: idService,
                                 uuid: "4"
@@ -224,7 +227,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                         }, $if(model.variables.isRequiredVar, false, this, function() {
                             return [React.createElement(OSWidgets.Text, {
                                 style: "text-error display-block",
-                                text: ["* This is required."],
+                                text: [$text(getTranslation("pI_leQ4_QUO6YQ_jPX8eKw#Value", "* This is required."))],
                                 _idProps: {
                                     service: idService,
                                     uuid: "7"
@@ -237,7 +240,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                             extendedProperties: {
                                 style: "font-size: 16px;"
                             },
-                            text: ["In your understanding, CFD trading allows you to:"],
+                            text: [$text(getTranslation("lxTf1H25N0iRRo4xpg9FBA#Value", "In your understanding, CFD trading allows you to:"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "8"
@@ -262,8 +265,8 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                             },
                             mandatory: false,
                             style: "radio-group",
-                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.moneyLossVar, function(value) {
-                                model.variables.moneyLossVar = value;
+                            variable: model.createVariable(OS.DataTypes.DataTypes.Text, tradershubClientVariables.getCFDAllow(), function(value) {
+                                tradershubClientVariables.setCFDAllow(value);
                             }),
                             _idProps: {
                                 service: idService,
@@ -283,7 +286,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 name: "A"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Purchase commodities or shares of a company."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("QMI4c9RXi0Wn0RWtqAn2FA#Value", "Purchase commodities or shares of a company."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -296,7 +299,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 name: "B"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Place a position on the price movement of an asset where the outcome is a fixed return or nothing at all."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("hmF74z6Ax0OmUiZuGY_5iQ#Value", "Place a position on the price movement of an asset where the outcome is a fixed return or nothing at all."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -309,7 +312,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 name: "C"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Speculate on the price movement of an asset without actually owning it."), React.createElement(OSWidgets.RadioButton, {
+                        }, $text(getTranslation("Blb877cLfEWUMg5_7QwkDw#Value", "Speculate on the price movement of an asset without actually owning it."))), React.createElement(OSWidgets.RadioButton, {
                             enabled: true,
                             gridProperties: {
                                 classes: "OSFillParent"
@@ -322,7 +325,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 name: "D"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Make a long-term investment for a guaranteed profit."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("cX0K1iZruki+htpM6BcE7g#Value", "Make a long-term investment for a guaranteed profit."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             extendedProperties: {
@@ -356,7 +359,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                                 style: "font-family: \"Roboto\", sans-serif; font-weight: 500;"
                             },
                             style: "roboto-medium",
-                            text: ["Next"],
+                            text: [$text(getTranslation("CpO5krhR8ky1V4s4o7G68w#Value", "Next"))],
                             _idProps: {
                                 service: idService,
                                 uuid: "17"
@@ -365,19 +368,19 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$view", ["
                         })))))];
                     })
                 },
-                _dependencies: [asPrimitiveValue(model.variables.moneyLossVar), asPrimitiveValue(model.variables.isRequiredVar)]
+                _dependencies: [asPrimitiveValue(tradershubClientVariables.getCFDAllow()), asPrimitiveValue(model.variables.isRequiredVar)]
             }));
         }
     }
 
     return View;
 });
-define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlowController) {
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "OutSystemsUI.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$translationsResources", "tradershub.TradingAssessmentFlow.controller", "OutSystemsUI.controller$IsPhone", "tradershub.referencesHealth", "tradershub.referencesHealth$OutSystemsUI", "tradershub.model$ST_0dd6e149ce474591a764bb53175023a1Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, OutSystemsUIController, tradershubLanguageResources, tradershubClientVariables, tradershub_TradingAssessmentFlow_TradingAssessmentStepFour_mvc_TranslationsResources, tradershub_TradingAssessmentFlowController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_TradingAssessmentFlow_TradingAssessmentStepFour_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -419,7 +422,7 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$controlle
                             try {
                                 controller.ensureControllerAlive("NextOnClick");
                                 callContext = controller.callContext(callContext);
-                                if (((model.variables.moneyLossVar === OS.BuiltinFunctions.nullTextIdentifier()))) {
+                                if (((tradershubClientVariables.getCFDAllow() === OS.BuiltinFunctions.nullTextIdentifier()))) {
                                     // IsRequired = True
                                     model.variables.isRequiredVar = true;
                                 } else {
@@ -554,4 +557,27 @@ define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$controlle
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "CpO5krhR8ky1V4s4o7G68w#Value": "Suivant",
+        "cX0K1iZruki+htpM6BcE7g#Value": "Faites un investissement à long terme pour un profit garanti.",
+        "Blb877cLfEWUMg5_7QwkDw#Value": "Spéculer sur le mouvement de prix d\'un actif sans réellement le posséder.",
+        "hmF74z6Ax0OmUiZuGY_5iQ#Value": "Placez une position sur le mouvement de prix d\'un actif où le résultat est un rendement fixe ou rien du tout.",
+        "QMI4c9RXi0Wn0RWtqAn2FA#Value": "Achetez des matières premières ou des actions d\'une entreprise.",
+        "lxTf1H25N0iRRo4xpg9FBA#Value": "Dans votre compréhension, le trading CFD vous permet de :",
+        "pI_leQ4_QUO6YQ_jPX8eKw#Value": "Ceci est requis.",
+        "d93Rya9lqEaYaaeK9JlFXw#Value": "4/10/2024 12:00:00 AM"
+    };
+});
+
+define("tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$translationsResources", ["exports", "tradershub.TradingAssessmentFlow.TradingAssessmentStepFour.mvc$translationsResources.fr-FR"], function(exports, tradershub_TradingAssessmentFlow_TradingAssessmentStepFour_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_TradingAssessmentFlow_TradingAssessmentStepFour_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

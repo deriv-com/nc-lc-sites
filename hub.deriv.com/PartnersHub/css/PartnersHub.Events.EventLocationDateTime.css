@@ -1,0 +1,19 @@
+﻿.ph-location-block-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.desktop .ph-location-block-container {
+    gap: 16px;
+}
+
+.ph-location-label {
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 0;
+}
+.desktop .ph-location-label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px; 
+}

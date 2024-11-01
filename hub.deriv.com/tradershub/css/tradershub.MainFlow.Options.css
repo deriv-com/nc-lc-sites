@@ -35,32 +35,7 @@
 .phone .options-header__left {
     justify-content: space-between;
     width: 100%;
-}
-
-.real-demo-switcher {
-    height: 40px;
-    min-width: 120px;
-    border-radius: 8px;
-    padding: 4px;
-    background-color: #F1F3F5;
-    margin-left: 24px;
-}
-
-.tablet .real-demo-switcher,
-.phone .real-demo-switcher {
-    margin-left: 0;
-}
-
-.real-demo-switcher-item {
-    border: none;
-    height: 32px;
-    min-width: 56px;
-    padding: 5px 8px;
-    color: #4F575E;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: 400;
+    padding: 16px 0;
 }
 
 [data-button-group-item].button-group-selected-item {
@@ -103,6 +78,11 @@
     right: 0;
     z-index: 100;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-list-container {
+    max-height: 260px;
+    overflow-y: scroll !important;
 }
 
 .account-switcher:hover {
@@ -158,7 +138,6 @@
     justify-content: flex-end;
     padding: 16px;
     width: fit-content;
-    margin-top: 8.5px;
 }
 
 .tablet .demo-account-container,
@@ -166,6 +145,7 @@
     padding: 0;
     width: 100%;
     justify-content: space-between;
+    margin-top: 8px;
 }
 
 .dtrader-container {
@@ -178,6 +158,11 @@
 .tablet .dtrader-container,
 .phone .dtrader-container {
     margin-top: 16px;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .rest-of-platforms {
@@ -199,6 +184,7 @@
 .trade-types-body {
     display: flex;
     gap: 8px;
+    overflow-x: scroll;
 }
 
 .phone .trade-types-body {
@@ -281,26 +267,12 @@
     padding: 0 !important;
 }
 
-.restricted-country-popup-dialog {
-    max-width: 368px;
-}
-
 .warning-modal {
     padding: 24px;
 }
 
 .tablet .warning-modal,
 .phone .warning-modal {
-    padding: 16px;
-}
-
-/* BO */
-.demo-yellow-container {
-    display: flex;
-    align-items: center;
-    background-color: #FDF6E5;
-    border-radius: 8px;
-    margin-bottom: 24px;
     padding: 16px;
 }
 
@@ -319,8 +291,9 @@
     margin-top: 8px;
 }
 
-.tablet .demo-yellow-container,
-.phone .demo-yellow-container {
-    margin-bottom: 0;
-    margin-top: 8px;
+.dtrader-loader {
+    height: 206px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 24px;
 }

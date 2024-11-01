@@ -494,9 +494,18 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$controller", ["@outsystems/runtime-c
 });
 
 
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001", [], function() {
+    return {
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "انضم الآن",
+        "KglJHT9r9U+AN_RNe7PMbw#Value": "تحديثات حصرية للشركاء على الواتساب",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "زر الانضمام الآن في لافتة واتساب",
+        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "انضم الآن"
+    };
+});
+
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Jetzt beitreten",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "WhatsApp-Updates exklusiv für Partner",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "WhatsApp-Banner Jetzt beitreten Button",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Jetzt beitreten"
@@ -505,16 +514,16 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", [], fu
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.es-ES", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Únete ahora",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Actualizaciones de WhatsApp exclusivamente para socios",
-        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner de WhatsApp Botón unirse ahora",
+        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner de WhatsApp Botón de unirse ahora",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Únete ahora"
     };
 });
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Rejoignez maintenant",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Mises à jour WhatsApp exclusivement pour les partenaires",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Bannière WhatsApp Bouton rejoindre maintenant",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Rejoignez maintenant"
@@ -523,7 +532,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", [], fu
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Iscriviti ora",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Aggiornamenti WhatsApp esclusivamente per i partner",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner di WhatsApp Pulsante unisciti ora",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Iscriviti ora"
@@ -532,7 +541,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", [], fu
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Dołącz teraz",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Aktualizacje WhatsApp wyłącznie dla partnerów",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Baner WhatsApp Przycisk dołącz teraz",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Dołącz teraz"
@@ -541,7 +550,7 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", [], fu
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Junte-se agora",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Atualizações do WhatsApp exclusivamente para parceiros",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Banner do WhatsApp Botão junte-se agora",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Junte-se agora"
@@ -550,23 +559,19 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", [], fu
 
 define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ru-RU", [], function() {
     return {
-        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Join Now",
+        "hGrjsVin_k+o09Xv10+QZA#Value.-1338680608.1": "Присоединяйтесь сейчас",
         "KglJHT9r9U+AN_RNe7PMbw#Value": "Обновления WhatsApp исключительно для партнеров",
         "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "Баннер WhatsApp Кнопка присоединиться сейчас",
         "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "Присоединяйтесь сейчас"
     };
 });
 
-define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001", [], function() {
+define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", ["exports", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.es-ES", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ru-RU"], function(exports, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_deDE, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_esES, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_frFR, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_itIT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_plPL, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ptPT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ruRU) {
     return {
-        "KglJHT9r9U+AN_RNe7PMbw#Value": "تحديثات WhatsApp حصريًا للشركاء",
-        "xmmB3QXapky_a843OQSiSw#Value.582033868.1": "زر الانضمام الآن",
-        "PxN9xg9sdEyO006yBWwOxA#Value.-1338680608.1": "انضم الآن"
-    };
-});
-
-define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", ["exports", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.de-DE", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.es-ES", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.fr-FR", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.it-IT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pl-PL", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.pt-PT", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ru-RU", "PartnersHub.Home.WhatsAppBanner.mvc$translationsResources.ar-001"], function(exports, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_deDE, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_esES, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_frFR, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_itIT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_plPL, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ptPT, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ruRU, PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001) {
-    return {
+        "ar-001": {
+            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001,
+            "isRTL": true
+        },
         "de-DE": {
             "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_deDE,
             "isRTL": false
@@ -594,10 +599,6 @@ define("PartnersHub.Home.WhatsAppBanner.mvc$translationsResources", ["exports", 
         "ru-RU": {
             "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ruRU,
             "isRTL": false
-        },
-        "ar-001": {
-            "translations": PartnersHub_Home_WhatsAppBanner_mvc_translationsResources_ar001,
-            "isRTL": true
         }
     };
 });

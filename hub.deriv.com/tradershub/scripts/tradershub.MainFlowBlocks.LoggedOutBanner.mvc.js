@@ -175,7 +175,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Text, {
                     style: "banner-title",
-                    text: ["Join over 2.5 million traders"],
+                    text: [$text(getTranslation("ChL_Y+QsQUaYtB962otG7Q#Value", "Join over 2.5 million traders"))],
                     _idProps: {
                         service: idService,
                         uuid: "3"
@@ -186,7 +186,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     isDefault: false,
                     onClick: function() {
                         try {
-                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL((((OS.BuiltinFunctions.index(tradershubClientVariables.getURL(), "green", 0, false, false) > -1)) ? (("https://oauth.deriv.com/oauth2/authorize?app_id=" + tradershubClientVariables.getAppId())) : (((("https://" + tradershubClientVariables.getURL()) + "/oauth2/authorize?app_id=") + tradershubClientVariables.getAppId()))), {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
+                            OS.Navigation.navigateTo(OS.Navigation.generateScreenURL((((((("https://" + tradershubClientVariables.getURL()) + "/oauth2/authorize?app_id=") + tradershubClientVariables.getAppId()) + "&l=") + tradershubClientVariables.getLang()) + "&brand=deriv"), {}), OS.Transitions.createTransition(OS.Transitions.TransitionAnimation.Default), null, true);
                         } catch (ex) {
                             if (((ex.name) !== ("RedirectOccurredException"))) {
                                 throw ex;
@@ -201,7 +201,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                         uuid: "4"
                     },
                     _widgetRecordProvider: widgetsRecordProvider
-                }, "Get started")), React.createElement(OSWidgets.Container, {
+                }, $text(getTranslation("eoP8o9VVVUSXsa3ZtbZH5A#Value", "Get started")))), React.createElement(OSWidgets.Container, {
                     align: /*Default*/ 0,
                     animate: false,
                     style: "hide-mobile",
@@ -263,7 +263,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     _widgetRecordProvider: widgetsRecordProvider
                 }, React.createElement(OSWidgets.Text, {
                     style: "hide-mobile",
-                    text: ["Our customer say"],
+                    text: [$text(getTranslation("XqrcCv7Mk0SAM7Fkxikvnw#Value", "Our customer say"))],
                     _idProps: {
                         service: idService,
                         uuid: "11"
@@ -286,7 +286,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
                     extendedProperties: {
                         style: "font-weight: bold;"
                     },
-                    text: ["Excellent"],
+                    text: [$text(getTranslation("qZpPgIx_s0il9nH3dce2Eg#Value", "Excellent"))],
                     _idProps: {
                         service: idService,
                         uuid: "13"
@@ -417,12 +417,12 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$view", ["@outsystems/runti
 
     return View;
 });
-define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.model$ST_d9250f167f0b0818f60ee73b22ec1a06Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$translationsResources", "tradershub.model$ST_d9250f167f0b0818f60ee73b22ec1a06Structure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {
@@ -448,7 +448,7 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$controller", ["@outsystems
                                 model.variables.trustPilotDataAct.dataFetchStatusAttr = b;
                             }, function(json) {
                                 model.variables.trustPilotDataAct.replaceWith(OS.DataConversion.ServerDataConverter.from(json, model.variables.trustPilotDataAct.constructor));
-                            }, undefined, undefined, undefined, callContext, undefined, false);
+                            }, undefined, undefined, undefined, callContext, undefined, true);
                         }.bind(this);
                         return OS.Logger.startActiveSpan("TrustPilot", function(span) {
                             if (span) {
@@ -577,4 +577,23 @@ define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$controller", ["@outsystems
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "qZpPgIx_s0il9nH3dce2Eg#Value": "Excellent",
+        "XqrcCv7Mk0SAM7Fkxikvnw#Value": "Notre client dit",
+        "eoP8o9VVVUSXsa3ZtbZH5A#Value": "Commencez",
+        "ChL_Y+QsQUaYtB962otG7Q#Value": "Rejoignez plus de 2,5 millions de traders"
+    };
+});
+
+define("tradershub.MainFlowBlocks.LoggedOutBanner.mvc$translationsResources", ["exports", "tradershub.MainFlowBlocks.LoggedOutBanner.mvc$translationsResources.fr-FR"], function(exports, tradershub_MainFlowBlocks_LoggedOutBanner_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_MainFlowBlocks_LoggedOutBanner_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

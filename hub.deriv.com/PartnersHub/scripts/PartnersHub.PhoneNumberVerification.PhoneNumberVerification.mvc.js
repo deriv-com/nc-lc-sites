@@ -1768,7 +1768,7 @@ define("PartnersHub.PhoneNumberVerification.PhoneNumberVerification.mvc$translat
         "ZqV91Ha8kkKN5dNRhl1kXg#Value": "التحقق من رقم الهاتف",
         "AFr8LldAKEmkCdYd8s7AKQ#Value": "تغيير رقم الهاتف",
         "vpWbo8hIQkeivsYLl_TX1g#Value": "أعد إرسال الرمز",
-        "RYVAczoYXECSCahgdN7k2A#Value": "لم تحصل على الشفرة؟"
+        "RYVAczoYXECSCahgdN7k2A#Value": "لم تحصل على الرمز؟"
     };
 });
 

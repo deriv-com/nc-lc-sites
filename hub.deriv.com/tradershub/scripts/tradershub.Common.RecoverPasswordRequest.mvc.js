@@ -107,7 +107,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
             var _this = this;
 
 
-            return "Recover password";
+            return OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ppvqP2sM50+rLmUCKpg5wA#TitleExpression.1539801591.1", "Recover password");
         }
 
         internalRender() {
@@ -214,7 +214,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                 uuid: "6"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Forgot your password?"), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("YkmG5_QATkSEW2787SKgvg#Value", "Forgot your password?"))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "margin-top-s",
@@ -233,7 +233,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                 uuid: "8"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Don\'t worry, we\'ll send you an email with instructions."))), React.createElement(OSWidgets.Container, {
+                        }, $text(getTranslation("70mE3canp0eMGAjJbbLBUg#Value", "Don\'t worry, we\'ll send you an email with instructions."))))), React.createElement(OSWidgets.Container, {
                             align: /*Default*/ 0,
                             animate: false,
                             style: "login-inputs margin-top-m",
@@ -279,7 +279,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                             uuid: "11"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }, "Email")];
+                                    }, $text(getTranslation("9KAkoQwQdUqTW+OsCHiWkA#Value", "Email")))];
                                 }),
                                 input: new PlaceholderContent(function() {
                                     return [React.createElement(OSWidgets.Input, {
@@ -383,7 +383,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                             uuid: "16"
                                         },
                                         _widgetRecordProvider: widgetsRecordProvider
-                                    }), "Reset password")];
+                                    }), $text(getTranslation("g2hmwzo5HUW5So+cLVujgw#Value", "Reset password")))];
                                 })
                             },
                             _dependencies: []
@@ -400,7 +400,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                 uuid: "17"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Not in the right place?", React.createElement(OSWidgets.Link, {
+                        }, $text(getTranslation("SSZdvN4LY0mknFVm_QDoDA#Value", "Not in the right place?")), React.createElement(OSWidgets.Link, {
                             enabled: true,
                             extendedProperties: {
                                 tabIndex: "3",
@@ -417,7 +417,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
                                 uuid: "18"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Go to login."))))];
+                        }, $text(getTranslation("3cAzE2Oh9ECwxvvUAuXtsg#Value", "Go to login."))))))];
                     })
                 },
                 _dependencies: [asPrimitiveValue(model.variables.isExecutingVar), asPrimitiveValue(model.variables.emailVar)]
@@ -427,12 +427,12 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$view", ["@outsystems/runtim
 
     return View;
 });
-define("tradershub.Common.RecoverPasswordRequest.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_CommonController) {
+define("tradershub.Common.RecoverPasswordRequest.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.RecoverPasswordRequest.mvc$translationsResources", "tradershub.Common.controller"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_RecoverPasswordRequest_mvc_TranslationsResources, tradershub_CommonController) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_RecoverPasswordRequest_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -459,7 +459,7 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$controller", ["@outsystems/
                                     ApplicationName: OS.DataConversion.ServerDataConverter.to(applicationNameIn, OS.DataTypes.DataTypes.Text),
                                     CustomerEmail: OS.DataConversion.ServerDataConverter.to(customerEmailIn, OS.DataTypes.DataTypes.Email)
                                 };
-                                return controller.callServerAction("SendResetPasswordEmail", "screenservices/tradershub/Common/RecoverPasswordRequest/ActionSendResetPasswordEmail", "ZQ3JIWE5Y0g+GWpXfIJc8A", inputs, controller.callContext(callContext), undefined, undefined, false).then(function(outputs) {
+                                return controller.callServerAction("SendResetPasswordEmail", "screenservices/tradershub/Common/RecoverPasswordRequest/ActionSendResetPasswordEmail", "ZQ3JIWE5Y0g+GWpXfIJc8A", inputs, controller.callContext(callContext), undefined, undefined, true).then(function(outputs) {
                                     var executeServerActionResult = new(controller.constructor.getVariableGroupType("tradershub.Common.RecoverPasswordRequest$ActionSendResetPasswordEmail"))();
                                     executeServerActionResult.successOut = OS.DataConversion.ServerDataConverter.from(outputs.Success, OS.DataTypes.DataTypes.Boolean);
                                     return executeServerActionResult;
@@ -678,4 +678,27 @@ define("tradershub.Common.RecoverPasswordRequest.mvc$controller", ["@outsystems/
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.RecoverPasswordRequest.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "3cAzE2Oh9ECwxvvUAuXtsg#Value": "Allez à la connexion.",
+        "SSZdvN4LY0mknFVm_QDoDA#Value": "Pas au bon endroit ?",
+        "g2hmwzo5HUW5So+cLVujgw#Value": "Réinitialiser le mot de passe",
+        "9KAkoQwQdUqTW+OsCHiWkA#Value": "E-mail",
+        "70mE3canp0eMGAjJbbLBUg#Value": "Ne vous inquiétez pas, nous vous enverrons un e-mail avec des instructions.",
+        "YkmG5_QATkSEW2787SKgvg#Value": "Mot de passe oublié ?",
+        "ppvqP2sM50+rLmUCKpg5wA#Title": "Récupérer le mot de passe",
+        "ppvqP2sM50+rLmUCKpg5wA#TitleExpression.1539801591.1": "Récupérer le mot de passe"
+    };
+});
+
+define("tradershub.Common.RecoverPasswordRequest.mvc$translationsResources", ["exports", "tradershub.Common.RecoverPasswordRequest.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_RecoverPasswordRequest_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_RecoverPasswordRequest_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
+    };
 });

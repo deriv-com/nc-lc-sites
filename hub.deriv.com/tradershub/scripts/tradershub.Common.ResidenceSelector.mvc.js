@@ -217,13 +217,13 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                             gridProperties: {
                                 classes: "OSFillParent"
                             },
-                            style: "wcag-hide-text",
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("8x__wEL6MkyMGNeDOLirEA#ValueExpression.773994173.1", "wcag-hide-text"),
                             _idProps: {
                                 service: idService,
                                 uuid: "2"
                             },
                             _widgetRecordProvider: widgetsRecordProvider
-                        }, "Search input"), React.createElement(OSWidgets.Input, {
+                        }, $text(getTranslation("mg_RG1fTt0Kml2mUQ0gQiw#Value", "Search input"))), React.createElement(OSWidgets.Input, {
                             _validationProps: {
                                 validationService: validationService
                             },
@@ -243,8 +243,8 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
 
                                 ;
                             },
-                            prompt: "Search",
-                            style: "form-control",
+                            prompt: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("OUkkZkK5+Ue5UqC9qRb+_A#ValueExpression.-1822469688.1", "Search"),
+                            style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("ILep0wVM+kWbtPdchxeBeQ#ValueExpression.85283156.1", "form-control"),
                             variable: model.createVariable(OS.DataTypes.DataTypes.Text, model.variables.searchedResidenceVar, function(value) {
                                 model.variables.searchedResidenceVar = value;
                             }),
@@ -262,7 +262,7 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                     extendedProperties: {
                         style: "color: #6A7178; font-size: 12px;"
                     },
-                    text: ["Choose the citizenship/nationality shown on your official ID."],
+                    text: [$text(getTranslation("qckzqMND6UyWdM5paoGBxw#Value", "Choose the citizenship/nationality shown on your official ID."))],
                     _idProps: {
                         service: idService,
                         uuid: "4"
@@ -291,7 +291,7 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                 },
                 mode: /*Default*/ 0,
                 source: model.variables.filteredResidenceListVar,
-                style: "list list-group residence-list ",
+                style: OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("APwvLoQNnkWh6zuGnPC9gQ#ValueExpression.723768045.1", "list list-group residence-list "),
                 tag: "div",
                 _idProps: {
                     service: idService,
@@ -311,7 +311,7 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                                 ;
                             },
                             style: model.getCachedValue(idService.getId("ListItem1.Style"), function() {
-                                return (((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr === model.variables.currentResidenceVar)) ? ("current-residence-item list-item") : ((((model.variables.shouldShowUnaviableMessageIn && (model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr === "DISABLED"))) ? (" list-item disabled-item") : ("list-item"))));
+                                return (((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr === model.variables.currentResidenceVar)) ? (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("_PKtALIN2UG8OkzXHc8p1w#ValueExpression.772382096.1", "current-residence-item list-item")) : ((((model.variables.shouldShowUnaviableMessageIn && (model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr === "DISABLED"))) ? (" list-item disabled-item") : (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("_PKtALIN2UG8OkzXHc8p1w#ValueExpression.-1270571294.1", "list-item")))));
                             }, function() {
                                 return model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr;
                             }, function() {
@@ -377,7 +377,7 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                                             marginLeft: "0"
                                         },
                                         style: model.getCachedValue(idService.getId("Vns9fPviOEOB0ZrMuah1rg.Style"), function() {
-                                            return ((((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr === model.variables.currentResidenceVar) && ((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr) !== ("DISABLED")))) ? ("current-country") : ((((model.variables.shouldShowUnaviableMessageIn && (model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr === "DISABLED"))) ? ("disabled-text") : ("country-list"))));
+                                            return ((((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr === model.variables.currentResidenceVar) && ((model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr) !== ("DISABLED")))) ? (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("DwcEBU5DykeDfsz22mdysQ#ValueExpression.-31232190.1", "current-country")) : ((((model.variables.shouldShowUnaviableMessageIn && (model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).disabledAttr === "DISABLED"))) ? ("disabled-text") : (OS.Injector.resolve(OS.ServiceNames.TranslationsService).getMessage("DwcEBU5DykeDfsz22mdysQ#ValueExpression.1435158645.1", "country-list")))));
                                         }, function() {
                                             return model.variables.filteredResidenceListVar.getCurrent(callContext.iterationContext).valueAttr;
                                         }, function() {
@@ -399,7 +399,7 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
                                             extendedProperties: {
                                                 style: "color: #6A7178; font-size: 14px;"
                                             },
-                                            text: ["Service is not available"],
+                                            text: [$text(getTranslation("BEf59jMPjkWUCVct+7XMOA#Value", "Service is not available"))],
                                             _idProps: {
                                                 service: idService,
                                                 uuid: "12"
@@ -435,12 +435,12 @@ define("tradershub.Common.ResidenceSelector.mvc$view", ["@outsystems/runtime-cor
 
     return View;
 });
-define("tradershub.Common.ResidenceSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.ResidenceSelector.mvc$controller.OnReady.JavaScript1JS", "tradershub.Common.ResidenceSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_ResidenceSelector_mvc_controller_OnReady_JavaScript1JS, tradershub_Common_ResidenceSelector_mvc_controller_OnSearch_SearchCountryJS) {
+define("tradershub.Common.ResidenceSelector.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.ResidenceSelector.mvc$translationsResources", "tradershub.Common.ResidenceSelector.mvc$controller.OnReady.JavaScript1JS", "tradershub.Common.ResidenceSelector.mvc$controller.OnSearch.SearchCountryJS", "tradershub.model$ST_1eac13b44db3d2db577291973f4a7e96Structure", "tradershub.model$RL_10436c71a703b5c08e6ed74c34052e0a", "tradershub.model$ST_1a4f07e6c8d6ea2e2ddfeb34b9b7a3c8Structure", "tradershub.model$ST_3d5602677826d8c01775c21c1065c8ceStructure"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_ResidenceSelector_mvc_TranslationsResources, tradershub_Common_ResidenceSelector_mvc_controller_OnReady_JavaScript1JS, tradershub_Common_ResidenceSelector_mvc_controller_OnSearch_SearchCountryJS) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_ResidenceSelector_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -905,12 +905,37 @@ define("tradershub.Common.ResidenceSelector.mvc$controller.OnSearch.SearchCountr
     return function($parameters, $actions, $roles, $public) {
         const residenceListResponse = JSON.parse($parameters.ResidenceList ?? JSON.stringify({}));
 
-
         const filteredResidenceListResponse = JSON.stringify({
             ...residenceListResponse,
             residence_list: residenceListResponse.filter(country => country["text"].toLowerCase().includes($parameters.SearchedResidence.toLowerCase()))
         });
 
         $parameters.FilteredResidenceList = filteredResidenceListResponse
+    };
+});
+
+
+define("tradershub.Common.ResidenceSelector.mvc$translationsResources.fr-FR", [], function() {
+    return {
+        "BEf59jMPjkWUCVct+7XMOA#Value": "Le service n\'est pas disponible",
+        "DwcEBU5DykeDfsz22mdysQ#ValueExpression.-31232190.1": "current-country",
+        "DwcEBU5DykeDfsz22mdysQ#ValueExpression.1435158645.1": "country-list",
+        "_PKtALIN2UG8OkzXHc8p1w#ValueExpression.-1270571294.1": "list-item",
+        "_PKtALIN2UG8OkzXHc8p1w#ValueExpression.772382096.1": "current-residence-item list-item",
+        "APwvLoQNnkWh6zuGnPC9gQ#ValueExpression.723768045.1": "list list-group residence-list ",
+        "qckzqMND6UyWdM5paoGBxw#Value": "Choisissez la citoyenneté/nationalité indiquée sur votre pièce d\'identité officielle.",
+        "ILep0wVM+kWbtPdchxeBeQ#ValueExpression.85283156.1": "form-control",
+        "OUkkZkK5+Ue5UqC9qRb+_A#ValueExpression.-1822469688.1": "Rechercher",
+        "mg_RG1fTt0Kml2mUQ0gQiw#Value": "Champ de recherche",
+        "8x__wEL6MkyMGNeDOLirEA#ValueExpression.773994173.1": "wcag-hide-text"
+    };
+});
+
+define("tradershub.Common.ResidenceSelector.mvc$translationsResources", ["exports", "tradershub.Common.ResidenceSelector.mvc$translationsResources.fr-FR"], function(exports, tradershub_Common_ResidenceSelector_mvc_translationsResources_frFR) {
+    return {
+        "fr-FR": {
+            "translations": tradershub_Common_ResidenceSelector_mvc_translationsResources_frFR,
+            "isRTL": false
+        }
     };
 });

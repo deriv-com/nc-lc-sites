@@ -107,7 +107,7 @@ define("tradershub.Common.BalanceSkeletonLoader.mvc$view", ["@outsystems/runtime
             return React.createElement("div", this.getRootNodeProperties(), React.createElement(OSWidgets.Container, {
                 align: /*Default*/ 0,
                 animate: false,
-                style: "balance-skeleton-loader",
+                style: "skeleton balance-loader",
                 visible: true,
                 _idProps: {
                     service: idService,
@@ -120,12 +120,12 @@ define("tradershub.Common.BalanceSkeletonLoader.mvc$view", ["@outsystems/runtime
 
     return View;
 });
-define("tradershub.Common.BalanceSkeletonLoader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables) {
+define("tradershub.Common.BalanceSkeletonLoader.mvc$controller", ["@outsystems/runtime-core-js", "tradershub.model", "tradershub.controller", "tradershub.languageResources", "tradershub.clientVariables", "tradershub.Common.BalanceSkeletonLoader.mvc$translationsResources"], function(OSRuntimeCore, tradershubModel, tradershubController, tradershubLanguageResources, tradershubClientVariables, tradershub_Common_BalanceSkeletonLoader_mvc_TranslationsResources) {
     var OS = OSRuntimeCore; {
         class ControllerInner extends
         OS.Controller.BaseViewController {
             constructor(model, messagesProvider, idService) {
-                super(model, messagesProvider, idService);
+                super(model, messagesProvider, idService, tradershub_Common_BalanceSkeletonLoader_mvc_TranslationsResources);
                 var controller = this.controller;
                 this.clientActionProxies = {};
                 this.dataFetchDependenciesOriginal = {};
@@ -235,4 +235,9 @@ define("tradershub.Common.BalanceSkeletonLoader.mvc$controller", ["@outsystems/r
 
     }
     return new OS.Controller.ControllerFactory(Controller, tradershubLanguageResources);
+});
+
+
+define("tradershub.Common.BalanceSkeletonLoader.mvc$translationsResources", ["exports"], function(exports) {
+    return {};
 });

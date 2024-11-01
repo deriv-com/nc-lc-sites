@@ -707,7 +707,7 @@ define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$controller.
 define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.ar-001", [], function() {
     return {
         "Rqe+i_NNF0udVEY3a2YZnA#Value": "التالي",
-        "CmBHFZFxMUKb6n_wooOCMQ#Value": "بالضبط كما يظهر في وثيقة هويتك.",
+        "CmBHFZFxMUKb6n_wooOCMQ#Value": "تمامًا كما هو مكتوب في بطاقة هويتك.",
         "R6QvSSYpZUKx2eKCmm6T+g#Value": "تاريخ الميلاد",
         "QI2aTs_TxE6cIF7ETUf9sg#Value": "أدخل",
         "w5xC+s7g0UaCuq6+6RZViA#ValueExpression.-591733248.1": "dd-mm-yyyy",
@@ -730,11 +730,11 @@ define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translation
 define("PartnersHub.RealAccountCreationFlow.DateOfBirthContainer.mvc$translationsResources.es-ES", [], function() {
     return {
         "Rqe+i_NNF0udVEY3a2YZnA#Value": "Siguiente",
-        "CmBHFZFxMUKb6n_wooOCMQ#Value": "exactamente como aparece en su documento de identidad.",
+        "CmBHFZFxMUKb6n_wooOCMQ#Value": "exactamente como aparece en tu documento de identidad.",
         "R6QvSSYpZUKx2eKCmm6T+g#Value": "fecha de nacimiento",
-        "QI2aTs_TxE6cIF7ETUf9sg#Value": "Introduzca su",
+        "QI2aTs_TxE6cIF7ETUf9sg#Value": "Introduce tu",
         "1wIXIAE1yUC7CgI2awV25w#Value.1002767249.1": "Select a date",
-        "w5xC+s7g0UaCuq6+6RZViA#ValueExpression.-591733248.1": "dd-mm-yyyy",
+        "w5xC+s7g0UaCuq6+6RZViA#ValueExpression.-591733248.1": "dd-mm-aaaa",
         "bAVdkOUNBUG_U9GkVV0i6Q#Value": "Fecha de nacimiento"
     };
 });
