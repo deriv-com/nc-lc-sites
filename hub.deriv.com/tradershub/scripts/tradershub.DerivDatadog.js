@@ -1,6 +1,6 @@
-function loadScript(url, callback) {
+﻿function loadScript(url, callback) {
     var script = document.createElement('script')
-    script.onload = function() {
+    script.onload = function () {
         if (callback) callback()
     }
     script.src = url
@@ -9,14 +9,14 @@ function loadScript(url, callback) {
 }
 var environment_dd = window.location.host === 'hub.deriv.com' ? 'production' : 'staging'
 // Usage to load the data-dog script
-loadScript("https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js", function() {
+loadScript("https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js", function () {
     window.DD_RUM && window.DD_RUM.init({
         clientToken: 'pub08554ab30284600af157441bfb0fa923',
         applicationId: '5c8975a3-ec86-4a64-8a3a-e6888fdde082',
         site: 'datadoghq.com',
         service: 'tradershub-os',
         env: environment_dd,
-        version: '1.0.0',
+        version: '1.0.0', 
         sessionSampleRate: 10,
         trackUserInteractions: true,
         trackResources: true,

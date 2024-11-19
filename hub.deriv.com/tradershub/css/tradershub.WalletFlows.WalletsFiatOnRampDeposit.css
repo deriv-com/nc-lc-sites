@@ -1,0 +1,14 @@
+﻿.wallet-fiat-onramp-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop .wallet-fiat-onramp-content {
+    gap: var(--space-m);
+}
+
+.phone .wallet-fiat-onramp-content,
+.tablet .wallet-fiat-onramp-content {
+    gap: var(--space-base);
+    height: calc(100vh - 250px);
+}

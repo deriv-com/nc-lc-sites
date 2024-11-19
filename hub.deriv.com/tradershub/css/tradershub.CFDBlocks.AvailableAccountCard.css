@@ -1,0 +1,10 @@
+﻿.available_account_card {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #DEE2E6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 94px;
+}

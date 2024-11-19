@@ -1,11 +1,12 @@
 ﻿.cfd-commissions-modal {
-    z-index: 999;
-    display: flex;
+    z-index: 999; 
     justify-content: end;
+    display: flex;
     --padding: 16px;
     --modal-width: 100vw;
     --header-height: 56px;
 }
+
 .desktop .cfd-commissions-modal-dialog{
     --modal-width: 400px;
 }
@@ -48,11 +49,11 @@
 
 .cfd-commissions-modal-content {
     padding: var(--padding);
+    height: 100%;
 }
 
 .desktop .cfd-commissions-modal-text {
     margin-block-end: 24px;
-    color: #000;
     color: #000;
 }
 .cfd-commissions-modal-text {
@@ -88,7 +89,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    height: 48px;
+    height: 40px;
     border: none;
     background: transparent;
     padding-left: 8px;
@@ -101,4 +102,41 @@
 .password-input-error {
     color: var(--color-error);
 }
+.cfd-input-validation{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cfd-input-validation.not-valid {
+    color: var(--color-error);
+}
 
+.cfd-input-validation.valid{
+    color: var(--color-success);
+}
+.cfd-commissions-modal-screen{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 16px;
+}
+.cfd-commissions-modal-screen-img{
+    width: 128px;
+    height: 128px;
+    margin-inline: auto;
+}
+.cfd-commissions-modal-screen-heading{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-neutral-10);
+    margin-block-start: 24px;
+}
+.cfd-commissions-modal-screen-text{
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-neutral-10);
+    margin-block-start: 8px;
+}

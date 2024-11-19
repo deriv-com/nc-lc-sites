@@ -1,6 +1,57 @@
-﻿.wallet-overlay-container,
+﻿.phone .bottom-navigation,
+.tablet .bottom-navigation {
+    display: none;
+}
+
+.phone .header-wrapper,
+.tablet header-wrapper {
+    display: none;
+}
+
+.content-wrapper {
+    position: relative;
+}
+
+.phone .content-wrapper,
+.tablet .content-wrapper {
+    padding: unset;
+    margin: 0;
+}
+
+/* Wallet Overlay Container - Parent Container */
+.wallet-overlay-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Wallet Title  */
+.wallet-title-container {
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    gap: 16px;
+}
+
+.desktop .wallet-title-container {
+    padding: 4px 0;
+}
+
+.phone .wallet-title-container,
+.tablet .wallet-title-container {
+    padding: 0px 16px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-neutral-3);
+}
+
+/* Wallet Overlay Content - Content Wrapper */
 .wallet-overlay-content {
     width: 100%;
+    height: 100%;
 }
 
 .wallet-overlay-content {
@@ -10,7 +61,30 @@
     height: 100%;
 }
 
+.desktop .wallet-overlay-content {
+    margin-top: var(--space-s);
+}
 
+.phone .wallet-overlay-content,
+.tablet .wallet-overlay-content {
+    padding: var(--space-base);
+    height: calc(100vh - 48px);
+}
+
+/* Wallet Footer Content - Footer Wrapper */
+.desktop .wallet-overlay-footer {
+    display: none;
+}
+
+.phone .wallet-overlay-footer,
+.tablet .wallet-overlay-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Wallet Loading Container - Container */
 .wallet-loading-container {
     width: 100%;
 }
@@ -24,13 +98,4 @@
 .tablet .wallet-loading-container {
     height: 250px;
     width: 100%;
-}
-
-.desktop .wallet-overlay-content {
-    margin-top: var(--space-s);
-}
-
-.phone .wallet-overlay-content,
-.tablet .wallet-overlay-content {
-    margin-top: var(--space-base);
 }

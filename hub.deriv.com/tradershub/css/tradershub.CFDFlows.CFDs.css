@@ -45,9 +45,10 @@
 }
 
 .available-accounts-loader {
-    height: 94px;
+    height: 218px;
     width: 100%;
     border-radius: 8px;
+    margin-top: 24px;
 }
 
 .available-accounts__container {
@@ -60,4 +61,62 @@
 .tablet .available-accounts__container,
 .phone .available-accounts__container {
     grid-template-columns: 1fr;
+}
+
+.transfer-btn {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    height: 32px;
+    width: 86px;
+}
+
+.ctrader-list-item {
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: 1px solid #E9ECEF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.add-another-account {
+    height: 40px;
+    padding: 0px 16px;
+    border-radius: 4px;
+    border: 1px solid #272B30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ctrader-redirections-desktop {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 0;
+}
+
+.tablet .ctrader-redirections-desktop,
+.phone .ctrader-redirections-desktop {
+    display: none;
+}
+
+.mobile-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    padding-top: 16px;
+    left: 16px;
+    display: none;
+}
+
+.tablet .mobile-btn,
+.phone .mobile-btn {
+    display: flex;
 }

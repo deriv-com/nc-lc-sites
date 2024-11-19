@@ -1,1 +1,4 @@
-define("DerivLogger.referencesHealth", [], function() {});
+﻿define("DerivLogger.referencesHealth", [], function () {
+});
+
+

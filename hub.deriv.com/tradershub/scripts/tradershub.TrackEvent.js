@@ -1,4 +1,4 @@
-const trackEvent = (eventName, eventProperties) => {
+﻿const trackEvent = (eventName, eventProperties) => {
     const trackToAnalytics = () => {
         Analytics.Analytics.trackEvent(eventName, eventProperties);
     };

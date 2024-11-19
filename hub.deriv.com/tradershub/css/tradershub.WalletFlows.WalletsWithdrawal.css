@@ -1,4 +1,5 @@
-﻿iframe {
+﻿/* Fiat Withdrawal */
+iframe {
     border: none;
     width: 100%;
 }
@@ -11,6 +12,8 @@
 .tablet iframe {
         height: calc(100vh - 265px);
 }
+
+/* Crpto Withdrawal */
 
 .wallets-crypto-amount-btn {
     padding: var(--space-s);
@@ -26,3 +29,52 @@
     outline: 1px solid var(--color-neutral-10);
     color: var(--color-neutral-10);
 }
+
+.tablet [data-checkbox]:before, .phone [data-checkbox]:before {
+    height: 24px;
+    width: 24px;
+}
+
+.tablet [data-checkbox]:checked:after, .phone [data-checkbox]:checked:after {
+    left: 5px;
+    top: 7px;
+}
+
+.input-number {
+    width: 100%;
+}
+
+.form-control {
+    flex-grow: 1;
+}
+
+.real-demo-switcher {
+    height: 100%;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: #F1F3F5;
+}
+
+.real-demo-switcher-item {
+    border: none;
+    height: 40px;
+    min-width: 56px;
+    padding: 5px 8px;
+    color: #4F575E;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+[data-button-group-item].button-group-selected-item {
+    color: #101213;
+    background-color: #fff;
+}
+
+[data-button-group-item].button-group-selected-item, .wallets-crypto-amount-btn:active + .real-demo-switcher-item {
+    outline: none;
+}
+
+

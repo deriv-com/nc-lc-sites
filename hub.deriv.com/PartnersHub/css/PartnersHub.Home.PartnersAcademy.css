@@ -5,3 +5,29 @@
     display: flex;
     align-items: center;
 }
+
+.ph-academy-content {
+    flex-grow: 1;
+    width: 306px;
+}
+.is-rtl .ph-academy-content {
+    text-align: right;
+}
+
+.ph-academy-image-text {
+    padding-left: 32px;
+    width: 100px;
+}
+.is-rtl .ph-academy-image-text {
+    padding-left: 0;
+    padding-right: 32px;
+}
+
+.ph-academy-image {
+    height: 213px;
+    padding-top: 34px;
+    width: 150px;
+}
+.is-rtl .ph-academy-image {
+    transform: translateX(30px);
+}

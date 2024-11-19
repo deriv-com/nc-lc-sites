@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .form-control[data-input]:focus:not(.not-valid), 
@@ -19,4 +20,11 @@
 .dropdown-container > select.dropdown-display:focus:not(.not-valid),
 .dropdown-container:focus(.not-valid)  {
     border: var(--border-size-s) solid #818488 !important;
+}
+
+.cookie-concent-bottom-banner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
