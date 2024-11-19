@@ -1,4 +1,4 @@
-### Overview
+### Repository Overview
 
 The No Code/Low Code Site Scanner is a tool designed to scan public JavaScript files on websites built using no-code and low-code platforms. Utilizing CodeQL, this scanner helps identify potential vulnerabilities in public-facing JavaScript files to enhance the security posture of applications.
 
