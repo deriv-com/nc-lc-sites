@@ -1,33 +1,34 @@
-﻿define("CustomComponentsOfficial.FullScreenMobileModal.controller", ["exports", "@outsystems/runtime-core-js", "CustomComponentsOfficial.model", "CustomComponentsOfficial.controller"], function (exports, OSRuntimeCore, CustomComponentsOfficialModel, CustomComponentsOfficialController) {
-var OS = OSRuntimeCore;
-var CustomComponentsOfficial_FullScreenMobileModalController = exports;
-class Controller extends 
-OS.Controller.BaseController {
-getDefaultTimeout() {
-return CustomComponentsOfficialController.default.defaultTimeout;
-}
+define("CustomComponentsOfficial.FullScreenMobileModal.controller", ["exports", "@outsystems/runtime-core-js", "CustomComponentsOfficial.model", "CustomComponentsOfficial.controller"], function(exports, OSRuntimeCore, CustomComponentsOfficialModel, CustomComponentsOfficialController) {
+    var OS = OSRuntimeCore;
+    var CustomComponentsOfficial_FullScreenMobileModalController = exports;
+    class Controller extends
+    OS.Controller.BaseController {
+        getDefaultTimeout() {
+            return CustomComponentsOfficialController.default.defaultTimeout;
+        }
 
-get handleError() {if(!(this.hasOwnProperty("_handleError"))) {
-this._handleError = function (ex, callContext) {
-var controller = this.controller;
-OS.Logger.debug("FullScreenMobileModal", OS.Exceptions.getMessage(ex));
-var globalExceptionHandle = OS.Injector.resolve(OS.ServiceNames.GlobalExceptionHandler);
-globalExceptionHandle(ex, callContext);
-return OS.ErrorHandling.UNHANDLED_ERROR_RESULT;
-
-
-};
-}
-
-return this._handleError;
-}set handleError(value) {this._handleError = value;
-}
-
-}
+        get handleError() {
+            if (!(this.hasOwnProperty("_handleError"))) {
+                this._handleError = function(ex, callContext) {
+                    var controller = this.controller;
+                    OS.Logger.debug("FullScreenMobileModal", OS.Exceptions.getMessage(ex));
+                    var globalExceptionHandle = OS.Injector.resolve(OS.ServiceNames.GlobalExceptionHandler);
+                    globalExceptionHandle(ex, callContext);
+                    return OS.ErrorHandling.UNHANDLED_ERROR_RESULT;
 
 
+                };
+            }
 
-CustomComponentsOfficial_FullScreenMobileModalController.default = new Controller();
+            return this._handleError;
+        }
+        set handleError(value) {
+            this._handleError = value;
+        }
+
+    }
+
+
+
+    CustomComponentsOfficial_FullScreenMobileModalController.default = new Controller();
 });
-
-

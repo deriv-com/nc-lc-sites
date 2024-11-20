@@ -1,8 +1,5 @@
-﻿define("SleepClientSide.referencesHealth$System_", [], function () {
-// Reference to producer 'System_' is OK.
+define("SleepClientSide.referencesHealth$System_", [], function() {
+    // Reference to producer 'System_' is OK.
 });
 
-define("SleepClientSide.referencesHealth", [], function () {
-});
-
-
+define("SleepClientSide.referencesHealth", [], function() {});

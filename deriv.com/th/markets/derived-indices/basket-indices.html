@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Oct 25 2024 08:56:48 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Nov 07 2024 08:18:34 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d884" data-wf-site="66585fe0e1dc7e70cc75d440" lang="th">
 
 <head>
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.55c800535.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.af806523c.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -219,12 +219,19 @@
                 let pageViewInterval = null;
 
                 pageViewInterval = setInterval(() => {
+                    const clientInfo = cacheTrackEvents.parseCookies("client_information");
+                    const signupDevice =
+                        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
                     if (
                         typeof window.Analytics !== "undefined" &&
                         typeof window.Analytics.Analytics?.pageView === "function" &&
                         cacheTrackEvents.isReady()
                     ) {
-                        window.Analytics.Analytics.pageView(window.location.href);
+                        window.Analytics.Analytics.pageView(window.location.href, {
+                            loggedIn: !!clientInfo,
+                            device_type: signupDevice,
+                        });
                     }
 
                     if (cacheTrackEvents.isPageViewSent()) {
@@ -569,6 +576,9 @@
                             "client_information"
                         ),
                         url: window.location.href,
+                        network_type: navigator.connection?.effectiveType,
+                        network_rtt: navigator.connection?.rtt,
+                        network_downlink: navigator.connection?.downlink,
                     },
                 },
             };
@@ -583,7 +593,9 @@
                 console.error("Error during initialisation:", error);
             }
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
-            Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
+            if (typeof Analytics !== "undefined" && Analytics?.Analytics) {
+                Analytics.Analytics.pageView(location.pathname, "Deriv.com");
+            }
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
             window.getGrowthbookInstance = function() {
                 if (typeof _growthbook !== "undefined") {
@@ -595,7 +607,7 @@
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                const growthBookInstance = window?.getGrowthbookInstance();
+                const growthBookInstance = window?.getGrowthbookInstance?.();
                 if (!growthBookInstance) return null;
                 let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
@@ -629,7 +641,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.23.1/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -748,7 +760,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1728,7 +1741,7 @@ a,
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">ตลาด</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/th/markets/forex" class="navbar_accordion-link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="navbar_accordion-link">ดัชนี Derived</a><a href="/th/markets/stocks" class="navbar_accordion-link">หุ้น</a><a href="/th/markets/stock-indices" class="navbar_accordion-link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="navbar_accordion-link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="navbar_accordion-link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="navbar_accordion-link">ETF</a><a href="/th/markets/tactical-indices" class="navbar_accordion-link">Tactical ดัชนี</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/th/markets/forex" class="navbar_accordion-link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="navbar_accordion-link">ดัชนี Derived</a><a href="/th/markets/stocks" class="navbar_accordion-link">หุ้น</a><a href="/th/markets/stock-indices" class="navbar_accordion-link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="navbar_accordion-link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="navbar_accordion-link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="navbar_accordion-link">ETF</a></div>
                                                                         </div>
                                                                         <div class="navbar_accodion-block">
                                                                             <div class="navbar_accordion-content-head">
@@ -1809,7 +1822,7 @@ a,
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">การเรียนรู้</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/th/blog" class="navbar_accordion-link">Deriv Blog</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/th/blog" class="navbar_accordion-link">Deriv Blog</a><a href="/th/trading-terms-glossary" class="navbar_accordion-link">อภิธานศัพท์</a></div>
                                                                         </div>
                                                                         <div class="navbar_accodion-block">
                                                                             <div class="navbar_accordion-content-head">
@@ -1926,7 +1939,7 @@ a,
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be88999-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">ตลาด</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be8899b-cff9dc9f" href="/th/markets/forex" class="new-navbar_dropdown-link is-adaptive">Forex</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be8899d-cff9dc9f" href="/th/markets/derived-indices/synthetic-indices" class="new-navbar_dropdown-link is-adaptive">ดัชนี Derived</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be8899f-cff9dc9f" href="/th/markets/stocks" class="new-navbar_dropdown-link is-adaptive">หุ้น</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a1-cff9dc9f" href="/th/markets/stock-indices" class="new-navbar_dropdown-link is-adaptive">ดัชนีหุ้น</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/th/markets/commodities" class="new-navbar_dropdown-link is-adaptive">สินค้าโภคภัณฑ์</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/th/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">คริปโตเคอเรนซี่</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/th/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETF</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/th/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Tactical ดัชนี</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/th/markets/commodities" class="new-navbar_dropdown-link is-adaptive">สินค้าโภคภัณฑ์</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/th/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">คริปโตเคอเรนซี่</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/th/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETF</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">เครื่องมือ</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/th/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/th/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">สัญญาณ MT5</a>
@@ -1980,7 +1993,7 @@ a,
                                                                 <div class="new-navbar_dropdown-content">
                                                                     <div class="new-navbar_dropdown-content-bottom is-adaptive">
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">การเรียนรู้</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/th/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">การเรียนรู้</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/th/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a><a id="w-node-_7c88ce57-3279-068c-737f-589772d75d9d-cff9dc9f" href="/th/trading-terms-glossary" class="new-navbar_dropdown-link is-adaptive">อภิธานศัพท์</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
                                                                             <div class="new-navbar_dropdown-title is-adaptive">รับการสนับสนุน</div><a href="/th/help-centre" class="new-navbar_dropdown-link is-adaptive">ศูนย์ช่วยเหลือ</a><a href="https://community.deriv.com/" target="_blank" class="new-navbar_dropdown-link is-block is-adaptive w-inline-block">
@@ -1998,7 +2011,7 @@ a,
                                                                             </a><a href="/th/contact-us" class="new-navbar_dropdown-link is-adaptive">ติดต่อเรา</a>
                                                                         </div>
                                                                         <div id="w-node-_05a65d05-2957-f84b-46d7-65bc5e71228c-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div class="new-navbar_dropdown-title is-adaptive">แหล่งข้อมูล</div><a id="w-node-_05a65d05-2957-f84b-46d7-65bc5e712297-cff9dc9f" href="/th/payment-methods" class="new-navbar_dropdown-link is-adaptive">วิธีการชำระเงิน</a>
+                                                                            <div class="new-navbar_dropdown-title is-adaptive">แหล่งข้อมูล</div><a id="w-node-_73351125-5e67-031f-90dd-7006ee37fe30-cff9dc9f" href="/th/payment-methods" class="new-navbar_dropdown-link is-adaptive">วิธีการชำระเงิน</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2044,7 +2057,7 @@ a,
                                     <div class="w-dyn-list">
                                         <div role="list" class="w-dyn-items">
                                             <div role="listitem" class="w-dyn-item">
-                                                <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                                <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                         <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_19689_31317)">
                                                                     <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -2145,13 +2158,13 @@ a,
                     <div class="padding-section-large header-with-image">
                         <div class="container-xlarge">
                             <div class="w-layout-grid image-header_component is-market-grid">
-                                <section id="w-node-_43193910-62a4-468f-8fa4-9d480a57d78f-cc75d884" class="markets-header_content">
+                                <div id="w-node-_43193910-62a4-468f-8fa4-9d480a57d78f-cc75d884" class="markets-header_content">
                                     <div class="title-description-wrapper">
                                         <h1>รับโอกาสที่แท้จริงไปกับตลาดโลกเสมือน</h1>
-                                        <p data-w-id="43193910-62a4-468f-8fa4-9d480a57d793">เทรดดัชนี Derived สุดพิเศษของเราที่จำลองตลาดในโลกแห่งความเป็นจริง เลือกตลาดที่มีความผันผวนที่เหมาะกับสไตล์การเทรดของคุณ ดัชนี Derived ส่วนใหญ่มีพร้อมให้ทำการเทรดได้ตลอดเวลา 24/7</p>
+                                        <p data-w-id="43193910-62a4-468f-8fa4-9d480a57d793">เทรดดัชนี Derived สุดพิเศษของเราที่จำลองตลาดในโลกแห่งความเป็นจริง เลือกตลาดที่มีความผันผวนที่เหมาะกับสไตล์การเทรดของคุณ ดัชนี Derived ส่วนใหญ่มีพร้อมให้ทำการเทรดได้ตลอด 24 ชั่วโมงทุกวัน</p>
                                     </div>
                                     <div class="margin-top margin-large">
-                                        <div class="button-group is-gap-small btn-free-demo"><a href="/th/signup" class="button is-full-width logged-out-btn hide-element w-button">ลองใช้บัญชีทดลองฟรี</a><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                        <div class="button-group is-gap-small btn-free-demo"><a href="/th/signup" class="button is-full-width logged-out-btn hide-element w-button">ลองใช้บัญชีทดลองฟรี</a><a id="btn-traders-hub" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                 <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_19689_31317)">
                                                             <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -2165,7 +2178,7 @@ a,
                                                 <div>Trader&#x27;s Hub</div>
                                             </a></div>
                                     </div>
-                                </section>
+                                </div>
                                 <div id="w-node-_55021066-100e-f4a0-6345-d7f7aaa9b012-cc75d884" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e4c5907c9f116a7b9d_Derived.webp" loading="lazy" width="1000" alt="Illustration of trading assets like vol 75, GBP basket, EUR/USD DFX 10, Gold Basket, Crash 500" class="markets-image" /></div>
                             </div>
                         </div>
@@ -2246,7 +2259,7 @@ a,
                             <div class="tabs_menu hide-scrollbar"><a href="/th/markets/derived-indices/synthetic-indices#tabs" class="platforms_tab-link is-text-decoration-none w-inline-block">
                                     <div>ดัชนี Synthetic</div>
                                 </a><a href="/th/markets/derived-indices/basket-indices#tabs" class="platforms_tab-link is-active w-inline-block">
-                                    <div>ดัชนี Basket</div>
+                                    <div>ดัชนี Basket </div>
                                 </a><a href="/th/markets/derived-indices/derived-fx#tabs" class="platforms_tab-link is-text-decoration-none w-inline-block">
                                     <div>ดัชนี Derived FX</div>
                                 </a></div>
@@ -2264,19 +2277,17 @@ a,
                                                 <div fs-accordion-element="accordion" class="container_market-category is-first">
                                                     <div class="header_market-category">
                                                         <h3 class="heading-style-h3">ดัชนี Basket Gold</h3>
-                                                        <p class="text-color-black">เทรดทองคำ พ่วงอีกห้าสกุลเงิน</p>
                                                     </div>
-                                                    <p>เมื่อเทรด Basket Gold คุณจะสามารถป้องกันความเสี่ยงโดยเทรดทองคำพร้อมกับ 5 สกุลเงินทั่วโลกในคราวเดียว</p>
+                                                    <p>เมื่อเทรด Basket Gold คุณจะสามารถป้องกันความเสี่ยงด้วยโดยเทรดทองคำพร้อมกับ 5 สกุลเงินทั่วโลกในคราวเดียว</p>
                                                 </div>
                                                 <div fs-accordion-element="accordion" class="container_market-category">
                                                     <div class="header_market-category">
-                                                        <h3 class="heading-style-h3">ดัชนี Basket Forex</h3>
-                                                        <p class="text-color-black">เทรด 1 ต่อ 5</p>
+                                                        <h3 class="heading-style-h3">Basket Forex</h3>
                                                     </div>
                                                     <p>ตะกร้าสกุลเงินวัดมูลค่าของสกุลเงินหลัก 1 สกุลเงินเมื่อเทียบกับตะกร้าสกุลเงินทั่วโลก 5 สกุลเงิน</p>
                                                 </div>
                                             </div>
-                                            <div class="button-group full-width-2"><a href="/trading-specifications#derived-indices" class="button is-full-width w-button">ตรวจสอบข้อมูลจำเพาะการเทรด</a></div>
+                                            <div class="button-group full-width-2"><a href="/th/trading-specifications#derived-indices" class="button is-full-width w-button">ตรวจสอบข้อมูลจำเพาะการเทรด</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -2344,6 +2355,137 @@ a,
                     </div>
                 </div>
             </section>
+            <section class="section_contact-us">
+                <div class="padding-global padding-section-medium">
+                    <div class="container-large">
+                        <div class="contact-us_content">
+                            <div class="padding-bottom padding-medium">
+                                <h2 class="text-align-center">เรียกดูคำถามที่พบบ่อยของเรา</h2>
+                            </div>
+                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                <div class="section-faq_component">
+                                    <div class="w-dyn-list">
+                                        <div role="list" class="w-dyn-items">
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">ค่าใช้จ่ายที่เกี่ยวข้องกับการเทรด Derived indices มีอะไรบ้าง</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">ข้อกำหนดมาร์จิ้น, สเปรดที่ต้องการ, และค่าธรรมเนียมสวอปสำหรับ Derived indices สามารถดูได้ใน <a href="/trading-specifications">หน้าข้อกำหนดการซื้อขาย</a> ตัวเลขเหล่านี้จะแตกต่างกันขึ้นอยู่กับว่าเทรดดัชนีใดอยู่</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">ฉันสามารถเทรดตัวชี้วัด Derived ในบัญชีที่ไม่มีค่าสวอปได้ไหม</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p>ใช่ คุณสามารถเทรดตัวชี้วัด Derived ได้โดยไม่มีค่าสวอป พวกเขามีอยู่ในบัญชี Deriv MT5 ที่ไม่มีค่าสวอป</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">ตัวชี้วัดทางเทคนิคใช้งานเหมือนกันกับดัชนี Derived หรือไม่</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p>ขึ้นอยู่กับสินทรัพย์เฉพาะที่คุณทำการซื้อขาย</p>
+                                                                    <p>‍</p>
+                                                                    <p>ดัชนีสังเคราะห์ ยกเว้น Range Break Index อาจไม่เหมาะสมกับการใช้ตัวชี้วัดทางเทคนิค เนื่องจากไม่มีสมุดคำสั่ง ดังนั้นราคาจึงไม่ได้ถูกกำหนดโดยสมดุลของราคาประมูลสูงสุดและข้อเสนอที่ต่ำที่สุด รูปแบบประวัติศาสตร์ที่เห็นได้จึงเป็นเพียงเรื่องบังเอิญ อย่างไรก็ตาม ดัชนี Range Break มีการแกว่งตัวระหว่างระดับแนวรับและแนวต้านก่อนที่จะมีการเบรคเอาท์ ดังนั้นการวิเคราะห์ช่องทางและตัวบ่งชี้อาจมีประสิทธิภาพ</p>
+                                                                    <p>‍</p>
+                                                                    <p>ดัชนี Basket และ DFX สามารถวิเคราะห์ได้โดยใช้ตัวชี้วัดทางเทคนิค เนื่องจากราคาของพวกมันมีความสัมพันธ์กับตลาดฟอเร็กซ์จริง ซึ่งได้รับผลกระทบจากปัจจัยทางเศรษฐกิจ</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">เหตุการณ์ข่าวภายนอกสามารถส่งผลกระทบต่อราคาของดัชนี Derived ได้หรือไม่</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p>เหตุการณ์ข่าวภายนอกจะไม่ส่งผลกระทบต่อการเปลี่ยนแปลงราคาของดัชนีสังเคราะห์ และความสัมพันธ์ในระยะสั้นถือเป็นเพียงเรื่องบังเอิญ</p>
+                                                                    <p>‍</p>
+                                                                    <p>อย่างไรก็ตาม ดัชนี Basket และ DFX อาจได้รับผลกระทบเนื่องจากราคาของมันได้รับผลกระทบโดยตรงจากราคาของคู่สกุลเงินซึ่งได้รับผลกระทบจากเหตุการณ์ข่าว</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">ราคาของดัชนี Derived สามารถถูกปรับเปลี่ยนได้หรือไม่</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p>ไม่, ราคาของดัชนี Derived ไม่สามารถถูกปรับเปลี่ยนได้</p>
+                                                                    <p>‍</p>
+                                                                    <p>การเปลี่ยนแปลงราคาของดัชนีสังเคราะห์นั้นเกิดจากการเข้ารหัสของการสร้างตัวเลขสุ่มที่ได้รับการปกป้องและไม่สามารถเข้าถึงหรือแก้ไขได้ ดัชนีสังเคราะห์ไม่พึ่งพาข้อมูลภายนอกใดๆ ที่สามารถถูกปรับเปลี่ยนได้ พวกเขาไม่มีหนังสือคำสั่งซื้อเช่นกัน ทำให้มีความต้านทานต่อการปรับเปลี่ยนที่คำสั่งซื้อมหาศาลสามารถย้ายราคาหรือมีข้อได้เปรียบที่แตกต่าง</p>
+                                                                    <p>‍</p>
+                                                                    <p>ราคาของดัชนีตระกร้าสามารถทำซ้ำได้ตามราคาตลาดขององค์ประกอบฟอเร็กซ์พื้นฐานในตระกร้า การปรับเปลี่ยนราคาตระกร้ารวมจะต้องเคลื่อนย้ายคู่ฟอเร็กซ์หลักหลายคู่พร้อมกัน ซึ่งเป็นสิ่งที่ไม่สามารถทำได้</p>
+                                                                    <p>‍</p>
+                                                                    <p>ดัชนี DFX ถูกสร้างเชิงอัลกอริทึมโดยอิงจากระบบเฉพาะที่คู่ฟอเร็กซ์พื้นฐานเป็นอินพุต ราคาของพวกเขาไม่สามารถถูกเปลี่ยนแปลงหรือถูกจัดการโดยตรงได้ เนื่องจากอัลกอริทึมได้รับการป้องกัน</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div class="section_cta-footer w-dyn-list">
                 <div role="list" class="w-dyn-items">
                     <div role="listitem" class="w-dyn-item">
@@ -2356,11 +2498,11 @@ a,
                                                 <h2 class="text-color-white">เริ่มเทรดดัชนี Basket ได้ทันทีวันนี้
                                                 </h2>
                                             </div>
-                                            <div class="cta_text">ใช้บัญชีทดลองของเราและเริ่มซื้อขายโดยปราศจากความเสี่ยงด้วยเงินเสมือนจริง</div>
+                                            <div class="cta_text">เข้าใช้บัญชีทดลองของเราและเริ่มเทรดด้วยเงินเสมือนจริงที่ไร้ความเสี่ยง</div>
                                         </div>
                                         <div class="button-group cta-content btn-free-demo"><a data-attributes="btn-primary-fcta" data-class="w-button" href="/th/signup" class="button is-icon logged-out-btn hide-element w-inline-block">
                                                 <div>ลองใช้บัญชีทดลองฟรี</div>
-                                            </a><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                            </a><a id="btn-traders-hub" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                 <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_19689_31317)">
                                                             <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -2514,7 +2656,7 @@ a,
                                                         <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
                                                         <div>ตลาด</div>
                                                     </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/th/markets/forex" class="footer_tabs-dropdown-link w-dropdown-link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="footer_tabs-dropdown-link w-dropdown-link">ดัชนี Derived</a><a href="/th/markets/stocks" class="footer_tabs-dropdown-link w-dropdown-link">หุ้น</a><a href="/th/markets/stock-indices" class="footer_tabs-dropdown-link w-dropdown-link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="footer_tabs-dropdown-link w-dropdown-link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="footer_tabs-dropdown-link w-dropdown-link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="footer_tabs-dropdown-link w-dropdown-link">ETF</a><a href="/th/markets/tactical-indices" class="footer_tabs-dropdown-link w-dropdown-link">ดัชนี Tactical</a></nav>
+                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/th/markets/forex" class="footer_tabs-dropdown-link w-dropdown-link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="footer_tabs-dropdown-link w-dropdown-link">ดัชนี Derived</a><a href="/th/markets/stocks" class="footer_tabs-dropdown-link w-dropdown-link">หุ้น</a><a href="/th/markets/stock-indices" class="footer_tabs-dropdown-link w-dropdown-link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="footer_tabs-dropdown-link w-dropdown-link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="footer_tabs-dropdown-link w-dropdown-link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="footer_tabs-dropdown-link w-dropdown-link">ETF</a></nav>
                                                 </div>
                                                 <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
                                                     <div class="footer_tabs-toggle w-dropdown-toggle">
@@ -2669,7 +2811,7 @@ a,
                                                 </div>
                                                 <div class="footer_link-list">
                                                     <div class="footer_link-list">
-                                                        <div class="footer_title">ตลาด</div><a href="/th/markets/forex" class="footer_link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="footer_link">ดัชนี Derived</a><a href="/th/markets/stocks" class="footer_link">หุ้น</a><a href="/th/markets/stock-indices" class="footer_link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="footer_link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="footer_link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="footer_link">ETF</a><a href="/th/markets/tactical-indices" class="footer_link">ดัชนี Tactical</a>
+                                                        <div class="footer_title">ตลาด</div><a href="/th/markets/forex" class="footer_link">Forex</a><a href="/th/markets/derived-indices/synthetic-indices" class="footer_link">ดัชนี Derived</a><a href="/th/markets/stocks" class="footer_link">หุ้น</a><a href="/th/markets/stock-indices" class="footer_link">ดัชนีหุ้น</a><a href="/th/markets/commodities" class="footer_link">สินค้าโภคภัณฑ์</a><a href="/th/markets/cryptocurrencies" class="footer_link">คริปโตเคอเรนซี่</a><a href="/th/markets/etfs" class="footer_link">ETF</a>
                                                     </div>
                                                 </div>
                                                 <div class="footer_link-list">
@@ -2768,8 +2910,8 @@ a,
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.deb9f4e6c.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.38/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.13b773619.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.39/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>

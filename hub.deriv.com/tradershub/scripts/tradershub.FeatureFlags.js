@@ -1,9 +1,17 @@
-﻿// Define your feature flags here and add them to the array
+// Define your feature flags here and add them to the array
 // example { name: "foo", enabled: true },
-let FEATURE_FLAGS = [
-    { name: "Options", enabled: true },
-    { name: "RESTAPI", enabled: false },
-    { name: "EURealAccountCreation", enabled: false },
+let FEATURE_FLAGS = [{
+        name: "Options",
+        enabled: true
+    },
+    {
+        name: "RESTAPI",
+        enabled: false
+    },
+    {
+        name: "EURealAccountCreation",
+        enabled: false
+    },
 ]
 
 if (location.hostname === "hub.deriv.com") {
@@ -23,11 +31,10 @@ if (
     savedFlags.length !== FEATURE_FLAGS.length
 ) {
     // Filter the stored flags to remove any flags that no longer exist in FEATURE_FLAGS
-    const filteredFeatureFlags = savedFlags
-        ? savedFlags.filter(savedFlag =>
+    const filteredFeatureFlags = savedFlags ?
+        savedFlags.filter(savedFlag =>
             FEATURE_FLAGS.some(flag => flag.name === savedFlag.name)
-        )
-        : [];
+        ) : [];
 
     // Merge the feature flags, keeping values from saved flags when applicable
     const mergedFlags = FEATURE_FLAGS.map(newFlag => {
@@ -40,7 +47,7 @@ if (
     localStorage.setItem("featureFlags", JSON.stringify(mergedFlags));
 }
 
-globalThis.toggleFeatureFlag = function (flagName) {
+globalThis.toggleFeatureFlag = function(flagName) {
     if (!flagName) return;
 
     const featureFlags = localStorage.getItem("featureFlags");
@@ -51,7 +58,10 @@ globalThis.toggleFeatureFlag = function (flagName) {
     }
     const parsedFeatureFlags = JSON.parse(featureFlags);
     const updatedFlags = parsedFeatureFlags.map(flag =>
-        flag.name === flagName ? { ...flag, enabled: !flag.enabled } : flag
+        flag.name === flagName ? {
+            ...flag,
+            enabled: !flag.enabled
+        } : flag
     );
 
     localStorage.setItem("featureFlags", JSON.stringify(updatedFlags));

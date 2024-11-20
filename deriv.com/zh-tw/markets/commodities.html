@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Oct 25 2024 08:56:48 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Nov 07 2024 08:18:34 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d78c" data-wf-site="66585fe0e1dc7e70cc75d440" lang="zh-TW">
 
 <head>
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.55c800535.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.af806523c.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -219,12 +219,19 @@
                 let pageViewInterval = null;
 
                 pageViewInterval = setInterval(() => {
+                    const clientInfo = cacheTrackEvents.parseCookies("client_information");
+                    const signupDevice =
+                        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
                     if (
                         typeof window.Analytics !== "undefined" &&
                         typeof window.Analytics.Analytics?.pageView === "function" &&
                         cacheTrackEvents.isReady()
                     ) {
-                        window.Analytics.Analytics.pageView(window.location.href);
+                        window.Analytics.Analytics.pageView(window.location.href, {
+                            loggedIn: !!clientInfo,
+                            device_type: signupDevice,
+                        });
                     }
 
                     if (cacheTrackEvents.isPageViewSent()) {
@@ -569,6 +576,9 @@
                             "client_information"
                         ),
                         url: window.location.href,
+                        network_type: navigator.connection?.effectiveType,
+                        network_rtt: navigator.connection?.rtt,
+                        network_downlink: navigator.connection?.downlink,
                     },
                 },
             };
@@ -583,7 +593,9 @@
                 console.error("Error during initialisation:", error);
             }
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
-            Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
+            if (typeof Analytics !== "undefined" && Analytics?.Analytics) {
+                Analytics.Analytics.pageView(location.pathname, "Deriv.com");
+            }
             // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
             window.getGrowthbookInstance = function() {
                 if (typeof _growthbook !== "undefined") {
@@ -595,7 +607,7 @@
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                const growthBookInstance = window?.getGrowthbookInstance();
+                const growthBookInstance = window?.getGrowthbookInstance?.();
                 if (!growthBookInstance) return null;
                 let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
@@ -629,7 +641,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.23.1/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -748,7 +760,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -825,7 +838,865 @@
 
 <body>
     <div class="page-wrapper">
-        <div class="global-styles w-embed"></div>
+        <div class="global-styles w-embed">
+            <style>
+                /* Set color style to inherit */
+                .inherit-color * {
+                    color: inherit;
+                }
+
+                /* Focus state style for keyboard navigation for the focusable elements */
+                *[tabindex]:focus-visible,
+                input[type="file"]:focus-visible {
+                    outline: 0.125rem solid #4d65ff;
+                    outline-offset: 0.125rem;
+                }
+
+                /* Get rid of top margin on first element in any rich text element */
+                .w-richtext> :not(div):first-child,
+                .w-richtext>div:first-child> :first-child {
+                    margin-top: 0 !important;
+                    padding-top: 0 !important;
+                }
+
+                /* Get rid of bottom margin on last element in any rich text element */
+                .w-richtext>:last-child,
+                .w-richtext ol li:last-child,
+                .w-richtext ul li:last-child {
+                    margin-bottom: 0 !important;
+                }
+
+                /* Prevent all click and hover interaction with an element */
+                .pointer-events-off {
+                    pointer-events: none;
+                }
+
+                /* Enables all click and hover interaction with an element */
+                .pointer-events-on {
+                    pointer-events: auto;
+                }
+
+                /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+                .div-square::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+
+                /* Make sure containers never lose their center alignment */
+                .container-medium,
+                .container-small,
+                .container-large {
+                    margin-right: auto !important;
+                    margin-left: auto !important;
+                }
+
+                /* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+                /*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+                /* Apply "..." after 3 lines of text */
+                .text-style-3lines {
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+
+                /* Apply "..." after 2 lines of text */
+                .text-style-2lines {
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                /* Adds inline flex display */
+                .display-inlineflex {
+                    display: inline-flex;
+                }
+
+                /* These classes are never overwritten */
+                .hide {
+                    display: none !important;
+                }
+
+                @media screen and (max-width: 991px) {
+
+                    .hide,
+                    .hide-tablet {
+                        display: none !important;
+                    }
+                }
+
+                @media screen and (max-width: 767px) {
+
+                    .disclaimer-visible .max-width-medium.max-width-full-mobile-landscape {
+                        max-width: none;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .hide-mobile-landscape {
+                        display: none !important;
+                    }
+                }
+
+                @media screen and (max-width: 479px) {
+                    .hide-mobile {
+                        display: none !important;
+                    }
+                }
+
+                .margin-0 {
+                    margin: 0rem !important;
+                }
+
+                .padding-0 {
+                    padding: 0rem !important;
+                }
+
+                .spacing-clean {
+                    padding: 0rem !important;
+                    margin: 0rem !important;
+                }
+
+                .margin-top {
+                    margin-right: 0rem !important;
+                    margin-bottom: 0rem !important;
+                    margin-left: 0rem !important;
+                }
+
+                .padding-top {
+                    padding-right: 0rem !important;
+                    padding-bottom: 0rem !important;
+                    padding-left: 0rem !important;
+                }
+
+                .margin-right {
+                    margin-top: 0rem !important;
+                    margin-bottom: 0rem !important;
+                    margin-left: 0rem !important;
+                }
+
+                .padding-right {
+                    padding-top: 0rem !important;
+                    padding-bottom: 0rem !important;
+                    padding-left: 0rem !important;
+                }
+
+                .margin-bottom {
+                    margin-top: 0rem !important;
+                    margin-right: 0rem !important;
+                    margin-left: 0rem !important;
+                }
+
+                .padding-bottom {
+                    padding-top: 0rem !important;
+                    padding-right: 0rem !important;
+                    padding-left: 0rem !important;
+                }
+
+                .margin-left {
+                    margin-top: 0rem !important;
+                    margin-right: 0rem !important;
+                    margin-bottom: 0rem !important;
+                }
+
+                .padding-left {
+                    padding-top: 0rem !important;
+                    padding-right: 0rem !important;
+                    padding-bottom: 0rem !important;
+                }
+
+                .margin-horizontal {
+                    margin-top: 0rem !important;
+                    margin-bottom: 0rem !important;
+                }
+
+                .padding-horizontal {
+                    padding-top: 0rem !important;
+                    padding-bottom: 0rem !important;
+                }
+
+                .margin-vertical {
+                    margin-right: 0rem !important;
+                    margin-left: 0rem !important;
+                }
+
+                .padding-vertical {
+                    padding-right: 0rem !important;
+                    padding-left: 0rem !important;
+                }
+
+                /* Apply "..." at 100% width */
+                .truncate-width {
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                /* Removes native scrollbar */
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    overflow: -moz-scrollbars-none;
+                }
+
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .accordion_dropdown.is-active-accordion,
+                .tab-dropdown.is-active-accordion {
+                    background: var(--background-color--background-alternate);
+                }
+
+                .accordion_dropdown.is-white.is-active-accordion {
+                    background: rgba(0, 0, 0, 0.00);
+                }
+
+                .accordion_arrow.is-active-accordion {
+                    transform: rotate(180deg);
+                }
+
+                .help_tab.fs-cmsfilter_active {
+                    color: var(--text-color--text-primary);
+                    border-bottom: 2px solid var(--border-color--border-primary);
+                }
+
+                .w-slider-dot {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    background: #4146528F;
+                }
+
+                .w-slider-dot.w-active {
+                    background: var(--base-color-neutral--black);
+                }
+
+                .blog-filters_button.fs-cmsfilter_active {
+                    background: var(--base-color-neutral--black);
+                    color: var(--text-color--text-alternate);
+                    border-color: var(--border-color--border-primary);
+                }
+
+                @media screen and (min-width: 992px) {
+                    .blogs_link-block:hover .blogs_image {
+                        transform: scale(1.07);
+                    }
+                }
+
+
+                .partner-navbar_component .w-nav-link.w--current {
+                    color: #e12e3a;
+                    /** Deriv partner navbar active link color **/
+                }
+
+                .customLink {
+                    color: #ff444f !important;
+                }
+
+                .content_market-text {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                .contact-social_link-wp:hover .is-hover,
+                .contact-social_link-live:hover .is-hover {
+                    display: block;
+                }
+
+
+                .contact-social_link-wp:hover .is-normal,
+                .contact-social_link-live:hover .is-normal {
+                    display: none;
+                }
+
+                /* Input field styling */
+
+                input,
+                textarea,
+                [contenteditable] {
+                    caret-color: #000000B8;
+                }
+
+                .floating-label {
+                    pointer-events: none;
+                }
+
+                .custom-input:not(:placeholder-shown) {
+                    padding-top: 1.5rem;
+                    padding-bottom: .5rem;
+                }
+
+                .custom-input:not(:placeholder-shown)~.floating-label {
+                    color: #6002ee;
+                    /** transform: scale(.75); **/
+                    top: .5rem;
+                    font-size: 12px;
+                }
+
+                .custom-input:not(:focus)~.floating-label {
+                    color: rgba(0, 0, 0, .6);
+                }
+
+
+
+                .custom-input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 8px;
+                    margin-bottom: 0px;
+                    padding: 1rem 0.70rem;
+                    border: 1px solid #00000014;
+                    box-shadow: none;
+                    transition-property: background-color, border-color, border-width;
+                    transition-duration: 150ms, 150ms, 0ms;
+                    transition-timing-function: ease, ease, ease;
+                    font-size: 1rem;
+                    background-color: rgb(0 0 0 / 0%);
+                }
+
+
+                .text-input.custom {
+
+                    height: 56px;
+                }
+
+                .custom-input.-wfp-focus,
+                :where(html:not(.wf-design-mode)) .custom-input:focus {
+                    border-bottom-width: 2px;
+                    border-bottom-color: rgba(0, 0, 0, 0.08);
+                    background-color: rgb(0 0 0 / 0%);
+                    box-shadow: none;
+                }
+
+                .w-input:focus,
+                .w-select:focus {
+
+                    outline: 0;
+                    border: 1px solid var(--core-color-solid-slate-1400, #000);
+                }
+
+                .w-input,
+                .w-select {
+
+
+                    color: #000000B8;
+                }
+
+                .custom-input:not(:placeholder-shown)+.floating-label {
+                    color: #000000B8;
+                }
+
+                input,
+                textarea,
+                [contenteditable] {
+                    caret-color: #000000B8;
+                }
+
+                .custom-input:not(:placeholder-shown)+.floating-label {
+                    color: #000000B8;
+                }
+
+                .with-asterisk:after {
+                    content: "*";
+                    color: #C40000;
+                    margin-left: 3px;
+                }
+
+                /* Error state styles */
+                .custom-input.error-field:not(:focus)+.floating-label {
+                    color: #de0040;
+                }
+
+                .custom-input.error-field {
+                    border-color: #de0040;
+                }
+
+                .input-error-text.error-field {
+                    display: block;
+                    padding-top: 4px;
+                    padding-left: var(--16-px);
+                    color: #de0040;
+                }
+
+                .error-field-icon.error-field {
+                    position: absolute;
+                    width: 24px;
+                }
+
+                .error-field-icon.error-field {
+                    position: absolute;
+                    width: 24px;
+                    inset: 0% 2% 0% auto;
+                    display: block;
+                }
+
+                .error-field-icon {
+                    display: none;
+                }
+
+                .input-error-text {
+                    display: none;
+                }
+
+                .error-message {
+                    color: rgba(230, 25, 14, 0.72) !important;
+                    /* Color of the error message */
+                    font-size: 12px;
+                    /* Adjust font size as needed */
+                    margin-top: 4px;
+                    /* Add space between field and message */
+                }
+
+
+                /* After login and logged ou */
+                .logged-out-btn.hide-element {
+                    display: none !important;
+                }
+
+                .logged-in-btn.hide-element {
+                    display: none !important;
+                }
+
+                /*added hide-element classed to ctrader check email screens */
+                .section_ctrader-check-email.hide-element {
+                    display: none !important;
+                }
+
+                .section_ctrader-check-email-verify.hide-element {
+                    display: none !important;
+                }
+
+                .section_page-header_dint-get-email.hide-element {
+                    display: none !important;
+                }
+
+                /* Affiliates page range slider handle */
+                .rangeslider_handle:focus {
+                    outline: none !important;
+                }
+
+                .contact-social_link-wp:hover .is-hover,
+                .contact-social_link-live:hover .is-hover {
+                    display: block;
+                }
+
+                .contact-social_link-wp:hover .is-normal,
+                .contact-social_link-live:hover .is-normal {
+                    display: none;
+                }
+
+                .margin-bottom-md {
+                    margin-bottom: 0.2rem !important;
+                }
+
+                input.error-field::placeholder {
+                    color: red !important;
+                }
+
+                .disclaimer-active .header_background-image-wrapper {
+                    top: 5%;
+                }
+
+                @media screen and (max-width: 430px) {
+                    .disclaimer-active .header_background-image-wrapper {
+                        top: 10%;
+                    }
+                }
+
+                .error-field-block {
+                    border: 1px solid #de0040;
+                }
+
+                .input-error-text.error-field-block {
+                    display: block;
+                    border: none;
+                }
+
+                .sn_form img#email-sign-up-error-icon {
+                    width: 24px;
+                    border: none;
+                    position: absolute;
+                    top: 14px;
+                    height: 25px;
+                    right: 9px;
+                }
+
+                .sn_form input.error-field-block:focus {
+                    border-color: #de0040;
+                }
+
+                .error-field-icon.error-field-block {
+                    display: block;
+                }
+
+                .footer_logo svg {
+                    max-width: 72px;
+                }
+
+                /* For trustpilot code */
+                span#translations-customerssay {
+                    font-family: IBM Plex Sans, sans-serif;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: red;
+                }
+
+                .navbar_icon {
+                    transition: transform 0.3s;
+                }
+
+                .navbar_accordion-content {
+                    transition: max-height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+                    transform: translateY(-20px);
+                }
+
+
+                .navbar_accordion-trigger:before {
+                    display: none;
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 4px;
+                    height: 44px;
+                    background: #FF444F;
+                }
+
+                .navbar_accordion-trigger.open:before {
+                    display: block;
+                }
+
+
+
+                .navbar_accordion-trigger.open svg {
+                    transform: rotate(180deg);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                .navbar_accordion-trigger.current:before {
+                    display: block;
+                }
+
+                /* Disclaimer Responsive Issue Fixes - START */
+
+                @media (max-width: 479px) {
+                    .disclaimer-active .header_background-image-wrapper {
+                        top: 5%
+                    }
+                }
+
+                @media (min-width: 480px) and (max-width: 610px) {
+                    .disclaimer-active .header_background-image-wrapper {
+                        top: 15%
+                    }
+                }
+
+                @media (min-width: 611px) and (max-width: 767px) {
+                    .disclaimer-active .header_background-image-wrapper {
+                        top: 12%
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .disclaimer-active .header_background-image-wrapper {
+                        top: 7%
+                    }
+                }
+
+                /* Disclaimer Responsive Issue Fixes - END !!! - this overwrites the required styles - !!! */
+                /*.new-navbar_dropdown-content-bottom a.new-navbar_dropdown-link:hover {
+    background: transparent;
+}*/
+
+                /* Fix for Select issue for safari and firefox */
+
+                select {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                }
+
+                /*to remove the password icon */
+                ::-ms-reveal {
+                    display: none;
+                }
+
+                .page-wrapper.nopad {
+                    padding: 0px !important;
+                }
+
+                .disclaimer-show .menu-wrapper {
+                    height: 80px;
+                }
+
+                .trustpilot-widget a[rel~="noopener"] {
+                    visibility: hidden;
+                }
+
+
+                /* Navbar bug solution */
+                .new-navbar_component .new-navbar_container>.new-navbar_menu {
+                    transform: none !important;
+                }
+
+                .input-group .error-field-icon.error-field {
+                    top: 16px;
+                }
+
+                /* ONLY ARABIC START*/
+
+
+                .dir-ltr {
+                    direction: ltr;
+                    text-align: left;
+                }
+
+                .new-navbar_menu.is-padding-0.is-adaptive:lang(ar) {
+                    margin-right: 0px;
+                }
+
+                :dir(rtl) .navbar_accordion-trigger:before {
+                    left: auto;
+                    right: 0px;
+                }
+
+                :dir(rtl) .sn_form img#email-sign-up-error-icon,
+                :dir(rtl) .error-field-icon.error-field {
+                    left: 8px;
+                    right: auto;
+                }
+
+                :dir(rtl) input#mobile-number {
+                    text-align: right;
+                }
+
+                a#profile-link:focus {
+                    outline: none;
+                }
+
+                /* ONLY ARABIC END*/
+                @media (max-width: 768px) {
+                    .blog-filters .w-dropdown {
+                        display: contents;
+                    }
+                }
+
+                /*
+.email-illustration #verification-text-c-trader{
+  word-wrap: break-word; 
+  word-break: break-all; 
+  overflow-wrap: break-word; 
+  white-space: normal;
+}
+*/
+
+
+                .show-cookie .cookie-middle-wrapper {
+                    margin-bottom: 85px;
+                }
+
+                .show-cookie .cookie-middle-wrapper:lang(de),
+                .show-cookie .cookie-middle-wrapper:lang(fr),
+                .show-cookie .cookie-middle-wrapper:lang(ru) {
+                    margin-bottom: 106px;
+                }
+
+                @media (max-width: 1025px) {
+                    .disclaimer_wrapper {
+                        display: none;
+                    }
+
+                    .disclaimer_wrapper.head,
+                    .head .banner_disclaimer.hide-element {
+                        display: block;
+                    }
+
+                    .show-cookie .cookie-middle-wrapper {
+                        margin-left: 45px;
+                        margin-bottom: 20px;
+                    }
+
+                    .show-cookie .cookie-middle-wrapper:lang(ar) {
+                        margin-right: 45px;
+                    }
+                }
+
+
+
+                @media (max-width: 478px) {
+                    .show-cookie .cookie-middle-wrapper {
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                    }
+                }
+
+                .foot .banner_disclaimer.hide-element {
+                    display: block;
+                }
+
+                @media (max-width: 430px) {
+
+                    .show-cookie .cookie-middle-wrapper:lang(de),
+                    .show-cookie .cookie-middle-wrapper:lang(fr),
+                    .show-cookie .cookie-middle-wrapper:lang(ru),
+                    .show-cookie .cookie-middle-wrapper:lang(de) {
+                        margin-bottom: 0px;
+                    }
+
+                    .show-cookie a.social-proof_link {
+                        z-index: -1;
+                    }
+
+                    .show-cookie .cookie-middle-wrapper:lang(ar) {
+                        margin-right: 0px;
+                    }
+
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp {
+                        bottom: 10.5rem;
+                    }
+                }
+
+                @media (min-width: 1025px) {
+
+                    .disclaimer-visible #live_chat-wrapper,
+                    .disclaimer-visible .contact-social_links-wrapper {
+                        bottom: 6rem;
+                    }
+
+                    .disclaimer-visible #live_chat-wrapper:lang(de),
+                    .disclaimer-visible #live_chat-wrapper:lang(fr),
+                    .disclaimer-visible #live_chat-wrapper:lang(ru) {
+                        bottom: 8rem;
+                    }
+
+                    .disclaimer-visible .footer_texts {
+                        padding-bottom: 70px;
+                    }
+                }
+
+                .cookies_banner-wrapper {
+                    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+                    -webkit-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+                }
+
+                .show-cookie div#floating_cta {
+                    display: none;
+                }
+
+                .show-cookie .footer_bottom-wrapper {
+                    margin-bottom: 128px;
+                }
+
+                @media (max-width: 430px) {
+
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(fr),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(pt),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(vi),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(bn),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(tr),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(it),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(pl) {
+                        bottom: 12.5rem;
+                    }
+
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(ru),
+                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(de) {
+                        bottom: 13.5rem;
+                    }
+                }
+
+                /* 25 years logo alignment */
+                .new-navbar_main-wrapper .logo-wrapper-25 {
+                    padding-top: 4px;
+                }
+
+                .prime-form-group .error-field-icon.error-field {
+                    top: 16px;
+                }
+
+                .prime-form-group .custom-input:not(:placeholder-shown)~.floating-label {
+                    color: #000000B8;
+                }
+
+                .form-group-wrapper.custom {
+                    transform: none !important;
+                    transform-style: unset !important;
+                }
+
+                /* START - This CSS is for button/dropdown component */
+
+                .dropdown-component.open .dropdown-component_list {
+                    display: block;
+                }
+
+                .dropdown-component:after {
+                    content: "▼";
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 10px;
+                    color: #333;
+                    pointer-events: none;
+                }
+
+                /* END - This CSS is for button/dropdown component */
+
+
+                :root {
+                    --container-xlarge-width: 77rem;
+                    --overflowMargin: calc((100vw - var(--container-xlarge-width)) / 2);
+                }
+
+                .testimonial_list.is-custom-margin {
+                    margin-left: var(--overflowMargin);
+                    /* Other styles for the section */
+                }
+
+                .is-custom-margin .testimonial-item.w-dyn-item:last-child {
+                    margin-right: var(--overflowMargin);
+                }
+
+                .dropdown-component_content-block {
+                    margin-top: 20px;
+                }
+
+                .overflow-word a {
+                    overflow-wrap: break-word;
+
+                }
+
+                a.deriv-tech-header_tablet-link.is-overlay:after {
+                    content: "";
+                    z-index: -1;
+                    opacity: .4;
+                    background-image: linear-gradient(181.93deg, #11141b00 3.15%, #11141b 50.01%);
+                    height: 71%;
+                    position: absolute;
+                    inset: auto 0% 0%;
+                }
+            </style>
+        </div>
         <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
             <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
             <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
@@ -1004,7 +1875,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">學習</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/zh-tw/blog" class="navbar_accordion-link">Deriv Blog</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/zh-tw/blog" class="navbar_accordion-link">Deriv Blog</a><a href="/zh-tw/trading-terms-glossary" class="navbar_accordion-link">詞彙表</a></div>
                                                                         </div>
                                                                         <div class="navbar_accodion-block">
                                                                             <div class="navbar_accordion-content-head">
@@ -1175,7 +2046,7 @@
                                                                 <div class="new-navbar_dropdown-content">
                                                                     <div class="new-navbar_dropdown-content-bottom is-adaptive">
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">學習</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/zh-tw/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">學習</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/zh-tw/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a><a id="w-node-_7c88ce57-3279-068c-737f-589772d75d9d-cff9dc9f" href="/zh-tw/trading-terms-glossary" class="new-navbar_dropdown-link is-adaptive">詞彙表</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
                                                                             <div class="new-navbar_dropdown-title is-adaptive">取得支援</div><a href="/zh-tw/help-centre" class="new-navbar_dropdown-link is-adaptive">帮助中心</a><a href="https://community.deriv.com/" target="_blank" class="new-navbar_dropdown-link is-block is-adaptive w-inline-block">
@@ -1193,7 +2064,7 @@
                                                                             </a><a href="/zh-tw/contact-us" class="new-navbar_dropdown-link is-adaptive">聯繫我們</a>
                                                                         </div>
                                                                         <div id="w-node-_05a65d05-2957-f84b-46d7-65bc5e71228c-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div class="new-navbar_dropdown-title is-adaptive">資源</div><a id="w-node-_05a65d05-2957-f84b-46d7-65bc5e712297-cff9dc9f" href="/zh-tw/payment-methods" class="new-navbar_dropdown-link is-adaptive">付款方式</a>
+                                                                            <div class="new-navbar_dropdown-title is-adaptive">資源</div><a id="w-node-_73351125-5e67-031f-90dd-7006ee37fe30-cff9dc9f" href="/zh-tw/payment-methods" class="new-navbar_dropdown-link is-adaptive">付款方式</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1239,7 +2110,7 @@
                                     <div class="w-dyn-list">
                                         <div role="list" class="w-dyn-items">
                                             <div role="listitem" class="w-dyn-item">
-                                                <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                                <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" data-attributes="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                         <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_19689_31317)">
                                                                     <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -1340,13 +2211,13 @@
                     <div class="padding-section-large header-with-image">
                         <div class="container-xlarge">
                             <div class="w-layout-grid image-header_component is-market-grid">
-                                <section id="w-node-_374831ee-8270-4a12-2b7a-c96f1514d834-cc75d78c" class="markets-header_content">
+                                <div id="w-node-_374831ee-8270-4a12-2b7a-c96f1514d834-cc75d78c" class="markets-header_content">
                                     <div class="title-description-wrapper">
                                         <h1>大宗商品黃金解鎖</h1>
                                         <p>交易推動世界的市場資產 -- 大宗商品。 透過交易黃金、貴金屬和石油的差價合約或期權來增強投資組合。</p>
                                     </div>
                                     <div class="margin-top margin-large">
-                                        <div class="button-group is-gap-small btn-free-demo"><a href="/zh-tw/signup" class="button is-full-width logged-out-btn hide-element w-button">試用免費示範</a><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                        <div class="button-group is-gap-small btn-free-demo"><a href="/zh-tw/signup" class="button is-full-width logged-out-btn hide-element w-button">試用免費示範</a><a id="btn-traders-hub" data-attributes="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                 <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_19689_31317)">
                                                             <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -1360,7 +2231,7 @@
                                                 <div>Trader&#x27;s Hub</div>
                                             </a></div>
                                     </div>
-                                </section>
+                                </div>
                                 <div id="w-node-_7bc16a71-f61e-4110-9f1d-300e4de07fef-cc75d78c" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities.webp" loading="lazy" width="1000" alt="Commodity trading assets like Brent Crude Oil, Gold, Silver, Copper, West Texas Intermediate" class="markets-image" /></div>
                             </div>
                         </div>
@@ -1431,28 +2302,24 @@
                                 <div fs-accordion-element="accordion" class="container_market-category is-first">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3">貴金屬</h3>
-                                        <p class="text-color-black">釋放黃金機會</p>
                                     </div>
                                     <p>黃金和白銀等貴金屬是通常反映市場情緒的重要指標。 </p>
                                 </div>
                                 <div fs-accordion-element="accordion" class="container_market-category">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3">基礎金屬</h3>
-                                        <p class="text-color-black">用工業金屬開拓前進</p>
                                     </div>
                                     <p>銅和鉛等基礎金屬推動全球產業和發展。 </p>
                                 </div>
                                 <div fs-accordion-element="accordion" class="container_market-category">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3">自然能量</h3>
-                                        <p class="text-color-black">為策略加油</p>
                                     </div>
                                     <p>交易原油，推測受全球事件和地緣政治影響的價格趨勢。   </p>
                                 </div>
                                 <div fs-accordion-element="accordion" class="container_market-category">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3"><strong>軟性大宗商品</strong></h3>
-                                        <p class="text-color-black">交易日常生活的必需品</p>
                                     </div>
                                     <p>從咖啡到棉花，軟性大宗商品提供受天氣和全球需求驅動的交易機會。<br /></p>
                                 </div>
@@ -1512,6 +2379,157 @@
                                             </a><a href="/zh-tw/trading-platforms/deriv-bot" class="trade-blocks_platform-link w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d681_logo-1.svg" loading="lazy" alt="" class="trade-blocks_icon-wrapper" />
                                                 <div>Deriv Bot</div>
                                             </a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section_contact-us">
+                <div class="padding-global padding-section-medium">
+                    <div class="container-large">
+                        <div class="contact-us_content">
+                            <div class="padding-bottom padding-medium">
+                                <h2 class="text-align-center">瀏覽我們的常見問題</h2>
+                            </div>
+                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                <div class="section-faq_component">
+                                    <div class="w-dyn-list">
+                                        <div role="list" class="w-dyn-items">
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">交易商品的好處是什麼？</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">商品交易的好處包括：</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">投資組合多元化</strong>：商品與傳統金融資產如股票和債券的相關性通常較低。 將商品加入交易投資組合可以幫助分散風險，降低整體投資組合的波動性。<strong id="">‍</strong></li>
+                                                                        <li><strong id="">對抗通脹</strong>：許多商品，如黃金、石油和農產品，歷來是對抗通脹的工具。</li>
+                                                                        <li>‍<strong id="">有形資產</strong>：商品代表實體資產。 然而，需要注意的是，在市場壓力期間，紙面商品價格有時會暫時與實物商品價格背離，這意味著溢價擴大。</li>
+                                                                        <li>‍<strong id="">全球經濟曝光</strong>：商品通常反映全球經濟狀態，並能提供對特定行業和地區健康狀況的見解。</li>
+                                                                        <li>‍<strong id="">風險管理：</strong> 對於依賴商品的行業（例如，農業、能源、製造業）中的企業來說，商品市場提供了通過對沖來管理價格風險的方法。</li>
+                                                                        <li>‍<strong id="">季節性趨勢</strong>：許多商品因天氣、收成周期和消費者需求等因素而表現出季節性價格模式。 交易者可以利用歷史模式來預測價格變動，並做出明智的交易決策。</li>
+                                                                        <li>‍<strong id="">透明度</strong>：商品市場通常高度透明，供應和需求的基礎信息隨時可用。 這種透明度可以幫助交易者做出明智的決策。</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">有哪些商品可以進行交易？</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">在 Deriv 上可供交易的商品種類繁多，包括：</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">貴金屬</strong>：黃金、白銀、鉑金和鈀金。</li>
+                                                                        <li>‍<strong id="">工業金屬</strong>：銅、鋁、鋅、鎳和鉛。</li>
+                                                                        <li>‍<strong id="">能源商品</strong>：天然氣、布倫特原油和美國油。</li>
+                                                                        <li>‍<strong id="">農產品</strong>：糖、棉花、可可和咖啡。</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">商品現貨交易和商品CFD交易之間的區別是什麼？</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">主要的差異是：</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">基礎資產的所有權：</strong> 在商品現貨交易中，您購買並擁有實際的實物商品或代表該商品所有權的合約。 在商品差價合約交易中，並不擁有商品的所有權。 而是您在商品的價格波動上進行交易。</li>
+                                                                        <li>‍<strong id="">交割與結算</strong>：現貨合約通常涉及在指定地點和時間實際交付實物商品。 這在農產品和能源商品中是常見的，因為實物交付是合約的一部分。 CFD不涉及實物交付。 而是以現金結算的合約。 <strong id="">槓桿</strong>：現貨交易中的槓桿通常是有限的。 如果您想購買特定數量的商品，您通常需要支付全額價格。 CFD提供顯著的槓桿，允許交易者以相對較少的資本控制更大的頭寸。 雖然這可以放大潛在利潤，但同時也增加了潛在損失。</li>
+                                                                        <li>‍<strong id="">賣空</strong>：使用CFD，可以實現商品的賣空交易。</li>
+                                                                        <li>‍<strong id="">監管環境</strong>：在實物商品的現貨交易中，通常需要遵循各種監管和物流要求，包括儲存、運輸和質量標準。 監管監督可能因司法管轄區和商品類型而異。</li>
+                                                                        <li>‍<strong id="">成本</strong>：現貨交易可能涉及儲存費用、運輸成本和保險費用，具體取決於商品。 此外，可能還會產生佣金和費用。 差價合約交易沒有佣金，但會產生點差成本，並通常會有每日金融費用（除非是在免掉期賬戶上）。</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">交易某些商品是否有儲存或實物交割的要求？</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p>對於大多數商品差價合約，沒有儲存或實物交割的要求。 由於差價合約 (CFDs) 是衍生工具，因此它們允許交易者在不實際擁有實物資產的情況下，對商品價格的變動進行投機。 差價合約以現金結算，根據開盤和收盤位置之間的價格差異。</p>
+                                                                    <p>‍</p>
+                                                                    <p>然而，重要的是要注意，某些商品，特別是在期貨市場中，如果持有頭寸直到合約到期日，可能會涉及實物交割。 在這種情況下，交易者可能需要進行實物交割或展期其頭寸，以避免交割義務。 了解您正在交易的特定商品合約的條款和規格是至關重要的。</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">哪些因素影響商品價格？</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">影響商品價格的因素有很多，例如：</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">供需：</strong> 供需之間的平衡是商品價格的主要驅動因素。 生產水平、天氣條件、地緣政治事件以及消費模式的變化等因素都可以影響供需動態。</li>
+                                                                        <li>‍<strong id="">經濟因素</strong>：經濟指標，如 GDP 增長、通貨膨脹、利率和貨幣匯率，都會影響商品價格。 商品價格通常反映全球或區域經濟的整體健康狀況。</li>
+                                                                        <li>‍<strong id="">政府政策</strong>：政府的規範、貿易政策、補貼、關稅和稅收都可以影響商品價格。 政治穩定性和地緣政治緊張局勢也可能有顯著影響。</li>
+                                                                        <li>‍<strong id="">天氣條件</strong>: 天氣模式，包括乾旱、洪水、颶風及其他自然災害，可能對農產品和能源商品產生影響（例如，颶風影響墨西哥灣的石油產量）。</li>
+                                                                        <li>‍<strong id="">投機和投資者情緒</strong>：投機交易活動和投資者情緒可以驅動商品價格的短期波動。 投資者對商品的需求作為對抗通脹的對沖或避險資產也會影響價格。</li>
+                                                                        <li>‍<strong id="">美元強度</strong>: 由於大宗商品主要以美元計價，根據美元指數（DXY）測量的美元強度會反向影響商品價格。 </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1593,7 +2611,7 @@
                                         </div>
                                         <div class="button-group cta-content btn-free-demo"><a data-attributes="btn-primary-fcta" data-class="w-button" href="/zh-tw/signup" class="button is-icon logged-out-btn hide-element w-inline-block">
                                                 <div>試用免費示範</div>
-                                            </a><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                            </a><a id="btn-traders-hub" data-attributes="btn-primary-fcta" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                 <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_19689_31317)">
                                                             <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -1910,7 +2928,7 @@
                                                         </a><a href="https://appgallery.huawei.com/app/C103801913" target="_blank" class="footer_banner-badge gallery w-inline-block">
                                                             <div class="footer_banner-store-icon-wrapper"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4db_icon.svg" alt="" class="footer_banner-store-icon" /></div><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47d_text.svg" alt="" class="footer_banner-store-text" />
                                                         </a></div>
-                                                    <div>*Deriv GO 的可用性取決於您的居住國家/地區。</div>
+                                                    <p>*Deriv GO 的可用性取決於您的居住國家/地區。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1942,8 +2960,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.deb9f4e6c.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.38/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.13b773619.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.39/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
