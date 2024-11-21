@@ -797,8 +797,7 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure :
-                                this.is_secure,
+                                options.secure : this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });

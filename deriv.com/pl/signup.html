@@ -760,8 +760,7 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure :
-                                this.is_secure,
+                                options.secure : this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -2439,8 +2438,7 @@ a,
                 )
                 if (dateFirstContactString) {
                     const parsedData = JSON.parse(dateFirstContactString)
-                    return parsedData.date_first_contact ?
-                        {
+                    return parsedData.date_first_contact ? {
                             date_first_contact: parsedData.date_first_contact
                         } :
                         null

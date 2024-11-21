@@ -16,10 +16,10 @@ define("tradershub.appDefinition", ["@outsystems/runtime-core-js"], function(OSR
             showExceptionStack: false
         },
         isWeb: true,
-        frontendBuildWorkerVersion: "v18.37.0",
-        buildSDKVersion: "v17.1689.2.0",
+        frontendBuildWorkerVersion: "v18.37.1",
+        buildSDKVersion: "v18.0.6.0",
         clientRuntimeVersion: "6.16.6",
         useESM: false,
-        appVersion: "9279"
+        appVersion: "9713"
     };
 });

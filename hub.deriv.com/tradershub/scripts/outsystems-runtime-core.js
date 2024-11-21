@@ -7299,7 +7299,7 @@
     }
 
     function su(e) {
-        return -1 !== e.toUpperCase().indexOf("T");
+        return /^\d{4}-\d{2}-\d{2}(?:T|t)\d{2}:\d{2}(:\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})?$/.test(e);
     }
 
     function au(e) {
@@ -16860,7 +16860,7 @@
             }(n, a) : void Vm("Variable Type didn't match any case. " + typeof n);
         };
     }(Hm || (Hm = {}));
-    const jm = "6.20.2";
+    const jm = "6.20.3";
     Me("client-runtime-core", jm);
     ("undefined" != typeof window ? window : global).OutSystemsDebugger = new class extends zm {
         callDebugger(e) {
@@ -16899,6 +16899,6 @@
             __proto__: null
         });
     Ne();
-    const Km = _exports.Version = "6.20.2";
+    const Km = _exports.Version = "6.20.3";
     Me("client-runtime-core", Km);
 });
