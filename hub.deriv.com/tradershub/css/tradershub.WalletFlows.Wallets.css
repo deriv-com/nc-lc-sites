@@ -236,3 +236,36 @@
         background-position: -200% 0;
     }
 }
+
+
+/* ADD MORE WALLETS */
+.desktop .wallets-add-more-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-base);
+}
+
+.phone .wallets-add-more-section,
+.tablet .wallets-add-more-section {
+    display: flex;
+    gap: var(--space-s);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.phone .wallets-add-more-section::-webkit-scrollbar,
+.tablet .wallets-add-more-section::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.desktop .wallets-add-more-cards {
+    height: 110px;
+}
+
+.phone .wallets-add-more-cards,
+.tablet .wallets-add-more-cards {
+    width: 130px;
+}

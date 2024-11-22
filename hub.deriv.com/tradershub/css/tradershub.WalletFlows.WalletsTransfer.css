@@ -1,0 +1,99 @@
+﻿.wallets-selected-item {
+    border: 1px solid var(--color-neutral-3);
+    overflow: unset;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wallets-selected-item__icon {
+    background-color: var(--color-neutral-2);
+    border-radius: 100%;
+    padding: 8px;
+    display: grid;
+    place-content: center;
+}
+
+.list-item:last-of-type {
+    border-bottom: 1px solid var(--color-neutral-3);
+}
+
+.wallets-transfer-footer {
+    width: 100%;
+    padding: 16px 0px;
+    gap: 16px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-top: 1px solid var(--color-neutral-3);
+}
+
+.desktop .wallets-transfer-footer {
+    display: flex;
+}
+
+.phone .wallets-transfer-footer,
+.tablet .wallets-transfer-footer {
+    display: none;
+}
+
+.desktop .wallets-transfer-success-footer {
+    display: block;
+}
+
+.phone .wallets-transfer-success-footer,
+.tablet .wallets-transfer-success-footer {
+    display: none;
+}
+
+.popup-dialog {
+    overflow: auto;
+}
+
+.phone .popup-dialog,
+.tablet .popup-dialog {
+    margin: 0;
+    height: calc(100% - 48px);
+    position: absolute;
+    bottom: 0;
+}
+
+.desktop .popup-dialog {
+    height: 550px;
+}
+
+.real-demo-switcher {
+    height: 100%;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: #F1F3F5;
+}
+
+.real-demo-switcher-item {
+    border: none;
+    height: 40px;
+    min-width: 56px;
+    padding: 5px 8px;
+    color: #4F575E;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+[data-button-group-item].button-group-selected-item.real-demo-switcher-item {
+    outline: none;
+    background-color: #FFF;
+}
+
+[data-button-group-item].button-group-selected-item {
+    color: #101213;
+}
+
+.input-number {
+    flex: 1;
+}
+
+.form-control[data-input] {
+    height: 47px;
+}

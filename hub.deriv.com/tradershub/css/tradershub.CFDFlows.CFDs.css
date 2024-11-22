@@ -2,6 +2,10 @@
     text-decoration: none;
 }
 
+.hide-text-decoration {
+    text-decoration: none;
+}
+
 .main-title {
     font-size: 24px;
     line-height: 36px;
@@ -45,10 +49,15 @@
 }
 
 .available-accounts-loader {
-    height: 218px;
     width: 100%;
     border-radius: 8px;
-    margin-top: 24px;
+    height: 94px;
+}
+
+.my-account-loader {
+    width: 100%;
+    border-radius: 8px;
+    height: 130px;
 }
 
 .available-accounts__container {
@@ -119,4 +128,14 @@
 .tablet .mobile-btn,
 .phone .mobile-btn {
     display: flex;
+}
+
+.cTrader-content {
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.tablet .cTrader-content,
+.phone .cTrader-content {
+    height: 85vh;
 }

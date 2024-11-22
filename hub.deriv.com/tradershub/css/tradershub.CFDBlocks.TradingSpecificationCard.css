@@ -1,0 +1,7 @@
+﻿.card-container {
+   margin-right: 16px;
+}
+
+.phone .card-container {
+    margin: 0;
+}

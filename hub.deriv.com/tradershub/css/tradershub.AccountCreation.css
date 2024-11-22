@@ -179,6 +179,10 @@ body {
     width: 400px !important;
 }
 
+.phone .full-height-popup {
+    width: 100% !important;
+}
+
 .flatpickr-calendar:not(.open) {
     display: none;
 }

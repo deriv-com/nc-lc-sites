@@ -17,14 +17,6 @@
     background-color: var(--color-neutral-1);
 }
 
-.wallet-transaction-amount-positive {
-    color: var(--color-green-dark);
-}
-
-.wallet-transaction-amount-negative {
-    color: var(--color-red-dark);
-}
-
 .wallet-transaction-btn {
     border: none;
     width: 100%;

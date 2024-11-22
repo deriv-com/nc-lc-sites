@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Oct 25 2024 08:56:48 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Wed Nov 20 2024 08:53:21 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d6cc" data-wf-site="66585fe0e1dc7e70cc75d440" lang="bn" data-wf-collection="66585fe0e1dc7e70cc75d556" data-wf-item-slug="deriv-p2p">
 
 <head>
@@ -11,7 +11,6 @@
     <link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/help-centre/deriv-p2p" />
     <link rel="alternate" hrefLang="es" href="https://deriv.com/es/help-centre/deriv-p2p" />
     <link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/help-centre/deriv-p2p" />
-    <link rel="alternate" hrefLang="th" href="https://deriv.com/th/help-centre/deriv-p2p" />
     <link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/help-centre/deriv-p2p" />
     <link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/help-centre/deriv-p2p" />
     <link rel="alternate" hrefLang="si" href="https://deriv.com/si/help-centre/deriv-p2p" />
@@ -25,7 +24,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/help-centre/deriv-p2p" />
     <meta content="প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী - Deriv P2P" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.55c800535.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.fea7aaff5.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -46,10 +45,10 @@
     <link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon" />
     <link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon" />
     <link href="https://deriv.com/bn/help-centre/deriv-p2p" rel="canonical" />
-    <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.20.30/dist/css/styles.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.6
+        // Version 1.0.12
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -128,9 +127,12 @@
                             method: this._method,
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
-                            data: this.responseText,
+                            data: this.responseType === "" || this.responseType === "text" ?
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
+
                         cacheTrackEvents.responses.push(responseData);
                     });
 
@@ -151,6 +153,7 @@
                     acc[decodeURIComponent(key)] = decodeURIComponent(value);
                     return acc;
                 }, {});
+
                 try {
                     return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
                 } catch (error) {
@@ -186,7 +189,6 @@
                         event.properties.email_hash = cacheTrackEvents.hash(email);
                     }
                 }
-
                 if (event?.properties?.email) {
                     const email = event.properties.email;
                     delete event.properties.email;
@@ -213,12 +215,22 @@
                 let pageViewInterval = null;
 
                 pageViewInterval = setInterval(() => {
+                    const clientInfo = cacheTrackEvents.parseCookies("client_information");
+                    const signupDevice =
+                        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
                     if (
                         typeof window.Analytics !== "undefined" &&
                         typeof window.Analytics.Analytics?.pageView === "function" &&
                         cacheTrackEvents.isReady()
                     ) {
-                        window.Analytics.Analytics.pageView(window.location.href);
+                        window.Analytics?.Analytics?.pageView(window.location.href, {
+                            loggedIn: !!clientInfo,
+                            device_type: signupDevice,
+                            network_type: window?.navigator?.connection?.effectiveType,
+                            network_rtt: window?.navigator?.connection?.rtt,
+                            network_downlink: window?.navigator?.connection?.downlink,
+                        });
                     }
 
                     if (cacheTrackEvents.isPageViewSent()) {
@@ -299,16 +311,19 @@
             },
             loadEvent: (items) => {
                 items.forEach(({
-                    event
+                    event,
+                    cache
                 }) => {
                     const {
                         name,
                         properties
                     } = event;
                     cacheTrackEvents.track({
-                        name,
-                        properties,
-                    });
+                            name,
+                            properties,
+                        },
+                        cache
+                    );
                 });
 
                 return cacheTrackEvents;
@@ -345,6 +360,30 @@
                 );
 
                 return cacheTrackEvents;
+            },
+            trackConsoleErrors: (callback) => {
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                    // Log the error to the console as usual
+                    originalConsoleError.apply(console, args);
+
+                    // Create a clean error message without __trackjs_state__
+                    const errorMessage = args
+                        .map((arg) =>
+                            arg && typeof arg === "object" && arg.message ?
+                            arg.message :
+                            typeof arg === "object" ?
+                            JSON.stringify(arg, (key, value) =>
+                                key.startsWith("__trackjs") ? undefined : value
+                            ) :
+                            String(arg)
+                        )
+                        .join(" ");
+
+                    if (typeof callback === "function") {
+                        callback(errorMessage);
+                    }
+                };
             },
         };
 
@@ -563,33 +602,36 @@
                             "client_information"
                         ),
                         url: window.location.href,
+                        network_type: navigator.connection?.effectiveType,
+                        network_rtt: navigator.connection?.rtt,
+                        network_downlink: navigator.connection?.downlink,
                     },
                 },
             };
             try {
-                Analytics?.Analytics.initialise(initialiseConfig);
-                // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
+                window.Analytics?.Analytics.initialise(initialiseConfig);
+
                 const userId = clientInfo?.user_id ?
                     clientInfo?.user_id :
-                    Analytics?.Analytics?.getInstances?.().tracking?.getAnonymousId();
-                Analytics?.Analytics?.identifyEvent(userId);
+                    window.Analytics?.Analytics?.getInstances?.().tracking?.getAnonymousId();
+                window.Analytics?.Analytics?.identifyEvent(userId);
             } catch (error) {
                 console.error("Error during initialisation:", error);
             }
-            // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
-            Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
-            // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
+
+            window.Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
+
             window.getGrowthbookInstance = function() {
                 if (typeof _growthbook !== "undefined") {
                     return _growthbook;
                 } else {
-                    return Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                    return window.Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
                 }
             };
             window.useGrowthbookFeatureFlag = function({
                 featureFlag
             }) {
-                const growthBookInstance = window?.getGrowthbookInstance();
+                const growthBookInstance = window?.getGrowthbookInstance?.();
                 if (!growthBookInstance) return null;
                 let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
 
@@ -623,7 +665,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.23.1/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -696,7 +738,8 @@
                 var deriv_cookie_domain = "deriv.com"; // Modify as per your actual usage
                 var CookieStorage = function(cookie_name, cookie_domain = "") {
                     var hostname = window.location.hostname;
-                    var is_deriv_com = hostname.includes("deriv.com");
+                    var is_deriv_com =
+                        hostname === "deriv.com" || hostname === "staging.deriv.com";
                     this.initialized = false;
                     this.cookie_name = cookie_name;
                     this.domain = is_deriv_com ?
@@ -742,7 +785,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -866,7 +910,6 @@
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="pt" href="/pt/help-centre/deriv-p2p" class="new-navbar_dropdown-link">Português</a></div>
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="es" href="/es/help-centre/deriv-p2p" class="new-navbar_dropdown-link">Español</a></div>
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="ru" href="/ru/help-centre/deriv-p2p" class="new-navbar_dropdown-link">Русский</a></div>
-                                                        <div role="listitem" class="locale w-locales-item"><a hreflang="th" href="/th/help-centre/deriv-p2p" class="new-navbar_dropdown-link">ไทย</a></div>
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="vi" href="/vi/help-centre/deriv-p2p" class="new-navbar_dropdown-link">Tiếng Việt</a></div>
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="bn" href="/bn/help-centre/deriv-p2p" aria-current="page" class="new-navbar_dropdown-link w--current">বাংলা</a></div>
                                                         <div role="listitem" class="locale w-locales-item"><a hreflang="si" href="/si/help-centre/deriv-p2p" class="new-navbar_dropdown-link">සිංහල</a></div>
@@ -1001,14 +1044,14 @@
                                                                                 <div class="navbar_accordion-content-head">
                                                                                     <div class="navbar_accordion-subhead">শিক্ষা</div>
                                                                                 </div>
-                                                                                <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/bn/blog" class="navbar_accordion-link">Deriv Blog</a></div>
+                                                                                <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/bn/blog" class="navbar_accordion-link">Deriv Blog</a><a href="/bn/trading-terms-glossary" class="navbar_accordion-link">শব্দকোষ</a></div>
                                                                             </div>
                                                                             <div class="navbar_accodion-block">
                                                                                 <div class="navbar_accordion-content-head">
                                                                                     <div class="navbar_accordion-subhead">সহায়তা পান</div>
                                                                                 </div>
                                                                                 <div class="navbar_accordion-content-group"><a href="/bn/help-centre" class="navbar_accordion-link">সহায়তা কেন্দ্র</a>
-                                                                                    <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" class="navbar_accordion-link padding-right-0">সম্প্রদায়</a>
+                                                                                    <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" target="_blank" class="navbar_accordion-link padding-right-0">সম্প্রদায়</a>
                                                                                         <div class="navbar_icon is-relative">
                                                                                             <div class="icon-embed-auto is-rotate w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                                     <g clip-path="url(#clip0_8673_4157)">
@@ -1081,7 +1124,7 @@
                                                 </div>
                                             </div>
                                             <div class="new-navbar_language-button-block">
-                                                <div id="w-node-_82d237d7-26ff-ddda-56a1-95171c3a9083-cff9dc9f" data-w-id="82d237d7-26ff-ddda-56a1-95171c3a9083" class="new-navbar_dropdown-toggle gap-small lang-mob padding-left-5p padding-left-5p">
+                                                <div id="w-node-_82d237d7-26ff-ddda-56a1-95171c3a9083-cff9dc9f" data-w-id="82d237d7-26ff-ddda-56a1-95171c3a9083" class="new-navbar_dropdown-toggle gap-small lang-mob padding-left-5p">
                                                     <div class="new-icon-embed-auto w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <g clip-path="url(#clip0_17173_4606)">
                                                                 <path d="M8 19C8.27083 19 8.57292 18.8646 8.90625 18.5938C9.23958 18.3229 9.58333 17.8646 9.9375 17.2188C10.25 16.5938 10.5 15.8542 10.6875 15H5.3125C5.5 15.8542 5.75 16.5938 6.0625 17.2188C6.41667 17.8646 6.76042 18.3229 7.09375 18.5938C7.42708 18.8646 7.72917 19 8 19ZM5.125 14H10.875C10.9583 13.375 11 12.7083 11 12C11 11.2917 10.9583 10.625 10.875 10H5.125C5.04167 10.625 5 11.2917 5 12C5 12.7083 5.04167 13.375 5.125 14ZM5.3125 9H10.6875C10.5 8.14583 10.25 7.40625 9.9375 6.78125C9.58333 6.13542 9.23958 5.67708 8.90625 5.40625C8.57292 5.13542 8.27083 5 8 5C7.72917 5 7.42708 5.13542 7.09375 5.40625C6.76042 5.67708 6.41667 6.13542 6.0625 6.78125C5.75 7.40625 5.5 8.14583 5.3125 9ZM11.875 10C11.9583 10.6458 12 11.3125 12 12C12 12.6875 11.9583 13.3542 11.875 14H14.7188C14.9062 13.3542 15 12.6875 15 12C15 11.3125 14.9062 10.6458 14.7188 10H11.875ZM14.3438 9C13.9271 8.14583 13.3646 7.40625 12.6562 6.78125C11.9479 6.15625 11.1458 5.6875 10.25 5.375C10.9167 6.27083 11.4062 7.47917 11.7188 9H14.3438ZM4.28125 9C4.59375 7.47917 5.09375 6.27083 5.78125 5.375C4.86458 5.6875 4.05208 6.15625 3.34375 6.78125C2.63542 7.40625 2.08333 8.14583 1.6875 9H4.28125ZM1.28125 10C1.09375 10.6458 1 11.3125 1 12C1 12.6875 1.09375 13.3542 1.28125 14H4.125C4.04167 13.3542 4 12.6875 4 12C4 11.3125 4.04167 10.6458 4.125 10H1.28125ZM10.25 18.625C11.1458 18.3125 11.9479 17.8438 12.6562 17.2188C13.3646 16.5938 13.9167 15.8542 14.3125 15H11.7188C11.4062 16.5208 10.9167 17.7292 10.25 18.625ZM5.78125 18.625C5.09375 17.7292 4.59375 16.5208 4.28125 15H1.6875C2.08333 15.8542 2.63542 16.5938 3.34375 17.2188C4.05208 17.8438 4.86458 18.3125 5.78125 18.625ZM8 20C6.54167 19.9792 5.20833 19.625 4 18.9375C2.79167 18.2292 1.8125 17.25 1.0625 16C0.354167 14.7292 0 13.3958 0 12C0 10.6042 0.354167 9.27083 1.0625 8C1.8125 6.75 2.79167 5.77083 4 5.0625C5.20833 4.375 6.54167 4.02083 8 4C9.45833 4.02083 10.7917 4.375 12 5.0625C13.2083 5.77083 14.1875 6.75 14.9375 8C15.6458 9.27083 16 10.6042 16 12C16 13.3958 15.6458 14.7292 14.9375 16C14.1875 17.25 13.2083 18.2292 12 18.9375C10.7917 19.625 9.45833 19.9792 8 20Z" fill="currentcolor" fill-opacity="0.72" />
@@ -1172,7 +1215,7 @@
                                                                     <div class="new-navbar_dropdown-content">
                                                                         <div class="new-navbar_dropdown-content-bottom is-adaptive">
                                                                             <div class="new-navbar_dropdown-link-list is-adaptive">
-                                                                                <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">শিক্ষা</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/bn/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a>
+                                                                                <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">শিক্ষা</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/bn/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a><a id="w-node-_7c88ce57-3279-068c-737f-589772d75d9d-cff9dc9f" href="/bn/trading-terms-glossary" class="new-navbar_dropdown-link is-adaptive">শব্দকোষ</a>
                                                                             </div>
                                                                             <div class="new-navbar_dropdown-link-list is-adaptive">
                                                                                 <div class="new-navbar_dropdown-title is-adaptive">সহায়তা পান</div><a href="/bn/help-centre" class="new-navbar_dropdown-link is-adaptive">সহায়তা কেন্দ্র</a><a href="https://community.deriv.com/" target="_blank" class="new-navbar_dropdown-link is-block is-adaptive w-inline-block">
@@ -1190,7 +1233,7 @@
                                                                                 </a><a href="/bn/contact-us" class="new-navbar_dropdown-link is-adaptive">আমাদের সাথে যোগাযোগ</a>
                                                                             </div>
                                                                             <div id="w-node-_05a65d05-2957-f84b-46d7-65bc5e71228c-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
-                                                                                <div class="new-navbar_dropdown-title is-adaptive">রিসোর্স</div><a id="w-node-_05a65d05-2957-f84b-46d7-65bc5e712297-cff9dc9f" href="/bn/payment-methods" class="new-navbar_dropdown-link is-adaptive">পেমেন্ট পদ্ধতি</a>
+                                                                                <div class="new-navbar_dropdown-title is-adaptive">রিসোর্স</div><a id="w-node-_73351125-5e67-031f-90dd-7006ee37fe30-cff9dc9f" href="/bn/payment-methods" class="new-navbar_dropdown-link is-adaptive">পেমেন্ট পদ্ধতি</a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1236,7 +1279,7 @@
                                         <div class="w-dyn-list">
                                             <div role="list" class="w-dyn-items">
                                                 <div role="listitem" class="w-dyn-item">
-                                                    <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" data-href="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
+                                                    <div class="new-navbar_menu-right is-border-top is-adaptive"><a id="btn-traders-hub" data-attributes="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
                                                             <div class="icon-embed-auto is-adaptive w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_19689_31317)">
                                                                         <path d="M2.5 6.5V9.5H5.5V6.5H2.5ZM1 6.5C1 5.6875 1.65625 5 2.5 5H5.5C6.3125 5 7 5.6875 7 6.5V9.5C7 10.3438 6.3125 11 5.5 11H2.5C1.65625 11 1 10.3438 1 9.5V6.5ZM2.5 14.5V17.5H5.5V14.5H2.5ZM1 14.5C1 13.6875 1.65625 13 2.5 13H5.5C6.3125 13 7 13.6875 7 14.5V17.5C7 18.3438 6.3125 19 5.5 19H2.5C1.65625 19 1 18.3438 1 17.5V14.5ZM13.5 6.5H10.5V9.5H13.5V6.5ZM10.5 5H13.5C14.3125 5 15 5.6875 15 6.5V9.5C15 10.3438 14.3125 11 13.5 11H10.5C9.65625 11 9 10.3438 9 9.5V6.5C9 5.6875 9.65625 5 10.5 5ZM10.5 14.5V17.5H13.5V14.5H10.5ZM9 14.5C9 13.6875 9.65625 13 10.5 13H13.5C14.3125 13 15 13.6875 15 14.5V17.5C15 18.3438 14.3125 19 13.5 19H10.5C9.65625 19 9 18.3438 9 17.5V14.5Z" fill="white" />
@@ -1278,7 +1321,6 @@
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pt" href="/pt/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">Português</a></div>
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="es" href="/es/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">Español</a></div>
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="ru" href="/ru/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">Русский</a></div>
-                                                                    <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="th" href="/th/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">ไทย</a></div>
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="vi" href="/vi/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">Tiếng Việt</a></div>
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="bn" href="/bn/help-centre/deriv-p2p" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">বাংলা</a></div>
                                                                     <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="si" href="/si/help-centre/deriv-p2p" class="new-navbar_dropdown-link is-adaptive">සිංහල</a></div>
@@ -1336,7 +1378,7 @@
                     <div class="container-large">
                         <div class="padding-section-small">
                             <div fs-cmsfilter-element="filters" class="margin-0 w-form">
-                                <form id="email-form" name="email-form" data-name="Email Form" method="get" data-wf-page-id="66585fe0e1dc7e70cc75d6cc" data-wf-element-id="cccf7b7c-81cd-e0f1-1d3c-e33ef6f72414"><input class="help_search-input w-input" autocomplete="off" maxlength="256" name="name" fs-cmsfilter-field="questionName, questionAnswer" data-name="Name" placeholder="অনুসন্ধান" type="text" id="search-field" /></form>
+                                <form id="email-form" name="email-form" data-name="Email Form" method="get" data-wf-page-id="66585fe0e1dc7e70cc75d6cc" data-wf-element-id="cccf7b7c-81cd-e0f1-1d3c-e33ef6f72414" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><input class="help_search-input w-input" autocomplete="off" maxlength="256" name="name" fs-cmsfilter-field="questionName, questionAnswer" data-name="Name" placeholder="অনুসন্ধান" type="text" id="search-field" /></form>
                                 <div class="w-form-done">
                                     <div>ধন্যবাদ! আপনার জমা পাওয়া গেছে!</div>
                                 </div>
@@ -1364,7 +1406,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id=""><a href="/p2p/" target="_blank">Deriv P2P</a> আমাদের পিয়ার-টু-পিয়ার ডিপোজিট এবং প্রত্যাহার পরিষেবা যা আমাদের ট্রেডিং প্ল্যাটফর্মের অংশ। Deriv P2P ব্যবহার করে, আপনি সহকর্মী ট্রেডয়ীদের সাথে এক্সচেঞ্জের মাধ্যমে কয়েক মিনিটের মধ্যে আপনার অ্যাকাউন্টে এবং বাইরে অর্থ পেতে পারেন। আমরা মূলত আমাদের ক্লায়েন্টদের জন্য এই পরিষেবাটি চালু করেছি যেখানে মুদ্রা বিনিময় পরিষেবাগুলি ব্যাপকভাবে অ্যাক্সেসযোগ্য নয়</p>
                                                             </div>
                                                         </div>
@@ -1382,7 +1424,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এখানে আমরা Deriv P2P যতটা সম্ভব নিরাপদ হিসাবে নিশ্চিত কিছু উপায় আছে:</p>
                                                                 <ul>
                                                                     <li>‍<strong id="">সবার যাচাইকরণ হয়েছে</strong>‍</li>
@@ -1412,14 +1454,14 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এখানে আপনি কি করতে পারেন:</p>
                                                                 <ul id="">
                                                                     <li id="">আপনার ইমেইল ঠিকানা সঠিক কিনা তা পরীক্ষা করুন। আপনি যদি কোনও ভুল ইমেইল ঠিকানা ব্যবহার করেন তবে সঠিক ইমেইল ঠিকানা দিয়ে আবার সাইন আপ করতে পারেন।</li>
                                                                     <li id="">কয়েক মিনিটের জন্য অপেক্ষা করুন। ডেলিভারিতে বিলম্ব হতে পারে।</li>
                                                                     <li id="">আপনার স্প্যাম বা জাঙ্ক ফোল্ডার পরীক্ষা করুন। কখনো কখনো ইমেইলগুলো সেখানেই শেষ হতে পারে।</li>
                                                                     <li id="">আপনার ব্রাউজার এবং ডিভাইস আপডেট হয়েছে কিনা তা পরীক্ষা করুন। যদি তা না হয় তবে সামঞ্জস্যের সমস্যাগুলি ইমেইলে আপনার কাছে পৌঁছাতে বাধা দিতে পারে।</li>
-                                                                    <li id="">যদি এই সমস্ত ব্যর্থ হয় তবে <a href="/contact-us?is_livechat_open=true" target="_blank">লাইভ চ্যাট</a>এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন এবং আমরা আপনাকে আবারও সহায়তা করব।</li>
+                                                                    <li id="">যদি এই সমস্ত ব্যর্থ হয় তবে <a href="#" rel="liveChatBtn">লাইভ চ্যাট</a>এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন এবং আমরা আপনাকে আরও সহায়তা করবো।</li>
                                                                 </ul>
                                                                 <p id="">‍</p>
                                                             </div>
@@ -1438,11 +1480,12 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">হ্যাঁ, Deriv P2P ব্যবহার করার আগে আপনার একটি আসল Deriv ইউএসডি অ্যাকাউন্টের প্রয়োজন হবে।<br>‍</p>
-                                                                <p id=""><a href="/signup/" target="_blank">আপনার এখনও Deriv অ্যাকাউন্ট না থাকলে বিনামূল্যে সাইন আপ করুন</a> ।<br>‍</p>
-                                                                <p id="">আপনার যদি ইতিমধ্যে একটি ডেমো অ্যাকাউন্ট থাকে তবে কীভাবে একটি আসল অ্যাকাউন্ট যুক্ত করবেন তা এখানে:<br>‍</p>
-                                                                <p id="">1. <a href="https://oauth.deriv.com/oauth2/authorize?app_id=16929" target="_blank">আপনার Deriv অ্যাকাউন্টে</a> লগ ইন করুন। </p>
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                                <p id="">হ্যাঁ, Deriv P2P ব্যবহার করার আগে আপনার একটি আসল Deriv USD অ্যাকাউন্টের প্রয়োজন হবে।</p>
+                                                                <p id="">আপনার যদি এখনও Deriv অ্যাকাউন্ট না থাকে <a href="https://hub.deriv.com/tradershub/signup" target="_blank">ফ্রি সাইন আপ করুন</a>।</p>
+                                                                <p id="">আপনার যদি ইতিমধ্যে একটি ডেমো অ্যাকাউন্ট থাকে তবে কীভাবে একটি আসল অ্যাকাউন্ট যুক্ত করবেন তা এখানে:</p>
+                                                                <p id="">‍</p>
+                                                                <p id="">1. আপনার Deriv অ্যাকাউন্টে <a href="https://oauth.deriv.com/oauth2/authorize?app_id=16929" target="_blank" id="">লগ ইন</a> করুন। </p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
                                                                     <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6703b8f052cf3808e6f21bbf_6644aaf7df5f12e582880345_661ffc36dd44bc109a1733d6_p2p-login-fcc889cc2980f33baa5f8ba235dc33a1.png" alt="লগইন" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
@@ -1471,7 +1514,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">Deriv P2P ব্যবহার করতে, আপনাকে প্রথমে একটি Deriv রিয়েল ইউএসডি অ্যাকাউন্টের প্রয়োজন হবে। আপনার যদি ইতিমধ্যে একটি না থাকে তবে <a href="/signup/" target="_blank">বিনামূল্যে সাইন আপ করুন</a>।</p>
                                                                 <p id="">তারপর, আপনার ডকুমেন্ট জমা দিয়ে পরিচয় যাচাই করতে হবে।</p>
                                                                 <p id="">একবার আপনার পরিচয় যাচাই করা হয়েছে, আপনি ডেস্কটপ বা মোবাইলে Deriv P2P ব্যবহার করতে পারেন।</p>
@@ -1492,7 +1535,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনার Deriv P2P ব্যালেন্সে আপনার Deriv অ্যাকাউন্টে করা সমস্ত আমানত অন্তর্ভুক্ত নাও থাকতে পারে। ক্রেডিট এবং ডেবিট কার্ডের মাধ্যমে আমানত (মায়েস্ট্রো এবং ডাইনার্স ক্লাব সহ), জিংপে, স্ক্রিল, নেটেলার এবং ডাইরেক্ট ব্যাংকিং নাইজেরিয়া Deriv P2Pতে পাওয়া যাবে না।</p>
                                                             </div>
                                                         </div>
@@ -1510,7 +1553,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id=""><a href="http://docs.deriv.com/tnc/funds-and-transfers.pdf" target="_blank">আমাদের শর্তাবলী</a>এর বিভাগ 4, 'Deriv P2P' এ যান।</p>
                                                             </div>
                                                         </div>
@@ -1528,11 +1571,11 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনার Deriv P2P অ্যাকাউন্ট নিম্নলিখিত কারণে এক ব্লক করা হতে পারে:</p>
                                                                 <ul id="">
-                                                                    <li id="">আপনার Deriv অ্যাকাউন্ট স্থগিত করা হয়েছে। আরও তথ্যের জন্য <a href="/contact-us/?is_livechat_open=true" target="_blank">লাইভ চ্যাট</a> এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</li>
-                                                                    <li id="">আপনার বিরুদ্ধে এক বা একাধিক বিরোধ উত্থাপিত হয়েছিল। আরও তথ্যের জন্য <a href="/contact-us/?is_livechat_open=true" target="_blank">লাইভ চ্যাট</a> এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</li>
+                                                                    <li id="">আপনার Deriv অ্যাকাউন্ট স্থগিত করা হয়েছে। আরও তথ্যের জন্য <a href="#" rel="liveChatBtn">লাইভ চ্যাট</a> এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</li>
+                                                                    <li id="">আপনার বিরুদ্ধে এক বা একাধিক বিরোধ উত্থাপিত হয়েছিল। আরও তথ্যের জন্য <a href="#" rel="liveChatBtn">লাইভ চ্যাট</a> এর মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</li>
                                                                     <li id="">আপনি গত 24 ঘন্টায় 3 টি অর্ডার বাতিল করেছেন। আপনার অ্যাকাউন্ট 24 ঘন্টা পরে স্বয়ংক্রিয়ভাবে আনব্লক করা হবে।</li>
                                                                 </ul>
                                                             </div>
@@ -1551,7 +1594,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনি যে কোনও পেমেন্ট পদ্ধতি ব্যবহার করতে পারেন যতক্ষণ না আপনি যে ট্রেডারের সাথে ডিল করছেন তার সাথে একমত হয়।</p>
                                                                 <p id="">দ্রষ্টব্য: Deriv P2P ট্রেডয়ীদের মধ্যে করা পেমেনট এর উপর Deriv এর কোন নিয়ন্ত্রণ নেই। অনুগ্রহ করে নিশ্চিত করুন যে আপনি এবং আপনি যে ট্রেডয়ীর সাথে লেনদেন করছেন তার মধ্যে সম্মত অর্থপ্রদানের নির্দেশাবলী অনুসরণ করেছেন এবং আপনার বিজ্ঞাপন পোস্ট করার সময় আপনার পছন্দের অর্থপ্রদানের পদ্ধতি এবং নির্দেশাবলী প্রদান করুন।</p>
                                                                 <p id="">আরও তথ্যের জন্য, <a href="https://docs.deriv.com/tnc/funds-and-transfers.pdf" target="_blank">আমাদের নিয়ম ও শর্তাবলী</a>এ Deriv P2P সম্পর্কিত বিভাগ 4 দেখুন।</p>
@@ -1572,28 +1615,28 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এই পদক্ষেপগুলি অনুসরণ করুন:</p>
                                                                 <ul id="">
                                                                     <li id=""><a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">Deriv P2P</a> &gt; <strong id="">আমার বিজ্ঞাপন</strong>এ যান।</li>
                                                                 </ul>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61d7acd5cf88be11136c_6644aaf7c27d956f09207a41_661ffc36dd44bc109a173402_p2p-myads-4de09cf385b65c72a862f68783846b4f.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/672d82a58b3aa544a37c00a5_6644aaf7c27d956f09207a41_661ffc36dd44bc109a173402_p2p-myads-4de09cf385b65c72a862f68783846b4f.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <ul id="">
                                                                     <li id="">টিপুন<strong id=""> নতুন বিজ্ঞাপন তৈরি </strong>।</li>
                                                                 </ul>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61d7acd5cf88be111368_6644aaf7c27d956f09207a22_661ffc36dd44bc109a1733ed_p2p-new-ad-0fcc5e620b044552c4d39797d63fc598.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/672d82a58b3aa544a37c0099_6644aaf7c27d956f09207a22_661ffc36dd44bc109a1733ed_p2p-new-ad-0fcc5e620b044552c4d39797d63fc598.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <ul id="">
                                                                     <li id="">ফর্মটি পূরণ করুন এবং <strong id="">পোস্ট বিজ্ঞাপন</strong>টিপুন।</li>
                                                                 </ul>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61d7acd5cf88be111370_6644aaf7c27d956f09207a3a_661ffc36dd44bc109a1733d7_p2p-post-ad-c28390482716a33b251f4d5434ba4e30.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/672d82a58b3aa544a37c0096_6644aaf7c27d956f09207a3a_661ffc36dd44bc109a1733d7_p2p-post-ad-c28390482716a33b251f4d5434ba4e30.png" alt="আমার বিজ্ঞাপনগুলিতে যান" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <p id=""><br>আপনার বিজ্ঞাপনটি সফলভাবে তৈরি হয়ে গেলে, এটি <strong id="">ক্রয়/বিক্রয়</strong> পৃষ্ঠায় প্রদর্শিত হবে।</p>
-                                                                <p id=""><strong id="">দ্রষ্টব্য:</strong> আপনার অ্যাকাউন্ট যাচাই হয়ে গেলে আপনি শুধু বিজ্ঞাপন তৈরি করতে সক্ষম হবেন। আপনার অ্যাকাউন্ট যাচাইকরণ সম্পর্কে আরও জানতে, দেখুন <a href="/help-centre/account/#how-do-i-verify-my-account" target="_blank">আমি কীভাবে আমার অ্যাকাউন্ট যাচাই করব?</a></p>
+                                                                <p id=""><strong id="">দ্রষ্টব্য:</strong> আপনার অ্যাকাউন্ট যাচাই হয়ে গেলে আপনি শুধু বিজ্ঞাপন তৈরি করতে সক্ষম হবেন। আপনার অ্যাকাউন্ট যাচাইকরণ সম্পর্কে আরও জানতে, দেখুন <a href="/help-centre/account/#id-how-do-i-verify-my-account" target="_blank">আমি কীভাবে আমার অ্যাকাউন্ট যাচাই করব?</a></p>
                                                                 <p id="">‍</p>
                                                             </div>
                                                         </div>
@@ -1611,7 +1654,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনার বিজ্ঞাপনগুলি <strong id="">আমার বিজ্ঞাপন</strong> ট্যাবে <a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">ক্যাশিয়ার &gt; Deriv P2P</a>এ উপলব্ধ।</p>
                                                             </div>
                                                         </div>
@@ -1629,7 +1672,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এই পদক্ষেপগুলি অনুসরণ করুন:</p>
                                                                 <ol start="" id="">
                                                                     <li id=""><a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">Deriv P2P</a> &gt; <strong id="">ক্রয়/বিক্রয়</strong>এ যান।</li>
@@ -1659,7 +1702,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনার অর্ডারগুলি <strong id="">অর্ডার</strong> ট্যাবে <a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">ক্যাশিয়ার &gt; Deriv P2P</a>এ উপলব্ধ।</p>
                                                             </div>
                                                         </div>
@@ -1677,7 +1720,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">সমাপ্তির হার হল অর্ডারগুলির শতাংশ যা বিজ্ঞাপনদাতা 1 ঘন্টার মধ্যে সম্পূর্ণ করতে পারে।</p>
                                                             </div>
                                                         </div>
@@ -1695,7 +1738,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id=""><strong id="">ক্রয়/বিক্রয়</strong> ট্যাব আপনাকে অন্যান্য বিজ্ঞাপনদাতাদের বিজ্ঞাপন দেখায়। আপনি <strong id="">আমার বিজ্ঞাপন</strong> ট্যাবে আপনার বিজ্ঞাপনগুলি দেখতে পারেন।</p>
                                                             </div>
                                                         </div>
@@ -1713,15 +1756,15 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">আপনি যদি Deriv P2P-তে কোনও লেনদেনের সাথে কোনও সমস্যার মুখোমুখি হন তবে প্রথমে আপনি যে ট্রেডয়ীর সাথে কাজ করছেন তার সাথে এটি সমাধান করার চেষ্টা করুন। যদি তারা সাহায্য করতে ইচ্ছুক না হয় তবে দয়া করে <a href="/contact-us/?is_livechat_open=true" target="_blank">লাইভ চ্যাট</a>এর মাধ্যমে আমাদের জানান এবং আমরা আপনাকে এটি সমাধানে সহায়তা করব।</p>
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                                <p id="">আপনি যদি Deriv P2P-তে কোনও লেনদেনের সাথে কোনও সমস্যার মুখোমুখি হন তবে প্রথমে আপনি যে ট্রেডয়ীর সাথে কাজ করছেন তার সাথে এটি সমাধান করার চেষ্টা করুন। যদি তারা সাহায্য করতে ইচ্ছুক না হয়, অনুগ্রহ করে আমাদের <a href="#" rel="liveChatBtn">লাইভ চ্যাট</a> এর মাধ্যমে জানান, এবং আমরা আপনাকে এটি সমাধান করতে সাহায্য করবো।</p>
                                                                 <p id="">একটি Deriv P2P লেনদেন বিরোধিতা করতে, এই পদক্ষেপগুলি অনুসরণ করুন:</p>
                                                                 <ul id="">
                                                                     <li id="">অর্ডারের মেয়াদ শেষ হয়ে গেলে, অর্ডারের বিবরণ স্ক্রিনে অভিযোগে ক্লিক করুন।</li>
                                                                     <li id="">ফর্মটি সম্পূর্ণ করুন এবং জমা দিতে ক্লিক করুন।</li>
                                                                 </ul>
                                                                 <p id="">আমরা আপনার এবং আপনি যে ট্রেডয়ীর সাথে কাজ করছেন তার সাথে যোগাযোগ করে লেনদেনের বিষয়ে আরও তথ্য চাইব এবং আমরা 12 ঘন্টার মধ্যে সমস্যাটি সমাধান করার চেষ্টা করব। আমরা আপনাকে অবস্থা সম্পর্কে অবহিত করব।</p>
-                                                                <p id="">আরও তথ্যের জন্য, <a href="https://docs.deriv.com/tnc/funds-and-transfers.pdf" target="_blank">আমাদের শর্তাবলীতে</a> Deriv P2P-এর বিভাগ 4 দেখুন।</p>
+                                                                <p id="">আরও তথ্যের জন্য, <a href="https://docs.deriv.com/tnc/funds-and-transfers.pdf" target="_blank" id="">আমাদের শর্তাবলীতে</a> Deriv P2P-এর বিভাগ 4 দেখুন।</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1738,10 +1781,10 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনি <strong id="">আমার প্রোফাইল</strong> ট্যাবে আপনার উপলব্ধ ব্যালেন্স দেখতে পারেন।</p>
                                                                 <p id=""><strong id="">নোট:</strong></p>
-                                                                <p id="">Deriv P2P এর জন্য আপনার উপলব্ধ ব্যালেন্স আপনার পুরো Deriv ব্যালেন্স প্রতিফলিত করতে পারে না। কারণ কিছু পেমেন্ট পদ্ধতির মাধ্যমে করা আমানত Deriv P2P এর জন্য উপলব্ধ হবে না। আরও তথ্যের জন্য <a href="/help-centre-question/why-deriv-p2p-balance-different-from-deriv-account-balance" target="_blank">আমার Deriv P2P ব্যালেন্স আমার Deriv অ্যাকাউন্ট ব্যালেন্স থেকে আলাদা কেন?</a> দেখুন।</p>
+                                                                <p id="">Deriv P2P এর জন্য আপনার উপলব্ধ ব্যালেন্স আপনার পুরো Deriv ব্যালেন্স প্রতিফলিত করতে পারে না। কারণ কিছু পেমেন্ট পদ্ধতির মাধ্যমে করা আমানত Deriv P2P এর জন্য উপলব্ধ হবে না। আরও তথ্যের জন্য <a href="/help-centre/deriv-p2p/#id-why-deriv-p2p-balance-different-from-deriv-account-balance" target="_blank">আমার Deriv P2P ব্যালেন্স আমার Deriv অ্যাকাউন্ট ব্যালেন্স থেকে আলাদা কেন?</a>আরো তথ্যের জন্য।</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1758,7 +1801,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">সফল Deriv P2P লেনদেন করতে, এই নির্দেশিকাগুলি অনুসরণ করুন:</p>
                                                                 <ul id="">
                                                                     <li id="">আপনার যদি সক্রিয় অর্ডার থাকে তবে আপনার অর্ডার সম্পন্ন না হওয়া পর্যন্ত অ্যাপটি খোলা রাখুন (আপনার ফোন বা কম্পিউটারে)। 1 ঘন্টার মধ্যে আপনার অর্ডার সম্পূর্ণ করার চেষ্টা করুন।</li>
@@ -1793,7 +1836,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনি যে ট্রেডয়ের সাথে কাজ করছেন তার সাথে যোগাযোগ করতে Deriv P2P-তে চ্যাট বৈশিষ্ট্যটি ব্যবহার করুন।</p>
                                                                 <p id=""><strong id="">দ্রষ্টব্য:</strong> চ্যাট বৈশিষ্ট্যটি শুধুমাত্র সক্রিয় অর্ডারের জন্য উপলব্ধ। একটি অর্ডার সম্পূর্ণ হয়ে গেলে চ্যাট বৈশিষ্ট্যটি অদৃশ্য হয়ে যায়।</p>
                                                             </div>
@@ -1812,7 +1855,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">হ্যাঁ, যতক্ষণ আপনি আমাদের চেক পাস করেন। প্রাথমিকভাবে, আপনি ক্রয় এবং বিক্রয় অর্ডারের 500 USD সীমা দিয়ে শুরু করবেন।</p>
                                                                 <p id="">একবার আপনি প্রয়োজনীয় মানদণ্ড পূরণ করার পরে, আমরা আপনার সীমা ক্রয় অর্ডারের জন্য 5,000 USD এবং বিক্রয় অর্ডারের জন্য 2,000 USD পর্যন্ত বাড়িয়ে দেব।</p>
                                                                 <p id="">আপনি যদি ভাল কাজ চালিয়ে যান, আপনি ক্রয়-বিক্রয় অর্ডারের জন্য আপনার সীমা 10,000 USD-এ বাড়িয়ে দিতে পারেন।</p>
@@ -1833,7 +1876,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id=""><a href="https://app.deriv.com/account/proof-of-identity)" target="_blank">পরিচয় প্রমাণ</a>জমা দিয়ে আপনার অ্যাকাউন্টের বয়স-যাচাই করুন।</p>
                                                                 <p id="">আপনার জমা দেওয়া নথিটি অনুমোদিত হয়ে গেলে, Deriv P2P অ্যাকাউন্ট নিবন্ধন করতে ক্যাশিয়ার &gt; DP2P এ যান।</p>
                                                             </div>
@@ -1852,7 +1895,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">বিভিন্ন মুদ্রায় বিজ্ঞাপনগুলি সন্ধান করতে <strong id="">Buy/Sell</strong> পৃষ্ঠায় ড্রপ-ডাউন মেনু (নীচের স্ক্রিনশটে দেখানো হয়েছে) ব্যবহার করুন।</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
                                                                     <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61db3e9ec721e01781aa_6644aaf5e73abda349f0994d_661ffc36dd44bc109a17340e_p2p-find-currency-100ea51a1edebceed7fbac8636d4d769.png" alt="বিভিন্ন মুদ্রা খুঁজুন" width="auto" height="auto" loading="auto" id=""></div>
@@ -1874,7 +1917,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এটি হতে পারে কারণ আপনার বিজ্ঞাপনগুলি নিষ্ক্রিয় ছিল এবং মুছে ফেলা হতে পারে। যদি আপনার বিজ্ঞাপন প্রথম 3 দিনের মধ্যে কোনও প্রতিক্রিয়া না পায় তবে এটি নিষ্ক্রিয় চিহ্নিত করা হবে। 90 দিনের নিষ্ক্রিয়তার পরে, এটি স্থায়ীভাবে মুছে ফেলা হবে।</p>
                                                                 <p id="">এটি রোধে, নিয়মিত আপনার বিজ্ঞাপনগুলি পরীক্ষা করুন। যদি সেগুলি নিষ্ক্রিয় করা হয় তবে আপনি <strong id="">আমার বিজ্ঞাপন</strong> পৃষ্ঠায় <strong id="">অ্যাক্টিভেট</strong> টিপে সেগুলি পুনরায় সক্রিয় করতে পারেন।</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
@@ -1897,7 +1940,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">এটি Deriv P2P বিজ্ঞাপনগুলিতে ব্যবহৃত বিনিময় হারকে বোঝায়। কিছু দেশে যেখানে একটি নির্দিষ্ট বিনিময় হার ব্যবহার করা সম্ভব নয় (বাজারের অস্থিরতার কারণে), আপনি আপনার বিজ্ঞাপনের জন্য বিনিময় হার বাজার মূল্যের একটি নির্দিষ্ট শতাংশে সেট করতে পারেন।</p>
                                                                 <p id="">প্রধান সুবিধা হল যে মুদ্রা বিনিময় হার উপরে বা নিচে গেলে আপনাকে আপনার বিজ্ঞাপনগুলি সম্পাদনা করতে হবে না।</p>
                                                                 <p id=""><strong id="">দ্রষ্টব্য:</strong> এই বৈশিষ্ট্যটি শুধুমাত্র কিছু দেশে উপলব্ধ। যেখানে উপলব্ধ, এটি ঐচ্ছিক নয়।</p>
@@ -1918,7 +1961,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনার দেশে উপলব্ধ থাকলে আপনি <strong id="">নতুন বিজ্ঞাপন</strong> পৃষ্ঠায় একটি ভাসমান বিনিময় হার সেট করতে পারেন।</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
                                                                     <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61f777178157ba940bd8_6644aaf5a414edd557d10920_661ffc36dd44bc109a173410_p2p-use-floating-5ca7b01cdc98ed3d6a89cf7a3c1f60d5.png" alt="ভাসমান বিনিময় হার ব্যবহার করুন" width="auto" height="auto" loading="auto" id=""></div>
@@ -1941,7 +1984,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">প্রতিটি লেনদেনের পরে, আপনি আপনার ট্রেড পার্টনারদের রেট এবং সুপারিশ করতে পারেন: তারার সংখ্যা নির্বাচন করুন এবং থাম্বস-আপ বাটনে ক্লিক করুন।</p>
                                                                 <p id="">আপনি প্রতিটি Deriv P2P ব্যবহারকারীর রেটিং এবং সুপারিশ স্কোর <strong id="">Buy/Sell</strong> পৃষ্ঠা এবং তাদের ব্যক্তিগত <strong id="">বিজ্ঞাপনদাতার পৃষ্ঠা</strong>-এ খুঁজে পেতে পারেন।</p>
                                                                 <p id="">একটি দুর্দান্ত অভিজ্ঞতা রেটিং আপনাকে আপনার ট্রেডয়িক অংশীদারদের প্রতি আপনার কৃতজ্ঞতা প্রদর্শন করতে দেয়। আপনার ইতিবাচক রেটিং পাওয়ার পরে তাদের দুর্দান্ত মান বজায় রাখতে তাদের উত্সাহিত করা হবে। আপনার রেটিং এবং সুপারিশগুলি অন্যান্য Deriv P2P ব্যবহারকারীদের নির্ভরযোগ্য ট্রেড অংশীদার খুঁজে পেতে</p>
@@ -1961,7 +2004,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনি কোনও ব্যবহারকারীকে Deriv P2P এ ব্লক করতে পারেন তাদের <strong id="">বিজ্ঞাপনদাতার</strong> পৃষ্ঠায় 3 টি বিন্দু টিপে এবং <strong id="">ব্লক</strong>নির্বাচন করে।</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1944px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1944px">
                                                                     <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61cfcb45dd289b409863_6644aaf46fd22dd1b31ed5c6_661ffc36dd44bc109a173411_p2p-advertise-page-f78d1a104b415ff8030597891ea3ccc7.png" alt="বিজ্ঞাপনদাতা পৃষ্ঠায় ব্যবহারকারী ব্লক" width="auto" height="auto" loading="auto" id=""></div>
@@ -1987,7 +2030,7 @@
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
-                                                            <div fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
+                                                            <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">আপনি যতটা চান। যাইহোক, শুধু 3 টি ক্রয় বিজ্ঞাপন এবং 3 বিক্রয় বিজ্ঞাপন যে কোনও সময় সক্রিয় হতে পারে এবং এই বিজ্ঞাপনগুলিতে অভিন্ন বিবরণ, সীমা এবং বিনিময় হার থাকতে পারে না।</p>
                                                                 <p id="">উদাহরণস্বরুপ,</p>
                                                                 <ul id="">
@@ -2394,7 +2437,7 @@
                                                         </a><a href="https://appgallery.huawei.com/app/C103801913" target="_blank" class="footer_banner-badge gallery w-inline-block">
                                                             <div class="footer_banner-store-icon-wrapper"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4db_icon.svg" alt="" class="footer_banner-store-icon" /></div><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47d_text.svg" alt="" class="footer_banner-store-text" />
                                                         </a></div>
-                                                    <div>*Deriv GO এর প্রাপ্যতা আপনার বসবাসের দেশের উপর নির্ভর করে।</div>
+                                                    <p>*Deriv GO এর প্রাপ্যতা আপনার বসবাসের দেশের উপর নির্ভর করে।</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2426,8 +2469,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.deb9f4e6c.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.38/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a9885b921.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.0/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2643,24 +2686,37 @@
         //end of dashboard send data
 
         // Start: FreshChat load function
-        const loadFreshChatScript = (callback) => {
-            const script = document.createElement("script");
-            script.src = "https://static.deriv.com/scripts/freshchat.js?v=1";
-            script.async = true;
+        const loadFreshChatScript = (callback, maxRetries = 3, retryDelay = 2000) => {
+            let retryCount = 0;
 
-            // Callback when the script is loaded
-            script.onload = () => {
-                if (typeof callback === "function") {
-                    callback();
-                }
+            const loadScript = () => {
+                const script = document.createElement("script");
+                script.src = "https://static.deriv.com/scripts/freshchat.js?v=1";
+                script.async = true;
+
+                script.onload = () => {
+                    if (typeof callback === "function") {
+                        callback();
+                    }
+                };
+
+                script.onerror = () => {
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(loadScript, retryDelay);
+                    } else {
+                        console.warn(
+                            "Freshchat script could not be loaded after maximum retries."
+                        );
+                    }
+                };
+
+                document.head.appendChild(script);
             };
 
-            script.onerror = () => {
-                console.error("Failed to load Freshchat script");
-            };
-
-            document.head.appendChild(script);
+            loadScript();
         };
+
         // End: FreshChat load function
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -2768,7 +2824,9 @@
         })(window, document, [].slice);
     </script>
     <noscript><a href="https://www.livechat.com/chat-with/12049137/" rel="nofollow">Chat with us</a>, powered by
-        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript <!-- End of LiveChat code -->
+        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+    </noscript>
+    <!-- End of LiveChat code -->
     <script>
         // Parse the cookies to get the 'client_information' cookie value
         const cookieValue = window.parseCookies(document.cookie, "client_information") ?
@@ -2787,15 +2845,52 @@
         }
     </script>
     <!-- Trackjs - start of code -->
-    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-    <script>
-        TrackJS.install({
-            token: "346262e7ffef497d85874322fff3bbf8",
-            application: "derivcom-v2",
-            dedupe: true,
-        });
+    <script defer>
+        (function() {
+            var script = document.createElement("script");
+            script.src = "https://cdn.trackjs.com/agent/v3/latest/t.js";
+            script.onload = function() {
+                // Install TrackJS after the script loads
+                TrackJS.install({
+                    token: "346262e7ffef497d85874322fff3bbf8",
+                    application: "derivcom-v2",
+                    dedupe: true,
+                });
+            };
+            document.body.appendChild(script);
+        })();
     </script>
     <!-- Trackjs - end of code -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const client_country = window?.getClientCountry?.();
+
+            const allowedCountries = "gh";
+            const allowedCountriesEU = "cy";
+
+            if (
+                allowedCountries.includes(client_country) ||
+                allowedCountriesEU.includes(client_country)
+            ) {
+                const signupBtn = Array.from(document.querySelectorAll("a")).filter(
+                    (link) => link.href.includes("https://login.deriv.com/signup.php")
+                );
+
+                signupBtn.forEach((link) => {
+                    link.href = "https://partners.deriv.com/live_signup?brd=1";
+                });
+
+                const loginBtn = Array.from(document.querySelectorAll("a")).filter(
+                    (link) => link.href.includes("https://login.deriv.com/signin.php")
+                );
+
+                loginBtn.forEach((link) => {
+                    link.href = "https://hub.deriv.com/partnershub/";
+                });
+            }
+        });
+    </script>
     <script>
         var Webflow = Webflow || [];
         Webflow.push(function() {

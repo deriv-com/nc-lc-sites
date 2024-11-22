@@ -10,3 +10,10 @@
 .desktop .title-container-mobile {
     display: none;
 }
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 16px;
+}

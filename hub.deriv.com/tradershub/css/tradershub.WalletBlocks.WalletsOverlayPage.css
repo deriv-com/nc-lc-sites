@@ -41,11 +41,11 @@
 .phone .wallet-title-container,
 .tablet .wallet-title-container {
     padding: 0px 16px;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 300;
     border-bottom: 1px solid var(--color-neutral-3);
+    width: 100%;
 }
 
 /* Wallet Overlay Content - Content Wrapper */
@@ -69,6 +69,9 @@
 .tablet .wallet-overlay-content {
     padding: var(--space-base);
     height: calc(100vh - 48px);
+    position: fixed;
+    top: 48px;
+    overflow-y: auto;
 }
 
 /* Wallet Footer Content - Footer Wrapper */
@@ -79,7 +82,7 @@
 .phone .wallet-overlay-footer,
 .tablet .wallet-overlay-footer {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }

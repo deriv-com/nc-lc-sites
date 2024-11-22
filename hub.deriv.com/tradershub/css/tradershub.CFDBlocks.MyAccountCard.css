@@ -5,3 +5,19 @@
     border: 1px solid #DEE2E6;
     height: 130px;
 }
+
+.balance-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #101213;
+}
+
+.balance-unavailable {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ADB5BD;
+}
+
+.disabled {
+    opacity: 0.5;
+}

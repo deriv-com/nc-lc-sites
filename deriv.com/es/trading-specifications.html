@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Nov 15 2024 09:50:43 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Wed Nov 20 2024 08:53:21 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d92e" data-wf-site="66585fe0e1dc7e70cc75d440" lang="es">
 
 <head>
@@ -11,7 +11,6 @@
     <link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/trading-specifications" />
     <link rel="alternate" hrefLang="es" href="https://deriv.com/es/trading-specifications" />
     <link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/trading-specifications" />
-    <link rel="alternate" hrefLang="th" href="https://deriv.com/th/trading-specifications" />
     <link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/trading-specifications" />
     <link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/trading-specifications" />
     <link rel="alternate" hrefLang="si" href="https://deriv.com/si/trading-specifications" />
@@ -31,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.00e172144.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.fea7aaff5.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -55,7 +54,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.6
+        // Version 1.0.12
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -134,9 +133,12 @@
                             method: this._method,
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
-                            data: this.responseText,
+                            data: this.responseType === "" || this.responseType === "text" ?
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
+
                         cacheTrackEvents.responses.push(responseData);
                     });
 
@@ -157,6 +159,7 @@
                     acc[decodeURIComponent(key)] = decodeURIComponent(value);
                     return acc;
                 }, {});
+
                 try {
                     return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
                 } catch (error) {
@@ -192,7 +195,6 @@
                         event.properties.email_hash = cacheTrackEvents.hash(email);
                     }
                 }
-
                 if (event?.properties?.email) {
                     const email = event.properties.email;
                     delete event.properties.email;
@@ -231,6 +233,9 @@
                         window.Analytics?.Analytics?.pageView(window.location.href, {
                             loggedIn: !!clientInfo,
                             device_type: signupDevice,
+                            network_type: window?.navigator?.connection?.effectiveType,
+                            network_rtt: window?.navigator?.connection?.rtt,
+                            network_downlink: window?.navigator?.connection?.downlink,
                         });
                     }
 
@@ -312,16 +317,19 @@
             },
             loadEvent: (items) => {
                 items.forEach(({
-                    event
+                    event,
+                    cache
                 }) => {
                     const {
                         name,
                         properties
                     } = event;
                     cacheTrackEvents.track({
-                        name,
-                        properties,
-                    });
+                            name,
+                            properties,
+                        },
+                        cache
+                    );
                 });
 
                 return cacheTrackEvents;
@@ -358,6 +366,30 @@
                 );
 
                 return cacheTrackEvents;
+            },
+            trackConsoleErrors: (callback) => {
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                    // Log the error to the console as usual
+                    originalConsoleError.apply(console, args);
+
+                    // Create a clean error message without __trackjs_state__
+                    const errorMessage = args
+                        .map((arg) =>
+                            arg && typeof arg === "object" && arg.message ?
+                            arg.message :
+                            typeof arg === "object" ?
+                            JSON.stringify(arg, (key, value) =>
+                                key.startsWith("__trackjs") ? undefined : value
+                            ) :
+                            String(arg)
+                        )
+                        .join(" ");
+
+                    if (typeof callback === "function") {
+                        callback(errorMessage);
+                    }
+                };
             },
         };
 
@@ -712,7 +744,8 @@
                 var deriv_cookie_domain = "deriv.com"; // Modify as per your actual usage
                 var CookieStorage = function(cookie_name, cookie_domain = "") {
                     var hostname = window.location.hostname;
-                    var is_deriv_com = hostname.includes("deriv.com");
+                    var is_deriv_com =
+                        hostname === "deriv.com" || hostname === "staging.deriv.com";
                     this.initialized = false;
                     this.cookie_name = cookie_name;
                     this.domain = is_deriv_com ?
@@ -758,7 +791,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1013,7 +1047,7 @@
                                                                                 <div class="navbar_accordion-subhead">Obtener apoyo</div>
                                                                             </div>
                                                                             <div class="navbar_accordion-content-group"><a href="/es/help-centre" class="navbar_accordion-link">Centro de ayuda</a>
-                                                                                <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" class="navbar_accordion-link padding-right-0">Comunidad</a>
+                                                                                <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" target="_blank" class="navbar_accordion-link padding-right-0">Comunidad</a>
                                                                                     <div class="navbar_icon is-relative">
                                                                                         <div class="icon-embed-auto is-rotate w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                                 <g clip-path="url(#clip0_8673_4157)">
@@ -1444,11 +1478,11 @@
                                                     <div class="table_list-wrapper w-dyn-list">
                                                         <div fs-cmsfilter-debounce="1500" fs-cmsstatic-element="list" fs-cmsfilter-element="list" fs-cmsload-element="list" fs-cmsload-mode="pagination" fs-cmsfilter-duration="0" role="list" class="table_list w-dyn-items">
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1a53dd2e5bb2985c97_66585fe0e1dc7e70cc75f659_66447f9c752959bdecb09e1a_6641cdb68fb4f0ea75702aea_market-forex-audcad.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bf2ea2d2c46165e0b6_66585fe0e1dc7e70cc75f659_66447f9c752959bdecb09e1a_6641cdb68fb4f0ea75702aea_market-forex-audcad.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDCAD</div>
                                                                 </div>
                                                                 <div class="table_cell">
-                                                                    <div>100,000</div>
+                                                                    <div>100000</div>
                                                                 </div>
                                                                 <div id="w-node-dfe3fef0-6f68-6f1f-5f52-e61d5cc1af2c-cc75d92e" class="table_cell">
                                                                     <div>AUD</div>
@@ -1463,7 +1497,7 @@
                                                                     <div>0.00022</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.029028</div>
+                                                                    <div>0.028067</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1472,17 +1506,17 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-0.51</div>
+                                                                    <div>0.36</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1.66</div>
+                                                                    <div>-4.62</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1a53dd2e5bb2985c97_66585fe0e1dc7e70cc75f659_66447f9c752959bdecb09e1a_6641cdb68fb4f0ea75702aea_market-forex-audcad.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bf2ea2d2c46165e0b6_66585fe0e1dc7e70cc75f659_66447f9c752959bdecb09e1a_6641cdb68fb4f0ea75702aea_market-forex-audcad.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDCADmicro</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1501,7 +1535,7 @@
                                                                     <div>0.00011</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.016947</div>
+                                                                    <div>0.01604</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1510,21 +1544,21 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-0.51</div>
+                                                                    <div>0.36</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1.66</div>
+                                                                    <div>-4.62</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1ad2d4607db465816c_66585fe0e1dc7e70cc75f658_66447f9c039da4a87b82cc42_6641cdb6aff619f047951f40_market-forex-audchf.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bfe5df9a82928917bc_66585fe0e1dc7e70cc75f658_66447f9c039da4a87b82cc42_6641cdb6aff619f047951f40_market-forex-audchf.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDCHF</div>
                                                                 </div>
                                                                 <div class="table_cell">
-                                                                    <div>100,000</div>
+                                                                    <div>100000</div>
                                                                 </div>
                                                                 <div id="w-node-dfe3fef0-6f68-6f1f-5f52-e61d5cc1af2c-cc75d92e" class="table_cell">
                                                                     <div>AUD</div>
@@ -1536,10 +1570,10 @@
                                                                     <div>15</div>
                                                                 </div>
                                                                 <div id="w-node-_33fb725c-4dfb-aa19-5290-328053d8de84-cc75d92e" class="table_cell">
-                                                                    <div>-0.57124</div>
+                                                                    <div>-0.56892</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.03619</div>
+                                                                    <div>0.035665</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1548,17 +1582,17 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>4.59</div>
+                                                                    <div>4.36</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.94</div>
+                                                                    <div>-7.29</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1a6d19ef80912bbb6a_66585fe0e1dc7e70cc75f658_66447f9c039da4a87b82cc42_6641cdb6aff619f047951f40_market-forex-audchf.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bfe5df9a82928917bc_66585fe0e1dc7e70cc75f658_66447f9c039da4a87b82cc42_6641cdb6aff619f047951f40_market-forex-audchf.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDCHFmicro</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1577,7 +1611,7 @@
                                                                     <div>0.00008</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.025847</div>
+                                                                    <div>0.025469</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1586,21 +1620,21 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>4.59</div>
+                                                                    <div>4.36</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.94</div>
+                                                                    <div>-7.29</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1a5b15ece70cfbc65a_66585fe0e1dc7e70cc75f65b_66447f9a09974dbcfa14362c_6641cdb65c40217f764602fd_market-forex-audjpy.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bf814e03ea45511649_66585fe0e1dc7e70cc75f65b_66447f9a09974dbcfa14362c_6641cdb65c40217f764602fd_market-forex-audjpy.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDJPY</div>
                                                                 </div>
                                                                 <div class="table_cell">
-                                                                    <div>100,000</div>
+                                                                    <div>100000</div>
                                                                 </div>
                                                                 <div id="w-node-dfe3fef0-6f68-6f1f-5f52-e61d5cc1af2c-cc75d92e" class="table_cell">
                                                                     <div>AUD</div>
@@ -1612,10 +1646,10 @@
                                                                     <div>15</div>
                                                                 </div>
                                                                 <div id="w-node-_33fb725c-4dfb-aa19-5290-328053d8de84-cc75d92e" class="table_cell">
-                                                                    <div>0.022</div>
+                                                                    <div>0.021</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.029495</div>
+                                                                    <div>0.026718</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1624,17 +1658,17 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>10.82</div>
+                                                                    <div>8.25</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-13.15</div>
+                                                                    <div>-16.93</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1a5b15ece70cfbc65a_66585fe0e1dc7e70cc75f65b_66447f9a09974dbcfa14362c_6641cdb65c40217f764602fd_market-forex-audjpy.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727bf814e03ea45511649_66585fe0e1dc7e70cc75f65b_66447f9a09974dbcfa14362c_6641cdb65c40217f764602fd_market-forex-audjpy.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDJPYmicro</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1650,10 +1684,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_33fb725c-4dfb-aa19-5290-328053d8de84-cc75d92e" class="table_cell">
-                                                                    <div>0.012</div>
+                                                                    <div>0.011</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.019274</div>
+                                                                    <div>0.01691</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1662,21 +1696,21 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>10.82</div>
+                                                                    <div>8.25</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-13.15</div>
+                                                                    <div>-16.93</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1bbc82a2f6d06a040b_66585fe0e1dc7e70cc75f638_66447f9cddc15a2dab69a49d_6641cdb603593fef78dd889a_market-forex-audnzd.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727c04c7078f9bae2e5d6_66585fe0e1dc7e70cc75f638_66447f9cddc15a2dab69a49d_6641cdb603593fef78dd889a_market-forex-audnzd.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDNZD</div>
                                                                 </div>
                                                                 <div class="table_cell">
-                                                                    <div>100,000</div>
+                                                                    <div>100000</div>
                                                                 </div>
                                                                 <div id="w-node-dfe3fef0-6f68-6f1f-5f52-e61d5cc1af2c-cc75d92e" class="table_cell">
                                                                     <div>AUD</div>
@@ -1691,7 +1725,7 @@
                                                                     <div>0.00021</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.026962</div>
+                                                                    <div>0.024402</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1700,17 +1734,17 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-4.91</div>
+                                                                    <div>-3.63</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.79</div>
+                                                                    <div>-1.65</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1bbc82a2f6d06a040b_66585fe0e1dc7e70cc75f638_66447f9cddc15a2dab69a49d_6641cdb603593fef78dd889a_market-forex-audnzd.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727c04c7078f9bae2e5d6_66585fe0e1dc7e70cc75f638_66447f9cddc15a2dab69a49d_6641cdb603593fef78dd889a_market-forex-audnzd.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDNZDmicro</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1729,7 +1763,7 @@
                                                                     <div>0.00008</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.013525</div>
+                                                                    <div>0.012866</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1738,17 +1772,17 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-4.91</div>
+                                                                    <div>-3.63</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.79</div>
+                                                                    <div>-1.65</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1bcb4ba8435db11e7f_669a54d87efc329590b6a6dc_6699faeaf27ad8ffee74a707_market-forex-audsgd.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727c0ee850217af9503d5_669a54d87efc329590b6a6dc_6699faeaf27ad8ffee74a707_market-forex-audsgd.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDSGD</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1767,7 +1801,7 @@
                                                                     <div>0.00014</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.021936</div>
+                                                                    <div>0.021792</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -1776,21 +1810,21 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.06</div>
+                                                                    <div>0.99</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-4.55</div>
+                                                                    <div>-5.72</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cc1bcb0f9770bce04b49_66585fe0e1dc7e70cc75f627_66447f9a505cf7b4896e1b94_6641cdb6a7afcf1807a81871_market-forex-audusd.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673727c0bac3df374bd52613_66585fe0e1dc7e70cc75f627_66447f9a505cf7b4896e1b94_6641cdb6a7afcf1807a81871_market-forex-audusd.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDUSD</div>
                                                                 </div>
                                                                 <div class="table_cell">
-                                                                    <div>100,000</div>
+                                                                    <div>100000</div>
                                                                 </div>
                                                                 <div id="w-node-dfe3fef0-6f68-6f1f-5f52-e61d5cc1af2c-cc75d92e" class="table_cell">
                                                                     <div>AUD</div>
@@ -1805,7 +1839,7 @@
                                                                     <div>0.00015</div>
                                                                 </div>
                                                                 <div id="w-node-_1b979870-cadc-79cc-49a9-bc7d7dd26a07-cc75d92e" class="table_cell">
-                                                                    <div>0.025092</div>
+                                                                    <div>0.027189</div>
                                                                 </div>
                                                                 <div id="w-node-e2bea1a9-4cff-37ee-8994-5a7631bab39b-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -1814,13 +1848,13 @@
                                                                     <div>0.10%</div>
                                                                 </div>
                                                                 <div id="w-node-_080670c3-e6c0-321e-74d4-908e640755e0-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2.3</div>
+                                                                    <div>-1.69</div>
                                                                 </div>
                                                                 <div id="w-node-_140809b8-198c-a3bd-7a7c-222e862f4331-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.9</div>
+                                                                    <div>0.05</div>
                                                                 </div>
                                                                 <div id="w-node-_296dd38e-768a-5a33-e921-47f7751f1edb-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 21:05-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Sun 22:05-Fri 21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1969,7 +2003,45 @@
                                                     <div class="table_list-wrapper w-dyn-list">
                                                         <div fs-cmsfilter-debounce="1500" fs-cmsstatic-element="list-2" fs-cmsfilter-element="list-2" fs-cmsload-element="list-2" fs-cmsload-mode="pagination" fs-cmsfilter-duration="0" role="list" class="table_list w-dyn-items">
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cd2ae1604eb1c6f186ac_66585fe0e1dc7e70cc75f9c3_66449d51f4ca7c3c29404de5_6641d2e36d0dd7a9dccb35fc_market-derived-aud-basket.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aae848903e38734342d77_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Silver RSI Pullback Index</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
+                                                                    <div>0.1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
+                                                                    <div>20</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
+                                                                    <div>38.58</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
+                                                                    <div>0.52213</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
+                                                                    <div>1:500</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
+                                                                    <div>0.20%</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon 02:02-21:59</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebea6ff68067bf798e8_66585fe0e1dc7e70cc75f9c3_66449d51f4ca7c3c29404de5_6641d2e36d0dd7a9dccb35fc_market-derived-aud-basket.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUD Basket</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -1985,10 +2057,10 @@
                                                                     <div>10</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.106</div>
+                                                                    <div>0.171</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.021658</div>
+                                                                    <div>0.027646</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:1000</div>
@@ -2003,11 +2075,49 @@
                                                                     <div>-1</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 00:00-19:55</div>
+                                                                    <div>Mon-Thu 00:00-24:00; Fri 00:00-20:55</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cd2a0bfe05aceac115b4_66585fe0e1dc7e70cc75f98c_66447f933d40c4bb0fa8a41a_6641d2e3b34f2ee16f51dab8_market-derived-audusd-dfx-10.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aae848903e38734342d77_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Silver RSI Rebound Index</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
+                                                                    <div>0.1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
+                                                                    <div>15</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
+                                                                    <div>77.06</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
+                                                                    <div>0.770045</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
+                                                                    <div>1:500</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
+                                                                    <div>0.20%</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon 02:02-21:59</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebe16ed64c02b6c1ccb_66585fe0e1dc7e70cc75f98c_66447f933d40c4bb0fa8a41a_6641d2e3b34f2ee16f51dab8_market-derived-audusd-dfx-10.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDUSD DFX 10 Index</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -2023,10 +2133,10 @@
                                                                     <div>2</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>10.89</div>
+                                                                    <div>11.01</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.014443</div>
+                                                                    <div>0.016075</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:500</div>
@@ -2035,17 +2145,55 @@
                                                                     <div>0.20%</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1</div>
+                                                                    <div>-5</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1</div>
+                                                                    <div>-5</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 00:00-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Mon-Thu 00:00-22:00, 22:05-24:00; Fri 00:00-21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cd2a5e3b04367154b4d7_66585fe0e1dc7e70cc75f9c5_66447f93b94d4a3bc4968f53_6641d2e3f22f0198da6f0122_market-derived-audusd-dfx-20.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aae848903e38734342d77_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Silver RSI Trend Down Index</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
+                                                                    <div>0.1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
+                                                                    <div>20</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
+                                                                    <div>30.72</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
+                                                                    <div>0.280591</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
+                                                                    <div>1:500</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
+                                                                    <div>0.20%</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon 02:02-21:59</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebef4aef1c1a46f6260_66585fe0e1dc7e70cc75f9c5_66447f93b94d4a3bc4968f53_6641d2e3f22f0198da6f0122_market-derived-audusd-dfx-20.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">AUDUSD DFX 20 Index</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -2061,10 +2209,10 @@
                                                                     <div>2</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>19.22</div>
+                                                                    <div>19.37</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.026844</div>
+                                                                    <div>0.033551</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:500</div>
@@ -2073,17 +2221,55 @@
                                                                     <div>0.20%</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2</div>
+                                                                    <div>-10</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2</div>
+                                                                    <div>-10</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 00:00-20:55 GMT. Daily break 21:00-21:05</div>
+                                                                    <div>Mon-Thu 00:00-22:00, 22:05-24:00; Fri 00:00-21:55 GMT. Daily break 22:00-22:05</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cd2a38519e33e8b1938e_66585fe0e1dc7e70cc75f9c4_66449d51c822e22c94c48c0a_6641d2e62cfd5ea1a69ad667_market-derived-boom-1000.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aae848903e38734342d77_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Silver RSI Trend Up Index</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
+                                                                    <div>0.1</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
+                                                                    <div>15</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
+                                                                    <div>20.6</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
+                                                                    <div>0.199501</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
+                                                                    <div>1:500</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
+                                                                    <div>0.20%</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10</div>
+                                                                </div>
+                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon 02:02-21:59</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebe0db3b51ff5b62dac_66585fe0e1dc7e70cc75f9c4_66449d51c822e22c94c48c0a_6641d2e62cfd5ea1a69ad667_market-derived-boom-1000.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Boom 1000 Index</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -2099,10 +2285,10 @@
                                                                     <div>120</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.725</div>
+                                                                    <div>1.536</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.003952</div>
+                                                                    <div>0.00778</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:600</div>
@@ -2117,11 +2303,11 @@
                                                                     <div>-7</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
+                                                                    <div>Mon-Sun 00:00-24:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6705095123c9e2a0025fdfed_66b4d1c749d22dcc4b595c0d_66585fe0e1dc7e70cc75f9c1_66449d519bb9ae3a41ac5b4f_6641d2e3bdb58bed56c9241a_market-derived-boom-300.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebe6ccbf2bcc135cc50_66585fe0e1dc7e70cc75f9c1_66449d519bb9ae3a41ac5b4f_6641d2e3bdb58bed56c9241a_market-derived-boom-300.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Boom 300 Index</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -2137,10 +2323,10 @@
                                                                     <div>250</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.55</div>
+                                                                    <div>0.228</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.046661</div>
+                                                                    <div>0.016384</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -2155,11 +2341,11 @@
                                                                     <div>-30</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
+                                                                    <div>Mon-Sun 00:00-24:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6705095118b46b32b65b3e74_66585fe0e1dc7e70cc75f9c2_66449d511c62347ea35c638f_6641d2e37ca0aa5661add331_market-derived-boom-500.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aaebe6ccbf2bcc135cc4c_66585fe0e1dc7e70cc75f9c2_66449d511c62347ea35c638f_6641d2e37ca0aa5661add331_market-derived-boom-500.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Boom 500 Index</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -2175,10 +2361,10 @@
                                                                     <div>150</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.385</div>
+                                                                    <div>0.451</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.005692</div>
+                                                                    <div>0.006455</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
                                                                     <div>1:400</div>
@@ -2193,159 +2379,7 @@
                                                                     <div>-10</div>
                                                                 </div>
                                                                 <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6705095118b46b32b65b3e74_66585fe0e1dc7e70cc75f9c2_66449d511c62347ea35c638f_6641d2e37ca0aa5661add331_market-derived-boom-500.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Boom 600 Index</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>1</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
-                                                                    <div>0.2</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
-                                                                    <div>80</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.506</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.005569</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
-                                                                    <div>1:400</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
-                                                                    <div>0.25%</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-20</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-15</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6705095118b46b32b65b3e74_66585fe0e1dc7e70cc75f9c2_66449d511c62347ea35c638f_6641d2e37ca0aa5661add331_market-derived-boom-500.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Boom 900 Index</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>1</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
-                                                                    <div>0.2</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
-                                                                    <div>85</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.427</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.004684</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
-                                                                    <div>1:400</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
-                                                                    <div>0.25%</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-18</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-12</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cd2ccab61c020639a4e7_66585fe0e1dc7e70cc75f9c0_66449d5274c801456ed85a06_6641d2e9a35b50b0dfd2c921_market-derived-crash-1000.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Crash 1000 Index</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>1</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
-                                                                    <div>0.2</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
-                                                                    <div>250</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.252</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.004257</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
-                                                                    <div>1:600</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
-                                                                    <div>0.17%</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-7</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-20</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/670509517a0aa2ea219578c4_66b4d1c74a83129cf53188d2_66585fe0e1dc7e70cc75f840_66449d58ac980f83fd73fe2d_6641d2e6e3b88c2a712f4a36_market-derived-crash-300.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Crash 300 Index</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>1</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebb8-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebba-cc75d92e" class="table_cell">
-                                                                    <div>0.5</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbc-cc75d92e" class="table_cell">
-                                                                    <div>50</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebbe-cc75d92e" class="table_cell">
-                                                                    <div>0.72</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc0-cc75d92e" class="table_cell">
-                                                                    <div>0.015282</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc2-cc75d92e" class="table_cell">
-                                                                    <div>1:100</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc4-cc75d92e" class="table_cell">
-                                                                    <div>1.00%</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc6-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-30</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebc8-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-40</div>
-                                                                </div>
-                                                                <div id="w-node-_684c5a26-2ea6-1874-1f02-d9e9fd13ebca-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Sat 00:00-24:00</div>
+                                                                    <div>Mon-Sun 00:00-24:00</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2359,7 +2393,7 @@
                                                             </a>
                                                             <link rel="prerender" href="?fd13ebaf_page=2" />
                                                             <div class="text-size-small"><span>NOTA:</span> La disponibilidad de los instrumentos variará según la plataforma de trading.</div>
-                                                            <div aria-label="Page 1 of 7" role="heading" class="w-page-count page-count">1 / 7</div>
+                                                            <div aria-label="Page 1 of 8" role="heading" class="w-page-count page-count">1 / 8</div>
                                                         </div>
                                                     </div>
                                                     <div fs-cmsfilter-element="empty-2" class="blogs_results-empty-wrapper">
@@ -2837,8 +2871,8 @@
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6705013d4f0fa6cb6fb5c28a_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Adidas AG</div>
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673aae848903e38734342d77_6698d6b4626a618c6c10b98c_66585fe0e1dc7e70cc75f5d8_664f56d1e7f1264d5ad6e5e2_6641d44d0ec09fa100baf78a_market-stocks-adidas-salomon.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Adidas Salomon</div>
                                                                 </div>
                                                                 <div class="table_cell">
                                                                     <div>1</div>
@@ -2856,7 +2890,7 @@
                                                                     <div>1.29</div>
                                                                 </div>
                                                                 <div id="w-node-_854b6fc9-4be5-0b52-5299-d7c65608a04d-cc75d92e" class="table_cell">
-                                                                    <div>0.590447</div>
+                                                                    <div>0.614014</div>
                                                                 </div>
                                                                 <div id="w-node-_854b6fc9-4be5-0b52-5299-d7c65608a04f-cc75d92e" class="table_cell">
                                                                     <div>1:10</div>
@@ -2865,13 +2899,13 @@
                                                                     <div>10.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_854b6fc9-4be5-0b52-5299-d7c65608a053-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2.7</div>
+                                                                    <div>-2.97</div>
                                                                 </div>
                                                                 <div id="w-node-_854b6fc9-4be5-0b52-5299-d7c65608a055-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-9.1</div>
+                                                                    <div>-10.01</div>
                                                                 </div>
                                                                 <div id="w-node-_854b6fc9-4be5-0b52-5299-d7c65608a057-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 07:00-15:30</div>
+                                                                    <div>Mon-Fri 08:00-16:30</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3020,7 +3054,7 @@
                                                     <div class="table_list-wrapper w-dyn-list">
                                                         <div fs-cmsfilter-debounce="1500" fs-cmsstatic-element="list-4" fs-cmsfilter-element="list-4" fs-cmsload-element="list-4" fs-cmsload-mode="pagination" fs-cmsfilter-duration="0" role="list" class="table_list w-dyn-items">
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbeddb5777679274d7f3_66989f4e09edf8e7e494f42d_66585fe0e1dc7e70cc75f5e5_66447fa023b78fc868ece066_6641d495aff619f0479ede38_market-indices-australia-200.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722934cf08442d07ec4fd_66989f4e09edf8e7e494f42d_66585fe0e1dc7e70cc75f5e5_66447fa023b78fc868ece066_6641d495aff619f0479ede38_market-indices-australia-200.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Australia 200</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3039,7 +3073,7 @@
                                                                     <div>1.76</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.034367</div>
+                                                                    <div>0.030579</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3048,17 +3082,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-6.05</div>
+                                                                    <div>-6.67</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>2.55</div>
+                                                                    <div>2.3</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbed75c96aeedb95de0a_66989f4f09801248a790c4e4_6683c3396ac16f646250a64d_market-indices-china-50.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6737229312e8e2f6e1dfad61_66989f4f09801248a790c4e4_6683c3396ac16f646250a64d_market-indices-china-50.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">China 50</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3074,10 +3108,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>6.92</div>
+                                                                    <div>2.92</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.074495</div>
+                                                                    <div>0.056336</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3086,17 +3120,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-7.21</div>
+                                                                    <div>-7.38</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>3.71</div>
+                                                                    <div>2.89</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbed457c123af298907c_66989f4fa0ff03e6192d74f4_6683c339f8d19da9ed67a5ca_market-indices-china-h-shares.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722935bfb165969788272_66989f4fa0ff03e6192d74f4_6683c339f8d19da9ed67a5ca_market-indices-china-h-shares.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">China H Shares</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3112,10 +3146,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>7.47</div>
+                                                                    <div>6.47</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.135694</div>
+                                                                    <div>0.108734</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3124,17 +3158,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.64</div>
+                                                                    <div>-6.42</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>2.14</div>
+                                                                    <div>2.1</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbedef68c3a0226a4ead_66989f4e75cdb0f28da7d298_66585fe0e1dc7e70cc75f5e3_66449d6bb524eaf1bd91a8df_6641d49595a23a27f1698de0_market-indices-euro-50.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6737229329b90f835221c49c_66989f4e75cdb0f28da7d298_66585fe0e1dc7e70cc75f5e3_66449d6bb524eaf1bd91a8df_6641d49595a23a27f1698de0_market-indices-euro-50.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Europe 50</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3153,7 +3187,7 @@
                                                                     <div>1.53</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.039998</div>
+                                                                    <div>0.03736</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3162,17 +3196,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.46</div>
+                                                                    <div>-5.63</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>1.96</div>
+                                                                    <div>1.46</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbed4776f202773074ca_66989f4e2e4855f71eb7a563_66585fe0e1dc7e70cc75f5e2_66449d6bb5955f56672346b1_6641d49587ef5da5891e9f3a_market-indices-france-40.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6737229370ae06075246348f_66989f4e2e4855f71eb7a563_66585fe0e1dc7e70cc75f5e2_66449d6bb5955f56672346b1_6641d49587ef5da5891e9f3a_market-indices-france-40.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">France 40</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3188,10 +3222,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>1.33</div>
+                                                                    <div>0.83</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.03842</div>
+                                                                    <div>0.030954</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3200,17 +3234,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.46</div>
+                                                                    <div>-5.63</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>1.96</div>
+                                                                    <div>1.46</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbed64c5072a7a860bcc_66989f4f3a89b1bf10d6c168_66585fe0e1dc7e70cc75f5e1_66449d6beb9b9d4706442cdb_6641d49525cd55cf535ca961_market-indices-german-40.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67372293418c20f40e905f74_66989f4f3a89b1bf10d6c168_66585fe0e1dc7e70cc75f5e1_66449d6beb9b9d4706442cdb_6641d49525cd55cf535ca961_market-indices-german-40.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Germany 40</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3226,10 +3260,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>1.7</div>
+                                                                    <div>1.2</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.012845</div>
+                                                                    <div>0.011388</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3238,17 +3272,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.46</div>
+                                                                    <div>-5.63</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>1.96</div>
+                                                                    <div>1.46</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbee95543e42183a92d8_66989f4f3dd3da3d1863b3b3_66585fe0e1dc7e70cc75db27_market-indices-hong-kong-50.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722941c5d0ff1f373058e_66989f4f3dd3da3d1863b3b3_66585fe0e1dc7e70cc75db27_market-indices-hong-kong-50.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Hong Kong 50</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3264,10 +3298,10 @@
                                                                     <div>100</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>5.78</div>
+                                                                    <div>3.28</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.043937</div>
+                                                                    <div>0.036031</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3276,17 +3310,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.64</div>
+                                                                    <div>-6.42</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>2.14</div>
+                                                                    <div>2.1</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbee0bfe05aceac03fd0_66989f5096115a558b143fef_66585fe0e1dc7e70cc75f5e0_66447fa2ae3c7464fef26e3d_6641d49503593fef78e7ead2_market-indices-japan-225.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722948888eff23cd40995_66989f5096115a558b143fef_66585fe0e1dc7e70cc75f5e0_66447fa2ae3c7464fef26e3d_6641d49503593fef78e7ead2_market-indices-japan-225.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Japan 225</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3302,10 +3336,10 @@
                                                                     <div>500</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c1-cc75d92e" class="table_cell">
-                                                                    <div>5.11</div>
+                                                                    <div>7.61</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.020814</div>
+                                                                    <div>0.020218</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3314,17 +3348,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1.94</div>
+                                                                    <div>-2.14</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-1.56</div>
+                                                                    <div>-1.71</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:00-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbeebc82a2f6d069dce7_66989f50af58a44ec28e6b80_66585fe0e1dc7e70cc75f5e4_66449d6a23e81e7b2ee39059_6641d4962cfd5ea1a69c98c1_market-indices-netherlands-25.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722942187e0d1704f7a7b_66989f50af58a44ec28e6b80_66585fe0e1dc7e70cc75f5e4_66449d6a23e81e7b2ee39059_6641d4962cfd5ea1a69c98c1_market-indices-netherlands-25.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Netherlands 25</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3343,7 +3377,7 @@
                                                                     <div>0.27</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.053101</div>
+                                                                    <div>0.052876</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3352,17 +3386,17 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.46</div>
+                                                                    <div>-5.63</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>1.96</div>
+                                                                    <div>1.46</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:05-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6710cbee9a5d8d6ae853bcca_66989f509da0b3878b7f9d3c_6683c33958aa95f9f034b129_market-indices-singapore-20.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673722948705828136f5fae8_66989f509da0b3878b7f9d3c_6683c33958aa95f9f034b129_market-indices-singapore-20.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Singapore 20</div>
                                                                 </div>
                                                                 <div class="table_cell">
@@ -3381,7 +3415,7 @@
                                                                     <div>0.17</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c3-cc75d92e" class="table_cell">
-                                                                    <div>0.068705</div>
+                                                                    <div>0.06445</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c5-cc75d92e" class="table_cell">
                                                                     <div>1:100</div>
@@ -3390,13 +3424,13 @@
                                                                     <div>1.00%</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9c9-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-5.4</div>
+                                                                    <div>-5.53</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cb-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>1.9</div>
+                                                                    <div>1.38</div>
                                                                 </div>
                                                                 <div id="w-node-_0a9de0c0-e4b4-ac24-eaf6-adfae476d9cd-cc75d92e" class="table_cell is-big">
-                                                                    <div>Sun-Fri 22:05-21:00 GMT. Daily break 21:00-22:00</div>
+                                                                    <div>Sun 22:00-Fri 21:00 GMT. Daily break 21:00-22:00</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3777,122 +3811,8 @@
                                                                 </div>
                                                             </div>
                                                             <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/670508efd96a1e643a5c10d6_66de68d1e8e570e5688bb11c_market-commodities-cocoa.svg" alt="" class="table_icon-wrapper" />
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673d7983459a0cfe78fa827b_66de68d1e8e570e5688bb11c_market-commodities-cocoa.svg" alt="" class="table_icon-wrapper" />
                                                                     <div fs-cmsfilter-field="name">Cocoa</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>100</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
-                                                                    <div>0.01</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
-                                                                    <div>100</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
-                                                                    <div>14.5</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
-                                                                    <div>0.266815</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
-                                                                    <div>1:50</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
-                                                                    <div>2.00%</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2.001</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-0.092</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 09:45-17:30</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/670508ef17ec70d4424b6886_66de68d18f9ffa7a4bcf5ace_market-commodities-coffee-arabica.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">CoffeeArab</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>100</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
-                                                                    <div>0.01</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
-                                                                    <div>20</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
-                                                                    <div>1.8</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
-                                                                    <div>0.761506</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
-                                                                    <div>1:50</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
-                                                                    <div>2.00%</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.094</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-0.225</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 09:15-17:30</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/670508ef42e2fd754c33b7f0_66de68d1da5a09c9a1d56067_market-commodities-coffee-robusta.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">CoffeeRobu</div>
-                                                                </div>
-                                                                <div class="table_cell">
-                                                                    <div>100</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
-                                                                    <div>USD</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
-                                                                    <div>0.01</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
-                                                                    <div>10</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
-                                                                    <div>7</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
-                                                                    <div>0.226289</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
-                                                                    <div>1:20</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
-                                                                    <div>5.00%</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.758</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-2.43</div>
-                                                                </div>
-                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 09:00-17:30</div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="listitem" class="table_item w-dyn-item">
-                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/670508efcd008408a713d5ae_66de68d067c5af6501cf1ee2_market-commodities-cotton.svg" alt="" class="table_icon-wrapper" />
-                                                                    <div fs-cmsfilter-field="name">Cotton</div>
                                                                 </div>
                                                                 <div class="table_cell">
                                                                     <div>100</div>
@@ -3907,10 +3827,10 @@
                                                                     <div>1</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
-                                                                    <div>0.24</div>
+                                                                    <div>14.5</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
-                                                                    <div>0.370617</div>
+                                                                    <div>0.30516</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
                                                                     <div>1:20</div>
@@ -3919,13 +3839,127 @@
                                                                     <div>5.00%</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>-0.131</div>
+                                                                    <div>33.71</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
-                                                                    <div>0.057</div>
+                                                                    <div>-64.74</div>
                                                                 </div>
                                                                 <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
-                                                                    <div>Mon-Fri 01:00-18:20</div>
+                                                                    <div>Mon-Fri 09:45-18:30</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673d7982ae7ad199a366bf20_66de68d18f9ffa7a4bcf5ace_market-commodities-coffee-arabica.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">CoffeeArab</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>100</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
+                                                                    <div>0.01</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
+                                                                    <div>10</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
+                                                                    <div>1.8</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
+                                                                    <div>0.751853</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
+                                                                    <div>1:20</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
+                                                                    <div>5.00%</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>0.06</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-0.2</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon-Fri 09:45-18:30</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673d7983d3627aab3ca2b440_66de68d1da5a09c9a1d56067_market-commodities-coffee-robusta.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">CoffeeRobu</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>100</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
+                                                                    <div>0.01</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
+                                                                    <div>1</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
+                                                                    <div>6</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
+                                                                    <div>0.229206</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
+                                                                    <div>1:20</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
+                                                                    <div>5.00%</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>4.61</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-10.27</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon-Fri 09:00-17:30</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="listitem" class="table_item w-dyn-item">
+                                                                <div class="table_cell is-main"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673d7982d7ec362c7735a9b3_66de68d067c5af6501cf1ee2_market-commodities-cotton.svg" alt="" class="table_icon-wrapper" />
+                                                                    <div fs-cmsfilter-field="name">Cotton</div>
+                                                                </div>
+                                                                <div class="table_cell">
+                                                                    <div>100</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e95-cc75d92e" class="table_cell">
+                                                                    <div>USD</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e97-cc75d92e" class="table_cell">
+                                                                    <div>0.01</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e99-cc75d92e" class="table_cell">
+                                                                    <div>20</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9b-cc75d92e" class="table_cell">
+                                                                    <div>0.24</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9d-cc75d92e" class="table_cell">
+                                                                    <div>0.366283</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647e9f-cc75d92e" class="table_cell">
+                                                                    <div>1:50</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea1-cc75d92e" class="table_cell">
+                                                                    <div>2.00%</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea3-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-0.01</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea5-cc75d92e" class="table_cell wtl-left">
+                                                                    <div>-0.01</div>
+                                                                </div>
+                                                                <div id="w-node-af000f01-2593-40aa-b2a7-b0afc9647ea7-cc75d92e" class="table_cell is-big">
+                                                                    <div>Mon-Fri 02:00-19:20</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5460,8 +5494,8 @@
     </div>
     <div class="loader-background"></div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.f084eff40.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a9885b921.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.0/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -5677,24 +5711,37 @@
         //end of dashboard send data
 
         // Start: FreshChat load function
-        const loadFreshChatScript = (callback) => {
-            const script = document.createElement("script");
-            script.src = "https://static.deriv.com/scripts/freshchat.js?v=1";
-            script.async = true;
+        const loadFreshChatScript = (callback, maxRetries = 3, retryDelay = 2000) => {
+            let retryCount = 0;
 
-            // Callback when the script is loaded
-            script.onload = () => {
-                if (typeof callback === "function") {
-                    callback();
-                }
+            const loadScript = () => {
+                const script = document.createElement("script");
+                script.src = "https://static.deriv.com/scripts/freshchat.js?v=1";
+                script.async = true;
+
+                script.onload = () => {
+                    if (typeof callback === "function") {
+                        callback();
+                    }
+                };
+
+                script.onerror = () => {
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(loadScript, retryDelay);
+                    } else {
+                        console.warn(
+                            "Freshchat script could not be loaded after maximum retries."
+                        );
+                    }
+                };
+
+                document.head.appendChild(script);
             };
 
-            script.onerror = () => {
-                console.error("Failed to load Freshchat script");
-            };
-
-            document.head.appendChild(script);
+            loadScript();
         };
+
         // End: FreshChat load function
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -5847,7 +5894,10 @@
             const allowedCountries = "gh";
             const allowedCountriesEU = "cy";
 
-            if (allowedCountries.includes(client_country) || allowedCountriesEU.includes(client_country)) {
+            if (
+                allowedCountries.includes(client_country) ||
+                allowedCountriesEU.includes(client_country)
+            ) {
                 const signupBtn = Array.from(document.querySelectorAll("a")).filter(
                     (link) => link.href.includes("https://login.deriv.com/signup.php")
                 );

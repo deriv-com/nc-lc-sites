@@ -1,1 +1,21 @@
-﻿
+﻿.header-container {
+    display: flex;
+    align-items: center;
+    border-color: #E9ECEF;
+    border-style: none none solid none;
+    border-width: 0px 0px 1px 0px;
+    height: 48px;
+    margin-bottom: 16px;
+}
+
+.phone .header-container {
+    padding: 0 16px;
+}
+
+.phone .carousel-container {
+    padding: 0 16px;
+}
+
+.carousel-container {
+    padding: 0;
+}
