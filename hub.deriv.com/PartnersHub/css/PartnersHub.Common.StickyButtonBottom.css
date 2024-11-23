@@ -4,7 +4,14 @@
     background: var(--Neutral-Neutral-0, #FFF);
     position: sticky;
     bottom: 0;
+    flex-direction: column;
+}
+.ph-sticky-btn-bottom > div {
+    width: 100%;
 }
 .desktop .ph-sticky-btn-bottom {
+    flex-direction: row-reverse;
+}
+.desktop .ph-should-hide-on-desktop {
     display: none;
 }

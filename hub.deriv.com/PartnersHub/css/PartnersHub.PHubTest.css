@@ -178,9 +178,9 @@ background: var(--core-color-solid-slate-50, #FFF);
 
 .ph-section-title {
     color: var(--Neutral-Neutral-10, #101213);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 28px;
 }
 .desktop .ph-section-title {
     font-size: 20px;
@@ -195,6 +195,12 @@ background: var(--core-color-solid-slate-50, #FFF);
     font-size: 16px;
 }
 
+.ph-section-16-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px; 
+}
+
 .ph-section-text {
     color: var(--Neutral-Neutral-10, #101213);
     font-size: 12px;
@@ -202,8 +208,29 @@ background: var(--core-color-solid-slate-50, #FFF);
     line-height: 18px;
 }
 
-ph-text {
+.ph-text {
     font-size: 14px;
     font-weight: 400;
     line-height: 22px; 
+}
+
+.tablet [data-checkbox]:before, .phone [data-checkbox]:before {
+    height: 22px;
+    width: 22px;
+}
+.tablet [data-checkbox]:checked:after, .phone [data-checkbox]:checked:after {
+    left: 5px;
+    top: 7px;
+}
+.tablet [data-checkbox], .phone [data-checkbox] {
+    height: 24px;
+    width: 24px;
+}
+
+.osui-sidebar--has-overlay::before {
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

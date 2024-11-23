@@ -222,8 +222,6 @@ background: rgba(44, 154, 255, 0.08);
     flex-direction: column;
     gap: 16px;
     height: auto;
-    padding-top: 20px;
-    padding-bottom: 40px;;
     max-width: 1069px;
 }
 
