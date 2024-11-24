@@ -2784,7 +2784,7 @@
                                     </fieldset>
             
         <fieldset class="submit-buttons">
-          <input type="hidden" name="_ftoken_" value="a1585e86b8e64116863cc2102e016a5c" />
+          <input type="hidden" name="_ftoken_" value="effd7cea81771a3cd349d04511fb4412" />
           <dl>
             <dt>&nbsp;</dt>
             <dd><input type="submit" value="Sign up" id="btn-signup" /></dd>
