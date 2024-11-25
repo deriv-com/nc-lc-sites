@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Nov 20 2024 03:27:10 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Mon Nov 25 2024 03:16:15 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="staging.deriv.com" data-wf-page="66585fe0e1dc7e70cc75d839" data-wf-site="66585fe0e1dc7e70cc75d440" lang="tr">
 
 <head>
@@ -11,7 +11,6 @@
     <link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/all-articles" />
     <link rel="alternate" hrefLang="es" href="https://deriv.com/es/all-articles" />
     <link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/all-articles" />
-    <link rel="alternate" hrefLang="th" href="https://deriv.com/th/all-articles" />
     <link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/all-articles" />
     <link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/all-articles" />
     <link rel="alternate" hrefLang="si" href="https://deriv.com/si/all-articles" />
@@ -31,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.59e8b2aa8.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15edc11d4.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -135,7 +134,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -671,7 +671,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.27.0/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -791,7 +791,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -912,7 +913,6 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pt" href="/pt/all-articles" class="new-navbar_dropdown-link">Português</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="es" href="/es/all-articles" class="new-navbar_dropdown-link">Español</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="ru" href="/ru/all-articles" class="new-navbar_dropdown-link">Русский</a></div>
-                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="th" href="/th/all-articles" class="new-navbar_dropdown-link">ไทย</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="vi" href="/vi/all-articles" class="new-navbar_dropdown-link">Tiếng Việt</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="bn" href="/bn/all-articles" class="new-navbar_dropdown-link">বাংলা</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="si" href="/si/all-articles" class="new-navbar_dropdown-link">සිංහල</a></div>
@@ -1324,7 +1324,6 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pt" href="/pt/all-articles" class="new-navbar_dropdown-link is-adaptive">Português</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="es" href="/es/all-articles" class="new-navbar_dropdown-link is-adaptive">Español</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="ru" href="/ru/all-articles" class="new-navbar_dropdown-link is-adaptive">Русский</a></div>
-                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="th" href="/th/all-articles" class="new-navbar_dropdown-link is-adaptive">ไทย</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="vi" href="/vi/all-articles" class="new-navbar_dropdown-link is-adaptive">Tiếng Việt</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="bn" href="/bn/all-articles" class="new-navbar_dropdown-link is-adaptive">বাংলা</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="si" href="/si/all-articles" class="new-navbar_dropdown-link is-adaptive">සිංහල</a></div>
@@ -1601,6 +1600,13 @@
                             </div>
                             <div class="blogs_wrapper w-dyn-list">
                                 <div fs-cmsload-mode="pagination" fs-cmsload-element="list" role="list" class="blogs_list w-dyn-items">
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/tr/blog/posts/deriv-wins-best-partner-programme-fx-trust-awards" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/673c6c3871e03639ae586df5_Artwork-for-the-PR-article-2.png" loading="lazy" alt="Deriv ilk FX Trust Score Awards&#x27;ta &quot;Best Partner Programme&quot; ödülünü kazandı." class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 19, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Deriv ilk FX Trust Score Awards&#x27;ta &quot;Best Partner Programme&quot; ödülünü kazandı.</h3>
+                                            <p class="blogs_text">Deriv, FX Trust Awards 2024&#x27;te &quot;Best Partner Programme&quot; ödülünü kazanarak, ortaklarına kapsamlı kaynaklar ve özel çözümler sunma konusundaki desteğini kanıtladı.
+                                            </p>
+                                        </a></div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/tr/blog/posts/what-drove-the-uptober-crypto-surge" class="blogs_link-block w-inline-block">
                                             <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/672c98c3f9b8c9d8059d874e_crytpo%20uptober.png" loading="lazy" alt="Kripto&#x27;nun yükselişi: Bitcoin neden yükseliyor?" class="blogs_image" /></div>
                                             <div class="blogs_date is-no-wrapper">November 1, 2024</div>
@@ -1648,12 +1654,6 @@
                                             <div class="blogs_date is-no-wrapper">October 4, 2024</div>
                                             <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Petrol fiyatı tahmini: Sınırsız zirvelere mi doğru gidiyoruz?</h3>
                                             <p class="blogs_text">Petrol, İran&#x27;ın İsrail&#x27;e düzenlediği füze saldırısının ardından Orta Doğu&#x27;daki gerginliklerin artmasıyla 71 doların üzerine fırladı. </p>
-                                        </a></div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/tr/blog/posts/tradingview-integration-now-on-deriv-x" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67035b3cd8afc7d4fdd9d680_tradingview.png" loading="lazy" alt="TradingView entegrasyonu artık Deriv X&#x27;te: CFD tüccarları için gelişmiş ticaret yetenekleri" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 2, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">TradingView entegrasyonu artık Deriv X&#x27;te: CFD tüccarları için gelişmiş ticaret yetenekleri</h3>
-                                            <p class="blogs_text">Deriv, TradingView&#x27;i Deriv X platformuna başarılı bir şekilde entegre etti ve ticaret tekliflerinde önemli bir gelişim sağladı.</p>
                                         </a></div>
                                 </div>
                                 <div role="navigation" aria-label="List" class="w-pagination-wrapper blogs_pagination-wrapper"><a fs-cmsload-element="page-button" href="/tr/blog" class="blogs_page w-inline-block">
@@ -1777,19 +1777,19 @@
                                         </svg></div>
                                 </a>
                                 <div id="footer_social-icons_diel" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="Facebook" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="Twitter" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="Instagram" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="Youtube" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="LinkedIn" /></a></div>
                                 </div>
                                 <div id="footer_social-icons_row" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="Facebook" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="Twitter" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="Instagram" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="Youtube" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="LinkedIn" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="Telegram" /></a></div>
                                 </div>
                             </div>
                             <div class="w-dyn-list">
@@ -2094,8 +2094,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a9885b921.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.0/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.144d33ad1.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2452,23 +2452,7 @@
         <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
     </noscript>
     <!-- End of LiveChat code -->
-    <script>
-        // Parse the cookies to get the 'client_information' cookie value
-        const cookieValue = window.parseCookies(document.cookie, "client_information") ?
-            JSON.parse(window.parseCookies(document.cookie, "client_information")) :
-            null;
 
-        // Hotjar integration
-        if (cookieValue?.loginid) {
-            window?.hj("identify", cookieValue.loginid, {
-                is_logged_in: !!window.parseCookies(
-                    document.cookie,
-                    "client_information"
-                ),
-                landing_company_shortcode: cookieValue.landing_company_shortcode || "null",
-            });
-        }
-    </script>
     <!-- Trackjs - start of code -->
     <script defer>
         (function() {
