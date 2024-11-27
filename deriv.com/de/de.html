@@ -873,10 +873,10 @@
         window.growthbook_config = {
             "uuidCookieName": "gbuuid",
             "uuidKey": "id",
-            "uuid": "371220be-cca1-441f-88c3-9a8ed4892b72",
+            "uuid": "257f4829-d818-4dab-98d5-a3e4fc297f27",
             "persistUuidOnLoad": true,
             "attributes": {
-                "id": "371220be-cca1-441f-88c3-9a8ed4892b72",
+                "id": "257f4829-d818-4dab-98d5-a3e4fc297f27",
                 "browser": "unknown",
                 "deviceType": "desktop",
                 "url": "https://deriv.com/de?fromWorker=true",
@@ -889,25 +889,14 @@
             },
             "payload": {
                 "features": {
-                    "test-feature-flag": {
-                        "defaultValue": true
-                    },
                     "test-webflow": {
                         "defaultValue": true
                     },
                     "trigger_os_signup_wf": {
                         "defaultValue": false
                     },
-                    "enable_freshworks_live_chat_wf": {
-                        "defaultValue": false,
-                        "rules": [{
-                            "condition": {
-                                "url": {
-                                    "$regex": "[?&]freshchat=1(&|$)"
-                                }
-                            },
-                            "force": true
-                        }]
+                    "signup_flow_error_enabled": {
+                        "defaultValue": true
                     }
                 },
                 "experiments": [{
@@ -994,9 +983,9 @@
                     "phase": "0",
                     "coverage": 1
                 }, {
-                    "key": "staging_sanity_localised_human_exp_001",
-                    "changeId": "dd63bfc456dae714a6ae962c6f86493a2997c31cd7cbc885b131521032b2a6f1",
-                    "status": "running",
+                    "key": "exp_wf_homepage_009_cta_content_en",
+                    "changeId": "85a4caf56f255c0d75416dedb4c79454a466d79102d7c11b932390cbae7d66fd",
+                    "status": "draft",
                     "variations": [{
                         "css": "",
                         "js": "",
@@ -1005,229 +994,95 @@
                         "css": "",
                         "js": "",
                         "domMutations": [{
-                            "selector": ".section_hero-home .header_person-image",
+                            "selector": ".col-gap-0 > .logged-out-btn > #cta-home-btn-navbar",
                             "action": "set",
-                            "attribute": "src",
-                            "value": "https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6708e86042ae0e6abd17cb1f_Mexico.avif"
+                            "attribute": "html",
+                            "value": "Sign Up Now"
                         }, {
-                            "selector": ".section_hero-home .header_person-image",
+                            "selector": ".margin-top #cta-btn",
                             "action": "set",
-                            "attribute": "srcset",
-                            "value": "https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6708e86042ae0e6abd17cb1f_Mexico.avif"
+                            "attribute": "html",
+                            "value": "Sign Up Now"
+                        }, {
+                            "selector": ".content_component #data-analytics",
+                            "action": "set",
+                            "attribute": "html",
+                            "value": "Sign Up Now"
                         }]
+                    }, {
+                        "css": "",
+                        "js": "",
+                        "domMutations": []
                     }],
                     "hashVersion": 2,
                     "hashAttribute": "id",
                     "fallbackAttribute": "",
                     "disableStickyBucketing": false,
-                    "bucketVersion": 1,
-                    "minBucketVersion": 0,
+                    "urlPatterns": [{
+                        "include": true,
+                        "type": "simple",
+                        "pattern": "deriv.com/zh-tw/eu"
+                    }],
+                    "weights": [0.3334, 0.3333, 0.3333],
+                    "meta": [{
+                        "key": "0",
+                        "name": "Control"
+                    }, {
+                        "key": "1",
+                        "name": "Variation 1"
+                    }, {
+                        "key": "2",
+                        "name": "Variation 2"
+                    }],
+                    "filters": [],
+                    "seed": "8a4d2052-ec90-41a3-bee6-acbadc1f53f9",
+                    "name": "exp_wf_homepage_009_cta_content_en",
+                    "phase": "0",
+                    "coverage": 1
+                }, {
+                    "key": "exp_wf_staging_homepage__cta_content_script_en",
+                    "changeId": "11383198fbc2ff4e6b90061444e2ecc4961a465ab49b6f13cbbdb243a7629b04",
+                    "status": "running",
+                    "variations": [{
+                        "css": "",
+                        "js": "",
+                        "domMutations": []
+                    }, {
+                        "css": "",
+                        "js": "let anchors = document.querySelectorAll('a');\nanchors.forEach(anchor => {\n  if (anchor.textContent.trim() === \"Try free demo\") {\n    anchor.textContent = \"Join Now\";\n  }\n});",
+                        "domMutations": []
+                    }, {
+                        "css": "",
+                        "js": "let anchors = document.querySelectorAll('a');\nanchors.forEach(anchor => {\n  if (anchor.textContent.trim() === \"Try free demo\") {\n    anchor.textContent = \"Sign Up Now\";\n  }\n});",
+                        "domMutations": []
+                    }],
+                    "hashVersion": 2,
+                    "hashAttribute": "id",
+                    "fallbackAttribute": "",
+                    "disableStickyBucketing": false,
                     "urlPatterns": [{
                         "include": true,
                         "type": "simple",
                         "pattern": "https://staging.deriv.com"
                     }],
-                    "weights": [0, 1],
+                    "weights": [0.3334, 0.3333, 0.3333],
                     "meta": [{
                         "key": "0",
                         "name": "Control"
                     }, {
                         "key": "1",
                         "name": "Variation 1"
+                    }, {
+                        "key": "2",
+                        "name": "Variation 2"
                     }],
                     "filters": [],
-                    "seed": "e444ea21-be33-4941-8ffc-1bc892c2c0c9",
-                    "name": "staging_sanity_localised_human_exp_001",
-                    "phase": "0",
-                    "condition": {
-                        "loggedIn": false,
-                        "country": {
-                            "$in": ["mx", "gt", "bz", "sv", "hn", "ni", "cr", "pa", "cu", "do", "ht", "pr", "co", "ve", "ec", "pe", "bo", "py", "cl", "ar", "uy", "gy", "sr", "gf"]
-                        }
-                    },
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_homepage_es_a_a_14_nov",
-                    "changeId": "b2e6b601bd3d0fb0b07e1148f8b716e6b2cf7e57a7296abc3224c340a32efbc9",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://deriv.com/es"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "13408d2e-1edd-428a-abf8-40962813da2d",
-                    "name": "exp_wf_homepage_es_a_a_14_nov",
-                    "phase": "1",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_homepage_a_a_14_nov",
-                    "changeId": "86b811bd1946303d39305ca6fa976ef2cbf0455af25b3c62228e5688d2d658fb",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://deriv.com"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "aa536b35-1667-4ccb-a9ce-d8fa25e3e25a",
-                    "name": "exp_wf_homepage_a_a_14_nov",
-                    "phase": "1",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_staging_scrolling_homepage_a_a_14_nov",
-                    "changeId": "0d35eedd728f382b7f685e5b5ab5b42455fd2555a0d4b9f8e2a8e4c2139224c3",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://staging.deriv.com/"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "7244053d-d3eb-45b6-8b54-18678eeb23e6",
-                    "name": "exp_wf_staging_scrolling_homepage_a_a_14_nov",
-                    "phase": "0",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_staging_scrolling_homepage_a_a_14_nov_es",
-                    "changeId": "c9fa598dfc40096411711cfdea516fd8abebd630b181095ab08f2673cbadd41b",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://staging.deriv.com/es"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "82db1715-d1ec-448e-8490-c7773b8c1f60",
-                    "name": "exp_wf_staging_scrolling_homepage_a_a_14_nov_es",
+                    "seed": "c81e31f5-d339-4bba-be43-c42e0889d504",
+                    "name": "exp_wf_staging_homepage__cta_content_script_en",
                     "phase": "0",
                     "coverage": 1
                 }],
-                "dateUpdated": "2024-11-22T09:05:02.841Z"
+                "dateUpdated": "2024-11-26T11:12:56.610Z"
             },
             "disableVisualExperiments": false,
             "disableJsInjection": false,
