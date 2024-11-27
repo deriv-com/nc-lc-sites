@@ -867,10 +867,10 @@
         window.growthbook_config = {
             "uuidCookieName": "gbuuid",
             "uuidKey": "id",
-            "uuid": "f4d06c00-a31c-432c-ad11-91a2d6a3a1ab",
+            "uuid": "2df6bb8a-f27e-4afb-aab4-afb1de0469f9",
             "persistUuidOnLoad": true,
             "attributes": {
-                "id": "f4d06c00-a31c-432c-ad11-91a2d6a3a1ab",
+                "id": "2df6bb8a-f27e-4afb-aab4-afb1de0469f9",
                 "browser": "unknown",
                 "deviceType": "desktop",
                 "url": "https://deriv.com/p2p?fromWorker=true",
@@ -883,9 +883,6 @@
             },
             "payload": {
                 "features": {
-                    "test-feature-flag": {
-                        "defaultValue": true
-                    },
                     "test-webflow": {
                         "defaultValue": true
                     },
@@ -901,7 +898,17 @@
                                 }
                             },
                             "force": true
+                        }, {
+                            "condition": {
+                                "country": {
+                                    "$in": ["bw"]
+                                }
+                            },
+                            "force": true
                         }]
+                    },
+                    "signup_flow_error_enabled": {
+                        "defaultValue": true
                     }
                 },
                 "experiments": [{
@@ -1041,72 +1048,41 @@
                     },
                     "coverage": 1
                 }, {
-                    "key": "exp_wf_homepage_es_a_a_14_nov",
-                    "changeId": "b2e6b601bd3d0fb0b07e1148f8b716e6b2cf7e57a7296abc3224c340a32efbc9",
-                    "status": "running",
+                    "key": "exp_wf_homepage_009_cta_content_en",
+                    "changeId": "ac1867a6e362fcc8fc571e52a4fb877f6447d0395fd25c2a2ecb19c75046e9bb",
+                    "status": "draft",
                     "variations": [{
                         "css": "",
                         "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
+                        "domMutations": []
                     }, {
                         "css": "",
                         "js": "",
                         "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
+                            "selector": ".col-gap-0 > .logged-out-btn > #cta-home-btn-navbar",
                             "action": "set",
                             "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://deriv.com/es"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "13408d2e-1edd-428a-abf8-40962813da2d",
-                    "name": "exp_wf_homepage_es_a_a_14_nov",
-                    "phase": "1",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_homepage_a_a_14_nov",
-                    "changeId": "86b811bd1946303d39305ca6fa976ef2cbf0455af25b3c62228e5688d2d658fb",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
+                            "value": "Join Now"
+                        }, {
+                            "selector": ".margin-top #cta-btn",
                             "action": "set",
                             "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
+                            "value": "Join Now"
+                        }, {
+                            "selector": ".content_component #data-analytics",
+                            "action": "set",
+                            "attribute": "html",
+                            "value": "Join Now"
+                        }, {
+                            "selector": ".margin-top #data-analytics",
+                            "action": "set",
+                            "attribute": "html",
+                            "value": "Join Now"
                         }]
                     }, {
                         "css": "",
                         "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
+                        "domMutations": []
                     }],
                     "hashVersion": 2,
                     "hashAttribute": "id",
@@ -1117,111 +1093,24 @@
                         "type": "simple",
                         "pattern": "https://deriv.com"
                     }],
-                    "weights": [0.5, 0.5],
+                    "weights": [0.3334, 0.3333, 0.3333],
                     "meta": [{
                         "key": "0",
                         "name": "Control"
                     }, {
                         "key": "1",
                         "name": "Variation 1"
+                    }, {
+                        "key": "2",
+                        "name": "Variation 2"
                     }],
                     "filters": [],
-                    "seed": "aa536b35-1667-4ccb-a9ce-d8fa25e3e25a",
-                    "name": "exp_wf_homepage_a_a_14_nov",
-                    "phase": "1",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_staging_scrolling_homepage_a_a_14_nov",
-                    "changeId": "0d35eedd728f382b7f685e5b5ab5b42455fd2555a0d4b9f8e2a8e4c2139224c3",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Trade CFDs and Options on global financial markets, all in one place with 24/7 trading and worldwide support"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://staging.deriv.com/"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "7244053d-d3eb-45b6-8b54-18678eeb23e6",
-                    "name": "exp_wf_staging_scrolling_homepage_a_a_14_nov",
-                    "phase": "0",
-                    "coverage": 1
-                }, {
-                    "key": "exp_wf_staging_scrolling_homepage_a_a_14_nov_es",
-                    "changeId": "c9fa598dfc40096411711cfdea516fd8abebd630b181095ab08f2673cbadd41b",
-                    "status": "running",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": "#cta-home-btn > .max-width-medium > .text-color-white",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Opere CFD y Opciones en los mercados financieros globales, todo en un solo lugar con operaciones 24/7 y soporte en todo el mundo"
-                        }]
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "https://staging.deriv.com/es"
-                    }],
-                    "weights": [0.5, 0.5],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }],
-                    "filters": [],
-                    "seed": "82db1715-d1ec-448e-8490-c7773b8c1f60",
-                    "name": "exp_wf_staging_scrolling_homepage_a_a_14_nov_es",
+                    "seed": "8a4d2052-ec90-41a3-bee6-acbadc1f53f9",
+                    "name": "exp_wf_homepage_009_cta_content_en",
                     "phase": "0",
                     "coverage": 1
                 }],
-                "dateUpdated": "2024-11-22T09:05:02.841Z"
+                "dateUpdated": "2024-11-25T15:39:22.902Z"
             },
             "disableVisualExperiments": false,
             "disableJsInjection": false,
