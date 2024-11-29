@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Nov 22 2024 11:01:09 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d839" data-wf-site="66585fe0e1dc7e70cc75d440" lang="pt">
 
 <head>
@@ -30,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15edc11d4.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -134,7 +134,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -392,6 +393,18 @@
             },
         };
 
+        const getUserCookieData = () => {
+            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const combinedObject = {};
+
+            cookies.forEach((cookieName) => {
+                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
+            });
+            combinedObject.full_url = window.location.href;
+
+            return combinedObject;
+        };
+
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -459,6 +472,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -488,6 +502,7 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -495,7 +510,45 @@
             ])
             .pageView();
 
-        //Analytics block for cta_clicks method starts here
+
+        const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
+            const form_name = isMobile() ?
+                "virtual_signup_web_mobile_default" :
+                "virtual_signup_web_desktop_default";
+            cacheTrackEvents.loadEvent([{
+                event: {
+                    name: "ce_virtual_signup_form",
+                    properties: {
+                        action,
+                        form_name,
+                        error_message: errorMessage,
+                        screen_name,
+                    },
+                },
+            }, ]);
+        };
+
+        cacheTrackEvents.trackConsoleErrors((errorMessage) => {
+            window.is_tracking_signup_errors = window.useGrowthbookFeatureFlag({
+                featureFlag: "signup_flow_error_enabled",
+            });
+
+            if (is_tracking_signup_errors) {
+                if (errorMessage) {
+                    const currentUrl = window.location.href;
+                    if (
+                        currentUrl.includes("signup") ||
+                        currentUrl.includes("signup-success")
+                    ) {
+                        const screen_name = currentUrl.includes("signup-success") ?
+                            "signup-success" :
+                            "signup";
+                        trackSignupErrorEvent("signup_flow_error", errorMessage, screen_name);
+                    }
+                }
+            }
+        });
+
         //Analytics block for cta_clicks method starts here
         (function() {
             const trackCTAEvents = (event) => {
@@ -670,7 +723,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.27.0/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -790,7 +843,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1601,6 +1655,18 @@
                                             <p class="blogs_text">A Deriv vence o prémio de Best Partner Programme nos FX Trust Awards 2024, reconhecendo o seu apoio aos parceiros com recursos abrangentes e soluções personalizadas.
                                             </p>
                                         </a></div>
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/pt/blog/posts/bitcoin-surpasses-silver-market-cap" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743f9f353d190104687abcc_red%20bitcoin.jpg" loading="lazy" alt="Bitcoin surpasses silver’s market cap as momentum builds for $100K" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 15, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Bitcoin surpasses silver’s market cap as momentum builds for $100K</h3>
+                                            <p class="blogs_text">Bitcoin hit a historic milestone, with its market cap reaching $1.75 trillion, surpassing silver’s $1.732 trillion and marking its position as the world’s eighth-largest asset.</p>
+                                        </a></div>
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/pt/blog/posts/ethereum-price-drop-temporary-pause-or-setup" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum.jpg" loading="lazy" alt="Ethereum’s price drop: Exhaustion or setup for new highs?" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 15, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Ethereum’s price drop: Exhaustion or setup for new highs?</h3>
+                                            <p class="blogs_text">Ethereum (ETH) recently experienced a slight pullback, reflecting a common cooling-off period for the crypto market after a week of bullish rallies.</p>
+                                        </a></div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/pt/blog/posts/what-drove-the-uptober-crypto-surge" class="blogs_link-block w-inline-block">
                                             <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/672c98c3f9b8c9d8059d874e_crytpo%20uptober.png" loading="lazy" alt="A subida das criptomoedas: Porque é que a Bitcoin está a subir?" class="blogs_image" /></div>
                                             <div class="blogs_date is-no-wrapper">November 1, 2024</div>
@@ -1636,18 +1702,6 @@
                                             <div class="blogs_date is-no-wrapper">October 14, 2024</div>
                                             <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Celebrando 25 Anos: Confiança, Serviço e Inovação continuam a impulsionar o futuro da Deriv</h3>
                                             <p class="blogs_text">A Deriv, um corretor renomado na indústria financeira, está celebrando hoje seu 25º aniversário, marcando um quarto de século de crescimento e liderança no setor.</p>
-                                        </a></div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/pt/blog/posts/japanese-yen-forecest-is-a-recovery-in-sight" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67089d477ad02c23b5363109_yen.png" loading="lazy" alt="Previsão do yen japonês: recuperação à vista ou a pressão económica veio para ficar?" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 10, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Previsão do yen japonês: recuperação à vista ou a pressão económica veio para ficar?</h3>
-                                            <p class="blogs_text">O Yen japonês (JPY) reduziu algumas das suas perdas recentes durante a sessão de negociação de Londres na sexta-feira, oferecendo um alívio temporário após uma forte queda no início da semana.</p>
-                                        </a></div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/pt/blog/posts/oil-price-forecast-iran-israel-conflict" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6703616c73f390757dcdd229_oil.jpg" loading="lazy" alt="Previsão de preços do petróleo: Estamos a caminho de máximos sem precedentes?" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 4, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Previsão de preços do petróleo: Estamos a caminho de máximos sem precedentes?</h3>
-                                            <p class="blogs_text">O petróleo sobe acima de 71 USD à medida que as tensões no Médio Oriente escalam, após o ataque com mísseis do Irão a Israel. </p>
                                         </a></div>
                                 </div>
                                 <div role="navigation" aria-label="List" class="w-pagination-wrapper blogs_pagination-wrapper"><a fs-cmsload-element="page-button" href="/pt/blog" class="blogs_page w-inline-block">
@@ -2088,8 +2142,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.144d33ad1.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.2/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
