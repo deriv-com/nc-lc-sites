@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Nov 20 2024 08:53:21 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d6cc" data-wf-site="66585fe0e1dc7e70cc75d440" lang="zh-CN" data-wf-collection="66585fe0e1dc7e70cc75d556" data-wf-item-slug="deriv-p2p">
 
 <head>
@@ -24,7 +24,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/help-centre/deriv-p2p" />
     <meta content="常见问题 - Deriv P2P" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.fea7aaff5.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -128,7 +128,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -386,6 +387,18 @@
             },
         };
 
+        const getUserCookieData = () => {
+            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const combinedObject = {};
+
+            cookies.forEach((cookieName) => {
+                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
+            });
+            combinedObject.full_url = window.location.href;
+
+            return combinedObject;
+        };
+
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -453,6 +466,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -482,6 +496,7 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -489,7 +504,45 @@
             ])
             .pageView();
 
-        //Analytics block for cta_clicks method starts here
+
+        const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
+            const form_name = isMobile() ?
+                "virtual_signup_web_mobile_default" :
+                "virtual_signup_web_desktop_default";
+            cacheTrackEvents.loadEvent([{
+                event: {
+                    name: "ce_virtual_signup_form",
+                    properties: {
+                        action,
+                        form_name,
+                        error_message: errorMessage,
+                        screen_name,
+                    },
+                },
+            }, ]);
+        };
+
+        cacheTrackEvents.trackConsoleErrors((errorMessage) => {
+            window.is_tracking_signup_errors = window.useGrowthbookFeatureFlag({
+                featureFlag: "signup_flow_error_enabled",
+            });
+
+            if (is_tracking_signup_errors) {
+                if (errorMessage) {
+                    const currentUrl = window.location.href;
+                    if (
+                        currentUrl.includes("signup") ||
+                        currentUrl.includes("signup-success")
+                    ) {
+                        const screen_name = currentUrl.includes("signup-success") ?
+                            "signup-success" :
+                            "signup";
+                        trackSignupErrorEvent("signup_flow_error", errorMessage, screen_name);
+                    }
+                }
+            }
+        });
+
         //Analytics block for cta_clicks method starts here
         (function() {
             const trackCTAEvents = (event) => {
@@ -664,7 +717,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.27.0/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -784,7 +837,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1427,13 +1481,13 @@
                                                                 <ul>
                                                                     <li><strong id="">每个人都经过验证</strong></li>
                                                                 </ul>
-                                                                <p>我们会先验证每个人的身份，然后他们才能开始使用 Deriv P2P。 不允许匿名交易。<br><strong id=""></strong></p>
+                                                                <p>开始使用 Deriv P2P 之前，我们会验证每个人的身份。 不允许匿名交易。<br><strong id=""></strong></p>
                                                                 <ul>
                                                                     <li><strong id="">托管资金保护</strong></li>
                                                                 </ul>
-                                                                <p>在双方确认交易已从一端完成之前，订单金额将锁定在托管中。<strong id=""><br></strong></p>
+                                                                <p>订单金额被托管锁定，直到双方确认交易已经完成。<strong id=""><br></strong></p>
                                                                 <ul>
-                                                                    <li><strong id="">双因素认证</strong></li>
+                                                                    <li><strong id="">双因素验证</strong></li>
                                                                 </ul>
                                                                 <p>双层验证应用于每笔 Deriv P2P 交易，作为资金释放前的额外安全层。</p>
                                                             </div>
@@ -1516,7 +1570,7 @@
                                                                 <p id="">要使用 Deriv P2P，首先需有 Deriv 真实美元账户。 如果还没有账户，请<a href="/signup/" target="_blank">免费注册</a>。</p>
                                                                 <p id="">然后，需要提交文件以验证身份。</p>
                                                                 <p id="">一旦身份得到验证，就可以在桌面或手机上使用 Deriv P2P。</p>
-                                                                <p id="">‍</p>
+                                                                <p id="">要使用 Deriv P2P，您首先需要一个 Deriv 的真实 USD 账户。如果您还没有，请<a href="/signup/" target="_blank">免费注册</a>。然后，您需要提交您的文件来验证您的身份。一旦您的身份得到验证，您就可以在桌面或移动设备上使用 Deriv P2P。</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1673,15 +1727,15 @@
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">请按照以下步骤操作：</p>
                                                                 <ol start="" id="">
-                                                                    <li id="">前往<a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">Deriv P2P</a> > <strong id="">购买/出售</strong>。</li>
+                                                                    <li id="">前往<a href="https://app.deriv.com/cashier/p2p" target="_blank" id="">Deriv P2P</a> &gt; <strong id="">买入/卖出</strong>。</li>
                                                                     <li id="">选择买入或卖出广告。</li>
-                                                                    <li id="">通过点击<strong id="">购买</strong>或<strong id="">出售</strong>选择您想要的广告。</li>
+                                                                    <li id="">点击<strong id="">买入</strong>或<strong id="">卖出</strong>选择想要的广告。</li>
                                                                     <li id="">填写表格并点击<strong id="">确认</strong>。</li>
                                                                 </ol>
-                                                                <p id="">注：</p>
+                                                                <p id="">备注：</p>
                                                                 <ul id="">
                                                                     <li id="">账户通过验证后才能下订单。</li>
-                                                                    <li id="">如果您正在购买，您需要付款并与卖家分享您的付款确认。 一旦卖家确认已收到您的付款，交易金额将存入您的Deriv帐户。</li>
+                                                                    <li id="">如果要买入，需要付款并与卖方分享付款确认。 一旦卖方确认已收到付款，交易金额将存入 Deriv 账户。</li>
                                                                     <li id="">如果要卖出，需要等待买方付款才能完成订单。</li>
                                                                 </ul>
                                                             </div>
@@ -1835,7 +1889,7 @@
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">使用 Deriv P2P 中的聊天功能与您交易的交易员进行沟通。</p>
+                                                                <p id="">使用 Deriv P2P 的聊天功能与交易者沟通。</p>
                                                                 <p id=""><strong id="">注意：</strong>聊天功能仅适用于活跃订单。 完成订单后，聊天功能将消失。</p>
                                                             </div>
                                                         </div>
@@ -1875,8 +1929,8 @@
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">通过提交 <a href="https://app.deriv.com/account/proof-of-identity)" target="_blank">身份证明</a>对您的账户进行年龄验证。</p>
-                                                                <p id="">提交的文件获得批准后，前往收银台 &gt; DP2P 注册您的 Deriv P2P 账户。</p>
+                                                                <p id="">通过提交<a href="https://app.deriv.com/account/proof-of-identity)" target="_blank">身份证明</a>对账户进行年龄验证。</p>
+                                                                <p id="">提交的文件获得批准后，前往收银台 &gt; DP2P 注册 Deriv P2P 账户。</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1894,9 +1948,9 @@
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">在<strong id="">买/卖</strong>页面上使用下拉菜单（如下面的屏幕截图所示）查找不同货币的广告。</p>
+                                                                <p id="">使用<strong id="">买入/卖出</strong>页面上的下拉菜单（如下图所示）查找不同币种的广告。</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61db3e9ec721e01781aa_6644aaf5e73abda349f0994d_661ffc36dd44bc109a17340e_p2p-find-currency-100ea51a1edebceed7fbac8636d4d769.png" alt="查找不同货币" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67443d3db133191c4144f870_6644aaf5e73abda349f0994d_661ffc36dd44bc109a17340e_p2p-find-currency-100ea51a1edebceed7fbac8636d4d769.png" alt="查找不同货币" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <p id="">‍</p>
                                                             </div>
@@ -1960,9 +2014,9 @@
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">如果您所在国家的话可以在<strong id="">创建新广告</strong>页面上设置浮动汇率。</p>
+                                                                <p id="">如果您所在国家有浮动汇率，可以在<strong id="">创建新广告</strong>页面设置浮动汇率。</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1500px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1500px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61f777178157ba940bd8_6644aaf5a414edd557d10920_661ffc36dd44bc109a173410_p2p-use-floating-5ca7b01cdc98ed3d6a89cf7a3c1f60d5.png" alt="使用浮动汇率" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/674440bc5f23ec44d5ad485d_6644aaf5a414edd557d10920_661ffc36dd44bc109a173410_p2p-use-floating-5ca7b01cdc98ed3d6a89cf7a3c1f60d5.png" alt="使用浮动汇率" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <p id="">一旦广告创建好了，汇率将是市场汇率的一个百分比。</p>
                                                                 <p id="">‍</p>
@@ -1976,16 +2030,16 @@
                                                     <div id="how-to-recommend-trade-partners" fs-accordion-element="trigger" class="accordion_toggle-block">
                                                         <div class="accordion_toggle-content">
                                                             <div class="accordion_toggle-info">
-                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">如何在 Deriv P2P 评价或推荐我的交易伙伴？</h2>
+                                                                <h2 itemprop="name" fs-cmsfilter-field="questionName" class="accordion_dropdown-name">如何在 Deriv P2P 评分或推荐交易伙伴？</h2>
                                                             </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" loading="lazy" fs-accordion-element="arrow" alt="" class="accordion_arrow" />
                                                         </div>
                                                     </div>
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">每次交易后，您都可以对交易伙伴进行评分和推荐：选择星级数量并点击 "竖起大拇指" 按钮。</p>
-                                                                <p id="">可以在<0>买/卖</0>页面和个人<0>广告商页面</0>找到每个 Deriv P2P 用户<0>的</0>评级和推荐分数。</p>
-                                                                <p id="">评分是一次很棒的体验，让您能够向您的交易伙伴展示您的赞赏之情。 在收到您的积极评价后，他们将会受到鼓舞，继续保持卓越的标准。 您的评级和推荐也将帮助其他 Deriv P2P 用户找到可靠的交易伙伴。</p>
+                                                                <p id="">每次交易后，都可以对交易伙伴评分和推荐：选择星级数量并点击竖起大拇指按钮。</p>
+                                                                <p id="">可以在<strong id="">买入/卖出</strong>页面和个人<strong id="">广告商页面</strong>找到每个 Deriv P2P 用户的评级和推荐分数。</p>
+                                                                <p id="">评分是很棒的体验，能够向交易伙伴表示赞赏。 收到正面评分后，他们将会受到鼓舞，继续保持卓越的标准。 评分和推荐也将帮助其他 Deriv P2P 用户找到可靠的交易伙伴。</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2005,11 +2059,11 @@
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
                                                                 <p id="">可以通过点击<strong id="">广告商页面</strong>的 3 个点并选择<strong id="">封禁</strong>以封禁 Deriv P2P 的用户。</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1944px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1944px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61cfcb45dd289b409863_6644aaf46fd22dd1b31ed5c6_661ffc36dd44bc109a173411_p2p-advertise-page-f78d1a104b415ff8030597891ea3ccc7.png" alt="在广告页面封禁用户" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67443b2402405143eb57bd2e_6644aaf46fd22dd1b31ed5c6_661ffc36dd44bc109a173411_p2p-advertise-page-f78d1a104b415ff8030597891ea3ccc7.png" alt="在广告页面封禁用户" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <p id="">或者，也可以在<strong id="">我的资料</strong> &gt; <strong id="">我的交易对手</strong>中封禁与您交易的任何人。</p>
                                                                 <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1947px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1947px">
-                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/668f61cfcb45dd289b40985f_6644aaf46fd22dd1b31ed5d3_661ffc36dd44bc109a173412_p2p-counterparties-2e360312b671f1844f5175fc1ffd0248.png" alt="在交易对手中封禁用户" width="auto" height="auto" loading="auto" id=""></div>
+                                                                    <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67443b2402405143eb57bd20_6644aaf46fd22dd1b31ed5d3_661ffc36dd44bc109a173412_p2p-counterparties-2e360312b671f1844f5175fc1ffd0248.png" alt="在交易对手中封禁用户" width="auto" height="auto" loading="auto" id=""></div>
                                                                 </figure>
                                                                 <p id="">‍</p>
                                                             </div>
@@ -2029,13 +2083,13 @@
                                                     <div fs-accordion-element="content" class="accordion_expanded-block">
                                                         <div itemtype="https://schema.org/Answer" itemscope="itemscope" itemprop="acceptedAnswer" class="accordion_expanded-wrapper is-padding-top">
                                                             <div target="_blank" fs-cmsfilter-field="questionAnswer" itemprop="text" class="help-category_rich-text w-richtext">
-                                                                <p id="">数量不限。 但是，任何时候只能有3个买入广告和3个卖出广告处于活动状态，而且这些广告的描述、限额和汇率不能完全相同。</p>
+                                                                <p id="">数量不限。 但是，任何时候只能有 3 个买入广告和 3 个卖出广告处于活动状态，而且这些广告的描述、限额和汇率不能完全相同。</p>
                                                                 <p id="">例如，</p>
                                                                 <ul id="">
                                                                     <li id="">如果已经有汇率为10%的活动广告，则不能再有汇率相同的活动广告。</li>
-                                                                    <li id="">如果已经有一个最小下单限额为10美元、最大下单限额为50美元的活动广告，就不能再有一个最小下单限额为40美元、最大下单限额为100美元的活动广告，因为其范围与第一个广告重叠。</li>
+                                                                    <li id="">如果已经有一个最小下单限额为 10 美元、最大下单限额为 50 美元的活动广告，就不能再有一个最小下单限额为 40 美元、最大下单限额为 100 美元的活动广告，因为其范围与第一个广告重叠。</li>
                                                                 </ul>
-                                                                <p id="">‍</p>
+                                                                <p id="">可以创建任意数量的广告。但是，任何时候只能有3个买入广告和3个卖出广告是活动的，这些广告不能具有相同的描述、限制和汇率。比如， 如果您已经有一个活动的广告，其汇率为10%，则您不能再有一个活动的广告具有相同的汇率。如果您已经有一个活动的广告，其最低订单限额为10美元，最高订单限额为50美元，则您不能再有一个活动的广告，其最低订单限额为40美元，最高订单限额为100美元，因为范围与第一个广告重叠。‍</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2150,19 +2204,19 @@
                                         </svg></div>
                                 </a>
                                 <div id="footer_social-icons_diel" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="Facebook" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="Twitter" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="Instagram" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="Youtube" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="LinkedIn" /></a></div>
                                 </div>
                                 <div id="footer_social-icons_row" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="Facebook" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="Twitter" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="Instagram" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="Youtube" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="LinkedIn" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="Telegram" /></a></div>
                                 </div>
                             </div>
                             <div class="w-dyn-list">
@@ -2467,8 +2521,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a9885b921.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.0/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2825,23 +2879,7 @@
         <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
     </noscript>
     <!-- End of LiveChat code -->
-    <script>
-        // Parse the cookies to get the 'client_information' cookie value
-        const cookieValue = window.parseCookies(document.cookie, "client_information") ?
-            JSON.parse(window.parseCookies(document.cookie, "client_information")) :
-            null;
 
-        // Hotjar integration
-        if (cookieValue?.loginid) {
-            window?.hj("identify", cookieValue.loginid, {
-                is_logged_in: !!window.parseCookies(
-                    document.cookie,
-                    "client_information"
-                ),
-                landing_company_shortcode: cookieValue.landing_company_shortcode || "null",
-            });
-        }
-    </script>
     <!-- Trackjs - start of code -->
     <script defer>
         (function() {

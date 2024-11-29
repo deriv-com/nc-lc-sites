@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Nov 22 2024 11:01:09 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d43f" data-wf-site="66585fe0e1dc7e70cc75d440" lang="ru">
 
 <head>
@@ -30,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15edc11d4.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -392,6 +392,18 @@
             },
         };
 
+        const getUserCookieData = () => {
+            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const combinedObject = {};
+
+            cookies.forEach((cookieName) => {
+                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
+            });
+            combinedObject.full_url = window.location.href;
+
+            return combinedObject;
+        };
+
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -459,6 +471,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -488,6 +501,7 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
+                                cookie_data: getUserCookieData()
                             },
                         };
                     },
@@ -495,7 +509,45 @@
             ])
             .pageView();
 
-        //Analytics block for cta_clicks method starts here
+
+        const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
+            const form_name = isMobile() ?
+                "virtual_signup_web_mobile_default" :
+                "virtual_signup_web_desktop_default";
+            cacheTrackEvents.loadEvent([{
+                event: {
+                    name: "ce_virtual_signup_form",
+                    properties: {
+                        action,
+                        form_name,
+                        error_message: errorMessage,
+                        screen_name,
+                    },
+                },
+            }, ]);
+        };
+
+        cacheTrackEvents.trackConsoleErrors((errorMessage) => {
+            window.is_tracking_signup_errors = window.useGrowthbookFeatureFlag({
+                featureFlag: "signup_flow_error_enabled",
+            });
+
+            if (is_tracking_signup_errors) {
+                if (errorMessage) {
+                    const currentUrl = window.location.href;
+                    if (
+                        currentUrl.includes("signup") ||
+                        currentUrl.includes("signup-success")
+                    ) {
+                        const screen_name = currentUrl.includes("signup-success") ?
+                            "signup-success" :
+                            "signup";
+                        trackSignupErrorEvent("signup_flow_error", errorMessage, screen_name);
+                    }
+                }
+            }
+        });
+
         //Analytics block for cta_clicks method starts here
         (function() {
             const trackCTAEvents = (event) => {
@@ -670,7 +722,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script defer src="https://unpkg.com/@deriv-com/analytics@1.26.2/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.27.0/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
@@ -873,10 +925,10 @@
         window.growthbook_config = {
             "uuidCookieName": "gbuuid",
             "uuidKey": "id",
-            "uuid": "d185b872-6933-403c-a0c9-8004fec96560",
+            "uuid": "dad9507a-734b-40ec-85eb-40d9036f98e2",
             "persistUuidOnLoad": true,
             "attributes": {
-                "id": "d185b872-6933-403c-a0c9-8004fec96560",
+                "id": "dad9507a-734b-40ec-85eb-40d9036f98e2",
                 "browser": "unknown",
                 "deviceType": "desktop",
                 "url": "https://deriv.com/ru?fromWorker=true",
@@ -889,14 +941,14 @@
             },
             "payload": {
                 "features": {
+                    "test-feature-flag": {
+                        "defaultValue": true
+                    },
                     "test-webflow": {
                         "defaultValue": true
                     },
                     "trigger_os_signup_wf": {
                         "defaultValue": false
-                    },
-                    "signup_flow_error_enabled": {
-                        "defaultValue": true
                     }
                 },
                 "experiments": [{
@@ -983,63 +1035,6 @@
                     "phase": "0",
                     "coverage": 1
                 }, {
-                    "key": "exp_wf_homepage_009_cta_content_en",
-                    "changeId": "85a4caf56f255c0d75416dedb4c79454a466d79102d7c11b932390cbae7d66fd",
-                    "status": "draft",
-                    "variations": [{
-                        "css": "",
-                        "js": "",
-                        "domMutations": []
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": [{
-                            "selector": ".col-gap-0 > .logged-out-btn > #cta-home-btn-navbar",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Sign Up Now"
-                        }, {
-                            "selector": ".margin-top #cta-btn",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Sign Up Now"
-                        }, {
-                            "selector": ".content_component #data-analytics",
-                            "action": "set",
-                            "attribute": "html",
-                            "value": "Sign Up Now"
-                        }]
-                    }, {
-                        "css": "",
-                        "js": "",
-                        "domMutations": []
-                    }],
-                    "hashVersion": 2,
-                    "hashAttribute": "id",
-                    "fallbackAttribute": "",
-                    "disableStickyBucketing": false,
-                    "urlPatterns": [{
-                        "include": true,
-                        "type": "simple",
-                        "pattern": "deriv.com/zh-tw/eu"
-                    }],
-                    "weights": [0.3334, 0.3333, 0.3333],
-                    "meta": [{
-                        "key": "0",
-                        "name": "Control"
-                    }, {
-                        "key": "1",
-                        "name": "Variation 1"
-                    }, {
-                        "key": "2",
-                        "name": "Variation 2"
-                    }],
-                    "filters": [],
-                    "seed": "8a4d2052-ec90-41a3-bee6-acbadc1f53f9",
-                    "name": "exp_wf_homepage_009_cta_content_en",
-                    "phase": "0",
-                    "coverage": 1
-                }, {
                     "key": "exp_wf_staging_homepage__cta_content_script_en",
                     "changeId": "11383198fbc2ff4e6b90061444e2ecc4961a465ab49b6f13cbbdb243a7629b04",
                     "status": "running",
@@ -1082,7 +1077,7 @@
                     "phase": "0",
                     "coverage": 1
                 }],
-                "dateUpdated": "2024-11-26T11:12:56.610Z"
+                "dateUpdated": "2024-11-28T13:43:00.505Z"
             },
             "disableVisualExperiments": false,
             "disableJsInjection": false,
@@ -3893,8 +3888,8 @@
                                     </div>
                                     <div class="award_component mobile-hidden"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47c_left%20wheat.svg" loading="lazy" alt="" class="award_image" />
                                         <div class="award_content-wrapper">
-                                            <div class="award_title">Most Innovative<br />Broker</div>
-                                            <div>UF Awards<br />2023</div>
+                                            <div class="award_title">Best Partner<br />Programme</div>
+                                            <div>FX Trust Score<br />Awards 2024</div>
                                         </div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4d8_right%20wheat.svg" loading="lazy" alt="" class="award_image" />
                                     </div>
                                 </div>
@@ -4214,7 +4209,7 @@
                                 <div class="platforms_component">
                                     <div data-w-id="d4c8c50e-6f91-4629-10cf-77ebcbcaf580" style="opacity:0;-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="steps_item">
                                         <div class="steps_item-top">
-                                            <div class="steps_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d528_Step%201.webp" loading="lazy" width="352" sizes="100vw" alt="A screenshot of different accounts on Traders hub" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d528_Step%25201-p-500.png 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d528_Step%201.webp 704w" class="steps_image" /></div>
+                                            <div class="steps_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d528_Step%201.webp" loading="lazy" width="352" alt="A screenshot of different accounts on Traders hub" class="steps_image" /></div>
                                         </div>
                                         <div class="steps_item-bottom">
                                             <div class="text-content-wrapper_centered">
@@ -4409,7 +4404,7 @@
                                     </div>
                                 </section>
                                 <div class="align-center padding-global">
-                                    <div class="text-size-small">* Доступность платежных методов и скорость обработки могут варьироваться в зависимости от местоположения и выбранного метода.</div>
+                                    <div class="text-size-small text-align-center">* Доступность платежных методов и скорость обработки могут варьироваться в зависимости от местоположения и выбранного метода.</div>
                                 </div>
                             </div>
                         </div>
@@ -4779,8 +4774,8 @@
         <div class="page-load_wrap"></div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.144d33ad1.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.23.2/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
