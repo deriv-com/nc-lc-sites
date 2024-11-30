@@ -1,5 +1,5 @@
-﻿.osui-progress-bar__value:before {
-    width: 80% !important;
+﻿.osui-progress-bar.eu .osui-progress-bar__value:before {
+    width: 57% !important;
 }
 
 .tablet .trading-assessment-steps__desktop,

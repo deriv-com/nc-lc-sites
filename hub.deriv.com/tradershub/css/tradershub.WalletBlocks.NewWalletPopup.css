@@ -1,0 +1,53 @@
+﻿.content-container {
+    display: flex;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.button-container {
+    padding: 24px;
+}
+
+.wallet-popup {
+    padding: 0 !important;
+    margin: 0;
+    width: 368px !important;
+    border-radius: 8px !important;
+}
+
+.tablet .wallet-popup {
+    width: 400px !important;
+}
+
+.phone .wallet-popup {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 100%;
+    border-radius: 0 !important;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+.phone .header-container {
+    justify-content: space-between;
+    border-bottom: 1px solid #E9ECEF;
+    height: 56px;
+    padding: 0 16px;
+}
+
+.header-title {
+    display: none;
+}
+
+.phone .header-title {
+    display: flex;
+}

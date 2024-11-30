@@ -5,12 +5,12 @@ iframe {
 }
 
 .desktop iframe {
-        height: calc(100vh - 165px);
+        height: calc(100vh - 110px);
 }
 
 .phone iframe,
 .tablet iframe {
-        height: calc(100vh - 265px);
+        height: calc(100vh - 110px);
 }
 
 /* Crpto Withdrawal */

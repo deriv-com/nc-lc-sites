@@ -1,5 +1,9 @@
-﻿.osui-progress-bar__value:before {
+﻿.osui-progress-bar.cr .osui-progress-bar__value:before {
     width: 80% !important;
+}
+
+.osui-progress-bar.eu .osui-progress-bar__value:before {
+    width: 43% !important;
 }
 
 .phone .btn[type='submit'] {

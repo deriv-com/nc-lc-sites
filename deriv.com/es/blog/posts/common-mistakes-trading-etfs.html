@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Nov 29 2024 10:50:13 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d74b" data-wf-site="66585fe0e1dc7e70cc75d440" lang="es" data-wf-collection="66585fe0e1dc7e70cc75d607" data-wf-item-slug="common-mistakes-trading-etfs">
 
 <head>
@@ -24,7 +24,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/blog/posts/common-mistakes-trading-etfs" />
     <meta content="" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8322106c2.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -48,7 +48,24 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.12
+        function setCookie(name, value, days, domain) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            if (domain) {
+                document.cookie =
+                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
+            } else {
+                document.cookie = name + "=" + (value || "") + expires + ";path=/";
+            }
+        }
+        let params = new URL(window.location.toString()).searchParams;
+        let tkn_aff = params.get("t") || params.get("affiliate_token");
+        setCookie("aff_tkn", tkn_aff, 365);
+
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -388,7 +405,13 @@
         };
 
         const getUserCookieData = () => {
-            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const cookies = [
+                "signup_device",
+                "gclid",
+                "utm_data",
+                "affiliate_tracking",
+                "aff_tkn",
+            ];
             const combinedObject = {};
 
             cookies.forEach((cookieName) => {
@@ -466,7 +489,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -496,14 +519,13 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
                 },
             ])
             .pageView();
-
 
         const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
             const form_name = isMobile() ?
@@ -721,24 +743,21 @@
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj =
-                h.hj ||
-                function() {
-                    (h.hj.q = h.hj.q || []).push(arguments);
-                };
-            h._hjSettings = {
-                hjid: 3050531,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName("head")[0];
-            r = o.createElement("script");
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+    <!-- <script>
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = { hjid: 3050531, hjsv: 6 };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+</script> -->
 
     <!-- [Attributes by Finsweet] Disable scrolling -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
@@ -917,7 +936,7 @@
                 "@type": "WebPage",
                 "@id": "https://www.deriv.com/blog/posts/common-mistakes-trading-etfs"
             },
-            "headline": "5 common mistakes to avoid when trading ETFs",
+            "headline": "5 errores comunes que evitar al operar con ETF",
             "description": "",
             "image": "https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4440d3d6d84615b8ac_5%20common%20mistakes%20to%20avoid%20when%20trading%20ETFs.webp",
             "author": {
@@ -1479,7 +1498,7 @@
                                 </div>
                             </div>
                             <div class="bread-crumb_icon-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6675269a479ef100e7b816ff_divider.svg" loading="lazy" alt="" class="bread-crumb_icon-wrapper" /></div>
-                            <div class="bread-crumb_link is-light">5 common mistakes to avoid when trading ETFs</div>
+                            <div class="bread-crumb_link is-light">5 errores comunes que evitar al operar con ETF</div>
                         </div>
                         <section class="blog-filters">
                             <div class="padding-vertical padding-small w-form">
@@ -1689,7 +1708,7 @@
                             <div class="blog-post_content">
                                 <section class="blog-post_header">
                                     <div class="blog-post_heading-wrapper">
-                                        <h1 class="text-align-center">5 common mistakes to avoid when trading ETFs</h1>
+                                        <h1 class="text-align-center">5 errores comunes que evitar al operar con ETF</h1>
                                     </div>
                                     <div class="padding-bottom padding-xsmall">
                                         <div class="blog-post_date">October 16, 2023</div>
@@ -1699,61 +1718,61 @@
                                             <div role="listitem" class="blog-post_category-wrapper w-dyn-item"><a href="/es/blog-categories/etfs" class="blog-post_category">ETF</a></div>
                                         </div>
                                     </div>
-                                    <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4440d3d6d84615b8ac_5%20common%20mistakes%20to%20avoid%20when%20trading%20ETFs.webp" loading="lazy" alt="5 common mistakes to avoid when trading ETFs" class="blog-post_image" /></div>
+                                    <div class="blog-post_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4440d3d6d84615b8ac_5%20common%20mistakes%20to%20avoid%20when%20trading%20ETFs.webp" loading="lazy" alt="5 errores comunes que evitar al operar con ETF" class="blog-post_image" /></div>
                                     <div class="blog-post_video-wrapper w-condition-invisible">
                                         <div class="blog-post_video w-dyn-bind-empty w-video w-embed"></div>
                                     </div>
                                 </section>
                                 <div class="container-medium">
                                     <div class="blog-post_post-text overflow-word w-richtext">
-                                        <p>Exchange-traded funds (ETFs) are popular for traders of all levels because they are a diversified way to invest in a basket of stocks, bonds, or other assets. Although trading ETFs generally can tend to be lower risk than trading stocks, there are still some mistakes that traders commonly make. Steer clear of these top 5 mistakes:</p>
-                                        <h2><strong>1. Not doing your research</strong> on ETFs</h2>
-                                        <p>ETFs can track various indexes, sectors, and assets. Before trading ETFs, it&#x27;s important to examine the ETF’s prospectus, which provides detailed information about its holdings. Look for the list of companies or assets the ETF tracks, and pay attention to the weightings of individual companies within the ETF. If there are a few dominant companies that make up a large percentage of the portfolio, this concentration can increase risk if those companies face challenges. Make sure to research the individual companies within the ETF to see if they are well-established and financially sound, or if they are struggling or speculative. When choosing <a href="https://deriv.com/markets/exchange-traded-funds/" target="_blank">ETFs to buy</a>, consider their fees, liquidity, weightings, and tracking errors, as well as your investment goals and risk tolerance.</p>
-                                        <p><strong>Watch out!</strong> </p>
-                                        <p>Imagine you&#x27;re interested in trading an ETF that tracks the technology sector with a medium-term trading strategy. Without researching its holdings, you might not realise that a big portion of the ETF is invested in tech growth stocks, which require a very long-term trading strategy to see profits. As your strategy was focused on a medium time period, this particular trade did not align with your strategy, and you likely will not make any profits.</p>
-                                        <figure style="max-width:1024pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea516_661e6e1f01dd2f56adc6f8dc_2-1024x576.webp" alt="A payment machine generating a big bill" loading="lazy" /></div>
+                                        <p id="">Los fondos cotizados en bolsa (ETF) son populares para traders de todos los niveles porque son una forma diversificada de invertir en una cesta de acciones, bonos u otros activos. Aunque el trading de ETF generalmente tiende a ser menos riesgoso que el trading de acciones, aún hay algunos errores que los traders suelen cometer. Evite estos 5 errores principales:</p>
+                                        <h2 id=""><strong id="">1. No hacer su investigación</strong> sobre los ETF</h2>
+                                        <p id="">Los ETF pueden rastrear diversos índices, sectores y activos. Antes de operar con ETF, es importante examinar el prospecto del ETF, que proporciona información detallada sobre sus tenencias. Busque la lista de empresas o activos que rastrea el ETF, y preste atención a los pesos de las empresas individuales dentro del ETF. Si hay algunas empresas dominantes que constituyen un gran porcentaje del portafolio, esta concentración puede aumentar el riesgo si esas empresas enfrentan desafíos. Asegúrese de investigar las empresas individuales dentro del ETF para ver si están bien establecidas y son financieramente sólidas, o si están en dificultades o son especulativas. Al elegir <a href="https://deriv.com/markets/exchange-traded-funds/" target="_blank" id="">ETF para comprar</a>, considere sus tarifas, liquidez, pesos y errores de seguimiento, así como sus objetivos de inversión y tolerancia al riesgo.</p>
+                                        <p id=""><strong id="">¡Cuidado!</strong>&nbsp;</p>
+                                        <p id="">Imagine que está interesado en operar con un ETF que rastrea el sector de la tecnología con una estrategia de trading a medio plazo. Sin investigar sus tenencias, podría no darse cuenta de que una gran parte del ETF está invertida en acciones de crecimiento tecnológico, que requieren una estrategia de trading a muy largo plazo para ver ganancias. Como su estrategia se centraba en un período de tiempo medio, esta operación en particular no se alineó con su estrategia, y probablemente no obtendrá ganancias.</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea4d2_661e6e1f01dd2f56adc6f8dc_2-1024x576.webp" alt="Una máquina de pago generando una gran factura" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h2><strong>2. Overtrading</strong></h2>
-                                        <p>New traders often make the mistake of overtrading, thinking that more frequent trades will lead to more profits. It often happens because of behavioural and psychological factors that can cloud judgment and lead to impulsive trading decisions. Excessive trading can lead to higher transaction costs and taxes, which can eat into your returns. Always be patient and stick to a <a href="https://blog.deriv.com/posts/top-4-trading-styles-choose-the-one-that-suits-you-best/" target="_blank">trading strategy</a> when trading ETFs.</p>
-                                        <p><strong>Watch out!</strong></p>
-                                        <p>Imagine you trade ETFs several times a day. You&#x27;re constantly trying to time the market perfectly without a proper strategy. However, due to inexperience and increasing transaction costs with each ETF trade, you end up losing money instead.</p>
-                                        <figure style="max-width:1024pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea519_661e6e1f01dd2f56adc6f8f8_3-1024x576.webp" alt="A red arrow showing loss" loading="lazy" /></div>
+                                        <h2 id=""><strong id="">2. Sobreoperar</strong></h2>
+                                        <p id="">Los traders novatos a menudo cometen el error de sobreoperar, pensando que realizar operaciones más frecuentes conducirá a más ganancias. A menudo sucede debido a factores conductuales y psicológicos que pueden nublar el juicio y llevar a decisiones de trading impulsivas. El trading excesivo puede llevar a mayores costos de transacción e impuestos, lo que puede reducir sus retornos. Siempre sea paciente y mantenga una <a href="https://blog.deriv.com/posts/top-4-trading-styles-choose-the-one-that-suits-you-best/" target="_blank" id="">estrategia de trading</a> al operar con ETF.</p>
+                                        <p id=""><strong id="">¡Cuidado!</strong></p>
+                                        <p id="">Imagine que opera con ETF varias veces al día. Está tratando constantemente de cronometrar el mercado perfectamente sin una estrategia adecuada. Sin embargo, debido a la inexperiencia y al aumento de costos de transacción con cada operación de ETF, termina perdiendo dinero.</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea4d5_661e6e1f01dd2f56adc6f8f8_3-1024x576.webp" alt="Una flecha roja que muestra una pérdida" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h2><strong>3. Chasing an ETF&#x27;s performance by relying on past results</strong></h2>
-                                        <p>It&#x27;s key to remember that past ETF performance does not indicate future results. Just because an ETF has done well in the past doesn&#x27;t mean that it will continue to do so in the future. Market performance is influenced by many factors, so it’s good to consider including <a href="https://blog.deriv.com/posts/fundamental-analysis-for-beginners/" target="_blank">fundamental</a> and <a href="https://blog.deriv.com/posts/what-is-technical-analysis-in-trading/" target="_blank">technical</a> analysis in your strategy so you can be aware of these influences. </p>
-                                        <p><strong>Watch out!</strong></p>
-                                        <p>Imagine you decide to trade an ETF that has been performing really well over the past year. However, you overlook that a temporary market anomaly drove the ETF&#x27;s spike, and it&#x27;s likely to return to its historical average soon.</p>
-                                        <figure style="max-width:1024pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea51c_661e6e1f01dd2f56adc6f91a_ETF-trading-mistakes-to-avoid-1024x576.webp" alt="Eggs in a basket" loading="lazy" /></div>
+                                        <h2 id=""><strong id="">3. Perseguir el rendimiento de un ETF confiando en resultados pasados</strong></h2>
+                                        <p id="">Es fundamental recordar que el rendimiento pasado de los ETF no indica resultados futuros. Solo porque un ETF haya tenido un buen desempeño en el pasado, no significa que continuará haciéndolo en el futuro. El rendimiento del mercado está influenciado por muchos factores, por lo que es bueno considerar incluir análisis <a href="https://blog.deriv.com/posts/fundamental-analysis-for-beginners/" target="_blank" id="">fundamentales</a> y <a href="https://blog.deriv.com/posts/what-is-technical-analysis-in-trading/" target="_blank" id="">técnicos</a> en su estrategia para que pueda estar al tanto de estas influencias.&nbsp;</p>
+                                        <p id=""><strong id="">¡Cuidado!</strong></p>
+                                        <p id="">Imagine que decide operar con un ETF que ha tenido un rendimiento realmente bueno durante el último año. Sin embargo, pasa por alto que una anomalía temporal del mercado impulsó el aumento del ETF, y es probable que vuelva a su promedio histórico pronto.</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea4d8_661e6e1f01dd2f56adc6f91a_ETF-trading-mistakes-to-avoid-1024x576.webp" alt="Huevos en una canasta" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h2><strong>4. Ignoring diversification</strong></h2>
-                                        <p>Not diversifying when you trade ETFs can result in higher risks, as your portfolio becomes too dependent on the performance of a single sector, industry, or asset class. Putting your eggs in one basket can magnify losses during downturns, limit potential gains from other thriving market segments, and increase portfolio volatility. Your portfolio will be less resilient to market shocks, slowing your ability to navigate market fluctuations effectively. </p>
-                                        <p><strong>Watch out! </strong></p>
-                                        <p>Imagine you put all your money into a single commodity-focused ETF because it has been performing well recently. Unfortunately, the <a href="https://blog.deriv.com/posts/what-are-commodities/" target="_blank">commodity</a> market takes a hit, causing a big drop in the value of your investment portfolio.</p>
-                                        <figure style="max-width:1024pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                            <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea51f_661e6e1f01dd2f56adc6f909_1-1024x576.png" alt="A button illustrating the stop loss risk-management feature" loading="lazy" /></div>
+                                        <h2 id=""><strong id="">4. Ignorar la diversificación</strong></h2>
+                                        <p id="">No diversificar al operar con ETF puede resultar en mayores riesgos, ya que su portafolio se vuelve demasiado dependiente del rendimiento de un único sector, industria o clase de activo. Poner todos los huevos en una sola canasta puede magnificar las pérdidas durante caídas, limitar las ganancias potenciales de otros segmentos del mercado prósperos y aumentar la volatilidad del portafolio. Su cartera será menos resistente a los choques del mercado, lo que ralentizará su capacidad para navegar efectivamente las fluctuaciones del mercado.&nbsp;</p>
+                                        <p id=""><strong id="">¡Cuidado!&nbsp;</strong></p>
+                                        <p id="">Imagine que pone todo su dinero en un solo ETF enfocado en materias primas porque ha tenido un buen rendimiento recientemente. Desafortunadamente, el <a href="https://blog.deriv.com/posts/what-are-commodities/" target="_blank" id="">mercado de materias primas</a> sufre un golpe, causando una gran caída en el valor de su portafolio de inversiones.</p>
+                                        <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px">
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6693bd4f63124e6de16ea4db_661e6e1f01dd2f56adc6f909_1-1024x576.png" alt="Un botón que ilustra la característica de gestión de riesgos de stop loss" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <h2><strong>5. Not using stop-loss orders</strong></h2>
-                                        <p>A stop-loss order is an order to sell an ETF at a specific price automatically, which can help you limit your losses if the ETF price moves against you — with a stop-loss order, you determine when you want the trade to end. For long trades (you predict the asset’s price will go up), the stop loss is set below the current market price. However, for short trades (you predict the asset’s price will go down), the stop loss is set above the current market price. This can help you to limit your losses if the ETF price moves against you. <a href="https://blog.deriv.com/posts/risk-management-features-on-deriv-multipliers/" target="_blank">Stop-loss orders</a> free up your time, as you don&#x27;t have to monitor your ETF positions constantly. </p>
-                                        <p><strong>Watch out!</strong></p>
-                                        <p>Imagine you decide not to set a stop-loss order on an ETF you&#x27;ve traded. The market faces a sudden economic crisis, and prices experience a huge jump. This wipes out a large chunk of your trade because you weren&#x27;t protected by a predetermined exit point.</p>
-                                        <h2>More tips to trade ETFs</h2>
-                                        <p>Trading ETFs offers many opportunities but also comes with risks. Whether you&#x27;re a beginner or an expert, always do your research, don’t overtrade, have a strategy, diversify, and use stop-loss orders. Here are some more tips to consider when trading ETFs:</p>
-                                        <ul role="list">
-                                            <li><strong>Get a demo account</strong></li>
+                                        <h2 id=""><strong id="">5. No usar órdenes de stop-loss</strong></h2>
+                                        <p id="">Una orden de stop-loss es una orden para vender un ETF a un precio específico automáticamente, lo que puede ayudarle a limitar sus pérdidas si el precio del ETF se mueve en su contra — con una orden de stop-loss, usted determina cuándo quiere que termine la operación. Para operaciones largas (predice que el precio del activo subirá), el stop-loss se establece por debajo del precio de mercado actual. Sin embargo, para operaciones cortas (predice que el precio del activo bajará), el stop-loss se establece por encima del precio de mercado actual. Esto puede ayudarle a limitar sus pérdidas si el precio del ETF se mueve en su contra. <a href="https://blog.deriv.com/posts/risk-management-features-on-deriv-multipliers/" target="_blank" id="">Las órdenes de stop-loss</a> le liberan tiempo, ya que no tiene que monitorear constantemente sus posiciones de ETF.&nbsp;</p>
+                                        <p id=""><strong id="">¡Cuidado!</strong></p>
+                                        <p id="">Imagine que decide no establecer una orden de stop-loss en un ETF que ha comerciado. El mercado enfrenta una repentina crisis económica, y los precios experimentan un gran aumento. Esto anula una gran parte de su operación porque no estaba protegido por un punto de salida predeterminado.</p>
+                                        <h2 id="">Más consejos para operar ETF</h2>
+                                        <p id="">Operar ETF ofrece muchas oportunidades, pero también conlleva riesgos. Ya sea que sea un principiante o un experto, siempre haga su investigación, no sobreoperé, tenga una estrategia, diversifique y utilice órdenes de stop-loss. Aquí hay algunos consejos más a considerar al operar con ETF:</p>
+                                        <ul id="">
+                                            <li id=""><strong id="">Consiga una cuenta demo</strong></li>
                                         </ul>
-                                        <p>A demo account is a trading account that allows you to practise trading without real money. On Deriv, you can sign up for a <a href="https://deriv.com/signup/" target="_blank">free demo account</a> to start exploring ETF CFDs on <a href="https://deriv.com/dmt5/" target="_blank">Deriv MT5</a> and <a href="https://deriv.com/derivx/" target="_blank">Deriv X</a>. Your Deriv demo account comes preloaded with 10,000 USD in virtual funds so you can practise trading ETFs online risk-free. </p>
-                                        <ul role="list">
-                                            <li><strong>Start small first</strong></li>
+                                        <p id="">Una cuenta demo es una cuenta de trading que le permite practicar el trading sin dinero real. En Deriv, puede registrarse para obtener una <a href="https://deriv.com/signup/" target="_blank" id="">cuenta demo gratuita</a> para comenzar a explorar CFD de ETF en <a href="https://deriv.com/dmt5/" target="_blank" id="">Deriv MT5</a> y <a href="https://deriv.com/derivx/" target="_blank" id="">Deriv X</a>. Su cuenta demo de Deriv viene precargada con 10,000 USD en fondos virtuales para que pueda practicar el trading de ETF en línea sin riesgo.&nbsp;</p>
+                                        <ul id="">
+                                            <li id=""><strong id="">Empiece pequeño primero</strong></li>
                                         </ul>
-                                        <p>Once you&#x27;ve learned the basics of ETF trading, you can start trading with a small amount of real money. This can help minimise your losses if you make mistakes.</p>
-                                        <ul role="list">
-                                            <li><strong>Be patient and disciplined</strong></li>
+                                        <p id="">Una vez que haya aprendido lo básico del trading de ETF, puede comenzar a operar con una pequeña cantidad de dinero real. Esto puede ayudar a minimizar sus pérdidas si comete errores.</p>
+                                        <ul id="">
+                                            <li id=""><strong id="">Sea paciente y disciplinado</strong></li>
                                         </ul>
-                                        <p>ETF trading is a long-term strategy. Don&#x27;t expect to get rich quickly. Instead, focus on developing a solid trading plan and sticking to it.</p>
-                                        <p>By educating yourself about ETFs and following the tips above, you&#x27;ll be better equipped to confidently navigate the world of ETF trading and work toward your financial goals.</p>
+                                        <p id="">El trading de ETF es una estrategia a largo plazo. No espere hacerse rico rápidamente. En su lugar, concéntrese en desarrollar un plan de trading sólido y mantenerlo.</p>
+                                        <p id="">Al educarse sobre los ETF y seguir los consejos anteriores, estará mejor equipado para navegar con confianza en el mundo del trading de ETF y trabajar hacia sus objetivos financieros.</p>
                                     </div>
                                     <div class="share-block">
                                         <div class="padding-bottom padding-xxsmall">
@@ -1763,10 +1782,10 @@
                                     </div>
                                     <div class="blog-post_disclaimer-wrapper">
                                         <div class="blog-post_post-text w-richtext">
-                                            <p><strong><em>Disclaimer:</em></strong><em> </em></p>
-                                            <p><em>The information contained in this blog article is for educational purposes only and is not intended as financial or investment advice.</em></p>
-                                            <p><em>Deriv X is not available for clients residing within the EU.</em></p>
-                                            <p><em>The availability of Deriv MT5 and ETFs may depend on your country of residence.</em></p>
+                                            <p id=""><strong id=""><em id="">Deslinde de responsabilidad:</em></strong><em id="">&nbsp;</em></p>
+                                            <p id=""><em id="">La información contenida en este artículo del blog es solo para fines educativos y no pretende ser asesoramiento financiero o de inversión.</em></p>
+                                            <p id=""><em id="">Deriv X no está disponible para clientes residentes en la UE.</em></p>
+                                            <p id=""><em id="">La disponibilidad de Deriv MT5 y ETFs puede depender de su país de residencia.</em></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2219,7 +2238,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.3925c6dcd.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 

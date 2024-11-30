@@ -1,4 +1,4 @@
-﻿.osui-progress-bar__value:before {
+﻿.osui-progress-bar.cr .osui-progress-bar__value:before {
     width: 40% !important;
 }
 

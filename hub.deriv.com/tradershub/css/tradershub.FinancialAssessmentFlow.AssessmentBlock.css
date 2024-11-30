@@ -63,3 +63,7 @@
     font-size: 14px;
     line-height: 21px;
 }
+
+.osui-progress-bar.eu .osui-progress-bar__value:before {
+    width: 71% !important;
+}

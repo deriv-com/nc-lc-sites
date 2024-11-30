@@ -1,6 +1,6 @@
 import {
     a as b
-} from "./_oschunk-KWWRRBN4.js";
+} from "./_oschunk-JBLOSOOY.js";
 import {
     A as g,
     V as u,
@@ -90,7 +90,7 @@ Promise.all([u.default.initialize(b, h.Application.InitializationType.Full, new 
     if (r) {
         let e = function() {
                 return new Promise(function(n) {
-                    Promise.all([import("./_oschunk-YTS7NVFC.js")]).then(function(i) {
+                    Promise.all([import("./_oschunk-63TBXLBE.js")]).then(function(i) {
                         var s = i[0];
                         u.default.registerDefaultErrorHandler(function() {
                             return function(o, c) {
@@ -102,7 +102,7 @@ Promise.all([u.default.initialize(b, h.Application.InitializationType.Full, new 
             },
             t = function() {
                 return S.promise(function(n, i) {
-                    Promise.all([import("./_oschunk-32GJFEW4.js")]).then(function(s) {
+                    Promise.all([import("./_oschunk-N7YEPY7D.js")]).then(function(s) {
                         var o = s[0];
                         try {
                             o.Router.load(u.default), n()

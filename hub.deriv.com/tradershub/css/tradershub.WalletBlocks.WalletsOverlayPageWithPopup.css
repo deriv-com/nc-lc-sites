@@ -32,6 +32,7 @@
     justify-content: space-between;
     height: 48px;
     gap: 16px;
+    background-color: var(--color-background-body);
 }
 
 .desktop .wallet-title-container {

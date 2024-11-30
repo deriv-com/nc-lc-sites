@@ -134,8 +134,7 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText :
-                                null,
+                                this.responseText : null,
                             payload: parsedPayload,
                         };
 
@@ -843,8 +842,7 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure :
-                                this.is_secure,
+                                options.secure : this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });

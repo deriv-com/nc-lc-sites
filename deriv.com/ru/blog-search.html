@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Nov 29 2024 10:50:13 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d837" data-wf-site="66585fe0e1dc7e70cc75d440" lang="ru">
 
 <head>
@@ -30,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8322106c2.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,7 +54,24 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.12
+        function setCookie(name, value, days, domain) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            if (domain) {
+                document.cookie =
+                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
+            } else {
+                document.cookie = name + "=" + (value || "") + expires + ";path=/";
+            }
+        }
+        let params = new URL(window.location.toString()).searchParams;
+        let tkn_aff = params.get("t") || params.get("affiliate_token");
+        setCookie("aff_tkn", tkn_aff, 365);
+
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -394,7 +411,13 @@
         };
 
         const getUserCookieData = () => {
-            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const cookies = [
+                "signup_device",
+                "gclid",
+                "utm_data",
+                "affiliate_tracking",
+                "aff_tkn",
+            ];
             const combinedObject = {};
 
             cookies.forEach((cookieName) => {
@@ -472,7 +495,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -502,14 +525,13 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
                 },
             ])
             .pageView();
-
 
         const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
             const form_name = isMobile() ?
@@ -727,24 +749,21 @@
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj =
-                h.hj ||
-                function() {
-                    (h.hj.q = h.hj.q || []).push(arguments);
-                };
-            h._hjSettings = {
-                hjid: 3050531,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName("head")[0];
-            r = o.createElement("script");
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+    <!-- <script>
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = { hjid: 3050531, hjsv: 6 };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+</script> -->
 
     <!-- [Attributes by Finsweet] Disable scrolling -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
@@ -1650,6 +1669,38 @@
                             </div>
                             <div class="blogs_wrapper w-dyn-list">
                                 <div fs-cmsload-mode="pagination" fs-cmsnest-element="list" fs-cmsfilter-element="list" fs-cmsload-element="list" role="list" class="blogs_list w-dyn-items">
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/ru/blog/posts/deriv-launches-tactical-indices-for-smarter-trading" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg 900w" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 29, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Deriv представляет Тактические Индексы: Оптимизация торговли на основе стратегии</h3>
+                                            <p fs-cmsfilter-field="summary" class="blogs_text">Революционный запуск Тактических Индексов от Deriv позволяет трейдерам преодолевать сложные торговые стратегии. Прочитайте о его функциях.</p>
+                                        </a>
+                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
+                                            <p id=""><strong id="">Киберджая, 27 ноября</strong> – Deriv запустил Тактические Индексы, инновационный класс активов, который меняет подход трейдеров к финансовым рынкам. Это развитие автоматизирует сложные торговые стратегии, делая их доступными для трейдеров с любым уровнем опыта.</p>
+                                            <p id="">Как устоявшийся интернет-брокер с 25-летним опытом работы в отрасли, Deriv разработал Тактические Индексы для решения распространенных торговых проблем. Это новое предложение автоматически выполняет предопределенные правила на основе технических индикаторов, позволяя трейдерам использовать рыночные возможности без постоянного ручного вмешательства.</p>
+                                            <p id="">"Тактические Индексы помогают закрыть разрыв между сложными торговыми стратегиями и практическим исполнением," объясняет Пракеш Бхудия, руководитель продукта и роста в Deriv. "Мы делаем сложные торговые техники более доступными, снижая барьеры ручного исполнения и технической сложности."</p>
+                                            <h3 id="">Стратегическая торговля переосмыслена: Лучшие индексы для торговли&nbsp;</h3>
+                                            <p id="">Первоначальный запуск включает четыре Тактических Индекса RSI на серебро, каждый из которых призван захватить различные рыночные возможности:</p>
+                                            <p id=""><strong id="">Индексы на основе импульса</strong>&nbsp;</p>
+                                            <ul id="">
+                                                <li id="">Тренд Вверх: потенциально использующий восходящие тренды в ценах на серебро.</li>
+                                                <li id="">Тренд Вниз: потенциально использующий нисходящие тренды в ценах на серебро.</li>
+                                            </ul>
+                                            <p id=""><strong id="">Контртрендовые Индексы</strong></p>
+                                            <ul id="">
+                                                <li id="">Коррекция: потенциально использующая развороты нисходящих трендов в серебре.</li>
+                                                <li id="">Отскок: потенциально использующий развороты восходящих трендов в серебре.<br></li>
+                                            </ul>
+                                            <h3 id="">Ключевые преимущества Тактических Индексов для трейдеров</h3>
+                                            <ul id="">
+                                                <li id="">Автоматизированное исполнение стратегии: Технические индикаторы автоматически направляют корректировки позиций</li>
+                                                <li id="">Сниженные торговые издержки: Минимизация расходов на ручное ребалансирование</li>
+                                                <li id="">Доступ к продвинутой торговле: Сложные стратегии без обширных технических знаний</li>
+                                                <li id="">Стратегическое плечо: Оптимизированное воздействие для потенциально повышенных доходов</li>
+                                            </ul>
+                                            <p id=""><a href="https://deriv.com/academy/trading-guides/tactical-indices-a-beginners-guide" target="_blank">Тактические Индексы</a>, в настоящее время доступные на платформах Deriv MT5, Deriv cTrader и Deriv X, являются важным шагом вперед. Deriv планирует расширить предложение в начале 2025 года с добавлением дополнительных технических индикаторов, включая MACD и Полосы Боллинджера, наряду с новыми торговыми стратегиями и классами активов.<em id="">‍</em></p>
+                                        </div>
+                                    </div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/ru/blog/posts/ethereum-price-drop-temporary-pause-or-setup" class="blogs_link-block w-inline-block">
                                             <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum.jpg 1600w" class="blogs_image" /></div>
                                             <div class="blogs_date is-no-wrapper">November 15, 2024</div>
@@ -1872,26 +1923,6 @@
                                             <p id="">Заглядывая в будущее, компания Deriv по-прежнему сосредоточена на своей миссии по расширению прав и возможностей трейдеров по всему миру, стимулируя рост на развивающихся рынках, таких как Африка, продолжая предоставлять передовые технологии и поддержку клиентов. Благодаря этим недавним наградам компания имеет все возможности для того, чтобы сохранить свое превосходное наследие в течение следующих 25 лет и в последующий период.</p>
                                         </div>
                                     </div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/ru/blog/posts/nvidia-stock-surge-boosted-by-ai" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo.jpg 2476w" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 17, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Следующая волна ИИ: готовится ли Nvidia к мощному ралли?</h3>
-                                            <p fs-cmsfilter-field="summary" class="blogs_text">За последний месяц акции компании Nvidia выросли на 25%, что свидетельствует о продолжении ралли ИИ.</p>
-                                        </a>
-                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
-                                            <p id="">За последний месяц акции компании Nvidia выросли на 25%, что свидетельствует о продолжении ралли ИИ. Ожидая появления своих новых чипов Blackwell, компания Nvidia готова возглавить следующую волну спроса на ИИ.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Беспрецедентный спрос на фишки Blackwell:</h2>
-                                            <p id="">Такие технологические гиганты, как OpenAI, Microsoft и Meta, стремятся интегрировать чипы Blackwell от Nvidia в свои центры обработки данных, основанные на искусственном интеллекте. При цене от $30 000 до $40 000 за единицу эти чипы обещают значительные улучшения по сравнению с текущими моделями Hopper, а по мере наращивания производства ожидается миллиардный доход.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Доминирование Nvidia в области аппаратного обеспечения ИИ:</h2>
-                                            <p id="">Графические процессоры Nvidia обеспечивают работу практически всех приложений искусственного интеллекта, что стало причиной впечатляющих финансовых показателей компании, включая 122%-ное увеличение дохода за последний квартал по сравнению с предыдущим годом. Лидерство компании в области аппаратных средств искусственного интеллекта также помогло ей обогнать Microsoft и стать второй самой дорогой компанией в мире.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Технический прогноз:</h2>
-                                            <p id="">Акции Nvidia в настоящее время находятся на уровне 134$ и обладают сильным импульсом, хотя плоский RSI вблизи 70 и приближение к полосе Боллинджера указывают на возможное замедление темпов роста. Аналитики ожидают, что по мере того, как спрос на ИИ будет расти, он достигнет 200 долларов.</p>
-                                            <p id="">Полную статью можно прочитать здесь: <a href="https://www.finextra.com/blogposting/27027/the-next-wave-of-ai-is-nvidia-set-for-a-strong-rally" target="_blank" id="">https://www.finextra.com/blogposting/27027/the-next-wave-of-ai-is-nvidia-set-for-a-strong-rally</a>.</p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div role="navigation" aria-label="List" class="w-pagination-wrapper blogs_pagination-wrapper"><a fs-cmsload-element="page-button" href="/ru/blog" class="blogs_page w-inline-block">
                                         <div>1</div>
@@ -1902,7 +1933,7 @@
                                             </svg></div>
                                     </a>
                                     <link rel="prerender" href="?af93ed5d_page=2" />
-                                    <div aria-label="Page 1 of 53" role="heading" class="w-page-count page-count">1 / 53</div>
+                                    <div aria-label="Page 1 of 42" role="heading" class="w-page-count page-count">1 / 42</div>
                                 </div>
                             </div>
                             <div fs-cmsfilter-element="empty" class="blogs_results-empty-wrapper">
@@ -2349,7 +2380,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.3925c6dcd.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 

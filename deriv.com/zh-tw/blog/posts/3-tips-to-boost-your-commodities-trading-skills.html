@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Nov 29 2024 10:50:13 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d74b" data-wf-site="66585fe0e1dc7e70cc75d440" lang="zh-TW" data-wf-collection="66585fe0e1dc7e70cc75d607" data-wf-item-slug="3-tips-to-boost-your-commodities-trading-skills">
 
 <head>
@@ -24,7 +24,7 @@
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/blog/posts/3-tips-to-boost-your-commodities-trading-skills" />
     <meta content="" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8322106c2.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -48,7 +48,24 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.12
+        function setCookie(name, value, days, domain) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            if (domain) {
+                document.cookie =
+                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
+            } else {
+                document.cookie = name + "=" + (value || "") + expires + ";path=/";
+            }
+        }
+        let params = new URL(window.location.toString()).searchParams;
+        let tkn_aff = params.get("t") || params.get("affiliate_token");
+        setCookie("aff_tkn", tkn_aff, 365);
+
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -388,7 +405,13 @@
         };
 
         const getUserCookieData = () => {
-            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const cookies = [
+                "signup_device",
+                "gclid",
+                "utm_data",
+                "affiliate_tracking",
+                "aff_tkn",
+            ];
             const combinedObject = {};
 
             cookies.forEach((cookieName) => {
@@ -466,7 +489,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -496,14 +519,13 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
                 },
             ])
             .pageView();
-
 
         const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
             const form_name = isMobile() ?
@@ -721,24 +743,21 @@
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj =
-                h.hj ||
-                function() {
-                    (h.hj.q = h.hj.q || []).push(arguments);
-                };
-            h._hjSettings = {
-                hjid: 3050531,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName("head")[0];
-            r = o.createElement("script");
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+    <!-- <script>
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = { hjid: 3050531, hjsv: 6 };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+</script> -->
 
     <!-- [Attributes by Finsweet] Disable scrolling -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
@@ -1713,7 +1732,7 @@
                                         <p id="">大宗商品市場是高度波動的市場，因為它不僅受到供需的影響，也受流動性、自然災害和國際政治等其他因素的影響。 對交易者來說，這種波動帶來的風險回報率比其他金融市場更具吸引力。 </p>
                                         <p id="">以下是 3 個大宗商品交易技巧，幫助應對該市場交易的風險。</p>
                                         <h2 id="">1. 了解影響大宗商品價格的因素</h2>
-                                        <p id="">大宗商品是週期性的，這意味著它們的價格以重複模式波動或定期重複。 而且，由於供需是主要的價格驅動力，因此與外匯和股票相比，它們的波動性要大得多。 此外，它受到經濟、政治和自然災害的影響很大。</p>
+                                        <p id="">大宗商品是週期性的，這表示它們的價格以重覆模式波動或定期重覆。 而且，由於供需是主要的價格驅動力，因此與外匯和股票相比，它們的波動性要大得多。 此外，它受到經濟、政治和自然災害的影響很大。</p>
                                         <h3 id="">經濟</h3>
                                         <p id="">一個國家的經濟狀況可以影響大宗商品價格，因為它決定了其人口的購買力。 經濟疲軟時，對大宗商品的需求減少，導致價格下降，而經濟蓬勃會增加需求，導致價格上漲。 </p>
                                         <p id="">當某一特定大宗商品的主要生產國發生供應中斷時，該商品的價格變動就會更高。</p>
@@ -1724,55 +1743,55 @@
                                         <p id="">自然災害和極端天氣波動會對自然資源的生產和運輸產生負面影響。 例如，颱風可以摧毀農作物，影響供應鏈，導致供應減少，隨後市場價格上漲。</p>
                                         <h2 id="">2. 進行深入的市場分析</h2>
                                         <p id="">由於大宗商品市場本質上是波動的，因此初學者和經驗豐富的交易者在交易之前都必須密切注意其價格走勢。</p>
-                                        <p id="">交易者使用兩種類型的分析——基本面分析和技術分析來檢查大宗商品市場的表現。 以下是對這些內容的簡要解釋：</p>
+                                        <p id="">交易者使用兩種類型的分析——基本面分析和技術分析來檢查大宗商品市場的效能。 以下是對這些內容的簡要解釋：</p>
                                         <h3 id="">基本面分析</h3>
                                         <p id="">基本面分析評估資產的內在價值或‘真實’價值，並確定未來可能影響資產的因素。 該分析考慮了外部事件和影響以及財務記錄和市場趨勢。 交易者和投資者使用基本面分析根據財務資料收集資訊，以便在開倉前做出理性的決定，並限制個人偏見。</p>
                                         <h3 id="">技術分析</h3>
-                                        <p id=""><a href="https://blog.deriv.com/posts/what-is-technical-analysis-in-trading/" target="_blank" id="">技術分析</a> 使用歷史價格圖表和市場統計數據來檢查和預測金融市場的價格變動。 這個想法是，透過研究先前的市場模式，交易者可以更準確地預測未來價格。 交易者使用技術分析來制定或改進交易策略，並確定進入和退出市場的最佳時間。</p>
+                                        <p id=""><a href="https://blog.deriv.com/posts/what-is-technical-analysis-in-trading/" target="_blank" id="">技術分析</a>使用歷史價格圖表和市場統計資料來研究和預測金融市場的價格走勢。 這個想法是，透過研究先前的市場模式，交易者可以更準確地預測未來價格。 交易者使用技術分析來制定或改進交易策略，並確定進入和退出市場的最佳時間。</p>
                                         <h2 id="">3. 密切關注市場趨勢</h2>
                                         <p id="">市場趨勢，無論是短期或長期，都可以為潛在的市場趨勢提供見解。 一般來說，趨勢代表資產或大宗商品市場價格的波動。 價格上漲時出現上升趨勢，價格下跌時出現下降趨勢。</p>
-                                        <p id="">在交易大宗商品時，交易者利用趨勢來制定更好的交易策略，因為價格往往朝著相同的方向移動，因此獲得收益的可能性更高。 這一來，交易者能夠將賠率轉移到對自己有利的方向並最大限度地提高潛在利潤。</p>
+                                        <p id="">在交易大宗商品時，交易者利用趨勢來制定更好的交易策略，因為價格往往朝著相同的方向移動，因此取得收益的可能性更高。 這一來，交易者能夠將賠率轉移到對自己有利的方向並最大限度地提高潛在利潤。</p>
                                         <h2 id="">如何在 Deriv 交易大宗商品</h2>
-                                        <p id="">在 Deriv 可以透過差價合約或期權推測大宗商品的價格走勢，而無需實際購買或擁有標的資產。</p>
+                                        <p id="">在 Deriv 可以透過差價合約或期權推測大宗商品的價格走勢，而無需實際購買或擁有基礎資產。</p>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1280px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1280px">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/661e6e1f01dd2f56adc6eddd_552f99ce-f702-4455-b8cd-78f1a4f8dc80.jpeg" alt="在 Deriv 交易差價合約" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965de2f38d5f8a02c090b5_661e6e1f01dd2f56adc6eddd_552f99ce-f702-4455-b8cd-78f1a4f8dc80.jpeg" alt="在 Deriv 交易差價合約" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
-                                        <p id="">交易<a href="https://blog.deriv.com/posts/what-is-cfd-trading/" target="_blank" id="">差價合約</a>時可以預測資產（例如黃金）的價格是上漲還是下跌。</p>
-                                        <h3 id="">做多</h3>
-                                        <p id="">如果您認為黃金價兌美元（USD）將上漲，則可以購買差價合約，如果您對市場走勢的預測是對的，則可以從上漲中獲利。</p>
+                                        <p id="">交易<a href="https://blog.deriv.com/posts/what-is-cfd-trading/" target="_blank" id="">差價合約</a>時可以預測例如黃金等資產的價格是上漲還是下跌。</p>
+                                        <h3 id="">Go long</h3>
+                                        <p id="">如果您認為黃金價兌美元 (USD) 將上漲，則可以購買差價合約，如果您對市場走勢的預測是對的，則可以從上漲中獲利。</p>
                                         <h3 id="">做空</h3>
                                         <p id="">如果您認為黃金價格將下跌，則可以賣出差價合約，如果您對市場走勢的預測是對的，則可以從下跌中獲利。</p>
                                         <p id="">使用差價合約交易大宗商品的一個優點是，可以保持頭寸直至決定平倉。 但是，只有在平倉時才能知道自己的盈虧狀況。</p>
                                         <p id="">以下是可以交易差價合約的可用大宗商品清單。</p>
                                         <p id="">‍<strong id="">金屬</strong></p>
                                         <ul id="">
-                                            <li id="">白銀/美元</li>
-                                            <li id="">黃金/美元</li>
-                                            <li id="">鈀金/美元</li>
-                                            <li id="">白金/美元</li>
-                                            <li id="">鋁/美元</li>
-                                            <li id="">銅/美元</li>
-                                            <li id="">鎳/美元</li>
-                                            <li id="">鉛/美元</li>
-                                            <li id="">鋅/美元</li>
-                                            <li id="">白銀/歐元</li>
-                                            <li id="">黃金/歐元</li>
+                                            <li id="">Silver/USD</li>
+                                            <li id="">Gold/USD</li>
+                                            <li id="">Palladium/USD</li>
+                                            <li id="">Platinum/USD</li>
+                                            <li id="">Aluminium/USD</li>
+                                            <li id="">Copper/USD</li>
+                                            <li id="">Nickel/USD</li>
+                                            <li id="">Lead/USD</li>
+                                            <li id="">Zinc/USD</li>
+                                            <li id="">Silver/Euro</li>
+                                            <li id="">Gold/Euro</li>
                                         </ul>
                                         <p id=""><strong id="">能源</strong></p>
                                         <ul id="">
-                                            <li id="">布蘭特原油</li>
-                                            <li id="">西德州中級原油</li>
+                                            <li id="">Brent 原油</li>
+                                            <li id="">West Texas Intermediate</li>
                                             <li id="">天然氣</li>
                                         </ul>
                                         <p id="">可以在 Deriv MT5 和 Deriv X 使用差價合約交易大宗商品。為此，必須先開立 Deriv MT5 或 Deriv X 帳戶。</p>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1280px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1280px">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/661e6e1f01dd2f56adc6edee_f2987584-1909-4ce9-8b0d-dd0d920498d1.jpeg" alt="在 Deriv 交易期權" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965de2f38d5f8a02c090b8_661e6e1f01dd2f56adc6edee_f2987584-1909-4ce9-8b0d-dd0d920498d1.jpeg" alt="在 Deriv 交易期權" width="auto" height="auto" loading="auto" id=""></div>
                                         </figure>
                                         <p id="">交易期權時可以透過三種方式——Up/Down、In/Out 和 Touch/No Touch 預測大宗商品的價格走勢。</p>
                                         <h3 id="">Up/Down</h3>
                                         <p id="">Up/Down 交易有兩個期權——Rise/Fall 和 Higher/Lower。 </p>
                                         <p id="">Rise/Fall 讓您預測合約結束時的退市現價是高於還是低於入市現價。 </p>
-                                        <p id="">Higher/Lower 讓您預測合約結束時的退市現價是否會高於或低於目標價（障礙）。</p>
+                                        <p id="">Higher/Lower 讓您預測合約結束時的退市現價是否會高於或低於目標價 (障礙) 。</p>
                                         <h3 id="">In/Out</h3>
                                         <p id="">In/Out 交易也有兩個期權：Ends Between/Ends Outside 和 Stays Between/Goes Outside。 </p>
                                         <p id="">Ends Between/Ends Outside 讓您預測退市現價在合約到期時處於兩個目標價格範圍之內或之外。 </p>
@@ -1781,7 +1800,7 @@
                                         <p id="">Touch/No Touch 交易讓您預測市價在合約期間的任何時間將觸及或不觸及目標價。 </p>
                                         <p id="">使用期權交易大宗商品的一個優點是可以提前設定交易時長，並且在開倉時已經知道了潛在的盈利或虧損。</p>
                                         <p id="">可以在 Deriv Trader、Deriv Bot 和 SmartTrader 使用期權交易大宗商品。</p>
-                                        <p id="">想了解更多關於大宗商品的資訊？ 查看我們的 <a href="https://blog.deriv.com/posts/what-are-commodities/" target="_blank" id="">什麼是商品？</a> 博客。 通過創建一個 <a href="https://deriv.com/signup/" target="_blank" id="">模擬賬戶</a> ，預先安裝 10,000 美元虛擬貨幣來練習商品交易，以免風險地進行商品交易。 </p>
+                                        <p id="">想了解更多關於大宗商品的資訊？ 查看<a href="https://blog.deriv.com/posts/what-are-commodities/" target="_blank" id="">什麼是大宗商品？</a>部落格。 透過開立備有 10,000 美元虛擬貨幣的<a href="https://deriv.com/signup/" target="_blank" id="">示範帳戶</a>，無風險地練習大宗商品交易。 </p>
                                     </div>
                                     <div class="share-block">
                                         <div class="padding-bottom padding-xxsmall">
@@ -2246,7 +2265,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.3925c6dcd.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 

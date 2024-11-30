@@ -220,3 +220,8 @@ label {
     transform: translateX(100%);
   }
 }
+
+.list-center, .list.list-group.list-center {
+    align-items: center;
+    justify-content: center;
+}

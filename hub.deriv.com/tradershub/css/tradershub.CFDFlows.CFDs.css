@@ -139,3 +139,18 @@
 .phone .cTrader-content {
     height: 85vh;
 }
+
+.demo-blue-container {
+    display: flex;
+    align-items: center;
+    background-color: #E5F5FC;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+}
+
+.tablet .demo-blue-container,
+.phone .demo-blue-container {
+    margin-bottom: 0;
+    margin-top: 8px;
+}

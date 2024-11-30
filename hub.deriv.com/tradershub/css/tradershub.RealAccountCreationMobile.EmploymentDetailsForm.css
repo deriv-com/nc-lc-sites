@@ -1,5 +1,9 @@
-﻿.osui-progress-bar__value:before {
+﻿.osui-progress-bar.cr .osui-progress-bar__value:before {
     width: 60% !important;
+}
+
+.osui-progress-bar.eu .osui-progress-bar__value:before {
+    width: 29% !important;
 }
 
 .real-account-signup-layout__content [data-block="Adaptive.DisplayOnDevice"] {

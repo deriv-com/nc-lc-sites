@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Nov 28 2024 03:37:11 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Nov 29 2024 10:50:13 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d837" data-wf-site="66585fe0e1dc7e70cc75d440" lang="vi">
 
 <head>
@@ -30,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.56aabfec7.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8322106c2.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,7 +54,24 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        // Version 1.0.12
+        function setCookie(name, value, days, domain) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            if (domain) {
+                document.cookie =
+                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
+            } else {
+                document.cookie = name + "=" + (value || "") + expires + ";path=/";
+            }
+        }
+        let params = new URL(window.location.toString()).searchParams;
+        let tkn_aff = params.get("t") || params.get("affiliate_token");
+        setCookie("aff_tkn", tkn_aff, 365);
+
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -394,7 +411,13 @@
         };
 
         const getUserCookieData = () => {
-            const cookies = ['signup_device', 'gclid', 'utm_data', 'affiliate_tracking'];
+            const cookies = [
+                "signup_device",
+                "gclid",
+                "utm_data",
+                "affiliate_tracking",
+                "aff_tkn",
+            ];
             const combinedObject = {};
 
             cookies.forEach((cookieName) => {
@@ -472,7 +495,7 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -502,14 +525,13 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData()
+                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
                 },
             ])
             .pageView();
-
 
         const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
             const form_name = isMobile() ?
@@ -727,24 +749,21 @@
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj =
-                h.hj ||
-                function() {
-                    (h.hj.q = h.hj.q || []).push(arguments);
-                };
-            h._hjSettings = {
-                hjid: 3050531,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName("head")[0];
-            r = o.createElement("script");
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+    <!-- <script>
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = { hjid: 3050531, hjsv: 6 };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+</script> -->
 
     <!-- [Attributes by Finsweet] Disable scrolling -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
@@ -1650,6 +1669,38 @@
                             </div>
                             <div class="blogs_wrapper w-dyn-list">
                                 <div fs-cmsload-mode="pagination" fs-cmsnest-element="list" fs-cmsfilter-element="list" fs-cmsload-element="list" role="list" class="blogs_list w-dyn-items">
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/vi/blog/posts/deriv-launches-tactical-indices-for-smarter-trading" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg 900w" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 29, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Deriv giới thiệu Chỉ số Tactical: Tinh giản giao dịch dựa trên chiến lược</h3>
+                                            <p fs-cmsfilter-field="summary" class="blogs_text">Lần ra mắt cách mạng của Chỉ số Tactical bởi Deriv cho phép các nhà giao dịch vượt qua các chiến lược giao dịch phức tạp. Đọc về các tính năng của nó.</p>
+                                        </a>
+                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
+                                            <p id=""><strong id="">Cyberjaya, 27 November</strong> – Deriv đã ra mắt Chỉ số Tactical, một loại tài sản sáng tạo thay đổi cách các nhà giao dịch tương tác với các thị trường tài chính. Sự phát triển này tự động hóa các chiến lược giao dịch tinh vi, làm cho chúng dễ dàng tiếp cận hơn với các nhà giao dịch ở mọi cấp độ kinh nghiệm.</p>
+                                            <p id="">Với 25 năm kinh nghiệm trong ngành, Deriv phát triển Chỉ số Tactical để giải quyết những thách thức giao dịch phổ biến. Sản phẩm mới này tự động thực hiện các quy tắc đã được xác định sẵn dựa trên các chỉ báo kỹ thuật, cho phép các nhà giao dịch tận dụng các cơ hội trên thị trường mà không cần can thiệp thủ công liên tục.</p>
+                                            <p id="">"Chỉ số Tactical giúp thu hẹp khoảng cách giữa các chiến lược giao dịch phức tạp và việc thực hiện thực tế," giải thích Prakash Bhudia, Trưởng phòng Sản phẩm và Tăng trưởng tại Deriv. "Chúng tôi đang làm cho các kỹ thuật giao dịch tiên tiến trở nên dễ tiếp cận hơn bằng cách giảm bớt rào cản thực hiện thủ công và độ phức tạp về kỹ thuật."</p>
+                                            <h3 id="">Giao dịch chiến lược được định nghĩa lại: Các chỉ số tốt nhất để giao dịch&nbsp;</h3>
+                                            <p id="">Lần ra mắt đầu tiên có bốn Chỉ số Tactical RSI Silver, mỗi chỉ số được thiết kế để nắm bắt những cơ hội thị trường khác nhau:</p>
+                                            <p id=""><strong id="">Chỉ số dựa trên động lực</strong>&nbsp;</p>
+                                            <ul id="">
+                                                <li id="">Xu hướng Tăng: có khả năng tận dụng các xu hướng tăng trong giá bạc.</li>
+                                                <li id="">Xu hướng Giảm: có khả năng tận dụng các xu hướng giảm trong giá bạc.</li>
+                                            </ul>
+                                            <p id=""><strong id="">Chỉ số đối kháng</strong></p>
+                                            <ul id="">
+                                                <li id="">Pullback: có khả năng tận dụng các đảo chiều xu hướng giảm trong bạc.</li>
+                                                <li id="">Rebound: có khả năng tận dụng các đảo chiều xu hướng tăng trong bạc.<br></li>
+                                            </ul>
+                                            <h3 id="">Lợi ích chính của Chỉ số Tactical cho các nhà giao dịch</h3>
+                                            <ul id="">
+                                                <li id="">Thực hiện chiến lược tự động: Các chỉ báo kỹ thuật hướng dẫn điều chỉnh vị trí một cách tự động</li>
+                                                <li id="">Giảm chi phí giao dịch: Giảm thiểu chi phí từ việc tái cân bằng thủ công</li>
+                                                <li id="">Truy cập giao dịch tiên tiến: Các chiến lược phức tạp mà không cần kiến thức kỹ thuật sâu rộng</li>
+                                                <li id="">Đòn bẩy chiến lược: Tối ưu hóa mức độ tiếp xúc để có thể tăng lợi nhuận</li>
+                                            </ul>
+                                            <p id=""><a href="https://deriv.com/academy/trading-guides/tactical-indices-a-beginners-guide" target="_blank">Chỉ số Tactical</a>, hiện có trên các nền tảng Deriv MT5, Deriv cTrader và Deriv X, đánh dấu một bước tiến quan trọng. Deriv plans to expand the offering in early 2025 with additional technical indicators, including MACD and Bollinger Bands, alongside new trading strategies and asset classes.<em id="">‍</em></p>
+                                        </div>
+                                    </div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/vi/blog/posts/ethereum-price-drop-temporary-pause-or-setup" class="blogs_link-block w-inline-block">
                                             <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6743fc21655a80b55a0a497f_ethereum.jpg 1600w" class="blogs_image" /></div>
                                             <div class="blogs_date is-no-wrapper">November 15, 2024</div>
@@ -1872,26 +1923,6 @@
                                             <p id="">Nhìn về phía trước, Deriv vẫn tập trung vào sứ mệnh trao quyền cho các nhà giao dịch trên toàn cầu, thúc đẩy tăng trưởng ở các thị trường mới nổi như Châu Phi trong khi tiếp tục cung cấp công nghệ hàng đầu trong ngành và hỗ trợ khách hàng. Với những giải thưởng gần đây, công ty có vị trí thuận lợi để tiếp tục di sản xuất sắc của mình trong 25 năm tới và hơn thế nữa.</p>
                                         </div>
                                     </div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/vi/blog/posts/nvidia-stock-surge-boosted-by-ai" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/671615b86ba110c4c222ac74_photo.jpg 2476w" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 17, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Làn sóng AI tiếp theo: Nvidia có sẵn sàng cho một cuộc biểu tình mạnh mẽ không?</h3>
-                                            <p fs-cmsfilter-field="summary" class="blogs_text">Cổ phiếu của Nvidia đã tăng 25% trong tháng trước, báo hiệu sức mạnh tiếp tục trong đợt tăng trưởng AI.</p>
-                                        </a>
-                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
-                                            <p id="">Cổ phiếu của Nvidia đã tăng 25% trong tháng trước, báo hiệu sức mạnh tiếp tục trong đợt tăng trưởng AI. Với dự đoán được xây dựng xung quanh các chip Blackwell sắp tới của mình, Nvidia đã sẵn sàng dẫn đầu làn sóng nhu cầu AI tiếp theo.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Nhu cầu chưa từng có đối với chip Blackwell:</h2>
-                                            <p id="">Những gã khổng lồ công nghệ như OpenAI, Microsoft và Meta đang mong muốn tích hợp chip Blackwell của Nvidia vào các trung tâm dữ liệu do AI điều khiển của họ. Với giá từ 30.000 đến 40.000 đô la mỗi chiếc, những con chip này hứa hẹn những tiến bộ lớn so với các mẫu Hopper hiện tại, với doanh thu hàng tỷ USD dự kiến khi sản xuất tăng lên.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Sự thống trị phần cứng AI của Nvidia:</h2>
-                                            <p id="">GPU của Nvidia cung cấp năng lượng cho gần như mọi ứng dụng AI, thúc đẩy hiệu suất tài chính ấn tượng của nó, bao gồm tăng doanh thu 122% so với cùng kỳ năm ngoái trong quý mới nhất. Sự dẫn đầu của công ty về phần cứng AI cũng đã giúp nó vượt qua Microsoft trở thành công ty có giá trị thứ hai trên toàn cầu.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Triển vọng kỹ thuật:</h2>
-                                            <p id="">Cổ phiếu của Nvidia hiện đang ở mức khoảng 134 đô la với đà mạnh mẽ, mặc dù RSI ổn định gần 70 và gần dải Bollinger cho thấy khả năng giảm tốc. Các nhà phân tích đang để mắt đến con đường đạt 200 đô la khi nhu cầu AI tiếp tục tăng.</p>
-                                            <p id="">Đọc toàn bộ bài viết tại đây: <a href="https://www.finextra.com/blogposting/27027/the-next-wave-of-ai-is-nvidia-set-for-a-strong-rally" target="_blank" id="">https://www.finextra.com/blogposting/27027/the-next-wave-of-ai-is-nvidia-set-for-a-strong-rally</a>.</p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div role="navigation" aria-label="List" class="w-pagination-wrapper blogs_pagination-wrapper"><a fs-cmsload-element="page-button" href="/vi/blog" class="blogs_page w-inline-block">
                                         <div>1</div>
@@ -1902,7 +1933,7 @@
                                             </svg></div>
                                     </a>
                                     <link rel="prerender" href="?af93ed5d_page=2" />
-                                    <div aria-label="Page 1 of 53" role="heading" class="w-page-count page-count">1 / 53</div>
+                                    <div aria-label="Page 1 of 42" role="heading" class="w-page-count page-count">1 / 42</div>
                                 </div>
                             </div>
                             <div fs-cmsfilter-element="empty" class="blogs_results-empty-wrapper">
@@ -2349,7 +2380,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.15473e4bf.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.3925c6dcd.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 

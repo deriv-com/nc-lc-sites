@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Thu Sep 19 2024 12:53:52 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Nov 29 2024 10:50:13 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d7a9" data-wf-site="66585fe0e1dc7e70cc75d440" lang="es">
 
 <head>
@@ -11,7 +11,6 @@
     <link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/markets/cryptocurrencies" />
     <link rel="alternate" hrefLang="es" href="https://deriv.com/es/markets/cryptocurrencies" />
     <link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/markets/cryptocurrencies" />
-    <link rel="alternate" hrefLang="th" href="https://deriv.com/th/markets/cryptocurrencies" />
     <link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/markets/cryptocurrencies" />
     <link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/markets/cryptocurrencies" />
     <link rel="alternate" hrefLang="si" href="https://deriv.com/si/markets/cryptocurrencies" />
@@ -31,7 +30,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b0d1e5070.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8322106c2.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -51,139 +50,745 @@
     </script>
     <link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon" />
     <link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon" />
-    <link href="https://deriv.com/es/markets/cryptocurrencies" rel="canonical" /><!-- Google Tag Manager -->
+    <link href="https://deriv.com/es/markets/cryptocurrencies" rel="canonical" />
+    <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
+    <!--Analytics block starts here-->
     <script>
+        function setCookie(name, value, days, domain) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            if (domain) {
+                document.cookie =
+                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
+            } else {
+                document.cookie = name + "=" + (value || "") + expires + ";path=/";
+            }
+        }
+        let params = new URL(window.location.toString()).searchParams;
+        let tkn_aff = params.get("t") || params.get("affiliate_token");
+        setCookie("aff_tkn", tkn_aff, 365);
+
+        const cacheTrackEvents = {
+            interval: null,
+            responses: [],
+            isTrackingResponses: false,
+            hash: (inputString, desiredLength = 32) => {
+                const fnv1aHash = (string) => {
+                    let hash = 0x811c9dc5;
+                    for (let i = 0; i < string.length; i++) {
+                        hash ^= string.charCodeAt(i);
+                        hash = (hash * 0x01000193) >>> 0;
+                    }
+                    return hash.toString(16);
+                };
+
+                const base64Encode = (string) => btoa(string);
+
+                let hash = fnv1aHash(inputString);
+                let combined = base64Encode(hash);
+
+                while (combined.length < desiredLength) {
+                    combined += base64Encode(fnv1aHash(combined));
+                }
+
+                return combined.substring(0, desiredLength);
+            },
+            getCookies: (name) => {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) {
+                    const cookieValue = decodeURIComponent(parts.pop().split(";").shift());
+
+                    try {
+                        return JSON.parse(cookieValue);
+                    } catch (e) {
+                        return cookieValue;
+                    }
+                }
+                return null;
+            },
+            trackPageUnload: () => {
+                window.addEventListener("beforeunload", (event) => {
+                    if (!cacheTrackEvents.isPageViewSent()) {
+                        cacheTrackEvents.push("cached_analytics_page_views", {
+                            name: window.location.href,
+                            properties: {
+                                url: window.location.href,
+                            },
+                        });
+                    }
+                });
+            },
+            trackResponses: () => {
+                const originalXhrOpen = XMLHttpRequest.prototype.open;
+                const originalXhrSend = XMLHttpRequest.prototype.send;
+
+                XMLHttpRequest.prototype.open = function(method, url) {
+                    this._url = url;
+                    this._method = method;
+                    return originalXhrOpen.apply(this, arguments);
+                };
+
+                XMLHttpRequest.prototype.send = function(body) {
+                    this.addEventListener("load", function() {
+                        let parsedPayload = null;
+
+                        if (typeof body === "string") {
+                            try {
+                                parsedPayload = JSON.parse(body);
+                            } catch (e) {
+                                parsedPayload = body;
+                            }
+                        }
+
+                        const responseData = {
+                            url: this._url,
+                            method: this._method,
+                            status: this.status,
+                            headers: this.getAllResponseHeaders(),
+                            data: this.responseType === "" || this.responseType === "text" ?
+                                this.responseText :
+                                null,
+                            payload: parsedPayload,
+                        };
+
+                        cacheTrackEvents.responses.push(responseData);
+                    });
+
+                    return originalXhrSend.apply(this, arguments);
+                };
+            },
+            isReady: () => {
+                if (typeof Analytics === "undefined" || Analytics === null) {
+                    return false;
+                }
+
+                const instances = Analytics.Analytics.getInstances();
+                return !!instances?.tracking;
+            },
+            parseCookies: (cookieName) => {
+                const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+                    const [key, value] = cookie.split("=");
+                    acc[decodeURIComponent(key)] = decodeURIComponent(value);
+                    return acc;
+                }, {});
+
+                try {
+                    return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
+                } catch (error) {
+                    return null;
+                }
+            },
+            isPageViewSent: () =>
+                !!cacheTrackEvents.responses.find(
+                    (e) => e.payload?.type === "page" && e.payload?.anonymousId
+                ),
+            set: (event) => {
+                cacheTrackEvents.push("cached_analytics_events", event);
+            },
+            push: (cookieName, data) => {
+                let storedCookies = [];
+                const cacheCookie = cacheTrackEvents.parseCookies(cookieName);
+                if (cacheCookie) storedCookies = cacheCookie;
+                storedCookies.push(data);
+
+                document.cookie = `${cookieName}=${JSON.stringify(
+        storedCookies
+      )}; path=/; Domain=.deriv.com`;
+            },
+            processEvent: (event) => {
+                const clientInfo = cacheTrackEvents.getCookies("client_information");
+
+                if (clientInfo) {
+                    const {
+                        email = null
+                    } = clientInfo;
+
+                    if (email) {
+                        event.properties.email_hash = cacheTrackEvents.hash(email);
+                    }
+                }
+                if (event?.properties?.email) {
+                    const email = event.properties.email;
+                    delete event.properties.email;
+                    event.properties.email_hash = cacheTrackEvents.hash(email);
+                }
+
+                return event;
+            },
+            track: (originalEvent, cache) => {
+                const event = cacheTrackEvents.processEvent(originalEvent);
+
+                if (cacheTrackEvents.isReady() && !cache) {
+                    Analytics.Analytics.trackEvent(event.name, event.properties);
+                } else {
+                    cacheTrackEvents.set(event);
+                }
+            },
+            pageView: () => {
+                if (!cacheTrackEvents.isTrackingResponses) {
+                    cacheTrackEvents.trackResponses();
+                    cacheTrackEvents.trackPageUnload();
+                }
+
+                let pageViewInterval = null;
+
+                pageViewInterval = setInterval(() => {
+                    const clientInfo = cacheTrackEvents.parseCookies("client_information");
+                    const signupDevice =
+                        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
+                    if (
+                        typeof window.Analytics !== "undefined" &&
+                        typeof window.Analytics.Analytics?.pageView === "function" &&
+                        cacheTrackEvents.isReady()
+                    ) {
+                        window.Analytics?.Analytics?.pageView(window.location.href, {
+                            loggedIn: !!clientInfo,
+                            device_type: signupDevice,
+                            network_type: window?.navigator?.connection?.effectiveType,
+                            network_rtt: window?.navigator?.connection?.rtt,
+                            network_downlink: window?.navigator?.connection?.downlink,
+                        });
+                    }
+
+                    if (cacheTrackEvents.isPageViewSent()) {
+                        clearInterval(pageViewInterval);
+                    }
+                }, 1000);
+            },
+            listen: (
+                element, {
+                    name = "",
+                    properties = {}
+                },
+                cache = false,
+                callback = null
+            ) => {
+                const addClickListener = (el) => {
+                    if (!el.dataset.clickEventTracking) {
+                        el.addEventListener("click", function(e) {
+                            let event = {
+                                name,
+                                properties,
+                                cache,
+                            };
+
+                            if (typeof callback === "function") {
+                                event = callback(e);
+                            }
+
+                            cacheTrackEvents.track(event);
+                        });
+                        el.dataset.clickEventTracking = "true";
+                    }
+                };
+
+                const elements =
+                    element instanceof NodeList ? Array.from(element) : [element];
+
+                elements.forEach(addClickListener);
+            },
+
+            addEventhandler: (items) => {
+                cacheTrackEvents.interval = setInterval(() => {
+                    let allListenersApplied = true;
+
+                    items.forEach(
+                        ({
+                            element,
+                            event = {},
+                            cache = false,
+                            callback = null
+                        }) => {
+                            const elem =
+                                element instanceof Element ?
+                                element :
+                                document.querySelectorAll(element);
+                            const elements =
+                                elem instanceof NodeList ? Array.from(elem) : [elem];
+
+                            if (!elements.length) {
+                                allListenersApplied = false;
+                            }
+
+                            elements.forEach((el) => {
+                                if (!el.dataset.clickEventTracking) {
+                                    cacheTrackEvents.listen(el, event, cache, callback);
+                                    allListenersApplied = false;
+                                }
+                            });
+                        }
+                    );
+
+                    if (allListenersApplied) {
+                        clearInterval(cacheTrackEvents.interval);
+                    }
+                }, 1);
+
+                return cacheTrackEvents;
+            },
+            loadEvent: (items) => {
+                items.forEach(({
+                    event,
+                    cache
+                }) => {
+                    const {
+                        name,
+                        properties
+                    } = event;
+                    cacheTrackEvents.track({
+                            name,
+                            properties,
+                        },
+                        cache
+                    );
+                });
+
+                return cacheTrackEvents;
+            },
+            pageLoadEvent: (items) => {
+                const pathname = window.location.pathname.slice(1);
+                items.forEach(
+                    ({
+                        pages = [],
+                        excludedPages = [],
+                        event,
+                        callback = null
+                    }) => {
+                        let dispatch = false;
+                        if (pages.length) {
+                            if (pages.includes(pathname)) {
+                                dispatch = true;
+                            }
+                        } else if (excludedPages.length) {
+                            if (!excludedPages.includes(pathname)) {
+                                dispatch = true;
+                            }
+                        } else {
+                            dispatch = true;
+                        }
+
+                        if (dispatch) {
+                            const eventData = callback ? callback() : event;
+                            cacheTrackEvents.loadEvent([{
+                                event: eventData
+                            }]);
+                        }
+                    }
+                );
+
+                return cacheTrackEvents;
+            },
+            trackConsoleErrors: (callback) => {
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                    // Log the error to the console as usual
+                    originalConsoleError.apply(console, args);
+
+                    // Create a clean error message without __trackjs_state__
+                    const errorMessage = args
+                        .map((arg) =>
+                            arg && typeof arg === "object" && arg.message ?
+                            arg.message :
+                            typeof arg === "object" ?
+                            JSON.stringify(arg, (key, value) =>
+                                key.startsWith("__trackjs") ? undefined : value
+                            ) :
+                            String(arg)
+                        )
+                        .join(" ");
+
+                    if (typeof callback === "function") {
+                        callback(errorMessage);
+                    }
+                };
+            },
+        };
+
+        const getUserCookieData = () => {
+            const cookies = [
+                "signup_device",
+                "gclid",
+                "utm_data",
+                "affiliate_tracking",
+                "aff_tkn",
+            ];
+            const combinedObject = {};
+
+            cookies.forEach((cookieName) => {
+                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
+            });
+            combinedObject.full_url = window.location.href;
+
+            return combinedObject;
+        };
+
+        cacheTrackEvents
+            .pageLoadEvent([{
+                    pages: ["signup", "eu/signup"],
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "open",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                            url: window.location.href,
+                        },
+                    },
+                },
+                {
+                    pages: ["signup-success", "eu/signup-success"],
+                    callback: () => {
+                        const url = new URL(window.location.href);
+                        const email = url.searchParams.get("email");
+                        const formattedEmail = decodeURIComponent(email).replace(/ /g, "+");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "email_confirmation_sent",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                url: window.location.href,
+                                email: formattedEmail,
+                            },
+                        };
+                    },
+                },
+            ])
+            .addEventhandler([{
+                    element: ".livechatbtn",
+                    event: {
+                        name: "ce_widget_usage_form",
+                        properties: {
+                            action: "click",
+                            widget_name: "livechat",
+                        },
+                    },
+                },
+                {
+                    element: ".whatsapp_chat",
+                    event: {
+                        name: "ce_widget_usage_form",
+                        properties: {
+                            action: "click",
+                            widget_name: "whatsapp",
+                        },
+                    },
+                },
+                {
+                    element: "#create",
+                    callback: (e) => {
+                        const emailElement = document.getElementById("Email");
+                        const email = emailElement ? emailElement.value : "";
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                action: "started",
+                                signup_provider: "email",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                email,
+                                cookie_data: getUserCookieData(),
+                            },
+                        };
+                    },
+                    cache: true,
+                },
+                {
+                    element: "#signup_login",
+                    event: {
+                        name: "ce_virtual_signup_form",
+                        properties: {
+                            action: "go_to_login",
+                            signup_provider: "email",
+                            form_source: window.location.hostname,
+                            form_name: "default_diel_deriv",
+                        },
+                    },
+                },
+                {
+                    element: ".sign-up_banner-badges-wrapper a",
+                    callback: (e) => {
+                        const provider = e.currentTarget.getAttribute("data-provider");
+
+                        return {
+                            name: "ce_virtual_signup_form",
+                            properties: {
+                                signup_provider: provider,
+                                action: "started",
+                                form_source: window.location.hostname,
+                                form_name: "default_diel_deriv",
+                                cookie_data: getUserCookieData(),
+                            },
+                        };
+                    },
+                },
+            ])
+            .pageView();
+
+        const trackSignupErrorEvent = (action, errorMessage, screen_name) => {
+            const form_name = isMobile() ?
+                "virtual_signup_web_mobile_default" :
+                "virtual_signup_web_desktop_default";
+            cacheTrackEvents.loadEvent([{
+                event: {
+                    name: "ce_virtual_signup_form",
+                    properties: {
+                        action,
+                        form_name,
+                        error_message: errorMessage,
+                        screen_name,
+                    },
+                },
+            }, ]);
+        };
+
+        cacheTrackEvents.trackConsoleErrors((errorMessage) => {
+            window.is_tracking_signup_errors = window.useGrowthbookFeatureFlag({
+                featureFlag: "signup_flow_error_enabled",
+            });
+
+            if (is_tracking_signup_errors) {
+                if (errorMessage) {
+                    const currentUrl = window.location.href;
+                    if (
+                        currentUrl.includes("signup") ||
+                        currentUrl.includes("signup-success")
+                    ) {
+                        const screen_name = currentUrl.includes("signup-success") ?
+                            "signup-success" :
+                            "signup";
+                        trackSignupErrorEvent("signup_flow_error", errorMessage, screen_name);
+                    }
+                }
+            }
+        });
+
+        //Analytics block for cta_clicks method starts here
+        (function() {
+            const trackCTAEvents = (event) => {
+                const anchor = event.target.closest("a");
+                let identifier = "";
+
+                if (anchor) {
+                    const href = anchor.getAttribute("href");
+                    identifier =
+                        href && href !== "#" && !href.startsWith("#") ?
+                        href.split("/").pop().toLowerCase() :
+                        anchor.getAttribute("data-href") || "";
+                }
+                const section = anchor?.closest("section");
+                const sectionName = section ? section.className.split(" ")[0] : "";
+
+                if (identifier && sectionName) {
+                    const eventName = "ce_cta_clicks";
+                    const eventProperties = {
+                        action: "click",
+                        component_type: "btn",
+                        component_name: identifier,
+                        section_name: sectionName,
+                        cta_name: anchor.textContent?.replace(/\s+/g, " ").trim(),
+                    };
+                    cacheTrackEvents.track({
+                        name: eventName,
+                        properties: eventProperties,
+                    });
+                }
+            };
+
+            const interval = setInterval(() => {
+                if (document.body) {
+                    document.body.addEventListener("click", trackCTAEvents);
+                    clearInterval(interval);
+                }
+            }, 10);
+        })();
+        //Analytics block for cta_clicks method ends here
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const RUDDERSTACK_STAGING_KEY = "2mmmTCZy9LNia85JObhPez0koy0";
+            const RUDDERSTACK_PRODUCTION_KEY = "2hrePojvWH0mpU7La2XfDgYivgC";
+            const GB_STAGING_CLIENT_KEY = "sdk-9wuqJ1mlcQsSyZQ";
+            const GB_STAGING_DECRYPTION_KEY = "";
+            const GB_PROD_CLIENT_KEY = "sdk-UhZV3cNEg5nLNLNS";
+            const GB_PROD_DECRYPTION_KEY = "nre64BV0dNIa44zW4tz5ow==";
+            var GB_CLIENT_KEY, RUDDERSTACK_KEY, GB_DECRYPTION_KEY;
+            if (
+                window.location.hostname === "deriv.com" ||
+                window.location.hostname === "deriv.be" ||
+                window.location.hostname === "deriv.me"
+            ) {
+                GB_CLIENT_KEY = GB_PROD_CLIENT_KEY;
+                GB_DECRYPTION_KEY = GB_PROD_DECRYPTION_KEY;
+                RUDDERSTACK_KEY = RUDDERSTACK_PRODUCTION_KEY;
+            } else {
+                GB_CLIENT_KEY = GB_STAGING_CLIENT_KEY;
+                GB_DECRYPTION_KEY = GB_STAGING_DECRYPTION_KEY;
+                RUDDERSTACK_KEY = RUDDERSTACK_STAGING_KEY;
+            }
+            const client_information = window.parseCookies(
+                document.cookie,
+                "client_information"
+            );
+            const clientInfo = client_information ?
+                JSON.parse(client_information) :
+                null;
+            const utm_data_string = window.parseCookies(document.cookie, "utm_data");
+            const utm_data = utm_data_string ? JSON.parse(utm_data_string) : {};
+            const {
+                utm_source,
+                utm_medium,
+                utm_campaign
+            } = utm_data;
+            const cookies = window.parseCookies(document.cookie, "signup_device");
+            let signupDevice = null;
+            const isBrowser = () => typeof window !== "undefined";
+            const getLanguage = () =>
+                isBrowser() ? localStorage.getItem("i18n") || navigator.language : null;
+            if (cookies) {
+                signupDevice = JSON.parse(cookies)?.signup_device || null;
+            }
+            const initialiseConfig = {
+                growthbookKey: typeof _growthbook !== "undefined" ? null : GB_CLIENT_KEY,
+                growthbookDecryptionKey: typeof _growthbook !== "undefined" ? null : GB_DECRYPTION_KEY,
+                rudderstackKey: RUDDERSTACK_KEY,
+                growthbookOptions: {
+                    navigate: (url) => window.location.replace(url),
+                    antiFlicker: false,
+                    navigateDelay: 0,
+                    attributes: {
+                        country: window.parseCookies(document.cookie, "clients_country") ||
+                            window.parseCookies(document.cookie, "website_status"),
+                        user_language: window.parseCookies(document.cookie, "user_language") ||
+                            getLanguage(),
+                        device_language: window.parseCookies(document.cookie, "language") || " ",
+                        device_type: signupDevice,
+                        utm_source: utm_data?.["utm_source"],
+                        utm_medium: utm_data?.["utm_medium"],
+                        utm_campaign: utm_data?.["utm_campaign"],
+                        is_authorised: !!window.parseCookies(
+                            document.cookie,
+                            "client_information"
+                        ),
+                        loggedIn: !!window.parseCookies(
+                            document.cookie,
+                            "client_information"
+                        ),
+                        url: window.location.href,
+                        network_type: navigator.connection?.effectiveType,
+                        network_rtt: navigator.connection?.rtt,
+                        network_downlink: navigator.connection?.downlink,
+                    },
+                },
+            };
+            try {
+                window.Analytics?.Analytics.initialise(initialiseConfig);
+
+                const userId = clientInfo?.user_id ?
+                    clientInfo?.user_id :
+                    window.Analytics?.Analytics?.getInstances?.().tracking?.getAnonymousId();
+                window.Analytics?.Analytics?.identifyEvent(userId);
+            } catch (error) {
+                console.error("Error during initialisation:", error);
+            }
+
+            window.Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
+
+            window.getGrowthbookInstance = function() {
+                if (typeof _growthbook !== "undefined") {
+                    return _growthbook;
+                } else {
+                    return window.Analytics?.Analytics?.getInstances?.().ab?.GrowthBook;
+                }
+            };
+            window.useGrowthbookFeatureFlag = function({
+                featureFlag
+            }) {
+                const growthBookInstance = window?.getGrowthbookInstance?.();
+                if (!growthBookInstance) return null;
+                let featureFlagValue = growthBookInstance.getFeatureValue(featureFlag);
+
+                function updateFeatureFlagValue() {
+                    const value = growthBookInstance.getFeatureValue(featureFlag);
+                    featureFlagValue = value;
+                }
+                growthBookInstance.setRenderer(updateFeatureFlagValue);
+                return featureFlagValue;
+            };
+        });
+    </script>
+    <!--Analytics block ends-->
+
+    <!-- Google Tag Manager -->
+    <script defer>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
             });
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
+                dl = l != "dataLayer" ? "&l=" + l : "";
             j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NF7884S');
+        })(window, document, "script", "dataLayer", "GTM-NF7884S");
     </script>
     <!-- End Google Tag Manager -->
 
     <!-- Analytics Integration -->
-    <script src="https://unpkg.com/@deriv-com/analytics@1.17.1/dist/analytics.bundle.js"></script>
+    <script defer src="https://unpkg.com/@deriv-com/analytics@1.27.0/dist/analytics.bundle.js"></script>
     <!--  Analytics end-->
 
     <!-- Hotjar Tracking Code for Deriv.com (.com + app.deriv) -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 3050531,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
+    <!-- <script>
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = { hjid: 3050531, hjsv: 6 };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+</script> -->
 
     <!-- [Attributes by Finsweet] Disable scrolling -->
     <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
-    <!-- Keep this css code to improve the font quality-->
-    <style>
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            -o-font-smoothing: antialiased;
-        }
 
-        /* display only one text element for language switcher 
-.current-locale-list > .current-locale:first-of-type {
-    display: block;
-} */
-    </style>
+    <!-- Keep this css code to improve the font quality-->
     <script>
         window.growthbook_config = window.growthbook_config || {};
         window.growthbook_config.attributes = {
-            "deviceId": "foo",
-            "company": "foo",
-            "loggedIn": true,
-            "employee": true,
-            "country": "foo",
-            "user_language": "foo",
-            "device_type": "foo",
-            "device_language": "foo",
-            "user_ip": "foo"
+            deviceId: "foo",
+            company: "foo",
+            loggedIn: true,
+            employee: true,
+            country: "foo",
+            user_language: "foo",
+            device_type: "foo",
+            device_language: "foo",
+            user_ip: "foo",
         };
     </script>
-    <style>
-        /* Style for disabling scroll */
-        .disable-scroll {
-            overflow: hidden;
-        }
-    </style>
-    <style>
-        /* removing scroll bar(vertical) */
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* removing scroll bar (Firefox) */
-        * {
-            scrollbar-width: none;
-        }
-    </style>
-    <style>
-        @media (min-width: 992px) and (max-width: 1200px) {
-            .new-navbar_menu-left-desctop {
-                font-size: 14px;
-                /* Adjust the font size of menus in the custom breakpoint */
-            }
-
-            .new-navbar_dropdown-toggle,
-            .new-navbar_link {
-                padding: .5rem 0.75rem;
-                /* Adjust the padding of menus in the custom breakpoint */
-            }
-
-            header h1 {
-                font-size: 3rem;
-                /* Adjust the font size of header texts in the custom breakpoint */
-            }
-
-            header p {
-                font-size: 14px;
-                /* Adjust the font size of p texts and their width in header in the custom breakpoint */
-                width: 81%;
-            }
-        }
-    </style>
-    <style>
-        @media screen and (max-width: 991px) {
-
-            /* Adjusts for mobile landscape */
-            .tabs_menu-scroll-mobile {
-                display: flex;
-                overflow-x: auto;
-                overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;
-                /* Smooth scrolling on iOS devices */
-                scrollbar-width: none;
-                /* For Firefox */
-            }
-        }
-    </style>
     <!-- Datadog Integration -->
     <script async src="https://www.datadoghq-browser-agent.com/datadog-rum.js"></script>
     <!-- Marketing and Affiliate Cookie-->
     <script>
         function loadScript(url, callback) {
-            var script = document.createElement('script');
+            var script = document.createElement("script");
             script.onload = function() {
                 if (callback) callback();
             };
@@ -192,31 +797,35 @@
         }
         // Usage to load the js-cookie script
         loadScript("https://static.deriv.com/scripts/cookie.js", function() {
-            console.log('js-cookie loaded successfully!');
+            console.log("js-cookie loaded successfully!");
         });
         (function() {
             // Function to dynamically load js-cookie
             function loadJSCookie(callback) {
-                var script = document.createElement('script');
+                var script = document.createElement("script");
                 script.onload = function() {
                     if (callback) callback();
                 };
-                script.src = "https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js";
+                script.src =
+                    "https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js";
                 document.head.appendChild(script);
             }
             // Define your cookie storage and manipulation functions
             function setupCookies() {
-                var deriv_cookie_domain = 'deriv.com'; // Modify as per your actual usage
-                var CookieStorage = function(cookie_name, cookie_domain = '') {
+                var deriv_cookie_domain = "deriv.com"; // Modify as per your actual usage
+                var CookieStorage = function(cookie_name, cookie_domain = "") {
                     var hostname = window.location.hostname;
-                    var is_deriv_com = hostname.includes('deriv.com');
+                    var is_deriv_com =
+                        hostname === "deriv.com" || hostname === "staging.deriv.com";
                     this.initialized = false;
                     this.cookie_name = cookie_name;
-                    this.domain = is_deriv_com ? deriv_cookie_domain : cookie_domain || hostname;
-                    this.path = '/';
-                    this.same_site = 'None';
+                    this.domain = is_deriv_com ?
+                        deriv_cookie_domain :
+                        cookie_domain || hostname;
+                    this.path = "/";
+                    this.same_site = "None";
                     this.is_secure = true;
-                    this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
+                    this.expires = new Date("Thu, 1 Jan 2037 12:00:00 GMT");
                     this.value = {};
                 };
                 CookieStorage.prototype = {
@@ -252,8 +861,10 @@
                             expires: this.expires,
                             path: this.path,
                             domain: this.domain,
-                            secure: options && options.secure !== undefined ? options.secure : this.is_secure,
-                            sameSite: options && options.sameSite || this.same_site,
+                            secure: options && options.secure !== undefined ?
+                                options.secure :
+                                this.is_secure,
+                            sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
                     },
@@ -268,7 +879,9 @@
                 function getCookiesObject(cookies) {
                     var cookies_objects = {};
                     cookies.forEach(function(cookie_name) {
-                        var cookie_object = new CookieStorage(cookie_name.includes('utm') ? 'utm_data' : cookie_name);
+                        var cookie_object = new CookieStorage(
+                            cookie_name.includes("utm") ? "utm_data" : cookie_name
+                        );
                         cookies_objects[cookie_name] = cookie_object;
                     });
                     return cookies_objects;
@@ -285,35 +898,35 @@
                 }
 
                 function getDataLink(data) {
-                    var data_link = '';
+                    var data_link = "";
                     Object.keys(data).forEach(function(elem) {
-                        data_link += '&' + elem + '=' + encodeURIComponent(data[elem]);
+                        data_link += "&" + elem + "=" + encodeURIComponent(data[elem]);
                     });
                     return data_link;
                 }
 
                 function getCookiesFields() {
                     return [
-                        'date_first_contact',
-                        'signup_device',
-                        'gclid',
-                        'utm_source',
-                        'utm_ad_id',
-                        'utm_adgroup_id',
-                        'utm_adrollclk_id',
-                        'utm_campaign',
-                        'utm_campaign_id',
-                        'utm_content',
-                        'utm_fbcl_id',
-                        'utm_gl_client_id',
-                        'utm_medium',
-                        'utm_msclk_id',
-                        'utm_term',
-                        'sidc'
+                        "date_first_contact",
+                        "signup_device",
+                        "gclid",
+                        "utm_source",
+                        "utm_ad_id",
+                        "utm_adgroup_id",
+                        "utm_adrollclk_id",
+                        "utm_campaign",
+                        "utm_campaign_id",
+                        "utm_content",
+                        "utm_fbcl_id",
+                        "utm_gl_client_id",
+                        "utm_medium",
+                        "utm_msclk_id",
+                        "utm_term",
+                        "sidc",
                     ];
                 }
                 // Example usage:
-                var exampleCookies = getCookiesObject(['utm_source', 'utm_campaign']);
+                var exampleCookies = getCookiesObject(["utm_source", "utm_campaign"]);
                 var dataObj = getDataObjFromCookies(exampleCookies, getCookiesFields());
                 var dataLink = getDataLink(dataObj);
             }
@@ -327,849 +940,10 @@
 
 <body>
     <div class="page-wrapper">
-        <div class="global-styles w-embed">
-            <style>
-                /* Set color style to inherit */
-                .inherit-color * {
-                    color: inherit;
-                }
-
-                /* Focus state style for keyboard navigation for the focusable elements */
-                *[tabindex]:focus-visible,
-                input[type="file"]:focus-visible {
-                    outline: 0.125rem solid #4d65ff;
-                    outline-offset: 0.125rem;
-                }
-
-                /* Get rid of top margin on first element in any rich text element */
-                .w-richtext> :not(div):first-child,
-                .w-richtext>div:first-child> :first-child {
-                    margin-top: 0 !important;
-                    padding-top: 0 !important;
-                }
-
-                /* Get rid of bottom margin on last element in any rich text element */
-                .w-richtext>:last-child,
-                .w-richtext ol li:last-child,
-                .w-richtext ul li:last-child {
-                    margin-bottom: 0 !important;
-                }
-
-                /* Prevent all click and hover interaction with an element */
-                .pointer-events-off {
-                    pointer-events: none;
-                }
-
-                /* Enables all click and hover interaction with an element */
-                .pointer-events-on {
-                    pointer-events: auto;
-                }
-
-                /* Create a class of .div-square which maintains a 1:1 dimension of a div */
-                .div-square::after {
-                    content: "";
-                    display: block;
-                    padding-bottom: 100%;
-                }
-
-                /* Make sure containers never lose their center alignment */
-                .container-medium,
-                .container-small,
-                .container-large {
-                    margin-right: auto !important;
-                    margin-left: auto !important;
-                }
-
-                /* 
-Make the following elements inherit typography styles from the parent and not have hardcoded values. 
-Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
-Uncomment this CSS to use it in the project. Leave this message for future hand-off.
-*/
-                /*
-a,
-.w-input,
-.w-select,
-.w-tab-link,
-.w-nav-link,
-.w-dropdown-btn,
-.w-dropdown-toggle,
-.w-dropdown-link {
-  color: inherit;
-  text-decoration: inherit;
-  font-size: inherit;
-}
-*/
-
-                /* Apply "..." after 3 lines of text */
-                .text-style-3lines {
-                    display: -webkit-box;
-                    overflow: hidden;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                }
-
-                /* Apply "..." after 2 lines of text */
-                .text-style-2lines {
-                    display: -webkit-box;
-                    overflow: hidden;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                }
-
-                /* Adds inline flex display */
-                .display-inlineflex {
-                    display: inline-flex;
-                }
-
-                /* These classes are never overwritten */
-                .hide {
-                    display: none !important;
-                }
-
-                @media screen and (max-width: 991px) {
-
-                    .hide,
-                    .hide-tablet {
-                        display: none !important;
-                    }
-                }
-
-                @media screen and (max-width: 767px) {
-
-                    .disclaimer-visible .max-width-medium.max-width-full-mobile-landscape {
-                        max-width: none;
-                        margin-bottom: 1.5rem;
-                    }
-
-                    .hide-mobile-landscape {
-                        display: none !important;
-                    }
-                }
-
-                @media screen and (max-width: 479px) {
-                    .hide-mobile {
-                        display: none !important;
-                    }
-                }
-
-                .margin-0 {
-                    margin: 0rem !important;
-                }
-
-                .padding-0 {
-                    padding: 0rem !important;
-                }
-
-                .spacing-clean {
-                    padding: 0rem !important;
-                    margin: 0rem !important;
-                }
-
-                .margin-top {
-                    margin-right: 0rem !important;
-                    margin-bottom: 0rem !important;
-                    margin-left: 0rem !important;
-                }
-
-                .padding-top {
-                    padding-right: 0rem !important;
-                    padding-bottom: 0rem !important;
-                    padding-left: 0rem !important;
-                }
-
-                .margin-right {
-                    margin-top: 0rem !important;
-                    margin-bottom: 0rem !important;
-                    margin-left: 0rem !important;
-                }
-
-                .padding-right {
-                    padding-top: 0rem !important;
-                    padding-bottom: 0rem !important;
-                    padding-left: 0rem !important;
-                }
-
-                .margin-bottom {
-                    margin-top: 0rem !important;
-                    margin-right: 0rem !important;
-                    margin-left: 0rem !important;
-                }
-
-                .padding-bottom {
-                    padding-top: 0rem !important;
-                    padding-right: 0rem !important;
-                    padding-left: 0rem !important;
-                }
-
-                .margin-left {
-                    margin-top: 0rem !important;
-                    margin-right: 0rem !important;
-                    margin-bottom: 0rem !important;
-                }
-
-                .padding-left {
-                    padding-top: 0rem !important;
-                    padding-right: 0rem !important;
-                    padding-bottom: 0rem !important;
-                }
-
-                .margin-horizontal {
-                    margin-top: 0rem !important;
-                    margin-bottom: 0rem !important;
-                }
-
-                .padding-horizontal {
-                    padding-top: 0rem !important;
-                    padding-bottom: 0rem !important;
-                }
-
-                .margin-vertical {
-                    margin-right: 0rem !important;
-                    margin-left: 0rem !important;
-                }
-
-                .padding-vertical {
-                    padding-right: 0rem !important;
-                    padding-left: 0rem !important;
-                }
-
-                /* Apply "..." at 100% width */
-                .truncate-width {
-                    width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-
-                /* Removes native scrollbar */
-                .no-scrollbar {
-                    -ms-overflow-style: none;
-                    overflow: -moz-scrollbars-none;
-                }
-
-                .no-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-
-                .accordion_dropdown.is-active-accordion,
-                .tab-dropdown.is-active-accordion {
-                    background: var(--background-color--background-alternate);
-                }
-
-                .accordion_dropdown.is-white.is-active-accordion {
-                    background: rgba(0, 0, 0, 0.00);
-                }
-
-                .accordion_arrow.is-active-accordion {
-                    transform: rotate(180deg);
-                }
-
-                .help_tab.fs-cmsfilter_active {
-                    color: var(--text-color--text-primary);
-                    border-bottom: 2px solid var(--border-color--border-primary);
-                }
-
-                .w-slider-dot {
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background: #4146528F;
-                }
-
-                .w-slider-dot.w-active {
-                    background: var(--base-color-neutral--black);
-                }
-
-                .blog-filters_button.fs-cmsfilter_active {
-                    background: var(--base-color-neutral--black);
-                    color: var(--text-color--text-alternate);
-                    border-color: var(--border-color--border-primary);
-                }
-
-                @media screen and (min-width: 992px) {
-                    .blogs_link-block:hover .blogs_image {
-                        transform: scale(1.07);
-                    }
-                }
-
-
-                .partner-navbar_component .w-nav-link.w--current {
-                    color: #e12e3a;
-                    /** Deriv partner navbar active link color **/
-                }
-
-                .customLink {
-                    color: #ff444f !important;
-                }
-
-                .content_market-text {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                }
-
-                .contact-social_link-wp:hover .is-hover,
-                .contact-social_link-live:hover .is-hover {
-                    display: block;
-                }
-
-
-                .contact-social_link-wp:hover .is-normal,
-                .contact-social_link-live:hover .is-normal {
-                    display: none;
-                }
-
-                /* Input field styling */
-
-                input,
-                textarea,
-                [contenteditable] {
-                    caret-color: #000000B8;
-                }
-
-                .floating-label {
-                    pointer-events: none;
-                }
-
-                .custom-input:not(:placeholder-shown) {
-                    padding-top: 1.5rem;
-                    padding-bottom: .5rem;
-                }
-
-                .custom-input:not(:placeholder-shown)~.floating-label {
-                    color: #6002ee;
-                    /** transform: scale(.75); **/
-                    top: .5rem;
-                    font-size: 12px;
-                }
-
-                .custom-input:not(:focus)~.floating-label {
-                    color: rgba(0, 0, 0, .6);
-                }
-
-
-
-                .custom-input {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 8px;
-                    margin-bottom: 0px;
-                    padding: 1rem 0.70rem;
-                    border: 1px solid #00000014;
-                    box-shadow: none;
-                    transition-property: background-color, border-color, border-width;
-                    transition-duration: 150ms, 150ms, 0ms;
-                    transition-timing-function: ease, ease, ease;
-                    font-size: 1rem;
-                    background-color: rgb(0 0 0 / 0%);
-                }
-
-
-                .text-input.custom {
-
-                    height: 56px;
-                }
-
-                .custom-input.-wfp-focus,
-                :where(html:not(.wf-design-mode)) .custom-input:focus {
-                    border-bottom-width: 2px;
-                    border-bottom-color: rgba(0, 0, 0, 0.08);
-                    background-color: rgb(0 0 0 / 0%);
-                    box-shadow: none;
-                }
-
-                .w-input:focus,
-                .w-select:focus {
-
-                    outline: 0;
-                    border: 1px solid var(--core-color-solid-slate-1400, #000);
-                }
-
-                .w-input,
-                .w-select {
-
-
-                    color: #000000B8;
-                }
-
-                .custom-input:not(:placeholder-shown)+.floating-label {
-                    color: #000000B8;
-                }
-
-                input,
-                textarea,
-                [contenteditable] {
-                    caret-color: #000000B8;
-                }
-
-                .custom-input:not(:placeholder-shown)+.floating-label {
-                    color: #000000B8;
-                }
-
-                .with-asterisk:after {
-                    content: "*";
-                    color: #C40000;
-                    margin-left: 3px;
-                }
-
-                /* Error state styles */
-                .custom-input.error-field:not(:focus)+.floating-label {
-                    color: #de0040;
-                }
-
-                .custom-input.error-field {
-                    border-color: #de0040;
-                }
-
-                .input-error-text.error-field {
-                    display: block;
-                    padding-top: 4px;
-                    padding-left: var(--16-px);
-                    color: #de0040;
-                }
-
-                .error-field-icon.error-field {
-                    position: absolute;
-                    width: 24px;
-                }
-
-                .error-field-icon.error-field {
-                    position: absolute;
-                    width: 24px;
-                    inset: 0% 2% 0% auto;
-                    display: block;
-                }
-
-                .error-field-icon {
-                    display: none;
-                }
-
-                .input-error-text {
-                    display: none;
-                }
-
-                .error-message {
-                    color: rgba(230, 25, 14, 0.72) !important;
-                    /* Color of the error message */
-                    font-size: 12px;
-                    /* Adjust font size as needed */
-                    margin-top: 4px;
-                    /* Add space between field and message */
-                }
-
-
-                /* After login and logged ou */
-                .logged-out-btn.hide-element {
-                    display: none !important;
-                }
-
-                .logged-in-btn.hide-element {
-                    display: none !important;
-                }
-
-                /*added hide-element classed to ctrader check email screens */
-                .section_ctrader-check-email.hide-element {
-                    display: none !important;
-                }
-
-                .section_ctrader-check-email-verify.hide-element {
-                    display: none !important;
-                }
-
-                .section_page-header_dint-get-email.hide-element {
-                    display: none !important;
-                }
-
-                /* Affiliates page range slider handle */
-                .rangeslider_handle:focus {
-                    outline: none !important;
-                }
-
-                .contact-social_link-wp:hover .is-hover,
-                .contact-social_link-live:hover .is-hover {
-                    display: block;
-                }
-
-                .contact-social_link-wp:hover .is-normal,
-                .contact-social_link-live:hover .is-normal {
-                    display: none;
-                }
-
-                .margin-bottom-md {
-                    margin-bottom: 0.2rem !important;
-                }
-
-                input.error-field::placeholder {
-                    color: red !important;
-                }
-
-                .disclaimer-active .header_background-image-wrapper {
-                    top: 5%;
-                }
-
-                @media screen and (max-width: 430px) {
-                    .disclaimer-active .header_background-image-wrapper {
-                        top: 10%;
-                    }
-                }
-
-                .error-field-block {
-                    border: 1px solid #de0040;
-                }
-
-                .input-error-text.error-field-block {
-                    display: block;
-                    border: none;
-                }
-
-                .sn_form img#email-sign-up-error-icon {
-                    width: 24px;
-                    border: none;
-                    position: absolute;
-                    top: 14px;
-                    height: 25px;
-                    right: 9px;
-                }
-
-                .sn_form input.error-field-block:focus {
-                    border-color: #de0040;
-                }
-
-                .error-field-icon.error-field-block {
-                    display: block;
-                }
-
-                .footer_logo svg {
-                    max-width: 72px;
-                }
-
-                /* For trustpilot code */
-                span#translations-customerssay {
-                    font-family: IBM Plex Sans, sans-serif;
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: red;
-                }
-
-                .navbar_icon {
-                    transition: transform 0.3s;
-                }
-
-                .navbar_accordion-content {
-                    transition: max-height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
-                    transform: translateY(-20px);
-                }
-
-
-                .navbar_accordion-trigger:before {
-                    display: none;
-                    content: "";
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    width: 4px;
-                    height: 44px;
-                    background: #FF444F;
-                }
-
-                .navbar_accordion-trigger.open:before {
-                    display: block;
-                }
-
-
-
-                .navbar_accordion-trigger.open svg {
-                    transform: rotate(180deg);
-                    transition: all 0.5s ease-in-out;
-                }
-
-                .navbar_accordion-trigger.current:before {
-                    display: block;
-                }
-
-                /* Disclaimer Responsive Issue Fixes - START */
-
-                @media (max-width: 479px) {
-                    .disclaimer-active .header_background-image-wrapper {
-                        top: 5%
-                    }
-                }
-
-                @media (min-width: 480px) and (max-width: 610px) {
-                    .disclaimer-active .header_background-image-wrapper {
-                        top: 15%
-                    }
-                }
-
-                @media (min-width: 611px) and (max-width: 767px) {
-                    .disclaimer-active .header_background-image-wrapper {
-                        top: 12%
-                    }
-                }
-
-                @media (min-width: 768px) {
-                    .disclaimer-active .header_background-image-wrapper {
-                        top: 7%
-                    }
-                }
-
-                /* Disclaimer Responsive Issue Fixes - END !!! - this overwrites the required styles - !!! */
-                /*.new-navbar_dropdown-content-bottom a.new-navbar_dropdown-link:hover {
-    background: transparent;
-}*/
-
-                /* Fix for Select issue for safari and firefox */
-
-                select {
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                }
-
-                /*to remove the password icon */
-                ::-ms-reveal {
-                    display: none;
-                }
-
-                .page-wrapper.nopad {
-                    padding: 0px !important;
-                }
-
-                .disclaimer-show .menu-wrapper {
-                    height: 80px;
-                }
-
-                .trustpilot-widget a[rel~="noopener"] {
-                    visibility: hidden;
-                }
-
-
-                /* Navbar bug solution */
-                .new-navbar_component .new-navbar_container>.new-navbar_menu {
-                    transform: none !important;
-                }
-
-                .input-group .error-field-icon.error-field {
-                    top: 16px;
-                }
-
-                /* ONLY ARABIC START*/
-
-
-                .dir-ltr {
-                    direction: ltr;
-                    text-align: left;
-                }
-
-                .new-navbar_menu.is-padding-0.is-adaptive:lang(ar) {
-                    margin-right: 0px;
-                }
-
-                :dir(rtl) .navbar_accordion-trigger:before {
-                    left: auto;
-                    right: 0px;
-                }
-
-                :dir(rtl) .sn_form img#email-sign-up-error-icon,
-                :dir(rtl) .error-field-icon.error-field {
-                    left: 8px;
-                    right: auto;
-                }
-
-                :dir(rtl) input#mobile-number {
-                    text-align: right;
-                }
-
-                a#profile-link:focus {
-                    outline: none;
-                }
-
-                /* ONLY ARABIC END*/
-                @media (max-width: 768px) {
-                    .blog-filters .w-dropdown {
-                        display: contents;
-                    }
-                }
-
-                /*
-.email-illustration #verification-text-c-trader{
-  word-wrap: break-word; 
-  word-break: break-all; 
-  overflow-wrap: break-word; 
-  white-space: normal;
-}
-*/
-
-
-                .show-cookie .cookie-middle-wrapper {
-                    margin-bottom: 85px;
-                }
-
-                .show-cookie .cookie-middle-wrapper:lang(de),
-                .show-cookie .cookie-middle-wrapper:lang(fr),
-                .show-cookie .cookie-middle-wrapper:lang(ru) {
-                    margin-bottom: 106px;
-                }
-
-                @media (max-width: 1025px) {
-                    .disclaimer_wrapper {
-                        display: none;
-                    }
-
-                    .disclaimer_wrapper.head,
-                    .head .banner_disclaimer.hide-element {
-                        display: block;
-                    }
-
-                    .show-cookie .cookie-middle-wrapper {
-                        margin-left: 45px;
-                        margin-bottom: 20px;
-                    }
-
-                    .show-cookie .cookie-middle-wrapper:lang(ar) {
-                        margin-right: 45px;
-                    }
-                }
-
-
-
-                @media (max-width: 478px) {
-                    .show-cookie .cookie-middle-wrapper {
-                        margin-bottom: 0px;
-                        margin-left: 0px;
-                    }
-                }
-
-                .foot .banner_disclaimer.hide-element {
-                    display: block;
-                }
-
-                @media (max-width: 430px) {
-
-                    .show-cookie .cookie-middle-wrapper:lang(de),
-                    .show-cookie .cookie-middle-wrapper:lang(fr),
-                    .show-cookie .cookie-middle-wrapper:lang(ru),
-                    .show-cookie .cookie-middle-wrapper:lang(de) {
-                        margin-bottom: 0px;
-                    }
-
-                    .show-cookie a.social-proof_link {
-                        z-index: -1;
-                    }
-
-                    .show-cookie .cookie-middle-wrapper:lang(ar) {
-                        margin-right: 0px;
-                    }
-
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp {
-                        bottom: 10.5rem;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-
-                    .disclaimer-visible #live_chat-wrapper,
-                    .disclaimer-visible .contact-social_links-wrapper {
-                        bottom: 6rem;
-                    }
-
-                    .disclaimer-visible #live_chat-wrapper:lang(de),
-                    .disclaimer-visible #live_chat-wrapper:lang(fr),
-                    .disclaimer-visible #live_chat-wrapper:lang(ru) {
-                        bottom: 8rem;
-                    }
-
-                    .disclaimer-visible .footer_texts {
-                        padding-bottom: 70px;
-                    }
-                }
-
-                .cookies_banner-wrapper {
-                    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
-                    -webkit-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
-                }
-
-                .show-cookie div#floating_cta {
-                    display: none;
-                }
-
-                .show-cookie .footer_bottom-wrapper {
-                    margin-bottom: 128px;
-                }
-
-                @media (max-width: 430px) {
-
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(fr),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(pt),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(vi),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(bn),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(tr),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(it),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(pl) {
-                        bottom: 12.5rem;
-                    }
-
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(ru),
-                    .show-cookie .contact-social_links-wrapper.is-whatsapp:lang(de) {
-                        bottom: 13.5rem;
-                    }
-                }
-
-                /* 25 years logo alignment */
-                .new-navbar_main-wrapper .logo-wrapper-25 {
-                    padding-top: 4px;
-                }
-
-                .prime-form-group .error-field-icon.error-field {
-                    top: 16px;
-                }
-
-                .prime-form-group .custom-input:not(:placeholder-shown)~.floating-label {
-                    color: #000000B8;
-                }
-
-                .form-group-wrapper.custom {
-                    transform: none !important;
-                    transform-style: unset !important;
-                }
-
-                /* START - This CSS is for button/dropdown component */
-
-                .dropdown-component.open .dropdown-component_list {
-                    display: block;
-                }
-
-                .dropdown-component:after {
-                    content: "▼";
-                    position: absolute;
-                    right: 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    font-size: 10px;
-                    color: #333;
-                    pointer-events: none;
-                }
-
-                /* END - This CSS is for button/dropdown component */
-
-
-                :root {
-                    --container-xlarge-width: 77rem;
-                    --overflowMargin: calc((100vw - var(--container-xlarge-width)) / 2);
-                }
-
-                .testimonial_list.is-custom-margin {
-                    margin-left: var(--overflowMargin);
-                    /* Other styles for the section */
-                }
-
-                .is-custom-margin .testimonial-item.w-dyn-item:last-child {
-                    margin-right: var(--overflowMargin);
-                }
-            </style>
-        </div>
+        <div class="global-styles w-embed"></div>
         <div data-animation="default" class="new-navbar_main-wrapper derivgo-query-element w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9dc9f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
             <div data-w-id="4c2420d9-8434-a78a-2a18-0dd184489c44" class="new-navbar_backdrop-blur"></div>
-            <div data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
+            <section data-w-id="2997ddca-0217-b8d8-8070-a9b0adc02c63" class="new-navbar_component">
                 <div class="new-navbar_component-wrapper">
                     <div class="new-navbar_container">
                         <div class="logo-wrap is-adaptive"><a href="/es" class="new-navbar_logo-link w-nav-brand">
@@ -1210,7 +984,6 @@ a,
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pt" href="/pt/markets/cryptocurrencies" class="new-navbar_dropdown-link">Português</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="es" href="/es/markets/cryptocurrencies" aria-current="page" class="new-navbar_dropdown-link w--current">Español</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="ru" href="/ru/markets/cryptocurrencies" class="new-navbar_dropdown-link">Русский</a></div>
-                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="th" href="/th/markets/cryptocurrencies" class="new-navbar_dropdown-link">ไทย</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="vi" href="/vi/markets/cryptocurrencies" class="new-navbar_dropdown-link">Tiếng Việt</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="bn" href="/bn/markets/cryptocurrencies" class="new-navbar_dropdown-link">বাংলা</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="si" href="/si/markets/cryptocurrencies" class="new-navbar_dropdown-link">සිංහල</a></div>
@@ -1343,16 +1116,16 @@ a,
                                                                     <div class="navbar_accordion-content">
                                                                         <div class="navbar_accodion-block">
                                                                             <div class="navbar_accordion-content-head">
-                                                                                <div class="navbar_accordion-subhead">Aprenda a operar</div>
+                                                                                <div class="navbar_accordion-subhead">Aprender</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/es/blog" class="navbar_accordion-link">Deriv Blog</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/academy" class="navbar_accordion-link">Deriv Academy</a><a href="/es/blog" class="navbar_accordion-link">Deriv Blog</a><a href="/es/trading-terms-glossary" class="navbar_accordion-link">Glosario</a></div>
                                                                         </div>
                                                                         <div class="navbar_accodion-block">
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Obtener apoyo</div>
                                                                             </div>
                                                                             <div class="navbar_accordion-content-group"><a href="/es/help-centre" class="navbar_accordion-link">Centro de ayuda</a>
-                                                                                <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" class="navbar_accordion-link padding-right-0">Comunidad</a>
+                                                                                <div class="navbar_accordion-menu-group"><a href="https://community.deriv.com/" target="_blank" class="navbar_accordion-link padding-right-0">Comunidad</a>
                                                                                     <div class="navbar_icon is-relative">
                                                                                         <div class="icon-embed-auto is-rotate w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                                 <g clip-path="url(#clip0_8673_4157)">
@@ -1425,7 +1198,7 @@ a,
                                             </div>
                                         </div>
                                         <div class="new-navbar_language-button-block">
-                                            <div id="w-node-_82d237d7-26ff-ddda-56a1-95171c3a9083-cff9dc9f" data-w-id="82d237d7-26ff-ddda-56a1-95171c3a9083" class="new-navbar_dropdown-toggle gap-small lang-mob padding-left-5p padding-left-5p">
+                                            <div id="w-node-_82d237d7-26ff-ddda-56a1-95171c3a9083-cff9dc9f" data-w-id="82d237d7-26ff-ddda-56a1-95171c3a9083" class="new-navbar_dropdown-toggle gap-small lang-mob padding-left-5p">
                                                 <div class="new-icon-embed-auto w-embed"><svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_17173_4606)">
                                                             <path d="M8 19C8.27083 19 8.57292 18.8646 8.90625 18.5938C9.23958 18.3229 9.58333 17.8646 9.9375 17.2188C10.25 16.5938 10.5 15.8542 10.6875 15H5.3125C5.5 15.8542 5.75 16.5938 6.0625 17.2188C6.41667 17.8646 6.76042 18.3229 7.09375 18.5938C7.42708 18.8646 7.72917 19 8 19ZM5.125 14H10.875C10.9583 13.375 11 12.7083 11 12C11 11.2917 10.9583 10.625 10.875 10H5.125C5.04167 10.625 5 11.2917 5 12C5 12.7083 5.04167 13.375 5.125 14ZM5.3125 9H10.6875C10.5 8.14583 10.25 7.40625 9.9375 6.78125C9.58333 6.13542 9.23958 5.67708 8.90625 5.40625C8.57292 5.13542 8.27083 5 8 5C7.72917 5 7.42708 5.13542 7.09375 5.40625C6.76042 5.67708 6.41667 6.13542 6.0625 6.78125C5.75 7.40625 5.5 8.14583 5.3125 9ZM11.875 10C11.9583 10.6458 12 11.3125 12 12C12 12.6875 11.9583 13.3542 11.875 14H14.7188C14.9062 13.3542 15 12.6875 15 12C15 11.3125 14.9062 10.6458 14.7188 10H11.875ZM14.3438 9C13.9271 8.14583 13.3646 7.40625 12.6562 6.78125C11.9479 6.15625 11.1458 5.6875 10.25 5.375C10.9167 6.27083 11.4062 7.47917 11.7188 9H14.3438ZM4.28125 9C4.59375 7.47917 5.09375 6.27083 5.78125 5.375C4.86458 5.6875 4.05208 6.15625 3.34375 6.78125C2.63542 7.40625 2.08333 8.14583 1.6875 9H4.28125ZM1.28125 10C1.09375 10.6458 1 11.3125 1 12C1 12.6875 1.09375 13.3542 1.28125 14H4.125C4.04167 13.3542 4 12.6875 4 12C4 11.3125 4.04167 10.6458 4.125 10H1.28125ZM10.25 18.625C11.1458 18.3125 11.9479 17.8438 12.6562 17.2188C13.3646 16.5938 13.9167 15.8542 14.3125 15H11.7188C11.4062 16.5208 10.9167 17.7292 10.25 18.625ZM5.78125 18.625C5.09375 17.7292 4.59375 16.5208 4.28125 15H1.6875C2.08333 15.8542 2.63542 16.5938 3.34375 17.2188C4.05208 17.8438 4.86458 18.3125 5.78125 18.625ZM8 20C6.54167 19.9792 5.20833 19.625 4 18.9375C2.79167 18.2292 1.8125 17.25 1.0625 16C0.354167 14.7292 0 13.3958 0 12C0 10.6042 0.354167 9.27083 1.0625 8C1.8125 6.75 2.79167 5.77083 4 5.0625C5.20833 4.375 6.54167 4.02083 8 4C9.45833 4.02083 10.7917 4.375 12 5.0625C13.2083 5.77083 14.1875 6.75 14.9375 8C15.6458 9.27083 16 10.6042 16 12C16 13.3958 15.6458 14.7292 14.9375 16C14.1875 17.25 13.2083 18.2292 12 18.9375C10.7917 19.625 9.45833 19.9792 8 20Z" fill="currentcolor" fill-opacity="0.72" />
@@ -1516,7 +1289,7 @@ a,
                                                                 <div class="new-navbar_dropdown-content">
                                                                     <div class="new-navbar_dropdown-content-bottom is-adaptive">
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">Aprenda a operar</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/es/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889df-cff9dc9f" class="new-navbar_dropdown-title is-adaptive">Aprender</div><a id="w-node-_1c3e6f14-5283-a502-b5ee-4b6a8ee35b9a-cff9dc9f" href="/academy" class="new-navbar_dropdown-link is-adaptive">Deriv Academy</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889e1-cff9dc9f" href="/es/blog" class="new-navbar_dropdown-link is-adaptive">Deriv Blog</a><a id="w-node-_7c88ce57-3279-068c-737f-589772d75d9d-cff9dc9f" href="/es/trading-terms-glossary" class="new-navbar_dropdown-link is-adaptive">Glosario</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list is-adaptive">
                                                                             <div class="new-navbar_dropdown-title is-adaptive">Obtener apoyo</div><a href="/es/help-centre" class="new-navbar_dropdown-link is-adaptive">Centro de ayuda</a><a href="https://community.deriv.com/" target="_blank" class="new-navbar_dropdown-link is-block is-adaptive w-inline-block">
@@ -1534,7 +1307,7 @@ a,
                                                                             </a><a href="/es/contact-us" class="new-navbar_dropdown-link is-adaptive">Contáctenos</a>
                                                                         </div>
                                                                         <div id="w-node-_05a65d05-2957-f84b-46d7-65bc5e71228c-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
-                                                                            <div class="new-navbar_dropdown-title is-adaptive">Recursos</div><a id="w-node-_05a65d05-2957-f84b-46d7-65bc5e712297-cff9dc9f" href="/es/payment-methods" class="new-navbar_dropdown-link is-adaptive">Métodos de pago</a>
+                                                                            <div class="new-navbar_dropdown-title is-adaptive">Recursos</div><a id="w-node-_73351125-5e67-031f-90dd-7006ee37fe30-cff9dc9f" href="/es/payment-methods" class="new-navbar_dropdown-link is-adaptive">Métodos de pago</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1592,7 +1365,7 @@ a,
                                                                 </defs>
                                                             </svg></div>
                                                         <div>Trader&#x27;s Hub</div>
-                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">Conectarse</a><a data-attributes="btn-primary-nav" href="/es/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">Pruebe la cuenta demo gratuita</a><a data-attributes="btn-primary-nav" href="/es/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">Pruebe la cuenta demo gratuita</a></div>
+                                                    </a><a id="white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" data-w-id="8e11cc17-102d-e2e0-18f4-df5dcff9ddbb" href="#" class="new-button new-navbar tab-hidden is-grey logged-out-btn is-adaptive hide-element w-button">Conectarse</a><a data-attributes="btn-primary-nav" href="/es/signup" class="new-button desctop-hidden logged-out-btn is-adaptive btn-free-demo hide-element w-button">Pruebe la cuenta demo gratuita</a><a data-attributes="btn-primary-nav" href="/es/signup" class="new-button logged-out-btn is-adaptive btn-free-demo hide-element w-button">Pruebe la cuenta demo gratuita</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1622,7 +1395,6 @@ a,
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pt" href="/pt/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Português</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="es" href="/es/markets/cryptocurrencies" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Español</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="ru" href="/ru/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Русский</a></div>
-                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="th" href="/th/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">ไทย</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="vi" href="/vi/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Tiếng Việt</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="bn" href="/bn/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">বাংলা</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="si" href="/si/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">සිංහල</a></div>
@@ -1642,14 +1414,14 @@ a,
                                             </nav>
                                         </div>
                                     </div>
-                                    <div class="new-navbar_container-wrapper"><a href="#" class="new-button tab new btn-free-demo w-button">Inscríbase</a><a href="#" class="new-button new-navbar tab w-button">Iniciar sesión</a></div>
+                                    <div class="new-navbar_container-wrapper"><a data-href="signup" href="#" class="new-button tab new btn-free-demo w-button">Inscríbase</a><a data-href="signin" href="#" class="new-button new-navbar tab w-button">Iniciar sesión</a></div>
                                 </div>
                             </div>
                         </nav>
                         <div class="new-show-tablet">
                             <div class="w-dyn-list">
                                 <div role="list" class="w-dyn-items">
-                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">Conectarse</a></div>
+                                    <div role="listitem" class="w-dyn-item"><a id="res-white-navbar_login" data-attributes="btn-secondary-nav" data-href="signin" href="#" class="new-button new-navbar log-in is-gray logged-out-btn hide-element w-button">Conectarse</a></div>
                                 </div>
                             </div>
                             <div class="navbar_menu-button w-nav-button">
@@ -1668,7 +1440,7 @@ a,
                 <div class="new-navbar_dynamic-background"></div>
                 <div class="new-navbar_background-solid"></div>
                 <div class="new-navbar_dark-curtain"></div>
-            </div>
+            </section>
         </div>
         <main class="main-wrapper">
             <header class="section_image-header is-chart-background">
@@ -1702,7 +1474,7 @@ a,
                                             </a></div>
                                     </div>
                                 </div>
-                                <div id="w-node-c43a3831-bb99-64dd-1494-6687cd650500-cc75d7a9" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos.webp" loading="lazy" width="1000" sizes="(max-width: 479px) 93vw, (max-width: 991px) 48vw, (max-width: 1439px) 45vw, 616px" alt="An illustration representing crypto trading assets like BTC, ETH, USDT, DOGE, LTC, TRX" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-1080.webp 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-1600.webp 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos.webp 2000w" class="markets-image" /></div>
+                                <div id="w-node-c43a3831-bb99-64dd-1494-6687cd650500-cc75d7a9" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos.webp" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-1080.webp 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos-p-1600.webp 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e3116e65b5df892753_Cryptos.webp 2000w" width="1000" sizes="(max-width: 479px) 93vw, (max-width: 991px) 48vw, 45vw" alt="An illustration representing crypto trading assets like BTC, ETH, USDT, DOGE, LTC, TRX" class="markets-image" /></div>
                             </div>
                         </div>
                     </div>
@@ -1780,14 +1552,12 @@ a,
                                 <div fs-accordion-element="accordion" class="container_market-category is-first">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3">Monedas principales</h3>
-                                        <p class="text-color-black">Opere las criptomonedas más populares</p>
                                     </div>
                                     <p>Las monedas principales Bitcoin y Ethereum son las monedas digitales más reconocidas cuyos movimientos tienen un impacto significativo en el panorama criptográfico. </p>
                                 </div>
                                 <div fs-accordion-element="accordion" class="container_market-category">
                                     <div class="header_market-category">
                                         <h3 class="heading-style-h3">Altcoins</h3>
-                                        <p class="text-color-black">Opere criptomonedas alternativas</p>
                                     </div>
                                     <p>Las alt coins son todas las criptodivisas distintas de Bitcoin y Ethereum.</p>
                                 </div>
@@ -1805,7 +1575,7 @@ a,
                             <div class="trade-blocks_wrapper">
                                 <div class="trade-blocks_item">
                                     <div class="trade-blocks_item-header">
-                                        <h3 class="heading-style-h2 padding-bottom padding-xsmall">CFD</h3>
+                                        <h3 class="heading-style-h2 padding-bottom-2 padding-xsmall-2">CFD</h3>
                                         <div class="trade-blocks_text-wrapper">
                                             <p>Especule sobre los movimientos de precios de las criptomonedas más populares con un alto apalancamiento e indicadores técnicos avanzados.</p>
                                             <div class="display-inlineflex"><a href="/es/trade/cfds" class="button is-link is-icon margin-top-16 is-center w-inline-block">
@@ -1852,6 +1622,136 @@ a,
                     </div>
                 </div>
             </section>
+            <section class="section_contact-us">
+                <div class="padding-global padding-section-medium">
+                    <div class="container-large">
+                        <div class="contact-us_content">
+                            <div class="padding-bottom padding-medium">
+                                <h2 class="text-align-center">Consulta nuestras preguntas frecuentes</h2>
+                            </div>
+                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                <div class="section-faq_component">
+                                    <div class="w-dyn-list">
+                                        <div role="list" class="w-dyn-items">
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">¿Cuáles son los beneficios de operar con criptomonedas?</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">Los beneficios del trading de criptomonedas son:</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">Altos retornos potenciales</strong>: Las criptomonedas se consideran una clase de activos de alta volatilidad. Esto conlleva un mayor riesgo, lo que podría llevar a mayores recompensas si tus especulaciones son correctas.</li>
+                                                                        <li>‍<strong id="">Diversificación</strong>: Las criptomonedas representan un tipo diferente de clase de activos que no está correlacionada directamente con los mercados financieros tradicionales, como las acciones o el forex. Esto podría reducir potencialmente el riesgo general de tu portafolio.</li>
+                                                                        <li>‍<strong id="">Accesibilidad</strong>: Los mercados de criptomonedas son accesibles las 24 horas, los 7 días de la semana, permitiendo a los traders comprar o vender activos digitales en cualquier momento, incluidos los fines de semana y días festivos.</li>
+                                                                        <li>‍<strong id="">Liquidez</strong>: Las principales criptomonedas, como Bitcoin y Ethereum, tienden a tener alta liquidez, lo que significa que hay muchos compradores y vendedores en el mercado. Esta alta liquidez puede facilitar la entrada o salida de posiciones sin un deslizamiento de precio significativo.</li>
+                                                                        <li>‍<strong id="">Descentralización</strong>: Las criptomonedas son típicamente descentralizadas y no están controladas por ninguna entidad o gobierno. Esta descentralización puede ser atractiva para aquellos que valoran la soberanía financiera y desean reducir su dependencia de los sistemas financieros tradicionales.</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">¿Cuál es la diferencia entre el trading de criptomonedas al contado y el trading de CFD de criptomonedas?</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">Las principales diferencias entre el trading de criptomonedas al contado (trading de la criptomoneda real) y el trading de CFD de criptomonedas (trading sobre los movimientos de precios) son:</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">Propiedad</strong>: Con el trading al contado, posees la criptomoneda subyacente y debes almacenarla en una billetera de criptomonedas o billetera de intercambio. En el trading de CFD, los traders pueden especular sobre los movimientos de precios de las criptomonedas sin poseer los activos subyacentes. Ten en cuenta que las billeteras de intercambio son controladas por los intercambios de criptomonedas, lo que significa que controlan las claves privadas asociadas a tu billetera de intercambio. Si el intercambio es hackeado o quiebra, podrías perder el acceso a tus activos de criptomonedas. Por eso, muchos traders transferirán criptomonedas a sus billeteras privadas. Los CFD no tienen este riesgo.</li>
+                                                                        <li>‍<strong id="">Apalancamiento</strong>: Los CFD te permiten operar con apalancamiento, controlando una posición más grande con menos capital. El trading de criptomonedas al contado suele ser en una base de 1:1, aunque también puedes tener cuentas de margen para el trading al contado.</li>
+                                                                        <li>‍<strong id="">Venta corta</strong>: Es posible hacer venta corta cuando operas con CFD de criptomonedas, pero no en el trading al contado de criptomonedas.</li>
+                                                                        <li>‍<strong id="">Costos</strong>: El trading de criptomonedas al contado implica comisiones. El trading de CFD de criptomonedas no tiene comisiones, pero en su lugar tendrá un costo de spread y usualmente viene con cargos financieros diarios (excepto en cuentas sin swap).</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">¿Qué factores pueden influir en los precios de las criptomonedas?</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">Los precios de las criptomonedas pueden verse influenciados por varios factores, que incluyen:</p>
+                                                                    <ul id="">
+                                                                        <li id="">Dinámicas de oferta y demanda del mercado</li>
+                                                                        <li id="">Desarrollos regulatorios y políticas gubernamentales</li>
+                                                                        <li id="">Avances tecnológicos y actualizaciones</li>
+                                                                        <li id="">Adopción y aceptación por parte de empresas e individuos</li>
+                                                                        <li id="">Incidentes de seguridad y hacking</li>
+                                                                        <li id="">Sentimiento de los inversores y especulación del mercado</li>
+                                                                        <li id="">Factores macroeconómicos y eventos globales</li>
+                                                                        <li id="">Cobertura mediática y percepción pública de las criptomonedas</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="listitem" class="w-dyn-item">
+                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                        <div class="accordion_toggle-content">
+                                                            <div class="accordion_toggle-info">
+                                                                <h3 class="accordion_dropdown-name">¿Cómo puedo investigar y analizar criptomonedas antes de tomar decisiones de trading?</h3>
+                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                        </div>
+                                                    </div>
+                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                        <div class="accordion_expanded-wrapper">
+                                                            <div class="accordion_location-info">
+                                                                <div class="accordion_dropdown-name w-richtext">
+                                                                    <p id="">Antes de tomar decisiones de trading sobre criptomonedas, puede realizar investigaciones y análisis utilizando los siguientes métodos:</p>
+                                                                    <ul>
+                                                                        <li>‍<strong id="">Análisis fundamental de criptomonedas:</strong> Evalúe el libro blanco del proyecto, los miembros del equipo, las asociaciones, la tecnología, el caso de uso y el apoyo de la comunidad. Analice el potencial de adopción del proyecto y sus ventajas competitivas.</li>
+                                                                        <li>‍<strong id="">Análisis técnico de criptomonedas:</strong> Estudie gráficos de precios, indicadores y patrones para identificar tendencias, niveles de soporte y resistencia, y puntos de entrada y salida potenciales. Utilice herramientas como promedios móviles, RSI (Índice de Fuerza Relativa) y MACD (Convergencia/Divergencia de Promedios Móviles).</li>
+                                                                        <li>‍<strong id="">Análisis del sentimiento del mercado de criptomonedas:</strong> Monitoree plataformas de redes sociales, foros en línea y el sentimiento de las noticias para evaluar el sentimiento general del mercado hacia una criptomoneda particular.</li>
+                                                                        <li>‍<strong id="">Gestión de riesgos en el trading de criptomonedas:</strong> Considere factores como la volatilidad del mercado, la liquidez y las relaciones riesgo-recompensa al evaluar operaciones potenciales. Establezca niveles apropiados de stop loss y take profit para gestionar el riesgo de manera efectiva.</li>
+                                                                    </ul>
+                                                                    <p id="">‍</p>
+                                                                    <p id="">Es importante señalar que invertir o comerciar con criptomonedas conlleva riesgos, y se recomienda buscar asesoría profesional y entender los riesgos involucrados antes de participar en el trading de criptomonedas.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div class="section_cta-footer w-dyn-list">
                 <div role="list" class="w-dyn-items">
                     <div role="listitem" class="w-dyn-item">
@@ -1863,7 +1763,7 @@ a,
                                             <div class="margin-bottom margin-small">
                                                 <h2 class="text-color-white">Opere criptomonedas 24/7</h2>
                                             </div>
-                                            <div class="cta_text">Comienza a comercializar los pares de criptomonedas más importantes del mundo.</div>
+                                            <div class="cta_text">Comience a operar los pares de criptomonedas más importantes del mundo.</div>
                                         </div>
                                         <div class="button-group cta-content btn-free-demo"><a data-attributes="btn-primary-fcta" data-class="w-button" href="/es/signup" class="button is-icon logged-out-btn hide-element w-inline-block">
                                                 <div>Pruebe la cuenta demo gratuita</div>
@@ -1958,19 +1858,19 @@ a,
                                         </svg></div>
                                 </a>
                                 <div id="footer_social-icons_diel" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="" /></a></div>
-                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivdotcom" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" alt="Facebook" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992327-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" alt="Twitter" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232a-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_official/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" alt="Instagram" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d99232d-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" alt="Youtube" /></a></div>
+                                    <div id="w-node-_7ee69540-8e38-190b-1c17-19f24d992330-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" alt="LinkedIn" /></a></div>
                                 </div>
                                 <div id="footer_social-icons_row" class="footer_social-icons">
-                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivespanol" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivespanol" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_espanol/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="" /></a></div>
-                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="" /></a></div>
+                                    <div class="footer_social-icons_item"><a href="https://www.facebook.com/derivespanol" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6661447d728f29ee4237fcf0_facebook.svg" loading="lazy" alt="Facebook" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbf7-f690dc6d" class="footer_social-icons_item"><a href="https://twitter.com/derivespanol" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a7_x-twitter-md.svg" loading="lazy" alt="Twitter" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfa-f690dc6d" class="footer_social-icons_item"><a href="https://www.instagram.com/deriv_espanol/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67b_instagram-md.svg" loading="lazy" alt="Instagram" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dbfd-f690dc6d" class="footer_social-icons_item"><a href="https://www.youtube.com/@deriv" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66613a1fcd4bb8b64795b203_youtube.svg" loading="lazy" alt="Youtube" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc00-f690dc6d" class="footer_social-icons_item"><a href="https://www.linkedin.com/company/derivdotcom/" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d67f_linkedin-md.svg" loading="lazy" alt="LinkedIn" /></a></div>
+                                    <div id="w-node-_658d6c14-e833-9575-42b3-2e5fdb09dc03-f690dc6d" class="footer_social-icons_item"><a href="https://t.me/Derivchannelofficial" target="_blank" class="footer_social-icons_wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d6a3_telegram-md.svg" loading="lazy" alt="Telegram" /></a></div>
                                 </div>
                             </div>
                             <div class="w-dyn-list">
@@ -2026,13 +1926,6 @@ a,
                                                 <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
                                                     <div class="footer_tabs-toggle w-dropdown-toggle">
                                                         <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
-                                                        <div>Herramientas</div>
-                                                    </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/es/tradingview" class="footer_tabs-dropdown-link w-dropdown-link">TradingView</a><a href="/es/mt5-trading-signals" class="footer_tabs-dropdown-link w-dropdown-link">Señales MT5</a></nav>
-                                                </div>
-                                                <div data-delay="0" data-hover="false" class="footer_tabs-dropdown w-dropdown">
-                                                    <div class="footer_tabs-toggle w-dropdown-toggle">
-                                                        <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
                                                         <div>Plataformas</div>
                                                     </div>
                                                     <nav class="footer_tabs-list w-dropdown-list"><a href="/es/trading-platforms/deriv-mt5" class="footer_tabs-dropdown-link w-dropdown-link">Deriv MT5</a><a href="/es/trading-platforms/deriv-ctrader" class="footer_tabs-dropdown-link w-dropdown-link">Deriv cTrader</a><a href="/es/trading-platforms/deriv-x" class="footer_tabs-dropdown-link w-dropdown-link">Deriv X</a><a href="/es/trading-platforms/deriv-trader" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Trader</a><a href="/es/trading-platforms/deriv-go" class="footer_tabs-dropdown-link w-dropdown-link">Deriv GO</a><a href="/es/trading-platforms/deriv-bot" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Bot</a><a href="https://smarttrader.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
@@ -2054,7 +1947,7 @@ a,
                                                         <div class="footer_tabs-icon w-icon-dropdown-toggle"></div>
                                                         <div>Soporte</div>
                                                     </div>
-                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/es/blog" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Blog</a><a href="/es/help-centre" class="footer_tabs-dropdown-link w-dropdown-link">Centro de ayuda</a><a href="https://community.deriv.com" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
+                                                    <nav class="footer_tabs-list w-dropdown-list"><a href="/es/help-centre" class="footer_tabs-dropdown-link w-dropdown-link">Centro de ayuda</a><a href="/academy" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Academy</a><a href="/es/blog" class="footer_tabs-dropdown-link w-dropdown-link">Deriv Blog</a><a href="https://community.deriv.com" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
                                                             <div>Comunidad</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_8673_4157)">
@@ -2147,14 +2040,14 @@ a,
                                                                     </defs>
                                                                 </svg></div>
                                                         </a>
-                                                    </div><a href="/blog/posts/deriv-gold-accreditation-by-investors-in-people" target="_blank" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a>
+                                                    </div><a href="/es/blog/posts/deriv-achieves-prestigious-platinum-accreditation-by-investors-in-people" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a>
                                                 </div>
                                                 <div class="footer_link-list gap-medium">
                                                     <div class="footer_link-list">
                                                         <div class="footer_title">Operar</div><a href="/es/trade/cfds" class="footer_link">CFD</a><a href="/es/trade/options" class="footer_link">Opciones</a>
                                                     </div>
                                                     <div class="footer_link-list">
-                                                        <div class="footer_title">Soporte</div><a href="/es/blog" class="footer_link">Deriv Blog</a><a href="/es/help-centre" class="footer_link">Centro de ayuda</a><a href="https://community.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
+                                                        <div class="footer_title">Soporte</div><a href="/es/help-centre" class="footer_link">Centro de ayuda</a><a href="/academy" class="footer_link">Deriv Academy</a><a href="/es/blog" class="footer_link">Deriv Blog</a><a href="https://community.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
                                                             <div>Comunidad</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_8673_4157)">
@@ -2184,9 +2077,6 @@ a,
                                                 <div class="footer_link-list">
                                                     <div class="footer_link-list">
                                                         <div class="footer_title">Mercados</div><a href="/es/markets/forex" class="footer_link">Forex</a><a href="/es/markets/derived-indices/synthetic-indices" class="footer_link">Índices Derived</a><a href="/es/markets/stocks" class="footer_link">Acciones</a><a href="/es/markets/stock-indices" class="footer_link">Índices bursátiles</a><a href="/es/markets/commodities" class="footer_link">Materias primas</a><a href="/es/markets/cryptocurrencies" aria-current="page" class="footer_link w--current">Criptomonedas</a><a href="/es/markets/etfs" class="footer_link">ETF</a><a href="/es/markets/tactical-indices" class="footer_link">Índices Tactical</a>
-                                                    </div>
-                                                    <div class="footer_link-list">
-                                                        <div class="footer_title">Herramientas</div><a href="/es/tradingview" class="footer_link">TradingView</a><a href="/es/mt5-trading-signals" class="footer_link">Señales MT5</a>
                                                     </div>
                                                 </div>
                                                 <div class="footer_link-list">
@@ -2241,7 +2131,7 @@ a,
                                                         <div class="footer_banner-logo-wrapper"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47a_deriv%20product-deriv%20go.svg" alt="" class="footer_banner-logo-image" />
                                                             <div class="footer_banner-logo-title">Deriv GO</div>
                                                         </div>
-                                                        <div>Opere multipliers en nuestra aplicación móvil.</div>
+                                                        <div>Comercie Multipliers y Accumulator Options en nuestra aplicación móvil.</div>
                                                         <div class="footer_banner-badge qr-code"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4d7_deriv.link_derivgo%20(4)%201.svg" alt="" class="footer_banner-qrcode" />
                                                             <div>Escanear para descargar</div>
                                                         </div>
@@ -2253,6 +2143,7 @@ a,
                                                         </a><a href="https://appgallery.huawei.com/app/C103801913" target="_blank" class="footer_banner-badge gallery w-inline-block">
                                                             <div class="footer_banner-store-icon-wrapper"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d4db_icon.svg" alt="" class="footer_banner-store-icon" /></div><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d47d_text.svg" alt="" class="footer_banner-store-text" />
                                                         </a></div>
+                                                    <p>*La disponibilidad de Deriv GO depende de su país de residencia.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2260,10 +2151,10 @@ a,
                                             <div class="footer_legal-list">
                                                 <div class="footer_texts">
                                                     <div id="footer_text_row" class="footer_text w-richtext">
-                                                        <p>Deriv Investments (Europe) Limited está autorizada y regulada por la Malta Financial Services Authority bajo el Investment Services Act.<br />Deriv (FX) Ltd está autorizada por la Labuan Financial Services Authority. <br />Deriv (BVI) Ltd está autorizada por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas. <br />Deriv (V) Ltd está autorizada y regulada por la Comisión de Servicios Financieros de Vanuatu.<br />Deriv (Mauritius) Ltd está autorizada por la Financial Services Commission, Mauritius.<br />Deriv (SVG) LLC tiene su oficina registrada en First Floor, SVG Teachers Credit Union Uptown Building, Corner of James and Middle Street, Kingstown P.O., St Vincent and the Grenadines. <br />Deriv.com Limited, una empresa registrada en Guernsey, es la sociedad holding de estas entidades.<br /><br />Asegúrese de leer nuestros <a href="/es/terms-and-conditions"><strong>Términos y condiciones</strong></a>, <a href="https://docs.deriv.com/tnc/risk-disclosure.pdf" target="_blank"><strong>Divulgación de riesgos</strong></a> y <a href="/es/responsible"><strong>Operaciones seguras y responsables</strong></a> para comprender plenamente los riesgos implicados antes de utilizar nuestros servicios. Por favor, tenga en cuenta también que la información de este sitio web no constituye asesoramiento en materia de inversión.</p>
+                                                        <p id="">Deriv Investments (Europe) Limited está autorizada y regulada por la Malta Financial Services Authority bajo el Investment Services Act.<br>Deriv (FX) Ltd está autorizada por la Labuan Financial Services Authority. <br>Deriv (BVI) Ltd está autorizada por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas. <br>Deriv (V) Ltd está autorizada y regulada por la Vanuatu Financial Services Commission.<br>Deriv (Mauritius) Ltd está autorizada por la Financial Services Commission, Mauritius.<br>Deriv (SVG) LLC tiene su oficina registrada en First Floor, SVG Teachers Credit Union Uptown Building, Corner of James and Middle Street, Kingstown P.O., St Vincent and the Grenadines. <br>Deriv.com Limited, una empresa registrada en Guernsey, es la sociedad holding de estas entidades.<br><br>Asegúrese de leer nuestros <a href="/terms-and-conditions" id=""><strong id="">Términos y condiciones</strong></a>, <a href="https://docs.deriv.com/tnc/risk-disclosure.pdf" target="_blank"><strong id="">Divulgación de riesgos</strong></a> y <a href="/responsible" id=""><strong id="">Operaciones seguras y responsables</strong></a> para comprender plenamente los riesgos implicados antes de utilizar nuestros servicios. Por favor, tenga en cuenta también que la información de este sitio web no constituye asesoramiento en materia de inversión.</p>
                                                     </div>
                                                     <div id="footer_text_diel" class="footer_text w-richtext">
-                                                        <p>Deriv Investments (Europe) Limited está autorizada y regulada por la Malta Financial Services Authority bajo el Investment Services Act.<br />Deriv (FX) Ltd está autorizada por la Labuan Financial Services Authority. <br />Deriv (BVI) Ltd está autorizada por la British Virgin Islands Financial Services Commission. <br />Deriv (V) Ltd está autorizada y regulada por la Comisión de Servicios Financieros de Vanuatu.<br />Deriv (Mauritius) Ltd está autorizada por la Financial Services Commission, Mauritius.<br />Deriv (SVG) LLC tiene su oficina registrada en First Floor, SVG Teachers Credit Union Uptown Building, Corner of James and Middle Street, Kingstown P.O., St Vincent and the Grenadines.<br />Deriv.com Limited, una empresa registrada en Guernsey, es la sociedad holding de estas entidades.<br /><br />Asegúrese de leer nuestros <a href="/es/terms-and-conditions"><strong>Términos y condiciones</strong></a>, <a href="https://docs.deriv.com/tnc/risk-disclosure.pdf" target="_blank"><strong>Divulgación de riesgos</strong></a>, y <a href="/es/responsible"><strong>Operaciones seguras y responsables</strong></a> para comprender plenamente los riesgos implicados antes de utilizar nuestros servicios. Por favor, tenga en cuenta también que la información de este sitio web no constituye asesoramiento en materia de inversión.</p>
+                                                        <p id="">Deriv Investments (Europe) Limited está autorizada y regulada por la Malta Financial Services Authority bajo el Investment Services Act.<br>Deriv (FX) Ltd está autorizada por la Labuan Financial Services Authority. <br>Deriv (BVI) Ltd está autorizada por la British Virgin Islands Financial Services Commission. <br>Deriv (V) Ltd está autorizada y regulada por la Vanuatu Financial Services Commission. <br>Deriv (Mauritius) Ltd está autorizada por la Financial Services Commission, Mauritius.<br>Deriv (SVG) LLC tiene su oficina registrada en First Floor, SVG Teachers Credit Union Uptown Building, Corner of James and Middle Street, Kingstown P.O., St Vincent and the Grenadines.<br>Deriv.com Limited, una empresa registrada en Guernsey, es la sociedad holding de estas entidades.<br><br>Asegúrese de leer nuestros <a href="/terms-and-conditions" id=""><strong id="">Términos y condiciones</strong></a>, <a href="https://docs.deriv.com/tnc/risk-disclosure.pdf" target="_blank" id=""><strong id="">Divulgación de riesgos</strong></a>, y <a href="/responsible" id=""><strong id="">Operaciones seguras y responsables</strong></a> para comprender plenamente los riesgos implicados antes de utilizar nuestros servicios. Por favor, tenga en cuenta también que la información de este sitio web no constituye asesoramiento en materia de inversión.</p>
                                                     </div>
                                                 </div>
                                                 <div class="footer_risk-warning w-richtext">
@@ -2271,11 +2162,11 @@ a,
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="show-tablet">
+                                            <div class="footer_badge-wrapper"><a href="/es/blog/posts/deriv-achieves-prestigious-platinum-accreditation-by-investors-in-people" target="_blank" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="show-tablet">
-                                <div class="footer_badge-wrapper"><a href="/blog/posts/deriv-gold-accreditation-by-investors-in-people" target="_blank" class="investor_people w-inline-block"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d482_invest%20in%20people%20-%20platinum%202.svg" loading="lazy" alt="" class="footer_badge" /></a></div>
                             </div>
                         </div>
                     </div>
@@ -2284,119 +2175,9 @@ a,
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.f3968512b.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.20.11/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.3925c6dcd.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
-
-    <!-- Trackjs - start of code -->
-
-    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-    <script>
-        TrackJS.install({
-            token: "346262e7ffef497d85874322fff3bbf8",
-            application: "derivcom-v2",
-            dedupe: true,
-        });
-    </script>
-
-    <!-- Trackjs - end of code -->
-
-    <!-- Display current language - start of code -->
-    <script>
-        var Webflow = Webflow || [];
-        Webflow.push(function() {
-            let currentLocaleElement = document.querySelector(
-                ".locale > .new-navbar_dropdown-link.w--current"
-            );
-
-            if (currentLocaleElement) {
-                let currentLocaleIsoCode = currentLocaleElement.getAttribute("hreflang");
-
-                let currentLocaleIsoCodeTexts = document.querySelectorAll(
-                    ".current-locale-iso-code"
-                );
-
-                if (currentLocaleIsoCode && currentLocaleIsoCodeTexts.length) {
-                    for (let currentLocaleIsoCodeText of currentLocaleIsoCodeTexts) {
-                        currentLocaleIsoCodeText.innerText = currentLocaleIsoCode;
-                    }
-                }
-            }
-        });
-    </script>
-    <!-- Display current language - end of code -->
-
-    <script>
-        // Function for setting cookies when changing language and redirecting to the current language page
-        document.addEventListener("DOMContentLoaded", function() {
-            function setCookie(name, value, days) {
-                let expires = "";
-                if (days) {
-                    let date = new Date();
-                    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-
-            function getCookie(name) {
-                let cookies = document.cookie.split(";");
-                for (let i = 0; i < cookies.length; i++) {
-                    let cookie = cookies[i].trim();
-                    if (cookie.startsWith(name + "=")) {
-                        return cookie.substring(name.length + 1);
-                    }
-                }
-                return null;
-            }
-
-            let localeItems = document.querySelectorAll(".w-locales-items");
-
-            if (localeItems.length > 0) {
-                localeItems.forEach(function(item) {
-                    let links = item.querySelectorAll("a");
-                    links.forEach(function(link) {
-                        link.addEventListener("click", function(event) {
-                            event.preventDefault();
-                            let language = link.getAttribute("hreflang");
-                            setCookie("webflow-user-language", language, 30);
-                            window.location.href = link.href;
-                        });
-                    });
-                });
-
-                function clickLinkWithLanguage(language) {
-                    let link = document.querySelector('a[hreflang="' + language + '"]');
-                    if (link && window.location.pathname !== link.getAttribute("href")) {
-                        link.click();
-                    }
-                }
-                window.setLanguageCookie = (language) => {
-                    setCookie("webflow-user-language", language, 30);
-                };
-
-                let languageCookie = getCookie("webflow-user-language");
-                let targetPaths = [
-                    "/careers",
-                    "/locations",
-                    "/derivtech",
-                    "/derivlife",
-                    "/eu-careers",
-                    "/our-locations",
-                ];
-                let path = window.location.pathname;
-                let targetPathUrl = false;
-
-                // Check if the current path matches any of the target paths
-                if (targetPaths.some((targetPath) => path.includes(targetPath))) {
-                    targetPathUrl === true;
-                }
-                if (languageCookie && targetPathUrl) {
-                    clickLinkWithLanguage(languageCookie);
-                }
-            }
-        });
-    </script>
 
     <script>
         var Webflow = Webflow || [];
@@ -2404,7 +2185,6 @@ a,
             if (document.querySelector(".new-navbar_component")) {
                 // Find the .new-navbar_component element
                 const navbarComponent = document.querySelector(".new-navbar_component");
-
                 // Add event listeners for hover
                 navbarComponent.addEventListener("mouseenter", () => {
                     if (window.innerWidth > 991) {
@@ -2416,12 +2196,10 @@ a,
                         enableScroll();
                     }
                 });
-
                 // Function to disable scroll
                 function disableScroll() {
                     document.body.classList.add("disable-scroll");
                 }
-
                 // Function to enable scroll
                 function enableScroll() {
                     document.body.classList.remove("disable-scroll");
@@ -2429,28 +2207,32 @@ a,
             }
         });
     </script>
-
     <!-- Datadog Integration -->
-    <script src="https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js" type="text/javascript"></script>
-    <script>
-        window.DD_RUM &&
-            window.DD_RUM.init({
-                clientToken: "pub08554ab30284600af157441bfb0fa923",
-                applicationId: "5c8975a3-ec86-4a64-8a3a-e6888fdde082",
-                // `site` refers to the Datadog site parameter of your organization
-                // see https://docs.datadoghq.com/getting_started/site/
-                site: "datadoghq.com",
-                service: "deriv.com-v2",
-                env: "production",
-                // Specify a version number to identify the deployed version of your application in Datadog
-                // version: '1.0.0',
-                sessionSampleRate: 10,
-                sessionReplaySampleRate: 0,
-                trackUserInteractions: true,
-                trackResources: true,
-                trackLongTasks: true,
-                defaultPrivacyLevel: "mask-user-input",
-            });
+    <script defer>
+        (function() {
+            var script = document.createElement("script");
+            script.src =
+                "https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js";
+            script.type = "text/javascript";
+            script.onload = function() {
+                if (window.DD_RUM) {
+                    window.DD_RUM.init({
+                        clientToken: "pub08554ab30284600af157441bfb0fa923",
+                        applicationId: "5c8975a3-ec86-4a64-8a3a-e6888fdde082",
+                        site: "datadoghq.com",
+                        service: "deriv.com-v2",
+                        env: window.location.hostname === "deriv.com" ? "production" : "staging",
+                        sessionSampleRate: 10,
+                        sessionReplaySampleRate: 0,
+                        trackUserInteractions: true,
+                        trackResources: true,
+                        trackLongTasks: true,
+                        defaultPrivacyLevel: "mask-user-input",
+                    });
+                }
+            };
+            document.body.appendChild(script);
+        })();
     </script>
     <!-- End Datadog Integration -->
     <script>
@@ -2462,211 +2244,8 @@ a,
             });
             return cookies[value];
         };
-
         // Listen for DOMContentLoaded event
-        document.addEventListener("DOMContentLoaded", function() {
-            const clientsCountry = window.getClientCountry();
-
-            const getDateFirstContact = () => {
-                const dateFirstContactString = window.parseCookies(
-                    document.cookie,
-                    "date_first_contact"
-                );
-                if (dateFirstContactString) {
-                    const parsedData = JSON.parse(dateFirstContactString);
-                    return parsedData.date_first_contact ? {
-                            date_first_contact: parsedData.date_first_contact
-                        } :
-                        null;
-                }
-                return null;
-            };
-
-            const getSignupDevice = () => {
-                const signupDeviceString = window.parseCookies(
-                    document.cookie,
-                    "signup_device"
-                );
-                if (signupDeviceString) {
-                    const parsedData = JSON.parse(signupDeviceString);
-                    return parsedData.signup_device ? {
-                            signup_device: parsedData.signup_device
-                        } :
-                        null;
-                }
-                return null;
-            };
-
-            const lang = window.parseCookies(document.cookie, "webflow-user-language");
-
-            const countriesToRedirect = [
-                "as",
-                "au",
-                "at",
-                "be",
-                "bg",
-                "ca",
-                "hr",
-                "cy",
-                "cz",
-                "dk",
-                "ee",
-                "fi",
-                "fr",
-                "gr",
-                "gu",
-                "gg",
-                "hk",
-                "hu",
-                "ir",
-                "ie",
-                "im",
-                "il",
-                "it",
-                "je",
-                "ng",
-                "mm",
-                "sy",
-                "kp",
-                "lv",
-                "lt",
-                "lu",
-                "my",
-                "mt",
-                "nl",
-                "nz",
-                "mp",
-                "py",
-                "pl",
-                "pt",
-                "pr",
-                "ro",
-                "rw",
-                "sk",
-                "si",
-                "es",
-                "se",
-                "ae",
-                "gb",
-                "us",
-                "um",
-                "vu",
-                "vi",
-                "ky",
-                "cu",
-                "de",
-            ];
-
-            if (
-                window.location.pathname.endsWith("p2p") &&
-                !window.location.pathname.startsWith("/blog")
-            ) {
-                const clientsCountry = window.getClientCountry();
-                if (clientsCountry && countriesToRedirect.includes(clientsCountry)) {
-                    if (lang === "en") {
-                        window.location.replace("/404");
-                    } else {
-                        window.location.replace(`/${lang}/404`);
-                    }
-                }
-            }
-
-            if (
-                window.parseCookies(document.cookie, "client_information") !== undefined
-            ) {
-                let purchaseButtons = document.querySelectorAll(
-                    "a.live-markets_button.is-secondary.is-small.is-purchase.w-button"
-                );
-
-                let sellButtons = document.querySelectorAll(
-                    "a.live-markets_button.is-secondary.is-small.is-sell.w-button"
-                );
-
-                function updateHref(buttons) {
-                    buttons.forEach((button) => {
-                        button.href = "https://app.deriv.com/appstore/traders-hub";
-                    });
-                }
-
-                updateHref(purchaseButtons);
-                updateHref(sellButtons);
-            }
-
-            //live chat button hide on menu appear
-            const mobileMenu = document.getElementById("mobile-menu");
-            const liveChatWrapper = document.getElementById("live_chat-wrapper");
-
-            let isLiveChatVisible = true;
-            let isLiveChatActivated = false;
-
-            function fadeIn(element) {
-                var opacity = 0;
-                var timer = setInterval(function() {
-                    if (opacity >= 1) {
-                        clearInterval(timer);
-                    }
-                    element.style.opacity = opacity;
-                    opacity += 0.1;
-                }, 30);
-            }
-
-            function fadeOut(element) {
-                var opacity = 1;
-                var timer = setInterval(function() {
-                    if (opacity <= 0) {
-                        clearInterval(timer);
-                        element.style.display = "none";
-                    }
-                    element.style.opacity = opacity;
-                    opacity -= 0.1;
-                }, 30);
-            }
-
-            // end of live chat hide
-        });
     </script>
-
-    <!-- Responsive Menu - end of code -->
-
-    <script>
-        // This function adds a red line to the current accordion trigger
-        var Webflow = Webflow || [];
-        Webflow.push(function() {
-            // Find all accordion triggers
-            let triggers = document.querySelectorAll(".navbar_accordion-trigger");
-
-            triggers.forEach((trigger) => {
-                trigger.addEventListener("click", function() {
-                    // Remove the .current class from all triggers
-                    triggers.forEach((t) => t.classList.remove("current"));
-
-                    // Add the .current class to the clicked trigger
-                    this.classList.add("current");
-                });
-            });
-
-            // Find the current page link in Navbar
-            let currentLink = document.querySelector(
-                ".navbar_accordion-link.w--current"
-            );
-
-            if (currentLink) {
-                // Find the closest accordion item
-                let accordionItem = currentLink.closest(".navbar_accordion-item");
-
-                if (accordionItem) {
-                    // Find the trigger element within the found parent
-                    let trigger = accordionItem.querySelector(".navbar_accordion-trigger");
-
-                    if (trigger) {
-                        // Add the .current class to the trigger
-                        trigger.classList.add("current");
-                    }
-                }
-            }
-        });
-    </script>
-    <!-- Mobile Menu - end of code -->
 
     <!-- Live Chat - start of code -->
     <script>
@@ -2699,8 +2278,12 @@ a,
             }
         };
         const openLiveChat = () => {
-            if (window.LC_API && window.LC_API.open_chat_window) {
-                window.LC_API.open_chat_window();
+            if (window.isFreshChat == true && window.fcWidget) {
+                window.fcWidget.open();
+            } else {
+                if (window.LC_API && window.LC_API.open_chat_window) {
+                    window.LC_API.open_chat_window();
+                }
             }
         };
         const checkUrlForLiveChat = () => {
@@ -2743,7 +2326,7 @@ a,
                 } = client_information ? JSON.parse(client_information) : {};
 
                 /* the session variables are sent to CS team dashboard to notify user has logged in
-                  and also acts as custom variables to trigger targeted engagement */
+                        and also acts as custom variables to trigger targeted engagement */
                 const session_variables = {
                     is_logged_in: is_logged_in,
                     loginid: loginid ?? "",
@@ -2808,7 +2391,73 @@ a,
         checkCookieInterval = setInterval(checkLoggedIn, 2000);
         //end of dashboard send data
 
+        // Start: FreshChat load function
+        const loadFreshChatScript = (callback, maxRetries = 3, retryDelay = 2000) => {
+            let retryCount = 0;
+
+            const loadScript = () => {
+                const script = document.createElement("script");
+                script.src = "https://static.deriv.com/scripts/freshchat.js?v=1";
+                script.async = true;
+
+                script.onload = () => {
+                    if (typeof callback === "function") {
+                        callback();
+                    }
+                };
+
+                script.onerror = () => {
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(loadScript, retryDelay);
+                    } else {
+                        console.warn(
+                            "Freshchat script could not be loaded after maximum retries."
+                        );
+                    }
+                };
+
+                document.head.appendChild(script);
+            };
+
+            loadScript();
+        };
+
+        // End: FreshChat load function
+
         document.addEventListener("DOMContentLoaded", () => {
+            // Start: Check featureflag for freshchat and load script
+            function checkFreshChatEnabled() {
+                const intervalId = setInterval(() => {
+                    if (typeof window.useGrowthbookFeatureFlag === "function") {
+                        window.isFreshChat = window.useGrowthbookFeatureFlag({
+                            featureFlag: "enable_freshworks_live_chat_wf",
+                        });
+
+                        if (typeof window.isFreshChat === "boolean") {
+                            clearInterval(intervalId);
+
+                            if (window.isFreshChat) {
+                                loadFreshChatScript(() => {
+                                    window.FreshChat.initialize({
+                                        hideButton: true,
+                                    });
+                                });
+                            }
+                        }
+                    } else if (window.useGrowthbookFeatureFlag === undefined) {
+                        console.log("Growthbook function not available, retrying...");
+                    } else {
+                        clearInterval(intervalId);
+                        console.error(
+                            "Growthbook function not available after multiple retries."
+                        );
+                    }
+                }, 500);
+            }
+
+            checkFreshChatEnabled();
+            // End: Check featureflag for freshchat and load script
             loadLiveChatScript();
             const liveChatIcons = document.querySelectorAll(".livechatbtn");
             if (liveChatIcons.length > 0) {
@@ -2838,7 +2487,6 @@ a,
         });
     </script>
     <!-- Live Chat - end of code -->
-
     <script>
         window.__lc = window.__lc || {};
         window.__lc.license = 12049137;
@@ -2882,472 +2530,55 @@ a,
         })(window, document, [].slice);
     </script>
     <noscript><a href="https://www.livechat.com/chat-with/12049137/" rel="nofollow">Chat with us</a>, powered by
-        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+    </noscript>
     <!-- End of LiveChat code -->
 
-    <!-- mobile menu height calculation - start of code -->
-    <script>
-        var Webflow = Webflow || [];
-        Webflow.push(function() {
-            let navbarMenuBtn = document.querySelector(".navbar_menu-button");
-
-            if (navbarMenuBtn) {
-                navbarMenuBtn.addEventListener("click", function() {
-                    let windowHeight = window.innerHeight;
-
-                    let navbarWrapper = document.querySelector(".new-navbar_main-wrapper");
-
-                    if (navbarWrapper) {
-                        let navbarHeight = navbarWrapper.offsetHeight;
-
-                        let calculatedHeight = windowHeight - navbarHeight;
-
-                        let navbarMenu = document.querySelector(".new-navbar_menu");
-                        if (navbarMenu) {
-                            navbarMenu.style.height = `${calculatedHeight}px`;
-                        }
-                    }
+    <!-- Trackjs - start of code -->
+    <script defer>
+        (function() {
+            var script = document.createElement("script");
+            script.src = "https://cdn.trackjs.com/agent/v3/latest/t.js";
+            script.onload = function() {
+                // Install TrackJS after the script loads
+                TrackJS.install({
+                    token: "346262e7ffef497d85874322fff3bbf8",
+                    application: "derivcom-v2",
+                    dedupe: true,
                 });
-            }
-        });
-    </script>
-    <!-- mobile menu height calculation - end of code -->
-
-    <!-- scroll list of languages -->
-    <script>
-        // this code ensures opening a list of languages on mobile starting from the top
-        var Webflow = Webflow || [];
-        Webflow.push(function() {
-            let langMobButton = document.querySelector(".lang-mob");
-
-            if (langMobButton) {
-                langMobButton.addEventListener("click", function() {
-                    let mobileMenuWrapper = document.querySelector(
-                        ".new-navbar_menu-wrapper"
-                    );
-
-                    if (mobileMenuWrapper) {
-                        mobileMenuWrapper.scrollBy({
-                            top: -3000
-                        });
-                    }
-                });
-            }
-        });
-    </script>
-    <!-- end of scroll list of languages -->
-
-    <!--EU cookie pop up -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            class CookieStorage {
-                constructor(cookieName) {
-                    this.cookieName = cookieName;
-                }
-
-                setItem(value) {
-                    const expiryDate = new Date();
-                    expiryDate.setDate(expiryDate.getDate() + 30); // 30 days from now
-                    const expires = "expires=" + expiryDate.toUTCString();
-                    const cookieValue = encodeURIComponent(JSON.stringify(value));
-                    document.cookie = `${this.cookieName}=${cookieValue};${expires};path=/`;
-                }
-                getItem() {
-                    const cookies = document.cookie.split(";");
-                    for (let i = 0; i < cookies.length; i++) {
-                        let cookie = cookies[i].trim();
-                        if (cookie.startsWith(`${this.cookieName}=`)) {
-                            let cookieValue = cookie.substring(`${this.cookieName}=`.length);
-                            return JSON.parse(decodeURIComponent(cookieValue));
-                        }
-                    }
-                    return null;
-                }
-            }
-
-            const tracking_status_cookie = new CookieStorage("tracking_status");
-            const tracking_status_cookie_declined = new CookieStorage(
-                "tracking_status_decline"
-            );
-
-            const popupElement = document.querySelector(".cookies_background-wrapper");
-
-            //set datalayer details
-            const has_dataLayer = window.dataLayer;
-            const client_information = window.parseCookies(
-                document.cookie,
-                "client_information"
-            );
-            const is_logged_in = !!client_information;
-            has_dataLayer &&
-                window.dataLayer.push({
-                    loggedIn: is_logged_in,
-                    language: window.parseCookies(document.cookie, "webflow-user-language") || "en",
-                    ...(is_logged_in && {
-                        visitorId: client_information?.loginid,
-                        currency: client_information?.currency,
-                        email: client_information?.email,
-                    }),
-                });
-
-            // Check if pathname contains "eu" and tracking_status_cookie is null
-
-            if (
-                window.location.pathname.includes("eu") &&
-                !tracking_status_cookie.getItem() &&
-                !tracking_status_cookie_declined.getItem()
-            ) {
-                popupElement.classList.remove("hide-element");
-                document.body.classList.add("show-cookie");
-            }
-
-            // Select the accept and decline buttons
-            const acceptButton = document.getElementById("accept-cookie");
-            const declineButton = document.getElementById("dont-accept-cookie");
-
-            acceptButton?.addEventListener("click", function() {
-                tracking_status_cookie.setItem(true);
-                popupElement.classList.add("hide-element");
-                document.body.classList.remove("show-cookie");
-            });
-
-            declineButton?.addEventListener("click", function() {
-                tracking_status_cookie_declined.setItem(true);
-                tracking_status_cookie.setItem(false);
-                popupElement.classList.add("hide-element");
-                document.body.classList.remove("show-cookie");
-            });
-        });
-    </script>
-
-    <!-- remove hreflanf links -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            var targetPaths = [
-                "/careers",
-                "/locations",
-                "/derivtech",
-                "/derivlife",
-                "/eu-careers",
-                "/our-locations",
-            ];
-            var path = window.location.pathname;
-            if (targetPaths.some((targetPath) => path.includes(targetPath))) {
-                var headTag = document.head;
-                var linkElements = headTag.querySelectorAll("link");
-                linkElements.forEach(function(linkElement) {
-                    if (linkElement.hasAttribute("hreflang")) {
-                        if (linkElement.getAttribute("hreflang") !== "x-default") {
-                            linkElement.remove();
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-    <!-- end of hreflang links removal -->
-    <!--Analytics block starts here-->
-    <script>
-        const setEvent = (event) => {
-            let storedEvents = [];
-            let cacheCookie = parseCookies(document.cookie, "cached_analytics_events");
-            if (cacheCookie) storedEvents = JSON.parse(cacheCookie);
-            storedEvents.push(event);
-            document.cookie = `cached_analytics_events=${JSON.stringify(
-      storedEvents
-    )}; path=/; Domain=.deriv.com`;
-        };
-
-        const trackEventWithCache = (event) => {
-            if (window.rudderanalytics) {
-                window.rudderanalytics.track(event.name, event.properties);
-            } else {
-                setEvent(event);
-            }
-        };
-
-        window.addClickListener = function(button, eventName, eventProperties) {
-            if (button) {
-                button.addEventListener("click", function() {
-                    trackEventWithCache({
-                        name: eventName,
-                        properties: eventProperties,
-                    });
-                });
-            }
-        };
-        document.addEventListener("DOMContentLoaded", () => {
-            var btnLiveChat = document?.getElementsByClassName("livechatbtn");
-            var btnWhatsapp = document?.getElementsByClassName("whatsapp_chat");
-            var btnTradershub = document?.getElementsByClassName("tradershub-btn");
-            var btnTryFreeDemo = document.querySelectorAll(".btn-free-demo .w-button");
-            var btnTryFreeDemoFooter = document.querySelectorAll(
-                '.btn-free-demo [data-class="w-button"]'
-            );
-
-            const btnNavbarPrimary = document.querySelectorAll(
-                '[data-attributes="btn-primary-nav"]'
-            );
-            const btnLoginNavbar = document.querySelectorAll(
-                '[data-attributes="btn-secondary-nav"]'
-            );
-
-            if (btnLiveChat) {
-                Array.from(btnLiveChat).forEach((button) => {
-                    window.addClickListener(button, "ce_widget_usage_form", {
-                        action: "click",
-                        widget_name: "livechat",
-                    });
-                });
-            }
-            if (btnWhatsapp) {
-                Array.from(btnWhatsapp).forEach((button) => {
-                    window.addClickListener(button, "ce_widget_usage_form", {
-                        action: "click",
-                        widget_name: "whatsapp",
-                    });
-                });
-            }
-            if (btnTradershub) {
-                Array.from(btnTradershub).forEach((button) => {
-                    window.addClickListener(button, "ce_cta_clicks", {
-                        action: "click",
-                        cta_name: "Traders Hub",
-                    });
-                });
-            }
-            if (btnTryFreeDemo) {
-                Array.from(btnTryFreeDemo).forEach((button) => {
-                    window.addClickListener(button, "ce_cta_clicks", {
-                        action: "click",
-                        cta_name: "Try free demo",
-                    });
-                });
-            }
-            if (btnTryFreeDemoFooter) {
-                Array.from(btnTryFreeDemoFooter).forEach((button) => {
-                    window.addClickListener(button, "ce_cta_clicks", {
-                        action: "click",
-                        cta_name: "Try free demo",
-                    });
-                });
-            }
-
-            if (btnNavbarPrimary) {
-                Array.from(btnNavbarPrimary).forEach((button) => {
-                    if (!button.classList.contains("tradershub-btn")) {
-                        window.addClickListener(button, "ce_cta_clicks", {
-                            action: "click",
-                            cta_name: "Try free demo",
-                        });
-                    }
-                });
-            }
-
-            if (btnLoginNavbar) {
-                Array.from(btnLoginNavbar).forEach((button) => {
-                    window.addClickListener(button, "ce_cta_clicks", {
-                        action: "click",
-                        cta_name: "Login",
-                    });
-                });
-            }
-
-            const RUDDERSTACK_STAGING_KEY = "1lN3tsFD2nruGFgM5F074DC2hMB";
-            const RUDDERSTACK_PRODUCTION_KEY = "1oV5agvlcnCZ6IH94wCKM1oR8Pd";
-            const GB_STAGING_CLIENT_KEY = "sdk-9wuqJ1mlcQsSyZQ";
-            const GB_STAGING_DECRYPTION_KEY = "";
-            const GB_PROD_CLIENT_KEY = "sdk-UhZV3cNEg5nLNLNS";
-            const GB_PROD_DECRYPTION_KEY = "nre64BV0dNIa44zW4tz5ow==";
-            var GB_CLIENT_KEY, RUDDERSTACK_KEY, GB_DECRYPTION_KEY;
-            if (
-                window.location.hostname === "deriv.com" ||
-                window.location.hostname === "deriv.be" ||
-                window.location.hostname === "deriv.me"
-            ) {
-                GB_CLIENT_KEY = GB_PROD_CLIENT_KEY;
-                GB_DECRYPTION_KEY = GB_PROD_DECRYPTION_KEY;
-                RUDDERSTACK_KEY = RUDDERSTACK_PRODUCTION_KEY;
-            } else {
-                GB_CLIENT_KEY = GB_STAGING_CLIENT_KEY;
-                GB_DECRYPTION_KEY = GB_STAGING_DECRYPTION_KEY;
-                RUDDERSTACK_KEY = RUDDERSTACK_STAGING_KEY;
-            }
-            const client_information = window.parseCookies(
-                document.cookie,
-                "client_information"
-            );
-            const clientInfo = client_information ?
-                JSON.parse(client_information) :
-                null;
-            const utm_data_string = window.parseCookies(document.cookie, "utm_data");
-            const utm_data = utm_data_string ? JSON.parse(utm_data_string) : {};
-            const {
-                utm_source,
-                utm_medium,
-                utm_campaign
-            } = utm_data;
-            const cookies = window.parseCookies(document.cookie, "signup_device");
-            let signupDevice = null;
-            const isBrowser = () => typeof window !== "undefined";
-            const getLanguage = () =>
-                isBrowser() ? localStorage.getItem("i18n") || navigator.language : null;
-            if (cookies) {
-                signupDevice = JSON.parse(cookies)?.signup_device || null;
-            }
-            const initialiseConfig = {
-                growthbookKey: GB_CLIENT_KEY,
-                growthbookDecryptionKey: GB_DECRYPTION_KEY,
-                rudderstackKey: RUDDERSTACK_KEY,
-                growthbookOptions: {
-                    navigate: (url) => window.location.replace(url),
-                    antiFlicker: false,
-                    navigateDelay: 0,
-                    attributes: {
-                        country: window.parseCookies(document.cookie, "clients_country") ||
-                            window.parseCookies(document.cookie, "website_status"),
-                        user_language: window.parseCookies(document.cookie, "user_language") ||
-                            getLanguage(),
-                        device_language: window.parseCookies(document.cookie, "language") || " ",
-                        device_type: signupDevice,
-                        utm_source: utm_data?.["utm_source"],
-                        utm_medium: utm_data?.["utm_medium"],
-                        utm_campaign: utm_data?.["utm_campaign"],
-                        is_authorised: !!window.parseCookies(
-                            document.cookie,
-                            "client_information"
-                        ),
-                        loggedIn: !!window.parseCookies(
-                            document.cookie,
-                            "client_information"
-                        ),
-                        url: window.location.href,
-                    },
-                },
             };
-            try {
-                Analytics?.Analytics.initialise(initialiseConfig);
-                // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
-                const userId = clientInfo?.user_id ?
-                    clientInfo?.user_id :
-                    Analytics?.Analytics?.getInstances?.().tracking?.getAnonymousId();
-                Analytics?.Analytics?.identifyEvent(userId);
-            } catch (error) {
-                console.error("Error during initialisation:", error);
-            }
-            // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.loadFeatures();
-            Analytics?.Analytics?.pageView(location.pathname, "Deriv.com");
-            // Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setURL(window.location.href)
-            window.useGrowthbookFeatureFlag = function({
-                featureFlag
-            }) {
-                let featureFlagValue = Analytics?.Analytics?.getFeatureValue(featureFlag);
-
-                function updateFeatureFlagValue() {
-                    const value = Analytics?.Analytics?.getFeatureValue(featureFlag);
-                    featureFlagValue = value;
-                }
-                Analytics?.Analytics?.getInstances()?.ab?.GrowthBook?.setRenderer(
-                    updateFeatureFlagValue
-                );
-                return featureFlagValue;
-            };
-        });
+            document.body.appendChild(script);
+        })();
     </script>
-    <!--Analytics block ends-->
+    <!-- Trackjs - end of code -->
 
-    <script>
-        // Parse the cookies to get the 'client_information' cookie value
-        const cookieValue = window.parseCookies(document.cookie, "client_information") ?
-            JSON.parse(window.parseCookies(document.cookie, "client_information")) :
-            null;
-
-        // Hotjar integration
-        if (cookieValue?.loginid) {
-            window?.hj("identify", cookieValue.loginid, {
-                is_logged_in: !!window.parseCookies(
-                    document.cookie,
-                    "client_information"
-                ),
-                landing_company_shortcode: cookieValue.landing_company_shortcode || "null",
-            });
-        }
-    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const updateLinkHrefs = () => {
-                const featureFlagValue = Analytics?.Analytics?.getFeatureValue(
-                    "trigger_os_signup_wf"
+            const client_country = window?.getClientCountry?.();
+
+            const allowedCountries = "gh";
+            const allowedCountriesEU = "cy";
+
+            if (
+                allowedCountries.includes(client_country) ||
+                allowedCountriesEU.includes(client_country)
+            ) {
+                const signupBtn = Array.from(document.querySelectorAll("a")).filter(
+                    (link) => link.href.includes("https://login.deriv.com/signup.php")
                 );
-                const handleOutSystemsRedirection = () => {
-                    const currentDomain = window.location.hostname;
-                    let env;
-                    if (
-                        currentDomain === "deriv.com" ||
-                        currentDomain === "deriv.be" ||
-                        currentDomain === "deriv.me"
-                    ) {
-                        env = "production";
-                    } else if (currentDomain === "staging.deriv.com") {
-                        env = "staging";
-                    } else {
-                        env = "development";
-                    }
-                    switch (env) {
-                        case "production":
-                            return "https://hub.deriv.com/tradershub/signup";
-                        case "staging":
-                            return "https://staging-hub.deriv.com/tradershub/signup";
-                        default:
-                            return "https://dev-hub.deriv.com/tradershub/signup";
-                    }
-                };
 
-                function isSafari() {
-                    const ua = navigator.userAgent.toLowerCase();
-                    return /safari/.test(ua) && !/chrome/.test(ua) && !/crios/.test(ua);
-                }
-
-                function isIOS() {
-                    const ua = navigator.userAgent.toLowerCase();
-                    return /ipad|iphone|ipod/.test(ua);
-                }
-
-                const newHref = featureFlagValue ?
-                    isIOS() || isSafari() ?
-                    `https://${window.location.host}/signup` :
-                    handleOutSystemsRedirection() :
-                    `https://${window.location.host}/signup`;
-
-                // Update href attributes
-                const mainSignupButton = document.getElementById("cta-home-btn-navbar");
-                if (mainSignupButton) {
-                    mainSignupButton.href = newHref;
-                }
-
-                const signupButtons = document.querySelectorAll(".logged-out-btn");
-                signupButtons?.forEach((btn) => {
-                    if (btn?.href?.indexOf("/signup") > 0) {
-                        btn.href = newHref;
-                    }
+                signupBtn.forEach((link) => {
+                    link.href = "https://partners.deriv.com/live_signup?brd=1";
                 });
 
-                const signupButtonsPlatforms =
-                    document.querySelectorAll(".logged-out-btn a");
-                signupButtonsPlatforms?.forEach((btn) => {
-                    if (btn?.href?.indexOf("/signup") > 0) {
-                        btn.href = newHref;
-                    }
-                });
-            };
+                const loginBtn = Array.from(document.querySelectorAll("a")).filter(
+                    (link) => link.href.includes("https://login.deriv.com/signin.php")
+                );
 
-            Analytics?.Analytics?.getInstances()
-                ?.ab?.GrowthBook?.loadFeatures()
-                .then(() => {
-                    if (window.location.href.indexOf("/partners") > -1 === false) {
-                        updateLinkHrefs();
-                    }
+                loginBtn.forEach((link) => {
+                    link.href = "https://hub.deriv.com/partnershub/";
                 });
+            }
         });
     </script>
 </body>

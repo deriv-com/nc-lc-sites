@@ -29,6 +29,7 @@
 
 .desktop .wallets-transfer-footer {
     display: flex;
+    margin-top: 24px;
 }
 
 .phone .wallets-transfer-footer,
@@ -52,7 +53,7 @@
 .phone .popup-dialog,
 .tablet .popup-dialog {
     margin: 0;
-    height: calc(100% - 48px);
+    height: 100%;
     position: absolute;
     bottom: 0;
 }
@@ -96,4 +97,8 @@
 
 .form-control[data-input] {
     height: 47px;
+}
+
+.validation-message {
+    margin-top: 8px;
 }
