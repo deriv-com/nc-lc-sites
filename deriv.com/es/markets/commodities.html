@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d78c" data-wf-site="66585fe0e1dc7e70cc75d440" lang="es">
 
 <head>
@@ -22,6 +22,7 @@
     <link rel="alternate" hrefLang="it" href="https://deriv.com/it/markets/commodities" />
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/markets/commodities" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/markets/commodities" />
+    <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/markets/commodities" />
     <meta content="Disfrute de operaciones sin comisiones cuando opere en el mercado de materias primas y especule sobre los movimientos de los precios de los metales y las energías naturales." name="description" />
     <meta content="Trading de materias primas | Trading de metales, petróleo y oro | Deriv" property="og:title" />
     <meta content="Disfrute de operaciones sin comisiones cuando opere en el mercado de materias primas y especule sobre los movimientos de los precios de los metales y las energías naturales." property="og:description" />
@@ -30,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,24 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -410,24 +393,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -495,7 +460,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -525,7 +489,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -995,6 +958,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1043,7 +1007,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Herramientas</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/es/tradingview" class="navbar_accordion-link">TradingView</a><a href="/es/mt5-trading-signals" class="navbar_accordion-link">Señales MT5</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/es/tradingview" class="navbar_accordion-link">TradingView</a><a href="/es/mt5-trading-signals" class="navbar_accordion-link">Señales MT5</a><a href="/es/economic-calendar" class="navbar_accordion-link">Calendario económico</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1238,7 +1202,7 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/es/markets/commodities" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Materias primas</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/es/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Criptomonedas</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/es/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETF</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/es/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Índices Tactical</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Herramientas</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/es/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/es/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Señales MT5</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Herramientas</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/es/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/es/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Señales MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/es/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Calendario económico</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1406,6 +1370,7 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Italiano</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Deutsch</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Polski</a></div>
+                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link is-adaptive">O&#x27;zbek</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1630,141 +1595,143 @@
             </section>
             <section class="section_contact-us">
                 <div class="padding-global padding-section-medium">
-                    <div class="container-large">
-                        <div class="contact-us_content">
-                            <div class="padding-bottom padding-medium">
-                                <h2 class="text-align-center">Explore nuestras preguntas frecuentes (FAQ)</h2>
-                            </div>
-                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
-                                <div class="section-faq_component">
-                                    <div class="w-dyn-list">
-                                        <div role="list" class="w-dyn-items">
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">¿Cuáles son los beneficios de operar con materias primas?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                    <div class="commodities_faqs">
+                        <div class="container-large">
+                            <div class="contact-us_content">
+                                <div class="padding-bottom padding-medium">
+                                    <h2 class="text-align-center">Explore nuestras preguntas frecuentes (FAQ)</h2>
+                                </div>
+                                <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                    <div class="section-faq_component">
+                                        <div class="w-dyn-list">
+                                            <div role="list" class="w-dyn-items">
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">¿Cuáles son los beneficios de operar con materias primas?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Los beneficios del comercio de materias primas incluyen:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Diversificación de cartera</strong>: Las materias primas a menudo tienen una baja correlación con activos financieros tradicionales como acciones y bonos. Agregar materias primas a una cartera de trading puede ayudar a diversificar el riesgo y reducir la volatilidad general de la cartera.<strong id="">‍</strong></li>
-                                                                        <li><strong id="">Cobertura contra la inflación</strong>: Muchas materias primas, como el oro, el petróleo y los productos agrícolas, han servido históricamente como coberturas contra la inflación.</li>
-                                                                        <li>‍<strong id="">Activos tangibles</strong>: Las materias primas representan activos físicos. Sin embargo, es importante tener en cuenta que los precios de las materias primas en papel pueden a veces divergir temporalmente de los precios de las materias primas físicas durante periodos de estrés en el mercado, lo que significa que las primas se han ampliado.</li>
-                                                                        <li>‍<strong id="">Exposición económica global</strong>: Las materias primas a menudo reflejan el estado de la economía global y pueden proporcionar información sobre la salud de industrias y regiones específicas.</li>
-                                                                        <li>‍<strong id="">Gestión de riesgos:</strong> Para las empresas involucradas en industrias que dependen de las materias primas (por ejemplo, agricultura, energía, fabricación), los mercados de materias primas proporcionan una forma de gestionar el riesgo de precios a través de coberturas.</li>
-                                                                        <li>‍<strong id="">Tendencias estacionales</strong>: Muchas materias primas exhiben patrones de precios estacionales debido a factores como el clima, los ciclos de cosecha y la demanda del consumidor. Los traders pueden usar patrones históricos para anticipar movimientos de precios y tomar decisiones de trading informadas.</li>
-                                                                        <li>‍<strong id="">Transparencia</strong>: Los mercados de materias primas son a menudo altamente transparentes, con información fácilmente disponible sobre los fundamentos de oferta y demanda. Esta transparencia puede ayudar a los traders a tomar decisiones informadas.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Los beneficios del comercio de materias primas incluyen:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Diversificación de cartera</strong>: Las materias primas a menudo tienen una baja correlación con activos financieros tradicionales como acciones y bonos. Agregar materias primas a una cartera de trading puede ayudar a diversificar el riesgo y reducir la volatilidad general de la cartera.<strong id="">‍</strong></li>
+                                                                            <li><strong id="">Cobertura contra la inflación</strong>: Muchas materias primas, como el oro, el petróleo y los productos agrícolas, han servido históricamente como coberturas contra la inflación.</li>
+                                                                            <li>‍<strong id="">Activos tangibles</strong>: Las materias primas representan activos físicos. Sin embargo, es importante tener en cuenta que los precios de las materias primas en papel pueden a veces divergir temporalmente de los precios de las materias primas físicas durante periodos de estrés en el mercado, lo que significa que las primas se han ampliado.</li>
+                                                                            <li>‍<strong id="">Exposición económica global</strong>: Las materias primas a menudo reflejan el estado de la economía global y pueden proporcionar información sobre la salud de industrias y regiones específicas.</li>
+                                                                            <li>‍<strong id="">Gestión de riesgos:</strong> Para las empresas involucradas en industrias que dependen de las materias primas (por ejemplo, agricultura, energía, fabricación), los mercados de materias primas proporcionan una forma de gestionar el riesgo de precios a través de coberturas.</li>
+                                                                            <li>‍<strong id="">Tendencias estacionales</strong>: Muchas materias primas exhiben patrones de precios estacionales debido a factores como el clima, los ciclos de cosecha y la demanda del consumidor. Los traders pueden usar patrones históricos para anticipar movimientos de precios y tomar decisiones de trading informadas.</li>
+                                                                            <li>‍<strong id="">Transparencia</strong>: Los mercados de materias primas son a menudo altamente transparentes, con información fácilmente disponible sobre los fundamentos de oferta y demanda. Esta transparencia puede ayudar a los traders a tomar decisiones informadas.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">¿Qué tipos de productos básicos están disponibles para el comercio?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">¿Qué tipos de productos básicos están disponibles para el comercio?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Una amplia gama de productos básicos está disponible para el comercio en Deriv, incluyendo:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Metales preciosos</strong>: Oro, plata, platino y paladio.</li>
-                                                                        <li>‍<strong id="">Metales industriales</strong>: Cobre, aluminio, zinc, níquel y plomo.</li>
-                                                                        <li>‍<strong id=""> productos básicos de energía</strong>: NGAS, UK Brent y US Oil.</li>
-                                                                        <li>‍<strong id=""> productos básicos suaves</strong>: Azúcar, algodón, cacao y café.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Una amplia gama de productos básicos está disponible para el comercio en Deriv, incluyendo:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Metales preciosos</strong>: Oro, plata, platino y paladio.</li>
+                                                                            <li>‍<strong id="">Metales industriales</strong>: Cobre, aluminio, zinc, níquel y plomo.</li>
+                                                                            <li>‍<strong id=""> productos básicos de energía</strong>: NGAS, UK Brent y US Oil.</li>
+                                                                            <li>‍<strong id=""> productos básicos suaves</strong>: Azúcar, algodón, cacao y café.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">¿Cuál es la diferencia entre el trading al contado de materias primas y el trading de CFD de materias primas?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">¿Cuál es la diferencia entre el trading al contado de materias primas y el trading de CFD de materias primas?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Las principales diferencias son:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Propiedad de los activos subyacentes:</strong> En el trading al contado de materias primas, usted compra y posee la materia prima física real o un contrato que representa la propiedad de dicha materia prima. Mientras que en el trading de CFD de materias primas, no hay propiedad de la materia prima. En su lugar, usted está operando en función de los movimientos de precios de la materia prima.</li>
-                                                                        <li>‍<strong id="">Entrega y liquidación</strong>: Los contratos al contado generalmente implican la entrega real de la materia prima física en un lugar y momento específicos. Esto es común en las materias primas agrícolas y energéticas, donde la entrega física es parte del contrato. Los CFD no implican entrega física. En su lugar, son contratos liquidados en efectivo. <strong id="">Apalancamiento</strong>: El apalancamiento en el trading al contado generalmente es limitado. Si desea comprar una cantidad específica de una materia prima, típicamente necesita pagar el precio total de compra. Los CFD ofrecen un apalancamiento significativo, permitiendo a los traders controlar posiciones más grandes con una cantidad relativamente pequeña de capital. Si bien esto puede amplificar las ganancias potenciales, también aumenta las pérdidas potenciales.</li>
-                                                                        <li>‍<strong id="">Venta corta</strong>: Con los CFD, es posible realizar ventas cortas de materias primas.</li>
-                                                                        <li>‍<strong id="">Entorno regulatorio</strong>: El trading al contado de materias primas físicas a menudo está sujeto a diversos requisitos regulatorios y logísticos, incluyendo almacenamiento, transporte y estándares de calidad. La supervisión regulatoria puede variar según la jurisdicción y el tipo de materia prima.</li>
-                                                                        <li>‍<strong id="">Costos</strong>: El trading al contado puede implicar costos como tarifas de almacenamiento, costos de transporte y gastos de seguros, dependiendo de la materia prima. Además, pueden aplicar comisiones y tarifas. El trading de CFD no tiene comisiones, pero en su lugar tendrá un costo de margen y generalmente viene con cargos financieros diarios (excepto en cuentas sin swap).</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Las principales diferencias son:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Propiedad de los activos subyacentes:</strong> En el trading al contado de materias primas, usted compra y posee la materia prima física real o un contrato que representa la propiedad de dicha materia prima. Mientras que en el trading de CFD de materias primas, no hay propiedad de la materia prima. En su lugar, usted está operando en función de los movimientos de precios de la materia prima.</li>
+                                                                            <li>‍<strong id="">Entrega y liquidación</strong>: Los contratos al contado generalmente implican la entrega real de la materia prima física en un lugar y momento específicos. Esto es común en las materias primas agrícolas y energéticas, donde la entrega física es parte del contrato. Los CFD no implican entrega física. En su lugar, son contratos liquidados en efectivo. <strong id="">Apalancamiento</strong>: El apalancamiento en el trading al contado generalmente es limitado. Si desea comprar una cantidad específica de una materia prima, típicamente necesita pagar el precio total de compra. Los CFD ofrecen un apalancamiento significativo, permitiendo a los traders controlar posiciones más grandes con una cantidad relativamente pequeña de capital. Si bien esto puede amplificar las ganancias potenciales, también aumenta las pérdidas potenciales.</li>
+                                                                            <li>‍<strong id="">Venta corta</strong>: Con los CFD, es posible realizar ventas cortas de materias primas.</li>
+                                                                            <li>‍<strong id="">Entorno regulatorio</strong>: El trading al contado de materias primas físicas a menudo está sujeto a diversos requisitos regulatorios y logísticos, incluyendo almacenamiento, transporte y estándares de calidad. La supervisión regulatoria puede variar según la jurisdicción y el tipo de materia prima.</li>
+                                                                            <li>‍<strong id="">Costos</strong>: El trading al contado puede implicar costos como tarifas de almacenamiento, costos de transporte y gastos de seguros, dependiendo de la materia prima. Además, pueden aplicar comisiones y tarifas. El trading de CFD no tiene comisiones, pero en su lugar tendrá un costo de margen y generalmente viene con cargos financieros diarios (excepto en cuentas sin swap).</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">¿Existen requisitos de almacenamiento o entrega física para negociar ciertas materias primas?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">¿Existen requisitos de almacenamiento o entrega física para negociar ciertas materias primas?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>Para la mayoría de los CFDs de materias primas, no hay requisitos de almacenamiento o entrega física. Dado que los CFDs (contratos por diferencia) son instrumentos derivados, permiten a los operadores especular sobre el movimiento de precios de las materias primas sin poseer realmente el activo físico. Los CFDs se liquidan en efectivo según la diferencia de precios entre las posiciones de apertura y cierre.</p>
-                                                                    <p>‍</p>
-                                                                    <p>Sin embargo, es importante tener en cuenta que algunas materias primas, particularmente en el mercado de futuros, pueden implicar entrega física si las posiciones se mantienen hasta la fecha de expiración del contrato. En tales casos, los operadores pueden necesitar recibir la entrega física o renovar sus posiciones para evitar obligaciones de entrega. Es esencial comprender los términos y especificaciones de los contratos de materias primas específicos que está negociando.</p>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>Para la mayoría de los CFDs de materias primas, no hay requisitos de almacenamiento o entrega física. Dado que los CFDs (contratos por diferencia) son instrumentos derivados, permiten a los operadores especular sobre el movimiento de precios de las materias primas sin poseer realmente el activo físico. Los CFDs se liquidan en efectivo según la diferencia de precios entre las posiciones de apertura y cierre.</p>
+                                                                        <p>‍</p>
+                                                                        <p>Sin embargo, es importante tener en cuenta que algunas materias primas, particularmente en el mercado de futuros, pueden implicar entrega física si las posiciones se mantienen hasta la fecha de expiración del contrato. En tales casos, los operadores pueden necesitar recibir la entrega física o renovar sus posiciones para evitar obligaciones de entrega. Es esencial comprender los términos y especificaciones de los contratos de materias primas específicos que está negociando.</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">¿Qué factores influyen en los precios de las materias primas?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">¿Qué factores influyen en los precios de las materias primas?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Existen diversos factores que afectan los precios de las materias primas, tales como:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Oferta y demanda:</strong> El equilibrio entre la oferta y la demanda es un impulsor clave de los precios de las materias primas. Factores como los niveles de producción, las condiciones climáticas, los eventos geopolíticos y los cambios en los patrones de consumo pueden impactar la dinámica de oferta y demanda.</li>
-                                                                        <li>‍<strong id="">Factores económicos</strong>: Indicadores económicos, como el crecimiento del PIB, la inflación, las tasas de interés y los tipos de cambio, pueden influir en los precios de las materias primas. Los precios de las materias primas a menudo reflejan la salud general de la economía global o regional.</li>
-                                                                        <li>‍<strong id="">Políticas gubernamentales</strong>: Las regulaciones gubernamentales, las políticas comerciales, los subsidios, los aranceles y la tributación pueden afectar los precios de las materias primas. La estabilidad política y las tensiones geopolíticas también pueden tener impactos significativos.</li>
-                                                                        <li>‍<strong id="">Condiciones climáticas</strong>: Los patrones climáticos, incluidos los períodos de sequía, inundaciones, huracanes y otros desastres naturales, pueden impactar las materias primas agrícolas y energéticas (p. ej., huracanes que afectan la producción de petróleo en el Golfo de México).</li>
-                                                                        <li>‍<strong id="">Especulación y sentimiento del inversor</strong>: Las actividades de trading especulativo y el sentimiento del inversor pueden provocar fluctuaciones a corto plazo en los precios de las materias primas. La demanda de los inversores por materias primas como cobertura contra la inflación o como un activo refugio también puede influir en los precios.</li>
-                                                                        <li>‍<strong id="">Fortaleza del dólar estadounidense</strong>: Dado que las materias primas se valoran en gran medida en dólares estadounidenses, la fortaleza del dólar medida por el Índice del Dólar de EE. UU. (DXY) afecta los precios de las materias primas de manera inversa. </li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Existen diversos factores que afectan los precios de las materias primas, tales como:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Oferta y demanda:</strong> El equilibrio entre la oferta y la demanda es un impulsor clave de los precios de las materias primas. Factores como los niveles de producción, las condiciones climáticas, los eventos geopolíticos y los cambios en los patrones de consumo pueden impactar la dinámica de oferta y demanda.</li>
+                                                                            <li>‍<strong id="">Factores económicos</strong>: Indicadores económicos, como el crecimiento del PIB, la inflación, las tasas de interés y los tipos de cambio, pueden influir en los precios de las materias primas. Los precios de las materias primas a menudo reflejan la salud general de la economía global o regional.</li>
+                                                                            <li>‍<strong id="">Políticas gubernamentales</strong>: Las regulaciones gubernamentales, las políticas comerciales, los subsidios, los aranceles y la tributación pueden afectar los precios de las materias primas. La estabilidad política y las tensiones geopolíticas también pueden tener impactos significativos.</li>
+                                                                            <li>‍<strong id="">Condiciones climáticas</strong>: Los patrones climáticos, incluidos los períodos de sequía, inundaciones, huracanes y otros desastres naturales, pueden impactar las materias primas agrícolas y energéticas (p. ej., huracanes que afectan la producción de petróleo en el Golfo de México).</li>
+                                                                            <li>‍<strong id="">Especulación y sentimiento del inversor</strong>: Las actividades de trading especulativo y el sentimiento del inversor pueden provocar fluctuaciones a corto plazo en los precios de las materias primas. La demanda de los inversores por materias primas como cobertura contra la inflación o como un activo refugio también puede influir en los precios.</li>
+                                                                            <li>‍<strong id="">Fortaleza del dólar estadounidense</strong>: Dado que las materias primas se valoran en gran medida en dólares estadounidenses, la fortaleza del dólar medida por el Índice del Dólar de EE. UU. (DXY) afecta los precios de las materias primas de manera inversa. </li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2202,7 +2169,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
@@ -2680,6 +2647,35 @@
         });
     </script>
     <!--Intercom end-->
+    <script>
+        // this code is intended to scroll page when dropdown opens
+        var Webflow = Webflow || [];
+        Webflow.push(async function() {
+            let desctopToggles = document.querySelectorAll('.accordion_toggle-block');
+
+            for (let desctopToggle of desctopToggles) {
+                desctopToggle.addEventListener('click', (event) => scrollToCurrentToggle(event));
+            }
+
+            function scrollToCurrentToggle(event) {
+                var closestDropdown = event.target.closest('.accordion_dropdown');
+                if (closestDropdown.classList.contains('is-active-accordion')) {
+                    return;
+                }
+                var previousDropdown = closestDropdown.previousElementSibling;
+
+                if (!previousDropdown) {
+                    previousDropdown = event.target.closest('.commodities_faqs');
+                }
+
+                setTimeout(() => {
+                    previousDropdown.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }, 100);
+            }
+        });
+    </script>
 </body>
 
 </html>

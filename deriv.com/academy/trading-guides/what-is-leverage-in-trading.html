@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66dea7fa895d1a948ce90a6f" data-wf-site="66585fe0e1dc7e70cc75d440" lang="en" data-wf-collection="66dea7f9895d1a948ce90a32" data-wf-item-slug="what-is-leverage-in-trading">
 
 <head>
@@ -8,7 +8,7 @@
     <link rel="alternate" hrefLang="en" href="https://deriv.com/academy/trading-guides/what-is-leverage-in-trading" />
     <meta content="What is the meaning of leverage in trading? This guide explains this key trading concept, how it works, and which markets you can apply it to." name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <style>
         @media (max-width:991px) and (min-width:768px) {
             html.w-mod-js:not(.w-mod-ix) [data-w-id="8d5f0205-5304-7cc5-895c-a78f12660370"] {
@@ -75,24 +75,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -431,24 +413,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -516,7 +480,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -546,7 +509,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -1089,6 +1051,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it" class="new-navbar_dropdown-link">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl" class="new-navbar_dropdown-link">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1316,6 +1279,11 @@
                                 <h2>You may also like</h2>
                                 <div class="guides_wrapper w-dyn-list">
                                     <div role="list" class="guides_list w-dyn-items">
+                                        <div role="listitem" class="w-dyn-item"><a data-w-id="85240088-6db5-cd76-d0bd-a28a2161d44a" href="/academy/trading-guides/trading-with-leverage-and-margin-explained" class="blogs_link-block w-inline-block">
+                                                <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67525909e8a2cabbdb9320c2_Leverage%20and%20Margin%20your%20forex%20superpowers%20(1).png" loading="lazy" alt="Illustration of margin and leverage, for 5x and 10x leverage ratios." class="blogs_image" /></div>
+                                                <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Understanding leverage and margin in Forex trading</h3>
+                                                <p class="blogs_text">Ever wanted to trade with more money than you actually have? In forex, that&#x27;s possible thanks to leverage. It allows you to control a larger portion of the market with a smaller investment. However, while leverage in forex trading can amplify your potential profits, it also increases your risks. </p>
+                                            </a></div>
                                         <div role="listitem" class="w-dyn-item"><a data-w-id="85240088-6db5-cd76-d0bd-a28a2161d44a" href="/academy/trading-guides/what-is-copy-trading-and-how-does-it-work" class="blogs_link-block w-inline-block">
                                                 <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66f264520204f724b3371445_What%20is%20copy%20trading%20and%20how%20does%20it%20work.jpg" loading="lazy" alt="multiple green tabs with the text copy trading" class="blogs_image" /></div>
                                                 <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">What is copy trading and how does it work?</h3>
@@ -1325,11 +1293,6 @@
                                                 <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66fce3365cb460c0ff543ab3_image%20(1).jpg" loading="lazy" alt="A candlestick chart illustrating key support and resistance levels" class="blogs_image" /></div>
                                                 <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Support and resistance trading in chart patterns</h3>
                                                 <p class="blogs_text">Identifying chart patterns is a great way to do technical analysis because, despite the word ‘technical’, it doesn’t actually require any technical expertise.</p>
-                                            </a></div>
-                                        <div role="listitem" class="w-dyn-item"><a data-w-id="85240088-6db5-cd76-d0bd-a28a2161d44a" href="/academy/trading-guides/what-is-margin-in-trading" class="blogs_link-block w-inline-block">
-                                                <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66f2438d7cb502c417885168_15.jpg" loading="lazy" alt="A seesaw with spheres of varying sizes illustrating how margin can amplify potential gains or losses" class="blogs_image" /></div>
-                                                <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">What is Margin in trading?</h3>
-                                                <p class="blogs_text">In this guide, we will go through what margin is in CFD trading.</p>
                                             </a></div>
                                     </div>
                                 </div>
@@ -1794,7 +1757,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 

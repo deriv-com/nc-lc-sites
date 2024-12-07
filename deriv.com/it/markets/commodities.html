@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d78c" data-wf-site="66585fe0e1dc7e70cc75d440" lang="it">
 
 <head>
@@ -22,6 +22,7 @@
     <link rel="alternate" hrefLang="it" href="https://deriv.com/it/markets/commodities" />
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/markets/commodities" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/markets/commodities" />
+    <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/markets/commodities" />
     <meta content="Approfitta dei trade senza commissioni quando sul mercato delle materie prime e specula sui movimenti dei prezzi dei metalli e delle energie naturali." name="description" />
     <meta content="Trading di materie prime | Trading di metalli, petrolio e oro | Derivati" property="og:title" />
     <meta content="Approfitta dei trade senza commissioni quando sul mercato delle materie prime e specula sui movimenti dei prezzi dei metalli e delle energie naturali." property="og:description" />
@@ -30,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,24 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -410,24 +393,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -495,7 +460,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -525,7 +489,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -995,6 +958,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it/markets/commodities" aria-current="page" class="new-navbar_dropdown-link w--current">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1043,7 +1007,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Strumenti</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/it/tradingview" class="navbar_accordion-link">TradingView</a><a href="/it/mt5-trading-signals" class="navbar_accordion-link">MT5 segnali</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/it/tradingview" class="navbar_accordion-link">TradingView</a><a href="/it/mt5-trading-signals" class="navbar_accordion-link">MT5 segnali</a><a href="/it/economic-calendar" class="navbar_accordion-link">Calendario economico</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1238,7 +1202,7 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/it/markets/commodities" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Materie prime</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/it/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Criptovalute</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/it/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETF</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/it/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Indici Tactical</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Strumenti</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/it/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/it/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 segnali</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Strumenti</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/it/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/it/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 segnali</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/it/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Calendario economico</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1406,6 +1370,7 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="it" href="/it/markets/commodities" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Italiano</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Deutsch</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Polski</a></div>
+                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link is-adaptive">O&#x27;zbek</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1630,141 +1595,143 @@
             </section>
             <section class="section_contact-us">
                 <div class="padding-global padding-section-medium">
-                    <div class="container-large">
-                        <div class="contact-us_content">
-                            <div class="padding-bottom padding-medium">
-                                <h2 class="text-align-center">Consulta le nostre FAQ</h2>
-                            </div>
-                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
-                                <div class="section-faq_component">
-                                    <div class="w-dyn-list">
-                                        <div role="list" class="w-dyn-items">
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Quali sono i benefici del trading di commodities?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                    <div class="commodities_faqs">
+                        <div class="container-large">
+                            <div class="contact-us_content">
+                                <div class="padding-bottom padding-medium">
+                                    <h2 class="text-align-center">Consulta le nostre FAQ</h2>
+                                </div>
+                                <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                    <div class="section-faq_component">
+                                        <div class="w-dyn-list">
+                                            <div role="list" class="w-dyn-items">
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Quali sono i benefici del trading di commodities?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">I benefici del trading di commodities includono:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Diversificazione del portafoglio</strong>: Le commodities hanno spesso una bassa correlazione con gli asset finanziari tradizionali come azioni e obbligazioni. Aggiungere commodities a un portafoglio di trading può aiutare a diversificare il rischio e ridurre la volatilità complessiva del portafoglio.<strong id="">‍</strong></li>
-                                                                        <li><strong id="">Protezione dall'inflazione</strong>: Molte commodities, come oro, petrolio e prodotti agricoli, hanno storicamente servito come protezioni contro l'inflazione.</li>
-                                                                        <li>‍<strong id="">Asset tangibili</strong>: Le commodities rappresentano asset fisici. Tuttavia, è importante notare che i prezzi delle commodities cartacee possono a volte divergere temporaneamente dai prezzi delle commodities fisiche durante i periodi di stress di mercato, il che significa che i premi si sono ampliati.</li>
-                                                                        <li>‍<strong id="">Esposizione economica globale</strong>: Le commodities riflettono spesso lo stato dell'economia globale e possono fornire informazioni sulla salute di settori e regioni specifiche.</li>
-                                                                        <li>‍<strong id="">Gestione del rischio:</strong> Per le aziende coinvolte in settori che dipendono dalle commodities (ad es., agricoltura, energia, manifattura), i mercati delle commodities offrono un modo per gestire il rischio di prezzo attraverso la copertura.</li>
-                                                                        <li>‍<strong id="">Tendenze stagionali</strong>: Molte commodities mostrano schemi di prezzo stagionali a causa di fattori come il clima, i cicli di raccolta e la domanda dei consumatori. I trader possono utilizzare schemi storici per anticipare i movimenti dei prezzi e prendere decisioni di trading informate.</li>
-                                                                        <li>‍<strong id="">Trasparenza</strong>: I mercati delle commodities sono spesso altamente trasparenti, con informazioni facilmente disponibili sui fondamenti di offerta e domanda. Questa trasparenza può aiutare i trader a prendere decisioni informate.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">I benefici del trading di commodities includono:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Diversificazione del portafoglio</strong>: Le commodities hanno spesso una bassa correlazione con gli asset finanziari tradizionali come azioni e obbligazioni. Aggiungere commodities a un portafoglio di trading può aiutare a diversificare il rischio e ridurre la volatilità complessiva del portafoglio.<strong id="">‍</strong></li>
+                                                                            <li><strong id="">Protezione dall'inflazione</strong>: Molte commodities, come oro, petrolio e prodotti agricoli, hanno storicamente servito come protezioni contro l'inflazione.</li>
+                                                                            <li>‍<strong id="">Asset tangibili</strong>: Le commodities rappresentano asset fisici. Tuttavia, è importante notare che i prezzi delle commodities cartacee possono a volte divergere temporaneamente dai prezzi delle commodities fisiche durante i periodi di stress di mercato, il che significa che i premi si sono ampliati.</li>
+                                                                            <li>‍<strong id="">Esposizione economica globale</strong>: Le commodities riflettono spesso lo stato dell'economia globale e possono fornire informazioni sulla salute di settori e regioni specifiche.</li>
+                                                                            <li>‍<strong id="">Gestione del rischio:</strong> Per le aziende coinvolte in settori che dipendono dalle commodities (ad es., agricoltura, energia, manifattura), i mercati delle commodities offrono un modo per gestire il rischio di prezzo attraverso la copertura.</li>
+                                                                            <li>‍<strong id="">Tendenze stagionali</strong>: Molte commodities mostrano schemi di prezzo stagionali a causa di fattori come il clima, i cicli di raccolta e la domanda dei consumatori. I trader possono utilizzare schemi storici per anticipare i movimenti dei prezzi e prendere decisioni di trading informate.</li>
+                                                                            <li>‍<strong id="">Trasparenza</strong>: I mercati delle commodities sono spesso altamente trasparenti, con informazioni facilmente disponibili sui fondamenti di offerta e domanda. Questa trasparenza può aiutare i trader a prendere decisioni informate.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Quali tipi di materie prime sono disponibili per il trading?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Quali tipi di materie prime sono disponibili per il trading?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Una vasta gamma di materie prime è disponibile per il trading su Deriv, tra cui:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Metalli preziosi</strong>: Oro, argento, platino e palladio.</li>
-                                                                        <li>‍<strong id="">Metalli industriali</strong>: Rame, alluminio, zinco, nichel e piombo.</li>
-                                                                        <li>‍<strong id="">Materie prime energetiche</strong>: NGAS, Brent del Regno Unito e petrolio USA.</li>
-                                                                        <li>‍<strong id="">Materie prime agricole</strong>: Zucchero, cotone, cacao e caffè.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Una vasta gamma di materie prime è disponibile per il trading su Deriv, tra cui:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Metalli preziosi</strong>: Oro, argento, platino e palladio.</li>
+                                                                            <li>‍<strong id="">Metalli industriali</strong>: Rame, alluminio, zinco, nichel e piombo.</li>
+                                                                            <li>‍<strong id="">Materie prime energetiche</strong>: NGAS, Brent del Regno Unito e petrolio USA.</li>
+                                                                            <li>‍<strong id="">Materie prime agricole</strong>: Zucchero, cotone, cacao e caffè.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Qual è la differenza tra il trading spot di materie prime e il trading CFD di materie prime?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Qual è la differenza tra il trading spot di materie prime e il trading CFD di materie prime?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Le principali differenze sono:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Proprietà delle attività sottostanti:</strong> Nel trading spot di materie prime, acquisti e possiedi la reale materia prima fisica o un contratto che rappresenta la proprietà di quella materia prima. Mentre nel trading CFD di materie prime, non c'è proprietà della materia prima. Anziché, stai effettuando operazioni sui movimenti di prezzo della materia prima.</li>
-                                                                        <li>‍<strong id="">Consegna e regolamento</strong>: I contratti spot coinvolgono tipicamente la consegna effettiva della materia prima fisica in un luogo e un orario specificato. Questo è comune nelle materie prime agricole ed energetiche, dove la consegna fisica è parte del contratto. I CFD non prevedono consegna fisica. Anziché, sono contratti regolati in contante. <strong id="">Leva</strong>: La leva nel trading spot è generalmente limitata. Se desideri acquistare una quantità specifica di una materia prima, normalmente devi pagare il prezzo di acquisto completo. I CFD offrono una leva significativa, permettendo ai trader di controllare posizioni più grandi con una quantità relativamente piccola di capitale. Sebbene ciò possa amplificare i profitti potenziali, aumenta anche le perdite potenziali.</li>
-                                                                        <li>‍<strong id="">Vendita allo scoperto</strong>: Con i CFD, è possibile vendere allo scoperto le materie prime.</li>
-                                                                        <li>‍<strong id="">Ambiente normativo</strong>: Il trading spot di materie prime fisiche è spesso soggetto a vari requisiti normativi e logistici, comprese le norme di stoccaggio, trasporto e qualità. La supervisione normativa può variare in base alla giurisdizione e al tipo di materia prima.</li>
-                                                                        <li>‍<strong id="">Costi</strong>: Il trading spot può comportare costi come spese di stoccaggio, costi di trasporto e spese assicurative, a seconda della materia prima. Inoltre, possono essere applicate commissioni e spese. Il trading CFD non ha commissioni ma avrà invece un costo di spread e di solito comporta spese finanziarie giornaliere (tranne nei conti privi di swap).</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Le principali differenze sono:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Proprietà delle attività sottostanti:</strong> Nel trading spot di materie prime, acquisti e possiedi la reale materia prima fisica o un contratto che rappresenta la proprietà di quella materia prima. Mentre nel trading CFD di materie prime, non c'è proprietà della materia prima. Anziché, stai effettuando operazioni sui movimenti di prezzo della materia prima.</li>
+                                                                            <li>‍<strong id="">Consegna e regolamento</strong>: I contratti spot coinvolgono tipicamente la consegna effettiva della materia prima fisica in un luogo e un orario specificato. Questo è comune nelle materie prime agricole ed energetiche, dove la consegna fisica è parte del contratto. I CFD non prevedono consegna fisica. Anziché, sono contratti regolati in contante. <strong id="">Leva</strong>: La leva nel trading spot è generalmente limitata. Se desideri acquistare una quantità specifica di una materia prima, normalmente devi pagare il prezzo di acquisto completo. I CFD offrono una leva significativa, permettendo ai trader di controllare posizioni più grandi con una quantità relativamente piccola di capitale. Sebbene ciò possa amplificare i profitti potenziali, aumenta anche le perdite potenziali.</li>
+                                                                            <li>‍<strong id="">Vendita allo scoperto</strong>: Con i CFD, è possibile vendere allo scoperto le materie prime.</li>
+                                                                            <li>‍<strong id="">Ambiente normativo</strong>: Il trading spot di materie prime fisiche è spesso soggetto a vari requisiti normativi e logistici, comprese le norme di stoccaggio, trasporto e qualità. La supervisione normativa può variare in base alla giurisdizione e al tipo di materia prima.</li>
+                                                                            <li>‍<strong id="">Costi</strong>: Il trading spot può comportare costi come spese di stoccaggio, costi di trasporto e spese assicurative, a seconda della materia prima. Inoltre, possono essere applicate commissioni e spese. Il trading CFD non ha commissioni ma avrà invece un costo di spread e di solito comporta spese finanziarie giornaliere (tranne nei conti privi di swap).</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Ci sono requisiti di stoccaggio o consegna fisica per negoziare alcune materie prime?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Ci sono requisiti di stoccaggio o consegna fisica per negoziare alcune materie prime?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>Per la maggior parte dei CFD sulle materie prime, non ci sono requisiti di stoccaggio o consegna fisica. Poiché i CFD (contratti per differenza) sono strumenti derivati, consentono ai trader di speculare sui movimenti di prezzo delle materie prime senza possedere effettivamente l'asset fisico. I CFD vengono regolati in contanti in base alla differenza di prezzo tra le posizioni di apertura e chiusura.</p>
-                                                                    <p>‍</p>
-                                                                    <p>Tuttavia, è importante notare che alcune materie prime, in particolare nel mercato dei futures, potrebbero richiedere la consegna fisica se le posizioni vengono mantenute fino alla data di scadenza del contratto. In tali casi, i trader potrebbero dover prendere la consegna fisica o rinviare le loro posizioni per evitare obblighi di consegna. È essenziale comprendere i termini e le specifiche dei contratti sulle materie prime specifiche che stai negoziando.</p>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>Per la maggior parte dei CFD sulle materie prime, non ci sono requisiti di stoccaggio o consegna fisica. Poiché i CFD (contratti per differenza) sono strumenti derivati, consentono ai trader di speculare sui movimenti di prezzo delle materie prime senza possedere effettivamente l'asset fisico. I CFD vengono regolati in contanti in base alla differenza di prezzo tra le posizioni di apertura e chiusura.</p>
+                                                                        <p>‍</p>
+                                                                        <p>Tuttavia, è importante notare che alcune materie prime, in particolare nel mercato dei futures, potrebbero richiedere la consegna fisica se le posizioni vengono mantenute fino alla data di scadenza del contratto. In tali casi, i trader potrebbero dover prendere la consegna fisica o rinviare le loro posizioni per evitare obblighi di consegna. È essenziale comprendere i termini e le specifiche dei contratti sulle materie prime specifiche che stai negoziando.</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Quali fattori influenzano i prezzi delle materie prime?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Quali fattori influenzano i prezzi delle materie prime?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Ci sono vari fattori che influenzano i prezzi delle materie prime come:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">Offerta e domanda:</strong> L'equilibrio tra offerta e domanda è un motore chiave dei prezzi delle materie prime. Fattori come i livelli di produzione, le condizioni meteorologiche, gli eventi geopolitici e i cambiamenti nei modelli di consumo possono influenzare la dinamica di offerta e domanda.</li>
-                                                                        <li>‍<strong id="">Fattori economici</strong>: Gli indicatori economici, come la crescita del PIL, l'inflazione, i tassi d'interesse e i tassi di cambio, possono influenzare i prezzi delle materie prime. I prezzi delle materie prime riflettono spesso la salute generale dell'economia globale o regionale.</li>
-                                                                        <li>‍<strong id="">Politiche governative</strong>: Le normative governative, le politiche commerciali, i sussidi, i dazi e la tassazione possono influenzare i prezzi delle materie prime. La stabilità politica e le tensioni geopolitiche possono avere anche impatti significativi.</li>
-                                                                        <li>‍<strong id="">Condizioni meteorologiche</strong>: I modelli meteorologici, comprese siccità, alluvioni, uragani e altri disastri naturali, possono influenzare le materie prime agricole e le materie prime energetiche (ad es. uragani che influenzano la produzione di petrolio nel Golfo del Messico).</li>
-                                                                        <li>‍<strong id="">Speculazione e sentiment degli investitori</strong>: Le attività di trading speculativo e il sentiment degli investitori possono guidare fluttuazioni a breve termine nei prezzi delle materie prime. La domanda degli investitori per le materie prime come protezione contro l'inflazione o come asset rifugio può influenzare anche i prezzi.</li>
-                                                                        <li>‍<strong id="">Forza del dollaro USA</strong>: Poiché le materie prime sono principalmente quotate in dollari USA, la forza del dollaro misurata dall'Indice del Dollaro USA (DXY) influisce inversamente sui prezzi delle materie prime. </li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Ci sono vari fattori che influenzano i prezzi delle materie prime come:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">Offerta e domanda:</strong> L'equilibrio tra offerta e domanda è un motore chiave dei prezzi delle materie prime. Fattori come i livelli di produzione, le condizioni meteorologiche, gli eventi geopolitici e i cambiamenti nei modelli di consumo possono influenzare la dinamica di offerta e domanda.</li>
+                                                                            <li>‍<strong id="">Fattori economici</strong>: Gli indicatori economici, come la crescita del PIL, l'inflazione, i tassi d'interesse e i tassi di cambio, possono influenzare i prezzi delle materie prime. I prezzi delle materie prime riflettono spesso la salute generale dell'economia globale o regionale.</li>
+                                                                            <li>‍<strong id="">Politiche governative</strong>: Le normative governative, le politiche commerciali, i sussidi, i dazi e la tassazione possono influenzare i prezzi delle materie prime. La stabilità politica e le tensioni geopolitiche possono avere anche impatti significativi.</li>
+                                                                            <li>‍<strong id="">Condizioni meteorologiche</strong>: I modelli meteorologici, comprese siccità, alluvioni, uragani e altri disastri naturali, possono influenzare le materie prime agricole e le materie prime energetiche (ad es. uragani che influenzano la produzione di petrolio nel Golfo del Messico).</li>
+                                                                            <li>‍<strong id="">Speculazione e sentiment degli investitori</strong>: Le attività di trading speculativo e il sentiment degli investitori possono guidare fluttuazioni a breve termine nei prezzi delle materie prime. La domanda degli investitori per le materie prime come protezione contro l'inflazione o come asset rifugio può influenzare anche i prezzi.</li>
+                                                                            <li>‍<strong id="">Forza del dollaro USA</strong>: Poiché le materie prime sono principalmente quotate in dollari USA, la forza del dollaro misurata dall'Indice del Dollaro USA (DXY) influisce inversamente sui prezzi delle materie prime. </li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2202,7 +2169,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
@@ -2680,6 +2647,35 @@
         });
     </script>
     <!--Intercom end-->
+    <script>
+        // this code is intended to scroll page when dropdown opens
+        var Webflow = Webflow || [];
+        Webflow.push(async function() {
+            let desctopToggles = document.querySelectorAll('.accordion_toggle-block');
+
+            for (let desctopToggle of desctopToggles) {
+                desctopToggle.addEventListener('click', (event) => scrollToCurrentToggle(event));
+            }
+
+            function scrollToCurrentToggle(event) {
+                var closestDropdown = event.target.closest('.accordion_dropdown');
+                if (closestDropdown.classList.contains('is-active-accordion')) {
+                    return;
+                }
+                var previousDropdown = closestDropdown.previousElementSibling;
+
+                if (!previousDropdown) {
+                    previousDropdown = event.target.closest('.commodities_faqs');
+                }
+
+                setTimeout(() => {
+                    previousDropdown.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }, 100);
+            }
+        });
+    </script>
 </body>
 
 </html>

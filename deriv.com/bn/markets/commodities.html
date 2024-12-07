@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d78c" data-wf-site="66585fe0e1dc7e70cc75d440" lang="bn">
 
 <head>
@@ -22,6 +22,7 @@
     <link rel="alternate" hrefLang="it" href="https://deriv.com/it/markets/commodities" />
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/markets/commodities" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/markets/commodities" />
+    <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/markets/commodities" />
     <meta content="আপনি যখন পণ্য বাজারে ট্রেড করেন এবং ধাতু এবং প্রাকৃতিক শক্তির মূুল্যের গতিবিধি সম্পর্কে জল্পনা করেন তখন শূন্য কমিশন ট্রেড উপভোগ করুন।" name="description" />
     <meta content="পণ্য ট্রেডিং | ধাতু, তেল ও সোনার ব্যবসা | Deriv" property="og:title" />
     <meta content="আপনি যখন পণ্য বাজারে ট্রেড করেন এবং ধাতু এবং প্রাকৃতিক শক্তির মূুল্যের গতিবিধি সম্পর্কে জল্পনা করেন তখন শূন্য কমিশন ট্রেড উপভোগ করুন।" property="og:description" />
@@ -30,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,24 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -410,24 +393,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -495,7 +460,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -525,7 +489,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -995,6 +958,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1043,7 +1007,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">সরঞ্জাম</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/bn/tradingview" class="navbar_accordion-link">TradingView</a><a href="/bn/mt5-trading-signals" class="navbar_accordion-link">MT5 সংকেত</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/bn/tradingview" class="navbar_accordion-link">TradingView</a><a href="/bn/mt5-trading-signals" class="navbar_accordion-link">MT5 সংকেত</a><a href="/bn/economic-calendar" class="navbar_accordion-link">আর্থিক ক্যালেন্ডার</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1238,7 +1202,7 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/bn/markets/commodities" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">পণ্য</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/bn/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">ক্রিপ্টোকারেন্সি</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/bn/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETFs</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/bn/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Tactical সূচক</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">সরঞ্জাম</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/bn/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/bn/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 সংকেত</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">সরঞ্জাম</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/bn/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/bn/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 সংকেত</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/bn/economic-calendar" class="new-navbar_dropdown-link is-adaptive">আর্থিক ক্যালেন্ডার</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1406,6 +1370,7 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Italiano</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Deutsch</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Polski</a></div>
+                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link is-adaptive">O&#x27;zbek</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1630,141 +1595,143 @@
             </section>
             <section class="section_contact-us">
                 <div class="padding-global padding-section-medium">
-                    <div class="container-large">
-                        <div class="contact-us_content">
-                            <div class="padding-bottom padding-medium">
-                                <h2 class="text-align-center">আমাদের FAQ ব্রাউজ করুন</h2>
-                            </div>
-                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
-                                <div class="section-faq_component">
-                                    <div class="w-dyn-list">
-                                        <div role="list" class="w-dyn-items">
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">পণ্য ট্রেডিংয়ের সুবিধাগুলি কী কী?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                    <div class="commodities_faqs">
+                        <div class="container-large">
+                            <div class="contact-us_content">
+                                <div class="padding-bottom padding-medium">
+                                    <h2 class="text-align-center">আমাদের FAQ ব্রাউজ করুন</h2>
+                                </div>
+                                <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                    <div class="section-faq_component">
+                                        <div class="w-dyn-list">
+                                            <div role="list" class="w-dyn-items">
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">পণ্য ট্রেডিংয়ের সুবিধাগুলি কী কী?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">পণ্য ট্রেডিংয়ের সুবিধাগুলি অন্তর্ভুক্ত:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">পোর্টফোলিও বৈচিত্র্যকরণ</strong>: পণ্যগুলির সাথে সাধারণত শেয়ার এবং বন্ডের মতো ঐতিহ্যবাহী আর্থিক সম্পদের সাথে একটি নিম্ন সম্পর্ক থাকে। পণ্যগুলি ট্রেডিং পোর্টফোলিওতে যোগ করা ঝুঁকি বৈচিত্র্যকরনে সহায়তা করতে পারে এবং সামগ্রিক পোর্টফোলিওর অস্থিরতা কমায়।<strong id="">‍</strong></li>
-                                                                        <li><strong id="">মুদ্রাস্ফীতি প্রতিরোধক</strong>: অনেক পণ্য, যেমন সোনা, তেল, এবং কৃষি পণ্য, ঐতিহাসিকভাবে মুদ্রাস্ফীতির বিরুদ্ধে প্রতিরক্ষা হিসাবে কাজ করেছে।</li>
-                                                                        <li>‍<strong id="">শারীরিক সম্পদ</strong>: পণ্যগুলি শারীরিক সম্পদকে প্রতিনিধিত্ব করে। তবে, এটি লক্ষ্য করা গুরুত্বপূর্ণ যে কাগজের পণ্যের দাম কখনও কখনও বাজারের চাপের সময় শারীরিক পণ্যের দামের থেকে সাময়িকভাবে বিচ্যুত হতে পারে, যার অর্থ প্রিমিয়াম বেড়ে গেছে।</li>
-                                                                        <li>‍<strong id="">গ্লোবাল অর্থনৈতিক এক্সপোজার</strong>: পণ্যগুলি প্রায়শই বৈশ্বিক অর্থনীতির অবস্থাকে প্রতিফলিত করে এবং নির্দিষ্ট শিল্প এবং অঞ্চলের স্বাস্থ্য সম্পর্কে দৃষ্টি লাভ করতে পারে।</li>
-                                                                        <li>‍<strong id="">ঝুঁকি ব্যবস্থাপনা:</strong> পণ্যের ওপর নির্ভরশীল শিল্পে (যেমন, কৃষি, শক্তি, উৎপাদন) থাকা ব্যবসার জন্য, পণ্য বাজারগুলি প্রিমিয়াম মোকাবেলার জন্য একটি উপায় সরবরাহ করে।</li>
-                                                                        <li>‍<strong id="">মৌসুমি প্রবণতা</strong>: অনেক পণ্যের মৌসুমি দাম প্যাটার্ন থাকে, যা আবহাওয়া, ফসল ওঠানো সময় এবং ভোক্তাদের চাহিদার মতো কারণগুলির জন্য ঘটে। ট্রেডাররা দাম পরিবর্তনের পূর্বাভাস দিতে এবং অবগত ট্রেডিং সিদ্ধান্ত নিতে ঐতিহাসিক প্যাটার্নগুলি ব্যবহার করতে পারে।</li>
-                                                                        <li>‍<strong id="">স্বচ্ছতা</strong>: পণ্য বাজারগুলি প্রায়শই অত্যন্ত স্বচ্ছ হয়, যেখানে সরবরাহ এবং চাহিদার মৌলিক বিষয়ের বিষয়ে সহজেই তথ্য পাওয়া যায়। এই স্বচ্ছতা ট্রেডারদের অবগত সিদ্ধান্ত নিতে সাহায্য করতে পারে।</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">পণ্য ট্রেডিংয়ের সুবিধাগুলি অন্তর্ভুক্ত:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">পোর্টফোলিও বৈচিত্র্যকরণ</strong>: পণ্যগুলির সাথে সাধারণত শেয়ার এবং বন্ডের মতো ঐতিহ্যবাহী আর্থিক সম্পদের সাথে একটি নিম্ন সম্পর্ক থাকে। পণ্যগুলি ট্রেডিং পোর্টফোলিওতে যোগ করা ঝুঁকি বৈচিত্র্যকরনে সহায়তা করতে পারে এবং সামগ্রিক পোর্টফোলিওর অস্থিরতা কমায়।<strong id="">‍</strong></li>
+                                                                            <li><strong id="">মুদ্রাস্ফীতি প্রতিরোধক</strong>: অনেক পণ্য, যেমন সোনা, তেল, এবং কৃষি পণ্য, ঐতিহাসিকভাবে মুদ্রাস্ফীতির বিরুদ্ধে প্রতিরক্ষা হিসাবে কাজ করেছে।</li>
+                                                                            <li>‍<strong id="">শারীরিক সম্পদ</strong>: পণ্যগুলি শারীরিক সম্পদকে প্রতিনিধিত্ব করে। তবে, এটি লক্ষ্য করা গুরুত্বপূর্ণ যে কাগজের পণ্যের দাম কখনও কখনও বাজারের চাপের সময় শারীরিক পণ্যের দামের থেকে সাময়িকভাবে বিচ্যুত হতে পারে, যার অর্থ প্রিমিয়াম বেড়ে গেছে।</li>
+                                                                            <li>‍<strong id="">গ্লোবাল অর্থনৈতিক এক্সপোজার</strong>: পণ্যগুলি প্রায়শই বৈশ্বিক অর্থনীতির অবস্থাকে প্রতিফলিত করে এবং নির্দিষ্ট শিল্প এবং অঞ্চলের স্বাস্থ্য সম্পর্কে দৃষ্টি লাভ করতে পারে।</li>
+                                                                            <li>‍<strong id="">ঝুঁকি ব্যবস্থাপনা:</strong> পণ্যের ওপর নির্ভরশীল শিল্পে (যেমন, কৃষি, শক্তি, উৎপাদন) থাকা ব্যবসার জন্য, পণ্য বাজারগুলি প্রিমিয়াম মোকাবেলার জন্য একটি উপায় সরবরাহ করে।</li>
+                                                                            <li>‍<strong id="">মৌসুমি প্রবণতা</strong>: অনেক পণ্যের মৌসুমি দাম প্যাটার্ন থাকে, যা আবহাওয়া, ফসল ওঠানো সময় এবং ভোক্তাদের চাহিদার মতো কারণগুলির জন্য ঘটে। ট্রেডাররা দাম পরিবর্তনের পূর্বাভাস দিতে এবং অবগত ট্রেডিং সিদ্ধান্ত নিতে ঐতিহাসিক প্যাটার্নগুলি ব্যবহার করতে পারে।</li>
+                                                                            <li>‍<strong id="">স্বচ্ছতা</strong>: পণ্য বাজারগুলি প্রায়শই অত্যন্ত স্বচ্ছ হয়, যেখানে সরবরাহ এবং চাহিদার মৌলিক বিষয়ের বিষয়ে সহজেই তথ্য পাওয়া যায়। এই স্বচ্ছতা ট্রেডারদের অবগত সিদ্ধান্ত নিতে সাহায্য করতে পারে।</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">কী ধরনের কমোডিটি ট্রেডিংয়ের জন্য উপলব্ধ রয়েছে?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">কী ধরনের কমোডিটি ট্রেডিংয়ের জন্য উপলব্ধ রয়েছে?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">Deriv-এ ট্রেডিংয়ের জন্য বিস্তৃত পরিসরের পণ্য উপলব্ধ রয়েছে, যার মধ্যে:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">মূল্যবান ধাতু</strong>: সোনা, রূপা, প্লাটিন, এবং প্যালাডিয়াম।</li>
-                                                                        <li>‍<strong id="">শিল্প ধাতু</strong>: তামা, অ্যালুমিনিয়াম, জিঙ্ক, নিকেল, এবং সীসা।</li>
-                                                                        <li>‍<strong id="">এনার্জি পণ্য</strong>: NGAS, UK Brent এবং US Oil.</li>
-                                                                        <li>‍<strong id="">সফট পণ্য</strong>: চিনি, তুলা, কোকো এবং কফি।</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">Deriv-এ ট্রেডিংয়ের জন্য বিস্তৃত পরিসরের পণ্য উপলব্ধ রয়েছে, যার মধ্যে:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">মূল্যবান ধাতু</strong>: সোনা, রূপা, প্লাটিন, এবং প্যালাডিয়াম।</li>
+                                                                            <li>‍<strong id="">শিল্প ধাতু</strong>: তামা, অ্যালুমিনিয়াম, জিঙ্ক, নিকেল, এবং সীসা।</li>
+                                                                            <li>‍<strong id="">এনার্জি পণ্য</strong>: NGAS, UK Brent এবং US Oil.</li>
+                                                                            <li>‍<strong id="">সফট পণ্য</strong>: চিনি, তুলা, কোকো এবং কফি।</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">পণ্যদ্রব্য স্পট ট্রেডিং এবং পণ্যদ্রব্য CFD ট্রেডিংয়ের মধ্যে পার্থক্য কী?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">পণ্যদ্রব্য স্পট ট্রেডিং এবং পণ্যদ্রব্য CFD ট্রেডিংয়ের মধ্যে পার্থক্য কী?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">প্রধান পার্থক্যগুলি হল:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">মৌলিক সম্পদের মালিকানা:</strong> পণ্যের স্পট ট্রেডিংয়ে, আপনি প্রকৃত শারীরিক পণ্যটি কেনেন এবং তা মালিকানা রাখেন অথবা সেই পণ্যের মালিকানার প্রতিনিধিত্বকারী একটি চুক্তি কিনে থাকেন। যেখানে পণ্যের CFD ট্রেডিংয়ে, পণ্যের মালিকানা নেই। বরং, আপনি পণ্যের দাম পরিবর্তনের উপর ব্যবসা করছেন।</li>
-                                                                        <li>‍<strong id="">ডেলিভারি এবং নিষ্পত্তি</strong>: স্পট চুক্তি সাধারণত নির্দিষ্ট স্থানে এবং সময়ে শারীরিক পণ্যের প্রকৃত ডেলিভারির সাথে জড়িত। এটি কৃষি ও শক্তি পণ্যে সাধারণ, যেখানে শারীরিক ডেলিভারি চুক্তির একটি অংশ। CFD এ শারীরিক ডেলিভারি জড়িত নয়। বরং, এগুলি নগদ নিষ্পত্তির চুক্তি। <strong id="">লিভারেজ</strong>: স্পট ট্রেডিংয়ে লিভারেজ সাধারণত সীমিত। আপনি যদি একটি নির্দিষ্ট পরিমাণ পণ্য কিনতে চান, তাহলে সাধারণত সম্পূর্ণ ক্রয়মূল্য দিতে হয়। CFD গুলি গুরুত্বপূর্ণ লিভারেজ প্রদান করে, যা ব্যবসায়ীদের একটি আপেক্ষিকভাবে ছোট মূলধনের সাথে বড় অবস্থান নিয়ন্ত্রণ করতে দেয়। যদিও এটি সম্ভাব্য লাভ বৃদ্ধি করতে পারে, তবে এটি সম্ভাব্য ক্ষতিও বাড়ায়।</li>
-                                                                        <li>‍<strong id="">শর্ট সেলিং</strong>: CFDs এর সাথে, পণ্যগুলোর শর্ট-সেল করা সম্ভব।</li>
-                                                                        <li>‍<strong id="">নিয়ন্ত্রক পরিবেশ</strong>: শারীরিক পণ্যের স্পট ট্রেডিং প্রায়শই বিভিন্ন নিয়ন্ত্রক এবং যথাযথতা প্রয়োজনীয়তার মুখোমুখি হয়, লভ্যাংশ, পরিবহন, এবং মানের স্ট্যান্ডার্ড সহ। নিয়ন্ত্রক তত্ত্বাবধান জুরিসডিকশন এবং পণ্য প্রকার অনুসারে পরিবর্তিত হতে পারে।</li>
-                                                                        <li>‍<strong id="">ব্যয়</strong>: স্পট ট্রেডিংয়ের সাথে সংযুক্ত ব্যয় হতে পারে যেমন স্টোরেজ ফি, পরিবহন খরচ এবং বীমার ব্যয়, পণ্যের উপর নির্ভর করে। এছাড়াও, কমিশন এবং ফি প্রযোজ্য হতে পারে। CFD ট্রেডিংয়ে কমিশন নেই তবে বরং একটি স্প্রেড খরচ থাকবে এবং সাধারণত প্রতিদিন আর্থিক চার্জ আসবে (সোয়াপ-মুক্ত অ্যাকাউন্ট ব্যতীত)।</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">প্রধান পার্থক্যগুলি হল:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">মৌলিক সম্পদের মালিকানা:</strong> পণ্যের স্পট ট্রেডিংয়ে, আপনি প্রকৃত শারীরিক পণ্যটি কেনেন এবং তা মালিকানা রাখেন অথবা সেই পণ্যের মালিকানার প্রতিনিধিত্বকারী একটি চুক্তি কিনে থাকেন। যেখানে পণ্যের CFD ট্রেডিংয়ে, পণ্যের মালিকানা নেই। বরং, আপনি পণ্যের দাম পরিবর্তনের উপর ব্যবসা করছেন।</li>
+                                                                            <li>‍<strong id="">ডেলিভারি এবং নিষ্পত্তি</strong>: স্পট চুক্তি সাধারণত নির্দিষ্ট স্থানে এবং সময়ে শারীরিক পণ্যের প্রকৃত ডেলিভারির সাথে জড়িত। এটি কৃষি ও শক্তি পণ্যে সাধারণ, যেখানে শারীরিক ডেলিভারি চুক্তির একটি অংশ। CFD এ শারীরিক ডেলিভারি জড়িত নয়। বরং, এগুলি নগদ নিষ্পত্তির চুক্তি। <strong id="">লিভারেজ</strong>: স্পট ট্রেডিংয়ে লিভারেজ সাধারণত সীমিত। আপনি যদি একটি নির্দিষ্ট পরিমাণ পণ্য কিনতে চান, তাহলে সাধারণত সম্পূর্ণ ক্রয়মূল্য দিতে হয়। CFD গুলি গুরুত্বপূর্ণ লিভারেজ প্রদান করে, যা ব্যবসায়ীদের একটি আপেক্ষিকভাবে ছোট মূলধনের সাথে বড় অবস্থান নিয়ন্ত্রণ করতে দেয়। যদিও এটি সম্ভাব্য লাভ বৃদ্ধি করতে পারে, তবে এটি সম্ভাব্য ক্ষতিও বাড়ায়।</li>
+                                                                            <li>‍<strong id="">শর্ট সেলিং</strong>: CFDs এর সাথে, পণ্যগুলোর শর্ট-সেল করা সম্ভব।</li>
+                                                                            <li>‍<strong id="">নিয়ন্ত্রক পরিবেশ</strong>: শারীরিক পণ্যের স্পট ট্রেডিং প্রায়শই বিভিন্ন নিয়ন্ত্রক এবং যথাযথতা প্রয়োজনীয়তার মুখোমুখি হয়, লভ্যাংশ, পরিবহন, এবং মানের স্ট্যান্ডার্ড সহ। নিয়ন্ত্রক তত্ত্বাবধান জুরিসডিকশন এবং পণ্য প্রকার অনুসারে পরিবর্তিত হতে পারে।</li>
+                                                                            <li>‍<strong id="">ব্যয়</strong>: স্পট ট্রেডিংয়ের সাথে সংযুক্ত ব্যয় হতে পারে যেমন স্টোরেজ ফি, পরিবহন খরচ এবং বীমার ব্যয়, পণ্যের উপর নির্ভর করে। এছাড়াও, কমিশন এবং ফি প্রযোজ্য হতে পারে। CFD ট্রেডিংয়ে কমিশন নেই তবে বরং একটি স্প্রেড খরচ থাকবে এবং সাধারণত প্রতিদিন আর্থিক চার্জ আসবে (সোয়াপ-মুক্ত অ্যাকাউন্ট ব্যতীত)।</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">কিছু পণ্যের ট্রেডিংয়ের জন্য কি কোনও স্টোরেজ বা শারীরিক বিতরণের প্রয়োজন রয়েছে?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">কিছু পণ্যের ট্রেডিংয়ের জন্য কি কোনও স্টোরেজ বা শারীরিক বিতরণের প্রয়োজন রয়েছে?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>বেশিরভাগ পণ্য CFDs এর জন্য, কোনো স্টোরেজ বা শারীরিক ডেলিভারির প্রয়োজনীয়তা নেই। যেহেতু CFD (পার্থক্যের জন্য চুক্তি) ডেরিভেটিভ যন্ত্র, তাই তারা প্রকৃত সম্পদের মালিকানা ছাড়াই ব্যবসায়ীদের পণ্যের মূল্যের গতিবিধি সম্পর্কে অনুমান করার অনুমতি দেয়। CFDগুলি নগদে নিষ্পত্তি করা হয় খোলার এবং বন্ধের অবস্থানের মধ্যে মূল্যের পার্থক্যের উপর ভিত্তি করে।</p>
-                                                                    <p>‍</p>
-                                                                    <p>যাইহোক, এটি লক্ষ করা গুরুত্বপূর্ণ যে কিছু পণ্য, বিশেষ করে ফিউচার মার্কেটে, যদি চুক্তির মেয়াদ শেষ হওয়ার তারিখ পর্যন্ত পজিশনগুলি রাখা হয় তবে শারীরিক ডেলিভারি জড়িত হতে পারে। এরকম ক্ষেত্রে, ব্যবসায়ীদের শারীরিক ডেলিভারি নেওয়ার বা ডেলিভারি বাধ্যবাধকতা এড়াতে তাদের পজিশন রোলওভার করতে হবে। আপনি যে নির্দিষ্ট পণ্য চুক্তির লেনদেন করছেন তার শর্তাবলী এবং বৈশিষ্ট্যগুলি বোঝা অপরিহার্য।</p>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>বেশিরভাগ পণ্য CFDs এর জন্য, কোনো স্টোরেজ বা শারীরিক ডেলিভারির প্রয়োজনীয়তা নেই। যেহেতু CFD (পার্থক্যের জন্য চুক্তি) ডেরিভেটিভ যন্ত্র, তাই তারা প্রকৃত সম্পদের মালিকানা ছাড়াই ব্যবসায়ীদের পণ্যের মূল্যের গতিবিধি সম্পর্কে অনুমান করার অনুমতি দেয়। CFDগুলি নগদে নিষ্পত্তি করা হয় খোলার এবং বন্ধের অবস্থানের মধ্যে মূল্যের পার্থক্যের উপর ভিত্তি করে।</p>
+                                                                        <p>‍</p>
+                                                                        <p>যাইহোক, এটি লক্ষ করা গুরুত্বপূর্ণ যে কিছু পণ্য, বিশেষ করে ফিউচার মার্কেটে, যদি চুক্তির মেয়াদ শেষ হওয়ার তারিখ পর্যন্ত পজিশনগুলি রাখা হয় তবে শারীরিক ডেলিভারি জড়িত হতে পারে। এরকম ক্ষেত্রে, ব্যবসায়ীদের শারীরিক ডেলিভারি নেওয়ার বা ডেলিভারি বাধ্যবাধকতা এড়াতে তাদের পজিশন রোলওভার করতে হবে। আপনি যে নির্দিষ্ট পণ্য চুক্তির লেনদেন করছেন তার শর্তাবলী এবং বৈশিষ্ট্যগুলি বোঝা অপরিহার্য।</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">পণ্যের দামকে প্রভাবিত করা কি কি কারণগুলো আছে?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">পণ্যের দামকে প্রভাবিত করা কি কি কারণগুলো আছে?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p id="">পণ্যের দামকে প্রভাবিত করা বিভিন্ন কারণ রয়েছে যেমন:</p>
-                                                                    <ul>
-                                                                        <li>‍<strong id="">সরবরাহ এবং চাহিদা:</strong> সরবরাহ এবং চাহিদার মধ্যে ব্যালেন্স হল পণ্য মূল্যের একটি প্রধান চালক। উৎপাদন স্তর, আবহাওয়ার পরিস্থিতি, ভূ-রাজনৈতিক ঘটনা এবং ভোক্তাদের চাহিদার পরিবর্তনের মত উপাদানগুলি সরবরাহ এবং চাহিদার গতিশীলতাকে প্রভাবিত করতে পারে।</li>
-                                                                        <li>‍<strong id="">অর্থনৈতিক উপাদান</strong>: অর্থনৈতিক সূচক, যেমন জিডিপি বৃদ্ধি, মুদ্রাস্ফীতি, সুদের হার, এবং মুদ্রা বিনিময় হার, পণ্য মূল্যে প্রভাব ফেলতে পারে। পণ্যমূল্য প্রায়শই বৈশ্বিক বা আঞ্চলিক অর্থনীতির সামগ্রিক স্বাস্থ্যকে প্রতিফলিত করে।</li>
-                                                                        <li>‍<strong id="">সরকারী নীতিমালা</strong>: সরকারি নিয়ম, বাণিজ্য নীতি, ভর্তুকি, শুল্কারোপ এবং কর দেশের পণ্যের দাম প্রভাবিত করতে পারে। রাজনৈতিক স্থিতিশীলতা এবং ভূ-রাজনৈতিক উত্তেজনাও উল্লেখযোগ্য প্রভাব ফেলে।</li>
-                                                                        <li>‍<strong id="">আবহাওয়ার পরিস্থিতি</strong>: আবহাওয়ার প্যাটার্ন, যেমন খরা, বন্যা, হারিকেন, এবং অন্যান্য প্রাকৃতিক বিপর্যয়, কৃষি পণ্য এবং শক্তির পণ্যগুলিতে প্রভাব ফেলতে পারে (যেমন, গাল্ফ অফ মেক্সিকোতে তেল উৎপাদনকে প্রভাবিত করে হারিকেন)।</li>
-                                                                        <li>‍<strong id="">অনুমান এবং বিনিয়োগকারীর মানসিকতা</strong>: অনুমানমূলক বাণিজ্য কার্যক্রম এবং বিনিয়োগকারীর মানসিকতা পণ্য মূল্যে স্বল্পমেয়াদী ওঠানামাকে সৃষ্টি করতে পারে। মুদ্রাস্ফীতি থেকে রক্ষা করার জন্য বা নিরাপদ আশ্রয়স্থল হিসেবে পণ্যের প্রতি বিনিয়োগকারীর চাহিদা মূল্যকেও প্রভাবিত করতে পারে।</li>
-                                                                        <li>‍<strong id="">মার্কিন ডলারের শক্তি</strong>: যেহেতু পণ্যগুলি মূলত মার্কিন ডলারে মূল্যায়িত হয়, মার্কিন ডলার সূচক (DXY) দ্বারা পরিমাপকৃত ডলারের শক্তি পণ্য মূল্যে বিপরীতভাবে প্রভাব ফেলে। </li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p id="">পণ্যের দামকে প্রভাবিত করা বিভিন্ন কারণ রয়েছে যেমন:</p>
+                                                                        <ul>
+                                                                            <li>‍<strong id="">সরবরাহ এবং চাহিদা:</strong> সরবরাহ এবং চাহিদার মধ্যে ব্যালেন্স হল পণ্য মূল্যের একটি প্রধান চালক। উৎপাদন স্তর, আবহাওয়ার পরিস্থিতি, ভূ-রাজনৈতিক ঘটনা এবং ভোক্তাদের চাহিদার পরিবর্তনের মত উপাদানগুলি সরবরাহ এবং চাহিদার গতিশীলতাকে প্রভাবিত করতে পারে।</li>
+                                                                            <li>‍<strong id="">অর্থনৈতিক উপাদান</strong>: অর্থনৈতিক সূচক, যেমন জিডিপি বৃদ্ধি, মুদ্রাস্ফীতি, সুদের হার, এবং মুদ্রা বিনিময় হার, পণ্য মূল্যে প্রভাব ফেলতে পারে। পণ্যমূল্য প্রায়শই বৈশ্বিক বা আঞ্চলিক অর্থনীতির সামগ্রিক স্বাস্থ্যকে প্রতিফলিত করে।</li>
+                                                                            <li>‍<strong id="">সরকারী নীতিমালা</strong>: সরকারি নিয়ম, বাণিজ্য নীতি, ভর্তুকি, শুল্কারোপ এবং কর দেশের পণ্যের দাম প্রভাবিত করতে পারে। রাজনৈতিক স্থিতিশীলতা এবং ভূ-রাজনৈতিক উত্তেজনাও উল্লেখযোগ্য প্রভাব ফেলে।</li>
+                                                                            <li>‍<strong id="">আবহাওয়ার পরিস্থিতি</strong>: আবহাওয়ার প্যাটার্ন, যেমন খরা, বন্যা, হারিকেন, এবং অন্যান্য প্রাকৃতিক বিপর্যয়, কৃষি পণ্য এবং শক্তির পণ্যগুলিতে প্রভাব ফেলতে পারে (যেমন, গাল্ফ অফ মেক্সিকোতে তেল উৎপাদনকে প্রভাবিত করে হারিকেন)।</li>
+                                                                            <li>‍<strong id="">অনুমান এবং বিনিয়োগকারীর মানসিকতা</strong>: অনুমানমূলক বাণিজ্য কার্যক্রম এবং বিনিয়োগকারীর মানসিকতা পণ্য মূল্যে স্বল্পমেয়াদী ওঠানামাকে সৃষ্টি করতে পারে। মুদ্রাস্ফীতি থেকে রক্ষা করার জন্য বা নিরাপদ আশ্রয়স্থল হিসেবে পণ্যের প্রতি বিনিয়োগকারীর চাহিদা মূল্যকেও প্রভাবিত করতে পারে।</li>
+                                                                            <li>‍<strong id="">মার্কিন ডলারের শক্তি</strong>: যেহেতু পণ্যগুলি মূলত মার্কিন ডলারে মূল্যায়িত হয়, মার্কিন ডলার সূচক (DXY) দ্বারা পরিমাপকৃত ডলারের শক্তি পণ্য মূল্যে বিপরীতভাবে প্রভাব ফেলে। </li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2202,7 +2169,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
@@ -2680,6 +2647,35 @@
         });
     </script>
     <!--Intercom end-->
+    <script>
+        // this code is intended to scroll page when dropdown opens
+        var Webflow = Webflow || [];
+        Webflow.push(async function() {
+            let desctopToggles = document.querySelectorAll('.accordion_toggle-block');
+
+            for (let desctopToggle of desctopToggles) {
+                desctopToggle.addEventListener('click', (event) => scrollToCurrentToggle(event));
+            }
+
+            function scrollToCurrentToggle(event) {
+                var closestDropdown = event.target.closest('.accordion_dropdown');
+                if (closestDropdown.classList.contains('is-active-accordion')) {
+                    return;
+                }
+                var previousDropdown = closestDropdown.previousElementSibling;
+
+                if (!previousDropdown) {
+                    previousDropdown = event.target.closest('.commodities_faqs');
+                }
+
+                setTimeout(() => {
+                    previousDropdown.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }, 100);
+            }
+        });
+    </script>
 </body>
 
 </html>

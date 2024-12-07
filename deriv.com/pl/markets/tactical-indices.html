@@ -1,9 +1,9 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66d087f84637cfb34230137f" data-wf-site="66585fe0e1dc7e70cc75d440" lang="pl">
 
 <head>
     <meta charset="utf-8" />
-    <title>Handel indeksami Tactical z wykorzystaniem wskaźników technicznych | Deriv</title>
+    <title>Handel indeksami Tactical ze wskaźnikami technicznymi | Deriv</title>
     <link rel="alternate" hrefLang="x-default" href="https://deriv.com/markets/tactical-indices" />
     <link rel="alternate" hrefLang="en" href="https://deriv.com/markets/tactical-indices" />
     <link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/markets/tactical-indices" />
@@ -22,15 +22,16 @@
     <link rel="alternate" hrefLang="it" href="https://deriv.com/it/markets/tactical-indices" />
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/markets/tactical-indices" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/markets/tactical-indices" />
-    <meta content="Indeksy Tactical, napędzane wskaźnikami technicznymi, takimi jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na platformie Deriv." name="description" />
-    <meta content="Handel indeksami Tactical z wykorzystaniem wskaźników technicznych | Deriv" property="og:title" />
-    <meta content="Indeksy Tactical, napędzane wskaźnikami technicznymi, takimi jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na platformie Deriv." property="og:description" />
-    <meta content="Handel indeksami Tactical z wykorzystaniem wskaźników technicznych | Deriv" property="twitter:title" />
-    <meta content="Indeksy Tactical, napędzane wskaźnikami technicznymi, takimi jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na platformie Deriv." property="twitter:description" />
+    <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/markets/tactical-indices" />
+    <meta content="Indeksy Tactical, oparte na wskaźnikach technicznych, takich jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na Deriv." name="description" />
+    <meta content="Handel indeksami Tactical ze wskaźnikami technicznymi | Deriv" property="og:title" />
+    <meta content="Indeksy Tactical, oparte na wskaźnikach technicznych, takich jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na Deriv." property="og:description" />
+    <meta content="Handel indeksami Tactical ze wskaźnikami technicznymi | Deriv" property="twitter:title" />
+    <meta content="Indeksy Tactical, oparte na wskaźnikach technicznych, takich jak sygnały RSI, obniżają koszty handlu dzięki zautomatyzowanym strategiom na Deriv." property="twitter:description" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,24 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -410,24 +393,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -495,7 +460,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -525,7 +489,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -1025,6 +988,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it/markets/tactical-indices" class="new-navbar_dropdown-link">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de/markets/tactical-indices" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl/markets/tactical-indices" aria-current="page" class="new-navbar_dropdown-link w--current">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz/markets/tactical-indices" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1073,7 +1037,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Narzędzia</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/pl/tradingview" class="navbar_accordion-link">TradingView</a><a href="/pl/mt5-trading-signals" class="navbar_accordion-link">Sygnały MT5</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/pl/tradingview" class="navbar_accordion-link">TradingView</a><a href="/pl/mt5-trading-signals" class="navbar_accordion-link">Sygnały MT5</a><a href="/pl/economic-calendar" class="navbar_accordion-link">Kalendarz ekonomiczny</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1268,7 +1232,7 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/pl/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Towary</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/pl/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Kryptowaluty</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/pl/markets/etfs" class="new-navbar_dropdown-link is-adaptive">Fundusze ETF</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/pl/markets/tactical-indices" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Tactical Indeksy</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Narzędzia</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/pl/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/pl/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Sygnały MT5</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Narzędzia</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/pl/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/pl/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Sygnały MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/pl/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Kalendarz ekonomiczny</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1436,6 +1400,7 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="it" href="/it/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Italiano</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="de" href="/de/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Deutsch</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pl" href="/pl/markets/tactical-indices" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Polski</a></div>
+                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="uz" href="/uz/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">O&#x27;zbek</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1485,9 +1450,9 @@
                             <div class="w-layout-grid image-header_component is-market-grid">
                                 <div id="w-node-_374831ee-8270-4a12-2b7a-c96f1514d834-4230137f" class="markets-header_content">
                                     <div class="title-description-wrapper">
-                                        <h1 class="forex-heading">Mniej kosztów ogólnych, ostrzejsze transakcje</h1>
+                                        <h1 class="forex-heading">Mniej kosztów ogólnych, odważniejsze transakcje</h1>
                                         <h3>Zautomatyzowane strategie dostosowane do zmieniających się rynków</h3>
-                                        <p>Indeksy tactical automatyzują transakcje za pomocą sygnałów ze wskaźników technicznych. Zmniejsza to potrzebę ręcznych korekt i obniża opłaty, dzięki czemu strategia jest skuteczna.</p>
+                                        <p>Indeksy Tactical automatyzują transakcje za pomocą sygnałów ze wskaźników technicznych. Zmniejsza to potrzebę ręcznych korekt i obniża opłaty, dzięki czemu strategia jest skuteczna.</p>
                                     </div>
                                     <div class="margin-top margin-large">
                                         <div class="button-group is-gap-small btn-free-demo"><a href="/pl/signup" class="button is-full-width logged-out-btn hide-element w-button">Wypróbuj darmowe demo</a><a id="btn-traders-hub" data-attributes="btn-primary-nav" href="/appstore/traders-hub" class="new-button logged-in-btn tradershub-btn is-adaptive hide-element w-inline-block">
@@ -1505,7 +1470,7 @@
                                             </a></div>
                                     </div>
                                 </div>
-                                <div id="w-node-_8c80049e-4779-3006-5ec4-6718a7ec711a-4230137f" class="markets-image-background"><img width="628" id="w-node-_8c80049e-4779-3006-5ec4-6718a7ec711b-4230137f" alt="Illustration of tactical indices showing showing different silver indexes" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66ed1132ec5a2665868cec89_tactical%20indices.webp" sizes="(max-width: 479px) 93vw, (max-width: 991px) 48vw, 45vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66ed1132ec5a2665868cec89_tactical%20indices-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66ed1132ec5a2665868cec89_tactical%20indices-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66ed1132ec5a2665868cec89_tactical%20indices.webp 1240w" class="markets-image" /></div>
+                                <div id="w-node-_8c80049e-4779-3006-5ec4-6718a7ec711a-4230137f" class="markets-image-background"><img width="628" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/675171c610b5da0da396bc07_tactical-new.webp" alt="Illustration of tactical indices showing showing different silver indexes" class="markets-image" /></div>
                             </div>
                         </div>
                     </div>
@@ -1515,12 +1480,12 @@
                 <div class="padding-global padding-section-large">
                     <div class="container-xlarge">
                         <div class="content_component">
-                            <h2>Dlaczego warto handlować indeksami tactical za pomocą Deriv</h2>
+                            <h2>Dlaczego warto handlować Indeksami Tactical na Deriv</h2>
                             <div class="trade_list">
                                 <div class="trade_item"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75db78_low-cost.svg" alt="Illustration representing Tactical Indices reducing trading costs, with a coin and downward arrow symbol." class="trade_image-wrapper" />
                                     <div class="text-content-wrapper_centered">
-                                        <h3 class="trade_category-name">Zmniejszone koszty handlu</h3>
-                                        <p>Minimalna interwencja ręczna zmniejsza koszty związane z częstym handlem.</p>
+                                        <h3 class="trade_category-name">Obniżone koszty handlowe</h3>
+                                        <p>Minimalna interwencja ręczna zmniejsza koszty związane z częstym tradingiem.</p>
                                     </div>
                                 </div>
                                 <div class="trade_item"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d727_intuitive-platforms-min.svg" alt="Illustration representing diverse Tactical Indices strategies, tailored for various market conditions." class="trade_image-wrapper" />
@@ -1531,7 +1496,7 @@
                                 </div>
                                 <div class="trade_item"><img loading="lazy" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d8c4_trade-in-any-direction.svg" alt="Illustration depicting Tactical Indices with a screen symbolising algorithmic trading decisions." class="trade_image-wrapper" />
                                     <div class="text-content-wrapper_centered">
-                                        <h3 class="trade_category-name">Automatyczne wyważanie</h3>
+                                        <h3 class="trade_category-name">Automatyczne dostosowywanie</h3>
                                         <p>Transakcje dostosowują się automatycznie na podstawie sygnałów rynkowych. Nie wymaga stałego monitorowania.</p>
                                     </div>
                                 </div>
@@ -1544,7 +1509,9 @@
                 <div class="padding-global padding-section-large">
                     <div class="container-xlarge">
                         <div class="content-component-small">
-                            <h2 class="text-align-center">Indeksy tactical na pochodnych</h2>
+                            <div class="title-description-wrapper">
+                                <h2 class="text-align-center">Indeksy Tactical dostępne na Deriv</h2>
+                            </div>
                             <div class="w-dyn-list">
                                 <div role="list" class="new_tactical_list w-dyn-items">
                                     <div role="listitem" class="w-dyn-item">
@@ -1553,7 +1520,7 @@
                                                 <div class="options_tabs-content">
                                                     <div class="options_lottie-wrapper">
                                                         <div class="w-embed">
-                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6711fa01d4eb7cfa990ce716_Silver%20RSI%20Rebound%20Index%20-%20Lottie.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
+                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/67516e03b6ac0287b2d00372_RSI%20rebound%20index.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
                                                         </div>
                                                         <div class="options_lottie-play-button"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d705_play%20logo.svg" loading="lazy" alt="" class="options_lottie-play-image" /></div>
                                                         <div class="options_lottie-pause-button"></div>
@@ -1562,7 +1529,7 @@
                                             </div>
                                             <div class="options_item-text-wrapper">
                                                 <h3 class="options_item-heading">Indeks Silver RSI Rebound</h3>
-                                                <p>Kupując ten indeks, wybierasz strategię mającą na celu wykorzystanie potencjalnych zwrotów cen w górę srebra. Strategia wykorzystuje sygnały RSI do identyfikacji momentów, w których ceny mogą się odbić, pozycjonując Cię, aby skorzystać z tych ruchów.</p>
+                                                <p>Kiedy kupujesz ten indeks, wybierasz strategię zaprojektowaną w celu wykorzystania potencjalnych wzrostów cen w srebrze. Strategia wykorzystuje sygnały RSI do identyfikacji momentów, w których ceny mogą się odbić, pozycjonując Cię, aby skorzystać z tych ruchów.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1572,7 +1539,7 @@
                                                 <div class="options_tabs-content">
                                                     <div class="options_lottie-wrapper">
                                                         <div class="w-embed">
-                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6711fab7338b4dc14f05ca56_Silver%20RSI%20Pullback%20Index%20-%20Lottie.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
+                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/67516de111904a5eaf86abbc_RSI%20Pullback%20index.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
                                                         </div>
                                                         <div class="options_lottie-play-button"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d705_play%20logo.svg" loading="lazy" alt="" class="options_lottie-play-image" /></div>
                                                         <div class="options_lottie-pause-button"></div>
@@ -1591,7 +1558,7 @@
                                                 <div class="options_tabs-content">
                                                     <div class="options_lottie-wrapper">
                                                         <div class="w-embed">
-                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6711fadd43e3f309af659f50_Silver%20RSI%20Trend%20Up%20Index%20-%20Lottie.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
+                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/67516e2cd056e7653ef5c132_RSI%20trend%20up%20index.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
                                                         </div>
                                                         <div class="options_lottie-play-button"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d705_play%20logo.svg" loading="lazy" alt="" class="options_lottie-play-image" /></div>
                                                         <div class="options_lottie-pause-button"></div>
@@ -1600,7 +1567,7 @@
                                             </div>
                                             <div class="options_item-text-wrapper">
                                                 <h3 class="options_item-heading">Indeks Silver RSI Trend Up</h3>
-                                                <p>Zakup tego indeksu dopasowuje Cię do strategii skoncentrowanej na uchwyceniu trwałych trendów wzrostowych cen srebra. Indeks wykorzystuje sygnały RSI do śledzenia wzrostowego pędu i dostosowywania transakcji, aby pozostać zgodnie z rosnącymi cenami.</p>
+                                                <p>Kupowanie tego indeksu jest zgodne z strategią skupioną na uchwyceniu długotrwałych wzrostów cen srebra. Indeks wykorzystuje sygnały RSI do śledzenia wzrostowego pędu i dostosowywania transakcji, aby pozostać zgodnie z rosnącymi cenami.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1610,7 +1577,7 @@
                                                 <div class="options_tabs-content">
                                                     <div class="options_lottie-wrapper">
                                                         <div class="w-embed">
-                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/6711faf1a295a6e234f8091c_Silver%20RSI%20Trend%20Down%20Index%20-%20Lottie.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
+                                                            <dotlottie-player class="dotlottie-player" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/67516e159759f4f463040128_RSI%20trend%20down%20index.lottie" background="transparent" speed="1" direction="1" playMode="normal" loop></dotlottie-player>
                                                         </div>
                                                         <div class="options_lottie-play-button"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d705_play%20logo.svg" loading="lazy" alt="" class="options_lottie-play-image" /></div>
                                                         <div class="options_lottie-pause-button"></div>
@@ -1619,7 +1586,7 @@
                                             </div>
                                             <div class="options_item-text-wrapper">
                                                 <h3 class="options_item-heading">Indeks Silver RSI Trend Down</h3>
-                                                <p>Kupując ten indeks, przyjmujesz strategię ukierunkowaną na przedłużone ruchy spadkowe w Silver. Indeks wykorzystuje sygnały RSI do śledzenia spadkowego tempa i dostosowuje pozycje, aby potencjalnie czerpać korzyści ze spadających cen.</p>
+                                                <p>Kupując ten indeks, przyjmujesz strategię, która celuje w długotrwałe ruchy spadkowe w srebrze. Indeks wykorzystuje sygnały RSI do śledzenia spadkowego tempa i dostosowuje pozycje, aby potencjalnie czerpać korzyści ze spadających cen.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1640,7 +1607,7 @@
                                     <div class="trade-blocks_item-header">
                                         <h3 class="heading-style-h2 padding-bottom padding-xxsmall">Kontrakty CFD</h3>
                                         <div class="trade-blocks_text-wrapper">
-                                            <p>Spekuluj na ruchach Indeksów Tactical z wysoką dźwignią i zaawansowanymi wskaźnikami technicznymi.</p>
+                                            <p>Spekuluj na temat ruchów indeksów Tactical z wysoką dźwignią finansową i zaawansowanymi wskaźnikami technicznymi.</p>
                                             <div class="display-inlineflex"><a href="/pl/trade/cfds" class="button is-link is-icon margin-top-16 is-center w-inline-block">
                                                     <div>Więcej</div>
                                                     <div class="icon-embed-auto w-embed"><svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1670,7 +1637,7 @@
                     <div class="tactical_faqs">
                         <div class="container-large">
                             <div class="padding-bottom padding-medium">
-                                <h2 class="text-align-center">Przejrzyj nasze FAQ</h2>
+                                <h2 class="text-align-center">FAQ</h2>
                             </div>
                             <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
                                 <div class="w-dyn-list">
@@ -1680,7 +1647,7 @@
                                                 <div fs-accordion-element="trigger" class="accordion_toggle-block">
                                                     <div class="accordion_toggle-content">
                                                         <div class="accordion_toggle-info">
-                                                            <h3 class="accordion_dropdown-name">W jaki sposób RSI jest używany w indeksach tactical?</h3>
+                                                            <h3 class="accordion_dropdown-name">Jak RSI jest używane w Tactical Indices?</h3>
                                                         </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
                                                     </div>
                                                 </div>
@@ -1688,7 +1655,7 @@
                                                     <div class="accordion_expanded-wrapper">
                                                         <div class="accordion_location-info">
                                                             <div class="accordion_dropdown-name w-richtext">
-                                                                <p>RSI (Relative Strength Index) to oscylator pędu, który pomaga zidentyfikować warunki wykupu lub wyprzedania na rynku. Na podstawie tego sygnału indeksy taktyczne automatycznie generują sygnały kupna lub sprzedaży, aby wykorzystać krótkoterminowe ruchy na rynku.</p>
+                                                                <p>RSI (Relative Strength Index) to oscylator momentumu, który pomaga zidentyfikować warunki wykupienia lub wyprzedania na rynku. Na podstawie tego sygnału, Tactical Indices automatycznie generują sygnały kupna lub sprzedaży, aby wykorzystać krótkoterminowe ruchy na rynku.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1700,7 +1667,7 @@
                                                 <div fs-accordion-element="trigger" class="accordion_toggle-block">
                                                     <div class="accordion_toggle-content">
                                                         <div class="accordion_toggle-info">
-                                                            <h3 class="accordion_dropdown-name">Czy parametry wskaźników tactical mogą być wykluczone?</h3>
+                                                            <h3 class="accordion_dropdown-name">Czy mogę dostosować parametry Tactical Indices?</h3>
                                                         </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
                                                     </div>
                                                 </div>
@@ -1708,7 +1675,7 @@
                                                     <div class="accordion_expanded-wrapper">
                                                         <div class="accordion_location-info">
                                                             <div class="accordion_dropdown-name w-richtext">
-                                                                <p>Nie, parametry Tactical Indices podlegają z góry ustalonym zasadom i są oferowane jako kontrakty CFD. Jednak z czterema unikalnymi indeksami dostępnymi, masz dostęp do różnych strategii dostosowanych do różnych scenariuszy rynkowych, co zwiększa dywersyfikację i zmniejsza zależność od pojedynczego podejścia.</p>
+                                                                <p id="">Nie, parametry Tactical Indices są zgodne z z góry określonymi parametrami i są oferowane jako CFD. Jednakże, mając do dyspozycji 4 unikalne indeksy, możesz wybrać strategię, która najlepiej odpowiada Twoim celom handlowym, jednocześnie korzystając z lepszej dywersyfikacji i zmniejszonej zależności od jednego podejścia.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1728,10 +1695,10 @@
                                                     <div class="accordion_expanded-wrapper">
                                                         <div class="accordion_location-info">
                                                             <div class="accordion_dropdown-name w-richtext">
-                                                                <p>Indeksy taktyczne są dostępne do obrotu od poniedziałku do piątku, w następujących godzinach:</p>
-                                                                <p>Poniedziałek: 01:02-20:59 i 23:02-00:00 GMT (przerwa od 20:59-23:02 GMT)</p>
-                                                                <p>Wtorek-czwartek: 00:00-20:59 i 23:02-00:00 GMT (przerwa od 20:59-23:02 GMT)</p>
-                                                                <p>Piątek: 00:00-19:55 GMT</p>
+                                                                <p id="">Indeksy Tactical są dostępne do handlu od poniedziałku do piątku, w następujących godzinach:</p>
+                                                                <p id="">Monday: 01:02-20:59 and 23:02-00:00 GMT (break from 20:59-23:02 GMT)</p>
+                                                                <p id="">Tuesday-Thursday: 00:00-20:59 and 23:02-00:00 GMT (break from 20:59-23:02 GMT)</p>
+                                                                <p id="">Piątek: 00:00-19:55 GMT</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1743,7 +1710,7 @@
                                                 <div fs-accordion-element="trigger" class="accordion_toggle-block">
                                                     <div class="accordion_toggle-content">
                                                         <div class="accordion_toggle-info">
-                                                            <h3 class="accordion_dropdown-name">Czy na jakich platformach będą oferowane nowe parametry Tactical?</h3>
+                                                            <h3 class="accordion_dropdown-name">Na jakich platformach oferowane są Indeksy Tactical?</h3>
                                                         </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
                                                     </div>
                                                 </div>
@@ -1751,7 +1718,7 @@
                                                     <div class="accordion_expanded-wrapper">
                                                         <div class="accordion_location-info">
                                                             <div class="accordion_dropdown-name w-richtext">
-                                                                <p>Nowe terminy Tactical są oferowane na wszystkich platformach CFD, w tym MT5, Deriv X i cTrader.</p>
+                                                                <p id="">Handel Indeksami Tactical jest dostępny na wszystkich platformach CFD Deriv, w tym Deriv MT5, Deriv X i Deriv cTrader.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2188,7 +2155,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
