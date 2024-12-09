@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Wed Dec 04 2024 09:46:28 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 06 2024 10:32:58 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d78c" data-wf-site="66585fe0e1dc7e70cc75d440" lang="en">
 
 <head>
@@ -22,6 +22,7 @@
     <link rel="alternate" hrefLang="it" href="https://deriv.com/it/markets/commodities" />
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/markets/commodities" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/markets/commodities" />
+    <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/markets/commodities" />
     <meta content="Enjoy zero commission trades when you trade on the commodities market and speculate on the price movements of metals and natural energies." name="description" />
     <meta content="Commodities trading | Metals, oil and gold trading | Deriv" property="og:title" />
     <meta content="Enjoy zero commission trades when you trade on the commodities market and speculate on the price movements of metals and natural energies." property="og:description" />
@@ -30,7 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.c3a9de115.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.685ccefd0.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,24 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" />
     <!--Analytics block starts here-->
     <script>
-        function setCookie(name, value, days, domain) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            if (domain) {
-                document.cookie =
-                    name + "=" + (value || "") + expires + `;domain=${domain}` + `;path=/`;
-            } else {
-                document.cookie = name + "=" + (value || "") + expires + ";path=/";
-            }
-        }
-        let params = new URL(window.location.toString()).searchParams;
-        let tkn_aff = params.get("t") || params.get("affiliate_token");
-        setCookie("aff_tkn", tkn_aff, 365);
-
         const cacheTrackEvents = {
             interval: null,
             responses: [],
@@ -151,7 +134,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -409,24 +393,6 @@
             },
         };
 
-        const getUserCookieData = () => {
-            const cookies = [
-                "signup_device",
-                "gclid",
-                "utm_data",
-                "affiliate_tracking",
-                "aff_tkn",
-            ];
-            const combinedObject = {};
-
-            cookies.forEach((cookieName) => {
-                combinedObject[cookieName] = cacheTrackEvents.getCookies(cookieName);
-            });
-            combinedObject.full_url = window.location.href;
-
-            return combinedObject;
-        };
-
         cacheTrackEvents
             .pageLoadEvent([{
                     pages: ["signup", "eu/signup"],
@@ -494,7 +460,6 @@
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
                                 email,
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -524,7 +489,6 @@
                                 action: "started",
                                 form_source: window.location.hostname,
                                 form_name: "default_diel_deriv",
-                                cookie_data: getUserCookieData(),
                             },
                         };
                     },
@@ -861,7 +825,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -993,6 +958,7 @@
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link">Italiano</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link">Deutsch</a></div>
                                                     <div role="listitem" class="locale w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link">Polski</a></div>
+                                                    <div role="listitem" class="locale w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link">O&#x27;zbek</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1041,7 +1007,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Tools</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/tradingview" class="navbar_accordion-link">TradingView</a><a href="/mt5-trading-signals" class="navbar_accordion-link">MT5 signals</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/tradingview" class="navbar_accordion-link">TradingView</a><a href="/mt5-trading-signals" class="navbar_accordion-link">MT5 signals</a><a href="/economic-calendar" class="navbar_accordion-link">Economic Calendar</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1236,7 +1202,7 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/markets/commodities" aria-current="page" class="new-navbar_dropdown-link is-adaptive w--current">Commodities</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Cryptocurrencies</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETFs</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Tactical Indices</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Tools</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 signals</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Tools</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">MT5 signals</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Economic Calendar</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1404,6 +1370,7 @@
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="it" href="/it/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Italiano</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="de" href="/de/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Deutsch</a></div>
                                                                 <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="pl" href="/pl/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Polski</a></div>
+                                                                <div role="listitem" class="locale is-adaptive w-locales-item"><a hreflang="uz" href="/uz/markets/commodities" class="new-navbar_dropdown-link is-adaptive">O&#x27;zbek</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1472,7 +1439,7 @@
                                             </a></div>
                                     </div>
                                 </div>
-                                <div id="w-node-_7bc16a71-f61e-4110-9f1d-300e4de07fef-cc75d78c" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities.webp" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-1080.webp 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-1600.webp 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities.webp 2000w" width="1000" sizes="(max-width: 479px) 100vw, (max-width: 991px) 48vw, (max-width: 1439px) 45vw, 616px" alt="Commodity trading assets like Brent Crude Oil, Gold, Silver, Copper, West Texas Intermediate" class="markets-image" /></div>
+                                <div id="w-node-_7bc16a71-f61e-4110-9f1d-300e4de07fef-cc75d78c" class="markets-image-background"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities.webp" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-500.webp 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-800.webp 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-1080.webp 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities-p-1600.webp 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/669772e34b8f23910ded3af3_Commodities.webp 2000w" width="1000" sizes="(max-width: 479px) 100vw, (max-width: 991px) 48vw, 45vw" alt="Commodity trading assets like Brent Crude Oil, Gold, Silver, Copper, West Texas Intermediate" class="markets-image" /></div>
                             </div>
                         </div>
                     </div>
@@ -1628,141 +1595,143 @@
             </section>
             <section class="section_contact-us">
                 <div class="padding-global padding-section-medium">
-                    <div class="container-large">
-                        <div class="contact-us_content">
-                            <div class="padding-bottom padding-medium">
-                                <h2 class="text-align-center">Browse our FAQ</h2>
-                            </div>
-                            <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
-                                <div class="section-faq_component">
-                                    <div class="w-dyn-list">
-                                        <div role="list" class="w-dyn-items">
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">What are the benefits of trading commodities?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                    <div class="commodities_faqs">
+                        <div class="container-large">
+                            <div class="contact-us_content">
+                                <div class="padding-bottom padding-medium">
+                                    <h2 class="text-align-center">Browse our FAQ</h2>
+                                </div>
+                                <div fs-accordion-single="true" fs-accordion-element="group" class="accordion">
+                                    <div class="section-faq_component">
+                                        <div class="w-dyn-list">
+                                            <div role="list" class="w-dyn-items">
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">What are the benefits of trading commodities?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>The benefits of commodity trading include:</p>
-                                                                    <ul role="list">
-                                                                        <li>‍<strong>Portfolio diversification</strong>: Commodities often have a low correlation with traditional financial assets like stocks and bonds. Adding commodities to a trading portfolio can help diversify risk and reduce overall portfolio volatility.<strong>‍</strong></li>
-                                                                        <li><strong>Inflation hedge</strong>: Many commodities, such as gold, oil, and agricultural products, have historically served as hedges against inflation.</li>
-                                                                        <li>‍<strong>Tangible assets</strong>: Commodities represent physical assets. However, it is important to note that paper commodity prices can sometimes temporarily diverge from physical commodity prices during periods of market stress, which means premiums have widened.</li>
-                                                                        <li>‍<strong>Global economic exposure</strong>: Commodities often reflect the state of the global economy and can provide insights into the health of specific industries and regions.</li>
-                                                                        <li>‍<strong>Risk management:</strong> For businesses involved in industries reliant on commodities (eg, agriculture, energy, manufacturing), commodity markets provide a way to manage price risk through hedging.</li>
-                                                                        <li>‍<strong>Seasonal trends</strong>: Many commodities exhibit seasonal price patterns due to factors like weather, harvest cycles, and consumer demand. Traders can use historical patterns to anticipate price movements and make informed trading decisions.</li>
-                                                                        <li>‍<strong>Transparency</strong>: Commodity markets are often highly transparent, with readily available information on supply and demand fundamentals. This transparency can help traders make informed decisions.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>The benefits of commodity trading include:</p>
+                                                                        <ul role="list">
+                                                                            <li>‍<strong>Portfolio diversification</strong>: Commodities often have a low correlation with traditional financial assets like stocks and bonds. Adding commodities to a trading portfolio can help diversify risk and reduce overall portfolio volatility.<strong>‍</strong></li>
+                                                                            <li><strong>Inflation hedge</strong>: Many commodities, such as gold, oil, and agricultural products, have historically served as hedges against inflation.</li>
+                                                                            <li>‍<strong>Tangible assets</strong>: Commodities represent physical assets. However, it is important to note that paper commodity prices can sometimes temporarily diverge from physical commodity prices during periods of market stress, which means premiums have widened.</li>
+                                                                            <li>‍<strong>Global economic exposure</strong>: Commodities often reflect the state of the global economy and can provide insights into the health of specific industries and regions.</li>
+                                                                            <li>‍<strong>Risk management:</strong> For businesses involved in industries reliant on commodities (eg, agriculture, energy, manufacturing), commodity markets provide a way to manage price risk through hedging.</li>
+                                                                            <li>‍<strong>Seasonal trends</strong>: Many commodities exhibit seasonal price patterns due to factors like weather, harvest cycles, and consumer demand. Traders can use historical patterns to anticipate price movements and make informed trading decisions.</li>
+                                                                            <li>‍<strong>Transparency</strong>: Commodity markets are often highly transparent, with readily available information on supply and demand fundamentals. This transparency can help traders make informed decisions.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">What types of commodities are available for trading?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">What types of commodities are available for trading?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>A wide range of commodities is available for trading on Deriv, including:</p>
-                                                                    <ul role="list">
-                                                                        <li>‍<strong>Precious metals</strong>: Gold, silver, platinum, and palladium.</li>
-                                                                        <li>‍<strong>Industrial metals</strong>: Copper, aluminium, zinc, nickel, and lead.</li>
-                                                                        <li>‍<strong>Energy commodities</strong>: NGAS, UK Brent and US Oil.</li>
-                                                                        <li>‍<strong>Soft commodities</strong>: Sugar, cotton, cocoa, and coffee.</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>A wide range of commodities is available for trading on Deriv, including:</p>
+                                                                        <ul role="list">
+                                                                            <li>‍<strong>Precious metals</strong>: Gold, silver, platinum, and palladium.</li>
+                                                                            <li>‍<strong>Industrial metals</strong>: Copper, aluminium, zinc, nickel, and lead.</li>
+                                                                            <li>‍<strong>Energy commodities</strong>: NGAS, UK Brent and US Oil.</li>
+                                                                            <li>‍<strong>Soft commodities</strong>: Sugar, cotton, cocoa, and coffee.</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">What is the difference between commodities spot trading and commodities CFD trading?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">What is the difference between commodities spot trading and commodities CFD trading?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>The main differences are:</p>
-                                                                    <ul role="list">
-                                                                        <li>‍<strong>Ownership of underlying assets:</strong> In commodities spot trading, you purchase and own the actual physical commodity or a contract representing the ownership of that commodity. While in commodities CFD trading, there is no ownership of the commodity. Instead, you are trading on the commodity&#x27;s price movements.</li>
-                                                                        <li>‍<strong>Delivery and settlement</strong>: Spot contracts typically involve the actual delivery of the physical commodity at a specified location and time. This is common in agricultural and energy commodities, where physical delivery is part of the contract. CFDs do not involve physical delivery. Instead, they are cash-settled contracts. <strong>Leverage</strong>: Leverage in spot trading is generally limited. If you want to buy a specific amount of a commodity, you typically need to pay the full purchase price. CFDs offer significant leverage, allowing traders to control larger positions with a relatively small amount of capital. While this can amplify potential profits, it also increases potential losses.</li>
-                                                                        <li>‍<strong>Short selling</strong>: With CFDs, it is possible to short-sell commodities.</li>
-                                                                        <li>‍<strong>Regulatory environment</strong>: Spot trading in physical commodities is often subject to various regulatory and logistical requirements, including storage, transportation, and quality standards. Regulatory oversight may vary by jurisdiction and commodity type.</li>
-                                                                        <li>‍<strong>Costs</strong>: Spot trading may involve costs such as storage fees, transportation costs, and insurance expenses, depending on the commodity. Additionally, commissions and fees may apply. CFD trading has no commissions but instead will have a spread cost and usually come with daily financial charges (except on swap-free accounts).</li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>The main differences are:</p>
+                                                                        <ul role="list">
+                                                                            <li>‍<strong>Ownership of underlying assets:</strong> In commodities spot trading, you purchase and own the actual physical commodity or a contract representing the ownership of that commodity. While in commodities CFD trading, there is no ownership of the commodity. Instead, you are trading on the commodity&#x27;s price movements.</li>
+                                                                            <li>‍<strong>Delivery and settlement</strong>: Spot contracts typically involve the actual delivery of the physical commodity at a specified location and time. This is common in agricultural and energy commodities, where physical delivery is part of the contract. CFDs do not involve physical delivery. Instead, they are cash-settled contracts. <strong>Leverage</strong>: Leverage in spot trading is generally limited. If you want to buy a specific amount of a commodity, you typically need to pay the full purchase price. CFDs offer significant leverage, allowing traders to control larger positions with a relatively small amount of capital. While this can amplify potential profits, it also increases potential losses.</li>
+                                                                            <li>‍<strong>Short selling</strong>: With CFDs, it is possible to short-sell commodities.</li>
+                                                                            <li>‍<strong>Regulatory environment</strong>: Spot trading in physical commodities is often subject to various regulatory and logistical requirements, including storage, transportation, and quality standards. Regulatory oversight may vary by jurisdiction and commodity type.</li>
+                                                                            <li>‍<strong>Costs</strong>: Spot trading may involve costs such as storage fees, transportation costs, and insurance expenses, depending on the commodity. Additionally, commissions and fees may apply. CFD trading has no commissions but instead will have a spread cost and usually come with daily financial charges (except on swap-free accounts).</li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">Are there any storage or physical delivery requirements for trading certain commodities?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">Are there any storage or physical delivery requirements for trading certain commodities?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>For most commodity CFDs, there are no storage or physical delivery requirements. Since CFDs (contracts for difference) are derivative instruments, they allow traders to speculate on the price movement of commodities without actually owning the physical asset. CFDs are settled in cash based on the price difference between the opening and closing positions.</p>
-                                                                    <p>‍</p>
-                                                                    <p>However, it&#x27;s important to note that some commodities, particularly in the futures market, may involve physical delivery if the positions are held until the contract&#x27;s expiry date. In such cases, traders may need to take physical delivery or roll over their positions to avoid delivery obligations. It&#x27;s essential to understand the terms and specifications of the specific commodity contracts you are trading.</p>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>For most commodity CFDs, there are no storage or physical delivery requirements. Since CFDs (contracts for difference) are derivative instruments, they allow traders to speculate on the price movement of commodities without actually owning the physical asset. CFDs are settled in cash based on the price difference between the opening and closing positions.</p>
+                                                                        <p>‍</p>
+                                                                        <p>However, it&#x27;s important to note that some commodities, particularly in the futures market, may involve physical delivery if the positions are held until the contract&#x27;s expiry date. In such cases, traders may need to take physical delivery or roll over their positions to avoid delivery obligations. It&#x27;s essential to understand the terms and specifications of the specific commodity contracts you are trading.</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div role="listitem" class="w-dyn-item">
-                                                <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
-                                                    <div fs-accordion-element="trigger" class="accordion_toggle-block">
-                                                        <div class="accordion_toggle-content">
-                                                            <div class="accordion_toggle-info">
-                                                                <h3 class="accordion_dropdown-name">What factors influence commodity prices?</h3>
-                                                            </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <div fs-accordion-element="accordion" class="accordion_dropdown is-first is-border-bottom">
+                                                        <div fs-accordion-element="trigger" class="accordion_toggle-block">
+                                                            <div class="accordion_toggle-content">
+                                                                <div class="accordion_toggle-info">
+                                                                    <h3 class="accordion_dropdown-name">What factors influence commodity prices?</h3>
+                                                                </div><img fs-accordion-element="arrow" loading="lazy" alt="" src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/66585fe0e1dc7e70cc75d591_arrow-down.svg" class="accordion_arrow" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div fs-accordion-element="content" class="accordion_expanded-block">
-                                                        <div class="accordion_expanded-wrapper">
-                                                            <div class="accordion_location-info">
-                                                                <div class="accordion_dropdown-name w-richtext">
-                                                                    <p>There are various factors affecting commodity prices such as:</p>
-                                                                    <ul role="list">
-                                                                        <li>‍<strong>Supply and demand:</strong> The balance between supply and demand is a key driver of commodity prices. Factors such as production levels, weather conditions, geopolitical events, and changes in consumption patterns can impact supply and demand dynamics.</li>
-                                                                        <li>‍<strong>Economic factors</strong>: Economic indicators, such as GDP growth, inflation, interest rates, and currency exchange rates, can influence commodity prices. Commodity prices often reflect the overall health of the global or regional economy.</li>
-                                                                        <li>‍<strong>Government policies</strong>: Government regulations, trade policies, subsidies, tariffs, and taxation can affect commodity prices. Political stability and geopolitical tensions can also have significant impacts.</li>
-                                                                        <li>‍<strong>Weather conditions</strong>: Weather patterns, including droughts, floods, hurricanes, and other natural disasters, can impact agricultural commodities and energy commodities (eg, hurricanes affecting oil production in the Gulf of Mexico).</li>
-                                                                        <li>‍<strong>Speculation and investor sentiment</strong>: Speculative trading activities and investor sentiment can drive short-term fluctuations in commodity prices. Investor demand for commodities as a hedge against inflation or as a safe-haven asset can also influence prices.</li>
-                                                                        <li>‍<strong>US dollar strength</strong>: Since commodities are largely priced in US dollars, the strength of the dollar measured by the US Dollar Index (DXY) impacts commodity prices inversely. </li>
-                                                                    </ul>
+                                                        <div fs-accordion-element="content" class="accordion_expanded-block">
+                                                            <div class="accordion_expanded-wrapper">
+                                                                <div class="accordion_location-info">
+                                                                    <div class="accordion_dropdown-name w-richtext">
+                                                                        <p>There are various factors affecting commodity prices such as:</p>
+                                                                        <ul role="list">
+                                                                            <li>‍<strong>Supply and demand:</strong> The balance between supply and demand is a key driver of commodity prices. Factors such as production levels, weather conditions, geopolitical events, and changes in consumption patterns can impact supply and demand dynamics.</li>
+                                                                            <li>‍<strong>Economic factors</strong>: Economic indicators, such as GDP growth, inflation, interest rates, and currency exchange rates, can influence commodity prices. Commodity prices often reflect the overall health of the global or regional economy.</li>
+                                                                            <li>‍<strong>Government policies</strong>: Government regulations, trade policies, subsidies, tariffs, and taxation can affect commodity prices. Political stability and geopolitical tensions can also have significant impacts.</li>
+                                                                            <li>‍<strong>Weather conditions</strong>: Weather patterns, including droughts, floods, hurricanes, and other natural disasters, can impact agricultural commodities and energy commodities (eg, hurricanes affecting oil production in the Gulf of Mexico).</li>
+                                                                            <li>‍<strong>Speculation and investor sentiment</strong>: Speculative trading activities and investor sentiment can drive short-term fluctuations in commodity prices. Investor demand for commodities as a hedge against inflation or as a safe-haven asset can also influence prices.</li>
+                                                                            <li>‍<strong>US dollar strength</strong>: Since commodities are largely priced in US dollars, the strength of the dollar measured by the US Dollar Index (DXY) impacts commodity prices inversely. </li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2200,7 +2169,7 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.52bf68eb9.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.b87c8393c.js" type="text/javascript"></script><!-- deriv js custom code script-->
     <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.24.2/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
@@ -2678,6 +2647,35 @@
         });
     </script>
     <!--Intercom end-->
+    <script>
+        // this code is intended to scroll page when dropdown opens
+        var Webflow = Webflow || [];
+        Webflow.push(async function() {
+            let desctopToggles = document.querySelectorAll('.accordion_toggle-block');
+
+            for (let desctopToggle of desctopToggles) {
+                desctopToggle.addEventListener('click', (event) => scrollToCurrentToggle(event));
+            }
+
+            function scrollToCurrentToggle(event) {
+                var closestDropdown = event.target.closest('.accordion_dropdown');
+                if (closestDropdown.classList.contains('is-active-accordion')) {
+                    return;
+                }
+                var previousDropdown = closestDropdown.previousElementSibling;
+
+                if (!previousDropdown) {
+                    previousDropdown = event.target.closest('.commodities_faqs');
+                }
+
+                setTimeout(() => {
+                    previousDropdown.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }, 100);
+            }
+        });
+    </script>
 </body>
 
 </html>
