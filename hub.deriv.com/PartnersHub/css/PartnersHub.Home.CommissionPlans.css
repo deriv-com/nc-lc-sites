@@ -75,3 +75,16 @@
     flex-direction: column;
     gap: 8px;
 }
+
+.osui-carousel--has-pagination {
+    padding-bottom: 0 !important;
+}
+.splide__pagination {
+    position: relative !important;
+    height: var(--osui-carousel-pagination-margin);
+    align-items: flex-end !important;
+}
+.desktop .ph-options-trading-description {
+    display: flex;
+    flex-direction: column;
+}

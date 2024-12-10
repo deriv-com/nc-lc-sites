@@ -9,6 +9,13 @@
     gap: 24px;
 }
 
+.osui-sidebar {
+    width: 100% !important;
+}
+.desktop .osui-sidebar {
+    max-width: 400px !important;
+}
+
 .ph-event-details-container {
     border-top: 1px solid var(--Neutral-Neutral-3, #E9ECEF);
     display: flex;
