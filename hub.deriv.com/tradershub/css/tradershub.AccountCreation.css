@@ -122,6 +122,10 @@ body {
     border-width: 0px;
 }
 
+.btn .test-custom-button  {
+    color: green;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -167,6 +171,18 @@ body {
     margin: 0;
     max-height: 100% !important;
     height: 100%;
+}
+
+.top-right-popup {
+    padding: 16px  !important;
+    border-radius: 8px  !important;
+    width: 320px  !important;
+    box-shadow: 1px 1px 5px lightgray;
+    position: absolute !important;
+    z-index: 999;
+    background: white;
+    top: 50px !important;   
+    right: 50px !important;   
 }
 
 .full-height-popup {
@@ -224,4 +240,8 @@ label {
 .list-center, .list.list-group.list-center {
     align-items: center;
     justify-content: center;
+}
+
+label {
+    line-height: 1.6 !important;
 }

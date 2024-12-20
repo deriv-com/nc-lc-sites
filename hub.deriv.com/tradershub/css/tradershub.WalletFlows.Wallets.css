@@ -1,37 +1,12 @@
-﻿/* WALLET TITLE */
-.wallet-heading-container {
-    padding: var(--space-base) 0;
-    display: flex;
-    align-items: center;
+﻿[data-popup-backdrop] {
+    z-index: 200;
 }
 
-.wallet-heading-title {
-    font-weight: 700;
-}
-
-.phone .wallet-heading-title,
-.tablet .wallet-heading-title {
-    flex: 1;
-}
-
-.desktop .wallet-heading-title {
-    font-size: 24px;
-}
-
-.phone .wallet-heading-title,
-.tablet .wallet-heading-title {
-    font-size: 18px;
-}
-
-/* WALLET CONTAINER */
 .real-wallet-container {
     display: flex;
     width: 100%;
     height: 100%;
     gap: var(--space-base);
-}
-
-.desktop .real-wallet-container {
     justify-content: space-between;
 }
 
@@ -40,292 +15,30 @@
     flex-direction: column;
 }
 
-.demo-wallet-container {
-    max-width: 560px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* WALLET LEFT SIDE */
 .real-wallet-left-side {
     display: flex;
     flex-direction: column;
     gap: var(--space-base);
-}
-
-.desktop .real-wallet-left-side {
     width: 60%;
 }
 
 .phone .real-wallet-left-side,
-.tablet .real-wallet-left-side {
-    width: 100%;
-}
-
+.tablet .real-wallet-left-side,
 .demo-wallet-left-side {
     width: 100%;
 }
 
-/* WALLET HEADER */
-.wallet-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: var(--space-s);
+.real-wallet-right-side {
+    width: 35%;
+}
+
+.phone .real-wallet-right-side,
+.tablet .real-wallet-right-side {
     width: 100%;
 }
 
-.wallet-header-primary {
-    background-color: var(--color-neutral-1);
-}
-
-.wallet-header-secondary {
-    border: 1px solid var(--color-neutral-3);
-    background-color: var(--color-neutral-0);
-    margin-bottom: 24px;
-}
-
-.desktop .wallet-header {
-    padding: var(--space-m);
-}
-
-.phone .wallet-header,
-.tablet .wallet-header {
-    padding: var(--space-base);
-    flex-direction: column;
-    gap: var(--space-base);
-}
-
-/* WALLET HEADER INFO WRAPPER - WALLET DETAILS CONTAINER */
-.wallet-header-info-wrapper {
-    display: flex;
-    gap: var(--space-s);
-    align-items: center;
+.demo-wallet-container {
+    max-width: 560px;
     width: 100%;
-}
-
-.desktop .wallet-header-currency-icon > img {
-    width: 40px;
-    height: 40px;
-}
-
-.tablet .wallet-header-currency-icon > img,
-.phone .wallet-header-currency-icon > img {
-    width: 32px;
-    height: 32px;
-}
-
-/* WALLET HEADER INFO - WALLET DETAILS */
-.wallet-header-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.phone .wallet-header-info,
-.tablet .wallet-header-info {
-    flex-grow: 1;
-}
-
-.wallet-header-currency-icon {
-    width: 100%;
-    height: 100%;
-}
-
-.desktop .wallet-header-currency-icon {
-    max-width: 40px;
-    max-height: 40px;
-}
-
-.phone .wallet-header-currency-icon,
-.tablet .wallet-header-currency-icon {
-    max-width: 32px;
-    max-height: 32px;
-}
-
-/* WALLET HEADER ACTIONS - WALLET ACTION BUTTONS CONTAINER */
-.wallet-header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.tablet .wallet-header-actions {
-    justify-content: space-between;
-}
-
-.phone .wallet-header-actions {
-    justify-content: space-between;
-}
-
-/* WALLET HEADER ACTIONS - WALLET CTA BUTTONS */
-.wallet-header-btn {
-    border-radius: 50px;
-    padding-inline: 16px;
-    height: 40px;
-    display: grid;
-    place-content: center;
-    background: transparent;
-}
-
-.wallet-header-btn:hover {
-    background-color: var(--color-neutral-2);
-    cursor: pointer;
-}
-
-.wallet-header-btn-primary {
-    background-color: var(--color-primary);
-    border: none;
-}
-
-.wallet-header-btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    cursor: pointer;
-}
-
-/* WALLETS RECENT TRANSACTIONS */
-.wallets-recent-transactions {
-    width: 30%;
-}
-
-.phone .wallets-recent-transactions,
-.tablet .wallets-recent-transactions,
-wallets-recent-transactions-demo {
-    width: 100%;
-}
-
-.wallets-recent-transactions-skeleton {
-    width: 100%;
-    height: 222px;
-}
-
-/* WALLETS ADD MORE SECTION */
-.desktop .wallets-add-more-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-base);
-}
-
-.phone .wallets-add-more-section,
-.tablet .wallets-add-more-section {
-    display: flex;
-    gap: var(--space-s);
-    overflow-x: auto;
-}
-
-
-.desktop .wallets-add-more-cards {
-    height: 110px;
-}
-
-.phone .wallets-add-more-cards,
-.tablet .wallets-add-more-cards {
-    width: 130px;
-    height: 108px;
-}
-
-/* LOADERS */
-.desktop .wallet-header-skeleton {
-    width: 100%;
-    height: 110px;
-    border-radius: 8px;
-}
-
-.phone .wallet-header-skeleton,
-.tablet .wallet-header-skeleton {
-    width: 100%;
-    height: 153px;
-    border-radius: 8px;
-}
-
-.desktop .wallet-header-skeleton-demo {
-    width: 100%;
-    height: 110px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-}
-
-.phone .wallet-header-skeleton-demo,
-.tablet .wallet-header-skeleton-demo {
-    width: 100%;
-    height: 153px;
-    border-radius: 8px;
-}
-
-/* ADD MORE WALLETS */
-.desktop .wallets-add-more-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-base);
-}
-
-.phone .wallets-add-more-section,
-.tablet .wallets-add-more-section {
-    display: flex;
-    gap: var(--space-s);
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.phone .wallets-add-more-section::-webkit-scrollbar,
-.tablet .wallets-add-more-section::-webkit-scrollbar {
-    display: none;
-}
-
-
-
-.desktop .wallets-add-more-cards {
-    height: 110px;
-}
-
-.phone .wallets-add-more-cards,
-.tablet .wallets-add-more-cards {
-    width: 130px;
-}
-
-[data-popup-backdrop] {
-    z-index: 200;
-}
-
-.real-demo-switcher {
-    height: 100%;
-    border-radius: 8px;
-    padding: 4px;
-    background-color: #F1F3F5;
-}
-
-.real-demo-switcher-item {
-    border: none;
-    height: 40px;
-    min-width: 56px;
-    padding: 5px 8px;
-    color: #4F575E;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: 400;
-    background-color: transparent;
-}
-
-[data-button-group-item].button-group-selected-item.real-demo-switcher-item {
-    outline: none;
-}
-
-.demo-blue-container {
-    display: flex;
-    align-items: center;
-    background-color: #E5F5FC;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    padding: 16px;
-}
-
-.tablet .demo-blue-container,
-.phone .demo-blue-container {
-    margin-bottom: 16px;
-    margin-top: 8px;
+    margin-inline: auto;
 }

@@ -1,0 +1,73 @@
+﻿a:hover {
+    text-decoration: none;
+}
+
+.account-activation-banner {
+    display: flex;
+    align-items: center;
+    background-color: #E5F5FC;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+}
+
+.tablet .account-activation-banner,
+.phone .account-activation-banner {
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.tablet .page-header,
+.phone .page-header {
+    flex-direction: column;
+}
+
+.page-title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #101213;
+}
+
+.tablet .page-title,
+.phone .page-title {
+    font-size: 18px;
+}
+
+.page-title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #101213;
+}
+
+.tablet .page-title,
+.phone .page-title {
+    font-size: 18px;
+}
+
+.tooltip-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
+.tablet .left-container,
+.phone .left-container {
+    justify-content: space-between;
+    width: 100%;
+}

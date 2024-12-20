@@ -1,5 +1,5 @@
 /*!
-OutSystems UI 2.20.3 • ODC Platform
+OutSystems UI 2.21.0 • ODC Platform
 Website:
  • https://www.outsystems.com/outsystems-ui
 GitHub:
@@ -182,7 +182,7 @@ var OSFramework;
             ];
             Constants.NoTransition = 'no-transition';
             Constants.OSPlatform = 'ODC';
-            Constants.OSUIVersion = '2.20.3';
+            Constants.OSUIVersion = '2.21.0';
             Constants.ZeroValue = 0;
         })(Constants = OSUI.Constants || (OSUI.Constants = {}));
     })(OSUI = OSFramework.OSUI || (OSFramework.OSUI = {}));
@@ -281,6 +281,7 @@ var OSFramework;
                 CssClassElements["AsideExpandable"] = "aside-expandable";
                 CssClassElements["Container"] = "screen-container";
                 CssClassElements["Content"] = "content";
+                CssClassElements["DarkMode"] = "os-dark-mode";
                 CssClassElements["DeprecatedSubmenu"] = "submenu";
                 CssClassElements["Footer"] = "footer";
                 CssClassElements["Header"] = "header";
@@ -288,6 +289,7 @@ var OSFramework;
                 CssClassElements["HeaderIsFixed"] = "fixed-header";
                 CssClassElements["HeaderIsVisible"] = "header-is--visible";
                 CssClassElements["HeaderTopContent"] = "header-top-content";
+                CssClassElements["HighContrast"] = "os-high-contrast";
                 CssClassElements["InputNotValid"] = "not-valid";
                 CssClassElements["IsTouch"] = "is--touch";
                 CssClassElements["Layout"] = "layout";
@@ -437,6 +439,7 @@ var OSFramework;
                 HTMLEvent["AnimationEnd"] = "animationend";
                 HTMLEvent["AnimationStart"] = "animationstart";
                 HTMLEvent["Blur"] = "blur";
+                HTMLEvent["Change"] = "change";
                 HTMLEvent["Click"] = "click";
                 HTMLEvent["Focus"] = "focus";
                 HTMLEvent["keyDown"] = "keydown";
@@ -2268,7 +2271,7 @@ var OSFramework;
                 static IsNull(date) {
                     let _date;
                     if (typeof date === 'string') {
-                        if (isNaN(Date.parse(date))) {
+                        if (Number.isNaN(Date.parse(date))) {
                             throw new Error(`The given date '${date}' it's not a valid date.`);
                         }
                         _date = new Date(Date.parse(date));
@@ -2283,7 +2286,7 @@ var OSFramework;
                     return false;
                 }
                 static IsValid(date) {
-                    return !isNaN(Number(this.NormalizeDate(date)));
+                    return !Number.isNaN(Number(this.NormalizeDate(date)));
                 }
                 static NormalizeDate(date) {
                     let currDate;
@@ -3328,7 +3331,7 @@ var OSFramework;
                         time.getSeconds());
                 }
                 static IsNull(time) {
-                    if (isNaN(Date.parse(time))) {
+                    if (Number.isNaN(Date.parse(time))) {
                         if (typeof time === OSUI.Constants.JavaScriptTypes.String) {
                             const isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
                             if (isValid === false) {
@@ -10246,7 +10249,7 @@ var OSFramework;
                             newContentItem.setIsActive();
                             this._activeTabContentElement = newContentItem;
                         }
-                        if (this._hasDragGestures) {
+                        if (this._hasDragGestures && this.isBuilt) {
                             this._activeTabHeaderElement.setFocus();
                         }
                         if (triggeredByObserver === false) {
@@ -10350,7 +10353,7 @@ var OSFramework;
                                 }
                             }
                             this._requestAnimationFrameOnIndicatorResize = requestAnimationFrame(updateIndicatorUI.bind(this));
-                            if (isNaN(_finalSize) || _finalSize === 0) {
+                            if (Number.isNaN(_finalSize) || _finalSize === 0) {
                                 const resizeObserver = new ResizeObserver((entries) => {
                                     for (const entry of entries) {
                                         if (entry.contentBoxSize) {
@@ -16217,6 +16220,15 @@ var OutSystems;
                 Accessibility.SetLang = SetLang;
 
                 function SkipToContent(targetId) {
+                    function _skipToContentOnBlur(e) {
+                        OSFramework.OSUI.Helper.AsyncInvocation(() => {
+                            const target = e.target;
+                            if (target) {
+                                OSFramework.OSUI.Helper.Dom.Attribute.Remove(target, 'tabindex');
+                                target.removeEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.Blur, _skipToContentOnBlur);
+                            }
+                        });
+                    }
                     const result = OutSystems.OSUI.Utils.CreateApiResponse({
                         errorCode: OSUI.ErrorCodes.Utilities.FailSkipToContent,
                         callback: () => {
@@ -16226,7 +16238,7 @@ var OutSystems;
                                 if (isFocusable === undefined) {
                                     OSFramework.OSUI.Helper.Dom.Attribute.Set(target, 'tabindex', '0');
                                     target.focus();
-                                    OSFramework.OSUI.Helper.Dom.Attribute.Remove(target, 'tabindex');
+                                    target.addEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.Blur, _skipToContentOnBlur);
                                 } else {
                                     target.focus();
                                 }
@@ -16844,21 +16856,66 @@ var OutSystems;
             var LayoutPrivate;
             (function(LayoutPrivate) {
                 class CssBodyVariables {
+                    static _checkDarkModeStatus(callback) {
+                        if (typeof window !== 'undefined' && window.matchMedia) {
+                            const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                            callback(darkModeQuery.matches);
+                            const listener = (event) => {
+                                callback(event.matches);
+                            };
+                            darkModeQuery.addEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.Change, listener);
+                        } else {
+                            console.warn('Dark mode detection is not supported at this context.');
+                            callback(false);
+                        }
+                    }
+                    static _checkHighContrastStatus(callback) {
+                        if (typeof window !== 'undefined' && window.matchMedia) {
+                            const highContrastModeQuery = window.matchMedia('(forced-colors: active)');
+                            callback(highContrastModeQuery.matches);
+                            const listener = (event) => {
+                                callback(event.matches);
+                            };
+                            highContrastModeQuery.addEventListener(OSFramework.OSUI.GlobalEnum.HTMLEvent.Change, listener);
+                        } else {
+                            console.warn('HighContrast mode detection is not supported at this context.');
+                            callback(false);
+                        }
+                    }
+                    static _isPhoneOrTablet() {
+                        OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(document.body, OSFramework.OSUI.GlobalEnum.CSSVariables.ViewportHeight, window.innerHeight + OSFramework.OSUI.GlobalEnum.Units.Pixel);
+                    }
                     static _setCssVars() {
-                        const body = document.body;
+                        if (OSUI.Utils.DeviceDetection.IsWebApp() === false) {
+                            this._setNotWebApp();
+                        }
+                        if (OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(document.body, OSFramework.OSUI.GlobalEnum.DeviceType.phone) ||
+                            OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(document.body, OSFramework.OSUI.GlobalEnum.DeviceType.tablet)) {
+                            this._isPhoneOrTablet();
+                        }
+                        this._checkHighContrastStatus((isHighContrast) => {
+                            if (isHighContrast) {
+                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(document.body, OSFramework.OSUI.GlobalEnum.CssClassElements.HighContrast);
+                            } else {
+                                OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(document.body, OSFramework.OSUI.GlobalEnum.CssClassElements.HighContrast);
+                            }
+                        });
+                        this._checkDarkModeStatus((isDarkMode) => {
+                            if (isDarkMode) {
+                                OSFramework.OSUI.Helper.Dom.Styles.AddClass(document.body, OSFramework.OSUI.GlobalEnum.CssClassElements.DarkMode);
+                            } else {
+                                OSFramework.OSUI.Helper.Dom.Styles.RemoveClass(document.body, OSFramework.OSUI.GlobalEnum.CssClassElements.DarkMode);
+                            }
+                        });
+                    }
+                    static _setNotWebApp() {
                         const headerContent = OSFramework.OSUI.Helper.Dom.ClassSelector(document, OSFramework.OSUI.GlobalEnum.CssClassElements.HeaderTopContent);
                         const footer = OSFramework.OSUI.Helper.Dom.ClassSelector(document, OSFramework.OSUI.GlobalEnum.CssClassElements.Footer);
-                        if (OSUI.Utils.DeviceDetection.IsWebApp() === false) {
-                            if (headerContent) {
-                                OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(body, OSFramework.OSUI.GlobalEnum.CSSVariables.HeaderContentHeight, headerContent.getBoundingClientRect().height + OSFramework.OSUI.GlobalEnum.Units.Pixel);
-                            }
-                            if (footer) {
-                                OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(body, OSFramework.OSUI.GlobalEnum.CSSVariables.FooterHeight, footer.getBoundingClientRect().height + OSFramework.OSUI.GlobalEnum.Units.Pixel);
-                            }
+                        if (headerContent) {
+                            OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(document.body, OSFramework.OSUI.GlobalEnum.CSSVariables.HeaderContentHeight, headerContent.getBoundingClientRect().height + OSFramework.OSUI.GlobalEnum.Units.Pixel);
                         }
-                        if (OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(body, OSFramework.OSUI.GlobalEnum.DeviceType.phone) ||
-                            OSFramework.OSUI.Helper.Dom.Styles.ContainsClass(body, OSFramework.OSUI.GlobalEnum.DeviceType.tablet)) {
-                            OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(body, OSFramework.OSUI.GlobalEnum.CSSVariables.ViewportHeight, window.innerHeight + OSFramework.OSUI.GlobalEnum.Units.Pixel);
+                        if (footer) {
+                            OSFramework.OSUI.Helper.Dom.Styles.SetStyleAttribute(document.body, OSFramework.OSUI.GlobalEnum.CSSVariables.FooterHeight, footer.getBoundingClientRect().height + OSFramework.OSUI.GlobalEnum.Units.Pixel);
                         }
                     }
                     static Set() {

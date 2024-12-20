@@ -102,3 +102,14 @@
 .validation-message {
     margin-top: 8px;
 }
+
+.modal-title {
+    display: flex;
+    align-items: center;
+}
+
+.phone .modal-title,
+.tablet .modal-title {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-neutral-3);
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Tue Dec 17 2024 12:07:24 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 20 2024 02:50:28 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d837" data-wf-site="66585fe0e1dc7e70cc75d440" lang="sw">
 
 <head>
@@ -31,17 +31,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.09687e057.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: ["Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic"]
-            }
-        });
-    </script>
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.bf22bebff.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         ! function(o, c) {
             var n = c.documentElement,
@@ -134,7 +124,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -205,7 +196,7 @@
             track: (originalEvent, cache) => {
                 const event = cacheTrackEvents.processEvent(originalEvent);
 
-                if (cacheTrackEvents.isReady() && !cache) {
+                if (cacheTrackEvents.isReady() && !cache && typeof Analytics !== "undefined") {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
                     cacheTrackEvents.set(event);
@@ -612,8 +603,14 @@
             const cookies = window.parseCookies(document.cookie, "signup_device");
             let signupDevice = null;
             const isBrowser = () => typeof window !== "undefined";
-            const getLanguage = () =>
-                isBrowser() ? localStorage.getItem("i18n") || navigator.language : null;
+            const getLanguage = () => {
+                if (!isBrowser()) return null;
+                if (!!window?.localStorage) {
+                    return localStorage.getItem("i18n") || navigator.language;
+                } else {
+                    return navigator.language;
+                }
+            };
             if (cookies) {
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
@@ -824,7 +821,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1007,7 +1005,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Zana</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/sw/tradingview" class="navbar_accordion-link">TradingView</a><a href="/sw/mt5-trading-signals" class="navbar_accordion-link">Ishara za MT5</a><a href="/sw/economic-calendar" class="navbar_accordion-link">Kalenda ya Kiuchumi</a><a href="/sw/product-explorer" class="navbar_accordion-link">Product explorer</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/sw/tradingview" class="navbar_accordion-link">TradingView</a><a href="/sw/mt5-trading-signals" class="navbar_accordion-link">Ishara za MT5</a><a href="/sw/economic-calendar" class="navbar_accordion-link">Kalenda ya Uchumi</a><a href="/sw/trading-central" class="navbar_accordion-link">Trading Central</a><a href="/sw/product-explorer" class="navbar_accordion-link">Mchunguzi wa bidhaa</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1202,7 +1200,10 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/sw/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Bidhaa</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/sw/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Cryptocurrencies</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/sw/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETFs</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/sw/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Tactical Indeksi</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Zana</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/sw/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/sw/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Ishara za MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/sw/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Kalenda ya Kiuchumi</a><a id="w-node-ecfd02a1-03e6-1000-7895-e90323e5493e-cff9dc9f" href="/sw/product-explorer" class="new-navbar_dropdown-link is-adaptive">Product explorer</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Zana</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/sw/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/sw/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Ishara za MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/sw/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Kalenda ya Uchumi</a>
+                                                                        </div>
+                                                                        <div id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4bd-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
+                                                                            <div id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4be-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4bf-cff9dc9f" href="/sw/trading-central" class="new-navbar_dropdown-link is-adaptive">Trading Central</a><a id="w-node-ecfd02a1-03e6-1000-7895-e90323e5493e-cff9dc9f" href="/sw/product-explorer" class="new-navbar_dropdown-link is-adaptive">Mchunguzi wa bidhaa</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1636,6 +1637,115 @@
                             </div>
                             <div class="blogs_wrapper w-dyn-list">
                                 <div fs-cmsload-mode="pagination" fs-cmsnest-element="list" fs-cmsfilter-element="list" fs-cmsload-element="list" role="list" class="blogs_list w-dyn-items">
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/stock-market-2024-recap-winning-and-losing-stock" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x-p-2600.jpg 2600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762bfc75594c6c42a72a5e7_2024%20wrap%20up2%402x.jpg 4096w" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">December 18, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Stock market 2024: The year’s stock winners and losers</h3>
+                                            <p fs-cmsfilter-field="summary" class="blogs_text">The stock market in 2024 painted a vivid picture of extremes. While a handful of companies soared to dazzling heights, delivering record-breaking gains, others faltered, their value eroded in a challenging economic landscape.</p>
+                                        </a>
+                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
+                                            <p>The stock market in 2024 painted a vivid picture of extremes. While a handful of companies soared to dazzling heights, delivering record-breaking gains, others faltered, their value eroded in a challenging economic landscape.</p>
+                                            <p>A recent IBD analysis reveals that eight S&amp;P 500 companies drove over $6 trillion in market value, accounting for more than half of this year’s $11.8 trillion index gain. Giants like Nvidia, Amazon, Apple, and Walmart were the heroes of 2024, while others like Intel, Nike, Boeing, and Moderna struggled to stay afloat.</p>
+                                            <p>Here’s a closer look at the winners and losers that defined the year.</p>
+                                            <p>‍</p>
+                                            <h2>Stock market winners of 2024</h2>
+                                            <h3>Nvidia stock 2024: The AI frontrunner</h3>
+                                            <p>‍</p>
+                                            <figure style="max-width:1400pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be645594c6c42a718214_AD_4nXcTx9yLPscv5cFGQI6frgvbAoLqhc8UwMDdK7UPAw5MGoptmnNNF_ukxT5tkD1G17aKIZ6cvqoyVMz-yqJ245rZ7ujaaFQtWaMzLosLxPwQHBvMuOnaImTHc_bC2rb2p4I2CDOPdQ.png" loading="lazy" alt="Nvidia stock performance in 2024 showing 180.40 percent year-to-date growth." /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1468pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be639405ea6b6c777355_AD_4nXfWI5sEiX580FELUHsxUf7Par3WFwV7tXaFnMSWqjCvUELh639Y3djk3P-ndkaZkXx-enBMo4-NmFJJsyINwXH-jghLGu5HHvTugXydmXcLn52LgcFxTUDfdyOzkQya-kWwdfsOyQ.png" loading="lazy" alt="Nvidia stock chart 2024 showing growth trend with moving average and relative strength index insights" /></div>
+                                                <figcaption>Source: Deriv MT5</figcaption>
+                                            </figure>
+                                            <p>‍</p>
+                                            <p>No stock better encapsulates 2024’s market success than Nvidia. Riding the AI boom, Nvidia’s stock surged 180%, adding an eye-popping $2.3 trillion in market value. To put this into perspective, Nvidia alone accounted for 20% of the S&amp;P 500’s total gains this year- an achievement unmatched by any other company.</p>
+                                            <p>With a stellar Relative Strength (RS) Rating of 96, Nvidia’s growth trajectory remains compelling. Analysts project its profit to climb nearly $300b in 2024 and a further 127% in 2025, solidifying its dominance in the AI semiconductor space.</p>
+                                            <p>‍</p>
+                                            <h3>Amazon stock 2024: An e-commerce powerhouse</h3>
+                                            <figure style="max-width:1370pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be6398d5c588c7420289_AD_4nXcrnCgeI9fT-CIiT1_9xOxpoBdbivLS43Wytg1YvWVP4t_cMBrJ0Om827RUFyI2FcRWKn01e7R7ul-mtm5pVU32BfYVr72IflQvXUex1UZxx-DhKuQOIRVPwffqDWPN5qUDDsHmVg.png" loading="lazy" alt="Amazon stock performance 2024 showing 50 percent year to date growth and strong market gains" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1468pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be6337d37e03df147d6e_AD_4nXd71P-JZnWAWPDvGyyanyQ6VrbWZr7Kf4X8Obt07p8NCxWTxGvemsrKfqDti3fV-g1rvf6P0kDzzWqHiYtSGOZSIdn-eLVjyGDoXrjHe57JSa7q_C9NPMwI-WOHYj3uxKybpx4s.png" loading="lazy" alt="Amazon Inc stock chart 2024 showing growth trend with moving average and relative strength index insights" /></div>
+                                                <figcaption>Source: Deriv MT5</figcaption>
+                                            </figure>
+                                            <p>Amazon took the runner-up spot, delivering a 50% stock gain in 2024 and adding $753 billion in market value. The e-commerce and cloud computing titan contributed 6.4% of the S&amp;P 500’s total gains. Analysts forecast profit growth of 77% this year and another 21% in 2025, further cementing Amazon’s status as a cornerstone of the modern economy.</p>
+                                            <p>‍</p>
+                                            <h3>Apple stock 2024: Driving innovation and revenue</h3>
+                                            <figure style="max-width:1388pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be63a24d4f98491bde90_AD_4nXeOo9UR0VqDMSgoi3XJtN8pIfTEDC2vVV26aM7W1k-ERUQV105087llpC3gyx0-2hb7INYg2Dy-G3BIhz1IaKoVqVE2oz-xuTfAn_ZwxExiOtSyk3Ba9SSOLgClFbpStfVFMNev.png" loading="lazy" alt="Apple stock performance 2024 showing 33 percent year to date growth with strong market presence." /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1464pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be634fa9c046151cfceb_AD_4nXdLdQfxK3uXg54Jp3ZOyejErJIufWyYAIIma6zCdPRDEbtv9dP9ltGSPLDm6FyltEPcvf6ACcUgEdAQRJZOcMhVd2ctni4Jju-3PeWIvW2vmvZNanrHl8AFBqKUMBLw48v_xxl4.png" loading="lazy" alt="Apple stock chart 2024 showing steady growth trend with moving average and relative strength index" /></div>
+                                                <figcaption>Source: Deriv MT5</figcaption>
+                                            </figure>
+                                            <p>Apple’s 33% stock gain in 2024 showcased the company’s continued ability to innovate and deliver value. Strong iPhone sales and services revenue drove its performance, with Q4 earnings beating expectations at $1.64 per share, a 12% year-over-year increase. Revenue reached $94.93 billion. The <a href="https://www.apple.com/ke/newsroom/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/" target="_blank">iPhone 16</a>, featuring AI-powered innovations, signals strong momentum for further growth.</p>
+                                            <p>‍</p>
+                                            <h3>Walmart stock 2024: A resilient retail story</h3>
+                                            <p>Proving that retail isn’t dead, Walmart surprised investors by soaring 78% this year, adding $342 billion in market value and accounting for roughly 3% of the S&amp;P 500’s total gains. With a CS Rating of 91 and robust profit growth expected in fiscal 2025 and 2026, Walmart demonstrated that traditional retail can thrive in a tech-driven world.</p>
+                                            <figure style="max-width:1364pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be6350d423af7b239064_AD_4nXfPJGZOt8SZLrRDioJ_F2j-SjJRkdey3-G_qSIbLZJITSnqMZGP0UW5dr9O5LibhZVtkSPYsKPNGCijOpZ7htsuSJ0XUygsBJolUG-8ivEcDUiT_5hhFfd2NXcHoSD9UTR2PLMsJA.png" loading="lazy" alt="Walmart stock performance 2024 showing 78 percent year to date growth with remarkable market gains." /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1460pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be639405ea6b6c77734d_AD_4nXdGcK0Ktpb5hqObaq57V7BmQgDoDJfY8A1wSb7AXve6YdwhlCUY2neb3jIMdc01vHZFd3Ds57Tq5dH3WRPV3YAVxb1WIvVzsuSQnfcOERHZb65FLNjYG4PUoLpIYXmiU7v4zuMeNA.png" loading="lazy" alt="Walmart stock chart 2024 showing consistent growth with moving average and strong relative strength index" /></div>
+                                                <figcaption>Source: Deriv MT5</figcaption>
+                                            </figure>
+                                            <p>‍</p>
+                                            <h2>The Stock market losers of 2024</h2>
+                                            <p>While some stocks soared, other <a href="/blog/posts/decline-in-the-stock-market" target="_blank">stocks fell</a>, dragging down the market&#x27;s overall momentum. Ten companies, including Intel, Nike, Boeing, and Moderna shed a combined $383.2 billion in value this year, underscoring the volatility and challenges some sectors faced.</p>
+                                            <p>‍</p>
+                                            <h3>Intel stock 2024: Missing the AI wave</h3>
+                                            <figure style="max-width:1430pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be635880a359915f74d0_AD_4nXenL8mXbeViLbugBSMPzchAC6K2rQE5bkpPnz6AFyJMLym8bHTspsxaqX7OgGVBUCzvyXa_oWyRXQclJ6cwtZQdOmnB3ckU7Hahqo6evDxdSmdKdwhhfSA9rTIpgfaDW50pE6NLNQ.png" loading="lazy" alt="Intel stock performance 2024 showing 57 percent decline year to date reflecting market challenges" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1464pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be6342d59afce23877b1_AD_4nXeWWqj5ZSTHcA6Fdx6W-dyeH5fY8jhi5Q4GlH2ANjphF2HUEQ0kMeOrqxRXQqN4w8HHs3hOVOqAeVLgmgxPmirgQNd13i-dMzvKai4Kn7iecG1nVescRl5jHehG3D8VAG0MNnQm.png" loading="lazy" alt="Intel stock chart 2024 showing significant decline with falling trend and moving average indicators" /></div>
+                                            </figure>
+                                            <p>At the top of the loser’s list is Intel, whose market value plummeted by $117.1 billion, marking a 58% drop in its stock price. Struggling to capitalize on the AI boom, Intel’s performance was the antithesis of Nvidia’s meteoric rise. With a dismal RS Rating of 12 and a forecasted profit decline of 112%, Intel’s challenges reflect a broader struggle to remain relevant in a rapidly evolving semiconductor market.</p>
+                                            <p>‍</p>
+                                            <h3>Nike stock 2024: Losing ground to rivals</h3>
+                                            <p><a href="https://www.reuters.com/business/retail-consumer/nike-post-steepest-sales-drop-since-covid-analysts-expect-target-reset-2024-09-30/" target="_blank">Nike</a> saw its value shrink by $48.5 billion this year, with shares falling 28%. This decline highlights a shift in consumer preferences toward competitors like Deckers and On Holding. With an RS Rating of 15 compared to On Holding’s 94, Nike struggled to regain its footing in a competitive landscape.</p>
+                                            <figure style="max-width:1418pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be63cdba34547334f71e_AD_4nXeL21dnFnfApgHq1lOVS6PnIrHB9NmMzup3_UMAigCVuM1cmhx3gM0VQA56ruqITzI5UChVtVVrGPG4XzWy3Or0aNmV7BtJMC_CSjCXFnR4qbqZN4Sr8RS2bY5Sel3Ek8C4Cccdyw.png" loading="lazy" alt="Nike stock performance 2024 showing 28 percent year to date decline highlighting market struggles" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1468pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be63a7ba58de19cdf1e4_AD_4nXcuaTMKsaXiSl5U49Wgyym9Qm2ZgL4O_2z_cnA1_v6ajfNWmi6CjzyB0VP-1nqKT2KLcwm0H_wiNh-3DlsiwVXNV6XH2ZrAV1vFwbFI8WZkE2nOY5CmOraVYMOh4Uac1loNAxD5.png" loading="lazy" alt="Nike stock chart 2024 showing downward trend and significant decline in performance over the year" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <h3>Boeing stock 2024: Struggles continued in 2024</h3>
+                                            <figure style="max-width:1426pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be6322698f9d6a6b6893_AD_4nXeIHJWGDqKaWpHlnBUTY96xXyaIn0A74M6guoFlC9Mbh3rFp5jt3zfjW-tAbjoGJWXcCPagtMA46KCNqiAP06DO6ZJ1qawfVwmyhRXt863eIzEZteIxQCbqjpp-lxm0RUOQM1gcIw.png" loading="lazy" alt="Boeing stock performance 2024 showing 35 percent year to date decline reflecting significant losses" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1466pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be638fbb408911d2ee5d_AD_4nXdWAbyT_XEi_cbWpnEOji75b344vwcSaMjvz97v7B39nMXk4OD4c7KpNotfOsLOpgE26hiyTLxqYrvWoJnP6R03d4_Or0YWfwGdZUfGrysCHKRH9xxEjOWlFeir7C8saF60rqSxqQ.png" loading="lazy" alt="Boeing stock chart 2024 shows a downward trend and a significant decline in value throughout the year." /></div>
+                                                <figcaption>Source: Deriv MT5</figcaption>
+                                            </figure>
+                                            <p>‍</p>
+                                            <p>Despite its dominance in aerospace, Boeing’s woes persisted in 2024, with shares tumbling 35% and wiping out $39.4 billion in market value. Plagued by a bloated cost structure and persistent quality control issues, Boeing faced a forecasted profit decline of 176%, further eroding investor confidence.</p>
+                                            <p>‍</p>
+                                            <h3>Moderna stock 2024: Post-pandemic pain</h3>
+                                            <figure style="max-width:1426px" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be633bb1525f21ea27a3_AD_4nXe-rl4S0miv4mtyb7Z5KhAu8LNxjy1_On1RfUxDJzAes68zhxqRK4tT9aUOiJn3NLHAjqOxDHnhCR8bJdJmGoKiWN7yADX-gzapaZCjx8W0DavBfh7u64gY8DwVhqgAyyXCib_i.png" loading="lazy" alt="Moderna stock performance 2024 showing 63 percent year to date decline amid post-pandemic challenges" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <figure style="max-width:1472px" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6762be636172de9176c42c92_AD_4nXdd_prAwhGOvphE554myBsuvDeOtZIqXAqqGky4tlYG7-QvnHoVoRgfv7Su9a2HSLvEuAyXTxw4NmduHHK3nz_IWuM_z89J3MWSaaJXVzvCqMm4quzh0qddoab_7yIOBs4dQbZJdA.png" loading="lazy" alt="Moderna stock chart 2024 showing steep decline in value reflecting post-pandemic market challenges" /></div>
+                                            </figure>
+                                            <p>‍</p>
+                                            <p>Moderna’s 63% drop this year reflects the challenges biotech firms face in a post-pandemic world. Once a hero of the COVID-19 vaccine race, Moderna hit a 52-week low of $41.52 amid concerns over vaccine demand sustainability and high cash burn. Despite advancing its mRNA technology and gaining regulatory approvals for its RSV vaccine, the company struggled to regain momentum. Analysts’ revised price targets signal lingering uncertainty about its future growth.</p>
+                                            <p>‍</p>
+                                            <h2>‍<strong>A year of contrasts for stocks</strong></h2>
+                                            <p>2024 was a year defined by extremes. The staggering gains of Nvidia, Amazon, Apple, and Walmart stood in stark contrast to the sharp declines of Intel, Nike, Boeing, and Moderna. These polarising performances highlight the importance of adaptability, innovation, and execution in navigating an ever-changing market. You can monitor the winners for what’s left of 2024, and into 2025 with a <a href="/dmt5/" target="_blank">Deriv MT5</a> account. Log in now to take advantage of the indicators, or <a href="/signup/" target="_blank">sign up</a> for a free demo account.</p>
+                                        </div>
+                                    </div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/holiday-trading-hours-market-schedule-2024" class="blogs_link-block w-inline-block">
                                             <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7b0b3193f26b424cd44_year%20end%20holiday.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7b0b3193f26b424cd44_year%20end%20holiday-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7b0b3193f26b424cd44_year%20end%20holiday-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7b0b3193f26b424cd44_year%20end%20holiday-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7b0b3193f26b424cd44_year%20end%20holiday.jpg 1600w" class="blogs_image" /></div>
                                             <div class="blogs_date is-no-wrapper w-dyn-bind-empty"></div>
@@ -1679,30 +1789,15 @@
                                             <h2>Stock indices market hours</h2>
                                             <p>The holiday season often sees lower trading volumes as participants step away. Adapting your strategy by tracking daily volumes and liquidity during market hours is key.</p>
                                             <p>Stock markets operate Monday through Friday on regular business days. During the holiday season, trading schedules may vary. Below are the holiday schedules for some of our major stock indices.</p>
-                                            <figure style="max-width:638pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8863_6760f55d10e57c58bcea2190_stock%2520indices%25201.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:638pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8860_6760f56779f9b04bbad0c09c_stock%2520indices%25202.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:638pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f885d_6760f572b3193f26b4229e84_stock%2520indices%25203.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:638pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f887e_6760f57ce8faad5fb98f7a8e_stock%2520indices%25204.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:638pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8869_6760f58579f9b04bbad0df63_stock%2520indices%25205.png" loading="lazy" alt="" /></div>
+                                            <figure style="max-width:3288px" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67627d8954b48cf54cef9c6e_67627d722119604e74058a5a_Stock%2520indices%2520market%2520hours.jpeg" loading="lazy" alt="" /></div>
                                             </figure>
                                             <p>‍</p>
                                             <h2>Commodities trading market hours</h2>
                                             <p>During the holiday season, trading activity and volumes in commodity markets often decline significantly, making prices more sensitive to even minor fluctuations in supply and demand. </p>
                                             <p>Below is the holiday schedule for all the commodities we offer.</p>
-                                            <figure style="max-width:810pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f885a_6760f67d4a50b6d5317e8497_commodities%25201.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:810pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8851_6760f686b3193f26b423d7f7_commodities%25202.png" loading="lazy" alt="" /></div>
+                                            <figure style="max-width:3288pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67626ec36383311284ed5a65_67626e9af460f76901e4b649_Commodities%2520trading%2520market%2520hours.jpeg" loading="lazy" alt="" /></div>
                                             </figure>
                                             <p>‍</p>
                                             <h2>ETFs and Stock market hours</h2>
@@ -1714,11 +1809,8 @@
                                             <p>‍</p>
                                             <h2>Platform Market Accessibility</h2>
                                             <p>On Deriv, cryptocurrencies and synthetic indices (excluding Forex Synthetic, Basket, and Tactical Indices) are available for trading 24/7, ensuring uninterrupted access even during holidays and public holidays. Stay connected to the markets whenever it suits you!</p>
-                                            <figure style="max-width:642pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8892_6760f75fc4282a36b591307d_platform%2520market%2520accessibility%25201.png" loading="lazy" alt="" /></div>
-                                            </figure>
-                                            <figure style="max-width:642pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6760f7cc4a50b6d5317f8857_6760f7671790989926ec3db0_platform%2520market%2520accessibility%25202.png" loading="lazy" alt="" /></div>
+                                            <figure style="max-width:3288pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                                                <div><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67626ec06383311284ed59da_67626eb0eceaee16f4df10a6_platform%2520market%2520accessibility.jpeg" loading="lazy" alt="" /></div>
                                             </figure>
                                             <p>‍</p>
                                             <h2>Trade around market closures as we close 2024</h2>
@@ -1741,6 +1833,38 @@
                                             <p id="">Ofisi hiyo itakuwa na vifaa vya hali ya juu, ikiwa ni pamoja na maeneo ya ushirikiano, nafasi za kisasa za kazi, na maeneo Inakusudia kutoa mazingira ya kuhamasisha kwa majukumu kama vile Wachambuzi wa Biashara, Wahandisi wa DevOps na WinOps, na Watengenezaji wa Msimbo wa Chini, wakiwezesha wataalamu kushinikiza mipaka ya teknolo</p>
                                             <p id="">Kwa zaidi ya uzoefu wa miaka 25, maeneo 20 ya ulimwengu, na sifa nyingi za 'Mahali pa Kufanya Kazi”, uwekezaji wa Deriv huko Kupro unasisitiza kujitolea kwake kwa uvumbuzi na ukuaji wa ulimwengu. Kwa kupanua huko Nicosia, kampuni inaendelea kuimarisha nafasi yake kama kiongozi wa fintech wakati wa kuchangia mazingira ya mitaa ya talanta na teknolojia.</p>
                                             <p>‍</p>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/deriv-launches-tactical-indices-for-smarter-trading" class="blogs_link-block w-inline-block">
+                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/67472acf243b5359dc095ac4_Tactical%20Indices%20for%20PR-900%20x%20500%20(1).jpg 900w" class="blogs_image" /></div>
+                                            <div class="blogs_date is-no-wrapper">November 29, 2024</div>
+                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Deriv inazindua Sintetiki Indeksi: Kuimarisha biashara ya msingi wa mkakati</h3>
+                                            <p fs-cmsfilter-field="summary" class="blogs_text">Uzinduzi wa mapinduzi wa Sintetiki Indeksi na Deriv unawawezesha wafanyabiashara kukata kupitia mikakati ngumu ya biashara. Soma kuhusu vipengele vyake.</p>
+                                        </a>
+                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
+                                            <p id=""><strong id="">Cyberjaya, 27 Novemba</strong> – Deriv imezindua Sintetiki Indeksi, daraja jipya la mali linalobadilisha jinsi wafanyabiashara wanavyoshirikiana na masoko ya kifedha. Maendeleo haya yanatoa njia za kisasa za biashara, na kuyafanya kufikiwa na wafanyabiashara wa viwango vyote vya uzoefu.</p>
+                                            <p id="">Kama broker wa mtandaoni aliyeanzishwa na uzoefu wa miaka 25 katika sekta, Deriv ilitengeneza Sintetiki Indeksi kushughulikia changamoto za kawaida za biashara. Toleo hili jipya linafanya kazi kiotomatiki kwa kutekeleza sheria zilizowekwa mapema kwa msingi wa viashiria vya kiufundi, kuruhusu wafanyabiashara kufaidika na fursa za soko bila ushirikiano wa mara kwa mara wa mikono.</p>
+                                            <p id="">"Sintetiki Indeksi husaidia kufunga pengo kati ya mikakati ngumu ya biashara na utekelezaji wa vitendo," anasema Prakash Bhudia, Kiongozi wa bidhaa na ukuaji katika Deriv. "Tunaifanya teknolojia za biashara za juu kuwa rahisi zaidi kwa kupunguza vizuizi vya utekelezaji wa mikono na ugumu wa kiufundi."</p>
+                                            <h3 id="">Biashara ya kimkakati imeelezewa upya: Indeksi bora za kuuza&nbsp;</h3>
+                                            <p id="">Uzinduzi wa awali unajumuisha Sintetiki Indeksi nne za Kijani RSI, kila moja imeundwa ili kunasa fursa tofauti za soko:</p>
+                                            <p id=""><strong id="">Indeksi zinazoegemea momentum</strong>&nbsp;</p>
+                                            <ul id="">
+                                                <li id="">Mwelekeo Wa Juu: inaweza kufanya faida kutokana na mwelekeo wa juu katika bei za fedha.</li>
+                                                <li id="">Mwelekeo Wa Chini: inaweza kufanya faida kutokana na mwelekeo wa chini katika bei za fedha.</li>
+                                            </ul>
+                                            <p id=""><strong id="">Indeksi zinazopingana</strong></p>
+                                            <ul id="">
+                                                <li id="">Pullback: inaweza kufanya faida kutokana na kurudi nyuma kwa mwelekeo wa chini katika fedha.</li>
+                                                <li id="">Rebound: inawezekana kufanya faida kutokana na kurudi nyuma kwa mwelekeo wa juu katika fedha.<br></li>
+                                            </ul>
+                                            <h3 id="">Manufaa makuu ya Sintetiki Indeksi kwa wafanyabiashara</h3>
+                                            <ul id="">
+                                                <li id="">Utekelezaji wa mkakati ulio otomatika: Viashiria vya kiufundi inaongoza marekebisho ya nafasi kiotomatiki</li>
+                                                <li id="">Kupunguza gharama za biashara: Kupunguza gharama kutokana na uwiano wa mikono</li>
+                                                <li id="">Upatikanaji wa biashara wa juu: Mikakati ngumu bila ujuzi mpana wa kiufundi</li>
+                                                <li id="">Leverage ya kimkakati: Uwazi ulioboreshwa kwa faida zinazoweza kuzidi</li>
+                                            </ul>
+                                            <p id=""><a href="https://deriv.com/academy/trading-guides/tactical-indices-a-beginners-guide" target="_blank">Sintetiki Indeksi</a>, zinazopatikana sasa kwenye Deriv MT5, Deriv cTrader, na Deriv X, ni hatua muhimu mbele. Deriv inapanga kupanua toleo hilo mapema mwaka wa 2025 kwa kuongezea viashiria vya kiufundi, ikiwa ni pamoja na MACD na Bollinger Bands, pamoja na mikakati mpya za biashara na madaraja ya mali.<em id="">‍</em></p>
                                         </div>
                                     </div>
                                     <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/ethereum-price-drop-temporary-pause-or-setup" class="blogs_link-block w-inline-block">
@@ -1885,64 +2009,6 @@
                                             </figure>
                                             <p id="">‍</p>
                                             <p id="">Kwa sasa, unaweza kushiriki na kutazama juu ya bei ya mali hizi mbili za kushangaza na akaunti ya <a href="https://deriv.com/dmt5/" target="_blank" id="">Deriv MT5</a> . Inatoa orodha ya viashiria vya kiufundi ambavyo vinaweza kutumika kuchambua bei. Ingia sasa ili kutumia faida ya viashiria, au <a href="https://deriv.com/signup/" target="_blank" id="">jiandikishe</a> kwa akaunti ya bure ya onyesho. Akaunti ya onyesho inakuja na fedha halisi ili uweze kufanya mazoezi ya kuchambua mwenendo bila hatari.</p>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/yen-rebounds-what-is-next-for-usd-jpy" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1).png" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1)-p-2000.png 2000w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a5b09ad2b6bbc9a7cc1a_Yen%20rebound%20snippet%20(1).png 3200w" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 28, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Yen huongezeka wakati wafanyabiashara huangalia data muhimu na benki kuu kusonga</h3>
-                                            <p fs-cmsfilter-field="summary" class="blogs_text">Yen inarudisha sana, ikiongeza kutokuwa na uhakika karibu na USD/JPY. Jifunze jinsi data ya kiuchumi inavyokaribia inavyoweza kuathir</p>
-                                        </a>
-                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
-                                            <p id="">Baada ya mauzo makali mapema wiki, yen ya Japani (JPY) iliongezeka siku ya Alhamisi, ilichochewa na uwindaji wa biashara na matarajio ya data muhimu ya kiuchumi. Soko sasa linalenga takwimu za mfumuko wa bei wa Tokyo na data za PMI ulimwenguni, ambazo zote zinaweza kuathiri hatua zifuatazo za sera za Benki ya Japan na kuathiri jozi kuu za sarafu, haswa USD/JPY.</p>
-                                            <p id=""><strong id="">Athari za kijiografia: </strong>Mapambano ya BoJ kufikia lengo lake la mfumuko wa bei huongeza uhakika kwa njia ya Yen. Wakati huo huo, kupunguza kwa kiwango cha kushangaza cha Benki ya Canada kimetuma miguko kupitia jozi ya USD/CAD, na kuongeza kubadilika kwa soko.</p>
-                                            <p id=""><strong id="">Mtazamo wa kiufundi wa USD/JPY:</strong> Jozi hao wanafanya biashara karibu $152, wakikabiliwa na upinzani karibu na $152.51 kwani RSI inaashiria hali ya kununuliwa kupita kiasi. Msaada unaonekana kwa $148.80, na upimaji wa upya wa wastani wa siku 100. Kutarajia kuongezeka kwa ubadilishaji huku wafanyabiashara hutoa data ijayo za PMI na wafanyikazi</p>
-                                            <p id="">Soma makala kamili hapa: <a href="https://www.fxstreet.com/analysis/yen-rebounds-amid-key-global-data-and-central-bank-moves-202410241445" target="_blank">https://www.fxstreet.com/analysis/yen-rebounds-amid-key-global-data-and-central-bank-moves-202410241445</a></p>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" class="w-dyn-item"><a data-w-id="e2ee0641-42e4-41fa-b596-10d9676870e3" href="/sw/blog/posts/will-election-2024-shift-stock-market-behaviour" class="blogs_link-block w-inline-block">
-                                            <div class="blogs_image-wrapper"><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a2e358ffc8edfb7823a7_Election%202024%20(1).png" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 46vw, 28vw" srcset="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a2e358ffc8edfb7823a7_Election%202024%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a2e358ffc8edfb7823a7_Election%202024%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a2e358ffc8edfb7823a7_Election%202024%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a2e358ffc8edfb7823a7_Election%202024%20(1).png 1200w" class="blogs_image" /></div>
-                                            <div class="blogs_date is-no-wrapper">October 25, 2024</div>
-                                            <h3 fs-cmsfilter-field="name" class="padding-bottom padding-xxsmall">Uchaguzi 2024: Ni hisa gani zinazoweza kustawi au kuingia baada ya uchaguzi</h3>
-                                            <p fs-cmsfilter-field="summary" class="blogs_text">Je! Uchaguzi wa Rais wa Marekani 2024 utaathiri vipi tabia ya soko la hisa? Tafuta utabiri wa soko la hisa unasema nini kuhusu hisa za EV na zaidi.</p>
-                                        </a>
-                                        <div fs-cmsfilter-field="text" class="hidden w-richtext">
-                                            <p id="">Huku uchaguzi wa urais wa Marekani wa <a href="https://www.usatoday.com/story/news/politics/elections/2024/10/25/days-until-election-day-countdown-clock/75825488007/" target="_blank" id="">wa</a> utakapotarajiwa kufanyika tarehe 2 Novemba, mashindano kati ya Makamu wa Rais Kamala Harris na Rais wa zamani Donald Trump inazimarisha, na kushinikiza homa ya uchaguzi hadi kiwango cha juu cha wakati wote. Matokeo yanaweza kuwa na athari kubwa kwa sekta mbalimbali za uchumi, na wawekezaji wanaangalia kwa karibu hisa ambazo zinaweza kuathiriwa na matokeo hayo.&nbsp;</p>
-                                            <p id="">Kuanzia huduma za kifedha, hadi magari ya nishati na umeme (EV), hisa kama Benki ya Amerika, Microsoft, Rivian, na Airbnb ziko tayari kwa harakati zinazowezekana. Lakini kabla ya kuingia kwenye hisa hizi za kibinafsi, ni muhimu kuelewa jinsi soko la hisa lilitenda kihistoria wakati wa mizunguko ya uchaguzi.</p>
-                                            <p id="">‍</p>
-                                            <h2 id="">Tabia ya soko la hisa wakati wa chaguzi uliopita</h2>
-                                            <p id="">Kihistoria, uchaguzi wa <a href="https://www.livemint.com/news/us-news/is-the-s-p-500-signalling-a-kamala-harris-win-in-the-2024-us-presidential-election-donald-trump-republican-democrat-11729772714541.html" target="_blank" id="">US</a> umekuwa na athari kubwa kwenye soko la hisa, na mifumo yanayoibuka kwa karibu karne moja. Tangu 1928, S&amp;P 500 imetabiri kwa usahihi matokeo ya uchaguzi 20 kati ya 24 za urais wa Marekani. Nguvu hii ya utabiri inatokana na mwenendo ambapo, ikiwa soko linaongezeka katika miezi mitatu kufuatia Siku ya Uchaguzi, chama kinachojulikana kinataka kushinda.&nbsp;</p>
-                                            <p id="">Kinyume chake, soko linalopungua kawaida inaashiria mabadiliko ya nguvu. Kwa mfano, wakati soko la hisa lilikuwa ikiongezeka wakati hiki muhimu, chama cha juu kiliweka White House mara 12 kati ya 15. Kwa upande mwingine, chama kilicho madarakani kilipoteza uchaguzi 8 kati ya 9 iliyopita wakati soko lilikuwa chini katika miezi iliyofuata kura hiyo.</p>
-                                            <figure id="" class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center">
-                                                <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/6728a0b408a7d61e9f781951_AD_4nXezdD4bU8lQHPzFzv08En_G4mk6NChWxoDEKgyz-PEqz_k8JkDfgE-rf62zBUVsP4SgDKaiWQ8ApoytevLzLoi2O30-XRqNr62WIItVngz4drQrJgwJT4s_GWGMz2XFJFljOKi6aRBGJYy4STadWwwS2Ic_.png" width="auto" height="auto" alt="" loading="auto" id=""></div>
-                                            </figure>
-                                            <p id="">Chanzo: LP Fedha</p>
-                                            <p id="">‍</p>
-                                            <p id="">Hivi sasa, soko la hisa limeonyesha kasi nzuri tangu Agosti, ambayo, kihistoria, inaweza kupendekeza kuendelea kwa sera za utawala wa sasa. Walakini, na Joe Biden akiacha muhula wa pili na Kamala Harris anaongoza tiketi ya Kidemokrasia, uchaguzi huu unaleta uhakika wa kipekee.</p>
-                                            <p id="">Mwekezaji maarufu Stan Druckenmiller hivi karibuni <a href="https://www.bloomberg.com/news/articles/2024-10-16/druckenmiller-says-market-is-very-convinced-trump-will-win" target="_blank" id="">alibainisha </a>kwamba soko linaonekana kuwa na bei katika ushindi unaowezekana wa Trump, ambao unaweza kusababisha hatua muhimu maalum za sekta. Uchunguzi wa Druckenmiller unaonyesha hisia kubwa kwamba, wakati masoko ya hisa huwa yanajibu kwa muda mfupi kwa matokeo ya kisiasa, utendaji wa muda mrefu unaunganishwa zaidi na mwenendo mpana wa uchumi kama mfumuko wa bei, sera za fedha, na ujasiri wa watumiaji.</p>
-                                            <p id="">Athari za haraka za uchaguzi hazikubaliki; hata hivyo, ni muhimu kutambua kwamba data ya kihistoria zinaonyesha mapato ya soko kwa muda mrefu hadi muda mrefu huathiriwa sana na mambo ya uchumi wa uchumi badala ya matokeo ya uchaguzi.</p>
-                                            <p id="">Serikali iliyogawanya—ambapo chama kimoja kinadhibiti urais na kingine kinadhibiti Bunge - kihistoria imesababisha utendaji bora wa soko la hisa kuliko udhibiti wa chama kimoja. Hii ndio sababu wawekezaji wanahitaji kuzingatia sio tu nani anayeshinda urais lakini pia juu ya muundo wa Bunge na jinsi inavyoweza kuathiri utekelezaji wa sera.</p>
-                                            <h2 id="">Sekta muhimu na hisa za kutazama</h2>
-                                            <h3 id="">Huduma za fedha: Benki ya Amerika (BAC)</h3>
-                                            <p id="">Sekta ya fedha ni moja ya maeneo muhimu ambayo yanaweza kuona athari kubwa kulingana na matokeo ya uchaguzi. Ushindi wa Trump unaweza kuashiria kuendelea kwa kupunguza udhibiti, unaweza kufaidika taasisi kubwa za kifedha kama Benki ya Amerika. Muda wa kwanza wa Trump uliona kurejeshwa kwa kanuni kadhaa za Dodd-Frank, ambazo zinaruhusu benki kupanua shughuli na kuongeza faida.</p>
-                                            <p id="">Mfaidika mwingine wa mazingira ya udhibiti wa biashara ambayo Trump anatarajiwa kukuza ni sekta ya kifedha, pamoja na benki na taasisi zingine za kifedha. Benki wanatarajia kuwa sheria kali zinazoundwa na utawala wa Biden zitarejeshwa au hata kuondolewa, huku mchambuzi mmoja wa <a href="https://www.vtg-mkt.com/en/academy/us-presidential-election-sector-winner-loser/" target="_blank" id=""></a> anatarajia “viwango vikali vya mtaji.” Hii inaweza kuunda mazingira mazuri zaidi kwa wakubwa wa kifedha kama Benki ya Amerika, na kuwawezesha kukua na kuchukua hatari zaidi.</p>
-                                            <p id="">Walakini, hata chini ya urais wa Harris, sekta ya fedha inaweza kubaki imara, haswa na wasiwasi unaoongezeka wa vyama viwili juu ya mfumuko wa bei, viwango vya riba, na mikopo ya watumiaji. Benki ya Amerika, kama moja ya benki kubwa zaidi nchini Marekani, ina nafasi nzuri ya kufaidika na utawala wote, na kuifanya kuwa hisa ambayo wawekezaji wanapaswa kufuatilia kwa karibu wakati uchaguzi unakaribia.</p>
-                                            <h3 id="">Teknolojia na usalama wa mtandao: Microsoft (MSFT)</h3>
-                                            <p id="">Microsoft ni kampuni nyingine ambayo inaweza kufanya vizuri bila kujali matokeo ya uchaguzi. Harris na GOP wamesisitiza umuhimu wa usalama wa mtandao, huku Harris alikuwa mtetezi wa muda mrefu wa kuimarisha miundombinu ya IT dhidi ya vitisho vya mtandao. Jukwaa la GOP pia linajumuisha lengo juu ya usalama wa mtandao, ikilingana na wasiwasi unaokua juu ya ulinzi wa mtandao.</p>
-                                            <p id="">Microsoft, kiongozi katika AI na usalama wa mtandao, iko nafasi ya kufaidika na lengo hii ya pande mbili. Kama mtoa huduma wa wingu wa pili kwa ukubwa, Microsoft imeunganisha AI kwenye seti yake ya bidhaa za programu na pia hutoa suluhisho kamili za usalama wa mtandao. Kwa kuzingatia umuhimu wa AI katika sekta zote za biashara na serikali, matarajio ya ukuaji wa Microsoft bado imara, bila kujali ni chama gani kinachukua White House.</p>
-                                            <h3 id="">Hisa za EV: Rivian Automotive (RIVN) na Tesla (TSLA)</h3>
-                                            <p id="">Sekta ya gari la umeme (EV) ni lengo kubwa katika uchaguzi huu, haswa chini ya Harris, ambaye ameendelea kuunga mkono wa Biden kwa sera zinazounga EV. Harris amepinga motisha ya shirikisho kama vile mkopo wa ushuru wa EV wa $7,500, pamoja na mabilioni ya dola katika ruzuku za kujenga mtandao wa kitaifa wa malipo. Sera hizi zinawafaidia moja kwa moja kampuni kama Rivian Automotive, ambayo huzalisha R1T pickup, R1S SUV, na gari za utoaji kwa Amazon, pamoja na Tesla, ambayo uongozi wake katika nafasi ya EV huiweka kutumia motisha hizi.</p>
-                                            <p id="">Licha ya Elon Musk kumunga mkono Trump, ushindi wa Kamala Harris unaweza kukuza Tesla, shukrani kwa msisitizo wake juu ya nishati mbadala na upanuzi wa EV. Kwa kweli, kampeni ya Harris imepangwa kukutana na wamiliki wa Tesla kwenye simu ya Zoom <a href="https://finance.yahoo.com/news/tesla-owners-unite-support-kamala-140000196.html" id=""></a> mnamo Novemba 2, ikionyesha uangaliano wake na sera za pro-EV.</p>
-                                            <p id="">Rivian pia imepata maoni mazuri kutoka kwa wachambuzi, na makubaliano ya kiwango cha “Nunua” na matumaini juu ya ukuaji wake wa baadaye. Uboreshaji wa Rivian katika uzalishaji na ushirikiano wa kimkakati, kama vile uwekezaji wa Volkswagen wa $5 bilioni, huimarisha zaidi nafasi yake katika soko la EV. Ikiwa Harris anaendelea na sera za Biden au Trump hubadilisha soko kwa lengo la nishati ya jadi zaidi, Rivian na Tesla zinabaki kuwa hisa kali za kutazama.</p>
-                                            <h3 id="">Usafiri na Utalii: Airbnb (ABNB)</h3>
-                                            <p id="">Airbnb ni hisa nyingine ya kuzingatia wakati uchaguzi unapokaribia. Wachambuzi wengine wanatabiri kwamba ushindi wa Trump unaweza kusababisha kuongezeka kwa ujasiri wa watumiaji na kusafiri, ambayo itafaidi Kampuni hiyo tayari imeonyesha faida na ustahimilivu katika sekta ya kusafiri na inaweza kuona ukuaji zaidi wakati mahitaji ya kusafiri yanapoongezeka baada ya janga.</p>
-                                            <p id="">Bila kujali ni nani anayeshinda uchaguzi huo, ufanisi wa uendeshaji wa Airbnb na utendaji mzuri wa kifedha hufanya kuwa chaguo thabiti kwa wawekezaji wanaotafuta kutumia fursa kwa sekta ya usafiri na utalii.</p>
-                                            <h2 id="">Maoni ya wataalamu na barabara mbele</h2>
-                                            <p id="">Uchaguzi wa Marekani unapokaribia, wataalam wa soko wanasisitiza kuwa ingawa matokeo ya kisiasa yanaweza kuathiri sekta maalum, utendaji wa hisa wa muda mrefu unaendeshwa kimsingi na mwenendo mpana wa uchumi kama mfumuko wa bei, viwango vya riba, na sera Wawekezaji wanapaswa kuangalia kwa karibu sababu hizi za uchumi wa uchumi wakati wa kufuatilia hisa za kibinafsi ambazo zinaweza kuathiriwa na uchaguzi</p>
-                                            <p id="">Kwa wale wanaotafuta kuendelea kwenye soko la baada ya uchaguzi, hisa zilizojadiliwa - Benki ya Amerika, Microsoft, Rivian, na AirBNB - hutoa uwezo mkubwa wa ukuaji. Ikiwa Harris au Trump wanashinda, kampuni hizi ziko tayari kufaidika na mwenendo unaoendelea katika ulinzi, teknolojia, nishati, na safari za watumiaji.</p>
-                                            <h2 id="">Biashara za hisa za uchaguzi kwenye Deriv MT5</h2>
-                                            <p id="">Ikiwa unatafuta kuanzisha nafasi za biashara kabla ya uchaguzi wa Marekani, Deriv MT5 inatoa mali anuwai, ikiwa ni pamoja na Benki ya Amerika, Microsoft, Rivian, Tesla, na Airbnb. Ukiwa na <a href="https://deriv.com/dmt5/" target="_blank" id="">Deriv MT5</a>, unaweza kuchunguza hisa hizi muhimu na kuweka portfolio yako kwa mafanikio, bila kujali ni nani anayeshinda urais.&nbsp;</p>
-                                            <p id="">‍</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2217,6 +2283,18 @@
                                                                         </clipPath>
                                                                     </defs>
                                                                 </svg></div>
+                                                        </a><a href="/sw/partners-help-centre" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
+                                                            <div>Kituo cha Msaada kwa Wabia</div>
+                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_8673_4157)">
+                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_8673_4157">
+                                                                            <rect width="12" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></div>
                                                         </a><a href="https://api.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
                                                             <div>Deriv API</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2338,6 +2416,18 @@
                                                                         </clipPath>
                                                                     </defs>
                                                                 </svg></div>
+                                                        </a><a href="/sw/partners-help-centre" target="_blank" class="footer_link is-block w-inline-block">
+                                                            <div>Kituo cha Msaada kwa Wabia</div>
+                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_8673_4157)">
+                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_8673_4157">
+                                                                            <rect width="12" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></div>
                                                         </a><a href="https://api.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
                                                             <div>Deriv API</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2402,8 +2492,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.6721e8114f34b8c0a52cdbd12d675447.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.25.3/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.d8b755fa6b7cf8d9173314a0d23dc1e7.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.25.4/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2919,6 +3009,37 @@
             }
         }
     </script>
+
+
+
+    <script>
+        (function(g, e, o, t, a, r, ge, tl, y) {
+            s = function() {
+                var def = 'geotargetlygeocontent1734508191130_default',
+                    len = g.getElementsByClassName(def).length;
+                if (len > 0) {
+                    for (i = 0; i < len; i++) {
+                        g.getElementsByClassName(def)[i].style.display = 'inline';
+                    }
+                }
+            };
+            t = g.getElementsByTagName(e)[0];
+            y = g.createElement(e);
+            y.async = true;
+            y.src = 'https://g1584674684.co/gc?winurl=' + encodeURIComponent(window.location) + '&refurl=' + g.referrer + '&id=-OENjdmdAwPNzarLahBV';
+            t.parentNode.insertBefore(y, t);
+            y.onerror = function() {
+                s()
+            };
+        })(document, 'script');
+    </script>
+    <noscript>
+        <style>
+            .geotargetlygeocontent1734508191130_default {
+                display: inline !important
+            }
+        </style>
+    </noscript>
     <script>
         var Webflow = Webflow || [];
         Webflow.push(function() {

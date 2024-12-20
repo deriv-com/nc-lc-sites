@@ -1,0 +1,30 @@
+﻿.wallet-transaction-action-type {
+    text-transform: capitalize;
+    color: var(--color-neutral-7);
+}
+
+.wallet-transaction-container-border {
+    border-radius: 8px;
+}
+
+.wallet-transaction-container-no-border {
+    border-radius: 8px 8px 0 0;
+}
+
+.wallet-transaction-item {
+    width: 100%;
+    padding: var(--space-base);
+    background-color: var(--color-neutral-1);
+}
+
+.wallet-transaction-btn {
+    border: none;
+    width: 100%;
+    background-color: var(--color-neutral-1);
+    padding: var(--space-base);
+    border-radius: 0 0 8px 8px;
+}
+
+.wallet-transaction-btn:active {
+    background-color: var(--color-neutral-2);
+}

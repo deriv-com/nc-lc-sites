@@ -1,15 +1,15 @@
 import {
-    a as b
-} from "./_oschunk-JBLOSOOY.js";
+    a as O
+} from "./_oschunk-I35P33TF.js";
 import {
     A as g,
     V as u,
-    ba as O,
+    ba as b,
     e as f,
     h as S,
     i as h,
     r as p
-} from "./_oschunk-NTQBNJ73.js";
+} from "./_oschunk-5EPHB76O.js";
 import {
     c as a
 } from "./_oschunk-DVBKI63I.js";
@@ -79,18 +79,18 @@ var m = class m {
 };
 a(m, "n");
 var d = m,
-    w = "6.20.5";
+    w = "6.20.6";
 f.registerPackage("client-runtime-core", w);
 (typeof window != "undefined" ? window : global).OutSystemsDebugger = new d;
-Promise.all([u.default.initialize(b, h.Application.InitializationType.Full, new p.DateTimeFormatInfo("yyyy-MM-dd", "HH:mm:ss"), new p.NumberFormatInfo(".", ""), function() {
-    return Promise.all(["scripts/tradershub.UserScripts.FeatureFlags.js", "scripts/tradershub.UserScripts.DerivUTM.js", "scripts/tradershub.UserScripts.ReconnectingWebsocket.js", "scripts/tradershub.UserScripts.DerivAPIBasic.js", "scripts/tradershub.UserScripts.CachingScript.js", "scripts/tradershub.UserScripts.DerivAnalytics.js"].map(function(r) {
-        return O.requireScript(r)
+Promise.all([u.default.initialize(O, h.Application.InitializationType.Full, new p.DateTimeFormatInfo("yyyy-MM-dd", "HH:mm:ss"), new p.NumberFormatInfo(".", ""), function() {
+    return Promise.all(["scripts/tradershub.UserScripts.FeatureFlags.js", "scripts/tradershub.UserScripts.DerivUTM.js", "scripts/tradershub.UserScripts.ReconnectingWebsocket.js", "scripts/tradershub.UserScripts.DerivAPIBasic.js", "scripts/tradershub.UserScripts.CachingScript.js", "scripts/tradershub.UserScripts.DerivAnalytics.js", "scripts/tradershub.UserScripts.JSCookie.js"].map(function(r) {
+        return b.requireScript(r)
     }))
 }).then(function(r) {
     if (r) {
         let e = function() {
                 return new Promise(function(n) {
-                    Promise.all([import("./_oschunk-63TBXLBE.js")]).then(function(i) {
+                    Promise.all([import("./_oschunk-QUH5SWU6.js")]).then(function(i) {
                         var s = i[0];
                         u.default.registerDefaultErrorHandler(function() {
                             return function(o, c) {
@@ -102,7 +102,7 @@ Promise.all([u.default.initialize(b, h.Application.InitializationType.Full, new 
             },
             t = function() {
                 return S.promise(function(n, i) {
-                    Promise.all([import("./_oschunk-N7YEPY7D.js")]).then(function(s) {
+                    Promise.all([import("./_oschunk-WYV6LGHR.js")]).then(function(s) {
                         var o = s[0];
                         try {
                             o.Router.load(u.default), n()

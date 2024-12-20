@@ -9,13 +9,17 @@ let FEATURE_FLAGS = [{
         enabled: false
     },
     {
-        name: "EURealAccountCreation",
+        name: "UAT",
         enabled: false
     },
     {
         name: "WalletRealAccountCreation",
         enabled: false
     },
+    {
+        name: "WalletsP2P",
+        enabled: false
+    }
 ]
 
 if (location.hostname === "hub.deriv.com") {

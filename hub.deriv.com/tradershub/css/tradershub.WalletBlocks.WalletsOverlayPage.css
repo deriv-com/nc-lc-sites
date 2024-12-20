@@ -25,6 +25,7 @@
     overflow-y: auto;
     position: fixed;
     left: 0;
+    background-color: var(--color-background-body);
 }
 
 .phone .wallet-overlay-container,
@@ -35,6 +36,7 @@
 .desktop .wallet-overlay-container {
     top: calc(48px + 56px);
     position: fixed;
+    height: calc(100% - (48px + 56px));
 }
 
 /* Wallet Title  */

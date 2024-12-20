@@ -128,7 +128,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -818,7 +819,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -1726,7 +1728,7 @@
                                         <h3 id=""><strong id="">1. No hagas clic en los enlaces aleatorios</strong>.</h3>
                                         <p id="">Asegúrese de que la URL comience por <strong id="">HTTPS</strong> y no por HTTP, y preste siempre atención a la ortografía, los caracteres y otras irregularidades que se puedan encontrar en la URL. Si encuentra que nuestra <a href="https://deriv.com/" target="_blank" id="">página web</a> oficial no empieza por HTTPS, o que Deriv está mal escrito, no introduzca sus datos personales. Si recibes un correo electrónico de una organización conocida pidiéndote que confirmes tus datos de inicio de sesión en otro sitio web, intenta acceder al sitio web sin hacer clic en el enlace proporcionado. No hagas clic en enlaces que te redirijan a un sitio web externo.</p>
                                         <h3 id=""><strong id="">2. Comprueba el contenido de los mensajes. </strong></h3>
-                                        <p id="">Examine minuciosamente los correos electrónicos y los mensajes que recibe para confirmar si el tono y el contenido coinciden con los del remitente. Además, observe si hay errores ortográficos y gramaticales en el mensaje. La mayoría de las empresas legítimas elaboran cuidadosamente sus mensajes antes de enviártelos (sí, ¡eso nos incluye a nosotros!). ¿Notas algo que huele mal? Copia el contenido del correo electrónico y búscalo en un motor de búsqueda para comprobar si se trata de una estafa de suplantación de identidad popular, o ponte en contacto con el remitente mediante una llamada telefónica o una dirección de correo electrónico alternativa. Deriv sólo se pondrá en contacto con usted a través de <a href="/cdn-cgi/l/email-protection#5b353476293e2b37221b3f3e29322d75383436" id=""><span class="__cf_email__" data-cfemail="284647055a4d584451684c4d5a415e064b4745">[email&#160;protected]</span></a> o <a href="/cdn-cgi/l/email-protection#b1c2c4c1c1dec3c5f1d5d4c3d8c79fd2dedc" id=""><span class="__cf_email__" data-cfemail="b5c6c0c5c5dac7c1f5d1d0c7dcc39bd6dad8">[email&#160;protected]</span>.</a> Por lo tanto, si recibe un correo electrónico nuestro que no proceda de estas direcciones de correo electrónico, póngase en contacto con nosotros a través <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">del chat en vivo</a> e informe del correo electrónico.</p>
+                                        <p id="">Examine minuciosamente los correos electrónicos y los mensajes que recibe para confirmar si el tono y el contenido coinciden con los del remitente. Además, observe si hay errores ortográficos y gramaticales en el mensaje. La mayoría de las empresas legítimas elaboran cuidadosamente sus mensajes antes de enviártelos (sí, ¡eso nos incluye a nosotros!). ¿Notas algo que huele mal? Copia el contenido del correo electrónico y búscalo en un motor de búsqueda para comprobar si se trata de una estafa de suplantación de identidad popular, o ponte en contacto con el remitente mediante una llamada telefónica o una dirección de correo electrónico alternativa. Deriv sólo se pondrá en contacto con usted a través de <a href="/cdn-cgi/l/email-protection#d5bbbaf8a7b0a5b9ac95b1b0a7bca3fbb6bab8" id=""><span class="__cf_email__" data-cfemail="f99796d48b9c899580b99d9c8b908fd79a9694">[email&#160;protected]</span></a> o <a href="/cdn-cgi/l/email-protection#60131510100f12142004051209164e030f0d" id=""><span class="__cf_email__" data-cfemail="a1d2d4d1d1ced3d5e1c5c4d3c8d78fc2cecc">[email&#160;protected]</span>.</a> Por lo tanto, si recibe un correo electrónico nuestro que no proceda de estas direcciones de correo electrónico, póngase en contacto con nosotros a través <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" id="">del chat en vivo</a> e informe del correo electrónico.</p>
                                         <h3 id=""><strong id="">3. Protégete. </strong></h3>
                                         <p id="">Asegúrese de que los sistemas operativos y el software antivirus se actualicen con regularidad. Nuestro sitio web y nuestras aplicaciones se actualizan y mejoran constantemente, así que mantén tu dispositivo actualizado y actualiza tus aplicaciones de forma constante. También te recomendamos usar una red privada virtual (VPN) para cifrar tu conexión cuando operes con nosotros, especialmente si accedes a información confidencial.</p>
                                         <h3 id=""><strong id="">4. Desactiva la configuración de conexión automática. </strong></h3>

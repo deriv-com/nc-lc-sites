@@ -1,0 +1,33 @@
+﻿.navigation-options{
+    display:flex;
+    flex-direction:column;
+    row-gap: 16px;
+}
+
+.account-setting-row-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.account-setting-row-container_mobile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+}
+
+.account-setting-row-container:hover{
+    background-color: #f3f6f8;
+    cursor: pointer;
+}
+
+.account-setting-row-item{
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    border-radius: 8px;
+}
+

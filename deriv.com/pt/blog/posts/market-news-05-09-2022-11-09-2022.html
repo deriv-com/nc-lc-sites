@@ -1,9 +1,9 @@
-<!DOCTYPE html><!-- Last Published: Tue Dec 17 2024 12:07:24 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Dec 20 2024 02:50:28 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="deriv.com" data-wf-page="66585fe0e1dc7e70cc75d74b" data-wf-site="66585fe0e1dc7e70cc75d440" lang="pt" data-wf-collection="66585fe0e1dc7e70cc75d607" data-wf-item-slug="market-news-05-09-2022-11-09-2022">
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Market news – Week 1, September 2022 | Deriv Blog</title>
     <link rel="alternate" hrefLang="x-default" href="https://deriv.com/blog/posts/market-news-05-09-2022-11-09-2022" />
     <link rel="alternate" hrefLang="en" href="https://deriv.com/blog/posts/market-news-05-09-2022-11-09-2022" />
     <link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/blog/posts/market-news-05-09-2022-11-09-2022" />
@@ -23,19 +23,9 @@
     <link rel="alternate" hrefLang="de" href="https://deriv.com/de/blog/posts/market-news-05-09-2022-11-09-2022" />
     <link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/blog/posts/market-news-05-09-2022-11-09-2022" />
     <link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/blog/posts/market-news-05-09-2022-11-09-2022" />
-    <meta content="" name="description" />
+    <meta content="Last week, assets in various financial markets were hit, and some recovered part of their losses. Our report shows which assets bounced back." name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.09687e057.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: ["Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic"]
-            }
-        });
-    </script>
+    <link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.bf22bebff.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         ! function(o, c) {
             var n = c.documentElement,
@@ -128,7 +118,8 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === "" || this.responseType === "text" ?
-                                this.responseText : null,
+                                this.responseText :
+                                null,
                             payload: parsedPayload,
                         };
 
@@ -199,7 +190,7 @@
             track: (originalEvent, cache) => {
                 const event = cacheTrackEvents.processEvent(originalEvent);
 
-                if (cacheTrackEvents.isReady() && !cache) {
+                if (cacheTrackEvents.isReady() && !cache && typeof Analytics !== "undefined") {
                     Analytics.Analytics.trackEvent(event.name, event.properties);
                 } else {
                     cacheTrackEvents.set(event);
@@ -606,8 +597,14 @@
             const cookies = window.parseCookies(document.cookie, "signup_device");
             let signupDevice = null;
             const isBrowser = () => typeof window !== "undefined";
-            const getLanguage = () =>
-                isBrowser() ? localStorage.getItem("i18n") || navigator.language : null;
+            const getLanguage = () => {
+                if (!isBrowser()) return null;
+                if (!!window?.localStorage) {
+                    return localStorage.getItem("i18n") || navigator.language;
+                } else {
+                    return navigator.language;
+                }
+            };
             if (cookies) {
                 signupDevice = JSON.parse(cookies)?.signup_device || null;
             }
@@ -818,7 +815,8 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure : this.is_secure,
+                                options.secure :
+                                this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         });
@@ -898,7 +896,7 @@
                 "@id": "https://www.deriv.com/blog/posts/market-news-05-09-2022-11-09-2022"
             },
             "headline": "Notícias do mercado — Semana 1, setembro de 2022",
-            "description": "",
+            "description": "Silver bar with a gold reflection on a black background, symbolizing precious metal investments.",
             "image": "https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc75f9d8_665458b760e6604d7305068a_662b2f36edc2bfffa00478f0_market%252520news%252520week%2525201%252520sep%2525202022.webp",
             "author": {
                 "@type": "Organization",
@@ -1048,7 +1046,7 @@
                                                                             <div class="navbar_accordion-content-head">
                                                                                 <div class="navbar_accordion-subhead">Ferramentas</div>
                                                                             </div>
-                                                                            <div class="navbar_accordion-content-group"><a href="/pt/tradingview" class="navbar_accordion-link">TradingView</a><a href="/pt/mt5-trading-signals" class="navbar_accordion-link">Sinais MT5</a><a href="/pt/economic-calendar" class="navbar_accordion-link">Calendário econômico</a><a href="/pt/product-explorer" class="navbar_accordion-link">Explorador de produtos</a></div>
+                                                                            <div class="navbar_accordion-content-group"><a href="/pt/tradingview" class="navbar_accordion-link">TradingView</a><a href="/pt/mt5-trading-signals" class="navbar_accordion-link">Sinais MT5</a><a href="/pt/economic-calendar" class="navbar_accordion-link">Calendário económico</a><a href="/pt/trading-central" class="navbar_accordion-link">Trading Central</a><a href="/pt/product-explorer" class="navbar_accordion-link">Explorador de produtos</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1243,7 +1241,10 @@
                                                                             <div id="w-node-_9026c31d-4304-7b71-5349-be253be889a4-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a5-cff9dc9f" href="/pt/markets/commodities" class="new-navbar_dropdown-link is-adaptive">Matérias-primas</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a7-cff9dc9f" href="/pt/markets/cryptocurrencies" class="new-navbar_dropdown-link is-adaptive">Criptomoedas</a><a id="w-node-_9026c31d-4304-7b71-5349-be253be889a9-cff9dc9f" href="/pt/markets/etfs" class="new-navbar_dropdown-link is-adaptive">ETFs</a><a id="w-node-_19007e5d-9da6-bb68-c748-b7a484437339-cff9dc9f" href="/pt/markets/tactical-indices" class="new-navbar_dropdown-link is-adaptive">Índices Tactical</a>
                                                                         </div>
                                                                         <div class="new-navbar_dropdown-link-list">
-                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Ferramentas</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/pt/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/pt/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Sinais MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/pt/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Calendário econômico</a><a id="w-node-ecfd02a1-03e6-1000-7895-e90323e5493e-cff9dc9f" href="/pt/product-explorer" class="new-navbar_dropdown-link is-adaptive">Explorador de produtos</a>
+                                                                            <div id="w-node-_9026c31d-4304-7b71-5349-be253be889ac-cff9dc9f" class="new-navbar_dropdown-title">Ferramentas</div><a id="w-node-_9026c31d-4304-7b71-5349-be253be889b0-cff9dc9f" href="/pt/tradingview" class="new-navbar_dropdown-link is-adaptive">TradingView</a><a id="w-node-_4648965f-0c47-8296-bfc4-16b63373ae8b-cff9dc9f" href="/pt/mt5-trading-signals" class="new-navbar_dropdown-link is-adaptive">Sinais MT5</a><a id="w-node-f8141781-f56f-b1e1-f425-e0f15ce3a18f-cff9dc9f" href="/pt/economic-calendar" class="new-navbar_dropdown-link is-adaptive">Calendário económico</a>
+                                                                        </div>
+                                                                        <div id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4bd-cff9dc9f" class="new-navbar_dropdown-link-list is-adaptive">
+                                                                            <div id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4be-cff9dc9f" class="new-navbar_dropdown-gap is-adaptive"></div><a id="w-node-_5e55c58c-cb24-9635-acec-74ca16e6d4bf-cff9dc9f" href="/pt/trading-central" class="new-navbar_dropdown-link is-adaptive">Trading Central</a><a id="w-node-ecfd02a1-03e6-1000-7895-e90323e5493e-cff9dc9f" href="/pt/product-explorer" class="new-navbar_dropdown-link is-adaptive">Explorador de produtos</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1691,7 +1692,7 @@
                                         <p id="">Anteriormente, o presidente do Federal Reserve, Jerome Powell, disse aos traders de Jackson Hole que o Fed está comprometido em aumentar as taxas de juros e combater a inflação até que “faça o trabalho”. Na semana passada, os mercados financeiros pareceram levar esse aviso a sério.<br></p>
                                         <h2 id=""><strong id="">Forex</strong></h2>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/661e6e1f01dd2f56adc6e5a0_78847146-3d8e-433f-a802-79a1708a303f.jpeg" alt="Gráfico EUR/USD em Deriv" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965df6b4cd6c7492a8445e_661e6e1f01dd2f56adc6e5a0_78847146-3d8e-433f-a802-79a1708a303f.jpeg" alt="Gráfico EUR/USD em Deriv" width="auto" height="auto" loading="auto" id=""></div>
                                             <figcaption id="">Fonte: Bloomberg</figcaption>
                                         </figure>
                                         <p id="">Pela segunda semana consecutiva, o par EUR/USD oscilou perto da paridade, volátil, mas incapaz de encontrar direção, e terminou a semana em $0,9954. Apesar do crescimento lento, os indicadores macroeconômicos dos EUA indicam que o progresso econômico continua, aliviando parte da carga do Federal Reserve. Embora o Fed reconheça que sua política macroeconômica afeta negativamente as despesas domésticas e comerciais, reafirmou seu compromisso de controlar a inflação.&nbsp;</p>
@@ -1701,7 +1702,7 @@
                                         <p id="">Melhore a sua estratégia de negociação com as últimas notícias do mercado e negoceie CFDs na sua conta <a href="https://deriv.com/derivx/" target="_blank" id="">Deriv X</a> Financial.</p>
                                         <h2 id=""><strong id="">Matérias-primas</strong></h2>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/661e6e1f01dd2f56adc6e59f_f1a51a25-8db7-470c-a348-7e827c48c8a5.jpeg" alt="Gráfico de ouro em Deriv" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965df6b4cd6c7492a84461_661e6e1f01dd2f56adc6e59f_f1a51a25-8db7-470c-a348-7e827c48c8a5.jpeg" alt="Gráfico de ouro em Deriv" width="auto" height="auto" loading="auto" id=""></div>
                                             <figcaption id="">Fonte: Bloomberg</figcaption>
                                         </figure>
                                         <p id="">Apesar de fechar a semana em vermelho, o ouro encontrou algum alívio na sexta-feira, 2 de setembro de 2022. O metal amarelo recuperou a maior parte das perdas do dia anterior, mas replicou seu nível mais baixo nos últimos 2 meses. Os preços à vista atingiram novos máximos diários na sexta-feira para fechar a semana acima do nível de $1.700.</p>
@@ -1710,7 +1711,7 @@
                                         <p id="">Enquanto isso, os preços da prata reverteram de seus preços mais baixos desde julho de 2020 para chegar a $18,00 antes dos resultados da folha de pagamento não agrícola dos EUA, saindo de uma tendência de baixa de cinco dias. Os traders estão à beira de qualquer surpresa que possa renovar a alta do dólar americano e prejudicar o XAG/USD.</p>
                                         <h2 id=""><strong id="">Criptomoedas</strong></h2>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/661e6e1f01dd2f56adc6e5a2_8f9b30c4-09d5-47fd-b0fa-f69465f73397.jpeg" alt="Gráfico de Bitcoin em Deriv" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965df6b4cd6c7492a84459_661e6e1f01dd2f56adc6e5a2_8f9b30c4-09d5-47fd-b0fa-f69465f73397.jpeg" alt="Gráfico de Bitcoin em Deriv" width="auto" height="auto" loading="auto" id=""></div>
                                             <figcaption id="">Fonte: Bloomberg</figcaption>
                                         </figure>
                                         <p id="">Uma semana difícil para o mercado de criptomoedas terminou com as principais moedas no vermelho. Após os comentários agressivos do presidente do Fed, os traders parecem considerar como o aumento das taxas de empréstimos afetará os ativos mais arriscados.</p>
@@ -1721,7 +1722,7 @@
                                         <p id="">Aproveite as oportunidades de mercado aprimorando sua estratégia de negociação e negociando nos mercados financeiros com opções e multiplicadores no <a href="https://deriv.com/dtrader/" target="_blank" id="">Deriv Trader</a>.</p>
                                         <h2 id=""><strong id="">Mercados de ações dos EUA</strong>&nbsp;</h2>
                                         <figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1219px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1219px">
-                                            <div id=""><img src="https://cdn.prod.website-files.com/661e6e1e01dd2f56adc6d3ca/662b2ef945714ec732d3dc73_Screenshot%202024-04-26%20at%2012.34.45%E2%80%AFPM.png" alt="__wf_reserved_inherit" width="auto" height="auto" loading="auto" id=""></div>
+                                            <div id=""><img src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66965df6b4cd6c7492a84455_662b2ef945714ec732d3dc73_Screenshot%25202024-04-26%2520at%252012.34.45%25E2%2580%25AFPM.png" alt="__wf_reserved_inherit" width="auto" height="auto" loading="auto" id=""></div>
                                             <figcaption id="">Fonte: Bloomberg<br>‍*A<em id=""> variação líquida e a variação líquida (%) baseiam-se na variação do preço de fecho semanal de sexta-feira a sexta-feira.</em></figcaption>
                                         </figure>
                                         <p id="">․</p>
@@ -2004,6 +2005,18 @@
                                                                         </clipPath>
                                                                     </defs>
                                                                 </svg></div>
+                                                        </a><a href="/pt/partners-help-centre" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
+                                                            <div>Centro de Ajuda para Parceiros</div>
+                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_8673_4157)">
+                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_8673_4157">
+                                                                            <rect width="12" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></div>
                                                         </a><a href="https://api.deriv.com/" target="_blank" class="footer_tabs-dropdown-link is-block w-inline-block">
                                                             <div>Deriv API</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2125,6 +2138,18 @@
                                                                         </clipPath>
                                                                     </defs>
                                                                 </svg></div>
+                                                        </a><a href="/pt/partners-help-centre" target="_blank" class="footer_link is-block w-inline-block">
+                                                            <div>Centro de Ajuda para Parceiros</div>
+                                                            <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_8673_4157)">
+                                                                        <path d="M10.5 7C10.8125 7.02083 10.9792 7.1875 11 7.5V14.5C10.9792 14.8125 10.8125 14.9792 10.5 15C10.1875 14.9792 10.0208 14.8125 10 14.5V8.71875L1.84375 16.8438C1.61458 17.0521 1.38542 17.0521 1.15625 16.8438C0.947917 16.6146 0.947917 16.3854 1.15625 16.1562L9.28125 8H3.5C3.1875 7.97917 3.02083 7.8125 3 7.5C3.02083 7.1875 3.1875 7.02083 3.5 7H10.5Z" fill="currentColor" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_8673_4157">
+                                                                            <rect width="12" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></div>
                                                         </a><a href="https://api.deriv.com/" target="_blank" class="footer_link is-block w-inline-block">
                                                             <div>Deriv API</div>
                                                             <div class="icon-embed-auto w-embed"><svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2194,8 +2219,8 @@
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.6721e8114f34b8c0a52cdbd12d675447.js" type="text/javascript"></script><!-- deriv js custom code script-->
-    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.25.3/dist/js/footer_scripts.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.d8b755fa6b7cf8d9173314a0d23dc1e7.js" type="text/javascript"></script><!-- deriv js custom code script-->
+    <script type="module" src="https://unpkg.com/@deriv-com/custom-scripts@1.25.4/dist/js/footer_scripts.min.js"></script>
     <!-- deriv js custom code script end-->
 
     <script>
@@ -2711,6 +2736,37 @@
             }
         }
     </script>
+
+
+
+    <script>
+        (function(g, e, o, t, a, r, ge, tl, y) {
+            s = function() {
+                var def = 'geotargetlygeocontent1734508191130_default',
+                    len = g.getElementsByClassName(def).length;
+                if (len > 0) {
+                    for (i = 0; i < len; i++) {
+                        g.getElementsByClassName(def)[i].style.display = 'inline';
+                    }
+                }
+            };
+            t = g.getElementsByTagName(e)[0];
+            y = g.createElement(e);
+            y.async = true;
+            y.src = 'https://g1584674684.co/gc?winurl=' + encodeURIComponent(window.location) + '&refurl=' + g.referrer + '&id=-OENjdmdAwPNzarLahBV';
+            t.parentNode.insertBefore(y, t);
+            y.onerror = function() {
+                s()
+            };
+        })(document, 'script');
+    </script>
+    <noscript>
+        <style>
+            .geotargetlygeocontent1734508191130_default {
+                display: inline !important
+            }
+        </style>
+    </noscript>
     <script>
         var Webflow = Webflow || [];
         Webflow.push(function() {

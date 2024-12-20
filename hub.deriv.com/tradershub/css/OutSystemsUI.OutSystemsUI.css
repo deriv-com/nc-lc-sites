@@ -1,6 +1,6 @@
 ﻿@charset "UTF-8";
 /*!
-OutSystems UI 2.20.3 • ODC Platform
+OutSystems UI 2.21.0 • ODC Platform
 Website:
  • https://www.outsystems.com/outsystems-ui
 GitHub:
@@ -427,8 +427,13 @@ body{
   border:0;
 }
 .has-accessible-features :focus{
-  -webkit-box-shadow:0 0 0 3px var(--color-focus-outer);
-          box-shadow:0 0 0 3px var(--color-focus-outer);
+  -webkit-box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+          box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+}
+.os-high-contrast .has-accessible-features :focus{
+  -webkit-box-shadow:none;
+          box-shadow:none;
+  outline:var(--border-size-l) solid var(--color-focus-outer);
 }
 abbr[title]{
   border-bottom:0;
@@ -1957,6 +1962,26 @@ body .app-menu-content .app-menu-links{
 .has-accessible-features [data-switch]:focus:before{
   border-color:var(--color-focus-inner);
 }
+.os-high-contrast [data-switch]:empty:after{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border:var(--border-size-s) solid var(--color-neutral-6);
+  content:"0";
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  font-family:monospace;
+  font-size:var(--font-size-xs);
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  left:-1px;
+  top:3px;
+}
+.os-high-contrast [data-switch]:checked:after{
+  content:"1";
+}
 /*! 4.3. Checkbox */
 [data-checkbox]{
   height:24px;
@@ -2393,6 +2418,26 @@ select.dropdown-display[disabled]{
 .desktop .list .list-item-selected .list-item-content-right .icon,
 .tablet.landscape .list .list-item-selected .list-item-content-right .icon{
   color:var(--color-primary);
+}
+.os-high-contrast.desktop .list .list-item:hover,
+.os-high-contrast.desktop .list .list-item-selected, .os-high-contrast.tablet.landscape .list .list-item:hover,
+.os-high-contrast.tablet.landscape .list .list-item-selected{
+  position:relative;
+}
+.os-high-contrast.desktop .list .list-item:hover:before,
+.os-high-contrast.desktop .list .list-item-selected:before, .os-high-contrast.tablet.landscape .list .list-item:hover:before,
+.os-high-contrast.tablet.landscape .list .list-item-selected:before{
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  border-right-width:0;
+  border-left-width:var(--border-size-l);
+  bottom:0;
+  content:"";
+  display:block;
+  left:0;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
 }
 /*! 4.8. Table */
 .table{
@@ -2896,6 +2941,16 @@ span.validation-message{
   top:-1px;
   z-index:var(--layer-global-screen);
 }
+.os-high-contrast .button-group-item.button-group-selected-item:before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  border:var(--border-size-l) solid var(--color-primary);
+}
 /*! 4.14. Popover */
 [data-popover] [data-icon]{
   vertical-align:initial;
@@ -2966,6 +3021,10 @@ span.validation-message{
 .layout-native .popup-backdrop, .layout-native .popup-dialog{
   padding:var(--space-base);
 }
+.os-high-contrast .popup-dialog{
+  border:var(--border-size-s) solid var(--color-neutral-0);
+  border-radius:var(--border-radius-soft);
+}
 /*! 4.17. Feedback Message */
 .feedback-message{
   -webkit-box-align:center;
@@ -3033,6 +3092,22 @@ div.feedback-message-warning{
 .is-rtl.phone .feedback-message.feedback-message-autoclose{
   -webkit-animation-name:feedbackMessageSlideDownThenUpPhoneRTL;
           animation-name:feedbackMessageSlideDownThenUpPhoneRTL;
+}
+.os-high-contrast .feedback-message{
+  border-width:var(--border-size-l);
+  border-style:solid;
+}
+.os-high-contrast .feedback-message.feedback-message-error{
+  border-color:var(--color-error);
+}
+.os-high-contrast .feedback-message.feedback-message-info{
+  border-color:var(--color-info);
+}
+.os-high-contrast .feedback-message.feedback-message-success{
+  border-color:var(--color-success);
+}
+.os-high-contrast .feedback-message.feedback-message-warning{
+  border-color:var(--color-warning);
 }
 /*! 4.18. Radio Button */
 .radio-button{
@@ -3160,17 +3235,17 @@ div.feedback-message-warning{
   top:50%;
   width:12px;
 }
+.has-accessible-features .radio-button:focus:before{
+  background-color:var(--color-primary);
+  border-color:var(--color-focus-inner);
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
 .has-accessible-features .radio-button:checked:before{
   border-color:var(--color-primary);
 }
 .has-accessible-features .radio-button:hover:before{
   border-color:var(--color-neutral-8);
-}
-.has-accessible-features .radio-button:focus:before{
-  background-color:var(--color-primary);
-  border:1px solid var(--color-focus-inner);
-  -webkit-box-shadow:none;
-          box-shadow:none;
 }
 .has-accessible-features [data-radio-group].not-valid [data-radio-button] .radio-button:checked:before{
   border-color:var(--color-primary);
@@ -6696,6 +6771,9 @@ span.flatpickr-weekday{
   bottom:var(--os-safe-area-bottom);
   right:var(--os-safe-area-right);
 }
+.os-high-contrast .floating-button{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+}
 /*! 6.2.12. List Item Content */
 .list-item-content{
   -webkit-box-align:center;
@@ -6914,6 +6992,14 @@ span.flatpickr-weekday{
 .osui-tooltip__balloon-wrapper__balloon{
   text-wrap:wrap;
 }
+.os-high-contrast .osui-tooltip .osui-balloon{
+  border:var(--border-size-s) solid var(--osui-tooltip-background-color);
+}
+.os-high-contrast .osui-tooltip__balloon-arrow{
+  border:0 solid var(--osui-tooltip-background-color);
+  border-right-width:var(--border-size-s);
+  border-bottom-width:var(--border-size-s);
+}
 /*! 6.2.16. User Avatar */
 .avatar{
   -webkit-box-align:center;
@@ -7065,6 +7151,21 @@ span.flatpickr-weekday{
 }
 .tablet .action-sheet-buttons, .tablet .action-sheet-cancel{
   max-width:600px;
+}
+.os-high-contrast .action-sheet-container--visible .action-sheet{
+  background-color:var(--color-neutral-0);
+  border:var(--border-size-l) solid var(--color-focus-outer);
+}
+.os-high-contrast .action-sheet-actions{
+  --osui-action-sheet-actions-layer:0;
+  position:relative;
+  z-index:var(--osui-action-sheet-actions-layer);
+}
+.os-high-contrast .action-sheet-actions:has(.btn:focus){
+  z-index:calc(var(--osui-action-sheet-actions-layer) + var(--layer-local-tier-1));
+}
+.os-high-contrast .action-sheet-buttons{
+  overflow:visible;
 }
 /*! 6.3.2. Animate */
 .animate{
@@ -7249,6 +7350,18 @@ span.flatpickr-weekday{
 .has-accessible-features .animated-label-input .form-control[data-input]:focus{
   -webkit-box-shadow:0 3px 0 0 var(--color-focus-outer);
           box-shadow:0 3px 0 0 var(--color-focus-outer);
+}
+.os-high-contrast .animated-label-text{
+  font-weight:var(--font-semi-bold);
+  padding:var(--space-none) var(--space-s);
+}
+.os-high-contrast .animated-label.active .animated-label-text{
+  background-color:var(--color-neutral-8);
+  font-size:var(--font-size-s);
+  top:-16px;
+}
+.os-high-contrast .animated-label-input .form-control[data-input]{
+  padding:var(--space-none) var(--space-s);
 }
 /*! 6.3.4. Balloon */
 .osui-balloon{
@@ -7516,6 +7629,9 @@ span.flatpickr-weekday{
 .osui-bottom-sheet--is-active .osui-bottom-sheet__content .osui-timepicker{
   position:relative;
 }
+.os-high-contrast .osui-bottom-sheet{
+  border:var(--border-size-s) solid var(--color-neutral-0);
+}
 /*! 6.3.6. Carousel */
 .osui-carousel{
   --osui-carousel-track-width:100%;
@@ -7621,6 +7737,12 @@ span.flatpickr-weekday{
 .has-accessible-features .splide__slide{
   -webkit-box-shadow:none;
           box-shadow:none;
+}
+.os-high-contrast .splide__pagination__page{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
+.os-high-contrast .splide__pagination li{
+  margin:var(--space-none) var(--space-xs);
 }
 .is-rtl .splide.splide--ltr{
   direction:ltr;
@@ -8122,6 +8244,135 @@ body:has(.has-accessible-features) .osui-monthpicker__dropdown .flatpickr-next-m
 body:has(.has-accessible-features) .osui-monthpicker__dropdown .flatpickr-monthSelect-month.selected:focus-visible{
   -webkit-box-shadow:0 0 0 3px var(--color-focus-outer);
           box-shadow:0 0 0 3px var(--color-focus-outer);
+}
+.os-high-contrast .flatpickr-rContainer,
+.os-high-contrast .flatpickr-days,
+.os-high-contrast .flatpickr-monthSelect-months{
+  padding:var(--space-xs);
+}
+.os-high-contrast .flatpickr-calendar.arrowTop:before, .os-high-contrast .flatpickr-calendar.arrowTop:after, .os-high-contrast .flatpickr-calendar.arrowBottom:before, .os-high-contrast .flatpickr-calendar.arrowBottom:after{
+  display:none;
+}
+.os-high-contrast .flatpickr-calendar .numInputWrapper span.arrowUp,
+.os-high-contrast .flatpickr-calendar .numInputWrapper span.arrowDown{
+  display:none;
+}
+.os-high-contrast .flatpickr-current-month .numInputWrapper input{
+  padding:var(--space-none) var(--space-xs);
+}
+.os-high-contrast .flatpickr-current-month .flatpickr-monthDropdown-months{
+  -webkit-appearance:revert;
+     -moz-appearance:revert;
+          appearance:revert;
+}
+.os-high-contrast .flatpickr-current-month .flatpickr-monthDropdown-months:focus, .os-high-contrast .flatpickr-current-month .flatpickr-monthDropdown-months:active{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
+.os-high-contrast .flatpickr-months .flatpickr-prev-month:focus, .os-high-contrast .flatpickr-months .flatpickr-prev-month:active,
+.os-high-contrast .flatpickr-months .flatpickr-next-month:focus,
+.os-high-contrast .flatpickr-months .flatpickr-next-month:active{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
+.os-high-contrast .flatpickr-day,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month{
+  --osui-flatpickr-calendar-elems-layer:0;
+  border:none;
+  position:relative;
+  z-index:var(--osui-flatpickr-calendar-elems-layer);
+}
+.os-high-contrast .flatpickr-day:hover, .os-high-contrast .flatpickr-day:focus, .os-high-contrast .flatpickr-day:focus-visible,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:hover,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:focus,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:focus-visible{
+  z-index:calc(var(--osui-flatpickr-calendar-elems-layer) + var(--layer-local-tier-2));
+}
+.os-high-contrast .flatpickr-day.today,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.today{
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  z-index:calc(var(--osui-flatpickr-calendar-elems-layer) + var(--layer-local-tier-1));
+}
+.os-high-contrast .flatpickr-day.selected, .os-high-contrast .flatpickr-day.selected:focus, .os-high-contrast .flatpickr-day.selected:focus-visible, .os-high-contrast .flatpickr-day.selected:hover, .os-high-contrast .flatpickr-day.selected.inRange, .os-high-contrast .flatpickr-day.selected.prevMonthDay, .os-high-contrast .flatpickr-day.selected.nextMonthDay,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected:focus,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected:focus-visible,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected:hover,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.inRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.prevMonthDay,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.nextMonthDay{
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  font-size:var(--font-size-base);
+  font-weight:var(--font-semi-bold);
+}
+.os-high-contrast .flatpickr-day:hover, .os-high-contrast .flatpickr-day:focus, .os-high-contrast .flatpickr-day:focus-visible, .os-high-contrast .flatpickr-day.inRange, .os-high-contrast .flatpickr-day.inRange:hover, .os-high-contrast .flatpickr-day.inRange:focus, .os-high-contrast .flatpickr-day.inRange:focus-visible, .os-high-contrast .flatpickr-day.today.inRange, .os-high-contrast .flatpickr-day.today.inRange:hover, .os-high-contrast .flatpickr-day.today.inRange:focus, .os-high-contrast .flatpickr-day.today.inRange:focus-visible,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:hover,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:focus,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month:focus-visible,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange:hover,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange:focus,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange:focus-visible,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.today.inRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.today.inRange:hover,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.today.inRange:focus,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.today.inRange:focus-visible{
+  font-size:var(--font-size-base);
+  font-weight:var(--font-semi-bold);
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
+.os-high-contrast .flatpickr-day.inRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange{
+  outline:none;
+}
+.os-high-contrast .flatpickr-day.inRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.inRange:before{
+  border-left:none;
+  border-radius:var(--border-radius-none);
+  border-right:none;
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  bottom:-1px;
+  content:"";
+  display:block;
+  left:-2px;
+  position:absolute;
+  right:-2px;
+  top:-1px;
+}
+.os-high-contrast .flatpickr-day.selected.startRange, .os-high-contrast .flatpickr-day.startRange, .os-high-contrast .flatpickr-day.endRange.startRange, .os-high-contrast .flatpickr-day.selected.endRange, .os-high-contrast .flatpickr-day.startRange.endRange, .os-high-contrast .flatpickr-day.endRange.endRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.startRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.startRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.endRange.startRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.endRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.startRange.endRange,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.endRange.endRange{
+  border:none;
+  border-radius:var(--border-radius-none);
+}
+.os-high-contrast .flatpickr-day.selected.startRange:before, .os-high-contrast .flatpickr-day.startRange:before, .os-high-contrast .flatpickr-day.endRange.startRange:before, .os-high-contrast .flatpickr-day.selected.endRange:before, .os-high-contrast .flatpickr-day.startRange.endRange:before, .os-high-contrast .flatpickr-day.endRange.endRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.startRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.startRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.endRange.startRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.endRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.startRange.endRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.endRange.endRange:before{
+  right:initial;
+}
+.os-high-contrast .flatpickr-day.selected.startRange:before, .os-high-contrast .flatpickr-day.startRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.startRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.startRange:before{
+  border-radius:50px 0 0 50px;
+  border-right:none;
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  left:0;
+  right:-2px;
+}
+.os-high-contrast .flatpickr-day.selected.endRange:before, .os-high-contrast .flatpickr-day.endRange.endRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.selected.endRange:before,
+.os-high-contrast .flatpickr-monthSelect-months .flatpickr-monthSelect-month.endRange.endRange:before{
+  border-left:none;
+  border-radius:0 50px 50px 0;
+  border:var(--border-size-s) solid var(--color-focus-outer);
+  left:-2px;
+  right:0;
 }
 .osui-datepicker input[type=date]::-webkit-inner-spin-button, .osui-datepicker input[type=date]::-webkit-calendar-picker-indicator, .osui-datepicker input[type=date]::-webkit-datetime-edit-year-field, .osui-datepicker input[type=date]::-webkit-datetime-edit-month-field, .osui-datepicker input[type=date]::-webkit-datetime-edit-day-field, .osui-datepicker input[type=date]::-webkit-datetime-edit-fields-wrapper{
   display:none;
@@ -8633,6 +8884,36 @@ html[data-uieditorversion^="1"] .osui-datepicker-calendar-ss-preview.has-today-b
 }
 .has-accessible-features .vscomp-toggle-button:after{
   color:var(--color-neutral-9);
+}
+.os-high-contrast .vscomp-wrapper.show-value-as-tags .vscomp-value-tag{
+  border:var(--border-size-s) solid var(--color-neutral-7);
+}
+.os-high-contrast .vscomp-wrapper .vscomp-option.focused:before{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+  bottom:0;
+  content:"";
+  display:block;
+  left:0;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.os-high-contrast .vscomp-wrapper.multiple .vscomp-option.selected .checkbox-icon:after{
+  border-top:none;
+  border-left:none;
+}
+.os-high-contrast .pop-comp-content,
+.os-high-contrast .vscomp-dropbox-container{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+}
+.os-high-contrast .vscomp-options-container::-webkit-scrollbar{
+  width:5px;
+}
+.os-high-contrast .vscomp-options-container::-webkit-scrollbar-track{
+  border:var(--border-size-l) solid var(--color-neutral-4);
+}
+.os-high-contrast .vscomp-options-container::-webkit-scrollbar-thumb{
+  border:var(--border-size-s) solid var(--color-neutral-4);
 }
 .phone .vscomp-wrapper.show-value-as-tags .vscomp-toggle-button,
 .tablet .vscomp-wrapper.show-value-as-tags .vscomp-toggle-button{
@@ -9603,8 +9884,21 @@ body.vscomp-popup-active .vscomp-wrapper{
 }
 .has-accessible-features .osui-range-slider .noUi-handle:focus{
   border-color:var(--color-focus-inner);
-  -webkit-box-shadow:0 0 0 3px var(--color-focus-outer);
-          box-shadow:0 0 0 3px var(--color-focus-outer);
+  -webkit-box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+          box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+}
+.os-high-contrast .osui-range-slider .noUi-horizontal{
+  height:calc(2 * var(--range-slider-thickness));
+}
+.os-high-contrast .osui-range-slider .noUi-vertical{
+  width:calc(2 * var(--range-slider-thickness));
+}
+.os-high-contrast .osui-range-slider .noUi-connect,
+.os-high-contrast .osui-range-slider .noUi-base{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+}
+.os-high-contrast .has-accessible-features .osui-range-slider{
+  border:0;
 }
 .is-rtl .osui-range-slider .noUi-pips-vertical{
   padding:0;
@@ -9826,6 +10120,10 @@ body.vscomp-popup-active .vscomp-wrapper{
 }
 .phone .osui-sidebar{
   max-width:85vw;
+}
+.os-high-contrast .active-screen .osui-sidebar--is-open{
+  border-left:var(--border-size-m) solid var(--color-focus-outer);
+  border-right:var(--border-size-m) solid var(--color-focus-outer);
 }
 /*! 6.3.17. Search */
 .osui-search{
@@ -10362,6 +10660,12 @@ html[data-uieditorversion^="1"] .osui-timepicker__dropdown-ss-preview.time12h, h
 .phone .osui-overflow-menu .osui-overflow-menu__trigger.btn{
   width:40px;
 }
+.os-high-contrast .osui-overflow-menu__balloon{
+  border:var(--border-size-s) solid var(--color-neutral-7);
+}
+.os-high-contrast .osui-overflow-menu__balloon a:hover{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
 /*! 6.4.4. Pagination */
 .pagination{
   -webkit-box-align:center;
@@ -10487,6 +10791,9 @@ html[data-uieditorversion^="1"] .osui-timepicker__dropdown-ss-preview.time12h, h
 .has-accessible-features .pagination-button:focus{
   border-color:var(--color-focus-inner);
 }
+.os-high-contrast .pagination-button.is--active{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
 /*! 6.4.5. Section Index */
 .osui-section-index{
   --top-position:calc(var(--header-size) + var(--header-size-content) + var(--status-bar-height));
@@ -10544,8 +10851,14 @@ html[data-uieditorversion^="1"] .osui-timepicker__dropdown-ss-preview.time12h, h
 }
 .has-accessible-features .osui-section-index-item:focus{
   background-color:transparent;
-  -webkit-box-shadow:0 0 0 3px var(--color-focus-outer);
-          box-shadow:0 0 0 3px var(--color-focus-outer);
+  -webkit-box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+          box-shadow:0 0 0 var(--border-size-l) var(--color-focus-outer);
+}
+.os-high-contrast .osui-section-index::before{
+  border-left:var(--border-size-s) solid var(--color-focus-outer);
+}
+.os-high-contrast .osui-section-index-item--is-active::before{
+  border-left:var(--border-size-l) solid var(--color-focus-outer);
 }
 .is-rtl .osui-section-index::before{
   left:auto;
@@ -10908,6 +11221,13 @@ html[data-uieditorversion^="1"] .osui-timepicker__dropdown-ss-preview.time12h, h
   margin-left:var(--space-none);
   margin-right:var(--space-s);
 }
+.os-high-contrast .layout:not(.layout-side) .app-menu-links .osui-submenu a{
+  border-top:none;
+  border-bottom:none;
+}
+.os-high-contrast .osui-submenu__header{
+  border-top:none;
+}
 /*! 6.4.7. Tabs */
 .osui-tabs{
   --header-item-width:fit-content(30%);
@@ -11184,6 +11504,37 @@ html[data-uieditorversion^="1"] .osui-timepicker__dropdown-ss-preview.time12h, h
 .has-accessible-features .osui-tabs__content-item:focus-visible{
   -webkit-box-shadow:0 0 0 1px var(--color-focus-outer) inset;
           box-shadow:0 0 0 1px var(--color-focus-outer) inset;
+}
+.os-high-contrast .osui-tabs__header__indicator{
+  display:none;
+}
+.os-high-contrast .osui-tabs__content-item{
+  position:relative;
+}
+.os-high-contrast .osui-tabs__header-item:focus,
+.os-high-contrast .osui-tabs__content-item :focus{
+  outline:none;
+}
+.os-high-contrast .osui-tabs__header-item:focus:before,
+.os-high-contrast .osui-tabs__header-item.osui-tabs--is-active:before,
+.os-high-contrast .osui-tabs__content-item:focus:before,
+.os-high-contrast .osui-tabs__content-item.osui-tabs--is-active:before{
+  border:var(--border-size-m) solid var(--color-focus-outer);
+  bottom:0;
+  content:"";
+  display:block;
+  left:0;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.os-high-contrast .osui-tabs__header-item:focus:before,
+.os-high-contrast .osui-tabs__content-item:focus:before{
+  border-width:var(--border-size-l);
+}
+.os-high-contrast .osui-tabs__content-item{
+  padding:var(--space-base);
 }
 .windows.chrome .osui-accordion .osui-tabs__header__indicator,
 .windows.chrome .section-expandable .osui-tabs__header__indicator,
@@ -11702,6 +12053,18 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
   left:inherit;
   right:0;
 }
+.os-high-contrast .osui-progress-bar__container{
+  min-height:calc(2 * var(--thickness));
+}
+.os-high-contrast .osui-progress-bar__value{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+  height:calc(2 * var(--thickness));
+}
+.os-high-contrast .osui-progress-bar__value:before, .os-high-contrast .osui-progress-bar__value:after{
+  border:var(--border-size-m) solid var(--color-neutral-7);
+  top:calc(-1 * var(--border-size-m));
+  left:calc(-1 * var(--border-size-m));
+}
 /*! 6.5.4.2 Progress Circle */
 [data-block*=ProgressCircle]{
   display:inline-block;
@@ -11875,6 +12238,9 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
 .rating-item:last-of-type{
   padding-right:0;
 }
+.rating-item img{
+  max-width:none;
+}
 .rating input:checked + .rating-item .rating-item-empty, .rating input:checked ~ .rating-item .rating-item-filled{
   opacity:0;
 }
@@ -11983,6 +12349,11 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
 .edge .osui-tabs .rating .wcag-hide-text{
   margin:unset;
 }
+.os-high-contrast .has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half,
+.os-high-contrast .has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half *, .os-high-contrast .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled,
+.os-high-contrast .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled *{
+  outline:var(--border-size-l) solid var(--color-focus-outer);
+}
 /*! 6.6. Utilities */
 /*! 6.6.1. Align Center */
 .vertical-align{
@@ -12058,7 +12429,7 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
           animation:loadingSpinner 850ms cubic-bezier(0.7, 1.05, 0.78, 0.78) infinite;
   border:var(--border-size-m) solid currentColor;
   border-radius:var(--border-radius-circle);
-  border-top:var(--border-size-m) solid transparent;
+  border-top-color:transparent;
   height:16px;
   margin-right:var(--space-s);
   width:16px;
@@ -12079,6 +12450,11 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
 }
 .phone .osui-btn-loading{
   width:100%;
+}
+.os-high-contrast .osui-btn-loading .btn .osui-btn-loading__spinner-animation{
+  border-width:var(--border-size-l);
+  border-bottom:none;
+  border-top:none;
 }
 /*! 6.6.3. Center Content */
 .center-content{
@@ -12585,6 +12961,10 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
 .has-accessible-features .osui-dropdown-serverside__balloon-content:focus > *:after{
   right:0;
 }
+.os-high-contrast .has-accessible-features .osui-dropdown-serverside__balloon-content:focus{
+  --osui-outline-size:0;
+  border:var(--border-size-l) solid var(--color-focus-outer);
+}
 .is-rtl .osui-dropdown-serverside__selected-values{
   margin-left:var(--space-base);
   margin-right:initial;
@@ -12746,6 +13126,19 @@ html[data-uieditorversion^="1"] .wizard-wrapper-item{
 .has-accessible-features .osui-dropdown-serverside-item:focus{
   -webkit-box-shadow:inset 0 0 0 3px var(--color-focus-outer);
           box-shadow:inset 0 0 0 3px var(--color-focus-outer);
+}
+.os-high-contrast .osui-dropdown-serverside-item:hover, .os-high-contrast .osui-dropdown-serverside-item:focus{
+  outline:none;
+}
+.os-high-contrast .osui-dropdown-serverside-item:hover:before, .os-high-contrast .osui-dropdown-serverside-item:focus:before{
+  border:var(--border-size-l) solid var(--color-focus-outer);
+  bottom:0;
+  content:"";
+  display:block;
+  left:0;
+  position:absolute;
+  right:0;
+  top:0;
 }
 .tablet .osui-dropdown-serverside-item,
 .phone .osui-dropdown-serverside-item{

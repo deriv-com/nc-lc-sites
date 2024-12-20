@@ -178,3 +178,21 @@
 .phone .account-link {
     display: none;
 }
+
+.account-settings-navigation-sidebar {
+    z-index: 999 !important;
+    max-width: 100vw !important;
+}
+
+.account-settings-navigation-sidebar  .osui-sidebar__header{
+    background-color: #f3f6f8;
+}
+
+.account-settings-navigation-sidebar_desktop {
+    z-index: 999 !important;
+    border-radius: 8px !important;
+    position: fixed !important;
+    top: 40px !important;
+    right: 40px !important;
+    height: max-content !important;
+}
