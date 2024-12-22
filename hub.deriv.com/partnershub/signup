@@ -4,18 +4,18 @@
 <head>
     <title>Deriv.com         - Sign up    </title>
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Promote Online Trading with Deriv.com, Trusted by Traders since 2000. Join our Affiliate and IB Programmes to Build a rewarding and long-term business relationship.">
-    <meta property="og:title" content="Deriv.com - Affiliate login" />
+    <meta name="description" content="Sign up for Deriv affiliate programme to earning commissions or log in to your partner account to access the affiliate dashboard and your affiliate link.">
+    <meta property="og:title" content="Deriv affiliate sign up and sign in page" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Promote Online Trading with Deriv.com, Trusted by Traders since 2000. Join our Affiliate and IB Programmes to Build a rewarding and long-term business relationship." />
+    <meta property="og:description" content="Sign up for Deriv affiliate programme to earning commissions or log in to your partner account to access the affiliate dashboard and your affiliate link." />
     <meta property="og:url" content="https://login.deriv.com" />
     <meta property="og:image" content="https://login.deriv.com/templates/default/images/deriv-og.png" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@derivdotcom">
-    <meta name="twitter:title" content="Deriv.com - Affiliate login">
-    <meta name="twitter:description" content="Promote Online Trading with Deriv.com, Trusted by Traders since 2000. Join our Affiliate and IB Programmes to Build a rewarding and long-term business relationship.">
+    <meta name="twitter:title" content="Deriv affiliate sign up and sign in page">
+    <meta name="twitter:description" content="Sign up for Deriv affiliate programme to earning commissions or log in to your partner account to access the affiliate dashboard and your affiliate link.">
     <meta name="twitter:image" content="https://login.deriv.com/templates/default/images/deriv-og.png">
-    <meta name="twitter:image:alt" content="Deriv.com - Affiliate login">
+    <meta name="twitter:image:alt" content="Deriv affiliate sign up and sign in page">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +109,7 @@
     "url": "https://login.deriv.com/templates/default/images/favicon-512x512.png"
     }
 },
-    "description": "Promote Online Trading with Deriv.com, Trusted by Traders since 2000. Join our Affiliate and IB Programmes to Build a rewarding and long-term business relationship."
+    "description": "Sign up for Deriv affiliate programme to earning commissions or log in to your partner account to access the affiliate dashboard and your affiliate link."
 }
 </script>
 </head>
@@ -2784,7 +2784,7 @@
                                     </fieldset>
             
         <fieldset class="submit-buttons">
-          <input type="hidden" name="_ftoken_" value="9123037e4b63ee5cc1794036589af99b" />
+          <input type="hidden" name="_ftoken_" value="e4626f41e668c493928e1c87dcc8eb67" />
           <dl>
             <dt>&nbsp;</dt>
             <dd><input type="submit" value="Sign up" id="btn-signup" /></dd>
