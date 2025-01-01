@@ -1,4 +1,8 @@
-﻿.phone .bottom-navigation,
+﻿.desktop .popup-dialog {
+    max-width: 320px;
+}
+
+.phone .bottom-navigation,
 .tablet .bottom-navigation {
     display: none;
 }

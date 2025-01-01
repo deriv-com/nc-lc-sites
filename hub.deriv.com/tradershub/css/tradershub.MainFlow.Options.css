@@ -65,23 +65,22 @@
     overflow-x: auto;
 }
 
-.phone .trade-types-body {
-    overflow-x: auto;
-}
-
 .trade-type-item {
-    text-decoration: none;
     background: #F8F9FA;
-    border-radius: 8px;
-    min-width: 240px;
     padding: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 240px;
+    color: #101213;
 }
 
+.trade-type-item:hover {
+    color: #101213;
+}
+
+.tablet .trade-type-item,
 .phone .trade-type-item {
-    min-width: 125px;
-}
-
-.tablet .trade-type-item {
     min-width: 125px;
 }
 

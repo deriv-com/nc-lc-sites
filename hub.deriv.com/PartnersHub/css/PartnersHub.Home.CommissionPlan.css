@@ -1,0 +1,48 @@
+﻿.ph-commissions-card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 198px;
+    padding: var(--padding-s);
+    gap: var(--gap-xs);
+    border: 1px solid var(--Neutral-Neutral-3);
+    border-radius: var(--border-radius-normal);
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+.desktop .ph-commissions-card-container {
+    gap: var(--gap-s)
+}
+.ph-commissions-card-container:hover {
+    box-shadow: var(--shadow-s);
+    cursor: pointer;
+}
+.ph-commissions-card-title {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+}
+.ph-commissions-card-image {
+    width: 68px;
+    height: auto;
+}
+.desktop .ph-commissions-card-image {
+    width: 120px;
+    height: 135px;
+    padding: 20px 8px;
+    object-fit: contain;
+}
+.ph-commission-plan-top {
+    display: flex;
+    flex-direction: column;
+}
+.ph-commission-subtitle {
+    flex-grow: 1;
+}
+.ph-commissions-card-container-gap__small {
+    gap: var( --gap-xs)
+}
+.ph-commissions-card-container-gap__medium {
+    gap: var( --gap-s)
+}

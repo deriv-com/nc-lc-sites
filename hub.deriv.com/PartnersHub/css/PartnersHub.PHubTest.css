@@ -51,7 +51,9 @@
     --Neutral-Neutral-1: #F8F9FA;
     --Neutral-Neutral-3: #E9ECEF;
 
-    --border-radius-normal: 8px
+    --border-radius-normal: 8px;
+
+    --border-normal: 1px solid var(--Neutral-Neutral-3);
 }
 
 body {
@@ -195,6 +197,16 @@ background: var(--core-color-solid-slate-50, #FFF);
     font-size: 14px;
 }
 
+.ph-main-title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.desktop .ph-main-title {
+    font-size: 24px;
+    line-height: 36px;
+}
 .ph-section-title {
     color: var(--Neutral-Neutral-10, #101213);
     font-size: 18px;
@@ -206,17 +218,42 @@ background: var(--core-color-solid-slate-50, #FFF);
     line-height: 30px;
 }
 .ph-section-subtitle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+.desktop .ph-section-subtitle {
+    font-size: 18px;
+    line-height: 28px;
+}
+.ph-section-head {
     font-size: 14px;
     font-weight: 700;
     line-height: 22px;
 }
-.desktop .ph-section-subtitle {
+.desktop .ph-section-head {
     font-size: 16px;
+    line-height: 24px;
 }
-
+.ph-section-description {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+.desktop .ph-section-description {
+    font-size: 16px;
+    line-height: 24px;
+}
 .ph-section-16-title {
     font-size: 16px;
     font-weight: 700;
+    line-height: 24px; 
+}
+.ph-section-16-sub-title {
+    font-size: 16px;
+    font-weight: 400;
     line-height: 24px; 
 }
 
@@ -261,4 +298,7 @@ background: var(--core-color-solid-slate-50, #FFF);
     font-size: 18px;
     font-weight: 700;
     line-height: normal;
+}
+.osui-inline-svg.svg-wrapper.OSInline {
+    display: flex;
 }

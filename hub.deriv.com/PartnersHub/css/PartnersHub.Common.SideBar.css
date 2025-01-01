@@ -83,6 +83,7 @@
 .ph-filter-sidebar {
     width: 100vw;
     max-width: 400px !important;
+    z-index: 100 !important;
 }
 .ph-ssidebar-sticky-button {
     position: sticky;
@@ -143,4 +144,8 @@
 }
 .desktop .ph-chip-container {
     margin-bottom: 24px;
+}
+.ph-sidebar-sticky-button {
+    position: sticky;
+    bottom: 0;
 }

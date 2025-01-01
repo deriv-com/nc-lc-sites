@@ -1,6 +1,6 @@
 import {
     a as w
-} from "./_oschunk-FVTKKH75.js";
+} from "./_oschunk-VYXP2FQN.js";
 import {
     A as h,
     V as u,
@@ -9,7 +9,7 @@ import {
     h as S,
     i as g,
     r as c
-} from "./_oschunk-5KJVGEL7.js";
+} from "./_oschunk-3RH6DZJJ.js";
 import {
     c as s
 } from "./_oschunk-QHO7QY6K.js";
@@ -79,7 +79,7 @@ var d = class d {
 };
 s(d, "n");
 var m = d,
-    A = "6.20.5";
+    A = "6.21.0";
 f.registerPackage("client-runtime-core", A);
 (typeof window != "undefined" ? window : global).OutSystemsDebugger = new m;
 Promise.all([u.default.initialize(w, g.Application.InitializationType.Full, new c.DateTimeFormatInfo("yyyy-MM-dd", "HH:mm:ss"), new c.NumberFormatInfo(".", ""), function() {
@@ -90,7 +90,7 @@ Promise.all([u.default.initialize(w, g.Application.InitializationType.Full, new 
     if (t) {
         let e = function() {
                 return new Promise(function(n) {
-                    Promise.all([import("./_oschunk-BMEDLFR5.js")]).then(function(i) {
+                    Promise.all([import("./_oschunk-H34GABYZ.js")]).then(function(i) {
                         var o = i[0];
                         u.default.registerDefaultErrorHandler(function() {
                             return function(a, p) {
@@ -102,7 +102,7 @@ Promise.all([u.default.initialize(w, g.Application.InitializationType.Full, new 
             },
             r = function() {
                 return S.promise(function(n, i) {
-                    Promise.all([import("./_oschunk-NYS22LQG.js")]).then(function(o) {
+                    Promise.all([import("./_oschunk-35GRVNTS.js")]).then(function(o) {
                         var a = o[0];
                         try {
                             a.Router.load(u.default), n()

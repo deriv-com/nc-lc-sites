@@ -1,4 +1,4 @@
-/*! js-cookie v3.0.5 | MIT */ ! function(e, t) {
+/*! js-cookie v3.0.5 | MIT | https://github.com/js-cookie/js-cookie */ ! function(e, t) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = "undefined" != typeof globalThis ? globalThis : e || self, function() {
         var n = e.JSCookies,
             o = e.JSCookies = t();

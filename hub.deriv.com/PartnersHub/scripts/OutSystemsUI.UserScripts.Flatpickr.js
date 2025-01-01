@@ -299,7 +299,7 @@
     var revFormat = {
         D: doNothing,
         F: function(dateObj, monthName, locale) {
-            dateObj.setMonth(locale.months.longhand.indexOf(monthName));
+            dateObj.setMonth(locale.months.longhand.join(",").toLowerCase().split(",").indexOf(monthName.toLowerCase()));
         },
         G: function(dateObj, hour) {
             dateObj.setHours((dateObj.getHours() >= 12 ? 12 : 0) + parseFloat(hour));
@@ -315,7 +315,7 @@
                 12 * int(new RegExp(locale.amPM[1], "i").test(amPM)));
         },
         M: function(dateObj, shortMonth, locale) {
-            dateObj.setMonth(locale.months.shorthand.indexOf(shortMonth));
+            dateObj.setMonth(locale.months.shorthand.join(",").toLowerCase().split(",").indexOf(shortMonth.toLowerCase()));
         },
         S: function(dateObj, seconds) {
             dateObj.setSeconds(parseFloat(seconds));
@@ -549,8 +549,8 @@
                         var isBackSlash = token_1 === "\\";
                         var escaped = format[i - 1] === "\\" || isBackSlash;
                         if (tokenRegex[token_1] && !escaped) {
-                            regexStr += tokenRegex[token_1];
-                            var match = new RegExp(regexStr).exec(date);
+                            regexStr += tokenRegex[token_1].toLowerCase();
+                            var match = new RegExp(regexStr).exec(date.toLowerCase());
                             if (match && (matched = true)) {
                                 ops[token_1 !== "Y" ? "push" : "unshift"]({
                                     fn: revFormat[token_1],
@@ -1021,18 +1021,8 @@
                         (self.config.noCalendar && self.config.enableTime)) {
                         return;
                     }
-                    // Get the input value
-                    var inputValue = self._input.value.trim();
-                    // With the input value, let's try to parse the date based on the defined altFormat
-                    var newDate = self.parseDate(inputValue, self.config.altFormat);
-                    // Check if the input is empty or the date is invalid, if so, prevent date to be set!
-                    if (inputValue === "") {
-                        return;
-                    } else if (isNaN(Number(newDate))) {
-                        console.error("Inserted date is not valid");
-                        return;
-                    }
-                    setDate(newDate, true);
+                    self._input.blur();
+                    self.close();
                     break;
                     // Close the calendar
                 case "Tab":

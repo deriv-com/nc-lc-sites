@@ -1,0 +1,38 @@
+﻿.security-options-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-neutral-3);
+    cursor: pointer;
+    padding-block: 16px;
+    padding-inline-end: 7px;
+    font-size: var(--font-size-base);
+    line-height: 1.46;
+}
+.security-options-initial-screen-container{
+    height: calc(100vh - 177px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.security-options-initial-screen-img{
+    max-width: 117px;
+    margin-inline: auto;
+    margin-block-end: 24px;
+}
+.security-options-heading{
+    font-size: var(--font-size-h6);
+    text-align: center;
+    margin-block-end: 8px;
+}
+.security-options-initial-screen-list{
+    margin: 0;
+    padding-left: 14px;
+}
+.security-options-initial-screen-list-item{
+    font-size: var(--font-size-base);
+    line-height: 24px;
+}

@@ -113,3 +113,7 @@
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-neutral-3);
 }
+
+.input-with-icon .input-with-icon-content-icon {
+    width: 60px;
+}

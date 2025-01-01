@@ -2,23 +2,27 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 1px);
 }
 .desktop .ph-navigation-main-container {
     flex-direction: row;
 }
-
+.ph-mobile-original-navigation-header {
+    min-height: 48px;
+    max-height: 48px;
+    padding-inline: var(--padding-s);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--Neutral-Neutral-3);
+}
+.ph-mobile-custom-navigation-header > div {
+    width: 100%;
+}
 .ph-mobile-navigation-header {
     position: sticky;
     z-index: 50;
     top: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    min-height: 48px;
-    max-height: 48px;
-    padding-inline: var(--padding-s);
-    border-bottom: 1px solid var(--Neutral-Neutral-3);
     background: var(--Neutral-Neutral-0);
 }
 .desktop .ph-mobile-navigation-header {
@@ -126,15 +130,16 @@
     border-radius: var(--border-radius-normal);
     border-bottom: unset;
 }
-
-.ph-bottom-navigation-footer {
-    z-index: 50;
-    position: sticky;
-    bottom: 1px;
+.ph-bottom-original-navigation-footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     padding: var(--padding-xxs) var(--padding-s);
     border-top: 1px solid var(--Neutral-Neutral-3);
+}
+.ph-bottom-navigation-footer {
+    z-index: 50;
+    position: sticky;
+    bottom: 1px;
     background: var(--Neutral-Neutral-0);
 }
 .desktop .ph-bottom-navigation-footer {
@@ -142,4 +147,25 @@
 }
 .ph-bottom-navigation-footer > .OSBlockWidget {
     display: contents;
+}
+.ph-profile-modal-header {
+    padding: 0 var(--padding-s) var(--padding-s)
+}
+.ph-profile-sidebar .osui-sidebar__header {
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+.ph-custom-sidebar-header {
+    padding: 0 var( --padding-s) var( --padding-s) var( --padding-s);
+    background: var(--Neutral-Neutral-1);
+}
+.ph-custom-sidebar-header .custom-title-container {
+    height: 56px;
+}
+.ph-profile-sidebar-head-details {
+    display: flex;
+    gap: var(--gap-s);
+}
+.ph-modal-logout-label {
+    color: #DC2020;
 }

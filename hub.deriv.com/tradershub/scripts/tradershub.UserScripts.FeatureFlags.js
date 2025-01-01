@@ -13,13 +13,21 @@ let FEATURE_FLAGS = [{
         enabled: false
     },
     {
-        name: "WalletRealAccountCreation",
+        name: "TEST_APP",
+        enabled: false
+    },
+    {
+        name: "CFD_KYC",
         enabled: false
     },
     {
         name: "WalletsP2P",
         enabled: false
-    }
+    },
+    {
+        name: "AuthURLRedirect",
+        enabled: false
+    },
 ]
 
 if (location.hostname === "hub.deriv.com") {

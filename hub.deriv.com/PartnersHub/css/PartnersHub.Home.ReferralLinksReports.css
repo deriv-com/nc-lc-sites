@@ -1,4 +1,13 @@
-﻿.tablet .referral-links-reports {
+﻿.referral-links-reports {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+    padding-block: var(--padding-s);
+    border-top: var(--border-normal);
+    border-bottom: var(--border-normal);
+}
+
+.tablet .referral-links-reports {
     display: flex;
     flex-direction: column !important;
     justify-content: center !important;
