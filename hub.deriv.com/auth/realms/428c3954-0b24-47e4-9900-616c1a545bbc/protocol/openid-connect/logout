@@ -38,8 +38,8 @@
         <div id="kc-logout-confirm" class="content-area">
             <p class="instruction">Do you want to log out?</p>
 
-            <form class="form-actions" action="/auth/realms/428c3954-0b24-47e4-9900-616c1a545bbc/protocol/openid-connect/logout/logout-confirm?client_id=account&amp;tab_id=jOaKQU0_iq8" method="POST">
-                <input type="hidden" name="session_code" value="HAUVT-IK_3w8apU2L07WWjreLBTNUTnbbklNfdLXYa4">
+            <form class="form-actions" action="/auth/realms/428c3954-0b24-47e4-9900-616c1a545bbc/protocol/openid-connect/logout/logout-confirm?client_id=account&amp;tab_id=58h6X4-fRDE" method="POST">
+                <input type="hidden" name="session_code" value="hHdpz4m426ywmdmHOf0FX8aWrwJqbayRVTQguIK84gE">
                 <div class="form-group">
                     <div id="kc-form-options">
                         <div class="">
