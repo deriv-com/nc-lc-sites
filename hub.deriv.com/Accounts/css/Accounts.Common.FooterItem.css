@@ -1,0 +1,16 @@
+﻿.footer-item--image{
+    padding: 0 var(--space-xs);
+    fill: var(--color-neutral-7);
+}
+
+.footer-item--selected{
+    color: var(--color-red2) !important;
+    fill: var(--color-red2) !important;
+    font-weight: 500;
+}
+
+.footer-item--text{
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--color-neutral-7);
+}

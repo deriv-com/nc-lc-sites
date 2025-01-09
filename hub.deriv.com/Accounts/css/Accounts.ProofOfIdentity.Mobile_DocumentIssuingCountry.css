@@ -1,0 +1,29 @@
+﻿.document-issuing-country__heading-text{
+    color: var(--color-neutral-10);
+    line-height: 28px;
+}
+
+.document-issuing-country__hint{
+    color:var(--color-neutral-7);
+    line-height: 18px;
+}
+
+.document-issuing-country__error-msg{
+    color:var(--color-error);
+}
+
+.list-container{
+    overflow-y: auto;
+    height: calc(100dvh - 249px);
+}
+
+.item-list{
+    border-bottom: unset !important;
+}
+
+.selected-item{
+    border-radius: 8px;
+    background-color: var(--color-neutral-2) !important;
+    padding: var(--space-s) var(--space-m) !important;
+}
+

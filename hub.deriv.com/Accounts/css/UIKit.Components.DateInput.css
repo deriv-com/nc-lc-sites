@@ -1,0 +1,11 @@
+﻿.air-datepicker-body--day-name {
+    color: #ff444f !important;
+}
+
+.air-datepicker-cell.-selected-{
+    background: #ff444f !important;
+}
+
+.custom-date-picker .input-with-icon-content-icon{
+    padding-bottom: var(--space-s) !important;
+}

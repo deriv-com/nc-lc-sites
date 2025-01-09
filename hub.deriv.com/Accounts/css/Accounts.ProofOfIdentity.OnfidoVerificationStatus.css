@@ -1,0 +1,26 @@
+﻿@media only screen and (min-width: 1280px){
+   .manual-status__layout{
+        padding: var(--space-m) 0;
+    }
+
+    .manual-status__btn{
+        width: 184px;
+    }
+}
+
+@media only screen and (max-width: 1279px){
+    .manual-status__btn{
+        width: 100%
+    }
+
+    .manual-status__btn-layout{
+        border-top: 1px solid var(--color-neutral-3);
+        padding: var(--space-base);
+    }
+
+    .manual-status__body-content{
+        flex-grow: 1;
+        padding: var(--space-base);
+    }
+}
+

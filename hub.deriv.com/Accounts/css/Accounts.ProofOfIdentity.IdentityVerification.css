@@ -1,0 +1,23 @@
+﻿.identity-verification__section-header{
+    line-height: 28px;
+    padding: var(--space-base) var(--space-base) 0
+}
+
+.banner-message-layout{
+    border-radius: var(--space-s);
+    line-height: 18px;
+}
+
+.error-banner{
+    background-color: var(--color-error-light);
+}
+
+.banner-message-layout__mobile{
+    margin: var(--space-base) 0;
+}
+
+.error-banner__link{
+    text-decoration: underline;
+    color:black
+}
+

@@ -1,0 +1,26 @@
+﻿@media only screen and (min-width: 1280px){
+   .idv-status__layout{
+        padding: var(--space-m) 0;
+    }
+
+    .idv-status__btn{
+        width: 184px;
+    }
+}
+
+@media only screen and (max-width: 1279px){
+    .idv-status__btn{
+        width: 100%
+    }
+
+    .idv-status__btn-layout{
+        border-top: 1px solid var(--color-neutral-3);
+        padding: var(--space-base);
+    }
+
+    .idv-status__body-content{
+        flex-grow: 1;
+        padding: var(--space-base);
+    }
+}
+

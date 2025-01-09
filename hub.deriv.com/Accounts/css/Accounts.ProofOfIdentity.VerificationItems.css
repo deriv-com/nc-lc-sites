@@ -1,0 +1,14 @@
+﻿.verification-section{
+    padding: var(--space-m) 0;
+}
+
+.verification-section--title{
+    line-height: 30px;
+    color: var(--color-neutral-10)
+}
+
+.loader-layout{
+    position: absolute;
+    top:50%;
+    inset-inline-start:50%
+}

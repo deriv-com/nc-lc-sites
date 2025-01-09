@@ -1,0 +1,19 @@
+﻿.create-passkeys-body{
+    flex-grow: 1;
+}
+
+.create-passkeys-footer{
+    border-top: 1px solid var(--color-neutral-3);
+}
+
+.create-passkeys-body__title{
+    line-height: 28px;
+}
+
+.create-passkeys-body__content{
+    line-height: 24px;
+}
+
+.create-passkeys .btn + .btn{
+    margin-left: unset !important;
+}

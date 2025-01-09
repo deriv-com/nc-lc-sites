@@ -1,0 +1,12 @@
+﻿.layout-header-dektop{
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    column-gap: var(--space-xl);
+    border-bottom: 1px solid var(--color-neutral-3);
+    background-color: var(--color-neutral-0);
+}
+
+.layout-header-desktop--link{
+    color:var(--color-neutral-8);
+}

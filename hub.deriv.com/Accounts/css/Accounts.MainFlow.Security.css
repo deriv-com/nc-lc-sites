@@ -1,0 +1,10 @@
+﻿.security-content{
+    width: 60%;
+    padding: var(--space-m) 0;
+}
+
+@media only screen and (max-width: 1279px){
+    .security-section__items{
+        padding: var(--space-s) var(--space-base);
+    }
+}

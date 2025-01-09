@@ -1,0 +1,7 @@
+﻿.input-field{
+    text-align: center;
+    width: var(--space-xxl);
+    height: var(--space-xxl);
+    padding: 10px;
+    border-radius: var(--space-s);
+}

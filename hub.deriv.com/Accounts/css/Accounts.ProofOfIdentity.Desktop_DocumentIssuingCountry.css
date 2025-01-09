@@ -1,0 +1,18 @@
+﻿.document-issuing-country--hint{
+    color:var(--color-neutral-7);
+    line-height: 21px;
+}
+
+.document-issuing-country--error-msg{
+    color:var(--color-error);
+}
+
+.document-issuing-country__field--error .vscomp-toggle-button{
+    border-color: var(--color-error) !important;
+}
+
+
+.document-issuing-country--field .vscomp-clear-button {
+    display: none !important;
+    pointer-events: none !important;
+}

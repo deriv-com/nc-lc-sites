@@ -1,0 +1,34 @@
+﻿.poi-layout{
+    background-color: var(--color-neutral-0);
+    padding: var(--space-xxl) var(--space-m) var(--space-m);
+}
+
+div[data-block="ProofOfIdentity.Desktop_DocumentIssuingCountry"] {
+    width: 600px;
+}
+
+div[data-block="ProofOfIdentity.DocumentType"]{
+    height: 100%;
+}
+
+.poi-section-content{
+     width: 600px;
+}
+
+.poi-section-content .form input[data-input]{
+    margin-bottom:var(--space-s);
+}
+
+.error-banner{
+    border-radius: var(--space-s);
+    background-color: var(--color-error-light);
+}
+
+.error-banner .ThemeGrid_MarginGutter{
+    margin-left: unset !important;
+} 
+
+.error-banner__link{
+    text-decoration: underline;
+    color:black
+}

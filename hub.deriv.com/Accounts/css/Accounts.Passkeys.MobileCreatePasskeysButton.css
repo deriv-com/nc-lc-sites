@@ -1,0 +1,11 @@
+﻿.passkeys-bottom-sheet-body{
+    flex-grow: 1;
+}
+
+.passkeys-bottom-sheet{
+    min-height: 232px !important;
+}
+
+.passkeys-bottom-sheet .osui-bottom-sheet__content{
+    padding-bottom: unset !important;
+}

@@ -1,0 +1,8 @@
+﻿.banner-message-layout{
+    border-radius: var(--space-s);
+    line-height: 18px;
+}
+
+.error-banner{
+    background-color: var(--color-error-light);
+}

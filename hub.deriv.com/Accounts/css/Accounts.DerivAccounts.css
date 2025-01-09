@@ -1,0 +1,142 @@
+﻿/* ===================================================================== */
+/*  The following CSS was created using Theme Editor.                    */
+/*  To modify this CSS, click "Open Theme Editor".                       */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  Root - CSS Variables                                                 */
+/* ===================================================================== */
+
+:root {
+	
+    /* Color - Brand */
+    --color-primary: #ff444f;
+    --color-secondary: #ff444f;
+
+    --color-primary-hover: #bf333b;
+    --color-primary-selected: rgba(255, 68, 79, .12);
+	
+    /* Dark Theme */
+    --background-dark-theme: rgba(255, 255, 255, .1);
+    --background-dark-theme-hover: rgba(255, 255, 255, .2);
+}
+
+
+:root{
+    /*! Color - Extended */
+    --color-red-darker2:#8C1D1D;
+    --color-red2:#FF444F;
+    --color-grey1:#F2F3F4;
+    --color-focus:#85acb0;
+    --color-header:#333333;
+}
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.error-text{
+    color: var(--color-error);
+}
+
+.hide-element{
+    visibility: hidden;
+}
+
+.display-on-device-phone{
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1279px){
+    .full-height-minus-header{
+        height: calc(100dvh - 56px) !important;
+    }
+
+}
+.osui-bottom-sheet-overlay{
+    background-color:rgba(0, 0, 0, 0.72);
+}
+/* Override color of Dialog */
+/*.osui-bottom-sheet-overlay,*/
+.popup-backdrop
+{
+    background: rgba(0, 0, 0, 0.72);
+}
+
+/* Change border color of input field */
+.vscomp-ele.pop-comp-active .vscomp-toggle-button {
+    border-color: var(--color-focus) !important;
+}
+
+/* Change border color of input field on focus and valid */
+.form-control[data-input]:focus:not(.not-valid), .form-control[data-textarea]:focus:not(.not-valid), .dropdown-container.dropdown-expanded:not(.not-valid) > div.dropdown-display{
+    border: var(--border-size-s) solid var(--color-focus) !important;
+}
+
+.dropdown-expanded.dropdown-container:after{
+    border: var(--border-size-m) solid var(--color-neutral-7);
+}
+
+/* Change color of Dropdown caret */
+.vscomp-ele.pop-comp-active .vscomp-toggle-button:after{
+        color: var(--color-neutral-7) !important;
+}
+
+.block-display{
+    display: block !important;
+}
+
+.inline-block-display{
+    display: inline-block !important;
+}
+
+.deriv-btn{
+    border-radius: 100px;
+    height: 40px;
+}
+
+.bullet-item {
+    display: block;
+    margin-left: 16px;
+    position: relative;
+}
+
+.bullet-item::before {
+    content: "•";
+    position: absolute;
+    left: -16px; 
+    color: black; 
+    font-size: 1.5em;
+    line-height: 0.75;
+}
+
+.not-required.mandatory:after{
+    content: none !important;
+}
+
+/* Customize scroll bar */
+::-webkit-scrollbar-track {
+    background: transparent; 
+    padding: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-4); 
+    border-radius: 4px; 
+    border: none; 
+}
+
+::-webkit-scrollbar {
+    width: 4px; 
+    height: 4px; 
+    padding: 0;
+}
+
+/* Remove default ellipse of dropdown text*/
+.dropdown-container .dropdown-popup-row span{
+    white-space: break-spaces !important;
+}
+
+/* Add spacing between dropdown options*/
+.scrollable-list-with-scroll .dropdown-popup-row{
+    margin: var(--space-xs) var(--space-none)
+}

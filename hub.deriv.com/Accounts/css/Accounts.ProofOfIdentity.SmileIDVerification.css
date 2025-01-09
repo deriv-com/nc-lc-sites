@@ -1,0 +1,18 @@
+﻿.SmileIDContainer{
+    height: 995px;
+    position: relative;
+}
+#smile-identity-hosted-web-integration{
+    position: relative!important;
+    max-width: 100%!important;
+    width: 100%!important;
+    overflow: hidden!important;
+    background-color: white !important;
+    z-index: 1!important;
+
+}
+@media (max-width: 1279px) {
+    .SmileIDContainer{
+        height: 873px;
+    }
+}
