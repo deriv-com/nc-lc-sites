@@ -1,9 +1,0 @@
-﻿.selected-content{
-    width: 60%;
-}
-
-@media only screen and (max-width: 1279px){
-    .verification-section__items{
-        padding: var(--space-s) var(--space-base);
-    }
-}

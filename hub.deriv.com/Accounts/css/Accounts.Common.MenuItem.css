@@ -1,8 +1,0 @@
-﻿.active-tab{
-    border-radius: var(--space-s);
-    background-color: var(--color-neutral-2);
-}
-
-.tab--layout{
-    padding: var(--space-s) 0;
-}

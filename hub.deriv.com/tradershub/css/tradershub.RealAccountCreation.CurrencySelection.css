@@ -1,7 +1,0 @@
-﻿.osui-progress-bar.cr .osui-progress-bar__value:before {
-    width: 0% !important;
-}
-
-.osui-progress-bar.eu .osui-progress-bar__value:before {
-    width: 0% !important;
-}

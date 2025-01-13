@@ -50,7 +50,8 @@ if (
     const filteredFeatureFlags = savedFlags ?
         savedFlags.filter(savedFlag =>
             FEATURE_FLAGS.some(flag => flag.name === savedFlag.name)
-        ) : [];
+        ) :
+        [];
 
     // Merge the feature flags, keeping values from saved flags when applicable
     const mergedFlags = FEATURE_FLAGS.map(newFlag => {
