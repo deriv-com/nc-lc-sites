@@ -125,8 +125,7 @@ script >
                         status: this.status,
                         headers: this.getAllResponseHeaders(),
                         data: this.responseType === '' || this.responseType === 'text' ?
-                            this.responseText :
-                            null,
+                            this.responseText : null,
                         payload: parsedPayload,
                     }
 
@@ -658,8 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return featureFlagValue
         }
     }) <
-    /script> <
-    !--Analytics block ends-- >
+    /script> <!--Analytics block ends-- >
 
     <
     !--Google Tag Manager-- >
@@ -678,14 +676,12 @@ document.addEventListener('DOMContentLoaded', () => {
     j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
     f.parentNode.insertBefore(j, f)
 })(window, document, 'script', 'dataLayer', 'GTM-NF7884S') <
-/script> <
-!--End Google Tag Manager-- >
+/script> <!--End Google Tag Manager-- >
 
 <
 !--Analytics Integration-- >
 <
-script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <
-    !--Analytics end-- >
+script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <!--Analytics end-- >
 
     <
     !--Hotjar Tracking Code
@@ -716,7 +712,8 @@ for Deriv.com(.com + app.deriv) -- >
 script
 defer
 src = "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js" >
-    < /script>
+    <
+    /script>
 
     <
     !--Keep this css code to improve the font quality-- >
@@ -734,11 +731,9 @@ window.growthbook_config.attributes = {
         device_language: 'foo',
         user_ip: 'foo',
     } <
-    /script> <
-    !--Datadog Integration-- >
+    /script> <!--Datadog Integration-- >
     <
-    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <
-        !--Marketing and Affiliate Cookie-- >
+    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- >
         <
         script >
         function loadScript(url, callback) {
@@ -812,8 +807,7 @@ loadScript('https://static.deriv.com/scripts/cookie.js', function() {
                     path: this.path,
                     domain: this.domain,
                     secure: options && options.secure !== undefined ?
-                        options.secure :
-                        this.is_secure,
+                        options.secure : this.is_secure,
                     sameSite: (options && options.sameSite) || this.same_site,
                     ...options,
                 })
@@ -918,8 +912,8 @@ for the close button in the mobile language selection menu.-- >
     script
 type = "module"
 src = "https://unpkg.com/@deriv-com/custom-scripts@1.26.8/dist/js/footer_scripts.min.js" >
-    < /script> <
-    !--deriv js custom code script end-- >
+    <
+    /script> <!--deriv js custom code script end-- >
 
     <
     script >
@@ -949,8 +943,7 @@ Webflow.push(function() {
         }
     }
 }); <
-/script> <
-!--Datadog Integration-- >
+/script> <!--Datadog Integration-- >
 <
 script defer >
     (function() {
@@ -977,8 +970,7 @@ script defer >
         };
         document.body.appendChild(script);
     })(); <
-/script> <
-!--End Datadog Integration-- >
+/script> <!--End Datadog Integration-- >
 <
 script >
     window.parseCookies = function(cookieString, value) {
@@ -1235,8 +1227,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); <
-/script> <
-!--Live Chat - end of code-- >
+/script> <!--Live Chat - end of code-- >
     <
     script >
     window.__lc = window.__lc || {};
@@ -1282,18 +1273,16 @@ window.__lc.integration_name = "manual_onboarding";
 /script> <
 noscript
     >
-    < a href = "https://www.livechat.com/chat-with/12049137/"
+    <
+    a href = "https://www.livechat.com/chat-with/12049137/"
 rel = "nofollow" >
-    Chat with us < /a >
-    , powered by <
+    Chat with us < /a >, powered by <
     a
 href = "https://www.livechat.com/?welcome"
 rel = "noopener nofollow"
 target = "_blank" >
-    LiveChat < /a >
-    <
-    /noscript> <
-    !--End of LiveChat code-- >
+    LiveChat < /a > <
+    /noscript> <!--End of LiveChat code-- >
 
     <
     !--Trackjs - start of code-- >
@@ -1312,8 +1301,7 @@ target = "_blank" >
         };
         document.body.appendChild(script);
     })(); <
-/script> <
-!--Trackjs - end of code-- >
+/script> <!--Trackjs - end of code-- >
 
     <
     script >
@@ -1447,8 +1435,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkIntercomEnabled();
 }); <
-/script> <
-!--Intercom end-- >
+/script> <!--Intercom end-- >
 <
 script >
 

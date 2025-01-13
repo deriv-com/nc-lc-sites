@@ -33,8 +33,7 @@
     };
 
     var fp = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Arabic = {
@@ -86,8 +85,7 @@
     fp.l10ns;
 
     var fp$1 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Austria = {
@@ -147,8 +145,7 @@
     fp$1.l10ns;
 
     var fp$2 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Azerbaijan = {
@@ -212,8 +209,7 @@
     fp$2.l10ns;
 
     var fp$3 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Belarusian = {
@@ -278,8 +274,7 @@
     fp$3.l10ns;
 
     var fp$4 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Bosnian = {
@@ -335,8 +330,7 @@
     fp$4.l10ns;
 
     var fp$5 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Bulgarian = {
@@ -392,8 +386,7 @@
     fp$5.l10ns;
 
     var fp$6 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Bangla = {
@@ -447,8 +440,7 @@
     fp$6.l10ns;
 
     var fp$7 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Catalan = {
@@ -522,8 +514,7 @@
     fp$7.l10ns;
 
     var fp$8 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Kurdish = {
@@ -589,8 +580,7 @@
     fp$8.l10ns;
 
     var fp$9 = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Czech = {
@@ -655,8 +645,7 @@
     fp$9.l10ns;
 
     var fp$a = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Welsh = {
@@ -739,8 +728,7 @@
     fp$a.l10ns;
 
     var fp$b = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Danish = {
@@ -801,8 +789,7 @@
     fp$b.l10ns;
 
     var fp$c = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var German = {
@@ -937,8 +924,7 @@
     };
 
     var fp$d = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Esperanto = {
@@ -1001,8 +987,7 @@
     fp$d.l10ns;
 
     var fp$e = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Spanish = {
@@ -1062,8 +1047,7 @@
     fp$e.l10ns;
 
     var fp$f = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Estonian = {
@@ -1126,8 +1110,7 @@
     fp$f.l10ns;
 
     var fp$g = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Persian = {
@@ -1185,8 +1168,7 @@
     fp$g.l10ns;
 
     var fp$h = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Finnish = {
@@ -1245,8 +1227,7 @@
     fp$h.l10ns;
 
     var fp$i = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Faroese = {
@@ -1310,8 +1291,7 @@
     fp$i.l10ns;
 
     var fp$j = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var French = {
@@ -1376,8 +1356,7 @@
     fp$j.l10ns;
 
     var fp$k = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Greek = {
@@ -1444,8 +1423,7 @@
     fp$k.l10ns;
 
     var fp$l = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Hebrew = {
@@ -1493,8 +1471,7 @@
     fp$l.l10ns;
 
     var fp$m = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Hindi = {
@@ -1548,8 +1525,7 @@
     fp$m.l10ns;
 
     var fp$n = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Croatian = {
@@ -1605,8 +1581,7 @@
     fp$n.l10ns;
 
     var fp$o = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Hungarian = {
@@ -1669,8 +1644,7 @@
     fp$o.l10ns;
 
     var fp$p = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Armenian = {
@@ -1738,8 +1712,7 @@
     fp$p.l10ns;
 
     var fp$q = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Indonesian = {
@@ -1791,8 +1764,7 @@
     fp$q.l10ns;
 
     var fp$r = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Icelandic = {
@@ -1854,8 +1826,7 @@
     fp$r.l10ns;
 
     var fp$s = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Italian = {
@@ -1918,8 +1889,7 @@
     fp$s.l10ns;
 
     var fp$t = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Japanese = {
@@ -1980,8 +1950,7 @@
     fp$t.l10ns;
 
     var fp$u = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Georgian = {
@@ -2046,8 +2015,7 @@
     fp$u.l10ns;
 
     var fp$v = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Korean = {
@@ -2106,8 +2074,7 @@
     fp$v.l10ns;
 
     var fp$w = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Khmer = {
@@ -2171,8 +2138,7 @@
     fp$w.l10ns;
 
     var fp$x = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Kazakh = {
@@ -2236,8 +2202,7 @@
     fp$x.l10ns;
 
     var fp$y = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Lithuanian = {
@@ -2300,8 +2265,7 @@
     fp$y.l10ns;
 
     var fp$z = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Latvian = {
@@ -2358,8 +2322,7 @@
     fp$z.l10ns;
 
     var fp$A = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Macedonian = {
@@ -2417,8 +2380,7 @@
     fp$A.l10ns;
 
     var fp$B = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Mongolian = {
@@ -2467,8 +2429,7 @@
     fp$B.l10ns;
 
     var fp$C = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Malaysian = {
@@ -2518,8 +2479,7 @@
     fp$C.l10ns;
 
     var fp$D = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Burmese = {
@@ -2578,8 +2538,7 @@
     fp$D.l10ns;
 
     var fp$E = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Dutch = {
@@ -2644,8 +2603,7 @@
     fp$E.l10ns;
 
     var fp$F = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var NorwegianNynorsk = {
@@ -2708,8 +2666,7 @@
     fp$F.l10ns;
 
     var fp$G = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Norwegian = {
@@ -2772,8 +2729,7 @@
     fp$G.l10ns;
 
     var fp$H = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Punjabi = {
@@ -2828,8 +2784,7 @@
     fp$H.l10ns;
 
     var fp$I = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Polish = {
@@ -2892,8 +2847,7 @@
     fp$I.l10ns;
 
     var fp$J = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Portuguese = {
@@ -2949,8 +2903,7 @@
     fp$J.l10ns;
 
     var fp$K = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Romanian = {
@@ -3009,8 +2962,7 @@
     fp$K.l10ns;
 
     var fp$L = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Russian = {
@@ -3075,8 +3027,7 @@
     fp$L.l10ns;
 
     var fp$M = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Sinhala = {
@@ -3131,8 +3082,7 @@
     fp$M.l10ns;
 
     var fp$N = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Slovak = {
@@ -3192,8 +3142,7 @@
     fp$N.l10ns;
 
     var fp$O = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Slovenian = {
@@ -3253,8 +3202,7 @@
     fp$O.l10ns;
 
     var fp$P = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Albanian = {
@@ -3316,8 +3264,7 @@
     fp$P.l10ns;
 
     var fp$Q = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Serbian = {
@@ -3375,8 +3322,7 @@
     fp$Q.l10ns;
 
     var fp$R = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Swedish = {
@@ -3437,8 +3383,7 @@
     fp$R.l10ns;
 
     var fp$S = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Thai = {
@@ -3500,8 +3445,7 @@
     fp$S.l10ns;
 
     var fp$T = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Turkish = {
@@ -3565,8 +3509,7 @@
     fp$T.l10ns;
 
     var fp$U = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Ukrainian = {
@@ -3622,8 +3565,7 @@
     fp$U.l10ns;
 
     var fp$V = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Uzbek = {
@@ -3688,8 +3630,7 @@
     fp$V.l10ns;
 
     var fp$W = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var UzbekLatin = {
@@ -3754,8 +3695,7 @@
     fp$W.l10ns;
 
     var fp$X = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Vietnamese = {
@@ -3811,8 +3751,7 @@
     fp$X.l10ns;
 
     var fp$Y = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var Mandarin = {
@@ -3870,8 +3809,7 @@
     fp$Y.l10ns;
 
     var fp$Z = typeof window !== "undefined" && window.flatpickr !== undefined ?
-        window.flatpickr :
-        {
+        window.flatpickr : {
             l10ns: {},
         };
     var MandarinTraditional = {
