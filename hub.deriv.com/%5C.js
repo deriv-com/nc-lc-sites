@@ -98,7 +98,7 @@ h2 class = "cf-subheadline" > < span data - translate = "unable_to_access" > You
 
     <
     /div> < /
-    div > <
+div > <
     /div><!-- /.captcha - container-- >
 
     <
@@ -112,7 +112,7 @@ h2 class = "cf-subheadline" > < span data - translate = "unable_to_access" > You
 
     <
     p data - translate = "blocked_why_detail" > This website is using a security service to protect itself from online attacks.The action you just performed triggered the security solution.There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data. < /p> < /
-    div >
+div >
 
     <
     div class = "cf-column" >
@@ -122,18 +122,18 @@ h2 class = "cf-subheadline" > < span data - translate = "unable_to_access" > You
         <
         p data - translate = "blocked_resolve_detail" > You can email the site owner to
     let them know you were blocked.Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page. < /p> < /
-        div > <
-        /div> < /
-        div > < !--/.section-- >
+div > <
+    /div> < /
+div > < !--/.section-- >
 
-        <
-        div class = "cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300" >
-        <
-        p class = "text-13" >
-        <
-        span class = "cf-footer-item sm:block sm:mb-1" > Cloudflare Ray ID: < strong class = "font-semibold" > 9012 b69c3ea3fcef < /strong></span >
-        <
-        span class = "cf-footer-separator sm:hidden" > & bull; < /span> <
+    <
+    div class = "cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300" >
+    <
+    p class = "text-13" >
+    <
+    span class = "cf-footer-item sm:block sm:mb-1" > Cloudflare Ray ID: < strong class = "font-semibold" > 9012 b69c3ea3fcef < /strong></span >
+    <
+    span class = "cf-footer-separator sm:hidden" > & bull; < /span> <
 span id = "cf-footer-item-ip"
 class = "cf-footer-item hidden sm:block sm:mb-1" >
     Your IP:
