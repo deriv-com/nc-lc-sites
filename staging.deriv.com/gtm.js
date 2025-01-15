@@ -1,11 +1,11 @@
-< !DOCTYPE html > < !--Last Published: Fri Jan 10 2025 13: 22: 33 GMT + 0000(Coordinated Universal Time) -- > < html data - wf - domain = "%%PUBLISH_URL_REPLACEMENT%%"
+< !DOCTYPE html > < !--Last Published: Wed Jan 15 2025 03: 52: 54 GMT + 0000(Coordinated Universal Time) -- > < html data - wf - domain = "%%PUBLISH_URL_REPLACEMENT%%"
 data - wf - page = "66585fe0e1dc7e70cc75d4b9"
 data - wf - site = "66585fe0e1dc7e70cc75d440"
 lang = "en"
 data - wf - locale = "en" > < head > < meta charset = "utf-8" / > < title > Not Found < /title><link rel="alternate" hrefLang="x-default" href="https:/ / deriv.com / 404 "/><link rel="
 alternate " hrefLang="
 en " href="
-https: //deriv.com/404"/><link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/404"/><link rel="alternate" hrefLang="ar" href="https://deriv.com/ar/404"/><link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/404"/><link rel="alternate" hrefLang="es" href="https://deriv.com/es/404"/><link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/404"/><link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/404"/><link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/404"/><link rel="alternate" hrefLang="si" href="https://deriv.com/si/404"/><link rel="alternate" hrefLang="tr" href="https://deriv.com/tr/404"/><link rel="alternate" hrefLang="sw" href="https://deriv.com/sw/404"/><link rel="alternate" hrefLang="zh-CN" href="https://deriv.com/zh-cn/404"/><link rel="alternate" hrefLang="zh-TW" href="https://deriv.com/zh-tw/404"/><link rel="alternate" hrefLang="ko" href="https://deriv.com/ko/404"/><link rel="alternate" hrefLang="it" href="https://deriv.com/it/404"/><link rel="alternate" hrefLang="de" href="https://deriv.com/de/404"/><link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/404"/><link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/404"/><meta content="Not Found" property="og:title"/><meta content="Not Found" property="twitter:title"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.aca7bd558.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon"/><link href="https://deriv.com/404" rel="canonical"/><meta name="language" content="ach">
+https: //deriv.com/404"/><link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/404"/><link rel="alternate" hrefLang="ar" href="https://deriv.com/ar/404"/><link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/404"/><link rel="alternate" hrefLang="es" href="https://deriv.com/es/404"/><link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/404"/><link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/404"/><link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/404"/><link rel="alternate" hrefLang="si" href="https://deriv.com/si/404"/><link rel="alternate" hrefLang="tr" href="https://deriv.com/tr/404"/><link rel="alternate" hrefLang="sw" href="https://deriv.com/sw/404"/><link rel="alternate" hrefLang="zh-CN" href="https://deriv.com/zh-cn/404"/><link rel="alternate" hrefLang="zh-TW" href="https://deriv.com/zh-tw/404"/><link rel="alternate" hrefLang="ko" href="https://deriv.com/ko/404"/><link rel="alternate" hrefLang="it" href="https://deriv.com/it/404"/><link rel="alternate" hrefLang="de" href="https://deriv.com/de/404"/><link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/404"/><link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/404"/><meta content="Not Found" property="og:title"/><meta content="Not Found" property="twitter:title"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.78c5946db.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon"/><link href="https://deriv.com/404" rel="canonical"/><meta name="language" content="ach">
 
     <
     link
@@ -14,38 +14,9 @@ href = "https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.c
     >
 
     <
-    !--New Homepage redirection-- >
+    !--Analytics block starts here-- >
     <
     script >
-    (function(g, e, o, t, a, r, ge, tl, y, s) {
-        g.getElementsByTagName(o)[0].insertAdjacentHTML('afterbegin', '<style id="georedirect1736491375761style">body{opacity:0.0 !important;}</style>');
-        s = function() {
-            g.getElementById('georedirect1736491375761style').innerHTML = 'body{opacity:1.0 !important;}';
-        };
-        t = g.getElementsByTagName(o)[0];
-        y = g.createElement(e);
-        y.async = true;
-        y.src = 'https://g10498469755.co/gr?id=-OGDwtjD0bq9wUoXqDuy&refurl=' + g.referrer + '&winurl=' + encodeURIComponent(window.location);
-        t.parentNode.insertBefore(y, t);
-        y.onerror = function() {
-            s()
-        };
-        georedirect1736491375761loaded = function(redirect) {
-            var to = 0;
-            if (redirect) {
-                to = 5000
-            };
-            setTimeout(function() {
-                s();
-            }, to)
-        };
-    })(document, 'script', 'head'); <
-/script>
-
-<
-!--Analytics block starts here-- >
-<
-script >
     const cacheTrackEvents = {
         interval: null,
         responses: [],
@@ -125,7 +96,8 @@ script >
                         status: this.status,
                         headers: this.getAllResponseHeaders(),
                         data: this.responseType === '' || this.responseType === 'text' ?
-                            this.responseText : null,
+                            this.responseText :
+                            null,
                         payload: parsedPayload,
                     }
 
@@ -657,7 +629,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return featureFlagValue
         }
     }) <
-    /script> <!--Analytics block ends-- >
+    /script> <
+    !--Analytics block ends-- >
 
     <
     !--Google Tag Manager-- >
@@ -676,12 +649,14 @@ document.addEventListener('DOMContentLoaded', () => {
     j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
     f.parentNode.insertBefore(j, f)
 })(window, document, 'script', 'dataLayer', 'GTM-NF7884S') <
-/script> <!--End Google Tag Manager-- >
+/script> <
+!--End Google Tag Manager-- >
 
 <
 !--Analytics Integration-- >
 <
-script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <!--Analytics end-- >
+script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <
+    !--Analytics end-- >
 
     <
     !--Hotjar Tracking Code
@@ -712,8 +687,7 @@ for Deriv.com(.com + app.deriv) -- >
 script
 defer
 src = "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js" >
-    <
-    /script>
+    < /script>
 
     <
     !--Keep this css code to improve the font quality-- >
@@ -731,17 +705,21 @@ window.growthbook_config.attributes = {
         device_language: 'foo',
         user_ip: 'foo',
     } <
-    /script> <!--Datadog Integration-- > <
-script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- > <
-script >
-    function loadScript(url, callback) {
-        var script = document.createElement('script')
-        script.onload = function() {
-            if (callback) callback()
+    /script> <
+    !--Datadog Integration-- >
+    <
+    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <
+        !--Marketing and Affiliate Cookie-- >
+        <
+        script >
+        function loadScript(url, callback) {
+            var script = document.createElement('script')
+            script.onload = function() {
+                if (callback) callback()
+            }
+            script.src = url
+            document.head.appendChild(script)
         }
-        script.src = url
-        document.head.appendChild(script)
-    }
 // Usage to load the js-cookie script
 loadScript('https://static.deriv.com/scripts/cookie.js', function() {
     console.log('js-cookie loaded successfully!')
@@ -805,7 +783,8 @@ loadScript('https://static.deriv.com/scripts/cookie.js', function() {
                     path: this.path,
                     domain: this.domain,
                     secure: options && options.secure !== undefined ?
-                        options.secure : this.is_secure,
+                        options.secure :
+                        this.is_secure,
                     sameSite: (options && options.sameSite) || this.same_site,
                     ...options,
                 })
@@ -897,7 +876,7 @@ alt = ""
 class = "utility_image _404_image" / > < h3 class = "_404-heading" > We couldn’ t find that page < /h3><div class="padding-xxsmall"></div > < div class = "_404-text" > It may not be available in your country, or a broken link has brought you here. < /div><a href="/
 " class="
 button w - button ">Return to homepage</a></div></div></div></div><script src="
-https: //d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.a33c8e93cc0abb8dce08cbbdc6b002c6.js" type="text/javascript"></script><!-- [Attributes by Finsweet] Mirror click events -->
+https: //d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.8085174acbc3af5b4d44d6fda3571e87.js" type="text/javascript"></script><!-- [Attributes by Finsweet] Mirror click events -->
     <
     !--This is needed
 for the close button in the mobile language selection menu.-- >
@@ -910,8 +889,8 @@ for the close button in the mobile language selection menu.-- >
     script
 type = "module"
 src = "https://unpkg.com/@deriv-com/custom-scripts@1.26.8/dist/js/footer_scripts.min.js" >
-    <
-    /script> <!--deriv js custom code script end-- >
+    < /script> <
+    !--deriv js custom code script end-- >
 
     <
     script >
@@ -941,7 +920,9 @@ Webflow.push(function() {
         }
     }
 }); <
-/script> <!--Datadog Integration-- > <
+/script> <
+!--Datadog Integration-- >
+<
 script defer >
     (function() {
         var script = document.createElement("script");
@@ -967,7 +948,9 @@ script defer >
         };
         document.body.appendChild(script);
     })(); <
-/script> <!--End Datadog Integration-- > <
+/script> <
+!--End Datadog Integration-- >
+<
 script >
     window.parseCookies = function(cookieString, value) {
         const cookies = {};
@@ -1223,8 +1206,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); <
-/script> <!--Live Chat - end of code-- > <
-script >
+/script> <
+!--Live Chat - end of code-- >
+    <
+    script >
     window.__lc = window.__lc || {};
 window.__lc.license = 12049137;
 window.__lc.integration_name = "manual_onboarding";
@@ -1268,16 +1253,18 @@ window.__lc.integration_name = "manual_onboarding";
 /script> <
 noscript
     >
-    <
-    a href = "https://www.livechat.com/chat-with/12049137/"
+    < a href = "https://www.livechat.com/chat-with/12049137/"
 rel = "nofollow" >
-    Chat with us < /a >, powered by <
-a
+    Chat with us < /a >
+    , powered by <
+    a
 href = "https://www.livechat.com/?welcome"
 rel = "noopener nofollow"
 target = "_blank" >
-    LiveChat < /a > < /
-noscript > < !--End of LiveChat code-- >
+    LiveChat < /a >
+    <
+    /noscript> <
+    !--End of LiveChat code-- >
 
     <
     !--Trackjs - start of code-- >
@@ -1296,10 +1283,11 @@ noscript > < !--End of LiveChat code-- >
         };
         document.body.appendChild(script);
     })(); <
-/script> <!--Trackjs - end of code-- >
+/script> <
+!--Trackjs - end of code-- >
 
-<
-script >
+    <
+    script >
     document.addEventListener("DOMContentLoaded", function() {
         // Handle replica domain pointing
         const urlsToCheck = [
@@ -1430,7 +1418,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkIntercomEnabled();
 }); <
-/script> <!--Intercom end-- > <
+/script> <
+!--Intercom end-- >
+<
 script >
 
     if (window.location.pathname.includes("/product-explorer")) {
