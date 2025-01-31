@@ -1,11 +1,11 @@
-< !DOCTYPE html > < !--Last Published: Mon Jan 13 2025 09: 07: 43 GMT + 0000(Coordinated Universal Time) -- > < html data - wf - domain = "%%PUBLISH_URL_REPLACEMENT%%"
+< !DOCTYPE html > < !--Last Published: Fri Jan 31 2025 03: 23: 16 GMT + 0000(Coordinated Universal Time) -- > < html data - wf - domain = "%%PUBLISH_URL_REPLACEMENT%%"
 data - wf - page = "66585fe0e1dc7e70cc75d4b9"
 data - wf - site = "66585fe0e1dc7e70cc75d440"
 lang = "en"
 data - wf - locale = "en" > < head > < meta charset = "utf-8" / > < title > Not Found < /title><link rel="alternate" hrefLang="x-default" href="https:/ / deriv.com / 404 "/><link rel="
 alternate " hrefLang="
 en " href="
-https: //deriv.com/404"/><link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/404"/><link rel="alternate" hrefLang="ar" href="https://deriv.com/ar/404"/><link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/404"/><link rel="alternate" hrefLang="es" href="https://deriv.com/es/404"/><link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/404"/><link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/404"/><link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/404"/><link rel="alternate" hrefLang="si" href="https://deriv.com/si/404"/><link rel="alternate" hrefLang="tr" href="https://deriv.com/tr/404"/><link rel="alternate" hrefLang="sw" href="https://deriv.com/sw/404"/><link rel="alternate" hrefLang="zh-CN" href="https://deriv.com/zh-cn/404"/><link rel="alternate" hrefLang="zh-TW" href="https://deriv.com/zh-tw/404"/><link rel="alternate" hrefLang="ko" href="https://deriv.com/ko/404"/><link rel="alternate" hrefLang="it" href="https://deriv.com/it/404"/><link rel="alternate" hrefLang="de" href="https://deriv.com/de/404"/><link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/404"/><link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/404"/><meta content="Not Found" property="og:title"/><meta content="Not Found" property="twitter:title"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.ab5b1dd90.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon"/><link href="https://deriv.com/404" rel="canonical"/><meta name="language" content="ach">
+https: //deriv.com/404"/><link rel="alternate" hrefLang="fr" href="https://deriv.com/fr/404"/><link rel="alternate" hrefLang="ar" href="https://deriv.com/ar/404"/><link rel="alternate" hrefLang="pt" href="https://deriv.com/pt/404"/><link rel="alternate" hrefLang="es" href="https://deriv.com/es/404"/><link rel="alternate" hrefLang="ru" href="https://deriv.com/ru/404"/><link rel="alternate" hrefLang="vi" href="https://deriv.com/vi/404"/><link rel="alternate" hrefLang="bn" href="https://deriv.com/bn/404"/><link rel="alternate" hrefLang="si" href="https://deriv.com/si/404"/><link rel="alternate" hrefLang="tr" href="https://deriv.com/tr/404"/><link rel="alternate" hrefLang="sw" href="https://deriv.com/sw/404"/><link rel="alternate" hrefLang="zh-CN" href="https://deriv.com/zh-cn/404"/><link rel="alternate" hrefLang="zh-TW" href="https://deriv.com/zh-tw/404"/><link rel="alternate" hrefLang="ko" href="https://deriv.com/ko/404"/><link rel="alternate" hrefLang="it" href="https://deriv.com/it/404"/><link rel="alternate" hrefLang="de" href="https://deriv.com/de/404"/><link rel="alternate" hrefLang="pl" href="https://deriv.com/pl/404"/><link rel="alternate" hrefLang="uz" href="https://deriv.com/uz/404"/><meta content="Not Found" property="og:title"/><meta content="Not Found" property="twitter:title"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/css/deriv-staged-2dfc316890fbbd8e3ed6d351bd.de987a535.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c773033acbd57cd18cc4c8_deriv_favicon_32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65c76c6482e68a9e09d9b765/65c7730a457546181fec95a5_deriv_favicon_256.png" rel="apple-touch-icon"/><link href="https://deriv.com/404" rel="canonical"/><meta name="language" content="ach">
 
     <
     link
@@ -13,7 +13,11 @@ rel = "stylesheet"
 href = "https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.css" /
     >
 
+
     <
+    style > .customLink div, .navbar_menu - new a.w--current div {
+        color: #FF444F!important;
+    } < /style> <
     !--Analytics block starts here-- >
     <
     script >
@@ -96,7 +100,8 @@ href = "https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.c
                         status: this.status,
                         headers: this.getAllResponseHeaders(),
                         data: this.responseType === '' || this.responseType === 'text' ?
-                            this.responseText : null,
+                            this.responseText :
+                            null,
                         payload: parsedPayload,
                     }
 
@@ -483,42 +488,46 @@ cacheTrackEvents.trackConsoleErrors((errorMessage) => {
 ;
 (function() {
     const trackCTAEvents = (event) => {
-        const anchor = event.target.closest('a')
-        let identifier = ''
+        const anchor = event.target.closest('a');
+        if (!anchor) return;
 
-        if (anchor) {
-            const href = anchor.getAttribute('href')
-            identifier =
-                href && href !== '#' && !href.startsWith('#') ?
-                href.split('/').pop().toLowerCase() :
-                anchor.getAttribute('data-href') || ''
-        }
-        const section = anchor?.closest('section')
-        const sectionName = section ? section.className.split(' ')[0] : ''
+        const href = anchor.getAttribute('href');
+        const dataHref = anchor.getAttribute('data-href');
+        const identifier = dataHref || (href && href !== '#' ? href.split('/').pop().toLowerCase() : '');
+
+        const section = anchor.closest('section') || anchor.closest('div[id]');
+        const sectionName = section ? section.className.split(' ')[0] || section.id || 'unknown' : 'unknown';
 
         if (identifier && sectionName) {
-            const eventName = 'ce_cta_clicks'
+            const eventName = 'ce_cta_clicks';
             const eventProperties = {
                 action: 'click',
                 component_type: 'btn',
                 component_name: identifier,
                 section_name: sectionName,
                 cta_name: anchor.textContent?.replace(/\s+/g, ' ').trim(),
-            }
+            };
+
+            console.log('Tracking Event:', {
+                name: eventName,
+                properties: eventProperties
+            });
+
             cacheTrackEvents.track({
                 name: eventName,
                 properties: eventProperties,
-            })
+            });
         }
-    }
+    };
 
     const interval = setInterval(() => {
         if (document.body) {
-            document.body.addEventListener('click', trackCTAEvents)
-            clearInterval(interval)
+            document.body.addEventListener('click', trackCTAEvents);
+            clearInterval(interval);
         }
-    }, 10)
-})()
+    }, 10);
+})();
+
 //Analytics block for cta_clicks method ends here
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -628,7 +637,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return featureFlagValue
         }
     }) <
-    /script> <!--Analytics block ends-- >
+    /script> <
+    !--Analytics block ends-- >
 
     <
     !--Google Tag Manager-- >
@@ -647,12 +657,14 @@ document.addEventListener('DOMContentLoaded', () => {
     j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
     f.parentNode.insertBefore(j, f)
 })(window, document, 'script', 'dataLayer', 'GTM-NF7884S') <
-/script> <!--End Google Tag Manager-- >
+/script> <
+!--End Google Tag Manager-- >
 
 <
 !--Analytics Integration-- >
 <
-script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <!--Analytics end-- >
+script defer src = "https://unpkg.com/@deriv-com/analytics@1.28.2/dist/analytics.bundle.js" > < /script> <
+    !--Analytics end-- >
 
     <
     !--Hotjar Tracking Code
@@ -683,8 +695,7 @@ for Deriv.com(.com + app.deriv) -- >
 script
 defer
 src = "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js" >
-    <
-    /script>
+    < /script>
 
     <
     !--Keep this css code to improve the font quality-- >
@@ -702,17 +713,21 @@ window.growthbook_config.attributes = {
         device_language: 'foo',
         user_ip: 'foo',
     } <
-    /script> <!--Datadog Integration-- > <
-script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- > <
-script >
-    function loadScript(url, callback) {
-        var script = document.createElement('script')
-        script.onload = function() {
-            if (callback) callback()
+    /script> <
+    !--Datadog Integration-- >
+    <
+    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <
+        !--Marketing and Affiliate Cookie-- >
+        <
+        script >
+        function loadScript(url, callback) {
+            var script = document.createElement('script')
+            script.onload = function() {
+                if (callback) callback()
+            }
+            script.src = url
+            document.head.appendChild(script)
         }
-        script.src = url
-        document.head.appendChild(script)
-    }
 // Usage to load the js-cookie script
 loadScript('https://static.deriv.com/scripts/cookie.js', function() {
     console.log('js-cookie loaded successfully!')
@@ -776,7 +791,8 @@ loadScript('https://static.deriv.com/scripts/cookie.js', function() {
                     path: this.path,
                     domain: this.domain,
                     secure: options && options.secure !== undefined ?
-                        options.secure : this.is_secure,
+                        options.secure :
+                        this.is_secure,
                     sameSite: (options && options.sameSite) || this.same_site,
                     ...options,
                 })
@@ -868,7 +884,7 @@ alt = ""
 class = "utility_image _404_image" / > < h3 class = "_404-heading" > We couldn’ t find that page < /h3><div class="padding-xxsmall"></div > < div class = "_404-text" > It may not be available in your country, or a broken link has brought you here. < /div><a href="/
 " class="
 button w - button ">Return to homepage</a></div></div></div></div><script src="
-https: //d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.7a296b1fa06cab06004cc80779a87231.js" type="text/javascript"></script><!-- [Attributes by Finsweet] Mirror click events -->
+https: //d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66585fe0e1dc7e70cc75d440" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d440/js/deriv-staged-2dfc316890fbbd8e3ed6d351bd.f5746687.73cc9a6b8e8b4c13.js" type="text/javascript"></script><!-- [Attributes by Finsweet] Mirror click events -->
     <
     !--This is needed
 for the close button in the mobile language selection menu.-- >
@@ -881,8 +897,8 @@ for the close button in the mobile language selection menu.-- >
     script
 type = "module"
 src = "https://unpkg.com/@deriv-com/custom-scripts@1.26.8/dist/js/footer_scripts.min.js" >
-    <
-    /script> <!--deriv js custom code script end-- >
+    < /script> <
+    !--deriv js custom code script end-- >
 
     <
     script >
@@ -912,7 +928,9 @@ Webflow.push(function() {
         }
     }
 }); <
-/script> <!--Datadog Integration-- > <
+/script> <
+!--Datadog Integration-- >
+<
 script defer >
     (function() {
         var script = document.createElement("script");
@@ -938,7 +956,9 @@ script defer >
         };
         document.body.appendChild(script);
     })(); <
-/script> <!--End Datadog Integration-- > <
+/script> <
+!--End Datadog Integration-- >
+<
 script >
     window.parseCookies = function(cookieString, value) {
         const cookies = {};
@@ -1194,8 +1214,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); <
-/script> <!--Live Chat - end of code-- > <
-script >
+/script> <
+!--Live Chat - end of code-- >
+    <
+    script >
     window.__lc = window.__lc || {};
 window.__lc.license = 12049137;
 window.__lc.integration_name = "manual_onboarding";
@@ -1239,16 +1261,18 @@ window.__lc.integration_name = "manual_onboarding";
 /script> <
 noscript
     >
-    <
-    a href = "https://www.livechat.com/chat-with/12049137/"
+    < a href = "https://www.livechat.com/chat-with/12049137/"
 rel = "nofollow" >
-    Chat with us < /a >, powered by <
-a
+    Chat with us < /a >
+    , powered by <
+    a
 href = "https://www.livechat.com/?welcome"
 rel = "noopener nofollow"
 target = "_blank" >
-    LiveChat < /a > < /
-noscript > < !--End of LiveChat code-- >
+    LiveChat < /a >
+    <
+    /noscript> <
+    !--End of LiveChat code-- >
 
     <
     !--Trackjs - start of code-- >
@@ -1267,10 +1291,11 @@ noscript > < !--End of LiveChat code-- >
         };
         document.body.appendChild(script);
     })(); <
-/script> <!--Trackjs - end of code-- >
+/script> <
+!--Trackjs - end of code-- >
 
-<
-script >
+    <
+    script >
     document.addEventListener("DOMContentLoaded", function() {
         // Handle replica domain pointing
         const urlsToCheck = [
@@ -1288,47 +1313,54 @@ script >
 
         if (allowedDomains.includes(baseDomain)) {
             Array.from(document.querySelectorAll("a")).forEach((link) => {
-                const linkUrl = new URL(link.href);
-                if (urlsToCheck.some(url => new URL(url).hostname === linkUrl.hostname)) {
-                    link.href = link.href.replace("deriv.com", baseDomain);
+                try {
+                    const linkUrl = new URL(link.href);
+                    if (urlsToCheck.some(url => new URL(url).hostname === linkUrl.hostname)) {
+                        link.href = link.href.replace("deriv.com", baseDomain);
+                    }
+                } catch (error) {
+                    console.debug('Skipping invalid URL:', link.href);
                 }
             });
         }
 
         // Handle Dynamic Partners URL
-        const client_country = window?.getClientCountry?.();
-        const allowedCountries = "gh";
-        const allowedCountriesEU = "cy";
+        const intervalId = setInterval(() => {
+            const client_country = window?.getClientCountry?.();
 
-        if (
-            allowedCountries.includes(client_country) ||
-            allowedCountriesEU.includes(client_country)
-        ) {
-            const signupBtn = Array.from(document.querySelectorAll("a")).filter(
-                (link) =>
-                /https:\/\/login\.deriv\.(com|me|be)\/signup\.php/.test(link.href)
-            );
+            if (client_country) {
+                const allowedCountries = "gh";
+                const allowedCountriesEU = "cy";
 
-            signupBtn.forEach((link) => {
-                link.href = "https://partners.deriv.com/live_signup?brd=1";
-            });
+                if (
+                    allowedCountries.includes(client_country) ||
+                    allowedCountriesEU.includes(client_country)
+                ) {
+                    const signupBtn = Array.from(document.querySelectorAll("a")).filter(
+                        (link) =>
+                        /https:\/\/login\.deriv\.(com|me|be)\/signup\.php/.test(link.href)
+                    );
 
-            const loginBtn = Array.from(document.querySelectorAll("a")).filter(
-                (link) =>
-                /https:\/\/login\.deriv\.(com|me|be)\/signin\.php/.test(link.href)
-            );
+                    signupBtn.forEach((link) => {
+                        link.href = "https://partners.deriv.com/live_signup?brd=1";
+                    });
 
-            loginBtn.forEach((link) => {
-                link.href = "https://hub.deriv.com/partnershub/";
-            });
+                    const loginBtn = Array.from(document.querySelectorAll("a")).filter(
+                        (link) =>
+                        /https:\/\/login\.deriv\.(com|me|be)\/signin\.php/.test(link.href)
+                    );
 
-            loginBtn.forEach((link) => {
-                const hostname = window.location.hostname;
-                const baseDomain = hostname.split(".").slice(-2).join(".");
+                    loginBtn.forEach((link) => {
+                        const hostname = window.location.hostname;
+                        const baseDomain = hostname.split(".").slice(-2).join(".");
 
-                link.href = `https://hub.${baseDomain}/partnershub/`;
-            });
-        }
+                        link.href = `https://hub.${baseDomain}/partnershub/`;
+                    });
+                }
+
+                clearInterval(intervalId);
+            }
+        }, 300);
     }); <
 /script>
 
@@ -1401,7 +1433,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkIntercomEnabled();
 }); <
-/script> <!--Intercom end-- > <
+/script> <
+!--Intercom end-- >
+<
 script >
 
     if (window.location.pathname.includes("/product-explorer")) {
@@ -1478,4 +1512,4 @@ noscript > < style > .geotargetlygeocontent1734508191130_default {
 
     <
     script defer type = "module"
-src = "https://cdn.jsdelivr.net/npm/@deriv-com/webflow-plugins@1.0.7/dist/plugins/authflow.js" > < /script></body > < /html>
+src = "https://cdn.jsdelivr.net/npm/@deriv-com/webflow-plugins@1.0.14/dist/plugins/authflow.js" > < /script></body > < /html>
