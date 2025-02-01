@@ -128,8 +128,7 @@
                             status: this.status,
                             headers: this.getAllResponseHeaders(),
                             data: this.responseType === '' || this.responseType === 'text' ?
-                                this.responseText :
-                                null,
+                                this.responseText : null,
                             payload: parsedPayload,
                         }
 
@@ -801,8 +800,7 @@
                             path: this.path,
                             domain: this.domain,
                             secure: options && options.secure !== undefined ?
-                                options.secure :
-                                this.is_secure,
+                                options.secure : this.is_secure,
                             sameSite: (options && options.sameSite) || this.same_site,
                             ...options,
                         })
@@ -911,8 +909,8 @@
                     "@type": "VideoObject",
                     "name": "Will European economic data provide an additional boost to the markets?", // Title of the video
                     "description": "In this latest Market Radar, we talk about pivotal Eurozone economic events which can affect market dynamics this week. - Eurozone retail sales -
-                        ECB interest rate decision -
-                        Eurozone Q4 GDP impact Find out how these indicators influence both currency pair movements like EURUSD and the performance of the DAX index.Stay informed with our market updates at blog.deriv.com / tag / market - news / ", // Description of the video
+                    ECB interest rate decision -
+                    Eurozone Q4 GDP impact Find out how these indicators influence both currency pair movements like EURUSD and the performance of the DAX index.Stay informed with our market updates at blog.deriv.com / tag / market - news / ", // Description of the video
                     "thumbnailUrl": "https://cdn.prod.website-files.com/66585fe0e1dc7e70cc75d484/66585fe0e1dc7e70cc760748_665458b760e6604d7304f735_6626306349c0a52458e3edd4_MR%252520Week2%252520Part%2525201%252520thumbnail%252520(1).webp", // URL of the video thumbnail
                     "uploadDate": "Mar 04, 2024", // Upload date of the video
                     "contentUrl": "https://vimeo.com/919084875", // Direct video URL
