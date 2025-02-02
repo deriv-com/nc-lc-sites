@@ -17,8 +17,7 @@ href = "https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.c
     <
     style > .customLink div, .navbar_menu - new a.w--current div {
         color: #FF444F!important;
-    } < /style> <!--Analytics block starts here-- >
-    <
+    } < /style> <!--Analytics block starts here-- > <
     script >
     const cacheTrackEvents = {
         interval: null,
@@ -709,10 +708,8 @@ window.growthbook_config.attributes = {
         device_language: 'foo',
         user_ip: 'foo',
     } <
-    /script> <!--Datadog Integration-- >
-    <
-    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- >
-        <
+    /script> <!--Datadog Integration-- > <
+    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- > <
         script >
         function loadScript(url, callback) {
             var script = document.createElement('script')
@@ -921,8 +918,7 @@ Webflow.push(function() {
         }
     }
 }); <
-/script> <!--Datadog Integration-- >
-<
+/script> <!--Datadog Integration-- > <
 script defer >
     (function() {
         var script = document.createElement("script");
@@ -948,8 +944,7 @@ script defer >
         };
         document.body.appendChild(script);
     })(); <
-/script> <!--End Datadog Integration-- >
-<
+/script> <!--End Datadog Integration-- > <
 script >
     window.parseCookies = function(cookieString, value) {
         const cookies = {};
@@ -1205,9 +1200,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); <
-/script> <!--Live Chat - end of code-- >
-    <
-    script >
+/script> <!--Live Chat - end of code-- > <
+script >
     window.__lc = window.__lc || {};
 window.__lc.license = 12049137;
 window.__lc.integration_name = "manual_onboarding";
@@ -1255,12 +1249,12 @@ noscript
     a href = "https://www.livechat.com/chat-with/12049137/"
 rel = "nofollow" >
     Chat with us < /a >, powered by <
-    a
+a
 href = "https://www.livechat.com/?welcome"
 rel = "noopener nofollow"
 target = "_blank" >
-    LiveChat < /a > <
-    /noscript> <!--End of LiveChat code-- >
+    LiveChat < /a > < /
+    noscript > < !--End of LiveChat code-- >
 
     <
     !--Trackjs - start of code-- >
@@ -1281,8 +1275,8 @@ target = "_blank" >
     })(); <
 /script> <!--Trackjs - end of code-- >
 
-    <
-    script >
+<
+script >
     document.addEventListener("DOMContentLoaded", function() {
         // Handle replica domain pointing
         const urlsToCheck = [
@@ -1420,8 +1414,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkIntercomEnabled();
 }); <
-/script> <!--Intercom end-- >
-<
+/script> <!--Intercom end-- > <
 script >
 
     if (window.location.pathname.includes("/product-explorer")) {
