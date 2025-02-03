@@ -18,7 +18,7 @@ href = "https://unpkg.com/@deriv-com/custom-scripts@1.22.0/dist/css/styles.min.c
     style > .customLink div, .navbar_menu - new a.w--current div {
         color: #FF444F!important;
     } < /style> <!--Analytics block starts here-- > <
-    script >
+script >
     const cacheTrackEvents = {
         interval: null,
         responses: [],
@@ -709,16 +709,16 @@ window.growthbook_config.attributes = {
         user_ip: 'foo',
     } <
     /script> <!--Datadog Integration-- > <
-    script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- > <
-        script >
-        function loadScript(url, callback) {
-            var script = document.createElement('script')
-            script.onload = function() {
-                if (callback) callback()
-            }
-            script.src = url
-            document.head.appendChild(script)
+script async src = "https://www.datadoghq-browser-agent.com/datadog-rum.js" > < /script> <!--Marketing and Affiliate Cookie-- > <
+script >
+    function loadScript(url, callback) {
+        var script = document.createElement('script')
+        script.onload = function() {
+            if (callback) callback()
         }
+        script.src = url
+        document.head.appendChild(script)
+    }
 // Usage to load the js-cookie script
 loadScript('https://static.deriv.com/scripts/cookie.js', function() {
     console.log('js-cookie loaded successfully!')
@@ -1254,7 +1254,7 @@ href = "https://www.livechat.com/?welcome"
 rel = "noopener nofollow"
 target = "_blank" >
     LiveChat < /a > < /
-    noscript > < !--End of LiveChat code-- >
+noscript > < !--End of LiveChat code-- >
 
     <
     !--Trackjs - start of code-- >
