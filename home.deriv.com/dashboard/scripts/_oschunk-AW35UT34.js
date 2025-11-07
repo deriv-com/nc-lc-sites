@@ -1,0 +1,524 @@
+import {
+    X as r,
+    c as e
+} from "./_oschunk-DFKJJKI4.js";
+var o = {
+        "Validation.Currency": "\u0623\u062F\u062E\u0644 \u0639\u0645\u0644\u0629 \u0635\u0627\u0644\u062D\u0629",
+        "Validation.DateTime": "\u0623\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E \u0648\u0648\u0642\u062A \u0635\u0627\u0644\u062D\u064A\u0646",
+        "Validation.Date": "\u0623\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "Validation.Decimal": "\u0623\u062F\u062E\u0644 \u0631\u0642\u0645 \u0639\u0634\u0631\u064A \u0635\u0627\u0644\u062D",
+        "Validation.Email": "\u0623\u062F\u062E\u0644 \u0628\u0631\u064A\u062F\u064B\u0627 \u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "Validation.Integer": "\u0623\u062F\u062E\u0644 \u0639\u062F\u062F\u064B\u0627 \u0635\u062D\u064A\u062D\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "Validation.LongInteger": "\u0623\u062F\u062E\u0644 \u0639\u062F\u062F\u064B\u0627 \u0635\u062D\u064A\u062D\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "Validation.Mandatory": "\u0647\u0630\u0627 \u0627\u0644\u062D\u0642\u0644 \u0645\u0637\u0644\u0648\u0628",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0623\u062F\u062E\u0644 \u0643\u0644\u0645\u0629 \u0645\u0631\u0648\u0631 \u0631\u0642\u0645\u064A\u0629 \u0635\u0627\u0644\u062D\u0629",
+        "Validation.PhoneNumber": "\u0623\u062F\u062E\u0644 \u0631\u0642\u0645 \u0647\u0627\u062A\u0641 \u0635\u0627\u0644\u062D",
+        "Validation.Text": "\u0623\u062F\u062E\u0644 \u0646\u0635\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "Validation.Time": "\u0623\u062F\u062E\u0644 \u0648\u0642\u062A\u064B\u0627 \u0635\u0627\u0644\u062D\u064B\u0627",
+        "AppInitError.Generic": "\u062D\u062F\u062B \u062E\u0637\u0623 \u0623\u062B\u0646\u0627\u0621 \u0645\u062D\u0627\u0648\u0644\u0629 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0637\u0628\u064A\u0642. \u0625\u0630\u0627 \u0643\u0646\u062A \u062A\u0631\u063A\u0628 \u0641\u064A \u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u062D\u0627\u0648\u0644\u0629\u060C \u0623\u0639\u062F \u062A\u0634\u063A\u064A\u0644 \u0627\u0644\u062A\u0637\u0628\u064A\u0642.",
+        "AppInitError.DataModel": "\u062D\u062F\u062B \u062E\u0637\u0623 \u0623\u062B\u0646\u0627\u0621 \u0645\u062D\u0627\u0648\u0644\u0629 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0637\u0628\u064A\u0642. \u0625\u0630\u0627 \u0643\u0646\u062A \u062A\u0631\u063A\u0628 \u0641\u064A \u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u062D\u0627\u0648\u0644\u0629\u060C \u0623\u0639\u062F \u062A\u0634\u063A\u064A\u0644 \u0627\u0644\u062A\u0637\u0628\u064A\u0642. \u0625\u0630\u0627 \u0627\u0633\u062A\u0645\u0631\u062A \u0627\u0644\u0645\u0634\u0643\u0644\u0629\u060C \u064A\u0645\u0643\u0646\u0643 \u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u062A\u062B\u0628\u064A\u062A\u060C \u0644\u0643\u0646 \u0633\u062A\u0641\u0642\u062F \u062C\u0645\u064A\u0639 \u0627\u0644\u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0645\u062D\u0644\u064A\u0629.",
+        "AppInitError.Resources": "\u062D\u062F\u062B \u062E\u0637\u0623 \u0623\u062B\u0646\u0627\u0621 \u0645\u062D\u0627\u0648\u0644\u0629 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0637\u0628\u064A\u0642. \u0625\u0630\u0627 \u0631\u063A\u0628\u062A \u0641\u064A \u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u062D\u0627\u0648\u0644\u0629\u060C \u0623\u0639\u062F \u062A\u0634\u063A\u064A\u0644 \u0627\u0644\u062A\u0637\u0628\u064A\u0642.",
+        UpgradeRequiredDataLoss: "\u062A\u0637\u0628\u064A\u0642\u0643 \u0628\u062D\u0627\u062C\u0629 \u0625\u0644\u0649 \u062A\u062D\u062F\u064A\u062B. \u0633\u062A\u0641\u0642\u062F \u0627\u0644\u0628\u064A\u0627\u0646\u0627\u062A \u063A\u064A\u0631 \u0627\u0644\u0645\u062D\u0641\u0648\u0638\u0629. \u0627\u0646\u0642\u0631 \u0647\u0646\u0627 \u0644\u0644\u062A\u062D\u062F\u064A\u062B.",
+        UpgradeRequired: "\u064A\u062A\u0637\u0644\u0628 \u062A\u0637\u0628\u064A\u0642\u0643 \u0627\u0644\u062A\u062D\u062F\u064A\u062B. \u0627\u0646\u0642\u0631 \u0647\u0646\u0627 \u0644\u0644\u062A\u062D\u062F\u064A\u062B."
+    },
+    l = {
+        "Validation.Currency": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09AE\u09C1\u09A6\u09CD\u09B0\u09BE \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.DateTime": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09A4\u09BE\u09B0\u09BF\u0996 \u098F\u09AC\u0982 \u09B8\u09AE\u09AF\u09BC \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Date": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09A4\u09BE\u09B0\u09BF\u0996 \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Decimal": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09A6\u09B6\u09AE\u09BF\u0995 \u09B8\u0982\u0996\u09CD\u09AF\u09BE \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Email": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u0987\u09AE\u09C7\u0987\u09B2 \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Integer": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09AA\u09C2\u09B0\u09CD\u09A3\u09B8\u0982\u0996\u09CD\u09AF\u09BE \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.LongInteger": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09AA\u09C2\u09B0\u09CD\u09A3\u09B8\u0982\u0996\u09CD\u09AF\u09BE \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Mandatory": "\u098F\u0987 \u0995\u09CD\u09B7\u09C7\u09A4\u09CD\u09B0\u099F\u09BF \u0986\u09AC\u09B6\u09CD\u09AF\u0995",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09B8\u0982\u0996\u09CD\u09AF\u09BE\u09AE\u09C2\u09B2\u0995 \u09AA\u09BE\u09B8\u0993\u09AF\u09BC\u09BE\u09B0\u09CD\u09A1 \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.PhoneNumber": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09AB\u09CB\u09A8 \u09A8\u09AE\u09CD\u09AC\u09B0 \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Text": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09AA\u09BE\u09A0\u09CD\u09AF \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "Validation.Time": "\u098F\u0995\u099F\u09BF \u09AC\u09C8\u09A7 \u09B8\u09AE\u09AF\u09BC \u09AA\u09CD\u09B0\u09AC\u09C7\u09B6 \u0995\u09B0\u09C1\u09A8",
+        "AppInitError.Generic": "\u0985\u09CD\u09AF\u09BE\u09AA \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09BE\u09B0 \u09B8\u09AE\u09AF\u09BC \u098F\u0995\u099F\u09BF \u09A4\u09CD\u09B0\u09C1\u099F\u09BF \u0998\u099F\u09C7\u099B\u09C7\u0964 \u09B0\u09BF\u09AA\u09BF\u099F \u0995\u09B0\u09A4\u09C7 \u099A\u09BE\u0987\u09B2\u09C7, \u0985\u09CD\u09AF\u09BE\u09AA\u099F\u09BF \u09AA\u09C1\u09A8\u09B0\u09BE\u09AF\u09BC \u099A\u09BE\u09B2\u09C1 \u0995\u09B0\u09C1\u09A8\u0964",
+        "AppInitError.DataModel": "\u0985\u09CD\u09AF\u09BE\u09AA \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09BE\u09B0 \u09B8\u09AE\u09AF\u09BC \u098F\u0995\u099F\u09BF \u09A4\u09CD\u09B0\u09C1\u099F\u09BF \u0998\u099F\u09C7\u099B\u09C7\u0964 \u09B0\u09BF\u09AA\u09BF\u099F \u0995\u09B0\u09A4\u09C7 \u099A\u09BE\u0987\u09B2\u09C7, \u0985\u09CD\u09AF\u09BE\u09AA\u099F\u09BF \u09AA\u09C1\u09A8\u09B0\u09BE\u09AF\u09BC \u099A\u09BE\u09B2\u09C1 \u0995\u09B0\u09C1\u09A8\u0964 \u09B8\u09AE\u09B8\u09CD\u09AF\u09BE \u09A5\u09BE\u0995\u09B2\u09C7, \u0986\u09AA\u09A8\u09BF \u09AA\u09C1\u09A8\u09B0\u09BE\u09AF\u09BC \u0987\u09A8\u09B8\u09CD\u099F\u09B2 \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09C7\u09A8, \u09A4\u09AC\u09C7 \u09B8\u09AC \u09B8\u09CD\u09A5\u09BE\u09A8\u09C0\u09AF\u09BC \u09A1\u09C7\u099F\u09BE \u09B9\u09BE\u09B0\u09BF\u09AF\u09BC\u09C7 \u09AF\u09BE\u09AC\u09C7\u0964",
+        "AppInitError.Resources": "\u0985\u09CD\u09AF\u09BE\u09AA \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09BE\u09B0 \u09B8\u09AE\u09AF\u09BC \u098F\u0995\u099F\u09BF \u09A4\u09CD\u09B0\u09C1\u099F\u09BF \u0998\u099F\u09C7\u099B\u09C7\u0964 \u09B0\u09BF\u09AA\u09BF\u099F \u0995\u09B0\u09A4\u09C7 \u099A\u09BE\u0987\u09B2\u09C7, \u0985\u09CD\u09AF\u09BE\u09AA\u099F\u09BF \u09AA\u09C1\u09A8\u09B0\u09BE\u09AF\u09BC \u099A\u09BE\u09B2\u09C1 \u0995\u09B0\u09C1\u09A8\u0964",
+        UpgradeRequiredDataLoss: "\u0986\u09AA\u09A8\u09BE\u09B0 \u0985\u09CD\u09AF\u09BE\u09AA\u09CD\u09B2\u09BF\u0995\u09C7\u09B6\u09A8 \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09A4\u09C7 \u09B9\u09AC\u09C7\u0964 \u09B8\u0982\u09B0\u0995\u09CD\u09B7\u09BF\u09A4 \u09A8\u09AF\u09BC \u098F\u09AE\u09A8 \u09A1\u09C7\u099F\u09BE \u09B9\u09BE\u09B0\u09BF\u09AF\u09BC\u09C7 \u09AF\u09BE\u09AC\u09C7\u0964 \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09A4\u09C7 \u098F\u0996\u09BE\u09A8\u09C7 \u0995\u09CD\u09B2\u09BF\u0995 \u0995\u09B0\u09C1\u09A8\u0964",
+        UpgradeRequired: "\u0986\u09AA\u09A8\u09BE\u09B0 \u0985\u09CD\u09AF\u09BE\u09AA\u09CD\u09B2\u09BF\u0995\u09C7\u09B6\u09A8\u099F\u09BF \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09A4\u09C7 \u09B9\u09AC\u09C7\u0964 \u0986\u09AA\u09A1\u09C7\u099F \u0995\u09B0\u09A4\u09C7 \u098F\u0996\u09BE\u09A8\u09C7 \u0995\u09CD\u09B2\u09BF\u0995 \u0995\u09B0\u09C1\u09A8\u0964"
+    },
+    s = {
+        "Validation.Currency": "Geben Sie eine g\xFCltige W\xE4hrung ein",
+        "Validation.DateTime": "Geben Sie ein g\xFCltiges Datum und Uhrzeit ein",
+        "Validation.Date": "Geben Sie ein g\xFCltiges Datum ein",
+        "Validation.Decimal": "Bitte geben Sie eine g\xFCltige Dezimalzahl ein",
+        "Validation.Email": "Geben Sie eine g\xFCltige E-Mail ein",
+        "Validation.Integer": "Geben Sie eine g\xFCltige ganze Zahl ein",
+        "Validation.LongInteger": "Geben Sie eine g\xFCltige ganze Zahl ein",
+        "Validation.Mandatory": "Dieses Feld ist erforderlich",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Geben Sie ein g\xFCltiges numerisches Passwort ein",
+        "Validation.PhoneNumber": "Geben Sie eine g\xFCltige Telefonnummer ein",
+        "Validation.Text": "Geben Sie einen g\xFCltigen Text ein",
+        "Validation.Time": "Geben Sie eine g\xFCltige Uhrzeit ein",
+        "AppInitError.Generic": "Beim Versuch, die App zu aktualisieren, ist ein Fehler aufgetreten. Wenn Sie es erneut versuchen m\xF6chten, starten Sie die App neu.",
+        "AppInitError.DataModel": "Beim Versuch, die App zu aktualisieren, ist ein Fehler aufgetreten. Wenn Sie es erneut versuchen m\xF6chten, starten Sie die App neu. Wenn das Problem weiterhin besteht, k\xF6nnen Sie die App neu installieren, jedoch gehen alle lokalen Daten verloren.",
+        "AppInitError.Resources": "Beim Versuch, die App zu aktualisieren, ist ein Fehler aufgetreten. Wenn Sie es erneut versuchen m\xF6chten, starten Sie die App neu.",
+        UpgradeRequiredDataLoss: "Ihre Anwendung muss aktualisiert werden. Ungespeicherte Daten gehen verloren. Klicken Sie hier, um zu aktualisieren.",
+        UpgradeRequired: "Ihre Anwendung muss aktualisiert werden. Klicken Sie hier, um zu aktualisieren."
+    },
+    d = {
+        "Validation.Currency": "Introduce una moneda v\xE1lida",
+        "Validation.DateTime": "Introduce una fecha y hora v\xE1lidas",
+        "Validation.Date": "Introduce una fecha v\xE1lida",
+        "Validation.Decimal": "Introduce un decimal v\xE1lido",
+        "Validation.Email": "Introduce un email v\xE1lido",
+        "Validation.Integer": "Introduce un entero v\xE1lido",
+        "Validation.LongInteger": "Introduce un entero v\xE1lido",
+        "Validation.Mandatory": "Este campo es obligatorio",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Introduce una contrase\xF1a num\xE9rica v\xE1lida",
+        "Validation.PhoneNumber": "Introduce un n\xFAmero de tel\xE9fono v\xE1lido",
+        "Validation.Text": "Introduce un texto v\xE1lido",
+        "Validation.Time": "Introduce una hora v\xE1lida",
+        "AppInitError.Generic": "Ocurri\xF3 un error al intentar actualizar la app. Si quieres reintentar, reinicia la app.",
+        "AppInitError.DataModel": "Ocurri\xF3 un error al intentar actualizar la app. Si quieres reintentar, reinicia la app. Si el problema persiste, puedes reinstalar, pero se perder\xE1n todos los datos locales.",
+        "AppInitError.Resources": "Ocurri\xF3 un error al intentar actualizar la app. Si quieres reintentar, reinicia la app.",
+        UpgradeRequiredDataLoss: "Tu aplicaci\xF3n debe actualizarse. Se perder\xE1n datos no guardados. Haz clic aqu\xED para actualizar.",
+        UpgradeRequired: "Tu aplicaci\xF3n necesita actualizarse. Haz clic aqu\xED para actualizar."
+    },
+    u = {
+        "Validation.Currency": "Entrez une devise valide",
+        "Validation.DateTime": "Entrez une date et une heure valides",
+        "Validation.Date": "Entrez une date valide",
+        "Validation.Decimal": "Entrez un nombre d\xE9cimal valide",
+        "Validation.Email": "Entrez un e-mail valide",
+        "Validation.Integer": "Entrez un entier valide",
+        "Validation.LongInteger": "Entrez un entier valide",
+        "Validation.Mandatory": "Ce champ est requis",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Entrez un mot de passe num\xE9rique valide",
+        "Validation.PhoneNumber": "Entrez un num\xE9ro de t\xE9l\xE9phone valide",
+        "Validation.Text": "Entrez un texte valide",
+        "Validation.Time": "Entrez une heure valide",
+        "AppInitError.Generic": "Une erreur est survenue lors de la mise \xE0 jour de l'application. Si vous souhaitez r\xE9essayer, red\xE9marrez l'application.",
+        "AppInitError.DataModel": "Une erreur est survenue lors de la mise \xE0 jour de l'application. Si vous souhaitez r\xE9essayer, red\xE9marrez l'application. Si le probl\xE8me persiste, vous pouvez la r\xE9installer, mais toutes les donn\xE9es locales seront perdues.",
+        "AppInitError.Resources": "Une erreur est survenue lors de la mise \xE0 jour de l'application. Si vous souhaitez r\xE9essayer, red\xE9marrez l'application.",
+        UpgradeRequiredDataLoss: "Votre application doit \xEAtre mise \xE0 jour. Les donn\xE9es non enregistr\xE9es seront perdues. Cliquez ici pour mettre \xE0 jour.",
+        UpgradeRequired: "Votre application doit \xEAtre mise \xE0 jour. Cliquez ici pour mettre \xE0 jour."
+    },
+    g = {
+        "Validation.Currency": "Inserisci una valuta valida",
+        "Validation.DateTime": "Inserisci una data e ora valide",
+        "Validation.Date": "Inserisci una data valida",
+        "Validation.Decimal": "Inserisci un decimale valido",
+        "Validation.Email": "Inserisci un\u2019e-mail valida",
+        "Validation.Integer": "Inserisci un intero valido",
+        "Validation.LongInteger": "Inserisci un intero valido",
+        "Validation.Mandatory": "Questo campo \xE8 obbligatorio",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Inserisci una password numerica valida",
+        "Validation.PhoneNumber": "Inserisci un numero di telefono valido",
+        "Validation.Text": "Inserisci un testo valido",
+        "Validation.Time": "Inserisci un orario valido",
+        "AppInitError.Generic": "Si \xE8 verificato un errore durante l'aggiornamento dell'app. Se vuoi riprovare, riavvia l'app.",
+        "AppInitError.DataModel": "Si \xE8 verificato un errore durante l'aggiornamento dell'app. Se vuoi riprovare, riavvia l'app. Se il problema persiste, puoi reinstallarla, ma tutti i dati locali saranno persi.",
+        "AppInitError.Resources": "Si \xE8 verificato un errore durante l'aggiornamento dell'app. Se vuoi riprovare, riavvia l'app.",
+        UpgradeRequiredDataLoss: "La tua applicazione deve essere aggiornata. I dati non salvati andranno persi. Clicca qui per aggiornare.",
+        UpgradeRequired: "La tua applicazione deve essere aggiornata. Clicca qui per aggiornare."
+    },
+    p = {
+        "Validation.Currency": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u179A\u17BC\u1794\u17B7\u1799\u1794\u17D0\u178E\u17D2\u178E\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.DateTime": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u1790\u17D2\u1784\u17C3\u1781\u17C2\u1786\u17D2\u1793\u17B6\u17C6 \u1793\u17B7\u1784\u1798\u17C9\u17C4\u1784\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Date": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u1790\u17D2\u1784\u17C3\u1781\u17C2\u1786\u17D2\u1793\u17B6\u17C6\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Decimal": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u179B\u17C1\u1781\u1791\u179F\u1797\u17B6\u1782\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Email": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u17A2\u17CA\u17B8\u1798\u17C2\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Integer": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u179B\u17C1\u1781\u1791\u17C4\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.LongInteger": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u179B\u17C1\u1781\u1791\u17C4\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Mandatory": "\u179C\u17B6\u179B\u1793\u17C1\u17C7\u200B\u178F\u17D2\u179A\u17BC\u179C\u178F\u17C2\u1794\u1789\u17D2\u1785\u17BC\u179B",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u1796\u17B6\u1780\u17D2\u1799\u179F\u1798\u17D2\u1784\u17B6\u178F\u17CB\u179B\u17C1\u1781\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.PhoneNumber": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Text": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u17A2\u178F\u17D2\u1790\u1794\u1791\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "Validation.Time": "\u1785\u17BC\u179B\u179A\u17BD\u1798\u1798\u17C9\u17C4\u1784\u178A\u17C2\u179B\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C",
+        "AppInitError.Generic": "\u1798\u17B6\u1793\u1780\u17C6\u17A0\u17BB\u179F\u1780\u17BE\u178F\u17A1\u17BE\u1784\u1793\u17C5\u1796\u17C1\u179B\u1781\u178E\u17C8\u1796\u17D2\u1799\u17B6\u1799\u17B6\u1798\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17D4 \u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u17A2\u17D2\u1793\u1780\u1785\u1784\u17CB\u179F\u17B6\u1780\u179B\u17D2\u1794\u1784\u1798\u17D2\u178A\u1784\u1791\u17C0\u178F, \u179F\u17BC\u1798\u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17A1\u17BE\u1784\u179C\u17B7\u1789\u17D4",
+        "AppInitError.DataModel": "\u1798\u17B6\u1793\u1780\u17C6\u17A0\u17BB\u179F\u1780\u17BE\u178F\u17A1\u17BE\u1784\u1793\u17C5\u1796\u17C1\u179B\u1796\u17D2\u1799\u17B6\u1799\u17B6\u1798\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17D4 \u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u17A2\u17D2\u1793\u1780\u1785\u1784\u17CB\u179F\u17B6\u1780\u179B\u17D2\u1794\u1784\u1798\u17D2\u178F\u1784\u1791\u17C0\u178F \u179F\u17BC\u1798\u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17A1\u17BE\u1784\u179C\u17B7\u1789\u17D4 \u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u1794\u1789\u17D2\u17A0\u17B6\u1794\u1793\u17D2\u178F \u17A2\u17D2\u1793\u1780\u17A2\u17B6\u1785\u178F\u17C6\u17A1\u17BE\u1784\u17A1\u17BE\u1784\u179C\u17B7\u1789 \u1794\u17C9\u17BB\u1793\u17D2\u178F\u17C2\u1791\u17B7\u1793\u17D2\u1793\u1793\u17D0\u1799\u1780\u17D2\u1793\u17BB\u1784\u179F\u17D2\u179A\u17BB\u1780\u1791\u17B6\u17C6\u1784\u17A2\u179F\u17CB\u1793\u17B9\u1784\u1794\u17B6\u178F\u17CB\u1794\u1784\u17CB\u17D4",
+        "AppInitError.Resources": "\u1798\u17B6\u1793\u1780\u17C6\u17A0\u17BB\u179F\u1780\u17BE\u178F\u17A1\u17BE\u1784\u1793\u17C5\u1796\u17C1\u179B\u1781\u178E\u17C8\u1796\u17D2\u1799\u17B6\u1799\u17B6\u1798\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17D4 \u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u17A2\u17D2\u1793\u1780\u1785\u1784\u17CB\u179F\u17B6\u1780\u179B\u17D2\u1794\u1784\u1798\u17D2\u178A\u1784\u1791\u17C0\u178F, \u179F\u17BC\u1798\u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u17A1\u17BE\u1784\u179C\u17B7\u1789\u17D4",
+        UpgradeRequiredDataLoss: "\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u179A\u1794\u179F\u17CB\u17A2\u17D2\u1793\u1780\u178F\u17D2\u179A\u17BC\u179C\u1780\u17B6\u179A\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u17D4 \u1791\u17B7\u1793\u17D2\u1793\u1793\u17D0\u1799\u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\u1793\u179A\u1780\u17D2\u179F\u17B6\u1791\u17BB\u1780\u1793\u17B9\u1784\u1794\u17B6\u178F\u17CB\u1794\u1784\u17CB\u17D4 \u1785\u17BB\u1785\u1791\u17B8\u1793\u17C1\u17C7\u178A\u17BE\u1798\u17D2\u1794\u17B8\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u17D4",
+        UpgradeRequired: "\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u179A\u1794\u179F\u17CB\u17A2\u17D2\u1793\u1780\u178F\u17D2\u179A\u17BC\u179C\u1780\u17B6\u179A\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u17D4 \u1785\u17BB\u1785\u1791\u17B8\u1793\u17C1\u17C7\u178A\u17BE\u1798\u17D2\u1794\u17B8\u1792\u17D2\u179C\u17BE\u1794\u1785\u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793\u1797\u17B6\u1796\u17D4"
+    },
+    c = {
+        "Validation.Currency": "\uC720\uD6A8\uD55C \uD1B5\uD654\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.DateTime": "\uC720\uD6A8\uD55C \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Date": "\uC720\uD6A8\uD55C \uB0A0\uC9DC\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Decimal": "\uC720\uD6A8\uD55C \uC18C\uC218\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Email": "\uC720\uD6A8\uD55C \uC774\uBA54\uC77C \uC8FC\uC18C\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Integer": "\uC720\uD6A8\uD55C \uC815\uC218\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.LongInteger": "\uC720\uD6A8\uD55C \uC815\uC218\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Mandatory": "\uC774 \uD544\uB4DC\uB294 \uD544\uC218\uC785\uB2C8\uB2E4",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\uC720\uD6A8\uD55C \uC22B\uC790 \uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.PhoneNumber": "\uC720\uD6A8\uD55C \uC804\uD654\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Text": "\uC720\uD6A8\uD55C \uD14D\uC2A4\uD2B8\uB97C \uC785\uB825\uD558\uC138\uC694",
+        "Validation.Time": "\uC720\uD6A8\uD55C \uC2DC\uAC04\uC744 \uC785\uB825\uD558\uC138\uC694",
+        "AppInitError.Generic": "\uC571 \uC5C5\uB370\uC774\uD2B8 \uC2DC \uC624\uB958\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB824\uBA74 \uC571\uC744 \uC7AC\uC2DC\uC791\uD558\uC138\uC694.",
+        "AppInitError.DataModel": "\uC571 \uC5C5\uB370\uC774\uD2B8 \uC2DC \uC624\uB958\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB824\uBA74 \uC571\uC744 \uC7AC\uC2DC\uC791\uD558\uC138\uC694. \uBB38\uC81C\uAC00 \uACC4\uC18D\uB418\uBA74 \uC7AC\uC124\uCE58\uD560 \uC218 \uC788\uC9C0\uB9CC, \uBAA8\uB4E0 \uB85C\uCEEC \uB370\uC774\uD130\uAC00 \uC190\uC2E4\uB429\uB2C8\uB2E4.",
+        "AppInitError.Resources": "\uC571 \uC5C5\uB370\uC774\uD2B8 \uC2DC \uC624\uB958\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB824\uBA74 \uC571\uC744 \uC7AC\uC2DC\uC791\uD558\uC138\uC694.",
+        UpgradeRequiredDataLoss: "\uADC0\uD558\uC758 \uC571\uC744 \uC5C5\uB370\uC774\uD2B8\uD574\uC57C \uD569\uB2C8\uB2E4. \uC800\uC7A5\uB418\uC9C0 \uC54A\uC740 \uB370\uC774\uD130\uB294 \uC190\uC2E4\uB429\uB2C8\uB2E4. \uC5EC\uAE30 \uD074\uB9AD\uD558\uC5EC \uC5C5\uB370\uC774\uD2B8\uD558\uC138\uC694.",
+        UpgradeRequired: "\uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uC5C5\uB370\uC774\uD2B8\uD574\uC57C \uD569\uB2C8\uB2E4. \uC5EC\uAE30\uB97C \uD074\uB9AD\uD558\uC5EC \uC5C5\uB370\uC774\uD2B8\uD558\uC138\uC694."
+    },
+    m = {
+        "Validation.Currency": "\u04AE\u0439\u043B\u0447\u0438\u043B\u0433\u044D\u044D\u043D\u0438\u0439 \u043C\u04E9\u043D\u0433\u0438\u0439\u0433 \u0437\u04E9\u0432 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.DateTime": "\u0417\u04E9\u0432 \u043E\u0433\u043D\u043E\u043E \u0431\u0430 \u0446\u0430\u0433\u0438\u0439\u0433 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Date": "\u0417\u04E9\u0432 \u043E\u0433\u043D\u043E\u043E \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Decimal": "\u0417\u04E9\u0432 \u0442\u043E\u043E\u043D\u044B \u043E\u043D\u043E\u0432\u0447\u0442\u043E\u0439 \u0442\u043E\u043E \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Email": "\u04AE\u0439\u043B\u0447\u0438\u043B\u0433\u044D\u044D\u043D\u0438\u0439 \u0438\u043C\u044D\u0439\u043B \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Integer": "\u0417\u04E9\u0432 \u0431\u04AF\u0445\u044D\u043B \u0442\u043E\u043E \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.LongInteger": "\u0417\u04E9\u0432 \u0431\u04AF\u0445\u044D\u043B \u0442\u043E\u043E \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Mandatory": "\u042D\u043D\u044D \u0442\u0430\u043B\u0431\u0430\u0440 \u0448\u0430\u0430\u0440\u0434\u043B\u0430\u0433\u0430\u0442\u0430\u0439 \u0431\u0430\u0439\u043D\u0430",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0417\u04E9\u0432 \u0442\u043E\u043E\u043D\u044B \u043D\u0443\u0443\u0446 \u04AF\u0433 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.PhoneNumber": "\u04AE\u0439\u043B\u0447\u0438\u043B\u0433\u044D\u044D\u043D\u0438\u0439 \u0443\u0442\u0430\u0441\u043D\u044B \u0434\u0443\u0433\u0430\u0430\u0440 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Text": "\u0417\u04E9\u0432 \u0442\u0435\u043A\u0441\u0442 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "Validation.Time": "\u0417\u04E9\u0432 \u0446\u0430\u0433 \u043E\u0440\u0443\u0443\u043B\u043D\u0430 \u0443\u0443",
+        "AppInitError.Generic": "\u0410\u043F\u043B\u0438\u043A\u0435\u0439\u0448\u043D\u044B \u0448\u0438\u043D\u044D\u0447\u043B\u044D\u0445 \u043E\u0440\u043E\u043B\u0434\u043B\u043E\u0433\u044B\u043D \u04AF\u0435\u0434 \u0430\u043B\u0434\u0430\u0430 \u0433\u0430\u0440\u043B\u0430\u0430. \u0414\u0430\u0432\u0445\u0430\u0446\u0433\u0430\u0430\u0445 \u0431\u043E\u043B, \u0430\u043F\u043F-\u0438\u0439\u0433 \u0434\u0430\u0445\u0438\u043D \u044D\u0445\u043B\u04AF\u04AF\u043B\u044D\u044D\u0440\u044D\u0439.",
+        "AppInitError.DataModel": "\u0410\u043F\u043B\u0438\u043A\u0435\u0439\u0448\u043D\u044B \u0448\u0438\u043D\u044D\u0447\u043B\u044D\u0445 \u043E\u0440\u043E\u043B\u0434\u043B\u043E\u0433\u044B\u043D \u04AF\u0435\u0434 \u0430\u043B\u0434\u0430\u0430 \u0433\u0430\u0440\u043B\u0430\u0430. \u0414\u0430\u0432\u0445\u0430\u0440 \u0434\u0430\u0445\u0438\u043D \u043E\u0440\u043E\u043B\u0434\u0432\u043E\u043B, \u0434\u044D\u043B\u0433\u044D\u0440\u044D\u043D\u0433\u04AF\u0439 \u043C\u044D\u0434\u044D\u044D\u043B\u043B\u04AF\u04AF\u0434 \u0443\u0441\u0442\u0430\u0445 \u0431\u043E\u043B\u043D\u043E, \u044D\u0441\u0432\u044D\u043B \u0434\u0430\u0445\u0438\u043D \u0441\u0443\u0443\u043B\u0433\u0430\u043D\u0430.",
+        "AppInitError.Resources": "\u0410\u043F\u043F \u0448\u0438\u043D\u044D\u0447\u043B\u044D\u0445 \u043E\u0440\u043E\u043B\u0434\u043B\u043E\u0433\u043E\u043E\u0440 \u0430\u043B\u0434\u0430\u0430 \u0433\u0430\u0440\u043B\u0430\u0430. \u0425\u044D\u0440\u044D\u0432 \u0434\u0430\u0445\u0438\u043D \u043E\u0440\u043E\u043B\u0434\u0441\u043E\u043D \u0445\u04AF\u0441\u044D\u0436 \u0431\u0430\u0439\u0432\u0430\u043B, \u0430\u043F\u043F\u044B\u0433 \u0434\u0430\u0445\u0438\u043D \u0430\u0441\u0430\u0430\u043D\u0430 \u0443\u0443.",
+        UpgradeRequiredDataLoss: "\u0422\u0430\u043D\u044B \u043F\u0440\u043E\u0433\u0440\u0430\u043C \u0448\u0438\u043D\u044D\u0447\u043B\u044D\u0445 \u0448\u0430\u0430\u0440\u0434\u043B\u0430\u0433\u0430\u0442\u0430\u0439. \u0425\u0430\u0434\u0433\u0430\u043B\u0430\u0430\u0433\u04AF\u0439 \u04E9\u0433\u04E9\u0433\u0434\u04E9\u043B \u0430\u043B\u0433\u0430 \u0431\u043E\u043B\u043E\u0445 \u0431\u043E\u043B\u043D\u043E. \u0428\u0438\u043D\u044D\u0447\u043B\u044D\u0445\u0438\u0439\u043D \u0442\u0443\u043B\u0434 \u044D\u043D\u0434 \u0434\u0430\u0440\u043D\u0430 \u0443\u0443.",
+        UpgradeRequired: "\u0422\u0430\u043D\u044B \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C \u0445\u0430\u043D\u0433\u0430\u043C\u0436\u0438\u0439\u0433 \u0448\u0438\u043D\u044D\u0447\u043B\u044D\u0445 \u0448\u0430\u0430\u0440\u0434\u043B\u0430\u0433\u0430\u0442\u0430\u0439 \u0431\u0430\u0439\u043D\u0430. \u0428\u0438\u043D\u044D\u0447\u043B\u044D\u0445\u0438\u0439\u043D \u0442\u0443\u043B\u0434 \u044D\u043D\u0434 \u0434\u0430\u0440\u043D\u0430 \u0443\u0443."
+    },
+    h = {
+        "Validation.Currency": "Wprowad\u017A poprawn\u0105 walut\u0119",
+        "Validation.DateTime": "Wprowad\u017A poprawn\u0105 dat\u0119 i czas",
+        "Validation.Date": "Wprowad\u017A poprawn\u0105 dat\u0119",
+        "Validation.Decimal": "Wprowad\u017A poprawn\u0105 liczb\u0119 dziesi\u0119tn\u0105",
+        "Validation.Email": "Wprowad\u017A poprawny email",
+        "Validation.Integer": "Wprowad\u017A poprawn\u0105 liczb\u0119 ca\u0142kowit\u0105",
+        "Validation.LongInteger": "Wprowad\u017A poprawn\u0105 liczb\u0119 ca\u0142kowit\u0105",
+        "Validation.Mandatory": "To pole jest wymagane",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Wprowad\u017A poprawne has\u0142o numeryczne",
+        "Validation.PhoneNumber": "Wprowad\u017A poprawny numer telefonu",
+        "Validation.Text": "Wprowad\u017A poprawny tekst",
+        "Validation.Time": "Wprowad\u017A poprawny czas",
+        "AppInitError.Generic": "Podczas pr\xF3by zaktualizowania aplikacji wyst\u0105pi\u0142 b\u0142\u0105d. Je\u015Bli chcesz spr\xF3bowa\u0107 ponownie, uruchom aplikacj\u0119 ponownie.",
+        "AppInitError.DataModel": "Wyst\u0105pi\u0142 b\u0142\u0105d podczas pr\xF3by aktualizacji aplikacji. Je\u015Bli chcesz ponownie spr\xF3bowa\u0107, uruchom aplikacj\u0119 ponownie. Je\u015Bli problem b\u0119dzie si\u0119 powtarza\u0107, mo\u017Cesz j\u0105 odinstalowa\u0107 i zainstalowa\u0107 od nowa, ale utracisz wszystkie lokalne dane.",
+        "AppInitError.Resources": "Podczas pr\xF3by zaktualizowania aplikacji wyst\u0105pi\u0142 b\u0142\u0105d. Je\u015Bli chcesz spr\xF3bowa\u0107 ponownie, uruchom aplikacj\u0119 ponownie.",
+        UpgradeRequiredDataLoss: "Twoja aplikacja wymaga aktualizacji. Niezapisane dane zostan\u0105 utracone. Kliknij tutaj, aby zaktualizowa\u0107.",
+        UpgradeRequired: "Twoja aplikacja wymaga aktualizacji. Kliknij tutaj, aby zaktualizowa\u0107."
+    },
+    V = {
+        "Validation.Currency": "Introduza uma moeda v\xE1lida",
+        "Validation.DateTime": "Introduza uma data e hora v\xE1lidas",
+        "Validation.Date": "Introduza uma data v\xE1lida",
+        "Validation.Decimal": "Introduza um decimal v\xE1lido",
+        "Validation.Email": "Introduza um email v\xE1lido",
+        "Validation.Integer": "Introduza um inteiro v\xE1lido",
+        "Validation.LongInteger": "Introduza um inteiro v\xE1lido",
+        "Validation.Mandatory": "Este campo \xE9 obrigat\xF3rio",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Introduza uma senha num\xE9rica v\xE1lida",
+        "Validation.PhoneNumber": "Introduza um n\xFAmero de telefone v\xE1lido",
+        "Validation.Text": "Introduza um texto v\xE1lido",
+        "Validation.Time": "Introduza uma hora v\xE1lida",
+        "AppInitError.Generic": "Ocorreu um erro ao tentar atualizar a aplica\xE7\xE3o. Se desejar tentar novamente, reinicie a aplica\xE7\xE3o.",
+        "AppInitError.DataModel": "Ocorreu um erro ao tentar atualizar a aplica\xE7\xE3o. Se desejar tentar novamente, reinicie a aplica\xE7\xE3o. Se o problema persistir, pode reinstal\xE1-la, mas todos os dados locais ser\xE3o perdidos.",
+        "AppInitError.Resources": "Ocorreu um erro ao tentar atualizar a aplica\xE7\xE3o. Se desejar tentar novamente, reinicie a aplica\xE7\xE3o.",
+        UpgradeRequiredDataLoss: "A sua aplica\xE7\xE3o precisa de ser atualizada. Os dados n\xE3o salvos ser\xE3o perdidos. Clique aqui para atualizar.",
+        UpgradeRequired: "A sua aplica\xE7\xE3o precisa de ser atualizada. Clique aqui para atualizar."
+    },
+    y = {
+        "Validation.Currency": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0432\u0430\u043B\u044E\u0442\u0443",
+        "Validation.DateTime": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0434\u0430\u0442\u0443 \u0438 \u0432\u0440\u0435\u043C\u044F",
+        "Validation.Date": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0434\u0430\u0442\u0443",
+        "Validation.Decimal": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0434\u0435\u0441\u044F\u0442\u0438\u0447\u043D\u043E\u0435 \u0447\u0438\u0441\u043B\u043E",
+        "Validation.Email": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 email",
+        "Validation.Integer": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u043E\u0435 \u0446\u0435\u043B\u043E\u0435 \u0447\u0438\u0441\u043B\u043E",
+        "Validation.LongInteger": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u043E\u0435 \u0446\u0435\u043B\u043E\u0435 \u0447\u0438\u0441\u043B\u043E",
+        "Validation.Mandatory": "\u042D\u0442\u043E \u043F\u043E\u043B\u0435 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u044B\u0439 \u0447\u0438\u0441\u043B\u043E\u0432\u043E\u0439 \u043F\u0430\u0440\u043E\u043B\u044C",
+        "Validation.PhoneNumber": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430",
+        "Validation.Text": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u044B\u0439 \u0442\u0435\u043A\u0441\u0442",
+        "Validation.Time": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F",
+        "AppInitError.Generic": "\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0435 \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0415\u0441\u043B\u0438 \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u044C \u043F\u043E\u043F\u044B\u0442\u043A\u0443, \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435.",
+        "AppInitError.DataModel": "\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0435 \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0415\u0441\u043B\u0438 \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u044C \u043F\u043E\u043F\u044B\u0442\u043A\u0443, \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0415\u0441\u043B\u0438 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 \u043D\u0435 \u0438\u0441\u0447\u0435\u0437\u0430\u0435\u0442, \u0442\u043E \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0435\u0440\u0435\u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435, \u043D\u043E \u0432\u0441\u0435 \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 \u0431\u0443\u0434\u0443\u0442 \u043F\u043E\u0442\u0435\u0440\u044F\u043D\u044B.",
+        "AppInitError.Resources": "\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0435 \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0415\u0441\u043B\u0438 \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u044C \u043F\u043E\u043F\u044B\u0442\u043A\u0443, \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435.",
+        UpgradeRequiredDataLoss: "\u0412\u0430\u0448\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0443\u0436\u043D\u043E \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C. \u041D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 \u0431\u0443\u0434\u0443\u0442 \u0443\u0442\u0435\u0440\u044F\u043D\u044B. \u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0437\u0434\u0435\u0441\u044C, \u0447\u0442\u043E\u0431\u044B \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C.",
+        UpgradeRequired: "\u0412\u0430\u0448\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0443\u0436\u0434\u0430\u0435\u0442\u0441\u044F \u0432 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438. \u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0437\u0434\u0435\u0441\u044C, \u0447\u0442\u043E\u0431\u044B \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C."
+    },
+    I = {
+        "Validation.Currency": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DB8\u0DD4\u0DAF\u0DBD\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.DateTime": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DAF\u0DD2\u0DB1\u0DBA\u0D9A\u0DCA \u0DC3\u0DC4 \u0DC0\u0DDA\u0DBD\u0DCF\u0DC0\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Date": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DAF\u0DD2\u0DB1\u0DBA\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Decimal": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DAF\u0DC1\u0DB8 \u0DC3\u0D82\u0D9B\u0DCA\u200D\u0DBA\u0DCF\u0DC0\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Email": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0D8A-\u0DAD\u0DD0\u0DB4\u0DD0\u0DBD\u0DCA \u0DBD\u0DD2\u0DB4\u0DD2\u0DB1\u0DBA\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Integer": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DC3\u0DB8\u0DCA\u0DB4\u0DD6\u0DBB\u0DCA\u0DAB \u0DC3\u0D82\u0D9B\u0DCA\u200D\u0DBA\u0DCF\u0DC0\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.LongInteger": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DC3\u0DB8\u0DCA\u0DB4\u0DD6\u0DBB\u0DCA\u0DAB \u0DC3\u0D82\u0D9B\u0DCA\u200D\u0DBA\u0DCF\u0DC0\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Mandatory": "\u0DB8\u0DD9\u0DBA \u0D85\u0DC0\u0DC1\u0DCA\u200D\u0DBA \u0DC0\u0DDA",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DC3\u0D82\u0D9B\u0DCA\u200D\u0DBA\u0DCF\u0DAD\u0DCA\u0DB8\u0D9A \u0DC3\u0D82\u0D9A\u0DDA\u0DAD \u0DB4\u0DAF\u0DBA\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.PhoneNumber": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DAF\u0DD4\u0DBB\u0D9A\u0DAE\u0DB1 \u0D85\u0D82\u0D9A\u0DBA\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Text": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DB4\u0DCF\u0DA8\u0DBA\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "Validation.Time": "\u0DC0\u0DBD\u0D82\u0D9C\u0DD4 \u0DC0\u0DDA\u0DBD\u0DCF\u0DC0\u0D9A\u0DCA \u0D87\u0DAD\u0DD4\u0DC5\u0DAD\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1",
+        "AppInitError.Generic": "\u0D87\u0DB4\u0DCA \u0D91\u0D9A \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7 \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DDA\u0DAF\u0DD3 \u0DAF\u0DDD\u0DC2\u0DBA\u0D9A\u0DCA \u0DC3\u0DD2\u0DAF\u0DD4\u0DC0\u0DD3 \u0D87\u0DAD. \u0DB1\u0DD0\u0DC0\u0DAD \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7, \u0DBA\u0DD9\u0DAF\u0DD4\u0DB8 \u0DB1\u0DD0\u0DC0\u0DAD \u0D86\u0DBB\u0DB8\u0DCA\u0DB7 \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1.",
+        "AppInitError.DataModel": "\u0D87\u0DB4\u0DCA \u0D91\u0D9A \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7 \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DDA\u0DAF\u0DD3 \u0DAF\u0DDD\u0DC2\u0DBA\u0D9A\u0DCA \u0DC3\u0DD2\u0DAF\u0DD4\u0DC0\u0DD3 \u0D87\u0DAD. \u0DB1\u0DD0\u0DC0\u0DAD \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7, \u0DBA\u0DD9\u0DAF\u0DD4\u0DB8 \u0DB1\u0DD0\u0DC0\u0DAD \u0D86\u0DBB\u0DB8\u0DCA\u0DB7 \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1. \u0D9C\u0DD0\u0DA7\u0DBD\u0DD4\u0DC0 \u0D85\u0D9B\u0DAB\u0DCA\u0DA9\u0DC0 \u0DB4\u0DC0\u0DAD\u0DD3 \u0DB1\u0DB8\u0DCA, \u0D94\u0DB6\u0DA7 \u0DB1\u0DD0\u0DC0\u0DAD \u0DC3\u0DCA\u0DAE\u0DCF\u0DB4\u0DB1\u0DBA \u0D9A\u0DC5 \u0DC4\u0DD0\u0D9A\u0DD2 \u0DB1\u0DB8\u0DD4\u0DAD\u0DCA \u0DC3\u0DD2\u0DBA\u0DC5\u0DD4\u0DB8 \u0DAF\u0DDA\u0DC1\u0DD3\u0DBA \u0DAF\u0DAD\u0DCA\u0DAD \u0D85\u0DC4\u0DD2\u0DB8\u0DD2 \u0DC0\u0DB1\u0DD4 \u0D87\u0DAD.",
+        "AppInitError.Resources": "\u0D87\u0DB4\u0DCA \u0D91\u0D9A \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7 \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DDA\u0DAF\u0DD3 \u0DAF\u0DDD\u0DC2\u0DBA\u0D9A\u0DCA \u0DC3\u0DD2\u0DAF\u0DD4\u0DC0\u0DD3 \u0D87\u0DAD. \u0DB1\u0DD0\u0DC0\u0DAD \u0D8B\u0DAD\u0DCA\u0DC3\u0DCF\u0DC4 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7, \u0DBA\u0DD9\u0DAF\u0DD4\u0DB8 \u0DB1\u0DD0\u0DC0\u0DAD \u0D86\u0DBB\u0DB8\u0DCA\u0DB7 \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1.",
+        UpgradeRequiredDataLoss: "\u0D94\u0DB6\u0D9C\u0DDA \u0DBA\u0DD9\u0DAF\u0DD4\u0DB8 \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DC5 \u0DBA\u0DD4\u0DAD\u0DD4\u0DBA\u0DD2. \u0DC3\u0DD4\u0DBB\u0D9A\u0DD2\u0DB1 \u0DBD\u0DAF \u0DB1\u0DDC\u0DB8\u0DD0\u0DAD\u0DD2 \u0DAF\u0DAD\u0DCA\u0DAD \u0D85\u0DC4\u0DD2\u0DB8\u0DD2 \u0DC0\u0DB1\u0DD4 \u0D87\u0DAD. \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DD2\u0DBB\u0DD3\u0DB8\u0DA7 \u0DB8\u0DD9\u0DAD\u0DB1 \u0D9A\u0DCA\u0DBD\u0DD2\u0D9A\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1.",
+        UpgradeRequired: "\u0D94\u0DB6\u0D9C\u0DDA \u0DBA\u0DD9\u0DAF\u0DD4\u0DB8 \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1 \u0D9A\u0DC5 \u0DBA\u0DD4\u0DAD\u0DD4\u0DBA\u0DD2. \u0DBA\u0DCF\u0DC0\u0DAD\u0DCA\u0D9A\u0DCF\u0DBD\u0DD3\u0DB1\u0DBA \u0DC3\u0DB3\u0DC4\u0DCF \u0DB8\u0DD9\u0DBA \u0D9A\u0DCA\u0DBD\u0DD2\u0D9A\u0DCA \u0D9A\u0DBB\u0DB1\u0DCA\u0DB1."
+    },
+    v = {
+        "Validation.Currency": "Ingiza sarafu halali",
+        "Validation.DateTime": "Ingiza tarehe na saa halali",
+        "Validation.Date": "Ingiza tarehe halali",
+        "Validation.Decimal": "Ingiza desimali sahihi",
+        "Validation.Email": "Ingiza barua pepe halali",
+        "Validation.Integer": "Ingiza nambari kamili halali",
+        "Validation.LongInteger": "Ingiza nambari kamili halali",
+        "Validation.Mandatory": "Eneo hili linahitajika",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Ingiza nenosiri nambari halali",
+        "Validation.PhoneNumber": "Ingiza nambari sahihi za simu",
+        "Validation.Text": "Ingiza maandishi halali",
+        "Validation.Time": "Ingiza saa halali",
+        "AppInitError.Generic": "Hitilafu imetokea wakati wa jaribio la kusasisha programu. Ikiwa unataka kujaribu tena, restart programu.",
+        "AppInitError.DataModel": "Hitilafu imetokea wakati wa jaribio la kusasisha programu. Ikiwa unataka kujaribu tena, restart programu. Ikiwa tatizo bado lipo, unaweza kusakinisha tena, lakini data zote za ndani zitapotea.",
+        "AppInitError.Resources": "Hitilafu imetokea wakati wa jaribio la kusasisha programu. Ikiwa unataka kujaribu tena, restart programu.",
+        UpgradeRequiredDataLoss: "Programu yako inahitaji kusasishwa. Data zisizokopwa zitapotea. Bonyeza hapa kusasisha.",
+        UpgradeRequired: "Programu yako inahitaji kusasishwa. Bonyeza hapa kusasisha."
+    },
+    b = {
+        "Validation.Currency": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BAA\u0BA3\u0BBF\u0B95\u0BCD\u0B95\u0BC1 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.DateTime": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA4\u0BC7\u0BA4\u0BBF \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BA8\u0BC7\u0BB0\u0BA4\u0BCD\u0BA4\u0BC8 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Date": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA4\u0BC7\u0BA4\u0BBF \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Decimal": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA4\u0B9A\u0BBE\u0BAE\u0BBF\u0B95\u0BCD\u0B95\u6570\u5B57\u0BA4\u0BCD\u0BA4\u0BC8 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Email": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0B88\u0BAE\u0BC6\u0BAF\u0BBF\u0BB2\u0BCD \u0BA4\u0B9F\u0BCD\u0B9F\u0B9A\u0BCD\u0B9A\u0BC1 \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Integer": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BAE\u0BC1\u0BB4\u0BC1 \u0B8E\u0BA3\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.LongInteger": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BAE\u0BC1\u0BB4\u0BC1 \u0B8E\u0BA3\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Mandatory": "\u0B87\u0BA8\u0BCD\u0BA4 \u0BAA\u0BC1\u0BB2\u0BAE\u0BCD \u0BA4\u0BC7\u0BB5\u0BC8\u0BAF\u0BBE\u0BA9\u0BA4\u0BC1",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0B87\u0BB2\u0B95\u0BCD\u0B95 \u0BAA\u0BBE\u0BB8\u0BCD\u0BB5\u0BC7\u0BB0\u0BCD\u0B9F\u0BC8 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.PhoneNumber": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA4\u0BCA\u0BB2\u0BC8\u0BAA\u0BC7\u0B9A\u0BBF \u0B8E\u0BA3\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Text": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0B89\u0BB0\u0BC8\u0BAF\u0BC8 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "Validation.Time": "\u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA8\u0BC7\u0BB0\u0BA4\u0BCD\u0BA4\u0BC8 \u0B89\u0BB3\u0BCD\u0BB3\u0BBF\u0B9F\u0BB5\u0BC1\u0BAE\u0BCD",
+        "AppInitError.Generic": "\u0B86\u0BAA\u0BCD\u0BAA\u0BC8 \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0BAA\u0BCD\u0BAA\u0BA4\u0BB1\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\u0BC7\u0BBE\u0BB0\u0BC1\u0B9F\u0BA9\u0BBE\u0BA9 \u0BAA\u0BBF\u0BB4\u0BC8. \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0BAE\u0BC1\u0BAF\u0BB1\u0BCD\u0B9A\u0BBF\u0B95\u0BCD\u0B95 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\u0BBF\u0BA9\u0BBE\u0BB2\u0BCD, \u0B86\u0BAA\u0BCD\u0BAA\u0BC8 \u0BAE\u0BB1\u0BC1\u0B9A\u0BC7\u0BAE\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD.",
+        "AppInitError.DataModel": "\u0B9A\u0BC6\u0BAF\u0BB2\u0BBF\u0BAF\u0BC8 \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0BAA\u0BCD\u0BAA\u0BA4\u0BB1\u0BCD\u0B95\u0BBE\u0BA9 \u0BAE\u0BC1\u0BAF\u0BB1\u0BCD\u0B9A\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0BAA\u0BBF\u0BB4\u0BC8 \u0B8F\u0BB1\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1. \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0BAE\u0BC1\u0BAF\u0BB1\u0BCD\u0B9A\u0BBF\u0B95\u0BCD\u0B95, \u0B9A\u0BC6\u0BAF\u0BB2\u0BBF\u0BAF\u0BC8 \u0BAE\u0BB1\u0BC1\u0BA4\u0BC2\u0B95\u0BCD\u0B95\u0BAE\u0BCD \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD. \u0BAA\u0BBF\u0BB0\u0B9A\u0BCD\u0B9A\u0BBF\u0BA9\u0BC8 \u0BA4\u0BCA\u0B9F\u0BB0\u0BCD\u0BA8\u0BCD\u0BA4\u0BBE\u0BB2\u0BCD, \u0B85\u0BA4\u0BC8 \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0BA8\u0BBF\u0BB1\u0BC1\u0BB5\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD, \u0B85\u0BA9\u0BC8\u0BA4\u0BCD\u0BA4\u0BC1 \u0B89\u0BB3\u0BCD\u0BB3\u0BC2\u0BB0\u0BCD \u0BA4\u0BB0\u0BB5\u0BC1\u0BAE\u0BCD \u0BAA\u0BC6\u0BAF\u0BB0\u0BCD\u0B9A\u0BCD\u0B9A\u0BBF \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0BAE\u0BCD.",
+        "AppInitError.Resources": "\u0B86\u0BAA\u0BC8 \u0B85\u0BAA\u0BCD\u0B9F\u0BC7\u0B9F\u0BCD \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BC1\u0BAE\u0BCD \u0BAA\u0BCB\u0BA4\u0BC1 \u0BAA\u0BBF\u0BB4\u0BC8 \u0B92\u0BA9\u0BCD\u0BB1\u0BC1 \u0B8F\u0BB1\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1. \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0BAE\u0BC1\u0BAF\u0BB1\u0BCD\u0B9A\u0BBF\u0B95\u0BCD\u0B95 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\u0BBF\u0BA9\u0BBE\u0BB2\u0BCD, \u0B86\u0BAA\u0BC8 \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0BA4\u0BC1\u0BB5\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD.",
+        UpgradeRequiredDataLoss: "\u0B89\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0BAA\u0BAF\u0BA9\u0BCD\u0BAA\u0BBE\u0B9F\u0BCD\u0B9F\u0BC8 \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95 \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD. \u0B9A\u0BC7\u0BAE\u0BBF\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BB5\u0BBF\u0BB2\u0BCD\u0BB2\u0BC8\u0BA4\u0BBE\u0BA9 \u0BA4\u0BB0\u0BB5\u0BC1\u0B95\u0BB3\u0BCD \u0B85\u0BB4\u0BBF\u0BAF\u0BB5\u0BC1\u0BB3\u0BCD\u0BB3\u0BA9. \u0B87\u0B99\u0BCD\u0B95\u0BC7 \u0B95\u0BBF\u0BB3\u0BBF\u0B95\u0BCD \u0B9A\u0BC6\u0BAF\u0BCD\u0BA4\u0BC1 \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD.",
+        UpgradeRequired: "\u0B89\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0BAA\u0BAF\u0BA9\u0BCD\u0BAA\u0BBE\u0B9F\u0BCD\u0B9F\u0BC8 \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95 \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD. \u0BAA\u0BC1\u0BA4\u0BC1\u0BAA\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95 \u0B87\u0B99\u0BCD\u0B95\u0BC7 \u0B95\u0BBF\u0BB3\u0BBF\u0B95\u0BCD \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD."
+    },
+    k = {
+        "Validation.Currency": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E2A\u0E01\u0E38\u0E25\u0E40\u0E07\u0E34\u0E19\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.DateTime": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E41\u0E25\u0E30\u0E40\u0E27\u0E25\u0E32\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Date": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Decimal": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E40\u0E25\u0E02\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Email": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E2D\u0E35\u0E40\u0E21\u0E25\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Integer": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E08\u0E33\u0E19\u0E27\u0E19\u0E40\u0E15\u0E47\u0E21\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.LongInteger": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E08\u0E33\u0E19\u0E27\u0E19\u0E40\u0E15\u0E47\u0E21\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Mandatory": "\u0E0A\u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E23\u0E2D\u0E01",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E23\u0E2B\u0E31\u0E2A\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.PhoneNumber": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Text": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "Validation.Time": "\u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E40\u0E27\u0E25\u0E32\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07",
+        "AppInitError.Generic": "\u0E40\u0E01\u0E34\u0E14\u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14\u0E02\u0E13\u0E30\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E41\u0E2D\u0E1B \u0E2B\u0E32\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E2D\u0E07\u0E43\u0E2B\u0E21\u0E48 \u0E43\u0E2B\u0E49\u0E23\u0E35\u0E2A\u0E15\u0E32\u0E23\u0E4C\u0E17\u0E41\u0E2D\u0E1B",
+        "AppInitError.DataModel": "\u0E40\u0E01\u0E34\u0E14\u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14\u0E02\u0E13\u0E30\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E41\u0E2D\u0E1B \u0E2B\u0E32\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E2D\u0E07\u0E43\u0E2B\u0E21\u0E48 \u0E43\u0E2B\u0E49\u0E23\u0E35\u0E2A\u0E15\u0E32\u0E23\u0E4C\u0E17\u0E41\u0E2D\u0E1B \u0E2B\u0E32\u0E01\u0E1B\u0E31\u0E0D\u0E2B\u0E32\u0E22\u0E31\u0E07\u0E04\u0E07\u0E2D\u0E22\u0E39\u0E48 \u0E04\u0E38\u0E13\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E15\u0E34\u0E14\u0E15\u0E31\u0E49\u0E07\u0E43\u0E2B\u0E21\u0E48\u0E44\u0E14\u0E49 \u0E41\u0E15\u0E48\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E20\u0E32\u0E22\u0E43\u0E19\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14\u0E08\u0E30\u0E2B\u0E32\u0E22\u0E44\u0E1B",
+        "AppInitError.Resources": "\u0E40\u0E01\u0E34\u0E14\u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14\u0E02\u0E13\u0E30\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E41\u0E2D\u0E1B \u0E2B\u0E32\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E2D\u0E07\u0E43\u0E2B\u0E21\u0E48 \u0E43\u0E2B\u0E49\u0E23\u0E35\u0E2A\u0E15\u0E32\u0E23\u0E4C\u0E17\u0E41\u0E2D\u0E1B",
+        UpgradeRequiredDataLoss: "\u0E41\u0E2D\u0E1B\u0E1E\u0E25\u0E34\u0E40\u0E04\u0E0A\u0E31\u0E19\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15 \u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E17\u0E35\u0E48\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E08\u0E30\u0E2B\u0E32\u0E22\u0E44\u0E1B \u0E04\u0E25\u0E34\u0E01\u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15",
+        UpgradeRequired: "\u0E41\u0E2D\u0E1B\u0E1E\u0E25\u0E34\u0E40\u0E04\u0E0A\u0E31\u0E19\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15 \u0E04\u0E25\u0E34\u0E01\u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15"
+    },
+    z = {
+        "Validation.Currency": "Ge\xE7erli bir d\xF6viz girin",
+        "Validation.DateTime": "Ge\xE7erli bir tarih ve saat girin",
+        "Validation.Date": "Ge\xE7erli bir tarih girin",
+        "Validation.Decimal": "Ge\xE7erli bir ondal\u0131k say\u0131 girin",
+        "Validation.Email": "Ge\xE7erli bir e-posta girin",
+        "Validation.Integer": "Ge\xE7erli bir tam say\u0131 girin",
+        "Validation.LongInteger": "Ge\xE7erli bir tam say\u0131 girin",
+        "Validation.Mandatory": "Bu alan zorunludur",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Ge\xE7erli say\u0131sal parola girin",
+        "Validation.PhoneNumber": "Ge\xE7erli bir telefon numaras\u0131 girin",
+        "Validation.Text": "Ge\xE7erli bir metin girin",
+        "Validation.Time": "Ge\xE7erli bir zaman girin",
+        "AppInitError.Generic": "Uygulamay\u0131 g\xFCncellemeye \xE7al\u0131\u015F\u0131rken hata olu\u015Ftu. Yeniden denemek isterseniz, uygulamay\u0131 yeniden ba\u015Flat\u0131n.",
+        "AppInitError.DataModel": "Uygulamay\u0131 g\xFCncellemeye \xE7al\u0131\u015F\u0131rken hata olu\u015Ftu. Yeniden denemek isterseniz, uygulamay\u0131 yeniden ba\u015Flat\u0131n. Sorun devam ederse, yeniden y\xFCkleyebilirsiniz, ancak t\xFCm yerel veriler kaybolacakt\u0131r.",
+        "AppInitError.Resources": "Uygulamay\u0131 g\xFCncellemeye \xE7al\u0131\u015F\u0131rken hata olu\u015Ftu. Yeniden denemek isterseniz, uygulamay\u0131 yeniden ba\u015Flat\u0131n.",
+        UpgradeRequiredDataLoss: "Uygulaman\u0131z\u0131n g\xFCncellenmesi gerekiyor. Kaydedilmemi\u015F veriler kaybolacak. G\xFCncellemek i\xE7in buraya t\u0131klay\u0131n.",
+        UpgradeRequired: "Uygulaman\u0131z\u0131n g\xFCncellenmesi gerekiyor. G\xFCncellemek i\xE7in buraya t\u0131klay\u0131n."
+    },
+    D = {
+        "Validation.Currency": "To'g'ri valyutani kiriting",
+        "Validation.DateTime": "To'g'ri sana va vaqt kiriting",
+        "Validation.Date": "To'g'ri sana kiriting",
+        "Validation.Decimal": "To'g'ri desimal kiriting",
+        "Validation.Email": "To'g'ri elektron pochta kiriting",
+        "Validation.Integer": "To'g'ri butun son kiriting",
+        "Validation.LongInteger": "To'g'ri butun son kiriting",
+        "Validation.Mandatory": "Ushbu maydon talab qilinadi",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "To'g'ri raqamli parol kiriting",
+        "Validation.PhoneNumber": "To'g'ri telefon raqamini kiriting",
+        "Validation.Text": "To'g'ri matn kiriting",
+        "Validation.Time": "To'g'ri vaqt kiriting",
+        "AppInitError.Generic": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang.",
+        "AppInitError.DataModel": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang. Muammo davom etsa, uni qayta o'rnatishingiz mumkin, lekin barcha mahalliy ma'lumotlar yo'qoladi.",
+        "AppInitError.Resources": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang.",
+        UpgradeRequiredDataLoss: "Ilovani yangilash shart. Saqlanmagan ma\u2019lumotlar yo\u2018qotiladi. Yangilash uchun bu yerni bosing.",
+        UpgradeRequired: "Sizning ilovangiz yangilanishi kerak. Yangilash uchun bu yerga bosing."
+    },
+    R = {
+        "Validation.Currency": "To'g'ri valyutani kiriting",
+        "Validation.DateTime": "To'g'ri sana va vaqt kiriting",
+        "Validation.Date": "To'g'ri sana kiriting",
+        "Validation.Decimal": "To'g'ri desimal kiriting",
+        "Validation.Email": "To'g'ri elektron pochta kiriting",
+        "Validation.Integer": "To'g'ri butun son kiriting",
+        "Validation.LongInteger": "To'g'ri butun son kiriting",
+        "Validation.Mandatory": "Ushbu maydon talab qilinadi",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "To'g'ri raqamli parol kiriting",
+        "Validation.PhoneNumber": "To'g'ri telefon raqamini kiriting",
+        "Validation.Text": "To'g'ri matn kiriting",
+        "Validation.Time": "To'g'ri vaqt kiriting",
+        "AppInitError.Generic": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang.",
+        "AppInitError.DataModel": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang. Muammo davom etsa, uni qayta o'rnatishingiz mumkin, lekin barcha mahalliy ma'lumotlar yo'qoladi.",
+        "AppInitError.Resources": "Ilovani yangilashga harakat paytida xato yuz berdi. Agar qayta urinishni xohlasangiz, dasturni qayta boshlang.",
+        UpgradeRequiredDataLoss: "Ilovani yangilash shart. Saqlanmagan ma\u2019lumotlar yo\u2018qotiladi. Yangilash uchun bu yerni bosing.",
+        UpgradeRequired: "Sizning ilovangiz yangilanishi kerak. Yangilash uchun bu yerga bosing."
+    },
+    E = {
+        "Validation.Currency": "Nh\u1EADp m\u1ED9t lo\u1EA1i ti\u1EC1n t\u1EC7 h\u1EE3p l\u1EC7",
+        "Validation.DateTime": "Nh\u1EADp ng\xE0y v\xE0 gi\u1EDD h\u1EE3p l\u1EC7",
+        "Validation.Date": "Nh\u1EADp ng\xE0y h\u1EE3p l\u1EC7",
+        "Validation.Decimal": "Nh\u1EADp s\u1ED1 th\u1EADp ph\xE2n h\u1EE3p l\u1EC7",
+        "Validation.Email": "Nh\u1EADp email h\u1EE3p l\u1EC7",
+        "Validation.Integer": "Nh\u1EADp s\u1ED1 nguy\xEAn h\u1EE3p l\u1EC7",
+        "Validation.LongInteger": "Nh\u1EADp s\u1ED1 nguy\xEAn h\u1EE3p l\u1EC7",
+        "Validation.Mandatory": "Tr\u01B0\u1EDDng n\xE0y l\xE0 b\u1EAFt bu\u1ED9c",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "Nh\u1EADp m\u1EADt kh\u1EA9u s\u1ED1 h\u1EE3p l\u1EC7",
+        "Validation.PhoneNumber": "Nh\u1EADp s\u1ED1 \u0111i\u1EC7n tho\u1EA1i h\u1EE3p l\u1EC7",
+        "Validation.Text": "Nh\u1EADp v\u0103n b\u1EA3n h\u1EE3p l\u1EC7",
+        "Validation.Time": "Nh\u1EADp th\u1EDDi gian h\u1EE3p l\u1EC7",
+        "AppInitError.Generic": "\u0110\xE3 x\u1EA3y ra l\u1ED7i trong khi c\u1ED1 g\u1EAFng c\u1EADp nh\u1EADt \u1EE9ng d\u1EE5ng. N\u1EBFu mu\u1ED1n th\u1EED l\u1EA1i, h\xE3y kh\u1EDFi \u0111\u1ED9ng l\u1EA1i \u1EE9ng d\u1EE5ng.",
+        "AppInitError.DataModel": "\u0110\xE3 x\u1EA3y ra l\u1ED7i trong qu\xE1 tr\xECnh c\u1ED1 g\u1EAFng c\u1EADp nh\u1EADt \u1EE9ng d\u1EE5ng. N\u1EBFu mu\u1ED1n th\u1EED l\u1EA1i, h\xE3y kh\u1EDFi \u0111\u1ED9ng l\u1EA1i \u1EE9ng d\u1EE5ng. N\u1EBFu v\u1EA5n \u0111\u1EC1 v\u1EABn ti\u1EBFp di\u1EC5n, b\u1EA1n c\xF3 th\u1EC3 c\xE0i \u0111\u1EB7t l\u1EA1i, nh\u01B0ng t\u1EA5t c\u1EA3 d\u1EEF li\u1EC7u c\u1EE5c b\u1ED9 s\u1EBD b\u1ECB m\u1EA5t.",
+        "AppInitError.Resources": "\u0110\xE3 x\u1EA3y ra l\u1ED7i trong khi c\u1ED1 g\u1EAFng c\u1EADp nh\u1EADt \u1EE9ng d\u1EE5ng. N\u1EBFu mu\u1ED1n th\u1EED l\u1EA1i, h\xE3y kh\u1EDFi \u0111\u1ED9ng l\u1EA1i \u1EE9ng d\u1EE5ng.",
+        UpgradeRequiredDataLoss: "\u1EE8ng d\u1EE5ng c\u1EE7a b\u1EA1n c\u1EA7n \u0111\u01B0\u1EE3c c\u1EADp nh\u1EADt. D\u1EEF li\u1EC7u ch\u01B0a \u0111\u01B0\u1EE3c l\u01B0u s\u1EBD b\u1ECB m\u1EA5t. Nh\u1EA5p v\xE0o \u0111\xE2y \u0111\u1EC3 c\u1EADp nh\u1EADt.",
+        UpgradeRequired: "\u1EE8ng d\u1EE5ng c\u1EE7a b\u1EA1n c\u1EA7n \u0111\u01B0\u1EE3c c\u1EADp nh\u1EADt. Nh\u1EA5p v\xE0o \u0111\xE2y \u0111\u1EC3 c\u1EADp nh\u1EADt."
+    },
+    T = {
+        "Validation.Currency": "\u8F93\u5165\u6709\u6548\u7684\u8D27\u5E01",
+        "Validation.DateTime": "\u8F93\u5165\u6709\u6548\u7684\u65E5\u671F\u548C\u65F6\u95F4",
+        "Validation.Date": "\u8F93\u5165\u6709\u6548\u7684\u65E5\u671F",
+        "Validation.Decimal": "\u8F93\u5165\u6709\u6548\u7684\u5341\u8FDB\u5236\u6570\u5B57",
+        "Validation.Email": "\u8F93\u5165\u6709\u6548\u7684\u7535\u5B50\u90AE\u4EF6",
+        "Validation.Integer": "\u8F93\u5165\u6709\u6548\u7684\u6574\u6570",
+        "Validation.LongInteger": "\u8F93\u5165\u6709\u6548\u7684\u6574\u6570",
+        "Validation.Mandatory": "\u6B64\u5B57\u6BB5\u4E3A\u5FC5\u586B\u9879",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u8F93\u5165\u6709\u6548\u7684\u6570\u5B57\u5BC6\u7801",
+        "Validation.PhoneNumber": "\u8F93\u5165\u6709\u6548\u7684\u7535\u8BDD\u53F7\u7801",
+        "Validation.Text": "\u8F93\u5165\u6709\u6548\u7684\u6587\u672C",
+        "Validation.Time": "\u8F93\u5165\u6709\u6548\u7684\u65F6\u95F4",
+        "AppInitError.Generic": "\u66F4\u65B0\u5E94\u7528\u7A0B\u5E8F\u65F6\u53D1\u751F\u9519\u8BEF\u3002 \u5982\u679C\u8981\u91CD\u8BD5\uFF0C\u8BF7\u91CD\u65B0\u542F\u52A8\u5E94\u7528\u7A0B\u5E8F\u3002",
+        "AppInitError.DataModel": "\u66F4\u65B0\u5E94\u7528\u7A0B\u5E8F\u65F6\u53D1\u751F\u9519\u8BEF\u3002\u5982\u679C\u8981\u91CD\u8BD5\uFF0C\u8BF7\u91CD\u65B0\u542F\u52A8\u5E94\u7528\u7A0B\u5E8F\u3002\u5982\u679C\u95EE\u9898\u4ECD\u7136\u5B58\u5728\uFF0C\u53EF\u4EE5\u91CD\u65B0\u5B89\u88C5\uFF0C\u4F46\u6240\u6709\u672C\u5730\u6570\u636E\u5C06\u4F1A\u4E22\u5931\u3002",
+        "AppInitError.Resources": "\u66F4\u65B0\u5E94\u7528\u7A0B\u5E8F\u65F6\u53D1\u751F\u9519\u8BEF\u3002\u5982\u679C\u8981\u91CD\u8BD5\uFF0C\u8BF7\u91CD\u65B0\u542F\u52A8\u5E94\u7528\u7A0B\u5E8F\u3002",
+        UpgradeRequiredDataLoss: "\u60A8\u7684\u5E94\u7528\u9700\u8981\u66F4\u65B0\u3002\u672A\u4FDD\u5B58\u7684\u6570\u636E\u5C06\u4F1A\u4E22\u5931\u3002\u5355\u51FB\u8FD9\u91CC\u8FDB\u884C\u66F4\u65B0\u3002",
+        UpgradeRequired: "\u60A8\u7684\u5E94\u7528\u9700\u8981\u66F4\u65B0\u3002\u70B9\u51FB\u8FD9\u91CC\u8FDB\u884C\u66F4\u65B0\u3002"
+    },
+    w = {
+        "Validation.Currency": "\u8ACB\u8F38\u5165\u6709\u6548\u7684\u8CA8\u5E63",
+        "Validation.DateTime": "\u8F38\u5165\u6709\u6548\u7684\u65E5\u671F\u548C\u6642\u9593",
+        "Validation.Date": "\u8F38\u5165\u6709\u6548\u7684\u65E5\u671F",
+        "Validation.Decimal": "\u8F38\u5165\u6709\u6548\u7684\u5C0F\u6578",
+        "Validation.Email": "\u8F38\u5165\u6709\u6548\u7684\u96FB\u5B50\u90F5\u4EF6",
+        "Validation.Integer": "\u8F38\u5165\u6709\u6548\u7684\u6574\u6578",
+        "Validation.LongInteger": "\u8F38\u5165\u6709\u6548\u7684\u6574\u6578",
+        "Validation.Mandatory": "\u6B64\u6B04\u4F4D\u70BA\u5FC5\u586B\u9805",
+        "uJHtu0GnlEa2H7Dvdhuk4g#NumericPasswordValidatorMsg": "\u8F38\u5165\u6709\u6548\u7684\u6578\u5B57\u5BC6\u78BC",
+        "Validation.PhoneNumber": "\u8F38\u5165\u6709\u6548\u7684\u96FB\u8A71\u865F\u78BC",
+        "Validation.Text": "\u8F38\u5165\u6709\u6548\u7684\u6587\u5B57",
+        "Validation.Time": "\u8F38\u5165\u6709\u6548\u7684\u6642\u9593",
+        "AppInitError.Generic": "\u5617\u8A66\u66F4\u65B0\u61C9\u7528\u7A0B\u5F0F\u6642\u767C\u751F\u932F\u8AA4\u3002\u5982\u679C\u60F3\u91CD\u8A66\uFF0C\u8ACB\u91CD\u65B0\u555F\u52D5\u61C9\u7528\u7A0B\u5F0F\u3002",
+        "AppInitError.DataModel": "\u5617\u8A66\u66F4\u65B0\u61C9\u7528\u7A0B\u5F0F\u6642\u767C\u751F\u932F\u8AA4\u3002\u5982\u679C\u8981\u91CD\u8A66\uFF0C\u8ACB\u91CD\u65B0\u555F\u52D5\u61C9\u7528\u7A0B\u5F0F\u3002\u5982\u679C\u554F\u984C\u6301\u7E8C\u5B58\u5728\uFF0C\u53EF\u91CD\u65B0\u5B89\u88DD\uFF0C\u4F46\u6240\u6709\u672C\u5730\u8CC7\u6599\u90FD\u6703\u907A\u5931\u3002",
+        "AppInitError.Resources": "\u5617\u8A66\u66F4\u65B0\u61C9\u7528\u7A0B\u5F0F\u6642\u767C\u751F\u932F\u8AA4\u3002\u5982\u679C\u60F3\u91CD\u8A66\uFF0C\u8ACB\u91CD\u65B0\u555F\u52D5\u61C9\u7528\u7A0B\u5F0F\u3002",
+        UpgradeRequiredDataLoss: "\u60A8\u7684\u61C9\u7528\u7A0B\u5F0F\u9700\u8981\u66F4\u65B0\u3002\u672A\u5132\u5B58\u7684\u8CC7\u6599\u5C07\u6703\u907A\u5931\u3002\u9EDE\u64CA\u6B64\u8655\u9032\u884C\u66F4\u65B0\u3002",
+        UpgradeRequired: "\u60A8\u7684\u61C9\u7528\u9700\u8981\u66F4\u65B0\u3002\u9EDE\u64CA\u6B64\u8655\u9032\u884C\u66F4\u65B0\u3002"
+    },
+    n = {
+        "ar-001": {
+            translations: o,
+            isRTL: !0
+        },
+        "bn-BD": {
+            translations: l,
+            isRTL: !1
+        },
+        "de-DE": {
+            translations: s,
+            isRTL: !1
+        },
+        "es-ES": {
+            translations: d,
+            isRTL: !1
+        },
+        "fr-FR": {
+            translations: u,
+            isRTL: !1
+        },
+        "it-IT": {
+            translations: g,
+            isRTL: !1
+        },
+        "km-KH": {
+            translations: p,
+            isRTL: !1
+        },
+        "ko-KR": {
+            translations: c,
+            isRTL: !1
+        },
+        "mn-MN": {
+            translations: m,
+            isRTL: !1
+        },
+        "pl-PL": {
+            translations: h,
+            isRTL: !1
+        },
+        "pt-PT": {
+            translations: V,
+            isRTL: !1
+        },
+        "ru-RU": {
+            translations: y,
+            isRTL: !1
+        },
+        "si-LK": {
+            translations: I,
+            isRTL: !1
+        },
+        "sw-KE": {
+            translations: v,
+            isRTL: !1
+        },
+        "ta-IN": {
+            translations: b,
+            isRTL: !1
+        },
+        "th-TH": {
+            translations: k,
+            isRTL: !1
+        },
+        "tr-TR": {
+            translations: z,
+            isRTL: !1
+        },
+        "uz-Latn-UZ": {
+            translations: D,
+            isRTL: !1
+        },
+        "uz-UZ": {
+            translations: R,
+            isRTL: !1
+        },
+        "vi-VN": {
+            translations: E,
+            isRTL: !1
+        },
+        "zh-CN": {
+            translations: T,
+            isRTL: !1
+        },
+        "zh-TW": {
+            translations: w,
+            isRTL: !1
+        }
+    };
+var q = r,
+    i = class i extends q.LanguageResources.BaseMessagesProvider {
+        constructor(t) {
+            super(t), this.setMessage("Validation.Mandatory", "This field is required."), this.setMessage("Validation.Integer", "Enter a valid integer."), this.setMessage("Validation.LongInteger", "Enter a valid integer."), this.setMessage("Validation.Decimal", "Enter a valid decimal."), this.setMessage("Validation.Currency", "Enter a valid currency."), this.setMessage("Validation.Date", "Enter a valid date."), this.setMessage("Validation.Time", "Enter a valid time."), this.setMessage("Validation.DateTime", "Enter a valid date and time."), this.setMessage("Validation.Text", "Enter a valid text."), this.setMessage("Validation.PhoneNumber", "Enter a valid phone number."), this.setMessage("Validation.Email", "Enter a valid email."), this.setMessage("UpgradeComplete", ""), this.setMessage("AppInitError.Generic", "An error occurred while trying to update the app. If you want to retry the update, restart the app."), this.setMessage("AppInitError.Resources", "An error occurred while trying to update the app. If you want to retry the update, restart the app."), this.setMessage("AppInitError.DataModel", "An error occurred while trying to update the app. If you want to retry the update, restart the app. If the problem persists you can reinstall, but all local data will be lost."), this.setMessage("UpgradeRequired", "Your application needs to be updated. Click here to update."), this.setMessage("UpgradeRequiredDataLoss", "Your application needs to be updated. Unsaved data will be lost. Click here to update.")
+        }
+    };
+e(i, "MessagesProvider");
+var a = i,
+    L = new a(n);
+export {
+    L as a
+};
